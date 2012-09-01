@@ -1,0 +1,1382 @@
+%\imput format
+\chapter{Ecuaciones Diferenciales Ordinarias}
+\label{Ecuaciones_Diferenciales_Ordinarias}
+
+
+
+
+\section{Introducción}
+
+En este capítulo comenzaremos el estudio de los sistemas de 
+ecuaciones diferenciales en derivadas ordinarias,--EDO de ahora en más--.
+Estos sistemas aparecen constantemente en física y conjuntamente con
+los sistemas de ecuaciones diferenciales en derivadas parciales, $\;\;$--EDP
+de ahora en más-- que estudiaremos en la segunda parte de este curso,
+forman el esqueleto matemático de las ciencias exactas. Esto se debe
+a que la mayoría de los fenómenos físicos se pueden
+describir en término de estas ecuaciones. 
+Si el parámetro libre --o variable independiente-- tiene la
+interpretación de ser un tiempo, entonces estamos frente a
+{\bf ecuaciones de evolución}. 
+Estas nos permiten, para cada estado inicial del sistema, 
+conocer su evolución temporal, es decir nos dan la capacidad de
+hacer predicciones a partir de condiciones iniciales, lo cual es el
+aspecto característico de toda teoría física.~\footnote{
+En algunos casos se da que la variable independiente no es el tiempo
+sino algún otro parámetro, pero la ecuación también puede 
+ser considerada como describiendo evolución. Por
+ejemplo si queremos ver como varía la densidad de un medio al
+aumentar la temperatura.}
+
+Existen otros fenómenos físicos descriptos por EDO que no tienen
+un carácter evolutivo. En general en estos casos estamos
+interesados en estados de equilibrio del sistema. 
+Por ejemplo si queremos ver qué figura describe la cuerda de secar la
+ropa que tenemos en casa. Estos casos no serán incluidos en la
+teoría de EDO que desarrollaremos a continuación, sino que 
+sus casos más sencillos serán
+tratados como casos especiales (unidimensionales) de las EDP elípticas.
+
+
+Si bien la física cuántica, o más precisamente la teoría de campos
+cuánticos, nos muestra que una descripción de los fenómenos físicos
+a esa escala microscópica no es posible por medio de los sistemas de
+ecuaciones diferenciales ya mencionados, usualmente nos ingeniamos
+para encontrar aspectos parciales de estos fenómenos, o ciertas
+aproximaciones en donde sí es posible una descripción en término
+de estos sistemas. Esto no se debe a un capricho o empecinamiento, 
+sino al hecho de que
+nuestro conocimiento de las EDO, y en menor medida de las EDP, es
+bastante profundo, lo cual nos permite manejarlas con re\-la\-tiva facilidad
+y comodidad.
+Por otro lado, y es importante remarcarlo, nuestro conocimiento del
+tipo de ecuaciones que aparecen en las teorías de campos cuánticos
+no-lineales es, en comparación, prácticamente nulo.
+
+
+
+\section{El Caso de una Única Ecuación Ordinaria de Primer Orden}
+
+\subsection{Ecuación Autónoma de Primer Orden}
+
+
+Esta tiene la forma:
+\beq
+\dot x= \frac{dx}{dt}=f(x)   \label {eq:4.5}
+\eeq
+\noindent 
+o sea una ecuación para un mapa $x(t):I \subset \re
+\to U\subset \re$.
+
+\noindent Supondremos $f:U\to \re$ continua. Una solución de esta
+ecuación será un mapa diferenciable $\varphi (t)$ definido para 
+todo $I$ y con imagen en $U$ .
+Diremos que $\varphi (t)$ satisface la {\bf condición inicial}
+$x_0$  en $t=t_0 \in I$ si 
+\beq 
+\varphi (t_0)=x_0 .   \label {eq:4.6}
+\eeq   
+Como veremos a continuación bajo ciertas  hipótesis la condición
+inicial que una solución cumple la determina unívocamente.
+
+
+
+La ecuación~\ref{eq:4.5} se puede interpretar geométricamente de la
+siguiente forma. En cada punto del plano $(x,t)$ marcamos una
+"rayita", es decir un campo de direcciones de tal forma que el
+ángulo que forma con el eje $x=$cte tenga tangente igual a $f(x)$ .
+
+\ejem: $\dot x = x^{\frac{1}{2}}$. [Ver figura (\ref{fig:4_1}).]
+
+
+%\fig{5cm}{Interpretación geométrica de la ecuación  $f(x)=x^{1/2}$.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m4_1}}
+    \caption{Interpretación geométrica de la ecuación  $f(x)=x^{1/2}$.}
+    \label{fig:4_1}
+  \end{center}
+\end{figure}
+
+Como $\varphi (t)$ tiene derivada $f(\varphi(t))$ , en el punto
+$(\varphi(t),t)$ , $\varphi(t)$ será tangente a la rayita en ese
+punto. Si nos paramos en algún punto $(x_0,t_0)$ por donde ésta
+pase podremos encontrar la solución siguiendo las rayitas. Por lo
+tanto vemos que dado un punto por donde la solución pasa, siguiendo
+una rayita determinaremos una única solución. Esto en particular
+nos dice que en este gráfico la mayoría de las soluciones no se cortan.
+Como veremos más adelante la unicidad de la solución se da si la rayita
+en cada punto tiene una tangente no nula. 
+Por otro lado, es claro del caso en la figura anterior, \ref{fig:4_1}, que si
+comenzaremos con el punto $(x_0=0,t_0)$ tendríamos dos opciones, o
+bien dibujar la línea ya dibujada $(t^2,t)$ o simplemente la línea $(0,t)$. 
+\espa
+
+\ejer: 
+Extender esta intuición gráfica al caso $\dot{x} = f(x,t)$.
+
+\ejem:
+De hecho la ecuación $\dot x= x^{1/2}$ tiene dos soluciones que pasan
+por $(0,0)$ , 
+\beq 
+\varphi(t)=0 \,\,\mbox{y}\,\,\,\varphi=\frac{t^2}4 
+\eeq 
+
+
+En efecto, supongamos $x(t)\neq 0$ entonces $\frac{dx}{x^{1/2}}=dt$ o
+$2(x^{1/2}-x_0^{1/2})=t-t_0$ , tomando $x_0=t_0=0$ 
+\beq 
+x=\left(\frac t2 \right)^2
+\eeq 
+La otra es trivialmente una solución.
+\espa
+
+\par
+La unicidad de las soluciones se obtiene, aun en el caso en que $f(x)$ se 
+anula, si en vez de pedir que $f(x)$
+sea continua se pide un poquito más, y eso es que, donde se anula,
+digamos en $x_0$ , se cumpla que 
+\beq 
+\lim_{\epsilon\to 0} \int_{x_0 + \eps}^x \frac {dx}{f(x)}
+=\infty , 
+\eeq 
+o alternativamente que para $\epsilon > 0$ suficientemente peque\~no,
+exista $k>0$ tal que,
+\beq 
+|f(x)| <k\mid x-x_0 \mid  \,\,\,\mbox{si}\, \mid
+x-x_0\mid<\epsilon.
+\eeq  
+
+O sea que $f(x)$ vaya a cero cuando $x\to x_0$ a lo sumo tan
+rápidamente como una función líneal. Esta condición se llama
+condición de Lipschitz. De ahora en más supondremos que $f(x)$ es
+diferenciable y por lo tanto Lipschitz.
+
+\ejer: Vea que esta condición es
+más débil que pedir que $f$ sea diferenciable en $x_0$.
+
+ 
+\noindent {\underbar {Solución}}: La función $f(x)=x\sin (\frac
+1x)$ es Lipschitz en $x_{+0}$ pero no es diferenciable.
+
+
+Así llegamos a nuestro primer teorema sobre ecuaciones ordinarias.
+
+
+
+\begin{teo} 
+Sea $f(x):U\to\re$ continua y Lipschitz en los puntos
+donde se anula. Luego
+
+
+i) Por cada $t_0\in\re$ , $x_0\in U$ existe un intervalo
+$I_{t_0}\in\re$ y una solución $\varphi (t)$ de la
+ecuación~\ref{eq:4.5} definida $\forall\,\,t\in I_{t_0}$ y la
+condición inicial $\varphi (t_0)=x_0$ ;
+
+
+ii) Dos soluciones cualesquiera $\varphi_1,\varphi_2 $ de~\ref{eq:4.5}
+satisfaciendo la misma condición inicial coinciden en algún
+entorno de $t=t_0$
+
+
+iii) la solución $\varphi $ de~\ref{eq:4.5} es tal que
+\beq 
+t-t_0=\int_{x_0}^{\varphi(t)} \frac{dx}{f(x)}\:\:\:\mbox{si}\,\,
+f(x)\neq 0
+\eeq 
+ \label{teo:2}
+\end{teo}
+
+\noindent{\underbar {Nota:}} La solución cuya existencia asegura
+este teorema es válida en un intervalo $I_{t_0}$ abierto, que el
+teorema no determina. Por lo tanto la unicidad se da solo en el
+máximo intervalo que esas tienen en común.
+
+
+
+
+
+
+
+
+\pru:
+
+Si $f(x_0)=0 $ luego $\fit=x_0$ es una solución.
+
+Si $f(x_0)\neq 0 $ luego por continuidad existe un entorno de $x_0$
+donde $f(x)\neq 0$ y por lo tanto $1/f(x)$ es una función continua,
+esto implica que la integral en~\ref{eq:4.3} es una función
+diferenciable de sus extremos de integración, los que llamaremos
+$\psi(x)-\psi(x_0)$ .
+
+\noi Por lo tanto tenemos,
+\beq 
+t-t_0=\psi(x)-\psi(x_0)
+\eeq 
+
+\noi O sea dado $x$ obtenemos $t$ y además esta relación se cumple 
+automáticamente que cuando
+{$x=x_0,\,t=t_0$}. Queremos ahora despejar $x$ de esta relación, es decir
+encontrar $\phi(t)$. 
+
+
+\noi Pero
+\beq 
+\left. \frac{d\psi}{dx}\right|_{x=\zeta}=\frac1{f(\zeta)} \neq 0\,\,,
+\eeq 
+\noi Por lo tanto el teorema de la función inversa nos asegura que
+existe un $I_{t_0}$ y una \emph{única} $\fit$ diferenciable, definida 
+para todo $t\in I_{t_0}$ y tal que  $\fip(t_0)=x_0$ y
+$t-t_0=\psi(\fit)-\psi(x_0)$. 
+Formando su derivada obtenemos,
+
+\beq 
+\frac{d\fip}{dt}=\left.\frac{d\psi^{-1}}{dt}\right|_{x=\fit}= 
+\left.\left[\frac1{f(x)}\right]^{-1}\right|_{x=\fit} =f(\fit)
+\eeq 
+\noi lo que demuestra que es una solución, necesariamente única
+de~\ref{eq:4.5} con la condición inicial apropiada.
+
+
+Solo resta ver que en el caso en que $f(x_0)=0$ la solución es única.
+Para ello utilizaremos el siguiente Lema.
+
+\begin{lem} 
+Sean $f_1 $ y $f_2$ funciones reales en
+$U\su \re$ tal que $f_1(x)<f_2(x)\;\;\forall\,x\in U$ y sean $\fip_1$
+y $\fip_2$ respectivas soluciones a las ecuaciones diferenciales que
+éstas generan, definidas en un intervalo $I\in \re$ y tal que
+$\fip_1(t_1)= \fip_2(t_1)$ para algún $t_1\in I$. Luego
+\beq
+\fip_1(t)\leq \fip_2(t)\;\;\;\;\;\forall\; \;t>t_1\,\in I     \label{eq:4.7}
+\eeq
+\label{lem}
+\end{lem}
+
+\espa
+
+
+\pru: Trivial, el que corre más rápido en cada sector del camino gana!
+Sea el conjunto $S = \{t>t_1 \in I | \phi_1(t) > \phi_2(t)\}$. 
+Sea $T \geq t_1$, $T \in I$ la mayor de las cotas inferiores de $S$.
+ En este instante
+$\fip_1(T)=\fip_2(T)$, 
+pero 
+\beq 
+\left.\frac{d\fip_1}{dt}\right|_{t=T}<\left.\frac{d\fip_2}{dt}\right|_{t=T}
+\eeq 
+%
+Por lo tanto existe $\eps > 0$ tal que para todo $t \in [T,\eps)$, 
+$\fip_1(t)<\fip_2(t)$ lo que es
+una contradicción, a menos que sea el último valor en $I$.
+
+%\fig{5cm}{Prueba del Lema 4.1.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m4_2_b}}
+    \caption{Prueba del Lema \ref{lem}.}
+    \label{fig:4_2}
+  \end{center}
+\end{figure}
+
+Con la ayuda de este Lema probaremos la unicidad de la solución.
+Sea $\fip_1(t)$ una solución con $\fip_1(t_0)=x_0$ pero distinta de
+la solución $\fip(t)=x_0\;\forall\;t$. 
+Supongamos entonces que existe
+$t_1>t_0$ tal que $\fip_1(t_1)=x_1\,>\,x_0$, los otros casos se
+tratan similarmente. [Ver figura 4.3.] 
+%\fig{5cm}{Prueba de la unicidad de la solución.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m4_2}}
+    \caption{Prueba de la unicidad de la solución.}
+    \label{fig:4_2_b}
+  \end{center}
+\end{figure}
+
+Si elegimos $x_1$ bastante próximo a $x_0$ se cumple
+\beq 
+f(x)<k\mid x-x_0\mid\;\;\forall \;\; x_0\leq x\leq x_1
+\eeq 
+y por lo tanto que $\fip_2(t) < \fip_1(t) ,\,\forall\;t_0\leq
+t\leq t_1$, donde $\fip_2(t)$ es la solución de la ecuación $\dot
+x= k(x-x_0)$ con condición inicial $\fip_2(t_1)=x_1$. 
+Pero $\fip_2(t)=x_0+(x_1-x_0)\, \mbox{e}^{k(t-t_1)}$ que tiende a $x_0$
+sólo cuando $t\to -\infty$. Por lo tanto $\fip_1(t)$ no puede tomar el valor
+$x_0$ para ningún $t < t_1$ finito y por lo tanto tenemos una
+contradicción \epru
+
+La solución cuya existencia y unicidad acabamos de demostrar no
+sólo se puede pensar como un mapa entre $I_{t_0}$ y $U$ sino también
+como un mapa $g_x^t$ entre $U_{x_0}\times\,I_{t_0}$ y $U$ 
+($U_{x_0}$ entorno de $x_0$). El mapa $g_x^t$ lleva $(x,t)$ al punto
+$\fit $ donde $\fip$ es la solución de~\ref{eq:4.5} con condición
+inicial $\fip (0)=x$.
+
+Estos mapas, o difeomorfismos locales, se denominan 
+{\bf flujos de fase locales}, 
+(ya que en general no se
+pueden definir en todo $I_{t_0}\times U$) y satisfacen la siguiente
+importante propiedad de grupo; si $t,s \in I_0$ luego
+$g^{s+t}_{\,\,x}=g^s o g^t_{\,x}$ .
+
+
+Por la forma en que aparecen las condiciones iniciales en el Teorema
+anterior es fácil ver, usando nuevamente el teorema de la función inversa, 
+que si $f(x_0)\neq 0$ luego $g^t_{\,x}$ es diferenciable también 
+con respecto a $x$.
+
+\begin{cor} si $f(x_0)\neq 0$ luego
+$g^t_{\,x}:U_{x_0}\times I_{t_0}\to U$ es diferenciable en ambos $t$ y
+$x$.
+\label{cor1}
+\end{cor}
+\noi {\underbar {Nota:}} La restricción $f(x_0)\neq 0$ es
+innecesaria como veremos más adelante.
+\espa
+
+Del uso del Teorema de la función inversa en el Teorema~\ref{teo:2} también
+sigue que si consideramos el conjunto de las soluciones distinguiendo
+cada una por su condición inicial,
+[$\fip(x_0,t_0,t)$ es la solución que satisface $\fip(t_0)=x_0$],
+luego la función $\fip(x_0,t_0,t):U\times I\times I\to U$ es
+diferencible con respecto a todos los argumentos. Es decir que si
+cambiamos levemente las condiciones iniciales, luego la solución
+solo cambiará  levemente. Más adelante daremos una prueba de todas
+las propiedades, incluyendo el Teorema~\ref{teo:2} para los sistemas generales,
+o sea la ecuación~\ref{eq:4.4}.
+\espa
+
+
+\ejem:
+Sea $x(t)$ el número de bacterias en un vaso de cultivo al tiempo
+$t$. Si el número es lo suficientemente grande podemos pensarla
+como una función  suave, diferenciable. Si a su vez este número
+no es tan grande de modo que su densidad en el vaso sea lo
+suficientemente baja como para que éstas no tengan que competir por
+aire y alimento, luego su reproducción  es tal que $x(t)$ satisface
+la ecuación,
+\beq
+\dot x =a\,x\;\;\;\;\;\;a=\mbox{cte.}\simeq 2.3\frac1{\mbox{día}},
+\label{eq:4.8}
+\eeq
+o sea la velocidad de crecimiento es proporcional a la cantidad de
+bacterias presentes. La constante $a$ es la diferencia entre la tasa
+de reproducción y la de extinción. Aplicando el Teorema~\ref{teo:2}
+sabemos que la ecuación nos permite, dado el número de bacterias
+$x_0$ al tiempo $t_0$, conocer el número de éstas para todo tiempo.
+En efecto la solución de~\ref{eq:4.8} es 
+\beq 
+\frac{dx}x = a\,\,dt
+\eeq 
+
+\noi Integrando ambas partes
+\beq 
+\ln \frac x{x_0}=a\,(t-t_0) \;\;\;\mbox{o}\\;\;\;
+x(t)=x_0\,\mbox{e}^{a\,(t-t_0)} 
+\eeq 
+
+O sea que el número de bacterias crece exponencialmente, a menos
+por supuesto de que $x_0=0$, y depende continuamente del número
+inicial. Se debe advertir que si bien la dependencia es continua la
+diferencia entre soluciones con condiciones iniciales distintas 
+crece exponencialmente.
+
+El flujo de fase es en este caso $g^t_x=x\,\mbox{e}^{a\,t}$ y aquí 
+ es global. Con ese crecimiento es fácil darse cuenta que en pocos
+días el número de bacterias y por lo tanto su densidad será 
+tan grande que éstas entrarán a competir entre sí por el alimento lo
+cual hará  disminuir la velocidad de crecimiento. Se observa
+experimentalmente  que este hecho se puede tomar en cuenta incluyendo
+en la~\ref{eq:4.8} un término proporcional al cuadrado del número de
+bacterias.
+
+\beq
+\dot x= a\,x-b\,x^2\;\;\;\;\;\;\;\;\;b=\frac a{375}.
+\label{eq:4.9}
+\eeq
+
+Si $x$ es peque\~na el primer término domina y $x$ comienza a
+crecer,  como ya vimos, en forma exponencial hasta que el segundo
+término comienza a ser importante y la velocidad de crecimiento
+decrece tendiendo a cero cuando $x=x_s$ tal que $a\,x_s-b\,x_s^2=0$ o
+$a-b\,x_s=0$ o $x_s=a/b\simeq 375$ bacterias. Como $\fit=x_s$ es una
+solución , debido a la unicidad,  la solución que tiende a $x_s$
+que describimos arriba no puede alcanzar el valor $x_s $ en un tiempo
+finito. Si el número de bacterias presentes es mayor que $375$ la
+velocidad de crecimiento será   negativa y la
+solución nuevamente  tenderá  asintóticamente a $x_s$
+
+
+La solución general de~\ref{eq:4.9} puede ser obtenida de forma
+análoga a la de~\ref{eq:4.8} y es,
+\beq
+x(t)=\frac{a/b}{1+(\frac a{bx_0}-1)\mbox{e}^{-a(t-t_0)}}
+\eeq 
+\noi lo cual confirma el análisis anterior.
+
+\espa
+
+%\fig{6cm}{Distintas soluciones de la ecuación de crecimiento bacteriano:$   \fip_1(t_0)=0 $, $\fip_2(t_0)=x_s=\frac ab$, $\fip_3(t)=x_0<x_s$ y $   \fip_4(t)=x_0>x_s$}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m4_3}}
+    \caption[Distintas soluciones de la ecuación de crecimiento bacteriano]{Distintas soluciones de la ecuación de crecimiento bacteriano:
+$   \fip_1(t_0)=0 $, $\fip_2(t_0)=x_s=\frac ab$, $\fip_3(t)=x_0<x_s$ y
+$   \fip_4(t)=x_0>x_s$}
+    \label{fig:4_3}
+  \end{center}
+\end{figure}
+
+
+
+Este ejemplo nos permite introducir dos conceptos claves en el área.
+El primero es el de {\bf solución estacionaria o de
+equilibrio} . Estas son las soluciones constantes o sea  son tales que
+$\dot x_s=f(x_s)=0$ o sea las raíces de la función $f(x)$.
+Para la ecuación~\ref{eq:4.8} $x_s=0$ , para la ecuación~\ref{eq:4.9}
+$x_s=0\;\;\mbox{y}\;a/b$. 
+
+Note que no siempre existen soluciones
+estacionarias, por ejemplo la ecuación con $f(x)=1$ no las tiene, 
+pero cuando existen el problema de
+encontrarlas se reduce a resolver una ecuación a lo sumo trascendente.
+Debido a la unicidad de las soluciones, esto nos permite dividir el
+plano $(x,t)$ en franjas tales que si una solución tiene
+condiciones iniciales en esta franja ésta debe permanecer en ella.
+
+
+El segundo concepto es la {\bf estabilidad} de estas soluciones.
+La solución $x_s=0$ de~\ref{eq:4.8} y~\ref{eq:4.9} no es estable en el
+sentido que si elegimos como condición inicial un punto en cualquier
+entorno de esta solución, la solución correspondiente se
+apartará  inicialmente en forma exponencial de la anterior. Por
+lo contrario la solución de~\ref{eq:4.9} $x_s=a/b$ es estable en el
+sentido que si tomamos valores iniciales próximos a ésta  las
+soluciones correspondientes se aproximarán asintóticamente (en el
+futuro) a la anterior.
+
+Las soluciones inestables no tienen interés físico ya que la más
+mínima perturbación del sistema originará  una solución que
+se alejará  rápidamente de la solución inestable. 
+Esto no es así en el ejemplo anterior pues el número de bacterias
+es discreto y la ecuación solo representa una aproximación. 
+Si el vaso de cultivo está esterilizado y herméticamente cerrado
+luego no hay posibilidad de crecimiento bacteriano.
+Más adelante analizaremos en detalle el problema de la estabilidad.
+
+\subsection{Extendiendo la Solución Local}
+
+Si nos olvidamos del modelo físico que describimos con~\ref{eq:4.9} 
+y tomamos
+$z_o < 0$, $t_o = 0$, por ejemplo, habrá  un tiempo máximo, 
+$t_d = \frac1a \ln [\frac{a/b - z_o}{- z_o}]$,  
+finito para el cual la solución diverge, es decir,
+\beq 
+\lim_{t \rightarrow t_d} z(t) = \infty . 
+\eeq
+Esto muestra que el teorema anterior solo puede asegurar la
+existencia de un intervalo $I$ para el cual la solución existe. Lo
+máximo que podemos concluir en forma general, es decir sin que se dé
+más información sobre $f$, es el siguiente Corolario del
+Teorema~\ref{teo:2}.
+
+\begin{cor}
+Sea $U \subset  \re $ el dominio de definición de f, $U_c $ un
+intervalo compacto [es decir cerrado y acotado] de $U$, $z_o \in U_c $.
+Luego la solución $(\fip (z_o,t_o,t), I)$ de la ecuación~\ref{eq:4.5}  puede ser extendida o bien indefinidamente o bien hasta
+la frontera de $U_c $. 
+Esta extensión es única en el sentido que cualquier par de soluciones,
+$(\fip_1(z_o,t_o,t), I_1 )$, $\fip_2(z_o,t_o,t), I_2 )$ coinciden en
+la intersección de sus intervalos de definición, $I = I_1 \cap
+I_2$. 
+\label{cor:4_2}
+\end{cor}
+
+\pru:
+Primero probamos la versión global de la unicidad de la solución.
+Sea $T$ la menor de las cotas superiores del conjunto 
+$\{\tau\, |\, \varphi_1(z_o,t) = \varphi_2(z_o,t) \,
+\forall \, t_o \le t \le \tau \}$.
+Suponga\-mos en contradicción que $T$ es un punto interior de 
+$I_1 \cap I_2 $. 
+Por continuidad tenemos,
+$\varphi_1(z_o,T) = \varphi_2(z_o,T) $, pero por el resultado del
+Teorema~\ref{teo:2}  , usando condiciones iniciales
+$\varphi_1(z_o,T)$, en $ T$
+vemos que ambas soluciones deben 
+coincidir en un entorno de $T$, lo que contradice que $T$ sea el máximo.
+Así es que $T$ debe ser un extremo de alguno de los intervalos de
+definición por lo que las soluciones coinciden en 
+$I_1 \cap I_2 \cap \{t | t \geq t_o\} $. 
+El caso $t \leq t_o $ se trata similarmente y por lo tanto las
+soluciones coinciden en todo $I_1 \cap I_2 $. 
+
+%\fig{4cm}{Unicidad global.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m4_4}}
+    \caption{Unicidad global.}
+    \label{fig:4_4}
+  \end{center}
+\end{figure}
+
+Segundo construimos la extensión. La idea es que si dos soluciones coinciden en $I_1 \cap I_2 $ luego las podemos combinar y formar una
+en $I_1 \cup I_2 $, 
+\beq 
+\fit =\left\{ \barr{ll}  \fip_1(t) &\forall t \in I_1\\
+           \fip_2(t) &\forall t \in I_2. 
+         \earr\right.
+\eeq
+
+%\fig{4cm}{Extendiendo la solución.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m4_5}}
+    \caption{Extendiendo la solución.}
+    \label{fig:4_5}
+  \end{center}
+\end{figure}
+
+Sea $T$ la cota superior mínima de $\{\tau | \fit $ existe y está 
+contenida en $U_c \; \forall \, t_o \leq t \leq \tau \}$.
+Si $T$ $= \infty $ no hay nada que probar, por lo tanto supongamos $T$ $<
+\infty $. Probaremos que existe $\fit $ definida para todo $t_o \leq 
+t \leq $ $T$ y tal que $\varphi (T) $ es uno de los extremos de $U_c $.
+El Corolario~\ref{cor1} nos dice que dado cualquier $\hat z \in U$, existen
+$\epsilon_{\hat z} > 0 $ y un entorno de $\hat z$, $V_{\hat z} \subset U$ tal
+que para cualquier $z \in V_{\hat z} $ existe una solución con
+condiciones iniciales $\varphi (t_o) = z$ definida para todo t en
+$\left| t - t_o \right| < \epsilon_{\hat z} $.
+Como $U_c $ es compacto podemos elegir un número finito de puntos
+${\hat z_i }$ tal que $U_c \subset \bigcup V_{\hat z_i}$. 
+Sea $\epsilon > 0 $ el mínimo de los $\epsilon_{\hat z_i} $.
+Como $T$ es la cota superior mínima existe $\tau $ entre $T -
+\epsilon $ y $T$ tal que $\fit \in U_c \, \forall \, t_o \leq t \leq \tau $, 
+pero como 
+$\varphi(\tau ) \in U_c $ 
+está  en alguno de los $V_{\hat z_i } $ existe
+una solución $\hat{\fip}(t) $ definida para todo $t$ en 
+$\left| t - \tau \right|
+< \epsilon $ 
+con condición inicial 
+$\hat{\fip}(\tau) = \fip(\tau) $.
+Usando $\hat{\fip}(t) $ podemos ahora extender  $\varphi $, cuya extensión 
+llamaremos $\tilde\varphi $, al intervalo $t_o \leq t < \tau + \epsilon $.
+Pero 
+$\tilde\varphi (\theta) \in U_c \, \forall \, t_o < \theta <T$ 
+ya que 
+$\tilde\varphi(\theta) = \varphi(\theta) \in U_c$, 
+y de otro modo $T$ no
+sería una cota superior mínima. Por continuidad $\tilde\varphi(T)
+\in U_c$ y como por definición de $T$ para todo intervalo abierto, $I_T $,
+conteniendo $T$,  $\tilde\varphi[I_T] \not\in U_c $ concluimos que 
+$\tilde\varphi(T) $ es un extremo de $U_c$ \epru
+
+\subsection{El Caso No-autónomo}
+
+Este es el caso en que en vez de~\ref{eq:4.5} tenemos 
+\beq 
+\frac{d\dot z}{dt} = f(z,t).
+\eeq
+La interpretación geométrica es la misma, sólo que ahora las {\sl
+rayitas } tienen un ángulo que depende también de la variable t,
+por lo tanto esperamos que si comenzamos en un punto $(t_o,z_o)$ y 
+trazamos una curva tangente a las rayitas obtendremos también una única
+solución. Este es en realidad el caso, pero su discusión estará 
+comprendida en la teoría general de sistemas autónomos
+de primer orden que enunciaremos más adelante.
+
+Suponiendo ciertas condiciones para $f(z,t) $ --por ejemplo que sea
+Lipschitz con respecto a ambas variables -- se puede ver que también existen
+flujos locales, pero éstos ahora dependen también de $t_o $ y no solo
+de la diferencia entre el tiempo inicial y el final. Denotaremos a
+estos flujos como, $g^t_{t_o}(z)$ y la propiedad de semigrupo que cumplen es
+$g^{t}_{t_1} \circ g^{t_1}_{t_o} (z) = g^t_{t_o} (z) $.
+
+Hay una clase especial de ecuaciones no-autónomas que se puede reducir
+al ya estudiado. Esta es la clase donde $f(z,t)$ se puede escribir como
+el cociente de dos funciones, una de $z$ y otra de $t$,
+\beq 
+f(z,t) = \frac{g(z)}{h(t)} .
+\eeq
+En este caso la interpretación geométrica es que el parámetro $t$
+no es el más indicado para describir este sistema. Esto se remedia eligiendo
+otro parámetro $\tau $ dado por, $\frac{d\tau}{dt} = \frac1{h(t)}$,o 
+\beq 
+\tau - \tau_o = \int^t_{t_o} \frac{dt}{h(t)}. 
+\eeq
+Una vez que se obtiene $t(\tau) $ [Ver el Teorema~\ref{teo:2}] debemos resolver,
+\beq 
+\frac{dz}{d\tau} = g(z(\tau )), 
+\eeq
+[Usando nuevamente el Teorema~\ref{teo:2}], obteniendo $\varphi(\tau) $.
+La solución con respecto al parámetro original se obtiene 
+definiendo $\fit = \varphi(\tau(t)) $.
+
+\section{Reducción a Sistemas de Primer Orden}
+
+\defi: La {\bf ecuación diferencial ordinaria general de orden} {\it m} 
+es una ecuación de la forma:
+\begin{equation}
+F(x,x^{(1)},\ldots,x^{(m)},t)\,=\,0     \label {eq:4.1}
+\end{equation}
+\noindent 
+
+Es decir una ecuación implícita de $x$, un mapa entre 
+$\tilde I\subset \re$ y $\tilde U\subset \re^{m \times n}$, (o sea $x$ es un
+vector de $n$ componentes), y sus derivadas (donde $x^{(i)} \equiv \frac{d^i x}{dt^i}]$ 
+denota la $i$-ésima derivada con respecto al parámetro independiente, $t$) 
+hasta el orden 
+{\it n}~\footnote{En realidad para definir correctamente~\ref{eq:4.1} se
+deben dar los abiertos $\tilde U^i$ para la $i$-ésima derivada con respecto 
+a $x$ donde $F$ está definida.}.
+
+\defi: Diremos que el mapa $m$--veces diferenciable $x(t): I \to
+\re^n$ es {\bf una solución} de la ecuación anterior si $F$
+evaluada en este mapa está bien definida y es idénticamente nula en 
+todo el intervalo $I$.
+
+En este curso supondremos que~\ref{eq:4.1} puede ser resuelta para $x^m$ ,
+o sea que~\ref{eq:4.1} es equivalente a la siguiente ecuación:
+\begin{equation}
+x^{(n)}\,=\,f(x,x^{(1)},\ldots,x^{(n-1)},t)       \label {eq:4.2}
+\end{equation}
+\noindent en abiertos $I\subset\tilde I \subset \re$\  y \ $U\subset
+\tilde U \subset \re^m$
+
+\ejem: La EDO $F(x,x^{(1)},t)=((x^{(1)})^2 -1)=0 $ 
+implica una de las siguientes EDO en nuestro sentido:
+\begin{equation}
+\begin{array}{l}
+   x^{(1)}\,=\,\,1 \\ 
+   o \\
+   x^{(1)}\,=\,-1
+\end{array}
+\end{equation}
+\espa
+Si conocemos los valores de $x$ y sus derivadas hasta el $(m-1)$-ésimo
+orden en un punto $t_0$ entonces la ecuación~\ref{eq:4.2} nos
+permite conocer la $m$-ésima derivada en dicho punto. 
+Si suponemos que $f$ es continua entonces esto nos permite conocer
+$x$ y sus derivadas hasta el $(m-1)$-ésimo orden en un punto $t_0+\eps$
+suficientemente cercano (el error en que incurriremos será del orden
+de $\eps \times $ {\it derivadas de $f$}), pero entonces podemos usar
+nuevamente la ecuación~\ref{eq:4.2} y así conocer aproximadamente
+la $n$-ésima derivada de $x$ en $t_0 + \eps$. Prosiguiendo de este modo
+podemos lograr una {\it solución aproximada} en un intervalo dado.
+Al menos intuitivamente, parecería que haciendo el intervalo $\eps$ cada vez más
+peque\~no deberíamos obtener una solución. !`Esto en realidad
+es así! Y lo probaremos más adelante en el curso. Lo importante
+por el momento es el hecho de que para obtener una solución debemos
+dar en un punto $t_0$ el valor de todas las derivadas de la variable
+incógnita de orden menor de la que determina el sistema, es decir de la
+que aparece en el lado izquierdo de la ecuación~\ref{eq:4.2}.
+
+
+
+\espa
+Introduciendo $ \tilde{u}^1 \equiv x$ , $\tilde{u}^2\equiv x^{(1)}$ , $\ldots$ ,
+$\tilde{u}^n \equiv x^{(m-1)}$ , podemos escribir~\ref{eq:4.2} de la forma:
+\begin{equation}
+\begin{array}{lcl}
+   \dot{\tilde{u}}^1&=&\tilde{u}^2 \\
+   \dot{\tilde{u}}^2&=&\tilde{u}^3 \\
+           &\vdots&  \\
+\dot{\tilde{u}}^m&=&f(\tilde{u}^1,\tilde{u}^2,\ldots,\tilde{u}^m,t)\\
+   \end{array}
+ \end{equation}
+\noindent 
+donde hemos denotado con un punto sobre la función su derivada con
+respecto al parámetro $t$. 
+Por lo tanto~\ref{eq:4.2} es equivalente a una ecuación de primer
+orden para el vector de vectores 
+$\ve{\tilde{u}} \subset U\subset \re^{n \times m}$,
+
+\beq 
+\dot{\ve{\tilde{u}}}=\tilde{\ve{V}}(\ve{\tilde{u}},t)  \label{eq:4.3}
+\eeq 
+
+\noindent donde $\tilde{\ve{V}}$ es también un vector en algún
+subconjunto de $\re^{n \times m}$.
+Si $\tilde{\ve{V}}(\tilde{u},t)$ depende explícitamente de $t$ entonces
+podemos agregarle a
+$\ve{\tilde{u}}$ otra componente, la $(n \times m +1)$-ésima con $\tilde{u}^{n \times m +1}=t$, 
+y por lo tanto tenemos que $\dot{\tilde{u}}^{n \times m + 1)} = 1$.
+La ecuación~\ref{eq:4.3}, más esta
+última ecuación, toman la forma ,
+\beq
+\dot{\ve{u}}\,=\,\ve{V}(\ve{u})\;,      \label{eq:4.4}
+\eeq
+donde $\ve{u} = (\ve{\tilde{u}}, \tilde{u}^{n \times m+1})$ y
+%\pagebreak
+
+\beq
+V^i(\ve{u}) =\left\{ \barr{ll}
+
+  \tilde V^i(\ve{\tilde{u}},\tilde{u}^{n \times m+1}) &\mbox{si $1\leq i \leq m\times n$}\\
+            1                   & \mbox{ si $i = n \times m + 1) $ ,}
+                               \earr
+                      \right.       
+\eeq
+
+\noindent un mapa entre $U\subset \re^{n \times m+1}$ y
+$\re^{n \times m + 1}$.
+
+
+
+\noindent Así es que arribamos al siguiente teorema.
+
+\begin{teo}[de Reducción]
+Si la función $f$ del sistema~\ref{eq:4.2} de $m$ ecuaciones diferenciales 
+ordinarias de orden $n$ es diferenciable, luego este sistema es equivalente 
+a un sistema de $m\times n+1$ ecuaciones
+diferenciales  ordinarias de primer orden que no dependen
+explícitamente de la variable independiente. Es decir por cada
+solución del sistema~\ref{eq:4.2} podemos construir una solución del
+sistema~\ref{eq:4.4} y viceversa.
+\label{teo:4.1}
+\end{teo}
+
+\pru:
+ Claramente dada una solución del sistema~\ref{eq:4.2} suficientemente
+diferenciable podemos escribir
+con ella un vector $\ve u$ y éste satisfará  (porque así lo construimos)
+el correspondiente sistema~\ref{eq:4.4}. Por lo tanto toda solución
+del sistema original es solución del sistema de primer orden
+asociado a él.
+
+Para probar el inverso, es decir que toda solución 
+$\ve{u}(t)$ del sistema~\ref{eq:4.4} da origen a una 
+del sistema~\ref{eq:4.2}, solo es necesario tomar repetidas
+derivadas de las primeras componentes, $x(t) = u^1(t)$, e ir
+usando las ecuaciones en el correspondiente orden hasta obtener 
+el sistema original satisfecho por la enésima derivada de $x(t)$
+\epru
+
+
+Este teorema es importante pues nos permite abarcar toda la teoría
+general de las ODE a partir del estudio de la ecuación~\ref{eq:4.4}, 
+la cual como veremos tiene un sentido geométrico claro. 
+Sin embargo se debe tener en cuenta que muchas veces en física
+aparecen subclases de ecuaciones muy especiales con propiedades particulares
+de mucha importancia física que la teoría general no contempla. 
+
+\ejem: Péndulo Matemático
+$$ \ddot x=k\,x \,\,\,\,\,\,u^1=x\,,\,u^2=\dot x$$
+\beq \frac d{dt}\left(\barr{c}
+                 u^1 \\ u^2
+                 \earr \right)=\left(\barr{cc}
+                                0 & 1\\
+                                k & 0
+                                \earr\right)\left(\barr{c}
+                                              u^1 \\ u^2
+                                              \earr\right)
+\eeq 
+
+\espa
+Note que si $u = \gamma(t): I \rightarrow U $ es una solución de~\ref{eq:4.4}
+luego $\forall s\in \re $ tal que $t+s \in I$, $\gamma(t+s)$ es también
+una solución. En efecto,
+\beq
+\left.\frac d{dt}\gamma(t+s)\right|_{t=t_o} =\left. \frac d{dt}\gamma(t) 
+\right|_{t=t_o+s}= V(\gamma(t_o+s)) = \left. V(\gamma(t+s)) \right|_{t=t_o}.
+\eeq
+Debido a esto de ahora en más tomaremos $t_o$, el punto donde daremos 
+la condición inicial, igual a cero.
+
+\ejer:
+Si $u=\sin(t):\re \rightarrow [0,1]$, es una solución de~\ref{eq:4.4}
+pruebe que $u=\cos(t)$ también lo es.
+
+
+
+\section{Sistemas de EDO}
+
+?`Tienen los sistemas de EDO una interpretación geométrica?
+Como ya vimos estos tienen la forma genérica.
+\beq
+\frac {dx^i}{dt} = v^i(x^j)\;\;\;\;\;\;\;\;\;\;\; i=1,\ldots,n.
+\eeq
+Sea $\gat$ una curva entre un intervalo $I\in \re$ y $M$ una variedad de
+$n$ dimensiones. Sea $p=\gato$ un punto de $M$ y
+$(U,\fip=(x^1,\ldots,x^n))$ una carta con $p\in U$. Luego
+$\fip\circ\gat=(x^1(t) ,\ldots,x^n(t))$ es un mapa entre $I$ y un
+abierto de $\re^n$, y $\dip\frac{dx^i}{dt}$ son las componentes del
+vector tangente a $\gamma$ en la base coordenada $\{\ve{x_i}\}$ en el punto
+$\gat$ de $M$. Por lo tanto $v^i(x^j)$ son las componentes de un
+campo vectorial $\ve v$ en la base coordenada $\{\ve{x_i}\}$ en el punto
+$p\in M$ correspondiente a $\fip(p)=(x^1,\ldots,x^n)$. Vemos así que
+los sistemas de EDO se pueden interpretar como un campo
+vectorial $\ve{v}$ en una variedad $M$, y sus soluciones como curvas $\gat $ 
+tal que su tangente en todo punto sea $\ve{v}$. 
+\espa
+\noi
+\ejem: El péndulo Físico
+\beq
+\left\{\barr{rcl}
+   \ddot\theta  & = & -\sin\theta \;\;\;\;\mbox{\o} \\
+   \dot \theta & = & z  \\
+   \dot z & = & -\sin\theta 
+   \earr\right.
+\eeq
+\noi
+Aquí el campo vectorial es $z\dip\frac{\partial}{\partial\theta} -
+\sin \theta \dip\frac{\partial}{\partial z}$,
+
+%\fig{8cm}{El péndulo Físico.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m4_6}}
+    \caption{El péndulo Físico.}
+    \label{fig:4_6}
+  \end{center}
+\end{figure}
+
+\noi
+note que el diagrama en el plano se repite cada $2\pi$ según el eje
+$\theta$. En realidad la ecuación tiene sentido físico en un
+cilindro, siendo $\theta$ la variable angular, 
+o sea la variedad es un cilindro. 
+Las {\bf curvas integrales}, o sea las imágenes de los mapas $\gat$ que son
+soluciones,
+se construyen siguiendo los vectores de tal modo que éstas sean
+siempre tangentes a las curvas.
+
+
+%\fig{8cm}{La variedad Péndulo Físico.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m4_7}}
+    \caption{La variedad Péndulo Físico.}
+    \label{fig:4_7}
+  \end{center}
+\end{figure}
+
+Del ejemplo queda claro que en general si damos un punto de $M$
+siguiendo los vectores, a partir de éste, podremos encontrar 
+una solución   $\gat$ que pasa por este punto. 
+Si tenemos  dos soluciones $\gamma_1(t)$,
+$\gamma_2(t)$ éstas no se pueden cruzar\ \ --sin ser tangentes--\ \ en
+los puntos donde el campo vectorial es distinto de cero [ya que
+de otro modo sus tangentes  darían dos vectores distintos en el punto].
+Si se supone que el campo vectorial es diferenciable luego se puede
+ver que distintas curvas nunca se pueden tocar y por lo tanto las
+soluciones son únicas.
+
+Por supuesto, como se ve por ejemplo en la figura \ref{fig:4_7}, 
+una misma curva si se puede intersectar (note que esto solo puede suceder
+si el sistema es autónomo, ya que de lo contrario, la inclusión de
+la variable temporal hace que ninguna curva se pueda intersectar). 
+En tal caso se puede probar que esa solución es
+{\bf periódica}, es decir que existe $T>0$ tal que $\gamma(t+T)=\gat$. Note
+en particular que esto implica que $\gamma$ está  definida para todo
+$t$ en $\re$.
+
+\espa \noi
+\bpro Si $M$ es una variedad compacta (ejemplo: una esfera
+o un toro) se puede probar  usando Corolario \ref{cor:4_2} que  todas 
+sus curvas de fase están definidas para todo $t$. 
+Sin embargo existen algunas que no son
+cerradas, dé un ejemplo.
+\epro
+
+\subsection{Integrales Primeras}
+
+Dado un campo vectorial $\ve{v}$ en $M$, si existe $f:M\to\re$ \ no constante 
+tal que $\ve{v}(f)=0$
+en $M$ luego diremos que $f$ es una {\bf integral primera o constante
+de movimiento} del sistema de EDO generado por $\ve{v}$.
+
+Se puede demostrar que si $n$ es la dimensión de $M$, luego
+localmente, alrededor de puntos donde $\ve v \neq 0$,
+existen $n-1$ integrales primeras funcionalmente
+independientes sin embargo es fácil encontrar campos vectoriales que
+no tienen ninguna integral primera.
+
+\espa
+\noi
+\yaya{Ejemplos--Problemas}
+
+\bpro 
+El sistema
+$$\left\{\barr{lcl}
+        \dot x_1 & = &x_1 \\
+        \dot x_2  &  = & x_2 
+        \earr\right.
+$$      
+\noi no tienen ninguna, ¿por qué? Ayuda: Dibuje las curvas integrales.
+\epro
+
+\bpro
+Considere el sistema 
+$$\left\{\barr{lcl}
+        \dot x_1 & = &k_1 \\
+        \dot x_2  &  = & k_2 
+        \earr\right.
+$$      
+\noi en el toro (obtenido identificando los puntos $(x_1,x_2)$ y
+$(x_1+n,x_2+m)$ de $\re $). ¿Para cuáles valores de $k_1\,,\;k_2 $
+existe una integral primera y para cuáles no? Ayuda: ídem 1).
+\epro
+
+
+\bpro
+Las ecuaciones de Hamilton de la mecánica clásica forman
+un sistema de EDO,
+
+\begin{eqnarray}
+    \dot q_i & = & \derp{H}{p_i}  \\
+    \dot p_i & = & -\derp{H}{q_i}
+    \end{eqnarray}
+
+\noi $i=1,\ldots,n$, donde $H:\re^{2n}\to\re$ es la función
+Hamiltoniano o energía. Demuestre que $H$  es una integral primera
+de este sistema.
+\epro
+
+ Los ejemplos anteriores muestran que hay sistemas de EDO que
+globalmente no son derivables de un principio variacional.
+
+Así como el conocimiento de la energía de un sistema  Hamiltoniano
+es una ayuda inestimable para conocer la forma cuantitativa de su
+movimiento, el conocimiento de una integral primera de un sistema
+general de EDO también brinda una gran ayuda ya que sabemos que las
+curvas de fase están restringidas a sus superficies de nivel ($f=$
+cte.) lo que nos permite reducir efectivamente el orden de la
+ecuación en uno: solo tenemos que considerar el problema en la variedad
+dada por los puntos $f= cte.$
+
+\subsection{Teorema Fundamental de los Sistemas de EDO}
+\bteo
+
+Sea $\ve{v}$ un campo vectorial continuamente diferenciable $(C^1)$ en un
+entorno de $p\in M$. Luego,
+
+ i) Existe un entorno $U_p$ de $p$ y un abierto $I\su\re$,
+tal que dado cualquier $q\in U_p\;(t_0\in I) $ existe una curva
+diferenciable $\gamma_q(t):I\to M$ satisfaciendo 
+\beq 
+\barr{rcl}
+  \left.  \dip\derc{\gamma_q}{t}\right|_t & = &\left.\ve{v}\right|_{\gamma_q(t)}  \\
+    \gamma_q(t_0) & = &q.
+      \earr
+\eeq
+
+ ii) si $\gamma_q^1$ y $\gamma_q^2$ satisfacen la condición i) luego
+     $\gamma_q^1=\gamma_q^2$ en $I^1\cap I^2$.
+
+iii) $\gamma_q(t)$ es también $C^1$ cuando es considerada como
+una función de $I\times U_p\to M$. O sea es continuamente
+diferenciable con respecto  a la condición inicial.
+
+ iv) Sea $U$ una región compacta  (acotada) de $M$, $\ve{v}\in C^1$
+y $ p\in U$ luego $\gamma_p(t)$ puede ser extendida (hacia adelante y/o
+hacia atrás) hasta la frontera de $U$. En particular si $M$ es compacta
+y $\ve{v}\in C^1(M)$, luego $\gamma_p(t)$ existe globalmente (para todo 
+$t \in \re$).
+
+\eteo
+
+
+Probaremos este teorema más adelante, luego de introducir las
+herramientas mate\-máticas necesarias.
+
+
+
+
+\subsection{Dependencia en Parámetros, Ecuación de Variaciones}
+
+Una consecuencia, muy importante en las aplicaciones, del teorema
+ fundamental es el siguiente:
+\bcor
+Sea $\ve{v}_{\lambda}$ un campo vectorial diferenciable en $U\su M $ que depende
+dife\-ren\-ciablemente de un parámetro $\lambda\in A \subset \re$. Luego dados
+$p\in U$, $t_0\in I$ y $\lambda_0\in A$ existen entornos
+$U_p\,,\;I_{t_0} $ y $A_{\lambda_0}$ tales que para toda terna
+$(q,t,\lambda) \in U_p\times I_{t_0}\times A_{\lambda_0}$ existe una
+única curva integral de
+$\ve{v}_{\lambda},\gamma_{\lambda}(t):I_{t_0}\times A_{\lambda_0}\to U_p$
+con $\gamma_{\lambda}(0)=q$. Esta depende diferenciablemente de $q$, $t$ 
+y $\lambda$.
+\ecor
+
+\pru: Considere el campo vectorial $(\ve{v}_{\lambda},0):U\times
+A \to TM\times \re$. Por hipótesis este campo es diferenciable y por
+lo tanto tiene curvas integrales $(\gamma_{\lambda}\;,\; \lambda)$ que
+dependen diferenciablemente de las condiciones iniciales y por lo
+tanto de $\lambda$ 
+\epru
+
+\espa
+\noi\yaya{Advertencia}: El intervalo $I_{t_0}\times A_{\lambda_0}$ donde
+la solución es diferenciable no necesariamente es el intervalo de
+definición de la solución. Por ejemplo no es cierto que aun
+cuando la solución esté definida para todo $t$ en $\re$ los
+límites  $\dip \lim_{T\to \infty}\gamma_{\lambda}(t)$ y $ \dip
+\lim_{\lambda \to \lambda_0}\gamma_{\lambda}(t) $ conmuten.
+
+La importancia práctica de este corolario  es que nos permite
+obtener soluciones a\-pro\-xi\-ma\-das a las ya conocidas. En efecto
+supongamos que para $\lambda=0$ conocemos alguna curva integral de
+$\ve{v}|_{\lambda=0}\,,\;\;\gamma_0(t)$ con $\gamma_0(0)=p$.  Tenemos entonces,
+ aplicando el Corolario y un desarrollo en serie de Taylor, que 
+ \beq 
+ \gamma_{\lambda}(t)=\gamma_0(t)+\lambda\;\gamma_1(t)+O(\lambda^2)
+ \eeq
+ \noi o sea  que $\gamma_0(t)+\lambda\,\gamma_1(t)$ es una buena
+aproximación a $\gamma_{\lambda}(t) $ para $ \lambda$ suficientemente
+peque\~no.
+
+Resta entonces encontrar la ecuación que satisface $\gay{1}{t}$.
+Esta se obtiene diferenciando con respecto a $\lam$ la ecuación
+diferencial en $\lam =0$,
+\beq
+\der{\lambda}\left.\left(\derc{\gamma_{\lambda}(t)}{t}=\ve{v}_{\lambda}(\gay{\lambda}{t
+})\right)\right|_{\lambda=0},
+\eeq
+expandiendo y usando coordenadas
+\beq
+\der{t}\gamma_1^j =\left. \derp{v^j}{x^i} \right|_{(\gamma_0,\lam=0)}\cdot
+\gamma_1^i +\left. \derc{v^j}{\lambda}\right|_{(\gamma_0,\lambda=0)},
+\eeq
+$$
+=A^j{}_{i}(t)\;\gamma_1^i +b^j(t).   \label{eq*}
+$$
+\noi o sea la ecuación para $\gay{1}{t}$ --usualmente llamada ecuación de variaciones-- es una ecuación líneal inhomogenea no-autónoma. Como
+tomamos como condición inicial $\gay{\lambda}{0}=p\;\;\;\forall\;\lam$, 
+la condición inicial que consideraremos para~\ref{eq*} es $\gay{1}{0}=0$.
+\espa
+
+
+
+\bpro 
+¿Cuál sería la condición inicial para $\gamma_1$ si la
+condición para $\gamma_{\lambda}$ fuese 
+$ \gamma_{\lambda}(0)=p(1-\lam)+\lam q$? 
+Considere solo el caso unidimensional pero piense en el genérico. 
+\epro
+
+\bpro
+Si decidiésemos considerar una aproximación hasta segundo
+orden $\gamma_{\lambda}=\gamma_0 +\lambda\gamma_1+\lambda^2\gamma_2+O(\lambda^3)$, ¿qué
+ecuaciones obtendríamos para $\gamma_2$?
+\epro
+
+\ejem: \textbf{a)} Un cuerpo cae verticalmente en un medio de baja
+viscosidad, la cual depende de la posición  y velocidad de éste.
+\beq
+\ddot x = -g\;+\eps\;F(x,\dot x)\;\;\;\;\;\;\;\;\;\;\eps\ll 1
+\eeq
+\noi Calcule el efecto de esta resistencia  en el movimiento.
+
+La solución, $x(t)$, dependerá  suavemente de $\eps$ por lo tanto
+podemos desarrollar esta en serie de Taylor con respecto a $\eps$.
+
+\beq
+x(t)= x_0(t) +\eps\;x_1(t)+O(\eps^2).
+\eeq
+\noi La solución para $\eps=0$ es claramente
+\beq
+x_0(t) = x_i+\ve{v}_it-g\frac{t^2}2 \;\;, 
+\eeq
+\noi donde $x_i$ y $v_i$ son respectivamente la posición y la
+velocidad inicial, 
+mientras que la ecuación de variaciones es 
+
+\beq
+\ddot x_1= \;F(x_0,\dot x_0),\;\;\;\;\;\;\;\;\;\;x_1(0)=0,\;\;\dot x_1(0)=0.
+\eeq
+\noi Integrando obtenemos
+\beq
+x_1(t)=\int_0^t \int_0^{\tau} F(x_0(\tilde\tau),\dot
+x_0(\tilde\tau))\,\,d \tilde\tau\;d\tau.
+\eeq
+\vskip \baselineskip
+
+\textbf{b)} El segundo ejemplo es el de auto-oscilaciones.
+
+\noi Considere el sistema,
+\beq \barr{rcl}
+       \dot x_1  &  = & x_2 + \eps\,f_1(x_1,x_2) \\
+       \dot x_2  &  = & -x_1
+                      +\eps\,f_2(x_1,x_2),\;\;\;\;\;\mbox{para}\;\;\;\eps\ll 1.
+       \earr
+\eeq
+Sin pérdida de generalidad podemos asumir $f_i(0,0)=0$. Cuando
+$\eps=0$ obtenemos las ecuaciones del péndulo --en la aproximación de peque\~nas amplitudes-- , o sea un sistema conservativo. Su
+energía --integral primera-- está dada por $E(x_1,x_2)=\frac12(x_1^2+x_2^2)$ y sus
+curvas de fase son entonces círculos de radio $\sqrt{2E}$.
+
+Cuando $\eps>0$ las curvas de fase no son necesariamente cerradas,
+pero debido al Corolario anterior a lo más pueden ser espirales con una
+distancia del orden de $\eps$ entre vuelta y vuelta. Estas pueden
+tender hacia algún punto estacionario dentro del círculo
+$\sqrt{2E_i}$, donde $E_i=$ energía inicial, es decir  donde $ x_2 +
+\eps\, f_1(x_1,x_2)=\;-x_1 \, +\;\eps\;f_2(x_1,x_2)=0$, o pueden
+aproximarse asintóticamente a alguna órbita cerrada o finalmente
+pueden  diverger. Que
+estas son las únicas opciones es el resultado de un  teorema clásico de 
+{\bf Poincaré--Bendixson}, el cual muestra que en general estas son las
+únicas posibilidades en dos dimensiones.
+
+Para estudiar cuál es el caso entre estos tres consideramos la
+variación de energía entre dos vueltas consecutivas.
+
+Usando que,
+\beq 
+\dot E(x_1,x_2)\,=\;\eps\,(x_1\,f_1\;+\;x_2\,f_2)
+\eeq
+\noi obtenemos
+\beq 
+\barr{rcl}
+\Delta E\; &= &\;\eps\:\oint (-f_1\,dx_2\;+\;f_2\,dx_1)\;+\;O(\eps^2) \\
+           &= & \;\eps\:F(E).
+           \earr
+\eeq
+\noi donde la integral es a lo largo de un  círculo de radio
+$\sqrt{2E}$ en la dirección del movimiento. Es decir, hemos
+aproximado la curva con ${\eps}>0$ por la curva con ${\eps}=0$.
+
+
+Si $F(E)$ es positiva la energía aumenta y el sistema realiza
+oscilaciones crecientes.
+
+Si $F(E)$ es negativa las oscilaciones disminuyen en amplitud y el
+sistema tiende eventualmente a un punto de equilibrio.
+
+Si $F(E)$ cambia de signo, digamos en $E=E_0$, se puede probar
+entonces que cerca de este círculo hay una curva de fase
+$\Gamma_{\eps}$ cerrada. 
+
+Si $\left.F'(E)\right|_{E=E_0}$ es negativa $\Gamma$ es un ciclo límite 
+estable --cualquier curva de fase cercana se aproxima asintóticamente 
+a ésta-- . Si $\left.F'(E)\right|_{E=E_0}$ es positiva
+$\Gamma$ es inestable.
+
+\bpro Muestre que si hay dos ciclos límites estables
+luego debe haber también al menos uno que es inestable.
+\epro
+
+De los dos ejemplos anteriores queda claro la importancia práctica
+del Corolario. La dependencia en forma diferenciable de las
+condiciones iniciales también conduce a la ecuación de variaciones,
+por lo tanto esta ecuación, que es líneal, inhomogenea, es de suma
+importancia y en el próximo capítulo la estudiaremos en más detalle.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newpage
+\section{Problemas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bpro[Kiseliov]
+Encuentre todas las soluciones de 
+\begin{equation}
+  \label{eq:tresmedios}
+  \frac{dx}{dt} = \frac{3}{2} x^{2/3}.
+\end{equation}
+%
+Ayuda: hay infinitas y éstas se obtienen a partir de segmentos de algunas
+soluciones particulares.
+Grafique algunas de estas soluciones.
+\epro
+
+\bpro[Kiseliov]
+Aplique el teorema de existencia y unicidad para determinar las regiones
+donde las ecuaciones siguientes tienen solución única:
+
+a) $\dot{x} = x + 3 x^{1/3}$.
+
+b) $\dot{x} = 1 - \cot x$.
+
+c) $\dot{x} = \sqrt{1-x^2}$.
+\epro
+
+\bpro[Kiseliov]
+Resuelva las siguientes ecuaciones, en todos los casos dé las
+soluciones generales en función de un dato inicial $x_0$
+para el tiempo inicial $t_0$.
+
+a) $t \dot{x} + x = cos(t)$. (Use integral primera de la parte homogénea.)
+
+b) $\dot{x} + 2x = e^t$. (Use variación de constantes.)
+
+c) $(1-t^2)\dot{x} + tx = 2t$. (Resuelva primero la homogénea y luego
+sume una inhomogénea particular.)
+
+d) $x \dot{x} = t - 2t^3$.
+\epro
+
+\bpro[Kiseliov]
+Resuelva las siguientes ecuaciones apelando a un cambio de variable en
+la variable independiente (t).
+
+a) $\dot{x}x = -t$. ($t = \cos(s)$.)
+
+b) $\dot{x}t - x =0$.
+
+c) $\dot{x} + e^{\dot{x}} = t$.
+\epro
+
+\bpro[Kiseliov]
+Grafique las isoclinas (líneas de igual pendiente en el plano $(t,x)$)
+y luego trace las soluciones de las siguientes ecuaciones:
+
+a) $\dot{x} = 2t - x$.
+
+b) $\dot{x} = \sin(x+t)$.
+
+c) $\dot{x} = x -t^2 + 2t -2$.
+
+d) $\dot{x} = \frac{x-t}{x+t}$.
+\epro
+
+\bpro 
+Resuelva la ecuación:
+
+$\dot{x} = A(t)x + B(t)x^n$ Ayuda: Use el cambio de variable $y = x^{1-n}$.
+\epro
+
+\bpro 
+Resuelva la ecuación
+\begin{equation}
+  \label{eq:osc}
+  \frac{dx}{dt} = i\lambda x + A e^{i \omega t} \;\; \lambda, \; \omega \in \re
+\end{equation}
+%
+y vea cómo se comporta su parte real.
+Examine los casos: 
+
+a) $A=0$, 
+b) ($A \neq 0, \;\; \lambda \neq \omega$) y
+c) ($A \neq 0, \;\; \lambda = \omega$).
+\epro
+
+\bpro 
+La ecuación del péndulo físico.
+
+a) Grafique el campo vectorial de la ecuación
+\begin{equation}
+  \label{eq:pendulo_fisico}
+  \frac{d^2\theta}{dt^2} = -\sin(\theta), \;\;\;-\pi \leq \theta \leq \pi. 
+\end{equation}
+
+b) Grafique algunas curvas integrales alrededor de 
+$(\theta=0, z=\frac{d\theta}{dt} = 0)$.
+
+c) Grafique las curvas integrales que pasan por el punto
+$\theta = \pm \pi, z=0)$. Infiera que el tiempo necesario 
+para llegar por estas curvas a dicho punto es infinito.
+
+d) Grafique el campo vectorial a lo largo de una recta $z=z_0$.
+Infiera de ello que las soluciones no pueden superar nunca la velocidad adquirida cuando pasan por el punto $\theta=0$. Ayuda: Concluya esto primero para la
+región $0 \leq \theta \leq \pi,\;\;\; 0 \leq z \leq z_0$ y luego use la simetría de la solución.
+
+e) Sea $E(z,\theta) := \frac{z^2}{2} - \cos(\theta)$. Vea que 
+$\frac{dE}{dt} = 0$. Use esta cantidad para analizar el comportamiento
+de las soluciones con dato inicial $(z_0,\theta_0=0)$. En particular
+determine cuáles cruzan el eje $z=0$ y cuáles no.
+\epro
+
+\bpro 
+Sea la ecuación:
+\begin{equation}
+  \frac{dz}{dt} = \left\{
+  \begin{array}{ll}
+    f(z) & |z| < 1 \\
+    iz   & |z| \geq 1
+  \end{array}
+  \right.
+\end{equation}
+Donde $f(z)$ es continua con $iz$ en $|z|=1$.
+Infiera que no importando cómo sea la forma de $f(z)$, las soluciones
+nunca escapan de la región $\{|z(t)| \leq \max\{|z(0)|, 1\}\}$.
+\epro
+
+\bpro 
+Sea un cuerpo afectado por una fuerza central, es decir,
+\begin{equation}
+  m\frac{d^2\vec{x}}{dt^2} = f(r)\vec{x}\;\;\; r:= |\vec{x}|.
+\end{equation}
+%
+
+a) Encuentre un sistema equivalente de primer orden.
+
+b) Compruebe que dado un vector cualquiera (constante) $\vec{c}$, luego
+   $F(\vec{x},\vec{p}) := \vec{c}\cdot(\vec{x}\wedge \vec{p})$,
+   donde $\vec{p} := \frac{d\vec{x}}{dt}$, es una integral primera.
+\epro
+
+\bpro 
+Sea la ecuación:
+\begin{equation}
+  \frac{d\vec{x}}{dt} = \vec{x} \wedge \vec{\omega}(\vec{x}).
+\end{equation}
+%
+
+a) Vea que $R:= \vec{x}\cdot\vec{x}$ es una integral primera.
+
+b) Concluya que las soluciones de este sistema existen para todo tiempo.
+\epro
+
+
+\bpro[Strichartz]
+Muestre que 
+\begin{equation}
+  \label{eq:Bessel}
+  J_k(t) = \sum_{j=0}^{\infty} \frac{(-1)^j(t/2)^{k+2j}}{j!(k+j)!},
+\end{equation}
+%
+tiene radio de convergencia infinito y satisface la ecuación de Bessel,
+$x''(t) + (1/t)x'(t) + (1-k^2/t^2)x(t) = 0$.
+\epro
+
+
+
+\bpro
+Resuelva el sistema:
+\begin{equation}
+  \frac{d}{dt}\left(
+    \begin{array}{c}
+      x_1 \\ x_2
+    \end{array}
+  \right) = 
+    \left(
+      \begin{array}{c}
+        -x_2 + \eps(x_1^2 + x_2^2) \\
+        x_1
+      \end{array}
+    \right) 
+\end{equation}
+Para los datos iniciales $(x_1(0) = 1, x_2(0) = 0)$. Investigue ahora 
+la solución cerca de $\eps=0$ obteniendo los coeficientes en la serie de 
+Taylor de la misma  con respecto al parámetro $\eps$.
+Encuentre qué ecuaciones satisfacen estos coeficientes.
+\epro
+
+\bpro[Arnold]
+Considere la ecuación del péndulo físico: 
+$\frac{d^2 x}{dt^2} = -\sin(x)$.
+Vea cómo varía la frecuencia en función de la amplitud para 
+soluciones peque\~nas. Ayuda: suponga una solución en serie de
+Taylor en la amplitud y resuelva hasta encontrar la primera contribución
+no trivial a la solución linealizada. 
+Encuentre el período ubicando los puntos de retorno (velocidad cero).
+\epro
+
+ 
+\recubib{Para éste y los próximos tres capítulos recomiendo los siguientes libros:
+\cite{Arnold}, \cite{Braum} y \cite{Roxin}. Sobre todo el primero.
+Las ecuaciones diferenciales ordinarias son la base de la mecánica clásica, aunque en esta última hay además una estructura geométrica
+particular que es fundamental. Casi todo lo que hemos visto en este capítulo es la teoría {\sl local}, la teoría {\sl global}, es decir el comportamiento de las soluciones para grandes valores de la variable independiente (el tiempo en la mayoría de los casos) solo se ha comprendido en los últimos años, dando origen a conceptos nuevos como el de caos, atractores, dimensiones fractales, etc. Lamentablemente estos aspectos no han sido todavía suficientemente sintetizados y por lo tanto no puedo recomendar ningún libro al respecto. Hay demasiadas ideas interesantes pero cada una de ellas requiere de un gran bagaje de información.}
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End: 

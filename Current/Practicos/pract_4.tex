@@ -1,0 +1,178 @@
+%%ultima modificacion 15-09-99
+%\input format
+%\input extdef
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Problemas sobre el teorema de existencia y unicidad de la ecuacion
+% de una sola variable
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\Pro 1.- [Kiseliov]
+Encuentre todas las soluciones de 
+\begin{equation}
+  \label{eq:tresmedios}
+  \frac{dx}{dt} = \frac{3}{2} x^{3/2}.
+\end{equation}
+%
+Ayuda: hay infinitas y estas se obtienen a partir de segmentos de algunas
+soluciones particulares.
+Grafique algunas de estas soluciones.
+\ePro
+
+\Pro 2.- [Kiseliov]
+Aplique el teorema de existencia y unicidad para determinar las regiones
+donde las ecuaciones siguientes tienen soluci\'on \'unica:
+
+a) $\dot{x} = x + 3 x^{1/3}$.
+
+b) $\dot{x} = 1 -\ctg x$.
+
+c) $\dot{x} = \sqrt{1-x^2}$.
+\ePro
+
+\Pro 3.- [Kiseliov]
+Resuelva las siguientes ecuaciones, en todos los casos de las
+soluciones generales en funcio\'on de un dato inicial $x_0$
+para el tiempo inicial $t_0$.
+
+a) $t \dot{x} + x = cos(t)$. (Use integral primera de la parte homog\'enea.)
+
+b) $\dot{x} + 2x = e^t$. (Use variaci'on de constantes.)
+
+c) $(1-t^2)\dot{x} + tx = 2t$. (Resuelva primero la homog\'enea y luego
+sume una inhomog\'enea particular.)
+
+d) $x \dot{x} = t - 2t^3$.
+\ePro
+
+\Pro 4.- [Kiseliov]
+Resuelva las siguientes ecuaciones apelando a un cambio de variable en
+la variable independiente (t).
+
+a) $\dot{x}x = -t$. ($t = \cos(s)$.)
+
+b) $\dot{x}t - x =0$.
+
+c) $\dot{x} + e^{\dot{x}} = t$.
+\ePro
+
+\Pro 5.- [Kiseliov]
+Grafique las isoclinas (l\'\i{}neas de igual pendiente en el plano $(t,x)$)
+y luego trace las soluciones de las siguientes ecuaciones:
+
+a) $\dot{x} = 2t - x$.
+
+b) $\dot{x} = \sin(x+t)$.
+
+c) $\dot{x} = x -t^2 + 2t -2$.
+
+d) $\dot{x} = \frac{x-t}{x+t}$.
+\ePro
+
+\Pro 6.- 
+Resuelva la ecuaci\'on:
+
+$\dot{x} = A(t)x + B(t)x^n$ Ayuda: Use el cambio de variable $y = x^{1-n}$.
+
+\Pro 7.-
+Resuelva la ecuaci\'on
+\begin{equation}
+  \label{eq:osc}
+  \frac{dx}{dt} = i\lamdba x + A e^{i \omaga t} \;\; \lambda, \; \omega \in \re
+\end{equation}
+%
+y vea como se comporta su parte real.
+Examine los casos: 
+a) $A=0$, 
+b) ($A \neq 0, \;\; \lambda \neq \omega$) y
+c) ($A \neq 0, \;\; \lambda = \omega$).
+
+\Pro 8.-
+La ecuaci\'on del p\'endula f\'\i{}sico.
+
+a) Grafique el campo vectorial de la ecuaci\'on
+\begin{equation}
+  \label{eq:pendulo_fisico}
+  \frac{d^2\theta}{dt^2} = -\sin(\theta), \;\;\;-\pi \leq \theta \leq \pi. 
+\end{equation}
+
+b) Grafique algunas curvas integrales alrededor de 
+$(\theta=0, z=\frac{d\theta}{dt} = 0)$.
+
+c) Grafique las curvas integrales que pasan por el punto
+$\theta = \pm \pi, z=0)$. Infiera que el tiempo necesario 
+para llegar por estas curvas a dicho punto es infinito.
+
+d) Grafique el campo vectorial a lo largo de una recta $z=z_0$.
+Infiera de ello que las soluciones no pueden superar nunca la velocida adquirida cuando pasan por el punto $\theta=0$. Ayuda: Concluya esto primero para la
+regi'on $0 \leq \theta \leq \pi,\;\;\; 0 \leq z \leq z_0$ y luego use la simetr\'ia de la soluci\'on.
+
+c) Sea $E(z,\theta) := \frac{z^2}{2} - \cos(\theta)$. Vea que 
+$\frac{dE}{dt} = 0$. Use esta cantidad para analizar el comportamiento
+de las soluciones con dato inicial $(z_0,\theta_0=0)$. En particular
+determine cuales cruzan el eje $z=0$ y cuales no.
+\ePro
+
+\Pro 9.-
+Sea la ecuaci\'on:
+\begin{equation}
+  \frac{dz}{dt} = \left\{
+  \begin{array}{ll}
+    f(z) & |z| < 1 \\
+    iz   & |z| \geq 1
+  \end{array}
+  \right.
+\end{equation}
+Donde $f(z)$ es cont\'\i{}nua con $iz$ en $|z|=1$.
+Infiera que no importando como sea la forma de $f(z)$, las soluciones
+nunca escapan de la regi\'on $\{|z(t)| \leq \max\{|z(0)|, 1\}\}$.
+\ePro
+
+\Pro 10.-
+Sea un cuerpo afectado por una fuerza central, es decir,
+\begin{equation}
+  m\frac{d^2\vec{x}}{dt^2} = f(r)\vec{x}\;\;\; r:= |\vcec{x}|.
+\end{equation}
+%
+a) Encuentre un sistema equivalente de primer orden.
+
+b) Compruebe que dado un vector cualquiera (constante) $\vec{c}$, luego
+   $F(\vec{x},\vec{p}) := \vec{c}\cdot(\vec{x}\wedge \vec{p})$,
+   donde $\vec{p} := \frac{d\vec{x}}{dt}$, es una integral primera.
+\ePro
+
+\Pro 11.-
+Sea la ecuaci\'on:
+\begin{equation}
+  \frac{d\vec{x}}{dt} = \vec{x} \wedge \vec{\omega}(\vec{x}).
+\end{equation}
+%
+a) Vea que $R:= \vec{x}\cdot\vec{x}$ es una integral primera.
+
+b) Concluya que las soluciones de este sistema existen para todo tiempo.
+\ePro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+%\end
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End: 

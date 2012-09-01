@@ -1,0 +1,90 @@
+
+
+
+
+\bpro
+Dado un conjunto de funciones $\{f_i(t)\}, \;i=1,..,n$ se definen vectores
+$\ve{u}_i(t) := (f_i(t), f^{(1)}_i(t),\dotsf^{(n-1)})$ y el
+Wronskiano del sistema como 
+$W(\{f_i\})(t) := \eps(\ve{u}_1(t),\ve{u}_2(t),\dots, \ve{u}_n(t))$.
+Si el Wronskiano de un conjunto de funciones no se anula, entonces las
+funciones son linealmente independientes, es decir ninguna combinaci\'on 
+lineal no trivial de las mismas (con coeficientes constantes) se anula.
+La conversa no es cierta.
+Calcule el Wronskiano de los siguientes conjuntos:
+
+a) $\{4,t\}$
+
+b) $\{t,3t,t^2\}$
+
+c) $\{e^t, te^t, t^2e^t\}$
+
+d) $\{ \sin(t), \cos(t), \cos(2t) \}$
+
+e) $\{1, \sin(t), \sin(2t)\}$
+\epro
+
+\bpro
+Decida si el siguiente conjunto de funciones es linealmente depediente o
+no. Luego calcule el Wronskiano.
+
+\begin{equation}
+  f_1(t) = \left\{
+    \begin{array}{ll}
+      0, & 0 \leq x \leq 1/2 \\
+      (x-1/2)^2, & 1/2 \leq x \leq 1
+    \end{array}
+    \right.
+\end{equation}
+
+\begin{equation}
+  f_2(t) = \left\{
+    \begin{array}{ll}
+      (x-1/2)^2, & 0 \leq x \leq 1/2 \\
+      0, & 1/2 \leq x \leq 1
+    \end{array}
+    \right.
+\end{equation}
+\epro
+
+\bpro
+Lleve a forma de primer orden los siguientes sistemas y calcule sus
+soluciones generales. Grafique alguna de ellas.
+
+a) 
+\begin{equation}
+  \label{eq:prob5_2a}
+  \frac{d}{dt}\left(
+    \begin{array}{c}
+      x_1 \\ x_2
+    \end{array}
+  \right) = 
+    \left(
+      \begin{array}{cc}
+        1 & 0 \\ 0 & 1
+      \end{array}
+    \right) \left(
+      \begin{array}{c}
+        x_1 \\ x_2
+      \end{array}
+      \right)
+\end{equation}
+
+\epro
+
+\bpro
+Hallar la soluci\'on general de las ecuaciones:
+
+a) $\frac{d^3 x}{dt^3} - 2\frac{d^2 x}{dt^2} - 3\frac{d x}{dt} =0$
+
+b) $\frac{d^3 x}{dt^3} + 2\frac{d^2 x}{dt^2} + \frac{d x}{dt} =0$
+
+c) $\frac{d^3 x}{dt^3} + 4\frac{d^2 x}{dt^2} + 13 \frac{d x}{dt} =0$
+
+d) $\frac{d^4 x}{dt^4} + 4\frac{d^3 x}{dt^3} + 8\frac{d^2 x}{dt^2} + 8 \frac{d x}{dt} + 4 = 0$
+\epro
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End: 

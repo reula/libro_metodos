@@ -1,0 +1,658 @@
+
+\chapter{Distribuciones}
+
+\section{Introducción}
+
+Para hacer del espacio de funciones de cuadrado integrable ${L}^2(\re{})$ un
+espacio normado fue necesario generalizar el concepto de función
+( como mapa de $\re{}$ en $\re{}$ ) en el sentido que los elementos
+de $L^2$  son solo
+funciones definidas en  casi todos los puntos, es decir clases
+equivalentes de funciones de cuadrado integrable ante la relación  de
+equivalencia $f\approx g$ si $\int|f-g|^2\,dx=0$.
+
+Si bien esta generalización es útil ya que entre otras cosas nos
+permite  agrupar las funciones en espacios de Hilbert y as\ii\ usar
+la poderosa estructura geométrica que éstos  tienen, es conveniente
+considerar una generalización aun mayor la cual, como veremos más
+adelante, nos proveerá de una importante herramienta en lo que hace
+al cálculo formal en física matemática.
+
+Las funciones generalizadas que definiremos a continuación,
+llamadas distribuciones, tienen muchas 
+propiedades interesantes, entre ellas que la operación
+diferenciación es cerrada en este espacio, es decir la derivada de
+una distribución es otra distribución. Esto es particularmente
+sorprendente si se tiene en cuenta que entre las distribuciones hay
+funciones que ni siquiera son continuas!
+
+¿Cuál es la idea detrás de esta generalización? 
+El teorema de representación de Riez nos mostró que el dual de $L^2(\re{})$ es ese
+mismo espacio. Ahora bien, si en vez del dual de $L^2(\re{})$
+consideramos el dual de un subespacio de $L^2(\re{})$, obtendremos un
+espacio mayor que $L^2(\re{})$ y que contiene a éste de una manera
+natural. Este espacio lineal, que contiene al de las funciones
+usuales es un espacio de funciones generalizadas.
+
+Está claro que existen muchos espacios de funciones generalizadas ya
+que no solo podemos considerar distintos subespacios de $L^2(\re{})$,
+sino también podemos considerar distintas nociones de continuidad más
+débiles que la continuidad proveniente de la norma de $L^2(\re{})$ para
+definir los espacios duales.
+
+¿Cuál de ellos estudiar? La respuesta es: El que más convenga al
+tratamiento del problema para el cual se las quiere usar. 
+Aquí trataremos aquellas obtenidas a partir de un subespacio bastante
+pequeño con lo cual se obtiene una generalización lo
+suficientemente amplia como para abarcar con ella la mayoría de
+los problemas de la Física. Es necesario remarcar que el concepto
+ de distribución que introduciremos no es una necesidad física,
+en el sentido que las teorías físicas se pueden enunciar usando
+simplemente funciones infinitamente diferenciables\footnote{
+Aquí nos referimos a las teorías fundamentales. Existen
+aproximaciones, como la teoría de los fluidos, donde las
+distribuciones aparecen naturalmente.}
+, pero sí es una
+herramienta muy útil que permite una formulación más ``condensada"
+de algunas de estas leyes.
+%
+El subespacio de $L^2(\re{})$ que usaremos es de las funciones
+infinitamente diferenciables y de soporte compacto
+$C_0^{\ifi}(\re{})$. [Recuerde que el soporte de una función
+clásica $f(x)$ está dado por el subconjunto de
+$\re{}$, 
+\[
+Cl\{f^{-1}\;[\re{}-\{0\}]\},
+\]
+%
+donde $Cl$ significa tomar la
+clausura. Como el so\-por\-te de una función es auto\-má\-ti\-ca\-men\-te
+cerrado, que sea compacto (como subconjunto de $\re{}$ o $\ren$ )
+significa meramente que es acotado.]
+
+
+\espa
+
+\ejer: Muestre que $C^{\infty}_0(\re{})$ es realmente un espacio
+vectorial.
+
+\espa
+\ejer: 
+Muestre que además es un álgebra con respecto 
+al producto
+usual. ¿Cuál es el soporte de $f\cdot g$?
+\espa
+
+?`Qué noción de continuidad introduciremos en las funcionales de
+$C^{\ifi}_0(\re{})$ para
+definir el dual? Desgraciadamente no hay en este espacio ninguna
+norma que sea {\sl natural}, en particular no hay ninguna en que éste
+sea completo~\footnote{Aún en el caso que, por ejemplo, usásemos como
+norma 
+$$
+\|f\|=\sum_{n=0}^{\ifi}\frac 1{n!} sup_{x\in\re{}}\{|f^{(n)}(x)|\}
+$$
+no obtendríamos un espacio completo ya que en este hay
+sucesiones de Cauchy que tienden a funciones infinitamente
+diferenciables pero cuyo soporte no es compacto.}.
+
+Hay sí, en este espacio, una topología conveniente.
+La correspondiente noción de continuidad de esta topología se
+obtiene del siguiente  criterio de convergencia:
+
+\espa
+
+\defi:
+Diremos que una sucesión
+$\{\fip_n\},\;\fip_n\in\cif $ 
+{\bf converge} a $\fip 
+\in C_0^{\ifi}(\re{})$ si:
+\begin{enumerate}
+\item Existe $K \su \re{}$ compacto tal que $soporte(\fip_n) \su K
+\;\;\;\forall n$.
+\item Las sucesiones $\{\fip^{(p)}_n\}$ de sus derivadas de orden $p$ 
+convergen uniformemente en $K$ a $\fip^{(p)}$ para todo 
+$p=0,1,2,\ldots,$, es decir dado $p$ y $\eps > 0$ existe $N$ tal que
+para todo $n>N$ se cumple 
+\beq
+sup_{x\in K}|\fip^{(p)}_n (x)-\fip^{(p)}(x)|<\eps.
+\eeq
+\end{enumerate}
+
+\noi
+{\bf Note} que la primera condición nos restringe a considerar como
+sucesiones convergentes a aquellas que solo pueden converger a una
+función de soporte compacto. Esto es fundamental para la
+completitud del espacio y para que la convergencia
+uniforme en la segunda condición tenga sentido usando el supremo.
+Con este criterio de convergencia asociamos la siguiente noción de
+continuidad sobre las funcionales de $C^{\infty}_0(\re{})$ en $\re{}$.
+
+\defi: 
+Diremos que la funcional
+$F:\cif\to\re{}\;(\mbox{o}\;\ve C)$ es {\bf continua} 
+en $\fip \in \cif$ si dada
+cualquier sucesión convergente $\{\fip_n\}$ en $\cif$ a $\fip$ se cumple,
+\beq
+F(\fip_n)\longrightarrow F(\fip).
+\eeq
+Esta noción proviene de la topología antes mencionada.
+\espa
+
+\ejer: 
+Sea $B$ un espacio de Banach con la noción de
+convergencia dada por su norma. Muestre que en ese caso la noción
+de continuidad definida arriba coincide con la usual $(\eps,\del)$.
+
+\espa
+
+Con esta noción de continuidad el espacio $\cif$ es llamado el {\bf
+espacio de funciones de prueba} de $ \re{}$ y denotado por ${\cal D}(\re{})$.
+
+\espa
+\noi
+\defi: El espacio dual al espacio de funciones de
+prueba, $\cal D'$, es decir el espacio de funcionales lineales
+continuas $T:\cif\to\re{}$ es llamado el espacio de las {\bf
+distribuciones}.
+
+\espa
+\noi \yaya{Ejemplos}: 
+
+\noi 
+a) Sea $f$ continua y sea la funcional lineal
+\beq
+T_f(\fip)=\int_{\re{}} f\,\fip\;dx.
+\eeq
+Como 
+\beq
+|T_f(\fip)| \leq\lp\int_K|f|\;dx\rp\;sup_{x\in K}|\fip|
+\eeq
+donde $K$ es cualquier compacto conteniendo el soporte de $\fip$ vemos que
+$T_f$ es continua y por lo tanto una distribución. Vemos así\ que las
+funciones continuas dan origen a distribuciones, es decir están incluidas
+naturalmente en el espacio de las distribuciones.
+
+\ejer: Muestre que si $f\neq g$ luego $T_f\neq T_g$.
+
+
+\espa
+\noi b) 
+Sea $f$ integrable (en el sentido de Lebesgue) es decir un
+elemento de ${\cL}^1(\re{})$ y sea 
+\beq
+T_f(\fip)=\int_{\re{}}f\,\fip\;dx\;\;\;\;\;\forall\;\;\fip\in\cif.
+\eeq
+Pero $|T_f(\fip)|\leq sup_{x \in K}{|\fip|}\;\;\int_{\re{}}|f|\;dx$
+ y por lo tanto si $\{\fin\}\to 0$ entonces $T_f(\fin)\to 0$ lo que nos asegura 
+ (por linealidad) que
+$T_f$ es continua y así una distribución. Note que si $f=g$ en casi
+todo punto ($f\sim g$) luego $T_f=T_g$ por lo que concluimos que son en realidad
+los elementos de $L^1$ los que definen estas distribuciones. Las
+distribuciones obtenidas de esta forma se denominan {\bf regulares}.
+\espa
+
+\noi
+c) Sea $T_a:\cif\to\re{}$, $a\in\re{}$, dada por
+$T_a(\fip)=\fip(a)$, este mapa es claramente lineal,
+$$
+\;T_a(\fip+\alf\psi)=\fip(a)+\alf\,\psi(a)=T_a(\fip)+\alf\,T_(\psi),
+$$
+ y continuo 
+$$
+ \; |T_a(\fip)|=|\fip(a)|\leq sup_{x\in\re{}}|\fip(x)|
+$$
+  y por lo tanto
+una distribución. Esta es llamada la delta de Dirac en el punto $a$.
+?`Hay alguna función continua, $f$, tal que $T_a=T_f$? Supongamos
+que sí, y que $f(r)\neq 0$ con $r\neq a$.
+Eligiendo $\fip$ distinto de cero solo en un entorno suficientemente pequeño
+de $r$ que no contenga a $a$ y con el mismo signo que $f(r)$ obtenemos $\fip(a)=0$ y
+ $T_f(\fip)\neq 0$  lo que implica que $f(r)=0 \;\;\forall r\neq a$
+ pero por continuidad concluimos entonces que $f\equiv 0$ y por lo tanto que
+ $T_f(\fip)=0\;\forall\;\fip\in\cif$. 
+Vemos entonces que esta distribución no proviene de ninguna
+función continua y se puede ver que en realidad no proviene de
+ningún elemento de $L^1(\re{})$, es así  una {\bf
+distribución irregular}.  
+Estos son los elementos {\bf extra} que nos da la generalización definida.
+Usualmente, en manipulaciones formales se pretende que esta
+distribución proviene de una función, denominada delta de Dirac y
+denotada por $\del(x-a)$. Con ella se escriben cosas como
+\beq
+\int_{\re{}}\del(x-a)\,\fip(x)\;dx=\fip(a).
+\eeq
+Como hemos visto en realidad no existe ninguna función para la cual 
+esta expresión  tenga sentido por lo tanto ésta
+es solo {\bf formal} y debe considerársela con precaución, es
+decir siempre como un mapa lineal y continuo del espacio de funciones
+de prueba.
+
+?`Qué estructura tiene ${\cD}'(\re{})$?  Por ser un espacio dual
+ésta es un espacio
+vectorial con la suma de sus elementos y el producto de éstos por
+números reales definidos en la manera obvia, es decir si $T,\ti
+T\in \cal D$, $\alf\in\re{}$, luego
+$\lp T+\alf\ti T\rp(\fip)=T(\fip)+\alf\,\lp\ti T(\fip)\rp$. 
+Estas 
+operaciones generalizan las operaciones definidas sobre
+funciones integrables ya que $T_f+\alf \,T_g=T_{f + \alpha g}$.
+
+
+¿Está definido el producto de distribuciones? 
+%
+La respuesta es que en
+general no lo está --así como tampoco lo está entre funciones
+integrables--. Sí lo está si una de ellas proviene de una
+función de prueba, es decir
+\beq
+T_{\fip}\,\ti T(\psi) := \ti T(\fip\psi)  \;\;\forall \psi \in {\cal D},
+\eeq
+donde hemos usado que los elementos de $\cal D$ forman un álgebra. Note
+que ésto generaliza la operación definida sobre funciones integrables:
+\beq
+T_{\fip}\,T_f(\psi) = \int_{\re{}}f\,\fip\psi\; = T_f(\fip\psi)=T_{\fip f}(\psi)
+\eeq
+ya que si $f\in L^1$  luego $f\,\fip\in L^1$ si $\fip\in \cal D$.
+
+
+\section{La derivada de una distribución}
+
+Si $f$ es continuamente diferenciable luego su derivada también da
+origen a una distribución $T_{f'}$. 
+¿Qué relación hay entre $T_f$ y $T_{f'}$? 
+Note que
+\beq
+T_{f'}(\fip)=\int_{\re{}}f'\,\fip\;dx=-\int_{\re{}} f\,\fip'\;dx=-T_f(\fip')
+ \;\;\;\forall\;\;\fip\in\cal D
+ \eeq
+donde al integrar por partes se usó que las $\fip$ en $\cal D$ tienen soporte
+acotado. Esto sugiere que la posibilidad de extender la noción de
+derivada a toda distribución por medio de la fórmula
+\beq
+T'(\fip):=-T(\fip'),\;\;\;\forall\;\fip\in\cal D,
+\eeq
+donde el lado derecho está bien definido ya que si $\fip\in\cal D$
+ luego $\fip'\in\cal D$.
+Note que esta operación satisface las condiciones que uno
+esperaría ya que son las mismas que satisface la derivada usual,
+teniendo en cuenta que ahora estamos en este espacio más amplio
+donde el producto de funciones no está definido en general. En
+efecto esta operación es lineal.
+\beq
+\barr{rcl}
+\lp T+\alf\ti T\rp'(\fip)&=&-\lp T+\alf\ti T\rp(\fip')=-\lp T(\fip')
+                          + \alf \ti T(\fip')\rp \\
+                       & =&T'(\fip)+\alf\ti T'(\fip)
+\earr
+\eeq
+y satisface la regla de Leibniz {\bf tanto como es posible} ya que como
+vimos el producto de distribuciones no está definido en general.
+Cuando si lo está, es decir cuando una de ellas es un elemento de
+$\cal D$, tenemos que
+\beq\barr{rcl}
+\lp T_{\fip}\,\ti T\rp'(\psi) &=& -\lp T_{\fip}\,\ti T \rp (\psi')=-\ti T(\fip\,\psi') \\
+                     &=&-\ti T((\fip\,\psi)'-\fip'\psi) \\
+                     &=&-\ti T((\fip\,\psi)')+\ti T(\fip'\psi) \\
+                     &=&\ti T'(\fip\,\psi)+\fip'\ti T(\psi) \\
+                     &=&\ti T_{\fip} \,\ti T'(\psi)+ T_{\fip'}\,\ti
+                              T(\psi) \\
+                     &=& \lp T_{\fip}\,\ti T'+ T_{\fip'}\,\ti T\rp(\psi).
+\earr
+\eeq
+Pero estas son las condiciones que definen una derivación.
+Vemos por lo tanto que ésta es una extensión de la derivada de
+una función en $\cal D$. Note que al generalizar la noción de función
+en la de distribución la hemos ampliado tanto que ahora objetos
+como la derivada de funciones discontinuas (incluso en todos sus
+puntos!) están incluidas entre éstas e incluso son a su vez
+infinitamente diferenciables [$(T)^{(n)}(\psi)\equiv(-1)^n\,T(\psi^{(n)})$].
+
+
+
+\espa
+\ejem: 
+$T'_a$, la derivada de la función de Dirac en $a$ es la
+distribución tal que $T'_a(\fip)=-\fip'(a)\;\;\forall \; \fip \in
+{\cal D}$.
+
+\espa
+Comenzamos con el espacio de funciones infinitamente diferenciables
+de soporte compacto y finalizamos también con un espacio
+infinitamente diferenciable [con una noción distinta de derivada],
+cabe preguntarse si existe una noción de soporte de una
+distribución. Obviamente no podemos utilizar la misma noción que
+para funciones continuas y tendremos que proceder de una manera indirecta.
+
+Sea $O$ un abierto acotado, de \re{} y $\cD (O)$ el espacio de funciones de
+prueba con soporte en la clausura de $O$, $\bar O$. 
+Diremos que una distribución $T$ se {\bf anula en} $O$ si $T[\cD(O)]= 0$, 
+es decir si
+se anula para toda función de prueba con soporte en $O$. Llamaremos
+el {\bf soporte de} $T$ al complemento de la unión de todos los abiertos
+donde $T$ se anula.
+Por ser el complemento de un conjunto abierto este conjunto es cerrado.
+
+\espa
+\ejem: 
+El soporte de $T_o$ es $\{0\}$. Sea $O_n=(1/n,n)\cup
+(-n,-1/n)$, luego $\re{}-\bigcup_n O_n=\{o\}$.
+
+\espa
+\ejer: 
+Sea $f$ continua. Pruebe que 
+ $soporte\{f\}=soporte\{T_f\}$
+
+\ejer: 
+¿Cómo extendería las nociones de funciones pares 
+($f(x)=f(-x)$) y
+el de impares ($f(x)=-f(-x)$). ?`Qué propiedades conserva esta extensión?
+
+\ejer: 
+Sea 
+$$g(x)=\lb\barr{lr} x, & x\geq0 \\ 0, & x\leq0 \earr\rdot$$
+ $x\in\re{}$.
+Claramente $g(x)$ es continua pero no diferenciable 
+(en el sentido clásico).
+Encuentre las 3 primeras derivadas de $g$ en el sentido de las distribuciones.
+
+\ejer: 
+La parte principal, en el sentido de Cauchy, de una
+función,
+$$ 
+\cP(1/x)(f)=\lim_{\eps\to0}\int_{|x|\geq\eps}\frac 1x\,f(x)\;dx
+$$ 
+ es una distribución.
+¿Cómo debe interpretarse la fórmula?
+$$
+\lim_{\eps\to0}\frac 1{x-x_0+i\eps}=\cP\lp\frac 1{x-x_0}\rp-i\,\pi\,\del(x-x_0)
+$$
+
+
+
+\espa
+\espa
+
+Hemos visto que una distribución es diferenciable, es decir dada
+$T\in\cal D'$
+existe $S\in\cD'$ tal que $T'=S$. Cabe preguntarse lo opuesto, es decir si dada
+$S\in\cD'$ existe $T$ tal que la fórmula de arriba valga, es decir
+\beq
+-T(\fip')=S(\fip)\;\;\;\;\;\forall\;\fip\in\cD.
+\label{9.13}
+\eeq
+%
+Esta es una generalización a distribuciones de la más simple de las
+ecuaciones diferenciales ordinarias ya estudiadas y la respuesta al
+problema planteado es afirmativa.
+Note que dada $T$ la ecuación \ron{9.13} nos define $S$, es decir su derivada,
+pero si damos $S$ luego \ron{9.13} no define $T$ completamente ya que
+esta fórmula nos
+dice solamente cómo actúa $T$ sobre funciones de prueba ($\fip'$) cuya
+integral ($\fip$) es también una función de prueba. Esto es de
+esperar ya que en el caso de funciones la primitiva de una función
+está sólo determinada hasta una constante.
+Esta indeterminación se remedia dando {\bf valores iniciales
+generalizados} lo cual se logra pidiendo que $T(\tita)$ tenga un dado valor,
+ $T_{\tita}$, para alguna $\tita\in\cD$ que no sea la primitiva de otra 
+ función en \cD,
+es decir que $\fip(x)=\dip\int_{-\ifi}^x\tita(\ti x)\;d\ti x$ no tenga 
+soporte acotado (o sea que $\dip\int_{\re{}}\tita(\ti x)\;d\ti x\neq 0)$.
+
+\espa
+
+\bteo Dada $S\in \cD'$, $\tita\in\cD$ tal que $\int_{\re{}}\tita\,dx\neq0$ 
+ y $T_{\tita}\in\re{}$, existe una única $T$ satisfaciendo
+\beq
+\label{eqn:primitiva}
+\barr{rcl}
+-T(\fip')&=&S(\fip)\;\;\;\;\;\;\forall\;\fip\in\cD \\
+T(\tita)&=&T_{\tita}
+\earr
+\eeq
+\eteo
+
+\pru: Solo tenemos que conocer la acción de $T$ sobre una
+arbitraria $\psi\in\cD$. Sin pérdida de generalidad tomemos 
+$\tita$ tal que $\int_{\re{}}\tita=1$.
+Vemos que dada $\psi\in\cD$ existe un único $\lam_{\psi} \in\re{}$ y una única $\fip_{\psi} \in \cD$ 
+tal que, $\psi-\lam_{\psi}\tita=\fip'_{\psi}$, es decir
+es una función de prueba con primitiva. En efecto, sea
+$$
+\fip_{\psi}(x)=\int_{-\ifi}^x(\psi-\lam_{\psi}\tita)\;d\ti x
+$$
+luego la condición para que $\fip_{\psi}$ tenga soporte compacto (y por lo tanto sea una funci\'on de prueba) es que
+\beq
+0=\int_{-\ifi}^{\ifi}(\psi-\lam_{\psi}\tita)\;d\ti x=\int_{-\ifi}^{\ifi}\psi\; dx-\lam_{\psi}=0
+\eeq
+o sea
+\beq
+\lam_{\psi}=\int_{-\ifi}^{\ifi}\psi\;dx.
+\eeq
+Sea entonces
+\beq
+T(\psi)=\lam_{\psi}\,T_{\tita}-S(\fip_{\psi}),
+\eeq
+esta distribución satisface las ecuaciones del enunciado del
+teorema. Note que $\lam_{\psi}\,T_{\tita}$ es una distribución,
+ 
+\[
+\lam_{\psi}\,T_{\tita}=T_{\tita}\int_{\re{}}\psi\;dx,
+\]
+% 
+y que, 
+
+\[
+T(\theta) = \lam_{\theta}\,T_{\theta} - S(\fip_{\theta}) = T_{\theta} - S(0) = T_{\theta}.
+\]
+%
+Veamos la unicidad, sea $\tilde{T}$ otra distribución satisfaciendo \ref{eqn:primitiva}, luego la diferencia,
+$\delta T = T - \tilde{T}$ satisfacer\'a,
+
+\beq
+\barr{rcl}
+-\delta T(\fip')&=&0\;\;\;\;\;\;\forall\;\fip\in\cD \\
+\delta T(\tita)&=&0.
+\earr
+\eeq
+%
+Como hemos visto que cualquier función de prueba $\psi$ se puede escribir como,
+$\psi = \lambda_{\psi}\theta + \fip'_{\psi}$ tenemos, 
+
+\[
+\delta T(\psi) = \lambda_{\psi}\delta T(\theta) + \delta T(\fip'_{\psi}) = 0.
+\]
+%
+Lo que concluye la demostración de unicidad.
+%
+De esto concluimos que, como en el caso de funciones, dos
+soluciones cualesquiera de \ron{9.13} difieren por una constante $\spadesuit$
+
+\section{Nota sobre la completitud de $\cD$ y su dual $\cD {}'$}
+
+Usando la noción de convergencia introducida en $\cD$ podemos definir
+un concepto análogo al de sucesión de Cauchy:
+\espa
+
+\defi:
+diremos que una sucesión de funciones de prueba  $\{\fip_n\},\;\fip_n\in\cD$
+es {\bf convergente} si:
+
+\noi 1) Existe $K\in\re{}$ compacto tal que
+$sop(\fip_n)\su K\;\;\forall\;n$.
+
+\noi 2) Dado $p$ y $\eps>0$ existe $N$ tal que para todo $n,m>N$ se cumple
+$$
+sup_{x\in K}\lpi f_n^{(p)}(x)-f_m^{(p)}(x)\rpi<\eps
+$$
+
+
+
+Con esta noción de convergencia el espacio $\cD$ es completo, es
+decir toda sucesión convergente converge a un elemento de \cD.
+Para discutir completitud de $\cD'$ debemos introducir nociones similares
+en este espacio. La noción de convergencia apropiada es la siguiente.
+
+\espa
+\defi:
+Diremos que la sucesión $\{T_n\}$, $T_n\in\cD'$ 
+{\bf converge} a $T\in\cD'$ si $T_n(\fip)\to T(\fip)$ para todo $\fip\in\cD$
+\footnote{Nuevamente estamos introduciendo una topología de
+manera indirecta, esta vez en $\cD'$.}.
+
+\noi\yaya{Ejemplos}: 
+
+\noi 
+a) Sea $T_n$ la distribución asociada con la función 
+$e^{-|x-n|^2}$.
+Luego $T_n$ converge a la distribución cero.
+Esto muestra lo débil que es este tipo de convergencia.
+
+\noi 
+b) Sea $T_n$ la distribución asociada con alguna función $f_n$ 
+satisfaciendo
+\begin{enumerate}
+\item $f_n(t)\geq0$ si $|t|<1/n$ y cero si $|t|\geq1/n$.
+\item $\int_a^b f_n(t)\;dt=1$,
+\end{enumerate}
+Luego $T_n\to T_0$, la función de Dirac con soporte en el cero.
+
+\espa
+Análogamente podemos definir la noción de convergencia de
+distribuciones. 
+\espa
+\defi:
+$\{T_n\}$, $T_n\in\cD'$ es {\bf convergente} si para cada 
+$\fip\in\cD$ y $\eps>0$ existe $N$ tal que si $n,m>N$ luego
+$$ |T_n(\fip)-T_m(\fip)|<\eps$$
+
+\noi Con esta noción de convergencia el espacio $\cD'$ es completo.
+ 
+\section{Convergencia y Compacidad Débil }
+
+En un espacio normado, $H$, tenemos la noción de convergencia con respecto
+a la norma, la cual llamaremos convergencia fuerte
+\[
+\{x_n\} \sr{f}{\rightarrow} x \;\; \mbox{ si } \;\;\lim_{n \to \infty} \|x_n - x\|_H = 0.
+\]
+% 
+En estos espacios existe otra noción de convergencia, la llamada convergencia
+débil y que usa la existencia del espacio dual de $H$, $H'$.
+
+\espa
+\noi
+ \defi: 
+Diremos que $\{x_n\}$ {\bf converge débilmente} a $x$,
+
+\[
+\{x_n\} \sr{d}{\rightarrow} x, \;\; \mbox{ si } \;\; \sigma(x_n) \rightarrow \sigma(x) \;\;\; \forall \;\; \sigma \in H'.
+\]
+%
+Si $H$ es un espacio de Hilbert (lo que supondremos de ahora en más)
+el Teorema de Representación de Riez nos dice que $\{x_n\}\sr{d}{\rightarrow}
+x$ sii $(x_n,y) \rightarrow (x,y)$  $ \forall \;y \in H$.
+
+\espa
+Claramente esta noción de convergencia es la más débil tal que los 
+elementos
+de $H'$ son funcionales continuas [En el sentido que $f$ es
+continua en $x$ si {\bf dada  cualquier sucesión $\{x_n\}$
+convergiendo a $x$} luego $\dip\lim_{n\to\ifi}f(x_n)=f(x)$.], donde decimos 
+que una noción de
+convergencia es más débil que otra si toda sucesión que
+converge con respecto a
+la segunda también lo hace con respecto a la primera y hay sucesiones
+que convergen con respecto a la primera pero no con respecto a la segunda.
+Veamos, a manera de ejemplo, que la convergencia en norma, o fuerte, es en
+realidad más fuerte que la llamada débil.
+Supongamos entonces que $\{x_n\} \sr{f}{\rightarrow} x$ es decir
+$\lim_{n \to \infty} \|x-x_n\|_H =0$, luego como los elementos de
+$H'$ son funcionales 
+lineales acotadas ($\Longleftrightarrow$ continuas) se cumple que 
+\beq 
+|\sigma(x)-\sigma(x_n)| \leq \|\sigma\|_{H'} \|x-x_n\|\;\;\;\;\;\; \forall \;\;\;\;
+\sigma \in H',
+\eeq
+y por lo tanto, 
+\beq
+\lim_{n\to\ifi} |\sigma(x)-\sigma(x_n)| = 0,
+\eeq 
+o sea $\{x_n\} \sr{d}{\rightarrow} 
+x$.
+El siguiente es un ejemplo de una sucesión que convergen débilmente
+y no fuertemente.
+\espa
+\ejer: 
+Muestre que la sucesión $\{x_n = (0,...,0,
+\barr{c} \\ 1\\ ^n \earr,0,...)\}$ 
+converge
+débilmente en $l^2$ pero no fuertemente.
+
+
+
+
+El anterior fue también el ejemplo que utilizamos para mostrar que la bola 
+de radio unidad en $l^2$ no era compacta con respecto a la convergencia fuerte.
+¿Será ésta débilmente compacta? Es decir, dada una sucesión 
+$\{x_n\} \in B_1(l^2)$ cualquiera ?`existirá una subsucesión que converja débilmente?
+La respuesta es afirmativa y es una de las herramientas más útiles
+del análisis funcional.
+
+\bteo 
+$B_1$ es débilmente compacta.
+\eteo
+
+\espa
+\noi
+\yaya{Prueba}: Sólo probaremos el caso en que $H$ es separable. Sea $\{x_n\}$
+con $\|x_n\|_H \leq 1 $ y $S=\{y_m\}$ una base ortonormal numerable de $H$.
+Construiremos, usando inducción, una subsucesión $\{x_n^{\infty}\}$ tal que,
+\beq 
+(x_n^{\infty},y_m) \stackrel{n \to \infty}{\rightarrow} \alpha_m \;\;\forall \;y_m \in S.
+\eeq
+Sea $m=1$, luego $|(x_n,y_1)| \leq \|x_n\|_H\|y_1\|_H \leq 1$.
+Vemos entonces que $\{(x_n,y_1)\}$ es una sucesión acotada en $\ve C$.
+Pero la bola de radio unidad en $\ve C$ es compacta y por
+lo tanto habrá alguna subsucesión $(x_n^1,y_1)$ convergiendo a algún 
+$\alpha_1$ en $\ve C$. 
+Supongamos ahora que tenemos una subsucesión 
+$\{x_n^{m-1}\}$ tal que 
+\beq 
+(x_n^{m-1},y_p) \rightarrow \alpha_p \;\;\;\;\forall \;1\leq p \leq m-1.
+\eeq
+De la misma forma que como hicimos para el caso $m=1$, considerando
+en este caso $\{(x_n^{m-1},y_m)\}$ obtenemos una subsucesión $\{x_n^m\}$
+de $\{x_n^{m-1}\}$ que satisface,
+\beq 
+(x_n^m,y_m) \stackrel{n \to \infty}{\rightarrow} \alpha_m, 
+\eeq
+lo que completa la inducción.
+Tenemos así un mapa $\sigma:\{y_m\} \rightarrow \ve C$ dado por 
+$\sigma(y_m) = \alpha_m$,
+como $\{y_m\}$ es una base podemos extender este mapa linealmente a
+todo $H$. 
+Como $\{x_n^{\infty}\}$ es acotada,
+\beq
+|\sigma(y)| = \lim |(x_n^{\infty},y)| \leq \|y\|_H 
+\eeq
+y $\sigma$ es también acotada, por lo tanto continua. 
+Usando el Teorema de
+Representación de Riez sabemos entonces que existe $x \in H$ tal que
+\beq
+(x,y) = \sigma(y) = \lim(x_n^{\infty},y) \;\;\;\;\;\forall \;y \in H.
+\eeq
+Concluimos así que $\{x_n^{\infty}\}\sr{d}{\rightarrow} x$
+$\spadesuit$ 
+
+En el pr\'oxido cap\'\i{}tul o haremos uso de esta propiedad para probar un importante resultado en espacios de Sobolev.
+
+
+\recubib{Recomiendo leer: \cite{Lang}, \cite{Geroch} \cite{Reed}. A pesar de que fue un f\'\i{}sico, Dirac, el que introdujo el concepto de distribuci\'on muchos f\'isicos las desde\~nan como algo {\sl matemático} y las usan como una abreviaci\'on \'util para hacer c\'alculos. Usualmente la persona que las manipula conoce lo que está haciendo y no comete errores, pero es bastante f\'acil cometerlos si no se siguen cuidadosamente las reglas y se pierde de vista lo que son. Esto por ejemplo lleva a errores tales como asignarle significado al producto de dos distribuciones arbitrarias. No es difícil entender el concepto b\'asico de distribuci\'on ni tampoco que no hay que salirse de las reglas operativas, s\'\i{}galas siempre y no se equivocar\'a.}
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End: 

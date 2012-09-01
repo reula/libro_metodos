@@ -1,0 +1,715 @@
+\chapter{Ecuaciones Elípticas}
+\label{ecuaciones_elipticas}
+
+
+\section{La Ecuación de Laplace}
+
+Tomaremos como modelo de ecuación elíptica a la ecuación de
+Laplace en $\re^n$ con métrica Euclídea $ds^2 = \sum^n_{i=1} (dx^i)^2$,
+o una región abierta $\Omeg$ de $\re^n$ con la misma métrica.
+Los resultados que obtendremos  que no dependan de funciones especiales
+se pueden generalizar para ecuaciones elípticas de la forma \ron{ec*} si se
+asume que $c\leq 0$.
+
+Como ya mencionamos, el programa de Cauchy, es decir formular el
+problema de obtener soluciones dando como dato $u^A$ en una hipersuperficie
+$\Sigma$ no funciona en general, solo lo hace para ecuaciones 
+hiperbólicas.
+Si consideramos datos no-analíticos, y los datos físicos
+son en general no-analíticos, no hay en general ni siquiera soluciones 
+locales.
+¿Cuál es la manera apropiada entonces de dar datos para la ecuación
+de Laplace? Obtendremos la respuesta a esto considerando un fenómeno
+físico descripto por esta ecuación.
+
+Consideremos un tambor e imprimamos una fuerza (peque\~na) sobre su membrana
+(o parche) en forma perpendicular a ésta.
+
+\espa 
+%\fig{6cm}{La Membrana de un Tambor.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m12_1}}
+    \caption{La membrana de un tambor.}
+    \label{fig:12_1}
+  \end{center}
+\end{figure}
+
+La membrana se moverá de su posición plana (de reposo) y adquirirá
+una nueva posición de equilibrio generando una fuerza elástica que
+cancele exactamente a la aplicada. 
+¿Cuál será esta nueva forma de la membrana?
+Si denotamos por $u(x,y)$ al desplazamiento de ésta en la dirección
+del eje vertical ($z$) y $f$ a la fuerza por unidad de área
+aplicada   (en la dirección vertical)
+se puede ver que $u$ debe satisfacer la ecuación,
+\beq 
+\Delta u = f, \mbox{en } \Omega=\{(x,y)| \sqrt{x^2+y^2} < \mbox{radio
+del tambor}\}.
+\label{ec2*}
+\eeq
+
+\ejer:
+Convénzase de que~\ron{ec2*} es la ecuación de equilibrio.
+Ayuda: Haga primero el caso unidimensional.
+
+Como el borde del tambor sujeta la membrana allí tendremos la siguiente
+{\bf condición de contorno},
+\beq 
+u|_{\partial \Omega} =0, \;\; \partial \Omega=\{(x,y)| \sqrt{x^2+y^2} = 
+\mbox{radio del tambor}\}.
+\label{ec3*}
+\eeq
+Tenemos así el siguiente problema: Dado $f$ en $\Omeg$ encuentre $u$ 
+satisfaciendo
+\ron{ec2*} y \ron{ec3*}.
+Por nuestra experiencia física sabemos que este problema se debe
+poder resolver! Más aún, se debe poder resolver el problema donde el
+tambor no es circular pero tiene forma arbitraria, permitiendo que
+$\partial \Omega$ sea un borde arbitrario pero suave y también que
+$\partial \Omega$ no esté en el plano $x=0$ o equivalentemente  que esté
+en tal plano pero que $u$ pueda tomar un valor cualquiera --pero suave--
+$\phi$ en $\partial \Omega$. 
+ 
+Llegamos así al siguiente {\bf Problema de Dirichlet:} 
+Dada $\Omeg$ con $\partial \Omega$ suave, $f :\Omega \rightarrow \re$ suave y
+$\phi_0: \partial \Omega \rightarrow \re$, también suave, encuentre 
+$u:\Omega \rightarrow \re$ satisfaciendo,
+\begin{enumerate}
+\item $ \Delta u = f \;\;\;\;\mbox{en}\;\;\Omega$,
+\item $u|_{\partial \Omega} = \phi_0.$
+\end{enumerate}
+Más adelante reafirmaremos nuestra intuición viendo que este problema 
+siempre se puede resolver.
+
+
+Supongamos ahora que permitimos que los bordes de la membrana se pueda
+deslizar verticalmente pero en el borde ponemos resortes verticales
+con una constante de Hooke que depende de la posición, $k:\partial \Omega
+\rightarrow \re$ y dispuestos de tal forma que la posición de equilibrio
+antes de aplicar $f$ sea $u=0$. Cuando apliquemos $f$ la membrana se
+moverá hasta que nuevamente en el interior tengamos, 
+\beq \Delta u = f \;\;\;\;\mbox{en}\;\;\Omega \eeq
+y en el borde
+\beq
+(ku + n^a\nabla_a u)|_{\partial \Omega} = 0,
+\eeq
+donde $n^a$ es la normal a $\partial \Omega$. 
+Este {\bf Problema Mixto} también se puede resolver. 
+%\fig{6cm}{Problema Mixto.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m12_2}}
+    \caption{Problema mixto.}
+    \label{fig:12_2}
+  \end{center}
+\end{figure}
+
+Un caso particular de éste es cuando
+para ejercer la fuerza de borde no usamos resortes sino simplemente
+una fuerza dada $\phi_1 :\partial \Omega \rightarrow \re$, pero teniendo 
+la precaución
+de que su contribución total, $\int_{\partial \Omega} \phi_1 dS $, cancele
+exactamente la contribución total de $f$ --de no ser así tendríamos
+una membrana acelerándose--. En tal caso tenemos el {\bf Problema de
+Neumann:}
+\beqarr 
+\Delta u &=& f \;\;\;\;\mbox{en}\;\;\Omega \\
+n^a\nabla u|_{\partial \Omega} &=& \phi_1,\mbox{ en el borde},\\
+\mbox{con} \dip\int_{\partial \Omega} \phi_1 \;dS 
+&=& \dip\int_{\partial \Omega} n^a\nabla_a u \;dS
+=\dip\int_{\Omega} f \;dV = \dip\int_{\Omega} \Delta u \;dV.
+\eeqarr
+
+\subsection{Existencia}
+
+A continuación veremos que el problema de Dirichlet siempre tiene
+una única solución (suponiendo que $f$, $\phi_0$ y $\partial \Omega$ son lo
+suficientemente suaves). Los otros problemas se resuelven en forma 
+similar.
+
+Supongamos que existe $u \in H^2(\Omega)$ satisfaciendo,
+$\Delta u = f $ en $\Omega$ y $u|_{\partial \Omega} = 0$ --lo que implica 
+$u \in H^1_0(\Omega)$--. Luego usando el teorema de la divergencia
+obtenemos la {\bf primera identidad de Green}, $\forall v \in C^{\infty}(\Omega). $
+
+\beq \int_{\Omega} v\bar f d^nx = \int_{\Omega} v\Delta \bar ud^nx =
+- \int_{\Omega} e^{ab} \nabla_a v \nabla_b \bar u d^nx +
+\int_{\partial \Omega} v(n^a\nabla_a \bar u) d^{n-1}x, 
+\eeq
+%
+Si suponemos que $v \in H^1_0(\Omega)$ la identidad todav\'\i{}a es válida y
+en este caso se reduce a,
+\beq
+\int_{\Omega} e^{ab} \nabla_a v \nabla_b \bar u d^nx =
+- \int_{\Omega} v \bar f d^nx , \;\;\;\;\;\forall \;\;v \in H^1_0(\Omega).
+\label{ec4*}
+\eeq
+Pero note que esta identidad todavía es válida si suponemos simplemente
+que $u \in H^1_0(\Omega)$ --no necesariamente en $H^2(\Omega)$-- y que $f \in
+H^{-1}(\Omega)$. 
+
+Tenemos así el {\bf Problema Débil de Dirichlet} 
+(con $\phi_0 = 0$):
+Encuentre $u \in H_0^1(\Omega)$ tal que dada $f \in H^{-1}(\Omega)$ se 
+satisfaga \ron{ec4*}.
+
+Si el lado derecho \ron{ec4*} fuese un producto escalar este daría origen
+(por completamiento) a un espacio de Hilbert $H$ y entonces 
+ \ron{ec4*} tendría la forma 
+\beq (u,v)_H = \Phi_f(v) \equiv -\int_{\Omega} \bar f v d^nx, \forall v
+\in H^1_0(\Omega).
+\label{ec5*}
+\eeq
+ 
+Si $H = H^1_0(\Omega) $ y si $\Phi_f: H \rightarrow \ve C$ fuese
+continua luego el teorema de representación de Riez nos diría que
+existe un único $u$ en $H$ satisfaciendo \ron{ec4*} y por lo tanto \ron{ec5*}.
+Como veremos a continuación (lema de Poincaré-Hardy) en este caso la
+parte derecha de \ron{ec4*} es un producto escalar equivalente al de 
+$H^1_0(\Omega)$
+y por lo tanto $H = H^1_0(\Omega) $. Pero entonces $\Phi_f$ es claramente
+continua ya que $H^{-1}(\Omega)$ es el dual de 
+$H^1(\Omega) \supset H^1_0(\Omega)$
+y $u \in H^1_0(\Omega)$. Hemos probado entonces:
+
+\bteo
+[de existencia y unicidad] Dada $f \in H^{-1}(\Omega)$ existe una
+única $u \in H^1_0(\Omega)$ satisfaciendo el problema débil de Dirichlet.  
+\eteo
+\bcor
+  El mapa $(\Delta,\tau) : H^1(\Omega) \rightarrow H^{-1}(\Omega)
+\times H^{1/2}(\Omega)$ dado por,
+\beq \barr{rcl}
+\Delta u &=& f \in H^{-1}(\Omega),\\
+\tau u &=& \phi_0 \in H^{1/2}(\pa \Omega),
+\earr
+\eeq 
+es un isomorfismo~\footnote{Siempre entendiendo estas ecuaciones en
+su {\sl forma débil} o distribucional}.
+\ecor
+
+\pru:
+Es claro que el mapa es continuo --ya que es lineal y acotado--. 
+Es también
+inyectivo ya que si  $\phi_0 = 0$ luego $u \in H^1_0(\Omega)$ y si $f=0$
+el teorema anterior (unicidad) nos dice entonces que $u=0$.
+Veamos que es suryectivo. Sea $\phi_0 \in H^{1/2}(\Omega)$, luego existe
+$w \in H^1(\Omega) $ tal que su restricción a $\pa \Omega$,  
+$\tau w = \phi_0$ y sea $f \in H^{-1}(\Omega)$. 
+Como también $\Delta w \in H^{-1}(\Omega)$ el teorema anterior
+nos garantiza  que existe $\bar u \in H^1_0(\Omega)$ tal que 
+\beq
+\Delta \bar u = f - \Delta w \mbox{ en } \Omega.
+\eeq
+Pero entonces $u = \bar u + w$ satisface $\Delta u = f$ en $\Omega$ y 
+$\tau u = \phi_0 $ en $\partial \Omega$.
+
+\espa
+
+
+\noi Solo resta probar entonces que el producto escalar anterior es un realmente un producto escalar y la norma así obtenida es equivalente a la de $H^{1}_{0}$. Esto sigue del siguiente resultado,
+
+\blem[de Poincaré-Hardy] 
+\label{lem12.1}
+Existe $C>0$ tal que para todo 
+$u \in H^1_0(\Omega)$,
+se cumple,
+\beq
+\int_{\Omega} |u|^2 d^nx \leq C \int_{\Omega} e^{ab} \nabla_a \bar u
+\nabla_b u d^nx.
+\eeq
+\elem
+
+Esto nos dice que el producto escalar en $H^1_0(\Omega)$ es equivalente
+al producto escalar usado anteriormente.
+
+\espa
+
+\pru: Como $C^{\infty}_0(\Omega)$ es denso en $H^1_0(\Omega)$ es suficiente
+probar la desigualdad para estas funciones. Sea $\Gamma_d$
+un n-cubo de lado $d$ conteniendo a $\Omega$. Extendiendo las funciones
+en $C^{\infty}_0(\Omega) $ como cero en $\Gamma_d - \Omega$ obtenemos,
+\beq\barr{rcl}
+|u|^2(x) &=& |\int^{x^1}_{-d/2} \partial_1 u(\xi^1,x^2,...,x^n)d\xi^1|^2\\
+         &\leq& (x^1+\frac d2)\int^{x^1}_{-d/2} |\partial_1u|^2 d\xi^1\\
+         &\leq& d\int^{d/2}_{-d/2} |\partial_1 u|^2 d\xi^1.
+\earr
+\eeq
+Por lo tanto,
+\beq 
+\int^{d/2}_{-d/2}|u(x)|^2 dx^1 
+\leq d^2 \int^{d/2}_{-d/2} |\partial_1 u|^2 d\xi^1,
+\eeq
+y
+\beq
+\int_{\Gamma_d} |u|^2(x) d^nx 
+\leq d^2 \int_{\Gamma_d} |\partial_1 u|^2 d^nx 
+\leq C \int_{\Gamma_d} \nabla_a \bar u \nabla^a u d^nx,
+\eeq
+con $C = d^2$. Esto prueba el lema y concluye la prueba de existencia
+y unicidad $\spadesuit\spadesuit$
+
+Tanto el teorema de existencia y unicidad como el de regularidad
+(que damos a continuación)
+pueden ser ge\-ne\-ra\-li\-za\-dos a ecuaciones elípticas con 
+coeficientes no 
+constantes mientras éstos sean suaves, se cumpla que $c \leq 0$  y que
+$a^{ab}l_al_b > k g^{ab}l_al_b$, donde $k$ es una constante y
+$g^{ab}$ es una métrica positiva definida tal que el volumen de
+$\Omega$ con respecto a esta métrica es finito. La prueba que dimos es
+válida solo si $Vol_g(\Omega) < \infty$, ya que en esta usamos el lema
+de Poincaré-Hardy. 
+Si $\Omega = \re^n$ entonces la prueba es todav\'\i{}a válida si sustituimos
+al espacio $H^1_0$ por el espacio $H^1_1$, es decir el espacio de las
+funciones que decaen al infinito, con norma
+$$
+||f||^2_{H^1_1(R^n)} = \int_{R^n} \frac{|f|^2}{r^2} + e^{ab}\na_a
+\bar{f} \na_b f.
+$$
+
+En este caso se puede probar que
+la solución del problema no solo será suave sino también que
+decaerá  asintóticamente como $1/r$.
+
+
+
+
+\subsection{*Regularidad de las Soluciones}
+
+La solución que hemos encontrado lo es solo en el sentido débil. Si
+suponemos ahora que $f$ y $\phi_0$ tienen cierta regularidad podemos
+concluir además que,
+
+\bteo
+[de Regularidad] Sea $u \in H^1(\Omega)$ una solución débil
+de la ecuación $\Delta u = f$ en $\Omega$ con condición de contorno
+$u|_{\partial \Omega} = \phi_0$ y sea 
+$f \in H^k(\Omega)$, $\phi_0 \in H^{k+\frac32}(\partial \Omega)$, $k \geq -1$ 
+luego $u \in H^{k+2}(\Omega)$. 
+En particular si $f \in C^{\infty}(\Omega)$ y    
+$\phi_0 \in C^{\infty}(\partial \Omega)$, luego $u \in C^{\infty}(\Omega)$.
+\eteo
+
+Antes de proceder con la prueba definiremos el operador diferencia
+finita y veremos sus propiedades. Sea $\{x^i\}$ un sistema coordenado
+en un abierto de $\Omega$.
+
+\espa
+\defi: 
+\[
+\Delta^h_i u(x^1,...,x^i,...,x^n) \equiv \dip\frac{u(x^1,...,x^i+h,...x^n) - u(x^1,...,x^i,...,x^n)}{h}.
+\]
+
+\blem
+\label{lem12.2}
+ Si $u \in H^1(\Omega)$ y $\Omega' \subset \subset \Omega$
+(contenido estrictamente, $\partial\Omega \cap \Omega' = \emptyset$) luego,
+\beq \|\Delta^h_i u \|_{H^0(\partial\Omega)} \leq \|\partial_i u \|_{H^0(\Omega)}.
+\eeq
+\elem
+
+\espa
+
+\pru: Es suficiente considerar el caso $u \in C^1(\Omega)$. 
+Si $h<dist(\partial\Omega,\Omega')$, luego 
+\beq
+\Delta^h_iu(x) = \frac1h \int_0^h \partial_i u(x^1,...,x^i+\xi,...,x^n) d\xi
+\;\;\forall x \in \Omega',
+\eeq
+por lo tanto, usando la desigualdad de Schwarzt vemos que,
+\beq 
+|\Delta^h_iu(x)|^2
+\leq \frac1h \int_0^h |\partial_i u(x^1,...,x^i+\xi,...,x^n)|^2 d\xi.
+\eeq
+Integrando sobre $\Omega'$ obtenemos,
+\beq
+\int_{\Omega'} |\Delta^h_i u(x)|^2 d^nx \leq
+\frac1h \int^h_0 \int_{\Omega'} |\partial_i u|^2 d^nx d\xi \leq
+\int_{\Omega} |\partial_i u |^2 d^nx.
+\eeq
+$\spadesuit$
+
+\blem
+\label{lem12.3}
+Sea $u \in H_0(\Omega)$ 
+(y por lo tanto $\Delta^h_i u \in H_0(\Omega')$)
+y supongamos existe $k<0$ tal que 
+$\|\Delta^h_i u \|_{H_0(\Omega')} \leq k \;\;\forall \;h>0$ y $\Omega'\subset
+\subset \Omega$, con $h<dist(\partial\Omega,\Omega')$. 
+Luego la derivada débil $\partial_i u$ existe y satisface,
+$\|\partial_i u \|_{H_0(\Omega)} \leq k$.
+\elem
+
+\espa
+
+\pru: Por la compacidad débil de los conjuntos cerrados y acotados
+en $H_0(\Omega')$ existirá una sucesión $\{h_m\}\rightarrow 0$ y
+$v_i \in H_0(\Omega)$ con $\|v_i\|_{H_0(\Omega')} \leq k$ tal que 
+$\Delta^{h_m}_i u \sr{d}{\rightarrow} v_i$, es decir
+\beq 
+\int_{\Omega} \phi \Delta^{h_m}_i u \;d^nx \rightarrow 
+\int_{\Omega} \phi v_i \;d^nx, \;\;\;\forall \;\phi \in C^1_0(\Omega).
+\eeq
+Por otro lado, si $h_m <dist(sop.\phi ,\partial\Omega)$, luego
+\beq
+\int_{\Omega} \phi \Delta^{h_m}_i u d^nx =
+- \int_{\Omega} u (\Delta^{-h_m}_i \phi ) d^nx \rightarrow
+- \int_{\Omega} u \partial_i \phi d^nx.
+\eeq
+Concluimos así que, 
+\beq
+\int_{\Omega} \phi v_i d^nx = - \int_{\Omega} u \partial_i \phi d^nx,
+\eeq
+o sea que $v_i$ es la derivada débil (distribucional) de $u$ en la dirección
+$x^i$ $\spadesuit$
+
+\espa
+
+\pru: (Teorema de Regularidad):
+Nos contentaremos con probar que $u$ es regular en cualquier $\Omega'$
+contenido estrictamente en $\Omega$, la extensión de la prueba a
+todo  $\Omega$ no agrega ningún concepto nuevo. 
+Probaremos el enunciado para $k=0$, el resto sigue por inducción en $k$.
+Como $u$ es una solución débil tenemos que 
+\beq 
+\int_{\Omega} \nabla^a \bar u \nabla_a v d^nx = 
+\int_{\Omega} \bar f v d^nx, \forall v \in C^1_0(\Omega).
+\label{ec6*}
+\eeq 
+Reemplazando $v$ por $-\Delta^{-h}_i v$ con $|2\,h|<dist(sop.v ,\partial\Omega)$,
+tenemos,
+\beq 
+\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \nabla_a v d^nx = 
+- \int_{\Omega} \bar f \Delta^h_i v d^nx, \forall v \in C^1_0(\Omega)
+\eeq
+y por lo tanto (Usando el lema~\ron{lem12.2}),
+\beq 
+\|\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \nabla_a v d^nx\| \leq 
+\|f\|_{H_0} \|\partial_i v\|_{H_0}.
+\eeq
+Tomando ahora $v = \Delta^h_i u $ obtenemos,
+\beq 
+\|\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \Delta^h_i \nabla_a u d^nx\| \leq 
+\|f\|_{H_0} \|\partial_i \Delta^h_i u\|_{H_0},
+\eeq
+o sea,
+\beq 
+\|\Delta^h_i\nabla^a u \|^2_{H_0}  \leq 
+\|f\|_{H_0} \|\Delta^h_i \:\na_a u\|_{H_0},
+\eeq
+lo que finalmente implica,
+\beq 
+\|\Delta^h_i\nabla^a u \|_{H_0}  \leq \|f\|_{H_0} < k. 
+\eeq
+El lema~\ron{lem12.3} nos dice entonces que 
+$\partial_i u \in H^1(\partial\Omega)$ y
+completa la primera parte de la prueba.
+
+Veamos ahora, para completar la prueba, 
+que si $f \in C^{\infty}(\Omega)$ luego $u \in C^{\infty}(\Omega)$.
+Pero esto es obvio ya que si $u \in H^p(\Omega)$, $\Omega \subset \re^n$, 
+luego por el Lema de Sobolev $u \in C^{p - \frac n2 - \eps} (\Omega)
+\;\;$ $\forall \;\eps > 0$ y en particular si $u \in H^p(\Omega) \;\;\;\;
+\forall \;p$ luego
+$u \in C^{\infty}(\Omega)$ $\spadesuit$
+\espa
+
+
+
+
+\section{Teorema Espectral}
+\label{sec:Teorema-Espectral}
+
+Sea una barra de un material de conductividad térmica $q=1$ y longitud
+$L=2\pi$ y supongamos que queremos describir la evolución de su
+distribución de temperatura $T(t,x)$. Para ello supondremos una
+distribución inicial $T_0(x)$ y que los extremos de la barra están
+conectados con un reservorio infinito de calor a cero grado. Debemos
+resolver entonces el problema matemático,
+\beq\barr{rcl}
+\dip\frac d{dt} T &=& - \dip\frac {d^2}{dx^2} T, \;\;\;t\geq 0 \\ [3mm]
+T(t_0,x) &=& T_0(x),\\ [3mm]
+T(t,0) &=& T(t,2\pi) = 0\;\;\;t \geq 0.
+\earr\eeq
+Para resolverlo usaremos un desarrollo en serie de Fourier, es decir
+plantearemos una solución de la forma,
+\beq
+T(t,x) = \sum^{\infty}_{n=1} C_n(t) sen(\frac{nx}2),
+\eeq
+la cual satisface claramente las condiciones de contorno.
+Aplicándole la ecuación y usando la ortogonalidad de las funciones 
+obtenemos,
+\beq
+\frac d{dt} C_n(t) = - \frac{n^2}4 C_n(t),
+\eeq
+la cual tiene como solución,
+\beq
+C_n(t) = C_n(0)e^{-\frac {n^2}4 t}.
+\eeq 
+Por lo tanto si damos como condición inicial 
+$T_0 \in L^2(0,2\pi)$, ésta determinará una sucesión 
+$\{C^0_n = (T_0,sen(\frac{nx}2))_{L^2}\}$ en $l^2$ que
+usaremos como condición inicial y así obtendremos $T(t,x)$.
+Como 
+\beq
+\sum^{\infty}_{n=1} |C_n(t)|^2 = \sum^{\infty}_{n=1}
+|C_n^0|^2e^{-\frac{n^2}2 t} \leq \sum^{\infty}_{n=1} |C_n^0|^2 < \infty
+\eeq
+la solución formal --ya que no sabemos si es diferenciable-- estará
+en $L^2(0,2\pi)$ para todo $t \geq 0$. Para cualquier $t>0$ y $q \in N$ 
+tenemos que $n^{2q}e^{-\frac{n^2}2 t}$ tiende en
+forma exponencial a cero cuando $n$ tiende a infinito y por lo tanto
+$T(t,x) \in H^q(0,2\pi)$ lo que implica $T(t,x) \in C^{\infty}((0,+\infty)\times
+[0,2\pi])$~\footnote{Se puede demostrar además que $T(t,x)$
+es analítica en ambas variables en $(0,+\infty)\times
+[0,2\pi])$}.
+
+\noi Hemos resuelto así completamente este problema.
+
+\espa
+¿Qué hemos usado para construir estas soluciones?
+Hemos usado que cualquier función que se anula en los extremos puede
+ser expandida en término de su serie de Fourier, es decir de las
+funciones $sen(\frac{nx}2)$ y además que ,
+\beq
+\frac{d^2}{dx^2} sen(\frac{nx}2) = -\frac{n^2}4 sen(\frac{nx}2)
+\eeq
+En analogía con la teoría de operadores entre espacios vectoriales
+de dimensión finita llamaremos a la ecuación de arriba la ecuación
+de autovectores-autovalores del operador lineal $\frac{d^2}{dx^2}$. 
+Dado un
+operador lineal $L:D \subset L^2 \rightarrow L^2$ 
+el problema de encontrar sus autovalores y
+autovectores con condiciones de contorno dadas se llama problema de
+Sturn-Liouville. Como veremos a continuación existe una gran
+cantidad de operadores para los cuales este problema tiene solución.
+?`Es una  casualidad que el conjunto de autovalores del operador en el
+ejemplo sea una base de $L^2$?~\footnote {Para obtener convergencia
+puntual(y no simplemente en $L^2$) en el caso de condiciones de contorno
+no nula hay que agregar los autovectores (con cero autovalor) 
+$f_0(x) = 1$ y $f_1(x)=x$.} 
+El siguiente teorema y su corolario nos dicen que no lo es, si el
+operador en cuestión satisface ciertas condiciones.
+
+\bteo[Espectral para el Laplaciano]
+Sea $\Omega \subset \ren$ acotado. 
+Luego el La\-pla\-cia\-no tiene un conjunto numerable y discreto de autovalores,
+$\Sigma=\{\lam_i\}$,
+cuyas autofunciones (autovectores) expanden $H^1_0(\Omega)$.
+\eteo
+
+% Para probar este teorema necesitamos de los siguientes lemas:
+
+
+\pru: [Teorema Espectral]
+Considere la funcional
+${\cJ}:H^1_0(\Omega) \rightarrow \re^+$ dada por,
+\beq
+\mbox{\cJ}(u) = \frac{\int_{\Omega} \na_a \bar u \na^a u \;d^nx}
+{\int_{\Omega} \bar u u \:d^nx}.
+\eeq
+Como $\cJ (u)$ es no negativa existirá $\lam_0(\Omega) \in \re^+$ tal que 
+\beq 
+\lam_0 = \barr{c} \\ inf \cJ (u) \\^{
+       u\in H^1_0(\Omega)} \earr.
+\eeq
+
+\ejer: 
+Relacione este $\lam_0$ con la constante en el Lema de
+Poincaré-Hardy. 
+\espa
+
+Como veremos a continuación este $\lam_0$ es el menor de los autovalores
+del Laplaciano y su autofunción $u_0$ es la que minimiza a \cJ . 
+En efecto supongamos que existe $u_0 $ en $H^1_0(\Omega)$ que
+minimiza a \cJ , 
+como \cJ es una funcional diferenciable debemos tener que
+\beq
+\frac d{ds} \cJ (u_0 + sv)|_{s=0} = 0 \;\;\;\; \forall\;v 
+\in H^1_0(\Omega).
+\label{des}
+\eeq
+Pero 
+\beqarr
+\frac d{ds} \cJ (u_0 + sv)|_{s=0} 
+&=& \frac{1}{\int_{\Omega} \bar u u \:d^nx} 
+[\int_{\Omega}(\na^a \bar v \na_a u_0 + \na^a \bar u_0 \na_a v) d^nx \nonumber \\
+&-&
+\lambda_0 [\int_{\Omega}(\bar v u_0 + \bar u_0 v) d^nx]]
+\eeqarr
+y por lo tanto \ron{des} es equivalente a que $u_0$ satisfaga la versión 
+débil de la ecuación de autovalores-autovectores. 
+Veamos ahora que $u_0$ existe. 
+Como $\lam_0$ es el ínfimo de \cJ  existe una sucesión 
+$\{u_p\} \in H^1_0(\Omega)$
+tal que $\|u_p\|_{H^0(\Omega)} = 1$ y $\cJ (u_p) \rightarrow \lam_0$.
+Pero tal sucesión es acotada en $H^1_0(\Omega)$ y por lo tanto por el 
+lema~\ron{lem10.10} existe una subsucesión $\{\ti u_p\}$ que converge 
+fuertemente en $H^0(\Omega)$
+a una función $u_0$ con $\|u_0\|_{H^0(\Omega)} = 1$. 
+Como $\mbox{\cal Q}(u) \equiv \int_{\Omega} \na^a \bar u \na_a u d^nx$ es una norma 
+proveniente de un producto
+escalar se cumple la regla del paralelogramo,
+\beq
+\mbox{\cal Q}(\frac{\ti u_p - \ti u_q}2) + \mbox{\cal Q}(\frac{\ti u_p + \ti u_q}2) =
+\frac12(\mbox{\cal Q}(\ti u_p) + \mbox{\cal Q}(\ti u_q)),
+\eeq
+la que implica 
+\beq
+\mbox{\cal Q}(\frac{\ti u_p - \ti u_q}2) \leq
+\frac 12 (\mbox{\cal Q}(\ti u_p) + \mbox{\cal Q}
+(\ti u_q)) - \lam_0 \|\frac{\ti u_p +\ti u_q}2\|^2_{
+H^0(\Omega)} 
+\barr{c} \\ \rightarrow \lam_0 - \lam_0 = 0.\\^{
+p,q \rightarrow \infty}
+\earr
+\eeq
+Donde hemos usado que como $\{\ti u_{q}\} \to u_{0}$ en $H^{0}(\Omega)$, $\{\frac{\ti u_p +\ti u_q}2\}$ también lo
+hace y por lo tanto $\{\|\frac{\ti u_p +\ti u_q}2\|_{H^0(\Omega)}\} \to 1$.
+Pero como la norma $\mbox{\cal Q}(u)$ es equivalente a la de $H^1_0(\Omega)$ 
+vemos que $\{\ti u_p\}$ es 
+también de Cauchy en $H^1_0(\Omega)$ y por lo tanto que $u_0 \in H^1_0(\Omega)$. 
+Usando el teorema de
+regularidad con $f= \lam_0u_0$ vemos que $u_0 \in C^{\infty}(\Omega) \cap 
+H^1_0(\Omega)$ y por lo tanto que $u_0$ es un  autovalor
+en el sentido clásico $(\Delta u_0 + \lam_0 u_0 = 0)$. 
+Probemos ahora la existencia de los otros
+autovalores-autovectores.
+Sea $H(1) = \{ u \in H^1_0(\Omega) | (u,u_0)_{H^0(\Omega)} = 0\}$.
+Este es un subespacio vectorial y es cerrado, por lo tanto es un
+espacio de Hilbert~\footnote {Note que $H(1) \neq $ espacio perpendicular a 
+$u_0$ en la norma $H^1_0(\Omega)$.}, 
+por lo tanto existirá $\lam_1$, tal que
+\beq 
+\lam_1 = \barr{c} \\ inf \\^{u \in H(1)} \earr
+              \cJ (u).       
+\eeq
+
+Repitiendo el argumento anterior vemos que $\lam_1$, será un autovalor, es
+decir que existirá una autofunción $u_1$, con autovalor $\lam_1$. 
+
+Definiendo $H(2) = \{u \in H^1_0(\Omega) | (u,u_0)_{H^0(\Omega)}=(u,u_1)_{H^0(\Omega)}=0
+\}$, etc. 
+podemos continuar indefinidamente y obtener $\Sigma$ y un conjunto
+ortonormal \footnote {Luego de normalizarlos convenientemente.}, en
+$H^0(\Omega)$, de autovectores.
+Para completar la prueba veamos que este conjunto expande $H^1_0(\Omega)$.
+Como $u_i$ satisface 
+$\Delta u_i +\lam_i u_i =0 $ y $(u_i,u_j)_{H^0(\Omega)} = 0 $ si $i \neq j$ 
+tenemos que
+\beq
+0=(u_j,\Delta u_i + \lam_i u_i)_{H^0(\Omega)} = 
+- \int_{\Omega} \na^a \bar u_j \na_a u_i d^nx
+\eeq
+y por lo tanto también que
+\beq
+(u_j,u_i)_{H^1_0(\Omega)} = 0.
+\eeq
+Vemos entonces que este conjunto es ortogonal en $H^1_0(\Omega)$ y que por
+construcción su sub\-es\-pa\-cio perpendicular es { 0 } lo que implica que
+este conjunto es una base de $H^1_0(\Omega)$ $\spadesuit$
+
+
+\espa
+\ejer: 
+Encuentre los autovalores y autovectores de Laplaciano en
+$H^1_0(\Omega)$ cuando:
+a) $\Omega \subset \re^2$ es un cuadrado de lado $L$.
+b) $\Omega \subset \re^3$ es una esfera de radio $R$.
+Construya en ambos casos usando estas autofunciones la función de
+Green del problema en cuestión.
+
+¿Para qué ecuaciones se puede generalizar el teorema anterior? Para
+la prueba se usaron propiedades específicas del Laplaciano solo para
+afirmar que $\cJ$ era acotada por debajo --para concluir que el ínfimo
+existía-- y que $\mbox{\cal Q}(u)$ era una norma proveniente de un producto escalar
+--para concluir que la ley del paralelogramo valía--.
+Si 
+\beq
+L(u)= a^{ab} \na_a \na_b u + b^a \na_b u + cu,                 \label{ec*}
+\eeq 
+con 
+$a^{ab} l_al_b \geq k g^{ab} l_al_b$, $k>0$, para todo campo vectorial 
+$l_a$ en $\Omega$ (elipticidad) y con $a^{ab}$, $b^a$ y $c$
+campos suaves en $\Omega$, 
+luego existen constantes positivas $c_1$ y $c_2$ tales que 
+\beq
+(u,-L(u))_{H^0(\Omega)} = -\int_{\Omega} \bar u L(u) d^nx 
+                     \leq c_1 \int_{\Omega} g^{ab}\na_a\bar u \na_b u d^nx
+                     -c_2 \int_{\Omega} |u|^2 d^nx.
+\eeq                 
+\ejer: Pruebe esto.
+\espa
+
+\noi
+Por lo tanto en este caso también tenemos que 
+\beq
+\cJ (u) \equiv \frac{(u,-L(u))_{H^0(\Omega)}}{(u,u)_{H^0(\Omega)}},
+\eeq
+es acotada por debajo.
+La condición de que $\mbox{\cal Q}(u)\equiv (u,-L(u))_{H^0(\Omega)}$ 
+satisfaga la \textsl{regla del paralelogramo}. Aunque
+no sea positiva definida es mucho más restrictiva, y es equivalente a
+pedir que $L$ satisfaga
+\beq
+(v,L(u))_{H^0(\Omega)} = (L(v),u)_{H^0(\Omega)}\;\;\;\forall\;u,v \in H^1_0(\Omega).
+\eeq
+Los operadores que satisfacen esta relación se denominan {\bf
+auto-adjuntos} o {\bf hermitianos}.
+
+\ejer: 
+Muestre que
+\beq
+L(u)= \na_a(a^{ab} \na_b u + b^a  u) - b^a \na_a u + cu,
+\eeq 
+con $a^{ab}$, $b^a$ y $c$ campos tensoriales reales es auto-adjunto.
+
+\ejer:
+Muestre que si $L$ es autoadjunto luego los autovectores
+son reales.
+
+\ejer: 
+Encuentre los autovalores y autovectores en $H^1_0(\Omega)$ 
+de 
+\beq
+L(u) = \frac{d^2}{dx^2}u + c x^2 u.
+\eeq
+
+\noi
+Llegamos así a la siguiente generalización:
+
+\bteo[Espectral] 
+Sea $\Omega$ acotado y $L$ un operador elíptico
+autoadjunto con coeficientes $a^{ab}$, $b^a$ y $c$ en $C^{\infty}(\Omega)$
+[Condición que se puede debilitar considerablemente]. 
+Luego el problema de autovalores 
+$L(u_i) = \lam_i u_i$, $u_i \in H^1_0(\Omega)$,
+tiene un conjunto numerable y discreto de autovalores reales, cuyas
+autofunciones $u_i \in C^{\infty}(\Omega)$ expanden $H^1_0(\Omega)$.
+\eteo
+
+\ejer:
+
+\noi 
+a) Pruebe el siguiente {\bf corolario:}
+
+Si $L$ elíptico y autoadjunto es tal que sus autovalores son
+distintos de cero luego el problema de Dirichlet
+\beq
+L(u) = f,
+\eeq
+$f\in H^0(\Omega)$, $u \in H^1(\Omega)$,
+tiene una única solución.
+
+\noi 
+b) Si algún $\lam_i = 0$ entonces el problema anterior tiene solución 
+sii $(u_i,f)_{H^0(\Omega)} = 0$ 
+para toda autofunción con autovalor cero.
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot.tex~/Metodos/"
+%%% End: 

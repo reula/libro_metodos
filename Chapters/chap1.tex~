@@ -1,0 +1,501 @@
+%%ultima modificación 13-08-92
+
+%\input format
+
+\chapter{Conceptos Básicos de Topología}
+
+
+
+%\section{Topología} 
+
+\section{Introducción}
+
+La noción de conjunto, si bien nos dice que ciertos objetos  --los elementos
+que lo conforman--
+tienen algo en común entre sí, no nos da ninguna idea de la
+{\it cercanía } de entre estos elementos, mientras que
+por otro lado si consideramos por ejemplo los números reales esta
+noción está presente. Sabemos por ejemplo que el número 2 está
+mucho más cercano al 1 que lo que lo está el 423. El concepto de una
+topología en un conjunto que definiremos a continuación trata de captar
+con precisión esta noción de cercanía la cual, como veremos admite
+muchas gradaciones.
+
+
+\defi: Un {\bf espacio topológico} consiste en un par $(X, \cT)$, donde $X$
+es un conjunto y $\cT$ es una colección de subconjuntos de $X$ satisfaciendo
+las siguientes condiciones:
+
+\begin{enumerate}
+\item Los subconjuntos $\emptyset$ y $X$ de $X$ están en \cT.
+\item Sea $O_{\lambda}$, $\lambda \in I$, 
+una familia monoparamétrica de subconjuntos
+de $X$ en \cT, luego $\bigcup_I O_{\lambda}$ está también en \cT.
+\item Si $O$ y $O'$ están en \cT, también lo está $O \cap O'$.
+
+\end{enumerate}
+
+Los elementos de \cT, subconjuntos de $X$, son llamados los {\bf subconjuntos
+abiertos} de $X$, el conjunto \cT en sí es llamado una {\bf
+topología} de $X$. La condición 2) nos dice que infinitas uniones de
+elementos de \cT también están en \cT, mientras que la condición 3)
+nos dice que en general solo finitas intersecciones siguen estando en
+\cT. De los ejemplos siguientes se desprende el porqué de esta
+asimetría, ellos también nos ilustrarán de cómo dar una topología
+es esencialmente dar una noción de cercanía entre los puntos del
+conjunto en cuestión.
+
+\ejem: a) Sea $\cT = \{\emptyset, X\}$, es decir que los únicos subconjuntos
+abiertos
+de $X$ son el subconjunto vacío y el subconjunto $X$. Es claro que
+esta colección de subconjuntos es una topología, ya que satisface
+las tres condiciones requeridas, a esta topología se la denomina 
+{\bf indis\-creta}. Podemos decir que en esta topología los puntos de $X$
+están arbitrariamente cerca entre sí, ya que si un abierto contiene
+a uno de ellos los contiene a todos.
+
+\ejem: b) Sea \cT = \cP($X$), la colección de todos los subconjuntos de $X$,
+claramente esta colección también satisface las condiciones arriba
+mencionadas y por lo tanto también es una topología de $X$, la llamada
+{\bf discreta}. Podemos decir que en ésta todos los puntos están 
+arbitrariamente separados entre sí ya que por ejemplo, dado cualquier 
+punto de $X$ existe un abierto que separa a éste de todos los demás,
+el que consiste de solo el punto en cuestión.
+
+\ejem: c) Sea $X$ el conjunto de los números reales, de ahora en más,
+\re, y sea $\cT = \{O |\; si \;r \in O, \exists \eps >0 \; tal \; que
+\;si \; |r - r'| < \eps, r' \in O\}$, es decir la colección de
+abiertos en el sentido usual. Veamos que esta colección satisface
+las condiciones para ser una topología.
+Claramente $\emptyset \in \cT$, (ya que no tiene
+ningún $r$), lo mismo que \re, (ya que contiene a todos los $r'$), y
+así condición 1) es satisfecha. Veamos la segunda, sea $r \in
+\bigcup_I O_{\lambda}$ luego $r \in O_{\lambda}$ para algún
+$\lambda$ y por lo tanto existirá $\eps >0 $ tal que todo $r'$ con
+$|r-r'| < \eps $ está también en $O_{\lambda}$, y por lo tanto en 
+$\bigcup_I O_{\lambda}$. 
+Veamos finalmente la tercera, sea $r \in O \cap O'$ luego $r
+\in O$ y por lo tanto existirá $\eps > 0$ tal que todo $r'$ con
+$|r-r'| < \eps $ estará en $O$, como $r$ también está en $O'$ existirá
+$\eps'> 0$ tal que todo $r'$ con $|r-r'| < \eps'$ estará en $O'$.
+Sea $\eps'' = min\{\eps, \eps' \}$ luego todo $r'$ con $|r-r'| < \eps''$
+estará en $O$ y en $O'$ y por lo tanto en $O \cap O'$, con lo que
+concluimos que este último conjunto también está en \cT.
+$\re$ con esta topología es llamada la {\bf línea real}. 
+
+\ejer: Encuentre usando el ejemplo anterior una intersección infinita de 
+abiertos que no es abierta.
+
+\ejem: d) Sea $X = \re \times \re \equiv \re^2$, es decir el producto 
+cartesiano de \re consigo mismo 
+--el conjunto de todos los pares $(x,y)$, con $x,y \in \re$-- 
+y sea $\cT = \{O |\; si \; (x,y) \in O, \exists \eps >0 \; tal \; que
+\;si \; |x - x'|+|y-y'| < \eps, (x',y') \in O\}$.
+Del ejemplo anterior se puede ver que este también es un espacio topológico
+y que esta es la topología que usualmente usamos en $\re^2$
+
+
+\defi: Un {\bf espacio  métrico}, $(X,d)$ es un par consistente en un 
+conjunto $X$ y un mapa $d: X \times X \longrightarrow \re$, llamado usualmente distancia,  satisfaciendo
+las siguientes condiciones:
+
+\begin{enumerate}
+\item $d(x,x') \geq 0$, $= 0 \Rightarrow x = x'$.
+\item $d(x,x')=d(x',x)$.
+\item $d(x,x') +d(x',x'') \geq d(x,x'')$.
+\end{enumerate}
+
+\ejer: Pruebe que este espacio posee una topología {\it inducida} por su 
+métrica en forma similar a $\re$ en el ejemplo anterior.
+
+\ejer: Vea que $d(x,y)=1$ si $x\neq y$, es una distancia. ¿Qué topología nos introduce dicha distancia?
+
+Claramente una métrica nos da una noción de cercanía entre
+puntos, ya que nos da un valor numérico de la distancia entre sí
+de estos. Una topología, al no darnos en general ningún número nos
+da una noción de cercanía mucho más vaga, pero de todos modos en general
+interesante.
+
+\subsection{Terminología}
+
+Damos a continuación un resumen de la terminología usual en esta
+área, la misma es una generalización directa de la usada comúnmente.
+
+\defi: Llamaremos el {\bf complemento}, $O^c$, del subconjunto $O$ de $X$ al
+subconjunto de todos los elementos de $X$ que no están en $O$.
+
+\defi: Diremos que un subconjunto $O$ de $X$ es {\bf cerrado} si su complemento
+$O^c$ es abierto.
+
+\defi: Un subconjunto $N$ de $X$ es llamado un {\bf entorno de $x \in X$} si
+existe un abierto  $O_x$, con $x \in O_x$, contenido en $N$.
+
+\defi: Llamaremos el {\bf interior} de $A \in X$ al subconjunto $Int(A)$ de $X$
+formado por la unión de todos los abiertos contenidos en $A$.
+
+\defi: Llamaremos la {\bf clausura} de $A \in X$ al subconjunto $Cl(A)$ de
+$X$ formado por la intersección de todos los cerrados conteniendo a $A$.
+
+\defi: Llamaremos la {\bf frontera} de $A \in X$ al subconjunto $\partial A$
+de $X$ formado por $Cl(A) - Int(A) \equiv Int(A)^c \cap Cl(A)$.
+ 
+\ejer: Sea $(X,d)$ un espacio vectorial métrico, pruebe que: \\
+a) $C^1_x = \{x'| d(x,x') \leq 1 \}$ es cerrado y es un entorno de
+$x$. \\
+b) $N^{\eps}_x =\{x' | d(x,x') < \eps \}$, $\eps >0$  es también un entorno
+de $x$. \\
+c) $Int(N^{\eps}_x) = N^{\eps}_x$ \\
+d) $Cl(N^{\eps}_x) = \{x' | d(x,x') \leq \eps\} $\\
+e) $\partial N^{\eps}_x = \{x' | d(x,x') = \eps \}$.
+
+\ejer: Sea $(X,\cT)$ un espacio topológico y $A$ un subconjunto de $X$.
+Pruebe que: \\
+a) $A$ es abierto si y solo si cada $x \in A$ tiene un entorno 
+contenido en $A$. \\
+b) $A$ es cerrado si y solo si cada $x$ en $A^c$
+(o sea no perteneciente a $A$) tiene un entorno que no intersecta a $A$.
+
+\ejer: Sea $(X,\cT)$ un espacio topológico, sea $A \in X$ y $x \in X$.
+Pruebe que: \\
+a) $x \in Int(A)$ si y solo si $x$ tiene un entorno contenido en $A$.\\
+b) $x \in Cl(A)$ si y solo si todo entorno de $x$ intersecta $A$. \\
+c) $x \in \partial A$ si y solo si todo entorno de $x$ contiene puntos
+en $A$ y puntos en $A^c$.
+
+\section{Conceptos Derivados}
+
+En las secciones anteriores hemos visto que el concepto de una
+topología nos lleva a una generalización de una serie de
+ideas y conceptos derivados que manejábamos en $\re^n$, 
+las cuales no dependían de
+la métrica usual usada en estos espacios (la llamada Métrica Euclídea).
+Cabe entonces preguntarse si hay otras generalizaciones posibles todavía.
+En esta y en la próxima subsección estudiaremos dos más de ellas,
+éstas a su vez abren una vasta área de las matemáticas, que no
+trataremos en este curso pero que es muy importante en lo que
+respecta a la física moderna.
+
+La primera de ellas es la de continuidad.
+
+\subsection{Mapas continuos}
+
+\defi: Sea $\fip :X \rightarrow Y$ un mapa entre dos espacios topológicos.
+(Ver recuadro.)
+Diremos que el mapa $\fip$ es {\bf continuo } si dado cualquier
+abierto $O$ de $Y$, $\fip^{-1}(O)$ es un abierto de $X$.
+
+\espa %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\recu{\defi: Un {\bf mapa} $\phi:X \to Y$ 
+entre un conjunto $X$ y otro $Y$ es una asignación
+a {\it cada } elemento de $X$ de un elemento de $Y$.
+
+Esto generaliza el concepto de función usual, note que el mapa
+está definido para  todo elemento de $X$, mientras que en general su
+{\bf imagen}, es decir el conjunto $\phi(X) \equiv \{y \in Y \;| \;
+\exists x \in X\; y\; \phi(x) = y\}$, no es todo $Y$.
+En el caso que lo es, es decir que $\phi(X) = Y$, diremos que el mapa
+es {\bf suryectivo}. Por otro lado si se cumple que $\phi(x) =
+\phi(\ti x) \Longrightarrow x=\ti x$ diremos que el mapa es {\bf inyectivo}.
+En tal caso existe el mapa inverso a $\phi$ entre el conjunto
+$\phi(X) \subset Y$ y $X$. Si el mapa es además suryectivo entonces
+su inverso está definido en todo $Y$ y en este caso se denota por
+$\phi^{-1}:Y \to X$. Es de utilidad considerar también los conjuntos
+$\phi^{-1}(O) = \{ x \in X \;|\; \phi(x) \in O\}$  
+
+}   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\espa
+
+Claramente la definición anterior solo usa conceptos topológicos, 
+¿Tiene algo que ver con la usual {\sl épsilon-delta} usada en $\re^n$?
+La respuesta es afirmativa, como veremos más abajo en nuestro
+primer teorema, pero primero veamos algunos ejemplos.
+
+\ejem: a) Sean $X$ e $Y$ cualquiera y sea la topología de $X$ la discreta. 
+Luego cualquier mapa entre $X$ e $Y$ es continuo. En efecto, para cualquier
+$O$ abierto en $Y$, $\fip^{-1}(O)$ es algún subconjunto en $X$, pero
+en la topología discreta todo subconjunto de $X$ es un abierto.
+
+\ejem: b) Sean $X$ e $Y$ cualquiera y sea la topología de $Y$ la indiscreta.
+Luego también cualquier mapa entre $X$ e $Y$ es continuo. En efecto,
+los únicos abiertos en $Y$ son $\emptyset$ e $Y$, pero
+$\fip^{-1}(\emptyset) = \emptyset$, mientras que $\fip^{-1}(Y)=X$,
+pero cualquiera sea la topología de $X$, $\emptyset$ y $X$ son abiertos.
+
+De los ejemplos anteriores parecería ser que nuestra definición de
+continuidad no es muy interesante, eso es debido a que hemos tomado casos
+con las topologías {\sl extremas}, en las topologías intermedias es donde
+la definición se hace más útil.
+
+\ejem: c) Sean $X$ e $Y$ líneas reales, y sea $\fip(x) = 1$ si $x \geq
+0$, $\fip(x) = -1$ si $x < 0$. Este mapa no es continuo ya que, por ejemplo,
+$\fip^{-1}((1/2,3/2)) = \{x | x \geq 0\}$.
+
+
+\bteo
+El mapa $\fip:X \to Y$ es continuo si y solo si se cumple que:
+dado cualquier punto $x \in X$ y cualquier entorno $M$ de $\fip(x)$,
+existe un entorno $N$ de $x$ tal que $\fip(N) \subset M$.
+\eteo
+
+Esta segunda definición está mucho más cerca del concepto intuitivo
+de continuidad. 
+
+\pru: Supongamos $\fip$ continuo. Sea $x$ un punto de $X$, y $M$ un
+entorno de $\phi(x)$. Luego existe un abierto $O$ en $Y$ contenido en $M$
+y conteniendo a $\phi(x)$. Por continuidad $N = \fip^{-1}(O)$ es un abierto de
+$X$, y como contiene a $x$, un entorno de $x$. Se cumple entonces que
+$\fip(N) \su O \su M$.
+Supongamos ahora que dado cualquier punto $x \in X$ y cualquier entorno 
+$M$ de $\fip(x)$, existe un entorno $N$ de $x$ tal que $\fip(N) \subset M$.
+Sea entonces $O$ un abierto cualquiera de $Y$, debemos mostrar ahora
+que $\fip^{-1}(O)$ es un abierto de $X$. Sea $x$ un punto cualquiera
+de $\fip^{-1}(O)$, luego $\fii (x) \in O$ y por lo tanto $O$ es un
+entorno de $\fii (x)$, por lo tanto existe un entorno $N$ de $x$ tal que
+$\fip(N) \su O$ y por lo tanto $N \su \fip^{-1}(O)$. Pero entonces 
+$\fip^{-1}(O)$ contiene un entorno de cada uno de sus puntos y por lo
+tanto es abierto.
+
+
+
+\ejer: Sea $\phi : X \to Y$ y $\psi : Y \to Z$ mapas continuos,
+pruebe que $\psi \circ \phi : X \to Z$ también es continuo.
+(Composición de mapas preserva continuidad.)
+
+\espa    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\recu{{\bf \yaya{Topología Inducida}:}
+\espa
+
+Sea $\phi$ un mapa entre un conjunto $X$ y un espacio topológico $\{Y,\cT\}$.
+Este mapa proporciona natu\-ral\-mente, es decir sin la ayuda de ninguna otra estructura,
+una topología en $X$, denotada por $\cT_{\phi}$ y llamada la 
+{\bf topología inducida} por $\phi$ en $X$.
+El conjunto de sus abiertos está dado por: $\cT_{\phi} = \{O \subset X \;|\; O = \phi^{-1}(Q),
+\; Q \in \cT\}$, es decir $O$ es un abierto de $X$ si existe un abierto $Q$ de $Y$ tal que 
+$O = \phi^{-1}(Q)$.
+
+\ejer: Demuestre que esta construcción realmente define una topología.
+
+No todas las topologías así inducidas son de interés y en general dependen fuertemente del mapa, como lo demuestra el siguiente ejemplo:
+
+\ejem: 
+
+\noi a) Sea $X=Y=\re$ con la topología usual y sea $\phi: \re \to \re$ la función
+ $\phi(x) = 17$ $\forall \; x \in \re$. Esta función es claramente continua con respecto a las topologías de $X$ e $Y$, las de la línea real. Sin embargo $\cT_{\phi}$,
+la topología inducida en $X$ por este mapa es la indiscreta!
+
+\noi b) Sea $X$ e $Y$ como en a) y sea $\phi(x)$ un mapa invertible, luego $\cT_{\phi}$
+coincide con la topología de la línea real.
+
+} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Compacidad}
+
+La otra generalización corresponde al concepto de {\bf Compacidad}.
+Para ello introducimos la siguiente definición:
+Sea $X$ un conjunto, $A$ un subconjunto de éste y $\{ A_{\lambda} \}
+$ una colección de subconjuntos de $X$ parametrizados por una variable
+continua o discreta $\lambda$. Diremos que esta colección {\bf cubre}
+$A$ si $A \subset  \cup_{\lambda}A_{\lambda}$.
+
+\defi: Diremos que $A$ es {\bf compacto} si dada cualquier colección
+$\{A_{\lambda}\}$ de {\it abiertos} que lo cubren, existe un número
+{\it finito} de estos $A_{\lambda}$ que también lo cubren.
+
+\ejem: a) Sea $X$ un conjunto infinito de puntos con la topología discreta.
+Luego un cubrimiento de $X$ consiste, por ejemplo, en todos los
+puntos de éste, considerados cada uno de ellos como un subconjunto
+del mismo. Pero la topología de $X$ es la discreta, por lo tanto este es
+un cubrimiento  de abiertos y ningún número finito de ellos
+lo cubrirá, por lo tanto $X$ no es en este caso compacto.
+Claramente si $X$ tuviese solo un número finito de elementos
+siempre sería compacto, cualquiera fuese su topología.
+
+\ejem: b) Sea $X$ cualquier conjunto con la topología indiscreta.
+Luego $X$ es compacto. Los únicos abiertos de este conjunto son
+$\emptyset$ y $X$, por lo tanto cualquier cubrimiento tiene a $X$ como
+uno de sus miembros y éste solo alcanza para cubrir a $X$.
+
+Vemos así que esta propiedad depende fuertemente de la topología
+del conjunto. La relación con el concepto intuitivo de compacidad
+queda clara de los siguientes ejemplo y ejercicio.
+
+\ejem: c) Sea $X$ la línea real y $A = (0,1)$. Este subconjunto no es compacto
+pues por ejemplo el siguiente es un cubrimiento de abiertos de $A$ tal que
+cualquier subconjunto finito del mismo no lo es. $A_n = (\frac1n, \frac{n-1}n)$
+
+\ejer: Sea $X$ la línea real y $A = [0,1]$. Pruebe que $A$ es compacto.
+
+\bpru
+
+Sea $\{A_{\lambda}\}$ un cubrimiento de $[0,1]$ y $a \in [0,1]$ la menor cota superior 
+de los $x \in (0,1]$ tales que $[0,x]$ está cubierto por un subcubrimiento finito. 
+$a$ existe pues $0$ tiene un $A$ que lo cubre. Sea $A_{\lambda_0}$ un elemento del cubrimiento
+tal que $a \in A_{\lambda_0}$. Luego existe $b < a$ tal que $b\in A_{\lambda_0}$ y $b$ ya está 
+cubierto por un subcubrimiento finito. Tenemos así que $a$ está en un subcubrimiento finito y por lo tanto,
+si $a \neq 1$ también algunos elementos mayores al mismo. Lo que constituiría una contradicción. 
+\epru
+
+Veamos ahora la relación entre los dos conceptos derivados del
+de Topología, es decir el de la continuidad de mapas entre espacios
+topológicos y el de compacidad. El hecho de que un mapa entre
+espacios topológicos sea continuo implica que este mapa es especial,
+en el sentido de que {\it tiene o lleva información sobre las respectivas
+topologías y preserva las propiedades topológicas de los conjuntos
+que asocia}. Esto se ve en la siguiente propiedad, la cual --como se
+desprende del ejemplo que sigue-- es muy importante.
+
+\bteo
+Sean $X$ e $Y$ dos espacios topológicos y $\phi$ un mapa continuo
+entre ellos. Luego si $A$ es un subconjunto compacto de $X$, 
+$\phi(A)$ es un subconjunto compacto de $Y$.
+\eteo
+
+\pru:
+Sea $O_{\lambda}$ una colección de abiertos en $Y$ que cubren a $\phi(A)$.
+Luego la colección $\phi^{-1}(O_{\lambda})$ cubre a $A$, pero $A$ es
+compacto y por lo tanto habrá una subcolección finita 
+$\phi^{-1}O_{\ti \lambda}$
+de la anterior que también lo cubre. Por lo tanto la subcolección
+finita $O_{\ti \lambda}$ cubrirá también a $\phi(A)$. Como esto es
+cierto para cualquier colección de abiertos cubriendo a $\phi(A)$
+concluimos que \'este es compacto.
+
+\ejem: Sea $A$ compacto y sea $\phi:A \to \re$ continuo, es decir un mapa 
+continuo entre $A$ y la línea real. $\phi(A)$ es entonces un conjunto compacto
+de la línea real y por lo tanto un conjunto cerrado y acotado, pero
+entonces este conjunto tendrá un máximo y un mínimo, es decir el
+mapa $\phi$ alcanza su máximo y mínimo en $A$.
+
+
+Finalmente otro teorema de fundamental importancia acerca de los conjuntos compactos,
+el cual muestra que éstos tienen otra propiedad que los hace
+muy interesantes. Para ello introducimos las siguientes definiciones,
+las cuales también solo en conceptos topológicos.
+Una {\bf sucesión} o {\bf secuencia} en un conjunto $X$ 
+$\{x_n\} = \{x_1, x_2, ...\}$, con $x_n \in X$, es un mapa
+de los números enteros en este conjunto.
+Dada una sucesión $\{x_n\}$ en un espacio topológico $X$, diremos que 
+$x \in X$ es un {\bf punto de convergencia o límite} de esta sucesión si dado
+cualquier abierto $O$ de $X$ conteniendo a $x$ existe un número $N$
+tal que para todo $n > N$ $x_n \in O$. Diremos que 
+$x \in X$ es un {\bf punto de acumulación} de esta sucesión si dado 
+cualquier abierto $O$ de $X$ conteniendo a $x$, infinitos elementos de la
+sucesión también pertenecen a $O$. 
+
+\espa
+
+\ejer: Encuentre un ejemplo de una sucesión en algún espacio
+topológico con diferentes puntos límites. 
+
+\espa
+%\newpage
+
+\bteo
+Sea $A$ compacto. Luego toda sucesión en $A$ tiene un punto de acumulación.
+\eteo
+
+\espa
+
+\pru:
+Supongamos --en contradicción con la afirmación del teorema-- que
+existe una sucesión $\{x_n\}$ sin ningún punto de acumulación.
+Es decir, dado cualquier punto $x$ de $A$ existe un entorno $O_x$
+conteniéndolo y un número $N_x$ tal que si $n>N_x$ luego $x_n \notin
+O_x$. Como esto es válido para cualquier $x$ en $A$, la colección de
+conjuntos $\{ O_x | x \in A \}$ cubre $A$, pero $A$ es compacto y por
+lo tanto existirá una subcolección finita de éstos que también lo cubre.
+Sea $N$ el máximo entre los $N_x$ de esta colección finita. Pero entonces
+$x_n \notin A$ para todo $n > N$ lo que es absurdo.  
+
+\ejer: Pruebe que los conjuntos compactos en la línea real son los
+cerrados y acotados.
+
+Nos podemos hacer ahora la pregunta inversa: ¿Si $A \subset X$ es
+tal que toda sucesión tiene puntos de acumulación, es cierto
+entonces que $A$ es compacto? Una respuesta afirmativa nos daría
+una caracterización alternativa de la compacidad, y ésta es
+afirmativa para el caso de la línea real. En general la respuesta es
+negativa: hay topologías en las cuales toda sucesión en un
+conjunto tiene puntos de acumulación en él, pero este no es
+compacto. Sin embargo todas las topologías que nosotros veremos
+son {\bf numerables de segunda especie} [Ver recuadro] y en éstas la
+respuesta es afirmativa.
+
+En la línea real es cierto que si $x \in \re $ es un punto de
+acumulación de una sucesión $\{x_n\}$ entonces existe una {\bf
+subsucesión}, $\{\tilde{x}_n\}$, --es decir una restricción del
+mapa definiendo la sucesión a un número infinito de números
+naturales--, que tendrá a $x$ como punto límite. Esto tampoco
+es cierto en la generalidad de los espacios topológicos, pero sí lo
+es si consideramos solo aquellos que son {\bf numerables de primera
+especie} [Ver recuadro]. Todos los espacios que veremos en este
+curso lo son.
+
+\espa 
+\vfill   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\recu{
+{\bf *\yaya{Numerabilidad de espacios topológicos.}}
+\espa
+
+\defi: Diremos que un espacio topológico $\{X,\cT\}$ es {numerable de primera especie}
+si para cada $p \in X$ existe una colección contable de abiertos $\{O_n\}$ tal que todo abierto conteniendo a $p$ contiene también al menos uno de estos $O_n$.
+
+\espa
+
+\defi: Diremos que un espacio topológico $\{X,\cT\}$ es {numerable de segunda especie}
+si hay una colección numerable de abiertos tal que cualquier abierto de $X$ puede ser expresado 
+como una unión de conjuntos de esta colección.
+
+\espa
+\ejem:
+
+\noi a) $X$ con la topología indiscreta es numerable de primera especie.
+
+\noi b) $X$ con la topología discreta es numerable de primera especie. Y de segunda especie si y solo si sus elementos son numerables.
+
+\espa
+\ejer: Demostrar que la línea real es numerable de primera y segunda especie. Ayuda: Para el
+primer caso use los abiertos $O_n = (p - \frac1n, p + \frac1n)$ y para el segundo 
+$O_{pqn} = (\frac{p}{q} - \frac1n, \frac{p}{q} + \frac1n)$
+
+}  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\espa
+
+\recu{
+{\bf *\yaya{Separabilidad de espacios topológicos.}}
+\espa
+
+\defi: Un espacio topológico $X$ es Hausdorff si dados cualquier par de puntos de $X$, $x$ e $y$,  luego existen
+entornos $O_x$ y $O_y$ tales que $O_x \cap O_y=\emptyset$.
+
+\ejem:
+
+\noi a) $X$ con la topología indiscreta es Hausdorff.
+
+\noi b) $X$ con la topología discreta no es Hausdorff.
+
+\ejer: Encontrar una topología tal que los enteros sean Hausdorff y compactos.
+
+\ejer: Pruebe que si un espacio es Hausdorff entonces si una sucesión tiene un punto límite este es único.
+
+\ejer: Sea $X$ compacto, $Y$ Hausdorff y $\phi: X \to Y$ continuo. Pruebe que las imágenes de conjuntos cerrados son cerradas.
+
+}
+
+\recubib{
+Este capítulo es esencialmente un condensado de los capítulos \textbf{26,27,28,29} y \textbf{30} de \cite{Geroch}, ver también \cite{Kelley}, \cite{Wald} y \cite{Isham}.
+La topología es una de las más apasionantes ramas de las matemáticas, ¡si profundiza quedará atrapado! De particular inter\'es en física en la noción de Homotopía~\index{Homotopía} un buen lugar para entender estas ideas es el capítulo \textbf{34} de \cite{Geroch}.       }
+
+\vfill
+%\end{document}
+%\end
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End: 

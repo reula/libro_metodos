@@ -1,0 +1,591 @@
+This is pdfTeX, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2008.8.1)  17 APR 2009 08:21
+entering extended mode
+**libro_rm.tex
+(./libro_rm.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, basque, bulgarian, coptic, welsh, czech, slovak, german, ngerman, d
+anish, esperanto, spanish, catalan, galician, estonian, finnish, french, greek,
+ monogreek, ancientgreek, croatian, hungarian, interlingua, ibycus, indonesian,
+ icelandic, italian, latin, mongolian, dutch, norsk, polish, portuguese, romani
+an, russian, slovenian, uppersorbian, serbian, swedish, turkish, ukenglish, ukr
+ainian, loaded.
+(./book.cls
+Document Class: book 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/bk10.clo
+File: bk10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/generic/babel/babel.sty
+Package: babel 2005/11/23 v3.8h The Babel package
+
+(/usr/share/texmf/tex/generic/babel/spanish.ldf
+Language: spanish.ldf 2005/03/31 v4.2b Spanish support from the babel system
+
+(/usr/share/texmf/tex/generic/babel/babel.def
+File: babel.def 2005/11/23 v3.8h Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+\es@quottoks=\toks14
+\es@quotdepth=\count89
+Package babel Info: Making . an active character on input line 509.
+Package babel Info: Making " an active character on input line 540.
+Package babel Info: Making < an active character on input line 641.
+Package babel Info: Making > an active character on input line 642.
+))
+(/usr/share/texmf/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/usr/share/texmf/tex/latex/base/inputenc.sty
+Package: inputenc 2006/05/05 v1.1b Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+(/usr/share/texmf/tex/latex/base/latin1.def
+File: latin1.def 2006/05/05 v1.1b Input encoding file
+))
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/lib/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/lib/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+(/usr/share/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)) (./format.tex)
+(./libro_rm.aux (./extdef_libro.aux) (./Chapters/title.aux)
+(./Chapters/chap0.aux) (./Chapters/chap1.aux) (./Chapters/chap2.aux)
+(./Chapters/chap3.aux) (./Chapters/chap4.aux) (./Chapters/chap5.aux)
+(./Chapters/chap6.aux) (./Chapters/chap7.aux) (./Chapters/chap8.aux)
+(./Chapters/chap9.aux) (./Chapters/chap10.aux) (./Chapters/chap11.aux)
+(./Chapters/chap12.aux) (./Chapters/chap13.aux) (./Chapters/chap14.aux)
+(./Chapters/bib.aux))
+\openout1 = `libro_rm.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+\openout2 = `extdef_libro.aux'.
+
+ (./extdef_libro.tex
+\c@teo=\count90
+\c@cor=\count91
+\c@lem=\count92
+\c@pro=\count93
+)
+\openout2 = `Chapters/title.aux'.
+
+ (./Chapters/title.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 9.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 9.
+
+(/usr/share/texmf/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+) [1
+
+
+
+
+
+])
+\openout2 = `Chapters/chap0.aux'.
+
+ (./Chapters/chap0.tex [2
+
+
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 10.
+
+[3] [4
+
+] [5]) [6] (./libro_rm.toc [7
+
+
+] [8])
+\tf@toc=\write3
+\openout3 = `libro_rm.toc'.
+
+ [9] [10
+
+] (./libro_rm.lof [11])
+\tf@lof=\write4
+\openout4 = `libro_rm.lof'.
+
+
+[12]
+\openout2 = `Chapters/chap1.aux'.
+
+ (./Chapters/chap1.tex
+\hfil Cap\'{\i }tulo 1.
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 5.
+
+[13
+
+
+] [14]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 206.
+ [15]
+Underfull \vbox (badness 1019) has occurred while \output is active []
+
+ [16]
+[17] [18]) [19]
+\openout2 = `Chapters/chap2.aux'.
+
+ (./Chapters/chap2.tex [20
+
+
+
+]
+\hfil Cap\'{\i }tulo 2.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 15.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 15.
+[21]
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 174.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 174.
+ [22] [23] [24] (./Figure/m2_1.pstex_t
+File: Figure/m2_1.pstex Graphic file (type eps)
+ <Figure/m2_1.pstex>) [25] [26]
+[27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]
+(./Figure/m2_2.pstex_t
+File: Figure/m2_2.pstex Graphic file (type eps)
+ <Figure/m2_2.pstex>) [39] (./Figure/m2_3.pstex_t
+File: Figure/m2_3.pstex Graphic file (type eps)
+
+<Figure/m2_3.pstex>) [40] (./Figure/m2_4.pstex_t
+File: Figure/m2_4.pstex Graphic file (type eps)
+ <Figure/m2_4.pstex>) [41]
+[42] [43] [44]) [45]
+\openout2 = `Chapters/chap3.aux'.
+
+ (./Chapters/chap3.tex [46
+
+
+
+]
+\hfil Cap\'{\i }tulo 3.
+(./Figure/m3_1_b.pstex_t
+File: Figure/m3_1_b.pstex Graphic file (type eps)
+ <Figure/m3_1_b.pstex>) [47] (./Figure/m3_2.pstex_t
+File: Figure/m3_2.pstex Graphic file (type eps)
+
+<Figure/m3_2.pstex>) (./Figure/m3_3.pstex_t
+File: Figure/m3_3.pstex Graphic file (type eps)
+ <Figure/m3_3.pstex>) [48]
+(./Figure/m3_4.pstex_t
+File: Figure/m3_4.pstex Graphic file (type eps)
+ <Figure/m3_4.pstex>) [49] (./Figure/m3_5.pstex_t
+File: Figure/m3_5.pstex Graphic file (type eps)
+
+<Figure/m3_5.pstex>) (./Figure/m3_6.pstex_t
+File: Figure/m3_6.pstex Graphic file (type eps)
+ <Figure/m3_6.pstex>) [50]
+(./Figure/m3_7.pstex_t
+File: Figure/m3_7.pstex Graphic file (type eps)
+ <Figure/m3_7.pstex>) [51] [52] (./Figure/m3_8.pstex_t
+File: Figure/m3_8.pstex Graphic file (type eps)
+
+<Figure/m3_8.pstex>) [53] [54] [55] [56] [57] [58] [59] [60]) [61]
+\openout2 = `Chapters/chap4.aux'.
+
+
+(./Chapters/chap4.tex [62
+
+
+
+]
+\hfil Cap\'{\i }tulo 4.
+[63] (./Figure/m4_1.pstex_t
+File: Figure/m4_1.pstex Graphic file (type eps)
+ <Figure/m4_1.pstex>) [64] [65]
+(./Figure/m4_2_b.pstex_t
+File: Figure/m4_2_b.pstex Graphic file (type eps)
+ <Figure/m4_2_b.pstex>) (./Figure/m4_2.pstex_t
+File: Figure/m4_2.pstex Graphic file (type eps)
+
+<Figure/m4_2.pstex>) [66] [67] (./Figure/m4_3.pstex_t
+File: Figure/m4_3.pstex Graphic file (type eps)
+ <Figure/m4_3.pstex>)
+[68] (./Figure/m4_4.pstex_t
+File: Figure/m4_4.pstex Graphic file (type eps)
+ <Figure/m4_4.pstex>
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9.79996> on input line 14.
+) (./Figure/m4_5.pstex_t
+File: Figure/m4_5.pstex Graphic file (type eps)
+
+<Figure/m4_5.pstex>) [69] [70] [71] [72] (./Figure/m4_6.pstex_t
+File: Figure/m4_6.pstex Graphic file (type eps)
+
+<Figure/m4_6.pstex>) (./Figure/m4_7.pstex_t
+File: Figure/m4_7.pstex Graphic file (type eps)
+ <Figure/m4_7.pstex>) [73] [74]
+[75] [76] [77] [78]) [79]
+\openout2 = `Chapters/chap5.aux'.
+
+ (./Chapters/chap5.tex [80
+
+
+
+]
+\hfil Cap\'{\i }tulo 5.
+[81] [82] [83] [84] [85] [86] [87] [88] [89]) [90]
+\openout2 = `Chapters/chap6.aux'.
+
+ (./Chapters/chap6.tex
+\hfil Cap\'{\i }tulo 6.
+(./Figure/m6_1.pstex_t
+File: Figure/m6_1.pstex Graphic file (type eps)
+ <Figure/m6_1.pstex>) [91
+
+
+
+] [92] (./Figure/m6_2.pstex_t
+File: Figure/m6_2.pstex Graphic file (type eps)
+
+<Figure/m6_2.pstex>) [93] (./Figure/m6_3.pstex_t
+File: Figure/m6_3.pstex Graphic file (type eps)
+ <Figure/m6_3.pstex>) [94]
+[95] [96] [97]) [98]
+\openout2 = `Chapters/chap7.aux'.
+
+ (./Chapters/chap7.tex
+\hfil Cap\'{\i }tulo 7.
+[99
+
+
+
+] [100] [101] (./Figure/m7_1.pstex_t
+File: Figure/m7_1.pstex Graphic file (type eps)
+ <Figure/m7_1.pstex>) [102]) [103]
+\openout2 = `Chapters/chap8.aux'.
+
+
+(./Chapters/chap8.tex [104
+
+
+
+]
+\hfil Cap\'{\i }tulo 8.
+[105] (./Figure/m8_1.pstex_t
+File: Figure/m8_1.pstex Graphic file (type eps)
+ <Figure/m8_1.pstex>) [106] (./Figure/m8_2.pstex_t
+File: Figure/m8_2.pstex Graphic file (type eps)
+
+<Figure/m8_2.pstex>) [107] (./Figure/m8_3.pstex_t
+File: Figure/m8_3.pstex Graphic file (type eps)
+ <Figure/m8_3.pstex>) [108]
+[109] [110] [111] [112]
+Overfull \hbox (2.8613pt too wide) in paragraph at lines 610--613
+[]\OT1/cmr/m/n/10 Sea $\OMS/cmsy/m/n/10 f[]g$ \OT1/cmr/m/n/10 la su-ce-si^^Son 
+(en $\OML/cmm/m/it/10 i$\OT1/cmr/m/n/10 ) de es-tos n^^Sume-ros, pro-ba-re-mos 
+aho-ra que $\OMS/cmsy/m/n/10 f[]g 2 \OML/cmm/m/it/10 l[]$ \OT1/cmr/m/n/10 y que
+ $\OMS/cmsy/m/n/10 ff\OML/cmm/m/it/10 x[]\OMS/cmsy/m/n/10 g[]g [][]!
+ []
+
+[113] (./Figure/m8_4.pstex_t
+File: Figure/m8_4.pstex Graphic file (type eps)
+ <Figure/m8_4.pstex>) [114] (./Figure/m8_5.pstex_t
+File: Figure/m8_5.pstex Graphic file (type eps)
+
+<Figure/m8_5.pstex>) [115] [116] [117] [118] [119] [120] [121] [122] [123]
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 1548.
+
+[124] [125] [126]) [127]
+\openout2 = `Chapters/chap9.aux'.
+
+ (./Chapters/chap9.tex [128
+
+
+
+]
+\hfil Cap\'{\i }tulo 9.
+[129] [130] [131] [132] [133] [134] [135]) [136]
+\openout2 = `Chapters/chap10.aux'.
+
+ (./Chapters/chap10.tex
+\hfil Cap\'{\i }tulo 10.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 50.
+(/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
+
+Overfull \hbox (2.02675pt too wide) in paragraph at lines 53--61
+[]\OT1/cmr/m/n/10 Note que en es-ta apli-ca-ci^^Son no he-mos usa-do di-rec-ta-
+men-te el he-cho de que las fun-cio-nes $\OMS/cmsy/m/n/10 f[]\OML/cmm/m/it/10 e
+[]\OMS/cmsy/m/n/10 g$
+ []
+
+[137
+
+
+
+] [138]
+Overfull \hbox (8.58661pt too wide) in paragraph at lines 221--229
+$[]$\OT1/cmr/m/n/10 : $\OML/cmm/m/it/10 I[]$ \OT1/cmr/m/n/10 de-no-tar^^Sa el c
+on-jun-to de $\OML/cmm/m/it/10 n$\OT1/cmr/m/n/10 -tuplas de en-te-ros no-negati
+vos $\OML/cmm/m/it/10  \OT1/cmr/m/n/10 =\OML/cmm/m/it/10 < []; [] ; [] >$
+ []
+
+[139] [140] [141] [142]
+Overfull \hbox (0.81354pt too wide) in paragraph at lines 576--578
+[]\OT1/cmr/m/n/10 Sea $[](\OML/cmm/m/it/10 ^^U[]; x[]\OT1/cmr/m/n/10 )$ la tran
+s-for-ma-da de Fou-rier de $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
+ x\OT1/cmr/m/n/10 )$ con res-pec-to a las coor-de-na-das $(\OML/cmm/m/it/10 x[]
+; x[]; [] ; x[]\OT1/cmr/m/n/10 )$
+ []
+
+[143] [144]) [145]
+\openout2 = `Chapters/chap11.aux'.
+
+ (./Chapters/chap11.tex [146
+
+
+
+]
+\hfil Cap\'{\i }tulo 11.
+[147]
+Overfull \hbox (24.15652pt too wide) in paragraph at lines 92--95
+\OT1/cmr/m/n/10 h) La ecua-ci^^Son de Navier-Stokes pa-ra un flui-do vis-co-so 
+e in-com-pre-si-ble (ejem-plo agua) en $[][]$(Eucl^^S^^Pdeo)$\OMS/cmsy/m/n/10 ^
+^B[]$ 
+ []
+
+[148] (./Figure/m11_1.pstex_t
+File: Figure/m11_1.pstex Graphic file (type eps)
+ <Figure/m11_1.pstex>) [149]
+(./Figure/m11_2.pstex_t
+File: Figure/m11_2.pstex Graphic file (type eps)
+ <Figure/m11_2.pstex>) (./Figure/m11_3.pstex_t
+File: Figure/m11_3.pstex Graphic file (type eps)
+
+<Figure/m11_3.pstex>) [150] [151] [152] (./Figure/m11_4.pstex_t
+File: Figure/m11_4.pstex Graphic file (type eps)
+
+<Figure/m11_4.pstex>) [153] [154]
+Overfull \hbox (1.24908pt too wide) in paragraph at lines 613--615
+$[]$\OT1/cmr/m/n/10 : Con-si-de-re en $[][]$ la m^^Setri-ca $\OML/cmm/m/it/10 d
+s[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 dt\
+OT1/cmr/m/n/10 )[] + (\OML/cmm/m/it/10 dx\OT1/cmr/m/n/10 )[]$ (en to-do pun-to)
+ y la ecua-ci^^Son $\OML/cmm/m/it/10 g[]\OMS/cmsy/m/n/10 r[]r[]\OML/cmm/m/it/10
+ u \OT1/cmr/m/n/10 =
+ []
+
+) [155]
+\openout2 = `Chapters/chap12.aux'.
+
+ (./Chapters/chap12.tex [156
+
+
+
+]
+\hfil Cap\'{\i }tulo 12.
+(./Figure/m12_1.pstex_t
+File: Figure/m12_1.pstex Graphic file (type eps)
+ <Figure/m12_1.pstex>) [157] (./Figure/m12_2.pstex_t
+File: Figure/m12_2.pstex Graphic file (type eps)
+
+<Figure/m12_2.pstex>) [158] [159] [160] [161] [162] [163] [164] [165]) [166]
+\openout2 = `Chapters/chap13.aux'.
+
+
+(./Chapters/chap13.tex
+\hfil Cap\'{\i }tulo 13.
+[167
+
+
+
+] (./Figure/m13_1.pstex_t
+File: Figure/m13_1.pstex Graphic file (type eps)
+ <Figure/m13_1.pstex>) [168]
+(./Figure/m13_2.pstex_t
+File: Figure/m13_2.pstex Graphic file (type eps)
+ <Figure/m13_2.pstex>) (./Figure/m13_3.pstex_t
+File: Figure/m13_3.pstex Graphic file (type eps)
+
+<Figure/m13_3.pstex>) [169] (./Figure/m13_4.pstex_t
+File: Figure/m13_4.pstex Graphic file (type eps)
+ <Figure/m13_4.pstex>)
+[170] [171] (./Figure/m13_5b.pstex_t
+File: Figure/m13_5b.pstex Graphic file (type eps)
+ <Figure/m13_5b.pstex>)
+(./Figure/m13_5.pstex_t
+File: Figure/m13_5.pstex Graphic file (type eps)
+ <Figure/m13_5.pstex>) [172] [173]
+(./Figure/m13_6c.pstex_t
+File: Figure/m13_6c.pstex Graphic file (type eps)
+ <Figure/m13_6c.pstex>) [174] (./Figure/m13_6b.pstex_t
+File: Figure/m13_6b.pstex Graphic file (type eps)
+
+<Figure/m13_6b.pstex>) [175] [176] (./Figure/m13_7b.pstex_t
+File: Figure/m13_7b.pstex Graphic file (type eps)
+
+<Figure/m13_7b.pstex>) [177] (./Figure/m13_8b.pstex_t
+File: Figure/m13_8b.pstex Graphic file (type eps)
+ <Figure/m13_8b.pstex>
+! Missing { inserted.
+<to be read again> 
+                   _
+l.20 }}}}
+         
+? s
+OK, entering \scrollmode...
+! Missing { inserted.
+<to be read again> 
+                   $
+l.20 }}}}
+         
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.20 }}}}
+         
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.20 }}}}
+         
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+) [178] [179]) [180]
+\openout2 = `Chapters/chap14.aux'.
+
+ (./Chapters/chap14.tex
+\hfil Cap\'{\i }tulo 14.
+(./Figure/m14_1.pstex_t
+File: Figure/m14_1.pstex Graphic file (type eps)
+ <Figure/m14_1.pstex>) [181
+
+
+
+]
+Overfull \hbox (15.46564pt too wide) in paragraph at lines 84--95
+[][] [] \OML/cmm/m/it/10 < \OMS/cmsy/m/n/10 1$\OT1/cmr/m/n/10 , ob-te-ne-mos, $
+\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t; x\OT1/cmr/m/n/10 ) = [][
+] []\OML/cmm/m/it/10 sen\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Ynx\OT1/cmr/m/n/10 
+)$. Pe-ro $\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t; \OT1/cmr/m/n/
+10 1\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 2) = [][] []$
+ []
+
+[182] (./Figure/m14_2.pstex_t
+File: Figure/m14_2.pstex Graphic file (type eps)
+ <Figure/m14_2.pstex>) [183]) [184]
+\openout2 = `Chapters/bib.aux'.
+
+
+(./Chapters/bib.tex) [185
+
+
+
+] (./libro_rm.aux (./extdef_libro.aux)
+(./Chapters/title.aux) (./Chapters/chap0.aux) (./Chapters/chap1.aux)
+(./Chapters/chap2.aux) (./Chapters/chap3.aux) (./Chapters/chap4.aux)
+(./Chapters/chap5.aux) (./Chapters/chap6.aux) (./Chapters/chap7.aux)
+(./Chapters/chap8.aux) (./Chapters/chap9.aux) (./Chapters/chap10.aux)
+(./Chapters/chap11.aux) (./Chapters/chap12.aux) (./Chapters/chap13.aux)
+(./Chapters/chap14.aux) (./Chapters/bib.aux))
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 1315 ({)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 2223 strings out of 94087
+ 27724 string characters out of 1167724
+ 86396 words of memory out of 3500000
+ 5217 multiletter control sequences out of 10000+50000
+ 18969 words of font info for 70 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 32i,15n,27p,858b,424s stack positions out of 5000i,500n,6000p,200000b,5000s
+
+Output written on libro_rm.dvi (185 pages, 920068 bytes).

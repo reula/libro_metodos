@@ -1,0 +1,99 @@
+\documentclass[spanish,UNC]{book}
+%\usepackage{babel,latexsym,html,graphics,pictex,epsfig}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{latexsym}
+%\usepackage{graphics,pictex,epsfig}
+\usepackage[latin1]{inputenc}
+%\documentstyle{libro}
+%\includeonly{chap11,chap13}
+%\usepackage{garamond}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PDFLaTeX  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! **********************
+% From the PDFTeX FAQ:
+% \newif\ifpdf
+% \ifx\pdfoutput\undefined
+%    \pdffalse           % not running PDFLaTeX
+% \else
+%    \pdfoutput=1
+%    \pdftrue            % running PDFLaTeX
+% \fi
+% 
+% \ifpdf
+    \pdfcompresslevel=9
+    \providecommand{\myinput}[1]{\input{#1.pdftex_t}}
+    \usepackage[pdftex]{graphicx}
+% \else
+%    \providecommand{\myinput}[1]{\input{#1.pstex_t}}
+%    \usepackage{graphicx}
+% \fi
+
+
+%\usepackage[T1]{fontenc}
+\usepackage[urw-garamond]{mathdesign}
+
+%\renewcommand{\rmdefault}{ugm}
+
+\input format_libro
+
+%\setcounter{chapter}{7}
+%\setcounter{section}{4}
+%\setcounter{subsection}{2}
+%\setcounter{page}{82}
+%\setcounter{equation}{88}
+%\setcounter{part}{1}
+
+\begin{document}
+%\input{extdef}
+\include{extdef_libro}
+
+%\garamond
+
+\include{Chapters/title}
+%\part{}
+
+\include{Chapters/chap0}
+
+\tableofcontents
+\listoffigures
+
+%\garamond
+
+\include{Chapters/chap01}
+\include{Chapters/chap1}
+\include{Chapters/chap2}
+\include{Chapters/chap3}
+\include{Chapters/chap4}
+\include{Chapters/chap5}
+\include{Chapters/chap6}
+\include{Chapters/chap7}
+\include{Chapters/chap8}
+\include{Chapters/chap9}
+\include{Chapters/chap10}
+\include{Chapters/chap11}
+\include{Chapters/chap12}
+\include{Chapters/chap13}
+\include{Chapters/chap14}
+\include{Chapters/bib}
+
+
+
+
+\newpage 
+\thispagestyle{empty}
+\phantom{X}
+\vfill
+\vspace{7cm}
+\vfill
+\begin{center}
+ Se termin\'o de imprimir \\
+ en mayo de 2009 \\
+CORDOBA -- ARGENTINA
+\end{center}
+\newpage 
+\pagestyle{plain}
+
+\end{document}
+\end

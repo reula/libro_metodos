@@ -1,0 +1,635 @@
+\chapter{Teoría de ecuaciones en derivadas parciales}
+\label{teoria_de_ecuaciones_en_derivadas_parciales}
+
+
+\section{Introducción}
+
+\noi
+\defi: 
+Una {\bf ecuación diferencial en derivadas parciales de
+orden $m$} en $M$ es una ecuación de la forma
+\beq
+F\lp p,u,\na_au,\na_a\na_bu,\ldots,\overbrace{\na_a\cdots\na_c}^{m\mbox{
+veces}}u\rp=0,
+\eeq
+donde $\na_a$ es alguna conexión en $M$.
+Más generalmente $u$ puede ser una tupla de campos tensoriales y $F$
+tener rango en alguna otra tupla de campos tensoriales.
+
+\espa
+\noi
+\yaya{Ejemplos}:
+\espa
+
+\noi
+a) La ecuación de Laplace en $\re^3$ con respecto a una métrica $g_{ab}$,
+\beq
+\Del u\equiv g^{ab}\na_a\na_b u=0
+\eeq
+Si $g_{ab}$ es la métrica Euclídea, luego en coordenadas cartesianas
+\beq
+\Del u=\lapl{u}.
+\eeq
+\espa
+
+\noi
+b) La ecuación de Poisson,
+\beq
+\Del u-\ro=0,
+\eeq
+donde $\ro$ es una función dada.
+\espa
+
+\noi
+c) La ecuación de onda en $\re^{n+1}$. Esta tiene la forma de la 
+ecuación de
+Laplace pero para una métrica de la forma $-(dx_0)^2+\dip
+\sum_{i=1}^n(dx^i)^2$. Por ejemplo en $\re^2$, $g_{ab}=-(dt)^2_{ab}
++(dx)^2_{ab}$,
+\beq
+g^{ab}\na_a\na_b u=-\dersp{u}{t}+\dersp{u}{x}.
+\eeq
+\espa
+
+\noi
+d) Las ecuaciones de Maxwell,
+\beq\barr{rcl}
+\na_aF^{ab}&=&j^b\\
+\na_{[a}F_{bc]}&=&0
+\earr
+\eeq
+donde $M$ es $\re^4$, la métrica (usada tanto para subir los índices de
+$F_{ab}$ como para definir $\na_c$) es la de Minkowski, $g_{ab}=-(dx^0)^2
++dx^1)^2+(dx^2)^2+(dx^3)^2$, $F_{ab}$ es un campo
+tensorial antisimétrico en $M$, y $y^b$ es un campo vectorial (la
+cuadricorriente) en $M$.
+\espa
+
+\noi
+e) Las ecuaciones de elasticidad en $\re^3$(Euclídeo)$\times\re$
+\beq
+\ro\dersp{u^a}{t}=\muu\,\Del u^a +(\lam+\muu)\,\na^a(\na_cu^c),
+\eeq
+donde $u^a$ es el vector desplazamiento (en $\re^3$), $\ro$ la densidad del medio
+elástico y $\lam$ y $\muu$  las constantes de Lamé del medio.
+
+\espa
+\noi
+f) La ecuación de conducción del calor en $\re^3$(Euclídeo)$\times\re$
+\beq
+\derp{u}{t}=k\,\Del u,\;\;\;\;\;\;\;\;\;k>0
+\eeq
+
+\espa
+\noi
+g) La ecuación de Schr\"odinger en $\re^3$(Euclídeo)$\times\re$,
+\beq
+i\hbar\derp{\psii}{t}=-\frac{\hbar^2}{2m}\Del\psii+V\,\psii,
+\eeq
+donde $\psii$ es una función compleja y $V$ un potencial.
+
+\espa
+\noi
+h) La ecuación de Navier-Stokes para un fluido viscoso e
+incompresible (ejemplo agua) en $\re^3$(Euclídeo)$\times\re$
+\beq
+\derp{u^a}{t}+u^b\na_bu^a+\frac1{\ro}\na^a p -\gamma\Del u^a=0
+\eeq
+\beq
+\na_au^a=0,
+\eeq
+donde $u^a$ es el vector velocidad del fluido, $p$ su presión, $\ro$ su
+densidad (constante) y $\gamma$ la viscosidad cinemática.
+
+\espa
+
+
+De los ejemplos citados, de los cuales solo el último no es lineal,
+vemos la tremenda importancia física que tiene tener una teoría
+general de estas ecuaciones y es así que ésta es una de las ramas
+más activas de la matemática. Por su complejidad, en el gran número
+de casos distintos que presenta, la teoría general dista mucho de
+estar completa, sin embargo hay casos o clases de ecuaciones donde
+esto se ha logrado.
+Uno de éstos es el caso de una única ecuación de primer orden, donde como
+veremos el problema se reduce al de las ecuaciones diferenciales ordinarias.
+
+Otro de estos casos es el de las ecuaciones
+lineales con coeficientes constantes (es decir para los cuales existe
+un sistema de coordenadas en el cual todos los coeficientes son
+constantes -ejemplo el Laplaciano para una métrica Euclídea).
+Esto se debe fundamentalmente al uso de transformadas como la de
+Fourier. Hago notar sin embargo que hay trabajos recientes mostrando
+nuevos resultados, aún en el caso del Laplaciano!  Si permitimos a
+los coeficientes variar el problema se complica, sin embargo ciertas
+subclases de éstos han sido estudiadas completamente. Si a esto le
+agregamos no-linealidad en una forma no demasiado drástica --lo que
+se conoce como ecuaciones cuasi-lineales-- el conocimiento se reduce
+bruscamente, aunque algunas subclases han sido doblegadas y algunas
+ecuaciones particulares completamente estudiadas.  El caso donde la
+no-linealidad es drástica no ha sido todavía atacado con
+éxito -de ninguna clase-. Por fortuna los problemas físicos
+que hasta el momento hemos podido modelar o describir por ecuaciones
+en derivadas parciales tienen ecuaciones a lo sumo del tipo
+cuasi-lineal.  En este curso veremos en detalle solo la teoría
+de algunas de las ecuaciones más simples [esencialmente las
+ecuaciones en los ejemplos a), b), c) y f)], siempre tratando de usar
+métodos que pueden ser aplicados a ecuaciones similares pero más
+complejas. Esto no solo se debe a la simplicidad de estas ecuaciones,
+lo que permite su conocimiento completo y detallado sino a que por un
+lado representan los \textit{``ejemplos canónicos"} de distintas clases de
+ecuaciones.  Las soluciones de las ecuaciones en cada una de estas
+clases se comportan en forma muy similar mientras que lo hacen  en
+forma radicalmente diferente a las soluciones a ecuaciones en las
+otras clases.  Por otro lado estas son las ecuaciones más usadas
+en física y aparecen en multitud de problemas diferentes,
+incluso como casos particulares de las ecuaciones en los ejemplos d),
+e), f) y g)!
+
+\section{La ecuación de primer orden}
+
+\noi
+Esta es una ecuación de la forma
+\beq
+F\lp p,u,\na_au\rp=0.
+\eeq
+
+\noi
+donde $u$ es una función en alguna variedad $M$.
+Esta ecuación puede ser atacada con mucho éxito y resulta en
+ecuaciones ordinarias, cuya teoría ya conocemos.
+Por simplicidad aquí consideraremos solo el caso cuasi-lineal y en 
+$\re^2$, es decir una ecuación de la forma,
+\beq
+a(x,y,u)\,u_x+b(x,y,u)\,u_y=c(x,y,u),
+\label{ot*}
+\eeq
+donde $u_x = \derp{u}{x}$ y $u_y=\derp{u}{y}.$
+
+Por motivos geométricos es útil representar las soluciones de esta
+ecuación en $\re^3$ o más precisamente en una región $\Omega$ de $\re^3$ donde 
+a, b y c estén definidos,
+eso es asociar una solución $u(x,y)$ de \ron{ot*} con la hiper-superficie 
+de $\re^3$ dada por $\tauu=z-u(x,y)=cte.$ 
+Estas hiper-superficies se denominan superficies
+integrales de la ecuación \ron{ot*}. El gradiente de $\tauu$ es en estas 
+coordenadas es
+$(\na_a\tauu) = (-u_x,-u_y,1)$, por lo que vemos que la ecuación \ron{ot*} 
+es simplemente la condición
+que $\tauu$ sea constante a lo largo del campo vectorial 
+$(l^a)=(a(x,y,z),\;b(x,y,z),\;c(x,y,z))$, 
+es decir $l^a\na_a\tauu=0$,
+lo que es equivalente a decir que $l^a$ es {\bf tangente} a las superficies
+integrales. Note que si $l^a\na_a\tauu=0$ luego $(fl^a)\na_a\tauu=0$ 
+o sea que lo que determina la ecuación
+\ron{ot*} no es $l^a$ sino su dirección. 
+Este campo de direcciones se llama de
+{\bf direcciones características}, y sus curvas integrales {\bf curvas
+características}.~\footnote{Recuerde que una curva integral es la 
+``imagen'' de una
+curva $\gamma(t)$(en este caso $=(x(t),y(t),z(t))$ solución de una EDO, 
+en este caso 
+\beq
+\derc{\gamma(t)}{t}=\der{t}\lp\barr{c} x\\ y\\ z\earr\rp=\lp\barr{c}a(x,y,z)\\
+b(x,y,z)\\c(x,y,z)\earr\rp.
+\eeq}
+La teoría de EDO nos dice entonces que por cada punto de $\Omega$ pasa una
+única curva característica. El conocimiento de estas curvas es
+fundamental ya que si formamos una superficie $S$ tomando la unión de
+ciertas curvas características luego claramente $S$ será una
+superficie integral de \ron{ot*}, pero por otro lado, dada una superficie
+integral $S$ y cualquier $p\in S$ la curva característica que pasa por $p$
+será tangente a $S$ en todo punto y por lo tanto será una
+subvariedad de $S$ con lo que se ve que $S$ estará formada por la
+unión de curvas características.
+
+\espa 
+%\fig{6cm}{Curvas Características.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m11_1}}
+    \caption{Curvas características.}
+    \label{fig:11_1}
+  \end{center}
+\end{figure}
+
+En particular note que si dos superficies integrales $S$, $S'$, es decir dos
+soluciones de \ron{ot*}, $u$ y $u'$, tienen un punto $p$ en común luego 
+tienen que
+tener toda una curva característica en común, ya que por $p$ solo
+pasa una de tales curvas y ésta no puede abandonar ninguna de las
+dos superficies.
+Por otro lado si $S$ y $S'$ se intersectan en una curva $\gamma$ ésta debe ser
+integral. Para ver esto tomemos un punto $p$ de $\gamma$ y consideremos
+$T_pS$ y $T_pS'$; como las superficies se intersectan en una curva estos dos
+sub-espacios de $T_p\re^3$ se intersectan en una línea, como ambos deben
+contener la dirección dada por $l^a$ ésta será la línea. Pero esto es
+cierto para todo punto de $\gamma$ y por lo tanto el vector tangente a $\gamma$
+en proporcional a $l^a$ y $\gamma$ es característica.
+
+\espa 
+%\fig{9cm}{Intersección de Soluciones.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{5cm}{!}{\myinput{Figure/m11_2}}
+    \caption{Intersección de soluciones.}
+    \label{fig:11_2}
+  \end{center}
+\end{figure}
+
+
+
+\subsection{El Problema de Cauchy}
+
+Se llama {\bf problema de Cauchy} de una ecuación al problema de encontrar
+ciertos datos tales que dando éstos exista una única solución de
+esta ecuación. Es decir el de encontrar un cierto conjunto 
+cuyos elementos son llamados datos y un mapa entre este espacio y el conjunto de 
+soluciones de la ecuación. 
+Por ejemplo en el caso de los EDO, el problema
+consiste en dada un campo vectorial suave $v^a$ en $M$ encontrar algún
+conjunto tal que a cada elemento de éste le corresponda una curva
+integral de $v^a$.
+Claramente podríamos tomar este conjunto a los puntos de $M$
+donde $v^a\neq0$ ya que por cada uno de estos puntos pasa una única
+curva integral. Claramente también podríamos tomar como conjunto de 
+datos --al menos localmente--
+una hiper-superficie $s$ de $M$ tal que en ninguno de sus puntos
+$v^a$ sea tangente a ésta. 
+En tal caso tenemos además la muy deseable
+propiedad de que cada punto de $S$ determina una única solución, es
+decir {\it no contamos cada solución más que una vez.}
+
+
+¿Cuáles serán estos datos en el caso de la ecuación \ron{ot*}?
+
+\noi Sea $\gamma(s)=(x_0(s),y_0(s),z_0(s))$, $s \in [0,1]$, una curva en $\re^3$.
+Buscaremos una solución tal que su superficie integral contenga a
+$\gamma$, es decir una $u(x,y)$ tal que se cumpla,\footnote{Solo interesa la 
+imagen de la curva y no su parametrización, por lo tanto tomaremos una 
+en que el rango de $S$ sea el intervalo $[0,1]$.}
+\beq
+z_0(s)=u(x_0(s),y_0(s))\;\;\;\;\;\;\;\forall\;s\in[0,1].
+\label{ot**}
+\eeq
+
+
+Consideraremos primero el caso en que $\gamma(s)$ no es una curva 
+característica.
+Tomando cada punto  $\gamma(s)$ como punto inicial para la ecuación 
+diferencial ordinaria que determina $l^a$ y resolviendo esta
+obtenemos para cada $s$ la curva 
+característica que pasa por $\gamma(s)$. (Ver figura.) 
+
+\espa 
+%\fig{6cm}{Construyendo la solución a partir de la curva $\gamma$.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{5cm}{!}{\myinput{Figure/m11_3}}
+    \caption{Construyendo la solución a partir de la curva $\gamma$.}
+    \label{fig:11_3}
+  \end{center}
+\end{figure}
+
+
+Obtenemos así un mapa $\gamma(s,t):I_s\times I_t\to\re^3$
+dado por,
+\beq
+\gamma(s,t)=(x(s,t),y(s,t),z(s,t))
+\eeq
+con $x(s,0)=x_0(s)$, $y(s,0)=y_0(s)$ y $z(s,0)=z_0(s)$ y donde a $s$ fijo
+se cumple,
+\beq
+\derc{\gamma(s,t)}{t}=l^a(\gamma(s,t)).
+\eeq
+
+
+Si pudiésemos invertir las funciones $x(s,t)$ e $y(s,t)$ y así obtener
+$s$ y $t$ como funciones de $x$ e $y$ luego
+\beq u(x,y) \equiv z(s(x,y),t(x,y))\eeq
+sería la solución buscada, ya que tal $u$ satisface por construcción
+\ron{ot*} y \ron{ot**}.
+
+No siempre es posible tal inversión. La razón es que en
+general habrá valores de $s$ y $t$ tales que el plano tangente a 
+$\gamma(s,t)$ en ese punto
+contiene al eje $z$. Veamos si hay condiciones que nos aseguren que tal
+inversión es posible al menos localmente, es decir en un entorno de algún
+punto $(x(s_0,0),y(s_0,0))$ sobre $\gamma(s)$.
+
+El teorema de la función implícita nos dice que esto será posible si el 
+diferencial de la transformación en ese punto $(s_0,0)$ es
+invertible, es decir si su determinante (el Jacobiano de la transformación)
+no se anula. En este punto tenemos,
+\beq
+J=\left|\barr{cc}
+\left.\frac{\pa x}{\pa s}\right|_{(s_0,0)}&\left.\frac{\pa y}{\pa s}\right|_{(s_0,0)}\\
+\left.\frac{\pa x}{\pa t}\right|_{(s_0,0)}&\left.\frac{\pa y}{\pa t}\right|_{(s_0,0)}
+\earr\right| 
+= \frac{\pa x}{\pa s}(s_0)\,b_0 - \frac{\pa y}{\pa s}(s_0)a_0 \neq 0,
+\eeq
+donde $a_0=a(x(s_0),y(s_0),z(s_0))$y $b_0=b(x(s_0),y(s_0),z(s_0))$.
+Esta es entonces la condición para la existencia
+local de soluciones y nos dice que $\gamma(s)$ debe ser elegida de modo tal
+que su proyección en el plano $(x,y)$ tenga vector tangente que no
+sea proporcional a la proyección en dicho plano del vector $(a,b,c)$.
+
+\espa
+\ejem: En algunas aplicaciones la coordenada $y$ es el tiempo. En
+tal caso es natural especificar $u$ en un instante de tiempo, digamos
+$y=0$, es decir dar su {\bf valor inicial}. Así es que el {\bf problema
+de valores iniciales} consiste simplemente en elegir $\gamma(s)=(s,0,h(s))$.
+La
+ecuación \ron{ot**} resulta entonces  $h(s)=u(s,0)$ o $h(x)=u(x,0)$, 
+es decir  $h(s)$ será el valor
+inicial que tendrá la solución a $y=0$. en este caso habrá
+solución local siempre y cuando $b$, el coeficiente de $\dip\derp{u}{y}$, 
+no se anule
+en $(x,0,h(x))$. 
+
+Si $\gamma$ fuese una curva característica luego existirán infinitas 
+soluciones (locales) ya que dado un punto $\gamma(s)$ de $\gamma$ y una 
+curva no característica $\gamma^{\star}(r)$ pasando por este punto 
+podremos construir, usando el procedimiento anterior, 
+pero ahora con $\gamma^{\star}(r)$, una solución (una superficie) 
+$\gamma^{\star}(r,t)$ que necesariamente contendrá a $\gamma$.
+
+\espa
+\noi
+\ejer: Resuelva por el método descripto las ecuaciones:
+\espa
+
+\noi
+a) $$\frac{\partial u}{\partial y} + c\frac{\partial u}{\partial x} =0$$
+   $$ u(x,0) = h(x).$$
+
+\noi
+b) $$\frac{\partial u}{\partial y} + u\frac{\partial u}{\partial x} =0$$
+   $$ u(x,0) = -x.$$   
+
+\noi
+c) ¿Por cuánto tiempo $(y=t)$ se pueden extender las soluciones de b)?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+
+\section{Clasificación de ecuaciones en derivadas parciales}
+
+Para facilitar la clasificación procederemos en forma similar a
+como lo hicimos cuando estudiamos las ecuaciones en derivadas ordinarias,
+es decir reduciremos los sistemas de ecuaciones a sistemas de primer orden.
+Para ello tomaremos como variables independientes todas las derivadas
+de orden inferior al mayor orden en que aparece cada una de las variables.
+
+\ejem: Sea $\phi :\re^2 \to \re$ satisfaciendo
+\beq
+\dersp{\phi}{x} + \dersp{\phi}{y} = \rho,
+\eeq
+es decir el Laplaciano en una variedad dos dimensional plana.
+Definamos $u^1 := \phi$, $u^2 :=\derp{\phi}{x}$ y $u^3 := \derp{\phi}{y}$,
+luego esta ecuación es equivalente al siguiente sistema
+\beq
+\left(
+\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & -1
+\end{array}
+\right)
+\pa_x
+\left(
+\begin{array}{c}
+u^1 \\ u^2 \\ u^3
+\end{array}
+\right)
++
+\left(
+\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+1 & 0 & 0 \\
+0 & 1 & 0
+\end{array}
+\right)
+\pa_y
+\left(
+\begin{array}{c}
+u^1 \\ u^2 \\ u^3
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+\rho \\ u^2 \\ u^3 \\ 0
+\end{array}
+\right)
+\label{lap2d}
+\eeq
+
+
+El motivo por el cual agregamos la cuarta ecuación se verá más adelante,
+pero adelantamos que ella nos permite deducir, sin recurrir a las ecuaciones
+de las filas segunda y tercera, de que las componentes $u^2$ y $u^3$
+son las componentes de la diferencial de alguna función. Si
+conocemos una solución de \ref{lap2d}, $(u^1,u^2,u^3)$ podemos
+probar que $u^1$ satisface también  el Laplaciano. En efecto, tomando
+una derivada con respecto a $x$ de la segunda fila y una derivada con
+respecto a $y$ de la tercera, sumándolas y luego usando la primer fila
+obtenemos el resultado buscado. De todos los sistemas de primer orden
+(y básicamente también por la misma razón que dimos cuando consideramos
+sistemas de ecuaciones ordinarias) solo consideraremos aquellos de la forma,
+\beq
+M^a_{A'B}\na_a u^B = I_{A'},
+\eeq
+con $M^a_{A'B}$ y $I_{A'}$ funciones suaves del punto en la variedad (campos) y de
+$u^A$.
+
+Los índices que estamos usando son índices abstractos y puede denotar 
+no solo un conjunto de escalares, sino también un gran vector hecho de diversos
+campos vectoriales. Veremos esto en ejemplos. También se pueden tomar
+sistemas coordenados y bases y entonces plantear el problema en componentes,
+como hicimos en el ejemplo anterior, en cuyo caso entonces podemos
+pensar a $u^A$ como en gran arreglo vectorial de campos escalares.
+Hemos usado índices con y sin primar para dejar en claro que el espacio
+(co-vectorial) de los índices primados no tiene la misma
+dimensión que el espacio vectorial de los índices sin primar.
+
+El tipo de sistema que acabamos de definir se llama cuasi--lineal, pues
+las derivadas aparecen en forma lineal. Esta no es una pérdida de
+generalidad desde el punto de vista de la física:
+\espa
+\noi 
+{!`\sl Todos los sistemas físicos conocidos son de esta forma!}
+\espa
+
+
+Históricamente la clasificación que daremos a continuación nace
+del intento de encuadrar todas las ecuaciones en el Problema de
+Cauchy, es decir, tomar una hiper-superficie $\Sigma$ de $M$, dar
+allí como dato $u$ y su derivada en la dirección normal y
+tratar de construir soluciones en un entorno de $\Sigma $ en $M$
+(soluciones locales).  Este intento no fue en general exitoso, ya
+que en general esta no es la manera correcta de dar datos, pero
+sí lo fue la clasificación de estas ecuaciones así
+obtenida, ya que las propiedades de las soluciones a las ecuaciones
+en cada una de estas clases en las que las clasificaremos son muy
+similares y en cada una de estas clases los datos se prescriben
+también de manera similar.
+
+Para fijar ideas sea $M$ de dimensión $n$ y sea $p \in M$.
+Queremos encontrar las soluciones en un entorno de $p$ dando como
+dato $u^A$ en alguna hiper-superficie $\Sigma$ de $M$
+que contiene a $p$. Por simplicidad  haremos las cuentas necesarias
+en un sistema de coordenadas adaptado al problema en el sentido que
+elegiremos a la coordenada $x^n$ de tal forma que la subvariedad $x^n
+=0$ sea la superficie $\Sigma$ y $p$ sea el origen de coordenadas.
+Los datos serán entonces $\Phi^A(x^1,...,x^{n-1})$, que luego
+corresponderá a la solución $u^A$ restringida a $\Sigma$, es decir
+$\Phi^A = u^A|_{\Sigma}$.
+
+Como conocemos lo que será $u^A$ en $\Sigma $ conocemos lo que serán todas
+sus derivadas (de cualquier orden) con respecto a las coordenadas $x^i,\;
+i=1,...,n-1$. 
+La idea es ahora usar la ecuación para
+encontrar $\partial_n u^A |_{\Sigma}$ y así sucesivamente encontrar
+todas las derivadas de $u$ en $p$ (o cualquier otro punto de $\Sigma$).
+Si lo lográsemos podríamos, al menos formalmente y en un
+entorno de $p$, construir $u^A$ como su serie de Taylor alrededor de $p$.
+Si pudiésemos encontrar las derivadas normales a $\Sigma$, si
+$\Phi^A$  fuesen datos analíticos, y si los coeficientes de la
+ecuación fuesen también analíticos, luego se puede demostrar
+(Teorema de Cauchy-Kowalevski) que la solución $u^A$ construida
+formalmente arriba en realidad existe y es analítica en un
+entorno de $p$ en $M$.
+
+\espa 
+%\fig{6cm}{Construyendo la Solución Local.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m11_4}}
+    \caption{Construyendo la solución local.}
+    \label{fig:11_4}
+  \end{center}
+\end{figure}
+
+¿Qué requisitos debe satisfacer la ecuación para que esto sea posible?
+Usando el sistema de coordenadas mencionado se puede ver que
+\beq M(\Phi^C,q)^n_{A'B}\partial_n u^B |_{\Sigma} = \mbox{Términos en }(\Phi^A,
+\partial_i \Phi^C,q)_{A'},
+\eeq
+Está claro entonces que podremos resolver para $\partial_n u^A$ 
+sólo si $M(\Phi^C,q)^n_{A'B}$ es invertible. En general (como en el
+ejemplo que dimos) el espacio de llegada del mapa $M^n_{A'B}$
+no tiene la misma dimensión que el espacio de partida y por lo
+tanto el mapa no es en general invertible, por lo tanto solo
+pediremos que {\bf el rango de dicho mapa tenga la dimensión máxima}
+(es decir la dimensión del espacio de partida --la de los vectores $u^A$--).
+En particular esto implica que estamos suponiendo que la dimensión
+del espacio de llegada es mayor o igual que la del espacio de partida.
+Estamos pidiendo la posibilidad mínima de tener soluciones.
+
+Si esto no sucede entonces es claro que la ecuación será
+una relación entre términos determinados a partir de los datos dados
+y en general no se satisfará. En ese caso los datos a dar
+libremente serán un número menor al de la dimensión del
+espacio de partida, solo se podrán dar algunas componentes de $u^A$.
+
+¿Qué es geométricamente la condición de maximalidad del rango de
+$M^a_{A'B}$ en lo que hace a las coordenadas elegidas?
+
+Si la superficie $x^n = 0$ es una superficie suave entonces podemos
+suponer que $\nabla_a x^n$ existe y es distinta de cero, en este caso
+la condición anterior es simplemente la condición que 
+$ M^a_{A'B}\nabla_ax^n$ tiene rango máximo,
+pero esta es independiente del sistema coordenado y solo depende de $\Sigma$,
+ya que aquí $x^n$ es simplemente una función en $M$ que es
+constante en $\Sigma$ y cuyo gradiente no se anula. Las superficies
+en donde la condición anterior se viola en todos sus puntos se llaman
+{\bf superficies características}.
+Clasificaremos a las ecuaciones de acuerdo al número de superficies 
+características que se intersecten en un dado punto.  Note que
+la clasificación solo depende del tensor $M^a_{A'B}$ y no de los términos
+de menor orden. $M^a_{A'B}\nabla_a u^B$ es llamada la 
+{\bf parte principal} de la ecuación. Note también que como $M^a_{A'B}$
+es un campo tensorial no necesariamente constante, la condición
+definiendo las superficies características  puede ser muy distinta
+de punto a punto, por lo tanto la clasificación que introduciremos
+vale en general solo para el punto en cuestión. Por fortuna en las 
+aplicaciones muy pocas veces aparecen ecuaciones donde su tipo cambia
+de región en región. Note también que para sistemas no--lineales
+la condición depende también de la solución que uno esté considerando!
+Como nuestra clasificación solo se basa en la parte principal de la
+ecuación ésta debe tener toda la información sobre la ecuación,
+es por eso que en el ejemplo anterior agregamos la última fila en
+el sistema de ecuaciones, sin ella y considerando el sistema principal
+no podríamos saber que las dos últimas componentes de $u^A$ debían
+ser las componentes de la diferencial de una función.
+
+Diremos que una ecuación es {\bf elíptica en $p \in M$} si $p$ no es
+intersectado por ninguna superficie característica. Es decir si
+Rango $M^a_{A'B}k_a$ no es maximal entonces $k_a = 0$ 
+[como estamos en un punto la condición de que $k_a $ sea un gradiente es 
+vacía].
+\espa
+
+\ejer: El ejemplo canónico de ecuación elíptica es el Laplaciano 
+en $M$, $\Delta u := g^{ab}\na_a\na_b \phi = \rho$ donde $g^{ab}$ es una métrica
+Riemanniana. Muestre que el ejemplo dado anteriormente es un sistema 
+elíptico.
+\espa
+
+Diremos que una ecuación es {\bf parabólica en $p \in m$} si $p$ es
+intersectado por una única superficie característica. Es decir existe
+un único $k_a \neq 0 $ --a menos de un factor multiplicativo-- tal que 
+Rango $M^a_{A'B}k_a$ no es maximal.
+
+El ejemplo canónico de ecuación parabólica (o de difusión) es la 
+ecuación del calor en $\re \times \re^{n-1}$,
+\beq 
+\partial_t u = \Delta u.
+\eeq
+
+\espa
+\noi
+\ejer: Considere la ecuación anterior en $\re \times \re$,
+$\pa_t u = \dersp{u}{x}$.
+Reduzca dicho sistema a primer orden y encuentre las superficies
+características de esta ecuación.
+\espa
+
+Diremos que una ecuación es {\bf hiperbólica en $p \in M$} si es
+intersectado por más de una superficie característica.
+
+El ejemplo canónico en este caso es la ecuación de onda en $M$
+\beq \Del u = g^{ab}\nabla_a \nabla_b u ,\eeq
+donde $g^{ab}$ es una métrica tal que dado cualquier punto $p \in m$
+existe un sistema coordenado en donde $g_{ab}$ toma la forma,
+\beq g_{\mu \nu}|_p = \{-(dt)^2 + \sum_i (dx^i)^2\}|_p.
+\eeq
+
+\espa
+\ejer: Considere en $\re^2$ la métrica $ds^2 = -(dt)^2 + (dx)^2$
+(en todo punto) y la ecuación $g^{ab}\na_a\na_b u = \rho$. 
+
+\noi
+a) Reduzca la ecuación a primer orden.
+
+\noi
+b) Encuentre las características de la ecuación.
+
+\noi
+c) Haga lo mismo en $\re \times S^1$ 
+(un cilindro espacio temporal) con $ds^2 = -(dt)^2 +(d\theta)^2$ y con
+$ds^2 = -(dt)^2 + t^2(d \theta)^2$.
+
+\recubib{Lectura recomendada para éste y los capítulos que siguen: \cite{Treves}, \cite{John},
+\cite{Folland} y \cite{Godunov}. Lo expuesto en estos capítulos es lo m\'\i{}nimo e imprescindible para tener una noci\'on de esta \'area.
+Se conoce much\'\i{}simo m\'as y a la vez, como siempre, hay much\'\i{}simo m\'as que desconocemos, soluciones d\'ebiles, existencia global, ondas de choque, condiciones de contorno, estabilidad, etc, etc. Esta es probablemente el \'area m\'as activa, con m\'as gente trabajando y con el mayor n\'umero de aplicaciones de toda la matemática. La mayor\'\i{}a de estas aplicaciones han sido tradicionalmente en el \'area de la ingenier\'\i{}a y en particular en la de fluidos, lo que ha hecho de que solo se tratasen cierto tipo espec\'\i{}fico de ecuaciones, bastante dif\'\i{}ciles por cierto, y no las m\'as usadas en otras \'areas de la f\'\i{}sica, esto ha evolucionado en los \'ultimos a\~nos y ahora hay un cambio considerable de atenci\'on hacia muchos de los problemas de la f\'isica moderna. }
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End: 

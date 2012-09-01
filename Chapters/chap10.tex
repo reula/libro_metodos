@@ -1,0 +1,779 @@
+\chapter{La Transformación de Fourier}
+
+
+\section{Introducción}
+
+Consideremos el siguiente problema en el círculo $S^1$ cuya
+circunferencia es $2\pi$:
+
+\noi Dada $\rho$ continua en $S^1$ encuentre $f$ en $S^1$ tal que 
+ \beq
+ \dersp{f}{\theta}=\rho. \label{10.1*}
+ \eeq
+ 
+\noi  Una manera de resolver este problema es u\-ti\-li\-zan\-do la ba\-se
+or\-to\-go\-nal de Fou\-rier, 
+$\lb\frac{1}{\sqrt{2\pi}}e^{in\theta}\rb$ de $L^2(S^1)$.
+Sea $F:L^2(S^1)\to l^2$  el mapa entre estos espacios generado por esta 
+base, es decir,
+\beq
+F(f)=\lb\lp\frac1{\sqrt{2\pi}}e^{in\theta},f\rp\rb\equiv\lb c_n\rb.
+\eeq
+Luego 
+\beq
+\barr{rcl}
+F\lp\dersp{f}{\theta}-\rho\rp &=& \lb\lp\frac1{\sqrt{2\pi}}e^{in\theta},
+\dersc{f}{\theta}-\rho\rp\rb \\ [3mm]
+& = & \lb-n^2\,c_n -a_n\rb
+\earr
+\eeq
+donde $\{a_n\}=F(\rho)$.
+
+Como $F(0)=\{0\}$ vemos que \ron{10.1*} implica una ecuación 
+algebraica en $l^2$,
+\beq
+-n^2c_n=a_n.\label{10.2*}
+\eeq
+Si $\rho$ es $L^2$ ortogonal a $f=cte.$, es decir a las únicas soluciones de 
+\ron{10.1*}
+con $\rho=0$, lo que implica $a_0=0$, la sucesión con $c_0$
+arbitrario y
+$c_n=-\dip\frac{a_n}{n^2}$, $n\neq0$ satisface
+\ron{10.2*}. 
+El mapa inverso $F^{-1}:l^2\to L^2(S^1)$ nos define 
+$f(\theta)=\dip\sum_{n=-\ifi}^{\ifi}\frac{c_n}{\sqrt{2\pi}}e^{in\theta} $,
+el cual al menos formalmente\footnote{El mapa define
+un elemento de $L^2$ pues $\rho\in L^2$ y por lo tanto $\dip
+\sum_{-\ifi}^{\ifi}|a_n|^2<\ifi$ lo que implica que $\{c_0$
+arbitrario, $c_n=-\dip\frac{a_n}{n^2},\;\;n\neq0$\} es también 
+un elemento de $l^2$.
+Restaría ver que $f=F^{-1}\{c_n\}$ es dos veces diferenciable.}
+es una solución de \ron{10.1*}.
+
+Note que en esta aplicación no hemos usado directamente el hecho de
+que las fun\-cio\-nes $\{\dip\frac{1}{\sqrt{2\pi}}e^{in\theta}\}$
+forman una base ortogonal sino solo que
+$\dip\der{\theta}e^{in\theta}=in\,e^{in\theta}$ y ciertas propiedades
+del mapa $F$ generado por dicha base.  En particular esta propiedad
+de la base se induce en el mapa en el sentido que si $f\in L^2$ es
+diferenciable y $F(f)=\{c_n\}$ luego
+$F(\dip\derc{f}{\theta})=\{+in\,c_n\}$.
+
+Estas observaciones son muy útiles pues existen casos, como el de $L^2(\re)$, 
+en los cuales no se conocen bases ortogonales interesantes, pero sí mapas
+similares a $F$ con propiedades interesantes. 
+Uno de ellos es la
+transformación de Fourier que estudiaremos ahora. 
+El problema en $L^2(\re)$
+es que desearíamos tener una base $\{\fip_n\}$ cuyas funciones 
+sa\-tis\-fa\-gan $\dip\der{x}\fip_n=i\,c_n\fip_n$,
+pero las soluciones a esta ecuación son $\fip_n=a_n\,e^{ic_nx}$, 
+las cuales no son funciones 
+de cuadrado integrable cualquiera sea $c_n$ o $a_n \;\in \; \re$  
+(excepto por supuesto que tomemos $a_n\equiv 0$). Sin embargo aunque
+estas funciones no formen una 
+base ortogonal si generan un mapa $\cF{}$, esta vez de $L^2(\re)$ 
+en otra copia (considerada como distinta) de $L^2(\re)$,
+con propiedades similares a las del mapa $F$
+considerado anteriormente.
+
+\bteo[de Fourier] La transformación de Fourier 
+\beq
+\hat f(\lambda) := \cF{} (f)(\lambda) := \frac1{(2\pi)^{n/2}}\int_{\ren{}}
+e^{-ix\cdot\lambda}\;f(x)\;dx^n 
+\eeq
+%
+donde  $x\cdot\lambda=\sum_{i=1}x^i\,\lambda_i$. 
+Satisface: 
+\espa
+
+\noi a) $\cF{} :L^2(\ren{})\to L^2(\ren{})$
+es un mapa lineal, continuo e invertible de $L^2(\ren{})$ en sí mismo que
+preserva la norma (es decir unitario),
+$\|\hat f\|_{L^2}=\|\cF{}(f)\|_{L^2}=\|f\|_{L^2}$ (identidad de Plancherel).
+
+\espa
+\noi b) Su inversa está dada por
+\beq
+\check g(x)={\cal F}^{-1}(\hat
+g)=\frac1{(2n)^{n/2}}\int_{\ren{}}e^{ix\cdot \lambda}\,\hat g(\lambda)\;d\lambda.
+\eeq
+
+\espa
+\noi c) Si la derivada de $f\in L^2(\ren{})$ en el sentido distribucional está
+también en $L^2(\ren{})$ se cumple entonces que
+\beq
+{\cal F}\lp\derp{f}{x_j}\rp(\lambda)=i\,\lambda_j\:{\cal F}(f)(\lambda).
+\eeq
+\eteo
+
+Este teorema nos dice que esta transformación tiene todas
+las propiedades que tenía la generada por la base de Fourier y por
+lo tanto será tan útil como aquella en aplicaciones similares, pero
+ahora en \ren{}.
+
+La prueba de este teorema usa varias de las técnicas más comunes y
+poderosas del análisis funcional y por lo tanto es recomendable una
+lectura atenta y no automática de la misma.
+
+
+\espa
+\pru: 
+El mapa \cF{} es obviamente lineal y claramente está definido
+para cualquier función en $\cifrn$, es decir infinitamente diferenciable
+y de soporte compacto. Veamos primero que \cF{} preserva la norma $L^2(\ren{})$ 
+para estas funciones. 
+Sea $f\in\cifrn$ cualquiera y tomemos un n-cubo $C_{\eps}$ de
+volumen $(\dip\frac{2}{\eps})^n$ con $\eps>0$ suficientemente peque\~no 
+como para que $sop(f)\su C_{\eps}$.
+Sea $K_{\eps}=\{k\in\ren{} \;|\;k_i=\pi p\eps\mbox{ para algún entero } 
+p\}$, [por ejemplo en $\re^3$ el vector $(\pi\eps 5,\pi\eps17,0)$ es un
+elemento de $K_{\eps}$]. 
+Luego el conjunto de funciones 
+$\lb\lp\dip\frac{\eps}2\rp^{n/2}\,e^{ik\cdot x}\;|\;k\in K_{\eps}\rb$ 
+forman una base
+ortogonal de $L^2(C_{\eps})$.
+
+Pero $f\in L^2(C_{\eps})$ y es continuamente diferenciable, por lo tanto 
+{\small
+\beq
+\sum_{k\in K_{\eps}}\lp\lp\frac{\eps}2\rp^{n/2}\;e^{ik\cdot
+\tilde{x}},f(\tilde{x} )\rp \lp
+\frac{\eps}2\rp^{n/2}\;e^{ik\cdot x}=\sum_{k\in K_{\eps}}\frac
+{\hat f(k)}{(2\pi)^{n/2}}e^{ik\cdot x}(2\pi\eps/2)^n,
+\label{10.f1}
+\eeq
+}
+%
+ es la representación en serie
+de Fourier de  $f$ la cual converge uniformemente a $f$ en $C_{\eps}$ y por lo
+tanto en \ren{}. 
+Tenemos entonces que 
+\begin{eqnarray}
+\|f\|^2_{L^2}&=&\int_{\ren{}}|f(x)|^2\;d^nx \nn 
+&=&\int_{C_{\eps}}|f(x)|^2\;d^nx \nn 
+&=&\sum_{k\in K_{\eps}}\lpi\lp(\frac{\eps}2)^{n/2}\,e^{ik\cdot x},f(x)\rp\rpi^2 \nn
+&=&\sum_{k\in K_{\eps}}|\hat f(k)|^2\;(\pi\eps)^n. 
+\label{10.f2}
+\end{eqnarray}
+%
+Como \ren{}{} es la unión de n-cubos de lados $\pi\eps$ ( o sea de volumen 
+$(\pi\eps)^n$
+alrededor de los puntos de $K_{\eps}$ el lado derecho de \ron{10.f2} es 
+simplemente la
+serie de Riemann de la función $|\hat f(k)|^2$. Si esta función fuese 
+continua
+luego la serie de Riemann convergería a $\|\hat f\|^2_{L^2}$ y 
+habríamos
+probado que la transformada de Fourier de una función en $\cifrn$
+preserva la norma $L^2(\ren{})$.
+Pero 
+\beq\barr{rcl}
+sup_k|\derp{\hat f(k)}{k_j}| &=& sup_k|\frac1{(2\pi)^{n/2}}\dip\int_{R^n}
+-i\,x^j\,e^{-ik\cdot x}\,f(x)\;d^nx|\\ [3mm]
+&\leq&\frac1{(2\pi)^{n/2}}\dip\int_{R^n}|x^j\,f(x)|\;d^nx<\ifi,
+\earr
+\eeq
+ya que $f\in\cifrn$.
+Vemos entonces que las derivadas de $\hat f(k)$ están acotadas y por lo
+tanto que $\hat f$ es continua. Este resultado no solo completa la
+demostración de que \cF{} preserva la norma sino también, ya que
+$\hat f(k)$
+es continua, que la serie de Riemann en el lado derecho de la
+ecuación \ron{10.f1} converge a la integral y por lo tanto que $\cF{}^{-1}
+(\cF{}(f))=f(x)$ $\forall\;\;f\in\cifrn$.
+
+Si $f\in\;\cifrn$ luego la identidad del punto c) se muestra trivialmente. Solo
+resta entonces extender estos resultados para $f$ arbitraria en $L^2(\ren{})$,
+pero $\cifrn$ es una subespacio denso de $L^2(\ren{})$, es decir todo elemento 
+$f\in L^2(\ren{})$
+puede obtenerse como límite (con respecto a la norma
+$L^2(\ren{})$) de una 
+sucesión $\{f_n\}$ de funciones en $\cifrn$, esto nos permite extender la
+acción de \cF{} a todo elemento de $L^2(\ren{})$. 
+En efecto, sea $f\in L^2(\ren{})$ arbitraria y
+sea $\{f_n\}\to f \in\cifrn$ luego la sucesión $\hat f_n(k)=\cF{}(f_n)$ 
+satisface,
+\beq
+\|\hat f_n(k)-\hat f_m(k)\|_{L^2(R^n)}=\|f_n(x)-f_m(x)\|_{L^2(\ren{})}.
+\eeq
+Como $\{f_n\}$ es convergente es de Cauchy y por lo tanto $\{\hat f_n\}$ 
+es también de
+Cauchy en $L^2(\ren{})$, pero $L^2(\ren{})$ es completo y por lo tanto existe 
+$\hat f\in L^2(\ren{})$ tal que $\{\hat f_n\}\to\hat f$.
+Extenderemos el mapa \cF{} a \LR{} definiendo $\cF{}(f)\equiv\hat f$.
+Esta extensión es claramente lineal y acotada por lo tanto es
+continua. Usando el mismo razonamiento extendemos $\cF{}^{-1}$ a todo \LR{} y
+vemos que $\cF{}^{-1}(\cF{}(f(x)))=f(x)$ $ \forall\;f(x)\in\LR$ 
+lo que demuestra que \cF{} es invertible, que su inversa es
+$\cF{}^{-1}$ y es continua. El mismo argumento muestra que la fórmula en c)
+también es válida para todo $f$ tal que su gradiente también
+está en \LR{}. Esto completa la prueba del teorema $\spadesuit$
+
+Note que la estrategia ha sido primero tomar un espacio ($\cifrn$) donde
+todas las propiedades valen obviamente, luego tomar un espacio que
+contiene al anterior y donde este es denso, ver que el mapa es allí
+continuo (con respecto a la noción de continuidad del espacio
+mayor) y finalmente tomar la extensión que esta continuidad nos brinda.
+
+?`Hay otras extensiones posibles? La respuesta es sí y ahora veremos
+una de ellas que nos permitirá usar la transformación de Fourier en
+distribuciones. Lo haremos en forma de un problema dividido en varios
+ejercicios.
+
+\espa
+\noi
+\yaya{Notación de Schwartz}: $I_+^n$ denotará el conjunto de $n$-tuplas de
+enteros no-negativos 
+$\alpha=<\alpha_1,\ldots,\alpha_n>$ 
+y 
+$|\alpha|=\sum_{i=1}^n\alpha_i$.
+Similarmente denotamos por 
+$D^{\alpha}\equiv\dip\frac{\pa^{\alpha}}{\pa x^{\alpha}}\equiv\dip\frac{\pa^{|\alpha|}}
+ {\pa x_1^{\alpha_1}\cdots\pa x_n^{\alpha_n}}$, 
+ es decir $D^{\alpha}$ es el operador diferencial que toma $\alpha_1$, derivadas parciales con respecto a $x_1$, $\alpha_2$ derivadas parciales con respecto a $x_2$, etc. El grado de $D^{\alpha}$ es $|\alpha|$.
+
+\espa
+\defi: 
+Llamaremos {\bf espacio de Schwartz} $\cS(\ren{})$ 
+al espacio vectorial
+de funciones infinitamente diferenciables que decaen
+asintóticamente más rápido que la inversa de cualquier polinomio,
+es decir que 
+\beq
+\|\fip\|_{p,q}\equiv
+\barr[t]{c} {\dip\sum} \\ {|\ti{\alpha}|\leq p} \\
+{|\ti\beta|\leq q}
+\earr 
+sup_{x\in\ren{}}|x^{\alpha}D^{\beta}\fip(x)|<\ifi
+\label{10.f5}
+\eeq
+$\forall\;\alpha,\beta\in I_+^n$, con la siguiente noción de convergencia: 
+diremos que $\{\fip_n\}$, $\fip_n \in \cS$ converge a $\fip\in\cS$ si dado $\eps>0$
+para cada par de enteros no negativos, $p$, $q$, existe $N_{p,q}$ tal que 
+si $n>N_{p,q}$ luego $\|\fip-\fip_n\|_{p,q}<\eps$.
+
+\espa
+\noi
+\yaya{Ejercicios}:
+
+\noi
+ 1) ¿Cómo definiría la noción de sucesión convergente en
+este espacio?
+
+\noi
+2) Muestre que si $\{\fip_n\}\to \fip$ luego $\{\fip_n\}$ 
+converge en el sentido anterior.
+
+\noi
+3) Muestre que $\cD$ está estrictamente contenido en $\cS$. 
+Ayuda: Encuentre $\fip\in\cS$ con $sop(\fip)=\ren{}$.
+\espa
+
+Las propiedades de este espacio que nos interesan son las siguientes:
+
+\blem
+Con la noción de convergencia correspondiente el
+espacio $\cS(\ren{})$ es completo.
+\elem
+
+\blem 
+\label{lem10.2}
+El espacio $\cifrn$ es denso en \cS, es decir cualquier elemento 
+$\fip\in\cS$
+puede ser obtenido como límite de una sucesión convergente con
+cada uno de sus miembros en $\cifrn$.
+\elem
+
+\espa
+\ejer: Pruebe el Lema~\ref{lem10.2}.
+
+\blem
+\label{lem10.3}
+$\cF{}:\cS\to\cS$ es continuo e invertible con inversa continua.
+\elem
+
+\espa
+\ejer: 
+Pruebe el Lema~\ref{lem10.3}. Ayuda: Pruebe que dado enteros $p$ y $q$
+ existen $\ti{p}$ y $\ti{q}$  
+ y $c>0$ tales que para todo $\fip\in\cS$ se cumple
+\beq
+\|\hat{\fip}\|_{p,q}\leq c\;\|\fip\|_{\ti{p},\ti{q}}.
+\eeq
+
+\espa
+\ejer: 
+Encuentre $\cF{}(e^{-\alpha x^2/2})$.
+
+\espa
+\defi:
+El espacio dual a \cS, $\cS'$ se llama el espacio 
+de las {\bf distribuciones temperadas}.
+
+\espa
+\ejer:
+Muestre que $\cS'$ está estrictamente contenido en $\cD'$.
+Ayuda: Encuentre $f$ tal que $T_f\in\cD'$ y no a $\cS'$.
+\espa
+
+
+¿Cómo extender \cF{} a $\cS'$? 
+Usando la identidad de Plancherel y la de
+polarización\footnote{Es decir que $(x,y) = \frac14 \{ ||x+y||^2 -
+||x-y||^2 + i ||x-iy||^2 - i ||x+iy||^2 \}$ }
+ tenemos que $(\fip,\psi)=(\hat{\fip},\hat\psi)$ .
+Pero entonces 
+\beq
+T_{\hat\sigma}(\hat{\psi})=\int\hat\sigma\,\hat\psi\;dk =
+\int \sigma\,\psi\;dx = T_{\sigma}(\psi) := 
+\hat{T}_{\sigma}(\hat{\psi}).
+\eeq
+\noi
+Esto nos induce a definir en general
+\beq
+\hat T(\hat{\fip}) := T({\fip}).
+\eeq
+
+\espa
+\ejer:
+Calcule $\cF{}(\del_a)$ y $\cF{}(\del'_a)$.
+
+\espa
+\noi
+¿Qué otras propiedades tiene la transformación de Fourier?
+Note que de la identidad del punto c) del Teorema de Fourier sigue
+que si $x^{\alpha}D^{\beta}f\in L^2(\ren{})$ luego $k^{\beta
+}D^{\alpha}\hat f\in L^2(\ren{})$. Esto nos dice esencialmente que 
+diferenciabilidad
+en $x$ es equivalente a decaimiento en $k$ y viceversa. En particular
+esto nos dice que la transformada de Fourier de una función de
+soporte compacto es infinitamente diferenciable.\footnote{
+En realidad el argumento anterior nos dice que si $sop(f)$ es
+compacto luego $D^{\alpha}\hat f\in L^2(\ren{})\;\;\;\forall\;\alpha\in I_+^n$. 
+Como veremos más adelante esto implica que es
+infinitamente diferenciable.}
+Más aún se puede probar que es analítica.
+
+Otra propiedad importante de la transformación de Fourier es que
+lleva producto de funciones en convolución de funciones y viceversa.
+
+\espa
+\defi:
+Sea $f,g\in\cS(\ren{})$. La {\bf convolución} de $f$ con $g$ 
+denotada $f*g$ es la
+función, también en $\cS(\ren{})$, dada por
+\beq
+(f*g)(y)=\int_{\ren{}}f(y-x)\:g(x)\;d^nx.
+\eeq
+
+\bteo
+
+\noi a) Para cada $f\in\cS(\ren{})$, el mapa lineal $g\to f*g$ de $\cS(\ren{})$ 
+en $\cS(\ren{})$ es continuo.
+
+
+\noi b) $\widehat{f\,g}=\frac1{(2\pi)^{n/2}}\:\hat f*\hat g$ \ \ \ y\
+\ \ \  $\widehat{f*g}
+=(2\pi)^{n/2}\,\hat f\hat g$.
+
+\noi c) $f*g=g*f$ \ \ \ y\ \ \  $f*(g*h)=(f*g)*h.$
+\eteo
+
+
+\espa
+\pru:
+Una vez probado el punto $b)$ los otros siguen
+trivialmente. Asegúrese! 
+Probaremos entonces $b)$.
+Como ya vimos $(\fip,\psi)=(\hat{\fip},\hat\psi)\;\;\;\forall\;
+\fip,\psi\in\cS(\ren{})$. Aplicando esta identidad a $e^{iy\cdot x}\bar
+f(x)$ y $g(x)$ obtenemos $(e^{iy\cdot x} \bar{f} ,g) = 
+(\widehat{e^{iy\cdot x}\bar f},\hat g)$. pero
+\beq
+(e^{iy\cdot x}\bar f, g)=\int_{\ren{}}e^{-iy\cdot x}\,f(x)\,g(x)\;d^{n}x=
+(2\pi)^{n/2}\;\widehat{fg}
+\eeq
+\noi y
+\beq\barr{rcl}
+(\widehat{e^{iy\cdot x} \bar{f}},\hat g) &=&\int_{\ren{}}\lp\overline{
+(2\pi)^{-n/2}\int_{\ren{}}e^{-i\lam\cdot x + iy\cdot x}\,\bar
+f(x)\;d^nx}\rp\;\hat g(\lambda)\;d^n\lambda\\ [3mm]
+&=&\int_{\ren{}}\hat f(y-\lambda)\,\hat g(\lambda)\;d^n\lambda\\ [3mm]
+&=&\hat f*\hat g.
+\earr
+\eeq
+La otra fórmula se obtiene aplicando $\cF{}^{-1}$ a la anterior $\spadesuit$
+
+Otra propiedad interesante de la convolución se obtiene al notar
+que como $\cS(\ren{})$ es cerrado con respecto a la operación de
+convolución $(f,g\in\cS(\ren{})\Longrightarrow f*g\in\cS(\ren{}))$
+ podemos definir la convolución de una distribución temperada con
+una función en $\cS(\ren{})$ como,
+\beq
+(T*f)(\fip)=T(\ti f*\fip)\;\;\;\mbox{ donde } \ti f(x) := f(-x).
+\label{10.t**}
+\eeq
+
+\espa
+\noi
+\yaya{Ejercicio}: Aplique \ron{10.t**} a $T=T_g$ para $g\in\cS(\ren{})$ y
+vea que esta definición tiene sentido.
+
+\noi La propiedad interesante se ve en el siguiente lema.
+\blem
+$T*f$ es equivalente a una función infinitamente diferenciable.
+\elem
+
+\section{*Propiedades básicas de los Espacios de Sobolev}
+
+Como una aplicación de la transformación de Fourier
+veremos a continuación las propiedades básicas de los espacios de Sobolev.
+Éstas será usadas más adelante cuando estudiemos 
+la teoría de las ecuaciones diferenciales parciales.
+El primer paso será una generalización de los espacios de
+Sobolev. Como vimos los espacios de Sobolev son espacios de Hilbert
+con norma proveniente del siguiente producto escalar.
+\beq
+(f,g)_{H^m}=\sum_{k=0}^m \sum_{i,j,p=1}^n \lp\underbrace{\pa_i\pa_j\ldots\pa_p}
+_{ k\mbox{ veces }}f,\,\pa_i\pa_j\ldots\pa_pg\rp_{L^2},
+\label{10.tr1}
+\eeq
+donde $f$ y $g$ son funciones definidas en un abierto $\Omega$ cualquiera 
+de \ren{}.
+Si $\Omega=\ren{}$ luego de las propiedades de la transformación de Fourier 
+obtenemos
+\beq\barr{rcl}
+(f,g)_{H^m}&=&\sum_{k=0}^m \sum_{i,j,p=1}^n (\lambda_i\lambda_j\ldots\lambda_p\hat
+f(\lambda),\lambda_i\lambda_j\ldots \lambda_p,\hat g(\lambda))_{L^2}\\
+&=&(\hat f(\lambda)\sqrt{\dip\sum_{k=0}^m|\lambda|^{2k}},\hat g(\lambda)
+\sqrt{\dip\sum_{k=0}^m|\lambda|^{2k}}),
+\earr
+\eeq
+es decir las funciones $f(x)\in H^m(\ren{})$ son aquellas que su transformada de
+Fourier $\hat f$ decae lo suficientemente rápido como para que
+$\hat f(\lambda)\sqrt{\dip\sum_{k=0}^m|\lambda|^{2k}}$  sea de
+cuadrado integrable.
+
+Esto nos sugiere generalizar los espacios permitiendo índices no
+enteros y aún negativos por medio del siguiente producto escalar,
+\beq
+(f,g)_{H^s}=(\hat f(\lambda)(1+|\lambda|^2)^{s/2},\hat g(\lambda)(1+|\lambda|^2)^{s/2})_{L^2}.
+\eeq
+
+\espa
+\noi
+\yaya{Ejercicio}: Muestre que este es un producto escalar.
+\espa
+
+Note que para $s=m$ en vez del polinomio $\dip\sum_{k+0}^m|\lambda|^{2k}$, 
+ahora tenemos $(1+|\lambda|^2)^m$. Como
+existen constantes positivas $c_1$ y$c_2$, tales que 
+\beq
+c_1(1+|\lambda|^2)^m\leq\sum_{k=0}^m|\lambda|^{2k}\leq c_2(1+|\lambda|^2)^m\eeq
+este cambio en la norma es 
+trivial en el sentido de que estas normas son equivalentes entre sí. 
+En realidad, como veremos en un caso especial, incluso el 1
+en el polinomio se puede ignorar y aún así obtener una norma equivalente.
+La primera propiedad que veremos es el siguiente lema:
+
+\blem
+Si $s'>s$ luego $H^{s'}\subset H^s$.
+\elem
+ 
+ \noi
+\yaya{Prueba}: Trivial $\spadesuit$
+
+\espa
+
+En particular si $s>0$ luego $H^s \su H^0=L^2$, si $s<0$ luego $L^2\su H^s$. 
+%
+¿Qué son los elementos de $H^s$ para $s$ negativo?
+
+Dada $g \in H^{-s}$ puedo definir el siguiente mapa de $H^s$ en $\ve C$,
+$$
+\Psi_g(f) := (\hat g, \hat f)_{H^0} = ( \frac{\hat g}{(1+|\lambda|^2)^{s/2}},
+\hat f (1+|\lambda|^2)^{s/2})_{H^0}.
+$$
+Este mapa es lineal, está bien definido $\forall \; f,g \in C^{\infty}_0$
+y puede ser extendido a todo $H^s$ (y $H^{-s}$) por continuidad, ya que,
+$$
+|\Psi_g(f)| \leq ||g||_{H^{-s}} ||f||_{H^s}.
+$$
+Por lo tanto tenemos un mapa entre $H^{-s}$ y el dual de $H^s$, que
+preserva la norma, es más, se puede probar que este mapa en un isomorfismo
+(o sea que además es invertible) entre estos espacios.\footnote{
+Por el teorema de Representación de Riez cada $\Psi :H^s \to \ve C$
+puede además ser escrito como $\Psi(f) = (\tilde{g}, f)_{H^s}$,
+$\tilde{g} \in H^s$. 
+Si tomamos $g =\cF{}^{-1}((1+|\lambda||^2)^s\cF{}(\tilde{g}))\in
+H^{-s}$ entonces $\Psi(f) = \Psi_g(f)$.}
+Por lo tanto podemos identificar a $H^{-s}$ con el dual de $H^s$.
+
+\espa
+\noi
+\yaya{Ejercicio}: Usando que $\cifrn$ es denso en $H^s(\ren{})$ muestre que 
+la delta de Dirac
+está en $H^s(\ren{})$ para todo $s<-n/2$.
+\espa
+
+Quizás la más importante propiedad de $H^s(\ren{})$ es la siguiente,
+
+
+\blem[de Sobolev] 
+Si $m<s-n/2$ luego $H^s(\ren{})\su C^m(\ren{})$.
+\elem
+\espa
+\pru:
+Basta con probarlo para $m=0$, el resto sigue por inducción.
+Basta también probar la desigualdad.
+$\|f\|_{C^0}<C\;\|f\|_{H^s},\;\;s>\frac n2 $ para alguna constante $C > 0$ 
+independiente de $f$ y para toda $f\in\cifrn$, el
+resto sigue por la continuidad de la norma. 
+Pero
+\beq
+\barr{rcl}
+\|f\|_{c^0}=sup_{x\in R^n}|f(x)|&=&sup_{x\in R^n}\lpi\dip\int_{R^n}
+e^{i\lambda\cdot x}\,\hat f(\lambda)\;d^nx\rpi \\ [3mm]
+&\leq&\frac1{(2\pi)^{n/2}}\dip\int_{R^n}|\hat f(\lambda)|\;d^n\lambda \\ [3mm]
+&\leq&\frac1{(2\pi)^{n/2}}\dip\int_{R^n}\dip\frac{|\hat f(\lambda)|
+(1+|\lambda|^2)^{s/2}}{(1+|\lambda|^2)^{s/2}}\;d^n\lambda \\ [3mm]
+&\leq&\frac1{(2\pi)^{n/2}}\|\hat f(\lambda)(1+|\lambda|^2)^{s/2}\|_{L^2}\;\|
+\frac{1}{(1+\|\lambda|^2)^{s/2}}\|_{L^2} \\ [3mm]
+&\leq&C\;\|f\|_{H^s}.
+\earr
+\eeq
+donde hemos usado que $s>n/2$ para probar que 
+$\|\dip\frac{1}{(1+|\lambda|^2)^{s/2}}\|_{L^2}<\ifi$ $\spadesuit$ 
+
+Este lema nos dice que si $f\in H^m(\ren{})$
+para $m$ suficientemente grande luego $f$ puede ser identificada con una
+función ordinaria, continua e incluso diferenciable.
+
+Sea $f$ una función continua en $\re^n_+=\{x\in\ren{}\;\/\;x_n\geq0\}$ 
+y sea $\tau f$ la restricción de esa
+función al hiperplano $x_n=0$ es decir $(\tau f)(x_1,x_2,\ldots,x_{n-1})=
+f(x_1,x_2,\ldots,x_n=0)$.
+Claramente $\tau$ es un mapa lineal y si $f$ es continua en $\re_+^n$ luego 
+$\tau f$ es
+continua en $\re^{n-1}=\{x\in\ren{}\;/\;x_n=0\}$.
+?`Se puede extender este mapa a funciones más generales?
+La respuesta es el siguiente lema que nos muestra además el porqué de
+la necesidad de extender los espacios de Sobolev a índices no enteros.
+
+
+\blem[Traza] 
+Sea $m>0$ entero, luego:
+
+i) $\tau:H^m(\re^n_+)\to H^{m-1/2}(\re^{n-1})$ es  continuo.
+
+ii) es suryectivo.
+\elem
+
+\espa
+\pru: 
+Por el mismo argumento que en el lema anterior para probar $i)$
+basta probar que existe $c>0$ tal que
+\beq
+\|\tau f\|_{H^{1/2}(R^{n-1/2})} <C \,\|f\|_{H^1(R^n_+)} \;\;\;\;\forall
+\;f\in C_0^{\ifi}(\re^n_+)
+\eeq
+
+Sea $\hat f(\lambda',x_n)$ la transformada de Fourier de $f(x)$ con respecto a las
+coordenadas $(x_1,x_2,\ldots,x_{n-1})$ de $\re^n_+$, luego 
+\beq
+|\hat f(\lambda',0)|^2=-2\,Re\,\int_0^{\ifi}\derp{\hat f}{x_n}(\lambda',t)
+\overline{\hat f(\lambda',t)}\;dt.
+\eeq
+Multiplicando ambos lados de esta igualdad por $(1+|\lambda'|^2)^{1/2}$ 
+e integrando con
+respecto a $\lambda'$ obtenemos,
+
+\beq\barr{rcl}
+\|\tau f\|_{H^{1/2}(R^{n-1}})&=&\dip\int_{R^{n-1}}|\hat
+f(\lambda',0)|^2\;d^{n-1}\lambda' \\ [3mm]
+&=&2\lpi\dip\int_{R^{n-1}}\dip\int_0^{\ifi}(1+|\lambda'|^2)^{1/2}
+\derp{\hat f(\lambda',t)}{x_n}\overline{\hat f(\lambda',t)}\;dt\,d^{n-1}\lambda'
+\rpi\\ [3mm]
+&\leq&2\lb\dip\int_{R^{n-1}}\dip\int_0^{\ifi}\lpi\derp{\hat f}{x_n}(\lambda',t)\rpi^2
+\;dt\;d^{n-1}\lambda'\rb^{1/2}\times\\ [3mm]
+&&\times\lb\dip\int_{R^{n-1}}\dip\int_0^{\ifi}(1+|\lambda'|^2)
+\;|f(\lambda',t)|^2\;dt\;d^{n-1}\lambda'\rb^{1/2}.
+\earr
+\eeq
+Usando que $|2\,a\,b|\leq a^2+b^2$ y la identidad de Plancherel obtenemos
+\beq\barr{rcl}
+\|\tau f\|^2_{H^{1/2}(R^{n-1})}&\leq&\int_{R^n_+}\lb|f(x)|^2+\sum_{k=0}^{n-1}
+|\pa_kf|^2+|\pa_n f|^2\rb\;d^nx\\ [3mm]
+&=&\|f\|_{H^1(R^n_+)}.
+\earr
+\eeq
+Para probar suryectividad debemos ver que dada $g\in H^{1/2}(\re^{n-1})$ 
+existe al menos una
+(en realidad infinitas) $f\in H^1(\re^n_+)$ tal que $\tau f=g$. 
+Nuevamente basta definir una
+anti-traza $K$ en $\cifrn$ y probar que existe $C>0$ tal que
+\beq
+\|K\,g\|_{H^1(R^n_+)} < C\:\|g\|_{H^{1/2}(R^{n-1})}\;\;\;\;\;\;
+\forall\;g\in\cifo.
+\eeq
+Sea $K(g)=\cF{}^{-1}(e^{-(1+|\lambda'|^2)^{1/2}\,x^n}\cF{}(g))$ 
+y notando que el argumento de $\cF{}^{-1}$ está en $\cS(\re^{n-1})$ 
+dejamos la prueba
+de la desigualdad anterior como ejercicio.
+
+En las aplicaciones tendremos que considerar funciones definidas solo
+en abiertos de \ren{}, $\Omega$ y sus bordes $\pa\Omega$.
+Supondremos que $\Omega$ es tal que su borde, $\pa\Omega=Cl\Omega-\Omega$, 
+es una variedad suave.
+
+Sea $H^m(\Omega)$ el espacio de Sobolev obtenido tomando la integral en el
+producto escalar  simplemente sobre $\Omega$ y completando el espacio
+$C^{\ifi}_0 (\Omega)$
+con respecto a su norma y sea $H^m_0(\Omega)$ el obtenido con la misma norma pero
+completando el espacio $C^{\ifi}(\Omega)$. Si $m=0$ o si $\Omega=\ren{}$ 
+luego estos espacios
+coinciden. Pero si $m\geq1$ y $\pa\Omega$ es no vacío entonces son 
+distintos
+(obviamente $H^m_0\su H^m$) ya que como se controlan derivadas en la norma las
+sucesiones de funciones de soporte compacto no pueden converger una
+función no nula en el borde.
+¿Cómo extenderemos los resultados obtenidos en \ren{} a $\Omega$?
+El lema clave para ello es el siguiente.
+
+\blem
+ Sea $\gamma$ la restricción de funciones en \ren{} a funciones en $\Omega$,
+luego $$\gamma:H^m(\ren{})\to H^m(\Omega)$$ es continuo y suryectivo.
+\elem
+\espa
+
+\pru:
+La continuidad es clara, solo resta ver la suryectividad.
+Probaremos suryectividad para el caso $\Omega=\{x\in\ren{},\;x_n>0\}$, 
+$\pa\Omega=\{x\in \ren{}\;/\;x_n=0\}.$
+Sea $f\in H^m(\Omega)$ luego por el Lema anterior $\tau(\pa^k_n f)\in
+L^2$ para $k=0,1,\ldots,m-1$. Continuamos $f$ para $x_n$
+ negativo como,
+\beq
+f(x)\equiv\lc\sum_{k=1}^{m-1}\frac{(-x_n)^k}{k!}\,\tau(\pa_n^k\,f)\rc\;\lp
+1-e^{1/x_n^2}\rp,\;\;x_n<0
+\eeq
+La sumatoria hace que las derivadas de $f$ sean continuas en $x_n=0$ y la
+exponencial hace que la norma $H^m$ sea acotada.
+Pero esta norma solo dependerá de las normas de $\tau (\pa_n^k f)$ 
+las cuales a su
+vez están acotadas por $\|f\|_{H^{m}(\Omega)}$ y por lo tanto 
+existirá $c>0$ tal que $\|f(x)\|_{H^m(R^n)}<C\;\|f\|_{H^m(\Omega)}$
+$\;\forall\;f\in\cifo$.
+El caso general es técnicamente más engorroso la idea
+básica es la de usar cartas tales que mapeen regiones conteniendo parte del 
+borde de $\Omega$ en $\ren{}^+$ mapeando borde con borde. En cada una
+de estas cartas sabemos cómo probar la desigualdad correspondiente.
+La desigualdad global se prueba suponiendo, por el absurdo, que
+ésta no vale $\spadesuit$
+
+Este lema nos permite inmediatamente generalizar los lemas
+anteriores. 
+
+\defi: Diremos que $f\in H^s(\Omega)$ si admite una extensión
+$\ti f$ a \ren{} tal que $\ti f\in H^s(\ren{})$
+[Note que esto concuerda con lo probado para $s$ entero positivo]. 
+
+Es inmediato entonces que si $s'>s$ luego $H^{s'}(\Omega)\su H^s(\Omega)$, 
+que si $m<s-n/2$ luego $H^s(\Omega)\su C^m(\Omega)$ y que si
+ $m>0$ entero $\tau:H^m(\Omega)\to H^{m-1/2}(\pa\Omega)$  
+ es continuo y suryectivo.
+ En la última afirmación usamos $H^{m-1/2}(\pa\Omega)$ donde en general 
+$\pa\Omega\neq$ abierto en
+ $\re^{n-1}$ y por lo tanto no se encuadra en la definición anterior. En el
+caso en que $\partial \Omega$ sea compacto diremos que 
+$f\in H^{m-1/2}(\pa\Omega)$ si, dado cualquier cubrimiento abierto
+$\{U_i\}$  de $\pa\Omega$ lo
+suficientemente peque\~no como para que exista $\fip_i$, tal que $(U_i,\fip_i)$ 
+sea una carta de $\pa\Omega$ entonces $f\in H^{m-1/2}(U_i)\;\forall
+\; i$.
+
+Finalizamos este capítulo con dos lemas. El segundo de ellos, consecuencia del primero,
+es de gran importancia en la teoría de ecuaciones en derivadas parciales.
+
+\blem 
+\label{lem10.9}
+Sea $\Gamma_d$ un cubo en $\ren$ con lados de longitud $d>0$.
+Si $u \in H^1(\Gamma_d)$ luego,
+\beq
+\|u\|^2_{H^0(\Gamma_d)} \leq d^{-n}|\int_{\Gamma_d}u d^nx|^2 + 
+\frac{nd^2}2 \sum_{j=1}^n \|\pa_j u\|^2_{H^0(\Gamma_d)}.
+\eeq
+\elem
+
+\pru:
+Es suficiente considerar $u \in C^1(\Gamma_d)$. 
+Para cualquier $x$ e $y$ en $\Gamma_d$ tenemos,
+\beq
+u(y)-u(x) = \sum^n_{j=1} \int^{y^j}_{x^j} \pa_j u (y^1,...,y^{j-1},s,x^{j+1},
+...,x^n) ds.
+\eeq
+Tomando su cuadrado y usando la desigualdad de Schwarzt obtenemos,
+\begin{eqnarray}
+&& |u|^2(x) + |u|^2(y) - 2\Re(u(x) u(y)) \nn 
+&\leq& nd\sum^n_{j=1} \int^{d/2}_{-d/2} |\pa_j u (y^1,\dots,y^{j-1},s,x^{j+1},\ldots,x^n)|^2 ds.
+\end{eqnarray}
+%
+Integrando con respecto a todos los $x^j$ e $y^j$ obtenemos, 
+\beq
+2\,d^n\:\|u\|^2_{H^0(\Gamma_d)}\leq 2\,\lpi\dip\int_{\Gamma_d}
+u\;d^nx\rpi^2+n\,d^{n+2}\;\dip\sum_{j=1}^n\|\pa_j\,u\|_{H^0(
+\Gamma_d)},
+\eeq
+de la cual
+sigue trivialmente la desigualdad buscada $\spadesuit$
+
+\blem
+\label{lem10.10}
+Sea $\Omega \subset \ren$ compacto con borde suave.
+Si una sucesión $\{u_p\}$ en $H^1_0(\Omega)$ es acotada, luego existe
+una subsucesión que converge (fuertemente) en $H^0(\Omega)$. 
+Es decir el mapa natural~\footnote{Por mapa natural entre dos espacios de Banach se entiende lo siguiente: recordemos que los elementos de cada uno de estos espacios son clases equivalentes de sucesiones de Cauchy, las cuales podemos asumir consisten de elementos suaves de algún espacio denso, por ejemplo $C^{\infty}(\Omega)$, el mapa natural se define como aquel que envía elemento a elemento una sucesión de Cauchy de un espacio en el otro. Como la norma del espacio de salida acota a la norma del espacio de llegada la sucesión obtenida en el espacio de llegada también es de Cauchy y por lo tanto determina una clase equivalente allí, ergo un elemento del espacio.} $H^1_0(\Omega) \rightarrow H^0(\Omega)$ es compacto.
+\elem
+
+\pru: 
+Sea $k = sup\{\|u_p\|_{H^1_0(\Omega)}\}$. 
+Como $\Omega$ es acotado lo podemos encerrar en un cubo $\Gamma_D$
+y extender cada $u_n$ como cero en $\Gamma_D - \Omega$. 
+Sea $\eps > 0$ y $M$ lo suficientemente
+grande como para que $\frac{2nk^2D^2}{M^2} < \eps$.
+Descomponiendo $\Gamma_D$ en $M^n$ cubos $\Gamma_d^j$ con $d = D/M$ y usando
+que como $\{u_n\}$ es también acotada en $H^0(\Omega)$ existe una 
+subsucesión 
+$\{\ti u_p\}$  y $u \in H^0(\Omega)$
+tal que esta converge débilmente a $u$. 
+Vemos entonces que existe un entero
+$N$ tal que si $p$ y $q >N$,
+\beq
+\lpi\int_{\Gamma_d^j} (\ti u_p -\ti u_q)\;d^nx\rpi^2 < \frac{\eps}2\lp
+\frac DM\rp^{2n}\frac{1}{D^n}.
+\eeq
+Si aplicamos a cada $\Gamma_d^j$ el lema~\ron{lem10.9}
+y sumamos sobre $j$ obtenemos que 
+$\forall \;p$ y $q > N$,
+\beq \barr{rcl}
+\|\ti u_p -\ti u_q\|^2_{H^0(\Omega)} &\leq& \lp\frac{D}{M}\rp^n
+\lp\sum^{M^n}_{j=1}\frac{\eps}2 \lp\frac DM\rp^{2n}\rp + \frac n2
+\lp\frac DM \rp^2(2k^2) \\ [3mm]
+&\leq& \frac{\eps}2 + \frac{\eps}2\\ [3mm]
+&\leq& \eps.
+\earr 
+\eeq                              
+Pero entonces $\{\ti u_p\}$ es una sucesión de Cauchy en $H^0(\Omega)$ 
+y por lo tanto
+converge fuertemente a $u$ en $H^0(\Omega)$ $\spadesuit$
+\espa
+
+
+\recubib{Recomiendo los libros: \cite{Treves} y \cite{Reed}. Los espacios de Sobolev permitieron comprender gran parte de la teoría de ecuaciones no lineales y previamente la teoría de ecuaciones lineales pero a coeficientes no suaves. No son ideas complejas, pero muy \'utiles e imprescindibles para la investigaci\'on en ecuaciones en derivadas parciales.}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End: 

@@ -1,0 +1,369 @@
+\chapter{Grupos}
+
+
+\section{Introducción}
+
+Los grupos juegan un papel fundamental en la física contemporánea. Esto se debe a que en la naturaleza
+se observan simetrías, o su correlato, vía el teorema de Noether, cantidades conservadas, es decir que no varían durante las interacciones de los diversos campos durante las escalas temporal propias a estas.
+Estas simetrías son invariancias ante transformaciones, tales, por ejemplo, como las traslaciones espaciales o temporales, las rotaciones, o transformaciones entre distintos campos, tales por ejemplo las que dan cuenta de la conservación de la carga eléctrica, el número bariónico, etc. Todas estas transformaciones, conforman grupos, y la determinación de la estructura de los mismos es un ingrediente fundamental en la construcción de modelos aproximando la realidad.
+
+Comenzamos con la definición abstracta de grupo:
+
+\defi: Un grupo es un conjunto $G$ y una asignación, $\Psi: G \times G \to G$, llamada {\sl multiplicación}, y usualmente denotada de la misma manera, $\Psi(g,g') :=  g g'$,
+satisfaciendo las siguientes condiciones:
+
+\begin{itemize}
+
+\item Asociatividad: $g(g'g'') = (gg')g''$
+
+\item Existe un elemento en $G$, usualmente denotado por $e$, tal que 
+\[
+ ge = eg = e \;\;\forall \; \in G 
+\]
+
+\item For each element $g \in G$ there exists another element in $G$, called its inverse, $g^{-1}$,
+such that, 
+\[
+g g^{-1} = g^{-1} g = e
+\]
+
+\end{itemize}
+
+\ejem: 
+Sea el conjunto $Z$ de números reales, incluidos los negativos y el cero. Sea el producto dado por la suma,
+$\Psi(n,m)=n+m$. Esta operación es claramente asociativa, 
+$\Psi(n,\Psi(m,l)) = \Psi(n, m+l) =  n+ m + l = \Psi(n+m,l)=\Psi(\Psi(n,m),l)$. En este caso la identidad es el número cero, $\Psi(0,n)=\Psi(n,0)=n$ y la inversa del elemento $n$ es el número $-n$.
+
+\ejem:
+Sea el conjunto $R-\{0\}$ y la multiplicación la usual. Vea que este conjunto con dicha operación es un grupo.
+
+\ejem:
+Veamos ahora el ejemplo más importante de grupo, como veremos más adelante todos los grupos se pueden obtener por esta construcción. Sea $S$ un conjunto cualquiera, sea $P(S)$ el conjunto de los mapas injectivos y surjectivos de $S$ en $S$, $\Psi: S \to S$. 
+Sea el producto la composición de mapas. Notemos que la composición de mapas es claramente asociativa,
+
+\[
+\Psi \mapcomp (\Phi \mapcomp \chi)(s) = \Psi \mapcomp \Phi(\chi(s)) 
+= \Psi(\Phi(\chi(s))) = (\Psi \mapcomp \Phi)(\chi(s))  = (\Psi \mapcomp \Phi)\mapcomp\chi(s).
+\]
+%
+Por otro lado la composición de mapas invertibles da un mapa invertible y por lo tanto la multiplicación es cerrada en $P(S)$. Como los mapas considerados son invertibles sus inversas como mapas son sus inversas como grupos y la identidad como mapa es la identidad en el grupo.
+
+\ejem:
+Sea $S=\{1,2\}$ un conjunto de dos elementos. $P(S)$ consta de solo dos elementos, la identidad, 
+$e(1,2) = (1,2)$ y la conmutación $g(1,2):=(2,1)$. 
+Notemos que $g$ es su propia inversa, $g\mapcomp g(12) = g(2,1) = (1,2)$.
+
+Abstractamente podemos definir este grupo por su tabla de multiplicación,
+
+\begin{table}[htdp]
+\caption{Tabla de multiplicación de $P(1,2)$}
+\begin{center}
+\begin{tabular}{|c|c|}
+e & g \\
+\hline
+g & e
+\end{tabular}
+\end{center}
+\label{tabla-15-1}
+\end{table}%
+
+\ejem:
+Veamos el caso siguiente, sea $S=\{1,2,3\}$. En este caso tenemos los siguientes mapas:
+$e(1,2,3)=(1,2,3)$, $f_{1}(1,2,3)=(1,3,2)$, $f_{2}(1,2,3)=(3,2,1)$, $f_{3}(1,2,3)=(2,1,3)$, $g(1,2,3)=(3,1,2)$, $g'(1,2,3)=(2,3,1)$. Su tabla de multiplicación es la siguiente:
+
+\begin{table}[htdp]
+\caption{Tabla de multiplicación de $P(1,2,3)$}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$e$ & $g$ & $g'$ & $f_{1}$ & $f_{2}$ & $f_{3}$ \\
+\hline
+$g$ & $g'$ & $e$ & $f_{3}$ & $f_{1}$ & $f_{2}$ \\
+\hline
+$g'$ & $e'$ & $g$ & $f_{2}$ &  $f_{3}$ & $f_{1}$ \\
+\hline
+$f_{1}$ & $f_{2}$ & $f_{3}$ & $e$ & $g$ & $g'$  \\
+\hline
+$f_{2}$ & $f_{3}$ & $f_{1}$ & $g'$ & $e$ & $g$ \\
+\hline
+$f_{3}$ & $f_{1}$ & $f_{2}$ & $g$ & $g'$ & $e$ \\
+\hline
+\end{tabular}
+\end{center}
+\label{tabla-15-2}
+\end{table}%
+
+\ejem:
+Considere el grupo de todos los mapas lineales de $\re2 \mapsto \re2$ que preservan un triángulo equilátero.
+
+
+\ejer: Considere el espacio todos los mapas lineales de $\re2 \mapsto \re2$ que preservan un cuadrado.
+Compare su tabla con la de $P(1,2,3,4)$.
+
+\section{Isomorfismos}
+
+Como hemos visto, el grupo de transformaciones lineales en $\re2$ que preservan un triángulo equilátero y el grupo $P(1,2,3)$ tienen la misma tabla de multiplicación. Por para todo fin práctico, de forma abstracta estos dos grupos son idénticos, el estudio de uno nos da toda la información sobre el otro. Esto no se una excepción, en física los mismos grupos aparecen como transformaciones en situaciones y espacios muy diversos y no es tan fácil establecer la relación entre los mismos. Formalmente la relación entre ellos se puede definir de la siguiente manera:
+
+\defi: Dos grupos, $G$ y $H$ son {\sl isomórfos} si existe un mapa invertible entre ambos, 
+$\Psi: G \mapsto H$ tal que,
+
+\[
+\Psi(g) \Psi(g') = \Psi(gg').
+\]
+ %
+ Note que en el lado izquierdo el producto es el producto de $H$, mientras que en el derecho el producto es el de $G$. Es decir el mapa $\Psi$ preserva el producto entre los espacios. Si dos grupos son isomórficos entonces son idénticos en cuanto a sus propiedades intrínsecas.
+ 
+ \ejer: Encuentre el mapa que hace $P(1,2)$ y grupo de todos los mapas lineales de $\re2 \mapsto \re2$ que preservan un triángulo equilátero.
+ 
+ \section{Subgrupos}
+ 
+ \defi: $H$ es un subgrupo de $G$ si es un grupo  en sí mismo, con la operación de multiplicación heredada de $G$. Es decir, si dado dos elementos, $h, \; h' \; \in H$, $hh' \; \in H$, o sea que es cerrado bajo  el producto, y si $h \;\in \; H$, luego $h^{-1} \;\in \; H$. Note que ambas condiciones ya nos aseguran que $e \;\in \; H$.
+ 
+ \ejem: En $P(1,2,3)$ los elementos $e,g,g'$ forman un subgrupo de $H$.
+ 
+ \ejer: Encuentre un subgrupo no trivial (el elemento identidad es siempre un subgrupo) del grupo dado por el conjunto $\re -\{0\}$ con la multiplicación usual.
+ 
+ \ejem: Si $H_{1}$ y $H_{2}$ son subgrupos, luego su intersección, $H_{1} \cap H_{2}$,  también lo es.
+ Dado un subconjunto $S$ de $G$, la intersección de todos los grupos que lo contienen es un subgrupo. 
+ Se lo denomina el subgrupo generado por $S$. 
+ 
+ \ejer: Demuestre las afirmaciones del ejemplo anterior.
+ 
+ \ejer: Considere un conjunto $S$ y el grupo de permutaciones sobre el mismo, $P(S)$.  Sea $S'$ un subconjunto de $S$ y considere todos los mapas que cuando restringidos a $S'$ son la identidad. 
+ Vea que este conjunto es un subgrupo.
+ 
+ \ejer: Sea $A$ subconjunto de $G$. Vea que $A$ es un subgrupo sii $\forall \; a, \; a'\; \in A$, 
+ $a^{-1}a' \; \in \; A$.
+ 
+ \ejer: Sea $P(S)$, con $S$ finito. Sea 
+ \[
+ A := \{ \mu \;\in \; P(S) |\; \exists \;s, \; s' \; s''\; \mbox{distintos, tales que } \mu(s) = s', \; \mu(s') =s'' \; \mu(s'') = s.\}\]
+ Muestre que el subgrupo generado por $A$ no es todo $P(S)$.
+ 
+ \section{La construcción universal}
+ 
+Vimos varios ejemplos de grupos que aparecen como grupos de transformaciones, es decir como mapas invertibles de un conjunto en sí mismo. En realidad todos los grupos se pueden obtener de esta forma.
+Citamos el siguiente teorema, el cual no probaremos, pero que es muy importante pues sitúa a los grupos en sy justa dimensión:
+
+\bteo
+Dado un grupo $G$ existe un conjunto $S$ tal que $G$ es isomórfico a un subgrupo de $P(S)$.
+\eteo
+% 
+Más adelante veremos una manera de establecer este resultado.
+
+\ejem: Sea el grupo cuyo conjunto consiste de los números enteros y la multiplicación la suma. Vea que este grupo es isomorfo al grupo de traslaciones sobre $Z$: $\Psi_{n}: Z \mapsto Z$, dados por 
+$\Psi_{n}(m) = n+m$.
+
+
+
+\ejem: 
+Sea el grupo cuyo conjunto es $R-\{0\}$ con multiplicación dada por el producto. Este grupo puede ser obtenido como el conjunto de los mapas invertibles de la línea real en sí misma dados por, $\Psi_{x}: \re \mapsto \re$ dados por $\Psi_{x}(y) := xy$. Estos mapas son llamados dilataciones. 
+
+
+
+
+\section{Grupos Lineales}
+
+Se llama grupos lineales a aquellos grupos que aparecen como subgrupos del grupo de mapas lineales e invertibles de $\ren \mapsto \ren$ o sus versiones complejas, los mapas de $\Complex{}^{n} \mapsto \Complex{}^{n}$.
+
+El mayor de ellos es el conjunto completo, llamado el {\sl grupo lineal general}, y denotado 
+$GL(n,\ren / \Complex{}^{n})$, es decir el conjunto de matrices cuadradas invertibles $n\times n$, con 
+elementos reales o complejos.
+
+
+Un subgrupo del mismo es el de todas las matrices con determinante con módulo unidad. 
+Note que este conjunto es realmente un subgrupo ya que,
+\[
+\det(A) \det(B) = \det(AB).
+\]
+%
+Un subgrupo más pequeño de este está formado por el subconjunto de las mismas que tiene determinante unidad. 
+Estas reciben el nombre, {\sl grupo lineal especial}, $SL(n,\ren / \Complex{}^{n})$.
+
+Estos espacios tienen más subgrupos pero los mismos no se manifiestan de forma natural a menos que incluyamos más estructura. Por ejemplo, si introducimos una base preferida, luego el conjunto de matrices que son triangular superior (inferior) con todos los elementos de la diagonal distintos de cero (invertibles) son subgrupos. De más relevancia son los que aparecen cuando introducimos un producto escalar.
+En ese caso vemos que las matrices unitarias, (ortogonales) forman subgrupos, 
+de hecho, si $U$ y $U'$ son unitarias, es decir, 
+
+\[
+\langle Ux, Uy \rangle = \langle U'x, U'y \rangle = \langle x, y \rangle,
+\]
+% 
+su producto también es unitario, 
+
+\[
+ \langle U U' x, U U'y \rangle =  \langle U (U' x), U (U'y) \rangle = \langle U'x, U'y  \rangle = \langle x, y \rangle.
+\]
+
+Estos grupos se denotan como $U(n)$ cuando consideramos matrices complejas (unitarias) y $O(n)$ para el caso real. Las con determinante unidad por $SU(n)$ y $SO(n)$.
+
+El grupo $SO(3)$ es el grupo de rotaciones en el espacio. El $O(n)$ incorpora, además de las rotaciones, las inversiones perpendiculares a planos arbitrarios. 
+
+\ejer: Encuentre y describa todos estos grupos anteriores para $n=1$ y $n=2$. 
+
+\ejer: Vea que $U(1)$ tiene como subgrupo a $P(1,2,3)$. $U(1)$ aparece en física como un grupo de simetría asociado a la conservación de la carga eléctrica. 
+
+\ejer: ?`Que otros subgrupos tiene $U(1)$?
+
+\ejer: Vea que $U(1)$ es isomorfo a $SO(2)$.
+
+\ejer: Vea que $SU(2)$ cubre dos veces $SO(3)$. Ayuda, use las matrices de Pauli. $SU(2)$ aparece en física como uno de los grupos principales del modelo estándar de partículas, al igual que $SU(3)$.
+
+\ejer: 
+
+\subsection{El grupo $SO(3)$.}
+
+El grupo $SO(3)$ consiste de las matrices ortonormales $3 \times 3$ con determinante unidad.
+Es decir las rotaciones en $\re^{3}$. Veamos que propiedades tiene este conjunto como variedad.
+Una manera de describir este conjunto es la siguiente: Para determinar una rotación necesitamos dar
+el eje invariante de la misma, o sea una dirección en $\re^{3}$, que tomamos como un vector unidad en $\re^{3}$, $\hat{n}$ y el ángulo de la misma. A este último 
+le podemos asignar un rango dado por $[-\pi,\pi]$ teniendo en cuenta que la rotación en la dirección $\hat{n}$ por un ángulo $\pi$ es igual a la rotación por el ángulo $-\pi$.
+Cada una de estas rotaciones puede ser expresada por la matriz,
+
+\[
+\left( \begin{array}{ccc}
+          1 & 0 & 0 \\
+          0 & \cos \theta & \sin \theta \\
+          0 &-\sin \theta & \cos \theta
+          \end{array}
+          \right)
+\]          
+%
+Donde hemos elegido los ejes coordenados de manera que el eje $z$ coincide con la dirección de la rotación.
+Vemos así que la rotación por $\pi$ es la misma rotación que por $-\pi$.
+Podemos unir la dirección de rotación con el ángulo de la misma y formar un vector de forma que su dirección coincida con la dirección de rotación y su magnitud con el ángulo de la misma. Vemos entonces que $SO(3)$
+consta de todos los puntos en una bola de radio $\pi$, cada diámetro de la misma consiste en todas las rotaciones sobre un eje fijo. Pero este conjunto tiene una peculiaridad, debemos identificar cada punto de la esfera exterior, de diámetro $\pi$, con su antípoda. Logramos así una variedad que no tiene frontera.
+Si trazamos una curva que pretende salir de ella, cuando llega al diámetro $\pi$ aparece en el punto opuesto
+de dicha esfera ingresando al interior de la bola por dicho punto.
+En particular  si comenzamos una curva de este tipo en un punto $p$ en el interior de la bola, vamos hacia el diámetro $\pi$ y la continuamos hasta alcanzar nuevamente el punto inicial $p$ tendremos una curva cerrada que no puede ser deformada a la curva identidad! \footnote{Diremos que una curva cerrada $\gamma(t)$ con $\gamma(0)=\gamma(1)=p$ en una dada variedad, $M$, puede ser deformada a la curva identidad $i(t)\equiv p$, si existe un mapa $\phi(t,s)$, $[0,1]\times [0,1] \mapsto M$ tal que $\phi(t,0)=\gamma(t)$ y $\phi(t,1)=i(t0=p$.} Es decir, como variedad, $SO(3)$ no es simplemente conexa. El siguiente ejemplo también muestra que no es un toro.
+
+\ejer: Muestre gráficamente que una curva que recorre dos veces el camino de la anterior es deformable a la identidad.
+
+Esta propiedad de $SO(3)$ tiene importantes consecuencias en física. Es la que permite la existencia matemática de los espinores, es decir el modelo que describe todos los campos fermiónicos, en particular el electrón. Esto se debe a que los espinores cuando son rotados por un ángulo de $2\pi$, es decir a lo largo de uno de los ejes de $SO(3)$, éste cambia de signo, (sabe de las curvas no deformables). Mientras que si lo rotamos por un ángulo de $4\pi$ vuelve a su estado original.
+
+
+\section{Cosets}
+
+Dado un grupo $G$ y un subgrupo $H$ del mismo, podemos construir dos espacios cocientes.
+Uno de ello se obtiene introduciendo la siguiente relación de equivalencia:
+
+Diremos que $g_{1} \approx g_{2}$ si existe $g \; \in \; G$ tal que $g_{1}=g h_{1}$ y $g_{2}=g h_{2}$.
+Con $h_{1}, \; h_{2}\; \in \; H$.
+
+Las dos primeras condiciones que definen una relación de equivalencia se satisfacen trivialmente. Veamos la tercera:
+
+Debemos ver que si $g_{1} \approx g_{2}$ y $g_{2} \approx g_{3}$, entonces $g_{1}\approx g_{3}$.
+Las dos primeras condiciones nos dan, 
+$g_{1}=g h_{1}$ y $g_{2}=g h_{2}$ para algún $g \in G$ y $g_{2}=\tilde{g} \tilde{h}_{2}$ y $g_{3}=\tilde{g} \tilde{h}_{3}$ para algún $\tilde{g} \in G$. Usando las dos relaciones para $g_{2}$ vemos que 
+$\tilde{g} = g h_{2} \tilde{h}^{-1}_{2}$. 
+Por lo tanto,  $g_{3}=\tilde{g} \tilde{h}_{3} = g h_{2} \tilde{h}^{-1}_{2}\tilde{h}_{3} = g h_{2} \tilde{h}^{-1}_{2}\tilde{h}_{3}$. Lo que prueba la afirmación ya que $h_{2} \tilde{h}^{-1}_{2}\tilde{h}_{3} \;\in\;H$.
+
+Definimos así, $L=G/H_{L}$, el conjunto de clases equivalentes con respecto a esta relación de equivalencia.
+El subíndice $L$ se refiere a que hacemos equivalencias multiplicando los elementos de $H$ por la izquierda.
+El otro espacio cociente se obtiene por multiplicación por la derecha.
+
+?`Cómo están constituido los elementos de $L$? Sea $g\in G$, luego podemos considerar el conjunto,
+
+\[
+gH := \{ gh, \; h\in H\}.
+\]
+%
+Note que $g \in H$ ya que $e \in H$ y que todos los elementos de $gH$ son equivalentes entre sí y no hay ningún elemento fuera de $gH$ que sea equivalente a $g$. Por lo tanto estos son los elementos de $L$.
+Note que ya que estas son clases equivalentes, cada elemento de $G$ está en una y solo una de estas clases equivalentes. 
+
+\ejer: Constate para el caso de $P(1,2,3)$ que los cosets por derecha correspondientes a tomar $P(1,2,3)$ como su propio subgrupo son las columnas de la tabla de multiplicación. A que corresponden las filas?
+Esto indica que cada fila y columna está constituida por elementos distintos entre sí.
+
+Sean $A$ y $B$ dos elementos de $L$. Tomando dos elementos cualesquiera de $G$ en cada una de estas clases equivalentes, $g_{A}$ y $g_{B}$, tenemos que $A=g_{A}H$ y $B=g_{B}H$. Con lo cual 
+$B=g_{B}H = g_{B}g^{-1}_{A}A$ y vemos que dados dos elementos cualesquiera de $L$, existe un mapa invertible que envía todos los elementos de uno en el otro. Es decir todas las clases equivalentes son isomorfas entre sí. Note que esto tiene la siguiente implicación.
+Sea $G$ un grupo con $p$ elementos y $H$ un subgrupo del mismo. El espacio cociente tendrá $n$ elementos, clases equivalentes, cada uno con $q$ elementos, el número de elementos de $H$. Como las relaciones de equivalencia dividen al conjunto $G$ en clases disjuntas. Debemos tener que $p=nq$.
+Es decir el número de elementos de un subgrupo divide al número de elementos del grupo!
+En particular, si el número de elementos de un grupo es primo, podemos concluir inmediatamente que este solo tendrá los subgrupos  triviales, la identidad y el grupo completo.
+
+\ejem: Sea $P(1,2,3)=\{e,g,g',f_{1},f_{2},f_{3}\}$, este grupo tiene los siguientes subgrupos,
+$H_{0}:=\{e,g,g'\}$ y $H_{i}:=\{e,f_{i}\}$.
+Como $H_{0}$ tiene 3 elementos, $(P(1,2,3)/H_{0})_{L}$ tendrá dos elementos,
+$L_{1}=H_{0}$ y $L_{2}=\{f_{1},f_{2},f{3}\}$. 
+
+\ejer: Vea que $f_{i}L_{1}=L_{2}$.
+
+\ejer: >Cuantos elementos tiene $(P(1,2,3)/H_{i})_{L}$? Encuéntrelos.
+
+\subsection{Espacios Homogéneos}
+
+El conjunto $L=G/H_{L}$ no es en general un grupo, pero tiene propiedades interesantes y estos conjuntos aparecen muy a menudo en aplicaciones, usualmente bajo el nombre de Espacios Homogéneos.
+
+Ya vimos que $G$ actúa sobre $L$, dado un elemento de $L$, $A$, la acción de $g \in G$ en $A$ es el elemento de $L$ dado por $gA$. Denotaremos dicho mapa como $\Psi_{g}:L \mapsto L$. 
+Como ya vimos, dados dos elementos de $L$, $A$ y $B$, siempre existe un elemento de $G$, $g$ tal que
+$\Psi_{g}(A)=B$, es decir actúa transitivamente. La inversa de este mapa es $\Psi_{g^{-1}}$. 
+Esto nos dice que todos los puntos de $L$ tiene la misma estructura, el grupo los mueve a todos en todos.
+De ahí su nombre de espacios homogéneos.
+
+Como los mapas anteriores tienen inversa pertenecen a $P(L)$ el espacio de permutaciones de $L$.
+Tenemos así un mapa de $G$ en $P(L)$, el que, dado un elemento $g \in G$ asigna el mapa $\Psi_{g}$
+en $P(L)$. Tenemos que,
+
+\[
+\Psi_{g} \mapcomp \Psi_{g'} (A) = \Psi_{g}(g'A) = g(g'A) = (gg') A = \Psi_{gg'} (A),
+\]
+%
+o sea un homomorfismo entre grupos, lo que indica que $G$ es un subgrupo de $P(L)$.
+Si tomamos $L=G/e=G$, tenemos al grupo como espacio homogéneo y a $G$ como subgrupo de $P(G)$.
+Esto nos da una prueba del teorema de la construcción universal mencionado anteriormente.
+
+\ejem: Sea $G = \re -\{0\}$ con la operación de multiplicación usual entre racionales. Sea $H=\{-1,1\}$.
+En este caso $G/H = \re^{+}$.
+
+\section{Subgrupos Normales}
+
+Una clase particular de subgrupos son los llamados grupos normales. Estos son los grupos donde los cosets por derecha e izquierda coinciden, es decir, $N\in G$ es subgrupo normal si es un subgrupo y además,
+
+\[
+gN = Ng \;\;\;\;\;\;\; \forall g \in G
+\]
+%
+la propiedad importante que tiene los cosets generados por subgrupos normales es que tienen una operación de multiplicación cerrada que convierte al conjunto de los mismos en grupos.
+De hecho, debido a la relación que los define,
+
+\[
+gN \;g'N = g g' N\; N = gg'N
+\]
+%
+el grupo así definido no es, en general, un subgrupo de $G$.
+
+\ejer: Mostrar que la intersección de subgrupos normales es normal.
+
+De la misma forma que se pueden generar subgrupos a partir de subconjuntos de $G$ tomando la intersección de todos los subgrupos que contienen el subconjunto generador. Como la intersección de subgrupos normales es un subgrupo normal, la intersección de todos los subgrupos conteniendo al subconjunto generador generarán un subgrupo normal.
+
+Un caso particularmente interesante es cuando el subconjunto es el conjunto de elementos de $G$
+de la forma,
+
+\[
+C:=\{g\tilde{g} g^{-1}\tilde{g}\}
+\]
+
+El subgrupo normal generado a partir de este conjunto se denomina el conmutador de $G$. 
+Este contiene todos los elementos que no conmutan en el sentido que si tomamos el cociente, 
+$G/N$ obtenemos un grupo abeliano.
+
+\ejer: Pruebe que un grupo es abeliano sii su subgrupo conmutador es la identidad.
+
+\ejer: Sea $P(S)$ el grupo de permutaciones sobre $S$. Vea que las transformaciones que dejan todos los elementos de $S$ invariantes, excepto un numero finito de elementos en un subgrupo normal.
+
+\ejer: Muestre que un subgrupo dando origen a solo dos cosets en necesariamente normal.
+
+\ejer: Sea $Z$ el conjunto de elementos de $G$ tales que si $z \in Z$ luego $gz=zg \; \forall g \in G$.
+Muestre que $Z$ es un subgrupo normal.
+
+
+
+
+%\espa 
+%%\fig{5cm}{Condiciones de Contorno para la Ecuación del Calor.}
+%\begin{figure}[htbp]
+%  \begin{center}
+%    \resizebox{7cm}{!}{\myinput{Figure/m14_1}}
+%    \caption{Condiciones de contorno para la ecuación del calor.}
+%    \label{fig:14_1}
+%  \end{center}
+%\end{figure}
+

@@ -1,0 +1,81 @@
+\documentclass{article}
+%\input{extdef}
+\newcommand{\ve}[1]{\mbox{\boldmath ${#1}$}}
+\begin{document}
+
+\begin{center}
+ \textbf{ Parcial de An\'alisis Matem\'atico IV (Hilbert-Fourier) \\
+Noviembre 19, 1999 }
+\end{center}
+
+Problema 1.- 
+%
+Sea $f(x) = |x|$ en el intervalo $[-\pi,\pi]$. 
+
+a) Vea que esta funci\'on es Lipshitz.
+
+b) Calcule sus coeficientes de Fourier.
+
+c) Use la convergencia punto a punto (no la relaci\'on de parseval) para concluir que 
+
+\begin{equation}
+  \frac{\pi^2}{8} = \sum_{k=1}^{\infty} \frac{1}{(2k+1)^2}
+\end{equation}
+
+Problema 2.-
+%
+Encuentre los coeficientes de Fourier de la funci\'on $|\sin(x)|$.
+
+Problema 3.-
+%
+Prueve que los coeficientes de Fourier de $h(x) = f(x)g(x)$
+estan dados por 
+\begin{equation}
+h_n = \frac{1}{\sqrt{2\pi}} \sum_{m=-\infty}^{\infty} f_{n-m} g_m.
+\end{equation}
+
+
+
+
+
+Problema 4.-
+%
+Verdadero o Falso? Justifique.
+
+\begin{itemize}
+
+\item[a] 
+La transformada parcial de una funci\'on Lipshitz $f$, $S_N(f)$
+aproxima puntualmente y uniformemente a $f$ cuando $N\to \infty$.
+
+\item[b] 
+Si una funci\'on es cont\'\i{}nuamente diferenciable ($f \in C^1([0,2\pi])$),
+luego la mejor cota para sus coeficientes de Fourier es: $|f_n| < C/\sqrt{n}$,
+donde $C$ depende solo $f$ y su derivada primera.
+
+\item[c] 
+Las funciones cont\'\i{}nuas no son densas en $L^2$.
+
+\item[d] 
+En un espacio de Hilbert puede haber sucesiones de Cauchy que no
+convergen a ning\'un elemento del mismo.
+
+\item[e] 
+El espacio 
+$H := \{f: R \to R | f \in C^0(R), \|f\|_H < \infty \}$, 
+con norma dada por
+$\|f\|_H := \sqrt{\int_{-\infty}^{\infty} |f(x)|^2 dx}$
+es un espacio de Hilbert. 
+\end{itemize}
+
+
+
+
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

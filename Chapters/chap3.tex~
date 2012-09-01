@@ -1,0 +1,1177 @@
+%%ultima modificación 15-08-92
+
+\chapter{Geometría}
+
+
+
+
+
+\section{Variedades}
+
+Hay dos motivos principales que justifican el estudio 
+del concepto de variedad, o más generalmente de la geometría
+diferencial por parte de los físicos.
+Uno es que en física aparecen naturalmente las variedades y por lo tanto no las podemos eludir.
+Solo en los cursos elementales se logra esquivar a éstas por medio del cálculo vectorial en $\re^n$. 
+Así es que, por ejemplo, para estudiar el movimiento de una partícula
+restringida a moverse en una esfera la imaginamos a esta última
+embebida en $\re^3$ y usamos las coordenadas naturales de $\re^3$
+para describir sus movimientos.
+
+El segundo motivo es que el concepto de variedad es de
+gran utilidad conceptual, ya que por ejemplo en el caso 
+de una partícula moviéndose en $\re^3$ este nos permite discernir
+claramente entre la posición de una partícula y su
+vector velocidad como entes matemáticos de naturaleza diferente.
+Este hecho se enmascara en $\re^3$ ya que este tipo especial de
+variedad tiene la estructura de un espacio vectorial.
+
+Una variedad es una generalización de los espacios Euclídeos
+$\re^n$ en la cual uno preserva el concepto de continuo, es decir su
+topología en el sentido local pero descarta su carácter de
+espacio vectorial. Una variedad de dimensión $n$ es en términos
+imprecisos un
+conjunto de puntos que localmente es como $\re^n$, pero que no
+lo es necesariamente en su forma
+global. 
+
+
+Un ejemplo de una variedad en dos
+dimensiones es la esfera, $S^2$.
+Si miramos un entorno suficientemente peque\~no, $U_p$, de un punto
+cualquiera de $S^2$ vemos que es similar a un entorno del plano,
+$\re^2$, en el sentido que podemos definir un mapa continuo e 
+ invertible entre ambos entornos. Globalmente el plano y la esfera
+son topológicamente distintos, ya que no existe ningún mapa continuo 
+e invertible entre ellos.
+[Ver figura 3.1.]
+%\fig{6cm}{Un atlas de la esfera.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_1_b}}
+    \caption{Un atlas de la esfera.}
+    \label{fig:3_1}
+  \end{center}
+\end{figure}
+
+Como dijimos antes, se podría objetar la necesidad, en el ejemplo
+anterior, de introducir el concepto de variedad, ya que uno podría
+considerar $S^2$ como el subconjunto de $\re^3$ tal que
+$x_1^2+x_2^2+x_3^2=1$. La respuesta a esta objeción es que en física 
+uno debe seguir la regla de la economía de conceptos y
+objetos y descartar todo lo que no sea fundamental a la descripción
+de un fenómeno: si queremos describir cosas sucediendo en la
+esfera, ¿para qué necesitamos un espacio de más dimensiones?
+
+Esta regla de economía nos fuerza a precisar los conceptos y
+descartar todo lo superfluo.
+
+\noi Damos a continuación una serie de definiciones para desembocar
+finalmente en la definición de variedad de dimensión $n$.
+
+\defi: Sea $M$ un conjunto. Una {\bf carta de $M$} es un par $(U,\fip)$
+donde $U$ es un subconjunto de $M$ y $\fip$ un mapa inyectivo entre
+$U$ y $\re^n$, tal que su imagen, $\fip(U)$ es abierta en $\re^n$.
+
+\defi: Un {\bf atlas de $M$} es una colección de cartas $\{(U_i,\fip_i)\}$
+ satisfaciendo las siguientes condiciones: 
+ [Ver figura 3.2.]
+
+\espa 
+%\fig{9cm}{Relación entre cartas}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_2}}
+    \caption{Relación entre cartas.}
+    \label{fig:3_2}
+  \end{center}
+\end{figure}
+
+\begin{enumerate}
+ \item Los $U_i$ cubren $M$, $\displaystyle(M=\bigcup_i\;U_i)$.
+ \label{it1}
+ \item Si dos cartas se superponen entonces $\fip_i(U_i\cap U_j)$ es
+también un abierto de $\re^n$.\label{it2}
+\item El mapa $\fip_j \circ \fip_i^{-1}:\fip_i(U_i\cap U_j) \to
+\fip_j(U_i\cap U_j) $ es continuo, inyectivo y suryectivo.
+\label{it3}
+\end{enumerate}
+
+
+
+La condición~\ref{it1} nos da una noción de {\it cercanía} en $M$
+inducida de la noción análoga en $\re^n$. En efecto, podemos decir
+que una secuencia de puntos $\{p_k\}$ en $M$ convergen a $p$ en $U_i$
+si existe $k_0$ tal que $\forall\;\;k> k_0$, $p_k\in U_i$ y la
+secuencia $\{\fip_i(p_k)\}$ converge a $\fip_i(p)\}$. 
+Otra manera de ver esto es que si luego de esta construcción
+de una variedad imponemos que los mapas $\fip_i$ sean continuos entonces
+inducimos de forma unívoca una topología en $M$.
+[Ver figura 3.3.] 
+
+\espa 
+%\fig{7cm}{Sucesiones en $M$.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_3}}
+    \caption{Sucesiones en $M$.}
+    \label{fig:3_3}
+  \end{center}
+\end{figure}
+
+La condición~\ref{it2} simplemente nos asegura que esta noción es
+consistente. Si $p\in U_i\cap U_j$ luego el hecho de que la secuencia
+converja es independiente de que usemos la carta $(U_i,\fip_j)$ o la
+$(U_j,\fip_j)$.
+
+La condición~\ref{it3} nos permite codificar en los mapas
+$\fip_j\circ\fip_i^{-1}$  de $\re^n$ en $\re^n$ la información
+topológica {\it global} necesaria para distinguir, por ejemplo, 
+si $M$ es una esfera  o un plano o un toro. 
+Allí está, por ejemplo la información de que
+no existe ningún mapa continuo e invertible entre $S^2$ y $\re^2$.
+Pero también, si pedimos que estos mapas sean diferenciables, es lo
+que nos permitirá formular el cálculo diferencial en $M$.
+En efecto, note que en la condición~\ref{it3} hablamos de la continuidad del
+mapa $\fip_j\circ \fip_i^{-1}$, la cual está bien definida debido a
+que este es un mapa entre $\re^n$ y $\re^n$. Análogamente podemos
+hablar de la diferenciabilidad de estos mapas.
+
+Diremos que {\bf un atlas $\{(U_i,\;\fip_i)\}$,es $C^p$} si los mapas
+$\fip_j\circ\fip_i^{-1}$ son $p$-veces diferenciables y su $p$-ésima
+derivada es continua.
+
+Uno estaría tentado a definir la variedad $M$ como el par que
+consiste del conjunto $M$ y un atlas $\{(U_i,\fip_i)\}$, pero esto
+nos llevaría a considerar como distintas variedades, por ejemplo,
+el plano con un atlas dado por la carta ($\re^2,(x,y)\to (x,y))$ y
+el plano con un atlas dado por la carta ($\re^2,(x,y)\to (x,-y))$.
+
+
+Para subsanar este inconveniente introducimos el concepto de
+equivalencia entre atlas. 
+
+\defi: Diremos que {\bf dos atlas son
+equivalentes} si su unión es también un atlas.
+
+
+\ejer: Demuestre que esta es realmente una relación
+de equivalencia $\approx$, es decir que cumple:
+
+$i$) $A\,\approx\,A$
+
+$ii$) $A\,\approx \,B\;\Longrightarrow\;B\,\approx\,A$
+
+$iii$) $A\,\approx\,B\, , \, B\,\approx\,C\;\Longrightarrow\;A\,\approx\,C$.
+
+Con esta relación de equivalencia podemos dividir el conjunto de
+atlas de $M$ en distintas {\bf clases equivalentes}. [Recuerde que cada clase
+equivalente es un conjunto donde todos sus elementos son equivalentes
+entre sí y tal que no hay ningún elemento equivalente a estos que
+no esté\ en él.]
+
+
+\defi: Llamaremos {\bf variedad $M$ de dimensión $n$ y diferenciabilidad $p$}
+al par que consiste del conjunto $M$ y de una clase equivalente de
+atlas, $\{\fip_i\,:\,U_i\,\to\,\re^n\}\;,$ en $C^p$.
+
+Se puede demostrar que para caracterizar la variedad $M$ unívocamente 
+es suficiente dar el conjunto $M$ y un atlas. Si tenemos dos atlas de
+$M$, luego, o bien estos son equivalentes y así representan la
+misma variedad, o no lo son y entonces representan variedades
+distintas.
+
+La definición de variedad que hemos introducido es todavía
+demasiado general para las aplicaciones físicas usuales, en el
+sentido de que la topologías permitidas pueden aún ser patológicas
+desde el punto de vista de la física. Por ello
+en este curso impondremos a las variedades una condición extra.
+Supondremos que éstas son {\bf separables o Hausdorff}. Eso es si
+$p$ y $q\,\in\;M$ luego: o pertenecen al dominio de una misma carta 
+$U_i$ (en cuyo caso existen entornos $W_p$ de $\fip_i(p)$ y 
+$W_q$ de $\fip_i(q)$ tales
+que $\fip_i^{-1}(W_p)\,\cap\,\fip_i^{-1}(W_q)=\;\emptyset$, o sea los
+puntos tienen entornos disjuntos) o bien existen $U_i$ y $U_j$ con
+$p\,\in\,U_i$, $q\,\in\,U_j$ y $U_i\,\cap\,U_j\,=\,\emptyset$, lo
+que también implica que tienen entornos disjuntos.
+Esta es una propiedad en la topología de $M$ que esencialmente
+dice que podemos separar puntos de $M$. Un ejemplo de una variedad
+no--Hausdorff  es el siguiente.
+
+
+
+
+\ejem: $M$, como conjunto, consta de tres intervalos de la recta
+$I_1\,=(-\infty,0]$, $I_2\,=(-\infty,0]$ y $I_3\,=(0,+\infty)$. \\
+Un atlas de $M$ es $\{ (
+U_1\,=\,I_1\,\cup\,I_3\,,\,\fip_1\,=\,id)\;,\,(U_2\,=\,I_2\,\cup\,
+I_3\;,\,\fip_2\,=\,id\,)\}$. 
+[Ver figura 3.4.] 
+
+\espa 
+%\fig{3cm}{Ejemplo de variedad no--Hausdorff.}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_4}}
+    \caption{Ejemplo de variedad no--Hausdorff.}
+    \label{fig:3_4}
+  \end{center}
+\end{figure}
+
+\ejer: Pruebe que es un atlas.
+
+\noi Note que dado cualquier entorno $W_1$  de $\fip_1(0)$ en $\re$ y
+cualquier entorno $W_2$ de $\fip_2(0)$ tenemos  necesariamente que
+$\fip_1^{-1}(W_1)\,\cap\,\fip_2^{-1}(W_2)\,\neq \,\emptyset$.
+
+
+\section {Funciones Diferenciables en $M$}
+
+De ahora en más asumiremos que $M$ es una variedad $C^\infty$, o sea
+que todos sus mapas $\fip_i\circ\fip_j^{-1}$ son infinitamente
+diferenciables. Si bien matemáticamente esto es una
+restricción, no lo es en las aplicaciones físicas. En estas $M$
+es generalmente el espacio de posibles estados del sistema y por lo
+tanto sus puntos no pueden ser determinados con absoluta certeza, ya
+que toda medición involucra  cierto error. 
+Esto indica que por
+medio de mediciones nunca podríamos saber el grado de
+diferenciabilidad de $M$. Por conveniencia supondremos que es $C^\infty$.
+
+Una función en $M$ es un mapa $f:M\to\,\re$, o sea un mapa que
+asigna un número real a cada punto de $M$. La información
+codificada en el atlas sobre $M$ nos permite decir cuan suave es $f$.
+
+\defi: Diremos que $f$ es {\bf $p$-veces continuamente diferenciable} en el 
+punto
+$q\,\in\;M\;,\,f\,\in\,C_q^p $ si dada $(U_i,\fip_i)$ con
+$q\,\in\,U_i\;,\,f\circ\fip_i^{-1}\,:\fip_i(U_i)\subset
+\,\re^n\,\to\re$ es $p$-veces continuamente diferenciable en $\fip_i(q)$.
+
+\noi Note que esta propiedad es independiente de la carta empleada [
+mientras consideremos solo cartas de la clase compatible de atlas ].
+Diremos que $f\,\in\,C^p(M)$ si $f\,\in\,C_q^p\;\;\forall\,q\,\in\,M$.
+[Ver figura 3.5.]
+
+\espa 
+%\fig{6cm}{Composición del mapa de una carta con una función}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_5}}
+    \caption{Composición del mapa de una carta con una función.}
+    \label{fig:3_5}
+  \end{center}
+\end{figure}
+
+
+En la práctica uno define una función particular $f\,\in\,C^p(M)$
+introduciendo funciones $f_i\,:\,\fip_i(U_i)\,\subset\,\re^n\;\to\re$
+( o sea $f_i(x^j)$ donde $x^j$ son las coordenadas cartesianas en
+$\fip_i(U_i)\subset\re^n $) que sean $C^p$ en $\fip_i(U_i)$ y tales
+que $f_i=f_j\circ\fip_j\circ\fip_i^{-1}$ en $\fip_i(U_i\cap U_j)$.
+Esto garantiza que el conjunto de las $f_i$ determinan una única
+función $f\,\in\,C^p(M)$. El conjunto de las $f_i\,(=f\circ \fip_i^{-1})$
+forman una {\bf representación de $f$} en el atlas $\{(U_i,\fip_i)\}$.
+[Ver figura 3.6.] 
+
+\espa 
+%\fig{8cm}{La relación entre las $f_i$.}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_6}}
+    \caption{La relación entre las $f_i$.}
+    \label{fig:3_6}
+  \end{center}
+\end{figure}
+
+\ejer: El círculo, $S^1$, se puede pensar
+como el intervalo [0,1] con sus extremos identificados. 
+¿Cuáles son las funciones en $C^2(S^1)$?
+
+\espa
+Usando la construcción anterior también se pueden definir mapas de $M$ en
+$\re^n$ que sean $p$-veces diferenciables. Ahora realizamos la
+construcción inversa es decir definiremos la diferenciabilidad de un
+mapa de $\re^n$ en $M$. Haremos el caso $\re\,\to\,M$, en cuyo caso
+el mapa así  obtenido se llama curva. El caso general es obvio.
+
+\section {Curvas en $M$}
+
+\defi: {\bf Una curva en $M$} es un mapa entre un intervalo
+$I\,\subset\,\re$ y $M$, $\gamma\,:\,I\,\to\,M$. 
+
+Note que la curva
+es el mapa y no su gráfico en $M$, es decir el conjunto $\gamma(I)$. 
+Se puede así tener
+dos curvas distintas con el mismo gráfico. Esto no es un capricho
+matemático sino una necesidad física : no es lo mismo que un
+auto recorra el camino Córdoba--Carlos Paz a 10 km/h que a 100 km/h,
+o lo recorra en sentido contrario.
+
+\defi: Diremos que $\gamma\,\in\,C_{t_0}^p$ si dada una carta $(U_i,\fip_i)$
+tal que $\gamma(t_0)\,\in\,U_i$ el mapa
+$\fip_i\circ\gamma(t)\,:\,I_{t_0}\su I\to\re^n$ es $p$-veces
+continuamente diferenciable en $t_0$.
+[Ver figura 3.7.] 
+
+
+\espa 
+%\fig{8cm}{Diferenciabilidad de curvas en $M$.}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_7}}
+    \caption{Diferenciabilidad de curvas en $M$.}
+    \label{fig:3_7}
+  \end{center}
+\end{figure}
+
+\espa
+\ejer: Demuestre que la definición anterior
+no depende de la carta usada.
+
+\espa
+Esta vez hemos usado el concepto de diferenciabilidad entre mapas de
+$\re$ en $\re^n$.
+ 
+\defi: Una curva {$\gamma(t)\in C^p(I)$} si 
+$\gamma(t)\in C_t^p\;\forall\,t\,\in\,I$.
+\par
+
+\ejer: ¿Cómo definiría el concepto de
+diferenciabilidad de mapas entre dos variedades?
+\espa
+De particular importancia entre estos son los mapas de $M$ en sí
+mismo $g\,:\,M\;\to\,M$ que son continuamente diferenciables e
+invertible. Se llaman {\bf Difeomorfismos}.
+De ahora en más supondremos que todas las variedades, curvas, difeomorfismos y
+funciones son suaves, es decir, son $C^\infty$.
+
+\section {Vectores}
+
+Para definir vectores en puntos de $M$ utilizaremos el concepto de
+derivada direccional en puntos de $\re^n$, es decir, explotaremos el
+hecho de que en $\re^n$ hay una correspondencia uno a uno entre
+vectores $\left. (v^1,\ldots, v^n)\right|_{x_0}$ y derivadas
+direccionales  $\left.\ve{v}(f)\right|_{x_0} = v^i\left.
+\frac{\partial}{\partial x^i}\,f\right|_{x_0}$.
+
+Como hemos definido funciones diferenciables en $M$ podemos definir
+derivaciones, o sea derivadas direccionales, en sus puntos e
+identificar con ellos a los vectores tangentes.
+
+\defi:Un {\bf vector tangente ${\ve{ v}}$ en $p\,\in\,M$} es un mapa
+${\ve{ v}}\,:\,C^\infty(M) \,\to\,\re$ satisfaciendo: 
+$\forall\,f,g\,\in C^\infty (M) \,,\;a,b\,\in\,\re$
+
+$i$) Linealidad; ${\ve{ v}}(af+bg)|_p=a\,{\ve{ v}}(f)|_p+b\,{\ve{ v}}(g)|_p$.
+
+$ii$) Leibnitz; ${\ve{ v}}(fg)|_p=f(p)\,{\ve{ v}}(g)|_p+g(p)\,{\ve{ v}}(f)|_p$.
+
+\espa
+Note que si $h\,\in\,C^\infty(M)$ es la función constante,
+$h(q)=c\;\;\forall\,q\in M$, luego ${\ve{ v}}(h)=0$. [ $i$) $\Longrightarrow
+\,{\ve{ v}}(h^2)={\ve{ v}}(ch)=c\,{\ve{ v}}(h) $ mientras que $ii$) $\Longrightarrow \,
+{\ve{ v}}(h^2)=2\,h(p)\,{\ve{ v}}(h) =2\,c\,{\ve{ v}}(h)\,$]. Estas propiedades muestran asimismo
+ que ${\ve{ v}}(f)$ depende solo del comportamiento de $f$ en $p$.
+ 
+\ejer: Pruebe esta última afirmación.
+
+\espa
+Sea $T_p$ el conjunto de todos los vectores en $p$. Este conjunto
+tiene la estructura de un espacio vectorial y es llamado el espacio
+tangente al punto $p$. En efecto, podemos definir la suma de dos
+vectores ${\ve{ v}}_1\,,\,{\ve{ v}}_2$ como el vector, es decir el
+mapa, satisfaciendo $i$) y $ii$), $({\ve{ v}}_1\,+\,{\ve{v}}_2)(f)
+=\,{\ve{ v}}_1(f)\,+\,{\ve{ v}}_2(f)$ 
+y el producto del
+vector ${\ve{ v}}$ por el número $a$ como el mapa $(a{\ve{
+v}})(f)=a\,{\ve{ v}}(f)$.
+
+Como en $\re^n$, la dimensión del espacio vectorial  $T_p$,
+(es decir el número máximo de
+vectores linealmente independientes), es $n$.
+
+\bteo
+dim $T_p\,=\,dim M$.
+\eteo
+
+\pru: Esta consistirá en encontrar una base
+para $T_p$. Sea $dim\;M=n$ y $(U,\fip)$ tal que $p\,\in\,U$ y
+$f\,\in\,C^{\infty}(M)$  cualquiera. Para $i=1,\ldots,n$ definimos
+los vectores $\ve{ x}_i:C^{\infty}(M)\,\to\,\re$ dados por,
+\beq
+\ve{ x}_i(f)=\left.\frac{\partial}{\partial x^i}(f\circ
+\fip^{-1})\right|_{\fip(p)} .  \label{eq10}
+\label{eq34}
+\eeq
+
+Note que estos mapas satisfacen $i$) y $ii$) y por lo tanto las
+$\ve{ x}_i$ son
+realmente vectores. Note además que el lado derecho de~\ref{eq34}
+está bien definido ya que tenemos las derivadas parciales usuales
+de mapas entre $\re^n$ y $\re$. Estos $\ve{ x}_i$ dependen de la carta
+$(U,\fip)$ pero esto no importa en la prueba ya que $T_p$ no depende
+de carta alguna. Estos vectores son linealmente independientes, es
+decir si $x=\sum_{i=1}^n c^i\,\ve{ x}_i=0$ luego $c^i=0\;\;\forall\,i=1,\ldots,n$. Esto
+se ve fácilmente considerando las funciones -- en rigor definidas
+solamente en $U$ -- $f^j =x^j\circ\fip$, ya que
+$\ve{ x}_i(f^j)=\delta_i^{\,j}$ y por lo tanto $0=\ve{x}(f^j)=c^j$. 
+Solo resta mostrar que cualquier vector ${\ve{ v}}$ puede ser expresado como
+combinación lineal de  los $\ve{ x}_i$. Para ello usaremos el siguiente
+resultado cuya prueba dejamos como ejercicio. 
+
+\blem
+Sea $F:\re^n\to\re\;F\in\,C^{\infty}(\re^n)$ luego para
+cada $x_0\in\re^n$ existen funciones
+$H_i:\re^n\to\re\;\in C^{\infty}(\re^n) $ tales que
+$\forall\;x\in\re^n$ se cumple 
+\beq
+F(x)=F(x_0)\,+\,\sum_{i=1}^n (x^i-x_0^i)\,H_i(x)\;\;\mbox{y}    \label{eq11}
+\eeq
+\par
+\noi además,
+
+\vskip -1cm
+
+\beq
+\left.\frac{\partial F}{\partial x^i}\right|_{x=x_0}\,=\,H_i(x_0).
+\eeq
+\elem
+
+\espa
+
+Continuamos ahora la prueba del Teorema anterior.
+Sea $F=f\circ \fip^{-1}$ y $x_0=\fip(p)$, luego $\forall\;q\in U$
+tenemos 
+\beq
+f(q)=f(p)\,+\,(x^i\circ \fip(q)\,-\,x^i\circ\fip(p))\,H_i\circ\fip(q)
+\eeq
+\noi Usando $i$) y $ii$) obtenemos,
+\beq
+\barr{ll}
+  {\ve{ v}}(f) &\left. ={\ve{ v}}(f(p))\,+
+  \,\sum_{i=1}^n (x^i\circ\fip(q)\,-\,x^i\circ\fip(p)) 
+                    \right|_{q=p}\;{\ve{ v}}(H_i\circ\fip)\\
+      &\;\;\;+\,\left. \sum_{i=1}^n (H_i\circ\fip)\right|_p\,{\ve{ v}}(x^i\circ
+                                      \fip\,-\,x^i\circ\fip(p))\\
+ &=\,\left. \sum_{i=1}^n (H_i\circ\fip)\right|_p\,{\ve{ v}}(x^i\circ\fip)\\
+ &=\,\sum_{i=1}^n v^i \;\ve{ x}_i(f)
+\earr
+\eeq
+\noi donde $v^i\equiv \,{\ve{ v}}(x^i\circ\fip)$, y por lo tanto hemos
+expresado ${\ve{ v}}$ como combinación lineal de los $\ve{ x}_i$,
+finalizando así 
+la prueba.
+
+La base $\{\ve{ x}_i\}$ se llama una {\bf base coordenada} y los $\{v^i\}$, las
+{\bf componentes de ${\ve{ v}}$} en esa base.
+
+\ejer:  Si $(\tilde U,\tilde{\fip})$ es otra
+carta tal que $p\in \tilde U$, entonces esta definirá\ otra base
+coordenada $\{\ve{\tilde x}_i\}$. Muestre que
+$$
+\ve{x_j}= \sum_{i=1}^n \frac{\partial {\tilde x}^i}{\partial x^j}\,\ve{\tilde x}_i
+$$
+\noi donde ${\tilde x}^i$ es la $i$-ésima componente del mapa 
+$\tilde{\fip}\circ {\fip}^{-1} $. 
+Muestre también que la relación entre las componentes es  $\tilde
+v^i=\displaystyle\sum_{i=1}^n\frac{\partial\tilde x^i}{\partial x^j} \,v^j$.
+
+\ejem: Sea $\gamma:I\to M$ una curva en $M$ . En cada punto $\gamma(t_0)$,
+$t_0\in I$, de $M$ podemos definir un vector de la siguiente forma,
+[Ver figura 3.8.] 
+
+
+\espa 
+%\fig{5cm}{Definición de vector.}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_8}}
+    \caption{Definición de vector.}
+    \label{fig:3_8}
+  \end{center}
+\end{figure}
+
+\beq
+\ve{ t}(f)=\frac{d\,}{dt}\left.(f\circ\gamma)\right|_{t=t_0}.
+\eeq
+
+
+
+Sus componentes en una base coordenada se obtienen por medio de las funciones
+\beq
+x^i(t)=\fip\circ\gamma(t)
+\eeq
+
+\begin{eqnarray}
+\frac d{dt}(f\circ\gamma) &=& 
+\frac d{dt}(f\circ\fip^{-1}\circ \fip \circ \gamma) \nonumber \\
+ &=& \frac d{dt}(f\circ\fip^{-1}(x^i(t))) \nonumber \\
+ &=& \sum_{i=1}^n (\frac{\partial}{\partial x^i}(f\circ\fip^{-1}))\frac{dx^i}{ dt} \nonumber \\
+ &=& \sum_{i=1}^n \frac{dx^i}{dt}\,{\ve{ x}}_i(f)
+\end{eqnarray}
+
+
+\section{Campos Vectoriales y Tensoriales}
+
+Si a cada punto  $q$ de $M$ le asignamos un vector ${\ve{ v}}|_q \in T_q$
+tendremos un {\bf campo vectorial}. Este estará\ en $C^{\infty}(M)$ si
+dada cualquier $f\in C^{\infty}(M)$ la función ${\ve{ v}}(f)$, que en cada
+punto $p$ de $M$ le asigna el valor ${\ve{ v}}\mid_p(f)$, esta también en
+$C^{\infty}(M)$ . Al conjunto de los campos vectoriales $C^{\infty}$
+lo denotaremos $TM$ y obviamente es un espacio vectorial, de
+dimensión infinita.
+
+\subsection{El Corchete de  Lie}
+
+Consideremos ahora la operación en el conjunto $TM$ de
+campos vectoriales, $[\cdot,\cdot]$ : $TM\times TM\to TM$. Esta operación se
+llama {\bf corchete de Lie} y dados dos campos vectoriales
+$(C^{\infty}) $ nos da un tercero:
+\beq
+[\ve{ x},\ve{ y}]\,(f) := \ve{ x}\,(\ve{ y}(f))-\ve{ y}\,(\ve{ x}(f)).
+\eeq
+
+\ejer: 
+
+1) Muestre que $[\ve{ x},\ve{ y}]$ es en realidad un
+campo vectorial.
+
+
+2) Vea que se satisface la {\bf identidad de Jacobi}:
+\beq
+\left[[\ve{ x},\ve{ y}]\,,\,\ve{ z}\right]+\left[[\ve{ z},\ve{ x}]\,,
+\,\ve{ y}\right]+\left[[\ve{ y},\ve{ z}\,,\,\ve{ x}\right]=0
+\eeq
+
+3) Sean $\ve x^i $ y $\ve x^j$ dos campos vectoriales provenientes de
+un sistema coordenado, es decir $\ve x^i(f) = \derp{f}{x^i}$, etc.
+Muestre que $\lc \ve x^i, \ve x^j \rc = 0$.
+
+4) Dadas las componentes de $\ve{ x}$ e $\ve{ y}$ en una base
+coordenada, ¿cuáles son las de $[\ve{ x},\ve{ y}]$? 
+
+Con esta operación $TM$ adquiere el carácter de un álgebra, llamada
+{\bf Álgebra de Lie.}
+
+
+\subsection{Difeomorfismos y la Teoría de las Ecuaciones
+Diferenciales Ordinarias}
+
+\defi: Un {\bf grupo monoparamétrica de difeomorfismos} $g^t$ es un mapa
+$\re\times M\to M$ tal que:
+
+1) Para cada $t$ fijo  es un difeomorfismo~\footnote{Es decir un mapa
+suave con inversa también suave.} $M\to M$ 
+
+2) Para todo par de reales, $t,s\in \re$ tenemos $g^t\circ g^s=g^{t+s}$
+(en particular
+$g^0=id$).
+
+\espa
+Podemos asociar con $g^t$ un campo vectorial de la
+siguiente manera : Para un $p$ fijo $g^t(p):\re\to M$ es una curva
+que en $t=0$ pasa por $p$ y por lo tanto define un vector tangente en
+$p$, ${\ve{ v}}\mid_p$. Repitiendo el proceso para todo punto de $M$ tenemos
+un campo vectorial en $M$. Note que debido a la propiedad de grupo
+que satisface $g^t$ el vector tangente a la curva $g^t(p)$ es también
+tangente a la curva $g^s(g^t(p))$ en $s=0$.
+
+Podemos hacernos la pregunta inversa: ¿Dado un campo vectorial suave
+$\ve v$
+en $M$ existirá\ un grupo monoparamétrico de difeomorfismos que lo
+defina? La respuesta a esta pregunta, que consiste en encontrar todas
+las curvas integrables $g^t(p)$ que pasan por cada $p\in M$ es
+la teoría de las ecuaciones diferenciales ordinarias,
+--que será el objeto de nuestro estudio en los capítulos siguientes--
+ya que consiste en resolver las
+ecuaciones $\frac {dx^i}{dt}=v^i(x^j)$ con condiciones iniciales
+$x^i(0)=\fip^i(p) \;\;\forall\;p\in M$. Como veremos la respuesta es
+afirmativa pero solo localmente, es decir podremos encontrar solo
+$g^t$ definidos en $I(\su \re)\times U(\su M)\to M$.
+
+\espa
+\ejem: En $\re^1$ sea el vector con componente
+coordenada $x^2$, es decir $V(x)=x^2\frac d{dx}$. La ecuación
+diferencial ordinaria asociada con este vector es $\frac{dx}{dt}=x^2$, 
+cuya solución es 
+\beq 
+t-t_0=\frac {-1}x +\frac 1{x_0}
+\;\mbox{\o}\;\;x(t)=\frac{-1}{t-\displaystyle\frac 1{x_0}}
+\eeq
+\noi
+donde hemos tomado $t_0=0$. O sea $g^t(x_0)=\displaystyle\frac{-1}{t-\frac
+1{x_0}}$. Note que cualquiera sea $t$ este mapa no está definido para
+todo $\re$ y por lo tanto no es un difeomorfismo.
+
+\ejem: Sea $g^t$ un difeomorfismo lineal en
+$\re$, es decir $ g^t(x+\alpha y)=g^t(x)\,+\,\alpha\,g^t(y)$. Luego tiene la
+forma $g^t(x)=f(t)\,x$. La propiedad de grupo implica $f(t)\cdot f(s)
+=f(t+s)$ o $f(t)=c\,\mbox{e}^{kt}=\mbox{e}^{kt}$, ya que $g^0=id$.
+Por lo tanto $g^t(x)=\mbox{e}^{kt}\,x$. 
+La ecuación diferencial asociada
+es: $x(t)=\mbox{e}^{kt}\,x_0\;\;\Longrightarrow\;\;\dot
+x=k\,\mbox{e}^{kt}\,x_0=$ \fbox{$k\,x=\dot x$}.
+
+\ejer: Grafique en un entorno del origen  $\re^2$ las curvas integrales y
+por lo tanto $g^t$ de los siguientes sistemas lineales.
+\beq \left(\barr{c}
+        \dot x \\ \dot y
+        \earr \right)=\left(\barr{cc}
+                        1 & 0\\
+                        0 & k
+                        \earr\right)\left(\barr{c}
+                                   x \\ y
+                                   \earr\right)
+\eeq 
+  
+  a) $k>1$  \ \ \,b) $k=1$\ \ \     c) $ 0<k<1$,   \ \ \   d) $k=0$, \ \ \   e) $k<0$
+
+\vskip \baselineskip
+
+
+
+\subsection{Campos de Covectores y Tensores}
+
+Así como introdujimos la noción de campo vectorial podemos
+también introducir la de campo de co-vectores, es decir un mapa
+suave de $M$ en $T_p^*$. Este actuará en campos vectoriales  dando
+como resultado funciones  en $M$. En el ejemplo que sigue vemos cómo
+se define el campo {\bf diferencial de $f$}.
+
+\ejem: Sea $f\in C^{\infty}_p$ . Un vector en
+$p\in M$ es una derivación sobre funciones en $C_p^{\infty}$,
+$\ve{v}(f)\in \re$. Pero dados $\ve{v}_1$ y $\ve{v}_2 \;\in T_p$\ \ \
+$(\ve{v}_1+ve{v}_2)(f)= \ve{v}_1(f)+ \ve{v}_2(f)$ y por lo tanto $f$ 
+define una funcional
+lineal $df\mid_p:T_p\to \re$, llamada la diferencial de $f$, es
+decir un elemento de $T_p^*$. De esta forma la diferencial de una
+función $df$ es un co-vector que al actuar sobre un vector $\ve{v}$ nos
+da el número {\it la derivada de $f$  en el punto $p$ en la dirección  de $\ve{v}$}.
+
+
+
+Considere el subconjunto $S$ de $M$ tal que $f(M)=\mbox{cte.}$ 
+Esta será una  subvariedad
+de $M$, es decir superficies embebidas en $M$, de dimensión $n-1$.
+La condición $df|_p(\ve{ v})=0$ en vectores de $T_p$ con $p\in S$
+significa que estos son en realidad vectores tangentes a $S$, es
+decir elementos de $T_p(S)$. Por el contrario, si $df(\ve{v})|_p \neq
+0$ entonces en ese punto $\ve{v}$ {\it pincha} a $S$. 
+
+\ejem: La función $f(x,y,z)=x^2+y^2+z^2$ en $\re^3$. \par
+$S=\{(x,y,z)\in \re^3 / f(x,y,z) = a^2\;,\,a^2>0\}$ es la esfera de radio
+$a$, y como ya hemos visto  una variedad. Sea $(v_x,v_y,v_z)$ un vector
+en $(x,y,z)\in\re$, luego la condición $df(v)=2(xv_x+yv_y+zv_z)=0$
+implica que $v$ es tangente a $S$.
+
+Similarmente definimos {\bf campos tensoriales} como los mapas multilineales
+que al actuar sobre campos vectoriales y co-vectoriales dan funciones
+de la variedad en los reales y que en cada punto  de la variedad sólo 
+dependen de los vectores y co-vectores definidos en ese punto. 
+Esta última aclaración es
+necesaria pues de lo contrario incluiremos entre los tensores, por
+ejemplo, integrales lineales sobre los campos vectoriales.
+ 
+\subsection{La Métrica}
+
+Sea $M$ una variedad n-dimensional. Hemos definido anteriormente en $M$
+las nociones de curvas, campos vectoriales y co-vectoriales, etc. pero
+no una noción de distancia entre sus puntos, es decir una función 
+$d: M \times M \rightarrow \re$ que toma dos puntos cualquiera, p y q de
+$M$ y nos da un número $d(p,q)$ satisfaciendo,
+\begin{enumerate}
+\item $d(p,q) \geq 0$.
+\item $d(p,q) = 0 $ \sii $p=q$.
+\item $d(p,q) = d(q,p)$.
+\item $d(p,q) \leq d(p,r) + d(r,q)$.
+\end{enumerate}
+ 
+Esta, y en algunos casos una noción de pseudo-distancia [donde 1) y
+2) no se cumplen], es fundamental si queremos tener una estructura 
+matemática que sea útil para la descripción de fenómenos físicos. 
+Por ejemplo
+la ley de Hooke, que nos dice que la fuerza aplicada a
+un resorte es proporcional a la elongación (una distancia) de éste,
+claramente necesita de este ente.
+A continuación introduciremos una noción de distancia infinitesimal,
+es decir entre dos puntos infinitesimalmente separados, la cual responde
+a la noción Euclídea de distancia y permite desarrollar una noción de
+distancia global, es decir entre dos puntos cualesquiera de $M$.
+
+La idea es entonces tener un concepto de distancia (o seudo-distancia)
+entre dos puntos {\sl infinitesimalmente cercanos}, es decir dos
+puntos conectados por un {\sl desplazamiento infinitesimal}, es decir
+conectados por un vector. La noción que necesitamos es entonces la de
+norma de un vector. Como una variedad es localmente como $\re^n$, en
+el sentido de que el espacio de vectores tangentes a un punto $p$,
+$T_pM$ es $\re^n$, es razonable considerar allí la noción de distancia
+Euclídea, es decir que la distancia entre dos puntos $x_0$ y $x_1\in \re^n$
+es la raíz cuadrada de la suma de los cuadrados de las
+componentes (en algún sistema de coordenadas) del vector conectando
+estos dos puntos. El inconveniente con esto es que
+dicha noción depende del sistema coordenado que se esté usando y
+por lo tanto habrá tantas distancias como sistemas coordenados cubriendo
+el punto $p$.
+Esto no es más que una indicación que la estructura que hasta
+este momento tenemos no contiene una noción de distancia privilegiada o
+natural. Esta debe ser introducida como una estructura adicional.
+Una manera de obtener distancias
+infinitesimales independientes del sistema coordenado (es decir geométricas)
+es introduciendo en cada  punto $p \in M$ un tensor de tipo (2,0), simétrico
+$[\mathbf{g(u,v) = g(v,u) \forall u,v} \in T_pM]$ y no degenerado $[\mathbf{g(u,v) = 0
+\forall v} \in T_pM \Ra \mathbf{u=0}]$.
+Si además pedimos que este tensor sea
+definido positivo $[\mathbf{g(u,u) \geq 0 (=\;\;\Sii\;\; u=0)}] $
+se puede ver fácilmente que este
+define un producto escalar en $T_pM$ (o seudoescalar
+si $\mathbf{g(u,u) =0}$ para algún $u \neq 0 \in T_pM$).
+\footnote{Posteriormente veremos que un producto escalar da origen
+a una distancia, correspondientemente un producto seudo-escalar da
+origen a una seudo-distancia.} 
+Si hacemos una elección para este tensor en cada punto de $M$ de
+forma suave obtendremos un campo tensorial suave que se denomina la
+{\bf métrica} de $M$. Esta estructura extra, un campo tensorial con
+ciertas propiedades es lo que nos permite construir las bases matemáticas
+para luego edificar gran parte de la física sobre ella.
+
+Sea $\ve{g}$ una métrica en $M$, dado un punto cualquiera $p$ de $M$
+existe un sistema coordenado en que sus componentes son
+$$g_{ij} = \delta_{ij} $$ 
+y por lo tanto da origen al producto escalar
+Euclídeo, sin embargo en general este resultado no se puede extender a 
+un entorno del punto y en general sus componentes dependerán allí de 
+las coordenadas. Note que esto es lo que queríamos hacer en un comienzo,
+pero ahora al definir esta norma vía un vector le hemos dado un carácter invariante.
+
+Restringiéndonos ahora a métricas  definidas positivas
+definiremos {\bf la norma} de un vector $v \in T_p$ como
+$|v| = \sqrt{|g(v,v)|} $, es decir como la distancia infinitesimal dividida
+por $\epsilon$ entre el $p$ y el punto $\gamma (\epsilon)$ donde
+$\gamma(t)$ es una curva tal que $\gamma (0) = p$, 
+$\frac{d\gamma(t)}{dt}|_{t=0} = v$.
+Análogamente podemos definir la longitud de una curva suave
+$\gamma(t):[0,1] \rightarrow M$ por la fórmula,
+\beq
+L(\lap)=\int_0^1\sqrt{\mathbf{g(v,v)}}\;dt,
+\eeq
+donde $\mathbf{v}(t)=\frac{d\gamma(t)}{dt} $. Vemos entonces que definimos la
+longitud de una curva midiendo las longitudes infinitesimales entre puntos
+cercanos de ésta y luego integramos con respecto a t.
+
+\espa
+\ejer: Pruebe que la distancia $L(\gamma) $ es independiente del parámetro
+elegido.
+
+ Definimos la distancia
+entre dos puntos $p,q \in M$ como,
+\beq
+d_g(p,q)=\barr{c}\\inf\\^{\{\gamma(t)\;:\;\gamma(0)=p,\gamma(1)=q\}}\earr
+|L(\gamma)|
+\eeq
+Es decir como el ínfimo de la longitud de todas las curvas conectando
+$p$ con $q$.
+\espa
+\ejer: Encuentre un ejemplo de una variedad con dos puntos tales que
+el ínfimo de la definición anterior no es un mínimo. Es decir
+en la que no haya ninguna curva conectando los dos puntos con la
+mínima distancia entre ellos.
+\espa
+
+\ejer: a) La métrica Euclídea en $\re^2$ es $(dx)^2+(dy)^2$, donde $\{dx,dy\}$ 
+es la co-base asociada
+con $\{\pa x,\pa y\}$. ¿Cuál es la distancia entre dos puntos en este caso?
+
+\ejer: b) ¿Cuál es la forma de la métrica Euclídea de $\re^3$ 
+en coordenadas esféricas? ¿Y en cilíndricas?
+
+\ejer: c) La métrica de la esfera es
+$(d\tita)^2+\sin^2\tita\,(d\fip)^2$. 
+¿Cuál es la distancia en este caso? ¿Para qué puntos $p,q$ existen
+varias curvas $\gap_i$ con $L(\gap_i)=d(p,q)$?
+
+
+\ejer: d) La métrica $(dx)^2+(dy)^2+(dz)^2-(dt)^2$ en $\re^4$ es la métrica 
+de Minkowski de la
+relatividad especial. ¿Cuál es la {\it distancia} entre el punto de
+coordenadas $(0,0,0,0)$ y $(1,0,0,1)$?
+
+Una métrica nos da un mapa privilegiado entre el espacio de
+vectores tangentes a $p$, $T_p$ y su dual $T_p^*$ para cada $p$ en $M$, 
+es decir el mapa
+que a cada vector $\ve{v}\in T_p$ le asigna el co-vector $\ve{g}(\ve{v},\;)\in T_p$. 
+Como esto es válido para cada $p$ obtenemos así un mapa entre campos
+vectoriales y co-vectoriales. 
+Como $\ve{g}$ es no degenerada este mapa es invertible, es decir existe un
+tensor de tipo $(2,0)$ simétrico $\ve{g^{-1}}$ tal que 
+\beq
+\ve{g}(\ve{g^{-1}}(\tita,\;),\;)=\tita
+\eeq
+para todo campo co-vectorial $\tita$. Esto indica que cuando tenemos una
+variedad con una métrica se hace irrelevante distinguir entre
+vectores  y co-vectores o por ejemplo entre tensores tipo (0,2),
+(2,0) o (1,1).
+
+\subsection{Notación de Índices Abstractos}
+
+
+Cuando se trabaja con objetos tensoriales la notación hasta ahora
+usada no es la más conveniente pues es difícil recordar cuál es el
+tipo de cada tensor, en qué casilla {\it come} otros objetos, etc. Una
+solución es introducir un sistema de coordenadas y trabajar con las
+componentes de los tensores, donde al haber índices es fácil
+saber de qué objetos se trata o introducir bases generales. De esta
+forma, por ejemplo representamos al vector $\ve{l}=l^i\dip\derp{}{x^i}$ 
+por sus componentes $\{l^i\}$. Una conveniencia de esta notación es
+que {\it comer} pasa a ser {\it contraer}, ya que por ejemplo representamos
+al vector $\ve{l}$ {\it comiéndose} a una función $f$, por la
+contracción de las componentes coordenadas del vector y de la
+diferencial de $f$:
+\[
+\ve{l}(f) = \sum_{i=1}^n l^i \frac{\partial f}{\partial x^i}.
+\]
+Pero un inconveniente grave de esta representación es  que en
+principio depende del sistema coordenado y por lo  tanto todas las expresiones
+que construyamos con ella tienen el potencial peligro de depender de
+tal sistema. 
+
+
+Remediaremos esto introduciendo {\bf índices abstractos}
+ (que serán letras latinas) que indican donde irían los
+índices coordenados pero nada más, es decir no dependen del
+sistema de coordenadas y ni siquiera toman valores numéricos, es
+decir $l^a$ no significa $(l^1,l^2,\ldots,l^n)$ como si fuesen índices.
+De esa forma $l^a$ denotará al vector $l$, $\tita_a$ al co-vector $\tita$ y 
+$g_{ab}$ a la
+métrica $g$. Una contracción como por ejemplo $g(v,\;)$ se denotará 
+$g_{ab}v^a$
+y a este covector lo denotaremos por $v_b$, es decir la acción de $g_{ab}$
+es la de bajar el índice a $v^a$ y dar el covector 
+$v_b \equiv v^ag_{ab}$. 
+Del mismo modo denotaremos a $\ve{g}^{-1}$ (la
+inversa de $\ve{g}$) como $g^{ab}$, es decir $\ve{g}$ con 
+{\it los índices subidos}.
+
+La simetría de $\ve{g}$ es entonces el equivalente a $g_{ab}=g_{ba}$.
+
+\espa
+\ejer: ¿Cómo denotaría un tensor de tipo $(2,0)$ antisimétrico?
+
+\espa
+Usando índices repetidos para la contracción vemos que $l(f)$ se
+puede denotar por $l^a\na_a f$ donde $\na_a f$ denota el co-vector 
+diferencial de $f$, mientras el vector $\na^af := g^{ab} \na_b f$ es
+llamado el {\bf gradiente} de $f$ y vemos que éste no solo depende de $f$
+sino también de $\ve{g}$.
+
+\section{Derivada Covariante}
+
+Hemos visto que en $M$ existe la noción de la derivada de un campo
+escalar $f$, ésta es el co-vector diferencial de $f$ que denotamos
+$\na_a f$.
+¿Existirá la noción de la derivada de un campo tensorial? Por
+ejemplo, ¿{}existirá una extensión del operador $\na_a$ a vectores tal que
+si $l^a$ es un vector diferenciable luego $\na_a l^b$ sea un tensor 
+del tipo (1,1)?
+Para fijar ideas definamos a esta extensión del diferencial $\na_a$,
+llamada derivada covariante, pidiendo que satisfaga las siguientes propiedades:
+\footnote {Note que son una extensión de las que se pide para
+definir derivaciones.}
+
+\noi
+$i)$ Linealidad: Si $A^{a_1\cdots a_k}_{b_1\ldots b_l},B^{a_1\cdots a_k}
+_{b_1\ldots b_l}$ son tensores de tipo $(k,l)$ y $\alpha\in \re$  luego
+\beq
+\na_c \lp \alf A^{a_1\cdots a_k}_{b_1\ldots b_l}+B^{a_1\cdots a_k}
+_{b_1\ldots b_l}\rp
+= \alf \na_c A^{a_1\cdots a_k}_{b_1\ldots
+b_l} + \na_c B^{a_1\cdots a_k}_{b_1\ldots b_l} 
+\eeq
+
+\noi $ii)$ Leibnitz:
+\beq
+\na_e \lp A^{a_1\cdots a_k}_{b_1\ldots b_l}\,B^{c_1\ldots c_m}_{d_1\ldots d_n}\rp
+=A^{a_1\cdots a_k}_{b_1\ldots b_l} \lp \na_e B^{c_1\ldots
+c_m}_{d_1\ldots d_n}\rp  +  
+\lp \na_e  A^{a_1\cdots a_k}_{b_1\ldots b_l}\rp 
+B^{c_1\ldots c_m}_{d_1\ldots d_n}
+\eeq
+
+\noi $iii)$ Conmutatividad con contracciones:
+\beq
+\na_e \lp \delta^i{}_j  A^{a_1\ldots,j,\ldots,a_k}_{b_1\ldots,i,\ldots,b_k}\rp 
+= \delta^i{}_j \na_e A^{a_1\ldots,j,\ldots,a_k}_{b_1\ldots,i,\ldots,b_k}
+\eeq
+Es decir si primero contraemos algunos índices de un tensor y
+luego tomamos su derivada obtenemos el mismo tensor que si tomamos
+primero la derivada y luego contraemos.
+
+\noi$iv$) Consistencia con la diferencial: Si $l^a$ es un campo vectorial y $f$
+un campo escalar, luego 
+\beq
+l^a\na_a f = \ve{l}(f)
+\eeq
+
+
+\noi $v$) Torsión cero: Si $f$ es un campo escalar luego
+\beq
+\na_a\na_b f=\na_b\na_a f
+\eeq
+
+\espa
+\ejem: Sea $\{x^i\}$ un sistema coordenado global en $\ren$ y sea 
+$\na_c$ el operador que cuando
+actúa en $A^{a_1\cdots a_k}_{b_1\ldots b_l}$ general el campo 
+tensorial que en estas coordenadas
+tiene componentes.
+\beq
+\pa_j \,A^{i_1\ldots i_k}_{j_1\ldots j_l}
+\eeq
+Por definición es un tensor y claramente satisface todas las
+condiciones de la definición, --ya que las satisface en este sistema
+de coordenadas-- por lo tanto es una derivada covariante. Si tomamos
+otro sistema de coordenadas obtendremos otra derivada covariante, en
+general distinta de la anterior. Por ejemplo, hagamos actuar $\na_c$ en el
+vector $l^a$ luego
+\beq
+\lp\na_c l^a\rp_j^i=\pa_j l^i.
+\eeq
+En otro sistema de coordenadas $\{\bar x^i\}$ este tensor tiene componentes
+\beq
+\lp\na_c l^a\rp_k^l=\sum_{i,j=1}^n\derp{\bar x^l}{x^i}\derp{x^j}{\bar x^k}\derp
+{l^i}{x^j}
+\eeq
+las cuales no son, en general, las componentes de la derivada
+covariante $\bar\na_c$ que estas nuevas coordenadas definen, en efecto
+
+\beq\barr{rcl}
+\lp\bar\na_c l^a\rp^l_k &\equiv& \derp{\bar l^l}{\bar x^k}=
+\sum_{j=1}^n\lp\derp{x^j}{\bar x^k}\rp\derp{}{x^j}\sum_{i=1}^n\lp\derp{\bar
+x^l}{x^i}l^i\rp=\\ \\
+&=& \sum_{i,j=1}^n\lp\derp{\bar x^l}{x^i}\rp\lp\derp{x^j}{\bar x^k}\rp\derp
+{l^i}{x^j}+ \sum_{i,j=1}^n\derp{x^j}{\bar x^k}\lp\frac{\pa^2\bar x^l}{\pa x^j\pa x^i}\rp
+l^i \\ \\
+&=&\lp\na_c l^a\rp^i_j+ \sum_{i,j=1}^n \derp{x^j}{\bar x^k}\lp\frac{\pa^2\bar x^l}{\pa 
+x^j\pa x^i}\rp l^i,
+\earr
+\eeq
+lo que muestra claramente que son dos tensores distintos y que su
+diferencia es un {\bf tensor} que depende linealmente y {\bf no diferencialmente}
+de $l^a$. ¿Es esto cierto en general?
+Es decir, dada dos conexiones, $\na_c$ y $\bar \na_c$, ¿es su 
+diferencia un tensor (y
+no un operador diferencial)?
+Veremos que esto es cierto.
+
+\bteo
+La diferencia entre dos conexiones es un tensor.
+\eteo
+ 
+\espa
+\pru:
+Note que por propiedad $iii)$ y $iv)$ de la definición, si sabemos
+cómo actúa $\na_c$ en co-vectores sabemos cómo actúa en vectores y
+así por $i)$ y $ii)$ en cualquier tensor. En efecto, si conocemos
+$\na_c w_a$
+para cualquier $w_a$ luego $\na_c l^a$ es el tensor de tipo (1,1) tal que cuando
+contraído con un $w_a$ arbitrario nos da el co-vector  
+\beq
+\lp\na_c l^a\rp w_a= \na_c\lp w_a l^a \rp-l^a\lp \na_c w_a\rp,
+\eeq 
+el cual
+conocemos ya que por $iv$) también sabemos cómo actúa $\na_c$ en
+escalares. Por lo tanto es suficiente ver que 
+\beq
+\lp\bar\na_c-\na_c\rp w_a = C^b{}_{ca} w_b
+\eeq
+para algún tensor $C^b{}_{ca}$.
+Probemos primero que dado cualquier $p\in M$, \\ 
+$\dip\lp\bar\na_c-\na_c\rp w_a |_p$  
+depende solo de $w_a|_p$ y no de su derivada. 
+Sea $w'_a$ cualquier otro co-vector tal que en $p$
+coinciden, es decir $(w_a-w'_a)|_p=0$.
+Luego dada una co-base suave $\{\mu_a^{i}\}$ en un entorno de $p$
+tendremos que $w_a-w'_a=\sum_{i} f^{i}\mu^{i}_a$ con
+$f^{i}$ funciones suaves que se anulan en $p$. En $p$ tenemos
+entonces
+\beq \barr{rcl}
+\bar\na_c\lp w_a-w'_a\rp-\na_c\lp w_a-w'_a\rp 
+&=&\sum_{i}\bar\na_c \lp f^{i}\mu^{i}_a\rp-\sum_{i} \na_c\lp
+f^{i}\mu^{i}_a\rp \\
+&=& \sum_i \mu^{i}_a\lp\bar\na_c f^{i}-\na_c f^{i}\rp=0
+\earr
+\eeq
+ya que por {\it iv)} $\bar \na_c $ y $\na_c$ deben actuar del 
+mismo modo en escalares --y en particular en las $f^{i}$--. 
+Esto muestra que
+\beq
+\lp\bar\na_c-\na_c\rp w'_a = \lp\bar\na_c-\na_c\rp w_a 
+\eeq
+y por lo tanto que $\lp\bar\na_c-\na_c\rp w_a$ depende de solo $w_a|_p$
+y obviamente en forma lineal.
+Pero entonces $\lp\bar\na_c-\na_c\rp $ debe ser un tensor de tipo (1,2) 
+que está esperando {\it comerse} una forma para darnos el tensor de 
+tipo (0,2) $\lp\bar\na_c -\na_c\rp w_a$. 
+Es decir $\lp\bar\na_c-\na_c\rp w_a = C^b{}_{ca} w_b$, lo que prueba el teorema.
+
+
+
+Note que condición {\it v}) nos dice que $\na_a \na_b f = \na_b \na_a f$, 
+tomando $w_a = \na_a f$ obtenemos
+\beq \barr{lcl}
+\bar \na_a \bar \na_b f &=& \bar \na_a \na_b f \\
+                        &=& \bar \na_a w_b\\
+                        &=& \na_a w_b + C^c_{ab} \na_c f \\
+                        &=& \na_a \na_b f + C^c_{ab}\na_c f.
+\earr\eeq
+Como $\na_c f|_p$ puede ser un co-vector cualquiera vemos que 
+la condición de que no haya torsión implica que $C^c{}_{ab}$
+es simétrico en los índices inferiores, $C^c{}_{ab} = C^c{}_{ba}$.
+
+\ejer: ¿Cómo actúa $\lp\bar\na_c-\na_c\rp$  en vectores?
+
+\ejer: Exprese el corchete de Lie en términos de una conexión cualquiera
+y luego pruebe explícitamente que no  depende de la conexión empleada.
+
+\ejer: Sea $A_{b,\ldots,z}$ un tensor totalmente antisimétrico. Muestre que
+$\na_{[a} A_{b,\ldots,z]}$, es decir la antisimetrización total de 
+$\na_{a} A_{b,\ldots,z}$, no depende de la derivada covariante empleada.
+
+\espa
+La diferencia entre una conexión cualquiera $\na_c$ y una proveniente de
+un sistema de coordenadas $\{x^i\}$ es un tensor llamado {\bf símbolo de
+Christoffel} de $\na_c$ con respecto a las coordenadas 
+$\{x^i\}$, $\Gamma^b_{ca}$,
+\beq
+\na_c w_a = \pa_c w_a + \Gamma^b_{ca} w_b.
+\eeq
+El conocimiento de este tensor es muy útil en la práctica, 
+pues nos permite expresar $\na_c$
+en término de la conexión coordenada correspondiente, $\pa_c$.
+
+Como hemos visto en una variedad $M$ existen infinitas formas de
+{\sl tomar la derivada de un tensor}. 
+¿Hay alguna natural o privilegiada?
+La respuesta es no, a menos que pongamos más estructura en $M$.
+Intuitivamente la razón de esto es que en $M$ no sabemos comparar
+$l^a|_p$ con $l^a|_q$ si $p$ y $q$ son dos puntos distintos.
+\footnote {Note que una manera de comparar vectores
+infinitesimalmente cercanos, dado un campo vectorial $m^a$, es con el
+corchete de Lie de $m^a$ con $l^a$, $[m,l]^a$.
+Esto no es lo apropiado ya que $[m,l]^a|_p$ depende de la derivada de $m^a$ en
+$p$.} 
+
+
+
+
+
+¿Es suficiente la presencia de una métrica en $M$ para poder
+realizar esta comparación?  ¡La respuesta es sí!
+
+\bteo
+Sea $g_{ab}$ una métrica (suave) en $M$, luego existe una única
+derivada covariante $\na_c$ tal que $\na_c g_{ab}=0$.
+\eteo
+
+\pru:
+Sea $\bar \na_c$ una conexión cualquiera y sea $\na_c$ tal que
+$\na_cg_{ab} =0$, es
+suficiente mostrar que esta condición determina unívocamente el
+tensor diferencia, $C^d{}_{ca}$. Pero,
+\beq
+0=\na_ag_{bc} = \bar \na_a g_{bc} - C^d{}_{ab} g_{dc} - C^d{}_{ac} g_{bd}
+\eeq
+o sea 
+\beq 
+C_{cab} + C_{bac} = \bar \na_a g_{bc} 
+\eeq
+pero también
+\beq \barr{lrcl}
+a \leftrightarrow b \;\;\;& C_{cba} + C_{abc} &=& \bar \na_b g_{ac} \\
+c \leftrightarrow b       & C_{bca} + C_{acb} &=& \bar \na_c g_{ab} .
+\earr \eeq
+Sumando estos dos últimos, sustrayendo la primera y usando la
+simetría de los dos últimos índices obtenemos
+\beq
+2C_{abc} = \bar \na_b g_{ac} + \bar \na_c g_{ab} - \bar \na_a g_{bc}
+\eeq
+o 
+\beq
+\label{eq:christ}
+C^a{}_{bc} = \frac 12 g^{ad}\{\bar \na_b g_{dc} + \bar \na_c g_{db} - \bar \na_d g_{bc}\}
+\eeq
+
+Nótese que la existencia de una métrica no es equivalente a la existencia de
+una conexión. Hay conexiones $\na_c$ para las cuales no existe ninguna
+métrica $g_{ab}$ tal que $\na_a g_{bc}=0$, es decir hay tensores 
+$C^a{}_{bc}$ para los cuales no hay ninguna $g_{ab}$ que satisfaga (\ref{eq:christ}).
+
+\espa
+
+\ejer: Si $\bar \na_c$ es una derivada correspondiente a un sistema de coordenadas 
+$\bar \na_c = \pa_c$
+el símbolo de Christoffel  correspondiente es
+\beq
+\Gamma^a{}_{bc} = \frac 12 g^{ad}\{\pa_b g_{dc} + \pa_c g_{db} - \pa_d g_{bc}\}.
+\eeq
+Muestre que sus componentes en ese sistema de coordenadas están dadas por,
+\beq
+\Gamma^i{}_{jk} = \frac 12 g^{il}\{\pa_j g_{lk} + \pa_k g_{lj} - \pa_l g_{jk}\},
+\eeq
+donde $g_{ij}$ son las componentes de la métrica en el mismo sistema de 
+coordenadas.
+\espa
+
+\ejer:
+La métrica Euclídea de $\re^3$ en coordenadas esféricas 
+es 
+\[
+ds^2 = (dr)^2 + r^2((d\theta)^2 + sen^2 \theta (d\fip)^2).
+\]
+%
+Calcule el Laplaciano $\Delta = g^{ab} \na_a \na_b$ en estas coordenadas.
+
+\espa
+
+\recu{{\bf *El tensor de Riemann}
+
+\noi ¿Dada una derivada covariante en una variedad, es posible definir 
+campos tensoriales que solo dependan de ella y por lo tanto que nos den
+información sobre ésta?
+
+¡La respuesta es sí! El siguiente tensor se denomina {\bf tensor de Riemann
+o de Curvatura} y solo depende de la conexión:
+\[
+2 \na_{[a} \na_{b]} l^c := \lp \na_a \na_b - \na_b \na_a \rp l^c :=
+R^c{}_{dab} l^d \;\;\;\; \forall l^c \in TM.
+\]
+\espa
+
+\ejer: Muestre que la definición de arriba tiene sentido, es decir
+que el lado izquierdo, evaluado en un punto $p$ cualquiera de $M$ solo
+depende de $l^c|_p$ y por lo tanto podemos escribir el lado derecho
+para algún tensor $R^c{}_{dab}$.
+
+\ejer: Sea $\bar \na_a $ otra derivada covariante. Calcule la diferencia
+entre los respectivos tensores de Riemann en términos del tensor que
+aparece como diferencia de las dos conexiones. 
+
+
+}
+
+
+\recubib{Recomiendo el libro de Wald \cite{Wald}, sobre todo por su notación moderna, ver también \cite{Isham}. El lenguaje de la intuición es la geometría, es la herramienta que nos permite visualizar los problemas, tocarlos, darlos vuelta a nuestro gusto y luego reducirlos al álgebra. Entender la geometría es la forma más eficiente de entender la física ya que ésta solo se entiende cabalmente cuando es traducida a un lenguaje geométrico. No abuse de ella, es un área muy vasta y es fácil perderse, aprenda bien lo básico y luego solo lo que le sea relevante.}
+            
+
+%\end{document}
+%\end
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "~/Metodosapu_tot.tex/"
+%%% End: 

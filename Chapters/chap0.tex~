@@ -1,0 +1,75 @@
+%%ultima modificación 13-08-92
+
+%\input format
+
+
+\chapter*{Agradecimientos:}
+
+En primer lugar quiero agradecer a Gloria Puente, por haberme apoyado durante todo el tiempo en que escribí estas notas,
+las cuales tomaron bastante tiempo de nuestras horas compartidas, en general largas noches.
+En segundo lugar a Bernardo González Kriegel quien volcara a $\LaTeX$ las primeras versiones de estas notas, haciendo
+un gran trabajo con mucho entusiasmo. También a Bob Geroch, con quien discutí varios temas de las notas y de quien 
+también me inspiré a través de sus escritos y libros, no solo en contenido sino también en estilo.
+Finalmente a varias camadas de estudiantes que asimilaron estoicamente una gran cantidad del material de estos cursos
+en un tiempo demasiado corto.
+
+
+\chapter*{Prefacio:}
+
+Estas notas, ahora devenidas en libro, se originaron como un intento de condensar en un
+solo lugar un gran conjunto de ideas, conceptos y herramientas matemáticas que considero básicas
+para la comprensión y el trabajo diario de un físico en nuestros días.
+
+Usualmente sucede que si un problema es formulado desde una necesidad de origen físico, como por ejemplo la descripción de algún 
+fenómeno  natural, entonces éste esta bien formulado, en el sentido de que una solución razonable al mismo existe.
+Esta regla ha sido en general muy fructífera y en particular les ha servido como guía a muchos matemáticos
+para abrirse camino en áreas desconocidas. Pero también ha servido, en particular a muchos físicos, para 
+trabajar sin preocuparse demasiado por aspectos formales, ya sean analíticos, algebraicos o geométricos 
+y poder así concentrarse en aspectos físicos y/o computacionales. 
+Si bien esto permite un rápido desarrollo de algunas investigaciones, a la larga se llega a un estancamiento
+pues al proceder de este modo se evita enfrentar problemas que son muy ricos en cuanto a la conceptualización
+del fenómeno a describir. Es importante constatar que el problema formulado tiene una solución matemática y físicamente
+correcta.
+
+Un ejemplo de esto ha sido el desarrollo, a mediados del siglo pasado, de la teoría
+moderna de las ecuaciones en derivadas parciales. Muchas de estas ecuaciones surgieron debido a que describen 
+fenómenos de físicos: transmisión del calor, propagación de ondas electromagnéticas, ondas cuánticas, gravitación, etc.
+Una de las primeras respuestas matemáticas al desarrollo de estas áreas fue el teorema de Cauchy-Kowalevski que nos dice que dada una ecuación 
+en derivadas parciales, (bajo ciertas circunstancias bastante generales)
+si una función analítica es dada como dato en una hipersuperficie (con ciertas características), luego existe una solución 
+única en un entorno suficientemente pequeño de dicha hipersuperficie. Tomó mucho tiempo darse cuenta que este teorema realmente
+no era relevante desde el punto de vista de las aplicaciones físicas: existían ecuaciones admitidas por el teorema tales que si
+el dato no era analítico !'no había solución! Y en muchos casos, si éstas existían, no dependían continuamente del dato dado,
+una pequeña variación del dato producía una solución totalmente distinta. Recién a mediados del siglo pasado se logró un
+avance sustancial al problema, encontrando que habían distinto tipo de ecuaciones, hiperbólicas, elípticas, parabólicas, etc.
+que se comportaban de manera distinta y esto reflejaba los distintos procesos físicos que las mismas simulaban.
+Debido a su relativa actualidad, este conjunto tan importante de conceptos no forman parte del conjunto de herramientas con que
+cuentan muchos de los físicos en actividad ni tampoco se encuentran en los libros de texto usualmente utilizados en las carreras de grado.
+
+Como el anterior hay muchos ejemplos, en particular la teoría de ecuaciones diferenciales ordinarias y la geometría, sin la cual es imposible
+comprender muchas de las teorías modernas, tales como la relatividad, las teorías de partículas elementales y muchos fenómenos
+de la física del estado sólido.
+A medida que avanza nuestra comprensión de los fenómenos básicos de la naturaleza más nos damos cuenta que la herramienta más importante
+para su descripción es la geometría. Esta, entre otras cosas, nos permite manejar una amplia gama de procesos y teorías sin mucho en común entre sí con un conjunto muy reducido de conceptos, lográndose así una síntesis. Éstas síntesis son las que nos permiten adquirir nuevos conocimientos,
+ya que mediante su adopción dejamos espacio en nuestras mentes para aprender nuevos conceptos, los cuales son a su vez ordenados de manera más eficiente
+dentro de nuestra construcción mental del área.
+
+Estas notas fueron originalmente pensadas para un curso de cuatro meses de duración. Pero en realidad se adaptaban más para un curso anual o dos
+semestrales. Luego, a medida que se fueron incorporando más temas a las mismas, resultó más y más claro que deben darse en dos cursos semestrales o
+uno anual. 
+Básicamente un curso debería contener los primeros capítulos que incluyen nociones de topología, espacios vectoriales, álgebra lineal,
+finalizando con la teoría de las ecuaciones en derivadas ordinarias. La tarea se simplifica considerablemente si los estudiantes han tenido previamente un buen curso de álgebra lineal. La correlación con las materias de física debería ser tal que el curso sea previo o concurrente con una mecánica avanzada.
+Haciendo hincapié en la misma sobre el hecho de que en definitiva uno está resolviendo ecuaciones diferenciales ordinarias con cierta estructura especial.
+Utilizando los conceptos del álgebra lineal para encontrar modos propios y la estabilidad de puntos de equilibrio. Y finalmente utilizando la geometría para
+describir aunque más no sea someramente la estructura simpléctica subyacente.
+
+El segundo curso consiste en desarrollar las herramientas para poder discutir aspectos de la teoría de ecuaciones en derivadas parciales.
+Debería darse antes o concurrentemente con un curso avanzado de electromagnetismo, donde se debería hacer hincapié en el tipo de ecuaciones
+que se resuelven (elípticas, hiperbólicas), y el sentido de sus condiciones iniciales o de contorno, según corresponda. Usando además en forma
+coherente el concepto de distribución, que lejos de ser un concepto matemático abstracto es en realidad un concepto que aparece naturalmente en la física.
+ 
+Nada del contenido de estas notas es material original, sí algunas formas de presentarlo, por ejemplo algunas pruebas más simples que las usuales, o la forma de integrar cada contenido con los anteriores. Mucho del material debería ser pensado como una primera lectura o una iniciación al tema y el lector interesado en profundizar debería leer los libros citados, de los cuales he extraído mucho material, siendo éstos excelentes y difíciles de superar.
+
+
+
+

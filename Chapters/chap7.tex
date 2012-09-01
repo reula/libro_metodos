@@ -1,0 +1,398 @@
+ \chapter{Prueba del Teorema Fundamental}
+
+Solo probaremos los puntos $i)$ y $ii)$, para lo cual usaremos el
+método de aproximaciones sucesivas de Picard, que tiene su
+importancia en aplicaciones. La prueba del punto $iii)$ es de
+carácter técnico y no aporta ninguna enseñanza extra de
+consideración. Punto $iv)$ sigue de los puntos $i)$ y $ii)$ y la
+prueba de esto es idéntica a la del Corolario 1.2 del Teorema análogo
+para el caso de una EDO.
+
+Para la prueba de estos puntos deberemos desarrollar algunas ideas y
+resultados de la teoría matemática de espacios vectoriales de
+dimensión infinita. Nos restringiremos a lo mínimo que el
+teorema requiere ya que estos temas serán  desarrollados  más
+extensamente en la segunda parte de este curso.
+
+\espa
+\defi: 
+Diremos que un espacio vectorial, $V$ es de
+{\bf dimensión infinita}~\index{dimensión!infinita} si tiene un número 
+infinito de vectores linealmente independientes.
+
+\noi 
+\yaya{Ejemplos}:
+
+\noi
+a) Sea $V$ el conjunto de todas las sucesiones
+$\{x_i\},\;i=1,\ldots,\ifi$ de números reales. Este es un espacio
+vectorial si definimos la {\bf suma} y el {\bf producto} de sucesiones por 
+medio de la siguiente fórmula,
+\beq
+\{x_i\}+\alpha\{y_i\}=\{x_i+\alpha\:y_i\}.
+\eeq
+Estos vectores se pueden escribir también como
+$\{x_i\}=(x_1,x_2,x_3,\ldots )$ con lo que se ve que es la
+extensión de \ren con $n\to\ifi$.
+Claramente los $\ve{u}_1=(1,0,0,\ldots) $; $\ve{u}_2=(0,1,0,\ldots) $;
+$\ve{u}_3=(0,0,1,\ldots) $; son linealmente independientes e infinitos en número.
+
+\espa
+
+\noi 
+b) Sea $V$ el conjunto de funciones continuas en el intervalo
+$[0,1]$. Este es un espacio vectorial ya que si $f$ y $g$ son
+continuas en $[0,1]$, luego $h=f+\alpha g$, $\alpha \in \re$, 
+es también continua en $[0,1]$.
+
+ El conjunto de vectores $u_n=x^n\,,\;n\in{\ve N}$, es linealmente
+independiente e infinito
+$(\sum^M_{n=0}c^n\,u_n=\sum_{n=0}^Mc^n\,x^n=0\Longrightarrow
+c^n=0\;\;\forall \;n\leq  M)$ ya que un polinomio de grado
+$M$ tiene a lo sumo $M$ raíces.
+
+A los espacios de dimensión infinita también se les puede asignar
+normas, pero en este caso éstas no son equivalentes y por lo tanto
+habrá que ser cuidadoso en no confundir las estructuras resultantes.
+Para ello asignaremos distintos nombres a los espacios con distintas normas.
+
+\noi\yaya{Ejemplos}:
+\noi 
+a) El espacio vectorial normado $l^2$ es el espacio de
+sucesiones infinitas con la norma
+$\|\{x_i\}\|_2=\sqrt{\dip\sum_{i=1}^{\ifi} x_i^2} < \infty $.
+
+\noi 
+b) El espacio vectorial normado $l^{\ifi}$ es el espacio de
+sucesiones infinitas con la norma
+$\|\{x_i\}\|_{\ifi}=sup_{i}\{|x_i|\}$. Es decir el espacio de todas
+las sucesiones acotadas.
+
+
+\noi c) El espacio vectorial normado $C[a,b]$ es el espacio de
+funciones continuas con la norma $\|f\|_c=sup_{x\in [a,b]}\{|f(x)|\}$.
+Es decir el espacio de funciones continuas acotadas en $[a,b]$.
+
+\espa
+\noi\yaya{Ejercicios}:
+
+\noi
+1) Muestre que las normas definidas en el ejemplo anterior son en
+realidad normas.
+
+\noi
+2) Muestre que existen sucesiones en $l^{\ifi}$ que no pertenecen a
+$l^2$. Ayuda: Encuentre una de ellas.
+
+\noi
+3) Muestre que $\|\{x_i\}\|_n := \sqrt[n]{\sum_{i=1}^{\infty} |x_i|^n}_{\stackrel{
+\textstyle \longrightarrow}{\scriptstyle n \to \infty}} sup_i \{|x_i|\}$.
+\espa
+
+A diferencia del caso de dimensión finita, un espacio normado de
+dimensión infinita no necesariamente es completo. Para ilustrar
+esto consideremos el espacio vectorial normado $l_0^{\ifi}$ el cual
+es un subespacio de $l^{\ifi}$ que consiste en todas las sucesiones
+acotadas con solo un número finito de términos no nulos. Cada
+sucesión $\{x_i\}_n= (1,1/2,1/3,\ldots,1/n,0,0,\ldots) $ está en
+$l_0^{\ifi}$, la sucesión de sucesiones $\{\{x_i\}_n\}$ es de
+Cauchy 
+$$\lp \|\{x_i\}_{m}-\{x_i\}_n\|_{\ifi}=\dip{\frac{1}{n+1}}_{\stackrel{\textstyle\longrightarrow}
+{\scriptstyle n\to\ifi}} 0 \rp$$ 
+y converge a la sucesión $\{x_i\}_{\ifi}=( 1,1/2,
+1/3 ,\ldots)\in l^{\ifi}$ {\it que no pertenece a} $l_0^{\ifi}$. Por lo tanto
+$l_0^{\ifi}$ no es completo.
+
+\espa
+\defi: 
+Diremos que un espacio vectorial normado
+$(V,\|\cdot\|)$ es un {\bf espacio de Banach}~\index{Banach!espacio} si es completo.
+
+\noi
+\yaya{Ejemplos}: 
+\ren con cualquiera de sus normas, $l^2$ y
+$l^{\ifi}$ son espacios de Banach.
+\espa
+
+Un importante resultado, crucial en la prueba del Teorema Fundamental
+es el siguiente teorema.
+\bteo
+El espacio vectorial de funciones continuas acotadas, $C[a,b]$ es completo.
+\eteo
+
+\pru: Sea $\{f_n(x)\}$ una sucesión de Cauchy en $C[a,b]$,
+es decir cada $f_n(x)$ es una función continua y acotada en
+$[a,b]$ y se cumple que dado $\eps>0$ existe $N>0$ tal que
+$\forall\;m,n>N\;\;\; \|f_n-f_m\|_c=sup_{x\in[a,b]}|f_n(x)-f_m(x)|<\eps$.
+Pero entonces para cada $x\in[a,b]$ la sucesión de números reales
+$\{f_n(x)\}$ es de Cauchy. Pero los números reales son completos y
+por lo tanto para cada $x\in[a,b]\;\;\{f_n(x)\}$ converge a un
+número que llamaremos $f(x)$. Pero entonces dado $\eps>0$ para
+todo $N$ tal que $m,n\geq N$ implique $\|f_n-f_m\|_c<\eps$, tenemos
+que 
+
+\beq
+	\barr{rcl}\dip
+     		sup_{x\in[a,b]}|f(x)-f_N(x)| & = & sup_{x\in[a,b]}\dip\lim_{n\to\ifi} |f_n(x)-f_N(x)| \\
+             		& \leq & sup_{n\geq N} sup_{x\in[a,b]}  |f_n(x)-f_N(x)| \\             
+             		& = & sup_{n\geq N} \|f_n-f_N\|_c<\eps .
+          \earr
+\eeq
+
+Por lo tanto si pudiésemos probar que $f\in C[a,b]$ entonces
+tendríamos  que $\|f-f_n\|_c\to 0,\;\;n\to\ifi$ y por lo tanto que
+$\{f_n\}\to f$ en $C[a,b]$ y el teorema estaría probado.
+
+ Sea $x\in[a,b]$ cualquiera y dado, probaremos que $f$ es continua en
+$x$ y as\'\i\ en todo $[a,b]$. Sea $\eps>0$, queremos encontrar
+un $\del $ tal que  $|x-y|<\del$ implique $|f(x)-f(y)|<\eps$.
+Tomemos $N$ tal que $\|f-f_N\|_c<\eps/3$  y $\del$ tal que
+$|x-y|<\del$ implique $|f_N(x)-f_N(y)|<\eps/3$ [Esto es posible pues
+las $f_N(x)$ son continuas en $[a,b]$]. Luego $|x-y|<\del$ implica
+{\small
+\beq\barr{rcl}
+|f(x)-f(y)|&\leq&|f(x)-f_N(x)|+|f_N(x)-f_N(y)|+|f_N(y)-f(y)| \\
+           &<   & \frac13\eps + \frac13\eps +\frac13 \eps=\eps .
+\earr
+\eeq
+}
+%
+y por lo tanto la continuidad de $f(x)$. Como $[a,b]$ es un conjunto compacto
+(cerrado y acotado) luego $f$ es acotada en $[a,b]$ y por lo tanto pertenece
+a $C[a,b]$ 
+\epru
+\espa
+
+\defi: 
+Sea $T:V\to V$ un mapa de un espacio de
+Banach  $V$ en sí mismo. Diremos que $T$ es una {\bf
+contracción}~\index{contracción} si existe $\lambda<1$ tal que:
+\beq 
+\|T(\ve{x})- T(\ve{y})\|_V\leq\lambda\,\|\ve{x}-\ve{y}\|_V.
+\eeq
+
+\noi\yaya{Ejemplos}:
+
+a) El mapa lineal en $l^2$; $\ve{A}\{\ve{x}_i\}=\lb \frac{\ve{x}_i}{i+1}\rb$.
+
+b) El Mapa de $\re^2$ en $\re^2$ que manda al punto $(x,y)$ en el
+punto $(x_0+x/2,y/2)$.
+
+c) Una función Lipschitz cualquiera de $\re$ en $\re$ con módulo de
+continuidad ($k$) menor que uno.
+\espa
+
+La propiedad importante de estos mapas es el siguiente teorema
+
+\bteo 
+\label{Teorema_del_mapa_contractivo}
+Sea $T:V\to V$ una contracción. Luego existe un único
+$\ve{v}\in V$ tal que $T(\ve{v})=\ve{v}$, además la sucesión $T^n(\ve{u})$
+tiende a $\ve{v}$ cualquiera sea $\ve{u}$.
+\eteo
+
+\pru:
+Sea $\|T(\ve{u})-\ve{u}\|=d$, luego 
+$\|T^{n+1}(\ve{u})- T^n(\ve{u})\|\leq\lambda^n\,d$ y si $m>n$
+
+% \beq\barr{rcl}
+%      \|T^m(\ve{u}) &-& T^n(\ve{u})\|  \nn 
+%  &=& \|T^m(\ve{u})-T^{m-1}(\ve{u})+T^{m-1}(\ve{u})-T^{m-2}(\ve{u})+\cdots T^n(\ve{u})\| \\
+%  & \leq & \|T^m(\ve{u})-T^{m-1}(\ve{u})\|+\|T^{m-1}(\ve{u})-T^{m-2}(\ve{u})\|
+% +\cdots  \\
+%  & \leq & d\;\sum^m_n \lambda^m. 
+%  \earr
+% \eeq
+{%\small
+\[
+\barr{rcl}
+\|&&\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!T^m (\ve{u}) - T^n(\ve{u})\| \\
+&=& \|T^m(\ve{u})-T^{m-1}(\ve{u})+T^{m-1}(\ve{u})-T^{m-2}(\ve{u})+\cdots T^n(\ve{u})\| \\
+ & \leq &  \|T^m(\ve{u})-T^{m-1}(\ve{u})\|+\|T^{m-1}(\ve{u})-T^{m-2}(\ve{u})\|
++\cdots  \\
+ & \leq &  d\;\sum^m_n \lambda^m. 
+ \earr 
+\]
+}
+%
+Como $\sum_{n=0}^{\ifi}\lambda^n$ converge $\{T^n(\ve{u})\}$ es una sucesión
+de Cauchy. Pero $V$ es completo y por lo tanto existe $\ve{v}\in V$ tal
+que $\lim_{n\to\ifi}T^n\,\ve{u}=\ve{v}$.
+
+Como toda contracción es continua tenemos que $$T(\ve{v}) = T (
+\lim_{n\to\ifi} T^n(\ve{u}))=\lim_{n\to\ifi}T^{n+1}(\ve{u})=\ve{v}.$$
+
+Solo resta probar que $\ve{v}$ es único. Supongamos por contradicción
+que exista $\ve{w}\in V$ distinto de $\ve{v}$ y tal que $T\,\ve{w}=\ve{w}$. 
+Pero
+entonces 
+$\|\ve{w}-\ve{v}\|_V=\|T(\ve{w})-T(\ve{v})\|_V\leq\lambda\,\|\ve{w}-\ve{v}\|_V$ 
+lo que es una contradicción ya que $\lambda\neq 1$ 
+\epru
+
+\ejer: 
+Sea $T: B_{R,x_0} \to B_{R,x_0}$, $B_{R,x_0} \in V$ una bola cerrada
+de radio $R$ alrededor de $x_0$, una contracción~\footnote{Acomode también la definición de una contracción para este caso.}. 
+Probar para
+este caso las mismas afirmaciones que en el teorema anterior.
+\espa
+
+
+\paragraph{Prueba de los puntos $i$) y $ii)$ del teorema fundamental.}
+
+Como solo queremos ver existencia y unicidad local, es decir solo en
+un entorno de un punto $p$ de $M$ es suficiente considerar el sistema
+en $\re^n$. Esto nos permitirá usar la norma euclídea allí presente.
+Para ver esto tomemos una carta $(U,\varphi)$ con $p\in U$ y por
+simplicidad $\varphi(p)=0\,\in\re^n$. Usando este mapa podemos
+trasladar el campo vectorial $\ve{v}$ en $M$ a un campo vectorial $\ti
+v$ definido en un entorno del cero en \ren.  Allí trataremos el
+problema de encontrar sus curvas integrales $g(t,x)$ que pasan por el
+punto $x\in\varphi(U)$ al tiempo $t=0$. Luego por medio del mapa
+$\varphi^{-1}$ obtendremos en $M$ las familias monoparamétricas de
+difeomorfismos  $g^t(q)$ , $q\in U$, que serán tangentes en todo
+punto al campo vectorial $\ve{v}$.
+
+Con esto en mente, solo resta por ver que para $R>0$ y $\eps>0$
+suficientemente pequeños 
+existen curvas integrales, 
+$g(t,x):[0,\eps] \times B_R=\{x\in \ren
+\;|\;\|x\|_V < R  \} \to \ren$,  
+del vector $\ti v$, es decir mapas satisfaciendo
+\beq  
+\derc{g(t,x)}{t}=\ti v(g(t,x))\;\;\;,\;\;\;\;\;g(0,x)=x,
+\label{7*}\eeq
+con $g(t,x)$ continua con respecto al segundo argumento, es decir con
+respecto a la condición inicial. Por la suposición de que $v$
+es Lipschitz~\footnote{Para probar la existencia y unicidad de soluciones locales solo 
+es necesario suponer que $\ve{v}$ es Lipschitz.}, 
+tenemos que existe $k>0$ tal que $\forall\;x,y\in B_R$
+\beq
+\|\ti v(x)-\ti v(y)\|_V<k\,\|x-y\|_V\;.\eeq
+
+Consideremos ahora el espacio de Banach $C([0,\eps]\times B_R)$ que consiste
+en todos los mapas  continuos (en $t$ y $x$ ) de $[0,\eps]\times B_R$
+en \ren{} con la norma 
+\beq\barr{rccl}
+     \|h\|_C & = & sup & \|h(t,x)\|_V\;\;, \\
+             &   & x\in B_R & \\
+             &   & t\in[0,\eps].
+             \earr
+\eeq
+
+Sea el mapa de la bola de radio $R$ en $C([0,\eps ]\times B_R)$ en sí
+misma dado por,
+\beq
+T(h)=\int_0^t \ti v(x+h(\tau,x))\,d\tau\;\;.
+\eeq
+Para que este mapa esté bien definido supondremos $R$ lo
+suficientemente pequeño como para que $\ti v$ esté definido y
+satisfaga la condición de Lipschitz en $B_{2R}$ y $\eps$ menor que
+$R/C$, donde \hfill 
+$C=\max_{x\in B_{2R}} |\ti v(x)|$, de modo que 
+si $\|h\|_C < R$ luego $\|x+h(\tau,x)\|_V < 2R \;\;\forall \tau\in[0,\eps]$
+y por lo tanto
+$\|T(h)\|_C < R$ en todo $C([0,\eps ]\times B_R)$. [Ver figura 7.1.] 
+
+\espa 
+%\fig{6cm}{Entornos usados en la prueba del Teorema Fundamental.}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m7_1}}
+    \caption{Entornos usados en la prueba del Teorema Fundamental.}
+    \label{fig:7_1}
+  \end{center}
+\end{figure}
+
+
+\blem
+Si \eps{} es suficientemente pequeño entonces $T$ es una contracción.
+\elem
+
+\espa
+\pru:
+\begin{eqnarray*}
+\|T(h_1)-T(h_2)\|_V  \!\! &=& \!\!
+           \int_0^t\|\ti v(x+h_1(\tau,x))-\ti v(x+h_2(\tau,x))\|_V\;d\tau \\
+\!\! &\leq& \!\!\int_0^t k\,\|h_1(\tau,x)-h_2(\tau,x)\|_V \,d\tau\\
+\!\! &\leq& \!\! k\,\eps\,\|h_1-h_2\|_C
+\end{eqnarray*}
+%                                         
+y por lo tanto
+\[
+\|T(h_1)-T(h_2)\|_C\leq k\,\eps\,\|h_1-h_2\|_C\;\;\;\;\;\;\;\forall
+\;h_1,h_2\in C([0,\eps]\times B_R).
+\]
+%
+Tomando $\eps<1/k $ completamos la prueba del Lema.
+
+Este Lema y el Teorema \ref{Teorema_del_mapa_contractivo}  nos aseguran 
+que existe un único mapa $h(t,x)$ --el punto fijo de $T$-- satisfaciendo
+\beq
+h(t,x)=T(h(t,x))=\int_0^t\ti v(x+h(\tau,x))\,d\tau .
+\label{7**}
+\eeq
+
+\espa
+Sea $g(t,x)\equiv x+h(t,x)$, esta función es continua en ambos
+argumentos --ya que $h(t,x)\in C([0,\eps]\times B_R)$-- y por
+construcción continuamente
+diferenciable en $t$ --ya que satisface \ron{7**}--.
+Diferenciando \ron{7**} con respecto a $t$ vemos que $g(t,x)$
+satisface la ecuación \ron{7*} y su condición inicial, lo que
+completa la prueba de los puntos $i)$ y $ii)$  del Teorema Fundamental.
+\epru
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newpage
+\section{Problemas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% 1
+\bpro
+Vea que $l^2$ la bola unidad no es compacta. 
+Ayuda: encuentre una sucesión infinita en la bola unidad que no tiene punto de acumulación.
+\epro
+
+%2
+\bpro
+Pruebe que la condición 
+\begin{equation}
+  \|A(\ve{x}) - A(\ve{y})\| < \|\ve{x} - \ve{y}\|
+\end{equation}
+no es suficiente para garantizar la existencia de un punto fijo.
+Ayuda: construya un contraejemplo. 
+Hay algunos muy simples usando funciones de la recta en sí misma.
+\epro
+
+%3
+\bpro 
+Sea $f:[a,b] \to [a,b]$ una función Lipschitz con constante menor
+que la unidad en todo el intervalo $[a,b]$. Demuestre usando el teorema del
+punto fijo para contracciones que la ecuación $f(x) = x$ siempre tiene una
+solución. Grafique en un diagrama $(y=f(x), x)$ la sucesión dada por
+$x_i = f(x_{i-1})$ para el caso de $f$ con pendiente positiva y menor que
+uno en todo punto. ¿Qué sucede cuando la pendiente se hace mayor que uno
+en algún intervalo?
+\epro
+
+%4
+\bpro
+Sea $g:[a,b] \to \re$ una función continuamente diferenciable tal que
+$g(a) < 0$, $g(b) > 0$ y $0 < c_1 < g'(x)$. Use el teorema del punto fijo 
+de las contracciones para probar que existe una única raíz $g(x) = 0$ en 
+el intervalo. Ayuda: defina la función $f(x)= x - \lambda g(x)$ para una 
+constante $\lambda$ convenientemente elegida y encuentre un punto fijo: 
+$f(x)=x$. Note que la sucesión aproximante es la del método de Newton
+para obtener raíces.
+\epro
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot.tex~/Metodos/"
+%%% End: 

@@ -1,0 +1,118 @@
+\begin{thebibliography}{99}
+
+\bibitem{Geroch}{\it Mathematical Physics},
+                  Geroch, R.,
+                  The Univ. of Chicago Press 
+                  .
+
+\bibitem{Kelley}{\it Topolog\'\i{}a General},
+                 Kelley, J. L.,
+                 EUDEBA
+                 .
+
+\bibitem{Arnold}{\it Ordinary Differential Equations}, 
+                 Arnold, V. I., 
+                 The MIT Press,
+                 1987.
+
+\bibitem{Arnold_CM}{\it Mathematical Methods of Classical Mechanics},
+		    Arnold, V. I., 
+		    Springer,
+	            1980.
+
+\bibitem{Lefschetz}{\it Differential Equations: Geometric Theory},
+                 Lefschetz, S,
+                 Wiley, 
+                 1962.
+
+\bibitem{Wald}{\it General Relativity},
+                 Wald, R.,
+                 The University of Chicago Press,
+                 1993.
+
+\bibitem{Braum}{\it Differential Equations and their applications,
+                    an introduction to applied mathematics},
+                 Braum, M.
+                 New York, Springer, 
+                 1983.
+
+\bibitem{Roxin}{\it Ecuaciones diferenciales ordinarias y teor\'\i{}a
+                    de control.}
+                 Roxin, E.
+                 Buenos Aires, EUDEBA,
+                 1968.
+
+% \bibitem{Sanchez}{\it }
+%                    Sanchez,
+
+\bibitem{Reed}{\it Methods of Modern Mathematical Physics. I. 
+                 Functional Analysis},
+               Reed, M., and Simon, B.,
+               Academic Press,
+               1972.
+
+\bibitem{Lang}{\it Real Analyis},
+                 Lang, S.,
+                 Addison-Wesley,
+                 1983.
+
+\bibitem{Lang_LA}{\it Introduction to Linear Algebra},
+		 Lang, S., Undergraduate Texts in Mathematics,
+	         Springer, second edition, 1986.
+
+\bibitem{Lax}{\it Linear Algebra}, 
+		Lax, P., Pure and applied mathematics, 
+		Wiley, 1996.
+
+\bibitem{Yosida}{\it Functional Analysis},
+                   Yosida, K.,
+                   Springer-Verlag
+                   1980.
+
+\bibitem{Kolmogorov}{\it Introductory Rela Analysis},
+                       A.N. Kolmogorov, and S.V. Fomin,
+                       Dover,
+                       1970.
+
+
+\bibitem{Treves}{\it Basic Linear Partial Differential Equations},
+                   Treves, F.,
+                   Academic Press,
+                   1975.
+
+\bibitem{John}{\it Partial Differential Equations},
+                 John, F.,
+                 Springer-Verlag
+                 1982.
+
+\bibitem{Folland}{\it Introduction to Partial Differential Equations},
+                    Folland, G. B.,
+                    Mathematical Notes, Princeton Univ. Press
+                    1976.
+
+\bibitem{TaylorI}{\it Partial Differential Equations I: Basic Theory}
+                    M. Taylor,
+                    Aplied Mathematical Sciences 115, Springer-Verlag,
+                    1996.
+
+
+\bibitem{Godunov}{\it Ecuaciones de la F\'\i{}sica Matem\'atica},
+                   Godunov, S.K.
+                   Mosc\'u, MIR, 
+                   1978.
+
+
+\bibitem{Kiseliov}{\it Problemas de Ecuaciones Diferenciales Ordinarias}
+                     Kiseliov A. ,  Krasnov M., and Makarenko G.,
+                      Mosc\'u, MIR, Mosc\'u, 
+                     1968.
+
+\bibitem{Isham}{\it Modern Differential Geometry for Physicists}
+		Isham C., World Scientific Lecture Notes in Physics - Vol. 61
+		World Scientific, Second edition, 1999.
+
+\end{thebibliography}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

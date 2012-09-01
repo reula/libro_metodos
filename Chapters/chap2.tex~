@@ -1,0 +1,2206 @@
+%%ultima modificación 15-09-99
+%\input format
+%\input extdef
+
+\chapter{Álgebra Lineal}
+
+
+
+
+\section{Espacios Vectoriales}
+
+\defi:
+Un {\bf Espacio Vectorial Real} consiste de tres cosas 
+-- $i$) Un conjunto, $V$, cuyos elementos serán llamados {\bf vectores}.
+$ii$) Una regla que asigna a cada par de vectores, $\ve{v}$,
+$\ve{u}$, un tercer vector que denotaremos por $\ve{v+u}$ y que llamaremos
+su {\bf suma}. $iii$) Una regla que asigna a cada vector, $\ve{v}$ y
+a cada número real $a$, un vector que denotaremos por $a\ve{v}$ y
+que llamaremos el {\bf producto} de $\ve{v}$ con $a$. -- sujetas a
+las siguientes condiciones:
+
+\begin{itemize}
+
+\item[1.a)] Para cualquier par de vectores $\ve{u}$, $\ve{v} \in V$
+se cumple que,
+\beq
+\ve{u} + \ve{v} = \ve{v} + \ve{u}
+\eeq
+
+
+\item[1.b)] Existe en $V$ un elemento llamado {\bf cero} y denotado por $\ve{0}$,
+tal que $\ve{0+v = v} \;\forall \ve{v} \in V$.
+
+\item[1.c)] Para cualquier vector $\ve{u} \in V$ existe un único
+vector en $V$, denotado $-\ve{u}$, tal que,
+\beq
+\ve{u} + (-\ve{u}) = \ve{0}
+\eeq
+
+\item[2.a)] Para cualquier par de números reales $a$ y $a'$ y cualquier vector 
+$\ve{v}$ se cumple que,
+\[
+a(a'\ve{v}) = (aa')\ve{v}.
+\]
+
+\item[2.b)] Para cualquier vector 
+$\ve{v}$ se cumple que,
+\[
+1\ve{v} = \ve{v}.
+\]
+
+\item[3.a)] Para cualquier par de números reales $a$ y $a'$ y cualquier vector 
+$\ve{v}$ se cumple que,
+\[
+(a+a')\ve{v} = a\ve{v} + a'\ve{v}.
+\]
+
+\item[3.b)] Para cualquier número real $a$ y cualquier par de vectores
+$\ve{v}$ y $\ve{v}'$ se cumple que,
+\[
+a(\ve{v}  + \ve{v}') = a\ve{v} + a\ve{v}'.
+\]
+
+
+ 
+
+\end{itemize}
+
+Las primeras son condiciones que involucran solo la regla de la suma.
+Las siguientes solo involucran a la regla del producto, mientras que
+las dos últimas tratan de la relación entre estas dos operaciones.
+
+\espa
+
+\ejem: El conjunto de todas las n--tuplas de números reales con las
+operaciones usuales de suma y multiplicación {\it tupla por tupla}.
+Este espacio se denomina $\re^n$.
+
+\ejem: Sea $S$ cualquier conjunto y sea $V$ el conjunto de todas las funciones
+de $S$ en los reales, $\ve{v}:S \to V$, con las siguientes
+operaciones de suma y producto: La suma de la función $\ve{v}$ con
+la función $\ve{v}'$ es la función (elemento de $V$) que al elemento
+$s$ de $S$ le asigna el valor $\ve{v}(s) + \ve{v}'(s)$. El producto de
+$a \in \re$ con la función $\ve{v}$ es la función que a $s \in S$
+le asigna el valor $a\ve{v}(s)$.
+Este ejemplo aparecerá muy a menudo en los capítulos siguientes.
+
+\defi: diremos que un conjunto de vectores $\{\ve{v_i}\}$ $i=1, \ldots ,n$
+son {\bf linealmente independientes}~\index{lineal!independencia} 
+si $\sum_i a^i \ve{v_i} = \ve{0}$ $a^i \in \re$, 
+$i= 1, \ldots ,n$ $\Longrightarrow $ $a^i = 0$, $i= 1, \ldots ,n$,
+es decir si cualquier combinación lineal no trivial de estos vectores nos
+da un vector no trivial. Si un número finito de vectores linealmente independientes, 
+$n$, son suficientes para {\bf expandir} $V$, [es decir si 
+cualquier vector  en $V$ puede ser obtenido como una combinación lineal de 
+estos $n$ vectores], entonces diremos que estos forman una {\bf base} de 
+$V$ y que la {\bf dimensión} de $V$ es $n$, $\dim V = n$.
+\espa
+
+\ejer: Muestre que la dimensión de $V$ es única, es decir que no depende de
+la base empleada para definirla. 
+
+Note que si en el ejemplo anterior $S$ consta de un número finito de elementos, 
+luego la dimensión de $V$ es finita.\footnote{Es decir un número finito de vectores
+linealmente independientes expanden $V$.} En el caso de que $S$
+tuviese un número infinito de elementos diríamos que la dimensión de $V$
+sería infinita. En lo que sigue de este capítulo solo
+consideraremos espacios vectoriales de dimensión finita.
+
+\bpro 
+Sea $S$ un conjunto finito, $S = \{s_1,s_2,\dots,s_n\}$, encuentre una base 
+del espacio vectorial de todas las funciones de $S$ en $\re$. 
+Encuentre la dimensión de este espacio.
+\epro
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Covectores y Tensores}
+\label{sub:Covectores_y_Tensores}
+
+Sea $V$ un espacio vectorial de dimensión $n$. 
+Asociado con este espacio vectorial consideremos el conjunto,
+$V^*=\{$ el espacio de mapas lineales $f:V\to \re\}$. 
+Este es también
+un espacio vectorial, llamado el {\bf espacio dual a $V$}~\index{espacio dual}, 
+o {\bf espacio de covectores},~\index{covectores} con suma y producto dados por: 
+$(f+\alpha g)(\ve{ v})=
+f(\ve{ v})+\alpha g(\ve{ v})\;\;\;\;\forall\;\ve{v}\in V$ 
+con 
+$f,g\,\in V^*\;,\,\alpha \in \re$. 
+¿Cuál es su dimensión? Note que si
+$\{\ve{ v}_i\}$ $i=1,\ldots,n$ es una base de $V$, es decir un conjunto
+linealmente independiente de vectores que expanden $V$, podemos definir $n$
+elementos de $V^*$ (llamados co-vectores) por la relación 
+\beq
+\ve{ \theta^i}(\ve{ v}_j)=\delta^i_{\;j}.
+\eeq
+Es decir definimos la acción de $\ve{ \theta^i}$ sobre los $\{\ve{v_j}\}$
+como en la ecuación de arriba y luego extendemos su acción a cualquier
+elemento de $V$ escribiendo a este elemento en la base $\{\ve{ v}_i\}$
+y usando el hecho que la acción debe ser lineal.
+  
+Se puede ver fácilmente que cualquier $\rho \in V^*$ se puede obtener
+como combinación lineal de los covectores $\{\ve{\theta^j}\}$,
+$j=1,\ldots,n$ y que estos son linealmente independientes, por lo
+tanto forman una base y por lo tanto la dimensión de $V^*$ es también $n$.
+\espa
+
+\ejer: Vea que $V^*$ es un espacio vectorial y que las $\{\ve{ \theta^i}\}$
+forman realmente una base.
+
+Como $V$ y $V^*$ tienen la misma dimensión son, como espacios
+vectoriales, la misma cosa, pero como no existe ningún mapa que los
+identifique los tenemos que tomar como distintos. 
+
+¿Qué pasa si ahora tomamos el dual de $V^*$? ¿Obtendremos así más
+copias de $V$? La respuesta es no, ya que existe una identificación
+natural entre $V$ y su doble dual $V^{**}$.
+
+En efecto a cada $\ve{v}\in V$ le podemos asociar un elemento $\ve{
+x}_v$ de
+$V^{**}$, es decir una funcional lineal de $V^*$ en $\re$, de la
+siguiente forma: $\ve{ x}_v(\omega)=\omega(\ve{v}) \;\;\;\forall
+\;\;\omega\in V^{*}$ . Es decir el elemento $\ve{ x}_v$ de $V^{**}$
+asociado a $\ve{ v}\in V$ es aquel que al actuar sobre un covector
+cualquiera $\omega$ da el número $\omega (\ve{v})$. Note que $\ve{x}_v$ actúa
+linealmente en los elementos de $V^*$ y por lo tanto es un elemento
+de $V^{**}$. ¿Hay elementos de $V^{**}$ que no provengan de algún
+vector en $V$? 
+La respuesta es no, ya que el mapa  $\ve x_v:V\to V^{**}$ es
+inyectivo [$\ve x_v(\omega)=0\;\;\forall \; \omega\Longrightarrow \ve{v}=0$] y
+por lo tanto~\footnote{Denotando por $\ve{x}_V$ la imagen por $\ve{x}_{(\cdot)}$ 
+de $V$.} $\dim \ve{x}_V = \dim V$.
+Por otro lado $\dim V^{**} = \dim V^*$ ya que $V^{**}$ es el dual de $V^*$ y así 
+$\dim V = \dim V^* = \dim V^{**}$ , lo que indica que el mapa en cuestión es también 
+suryectivo y por lo tanto invertible.
+Esto nos permite identificar
+$V$ y $V^{**}$ y concluir que {\it dualizando} no podremos
+construir más espacios vectoriales interesantes.
+\espa
+
+\ejer: Vea que efectivamente $\dim \ve{x}_V = \dim V$.
+
+Sin embargo nada nos impide considerar también  \index{mapas multilineales}
+{\bf mapas multilineales}~\footnote{O sea mapas separadamente lineales en cada 
+uno de sus argumentos.} 
+de $\underbrace{V\times V\times\cdots\times V}_{k\;\mbox{veces}}$ en $\re$,
+o más generalmente de $\underbrace{V\times\cdots\times V}_{k\;\mbox{veces}}
+\times\underbrace{ V^*\times \cdots\times V^*}_{l\;\mbox{veces}}$ en $\re$.
+El conjunto de estos mapas (para cada par $(k,l)$ dado) es también un espacio 
+vectorial, --con las operaciones obvias-- y sus elementos son llamados
+{\bf tensores de tipo $(k,l)$}~\index{tensores!tipo}.
+
+\ejer: ¿Cuál es la dimensión de estos espacios como función del par $(k,l)$?
+
+
+\noi\yaya{Nota}:
+En dimensión finita se puede demostrar que cualquier tensor de tipo $(k,l)$
+se puede escribir como combinación lineal de elementos del producto cartesiano de $k$ copias de $V^*$ y $l$ copias de $V$ 
+--donde hemos identificado a $V$ con $V^{**}$--. 
+Por ejemplo si $\ve{t}$ es de tipo $(0,2)$, --o sea un mapa que tiene como argumentos  a dos covectores--, 
+entonces dada una base $\{\ve{v^i}\}$ de $V$ habrá $n \times n$ números reales $t^{ij}$, $i=1, \ldots ,n$ tales que 
+\beq
+\ve{t}(\ve{\sigma},\ve{\omega}) = \sum_{i,j=1}^{n} t^{ij} \ve{v_i}(\ve{\sigma})
+\ve{v_j}(\ve{\omega}), \;\;\;\; \forall \ve{\sigma},\;\ve{\omega} \in V^*.
+\eeq
+Pero el producto de combinaciones lineales de productos cartesianos de
+$k$ copias de $V^*$ y $l$ copias de $V$ es también un espacio
+vectorial, se lo llama {\bf producto externo}~\index{producto!externo} 
+de  $k$ copias de $V^*$ y $l$ copias de $V$ y se lo denota por
+$\underbrace{V^*\otimes V^*\otimes\cdots\otimes V^*}_{k\;\mbox{veces}}
+\otimes\underbrace{ V\otimes \cdots\otimes V}_{l\;\mbox{veces}}$.
+Por lo tanto también se los puede considerar a los tensores como elementos
+de estos productos externos.
+
+
+
+
+\ejem: a) Sea $\ve{ t}$ de tipo $(2,0)$, o sea $\ve{ t}\in\;V^*\otimes V^*$. 
+Este es un mapa bilineal de $V\otimes V$ en $\re$, $\ve{ t}(v,u)\in \re$. Sea
+$\ve{ t}$ simétrico $[\ve{ t}(v,u)=\ve{ t}(u,v)]$ y no degenerado 
+[$\; \ve{ t}(v,\;\;)= 0
+\in V^*\Longrightarrow v=0$]. Como $\ve{ t}$ es no degenerado define un mapa
+invertible entre $V$ y su dual.
+
+\ejem: b) Sea $\ve{\varepsilon}$ un elemento de $(n,0)$ tal que 
+\beq
+\ve{\varepsilon} (\ldots,\underbrace{v}_i,\ldots,\underbrace{u}_j,\ldots)
+=-\ve{\varepsilon}
+(\ldots,\underbrace{u}_i,\ldots,\underbrace{v}_j,\ldots) 
+\eeq
+\noi cualquiera sea la casilla $i$ y $j$, es decir un tensor
+totalmente antisimétrico. Sea $\{\ve{u}_i\}$ una base de $V$ y
+$\ve{\varepsilon}_{123\ldots n}=
+\ve{\varepsilon} (\ve{u}_1,\ve{u}_2,\ldots,\ve{u}_n)$, 
+luego cualquier otra componente de
+$\ve{\varepsilon}$ en esta base será o bien cero o 
+$\ve{\varepsilon}_{123\ldots n}$ o $-\ve{\varepsilon}_{123\ldots n}$ 
+de acuerdo a que
+algún $\ve{u}_i$ se repita o sea una permutación par de la de
+arriba o una impar. Por lo tanto basta un número,
+$\ve{\varepsilon}_{123\ldots n}$, para determinar el tensor
+$\ve{\varepsilon}$ y dado y otro tensor
+$\ve{\tilde{\varepsilon} }$ no idénticamente cero con las propiedades
+arriba mencionadas luego existirá un número $\alpha$ tal que
+$\ve{\varepsilon} = \alpha\ve{\tilde{\varepsilon}}$.
+
+\ejer: Sea $\ve{\varepsilon}$ no idénticamente cero y
+$\{\ve{u}_i\}$ un conjunto de $n=\dim V$ vectores de $V$. Muestre que estos
+forman una base si y solo si 
+\beq
+\ve{\varepsilon} (u_1,\ldots,u_n)\neq 0.
+\eeq
+
+\ejem: c) Sea $\ve{ A}$ un elemento de $(1,1)$, 
+\beq
+\ve{ u}\in V, \;\;\ve{ v}^*\in V^*\to \ve{A}(\ve{ u},\ve{v}^*)\in\re.
+\eeq
+Esto implica que $\ve{A}(\ve{u},\;\;)$ es también un vector
+(identificando $V$ con $V^{**}$, aquel
+que toma una forma $\ve{\omega} \in V^*$ y da el número
+$\ve{A}(\ve{u},\ve{\omega})$). Tenemos así un mapa lineal de $V$ en
+$V$, o sea un operador lineal en $V$.
+
+\ejer: Sea $\{\ve{u}_i\}$ una base de $V$ y sean
+$\ve{ a}_i$ los vectores $A(u_i,\;\;)$, luego 
+$$
+\ve{\varepsilon}
+(a_1,\ldots,a_n)=\ve{\varepsilon}(A(u_1,\;\;),\ldots ,A(u_n,\;\;))
+$$ 
+es totalmente antisimétrico en los $\{u_i\}$ y por lo tanto proporcional a
+$\ve{\varepsilon}(u_1. \ldots, u_n)$. La constante de proporcionalidad se
+llama {\bf determinante} \index{determinante} del operador $A$, $\det(A)$. 
+
+\bpro
+Muestre que esta definición no depende del $\ve{\varepsilon} $ empleado ni
+de la base y por lo tanto es realmente una función del espacio de
+operadores de $V$ en $\re$.
+\epro
+
+\ejer:
+Si $A$ y $B$ son dos operadores de $V$ , luego $A\cdot B (v)\equiv
+A(B(v))$. Muestre que $\det(AB)=\det(A)\cdot \det(B)$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Complexificación}
+\label{sub:Complexificacion}
+
+Otra manera de obtener campos vectoriales a partir de uno dado, digamos $V$, es
+extendiendo el campo donde está definida la operación de multiplicación,
+si esto es posible. El caso más común es la 
+\textbf{complexificación}~\index{complexificación} de un espacio
+vectorial real en ese caso simplemente se extiende el producto a los números
+complejos resultando un campo vectorial de la misma dimensión. Una manera de
+obtenerlo, por ejemplo es tomando un conjunto de vectores linealmente independientes
+ del espacio inicial, es decir una base, y considerando todas
+las combinaciones lineales con coeficientes complejos arbitrarios.
+El espacio así obtenido se denota por $V^{\Complex}$.
+Si las componentes de los vectores en $V$ en la base original eran
+n-tuplas de números reales, ahora son n-tuplas de números complejos.
+Como la base es la misma, la dimensión también es la misma.
+Estas extensiones de espacios vectoriales aparecen a menudo y más adelante
+veremos otras.
+
+\ejem: Considere el espacio vectorial $Q^n$ consistente de todas las n-tuplas de
+números racionales. En este espacio el campo es también el conjunto de los
+racionales. Si extendemos el campo a los reales obtenemos $\ren$.
+  
+\subsection{Espacios cociente}
+
+La última forma que veremos de obtener espacios vectoriales a partir
+de otros espacios vectoriales es la de tomar \textbf{cocientes}.~\index{espacio vectoriale!cociente}
+Sea $V$ un espacio vectorial y sea $W \subset V$ un subespacio del mismo.
+Llamaremos \textbf{espacio cociente}~\index{espacio vectoriale!cociente}
+al conjunto de clases equivalentes en $V$, donde diremos que dos vectores
+de $V$ son equivalentes si su diferencia es un vector en $W$. Este espacio
+se denota como $V/W$. 
+\espa
+
+\ejer: Probar que esta es una relación de equivalencia.
+\espa
+
+Veamos que este es un espacio vectorial.
+Los elementos de $V/W$ son clases equivalentes, las cuales denotamos como
+$\{\ve{v}\}$, dos elementos de $V$, $\ve{v}$ y $\ve{v}'$ pertenecen a 
+la misma clase equivalente si $\ve{v}-\ve{v}' \in W$. Sean $\ve{\zeta}$ y
+$\ve{\zeta}'$ dos elementos de $V/W$, es decir dos clases equivalentes
+de elementos de $V$. Definiremos las operaciones propias en los espacios
+vectoriales de la siguiente forma: 
+$\ve{\zeta} + \alpha \ve{\zeta}'$ será la clase equivalente correspondiente
+un elemento $\tilde{\ve{v}}$ obtenido tomando un elemento de $V$ en 
+$\ve{\zeta}$, digamos $\ve{v}$, otro de 
+$\ve{\zeta}'$, digamos $\ve{v}'$, y definiendo 
+$\tilde{\ve{v}} = \ve{v} + \alpha \ve{v}'$, tenemos 
+$\{\tilde{\ve{v}}\}= \ve{\zeta} + \alpha \ve{\zeta}'$.
+\espa
+
+\ejer: Vea que esta definición no depende de la elección de elementos
+en la clase equivalente tomados para hacer la operación. Es decir, considere otros dos elementos en $\ve{\zeta}$  y $\ve{\zeta}'$, digamos $\hat{\ve{v}}$ y
+$\hat{\ve{v}}'$ y vea que con ellos obtiene un elemento en la misma clase que
+$\tilde{\ve{v}} = \ve{v} + \alpha \ve{v}'$. 
+\espa
+
+\ejem: Sea $V = \re{}^2$, es decir el espacio de 2-tuplas de números
+reales. Sea $\ve{v}$ un elemento cualquiera. Este elemento genera el
+espacio unidimensional $W_{\ve{v}}$ que consiste en todos los vectores
+de la forma $\alpha \ve{v}$, para $\alpha \in \re$. El espacio cociente
+$V/W_{\ve{v}}$ es el espacio compuesto por las líneas paralelas a
+$\ve{v}$. Es decir, cada línea es un elemento del espacio cociente
+y entre ellas existe una noción de suma y multiplicación por un 
+escalar.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Agregar figura m2_1
+%
+
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m2_1}}
+    \caption{Diagrama del operador dual.}
+    \label{fig:2_1}
+  \end{center}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Normas}
+\label{sec:Normas}
+
+\defi: 
+Una {\bf norma} \index{norma} en un espacio vectorial $V$ es un mapa $\|\ve x\|:V\to \re^+$,
+satisfaciendo para todo $\ve x,\ve y\in V\,,\;\alpha\in \re\,$,
+
+$i$)  $\|\ve x\|\geq 0$  \ \ ($=\sii \;\ve x=0$)
+
+$ii$) $\|\alpha \ve x\| =| \alpha|\;\|\ve x\|$
+
+$iii$) $\|\ve x+\ve y\|\leq\|\ve x\|+\|\ve y\|$
+
+\espa
+\noi\yaya{Ejemplos}: En $\re^2$ : 
+
+\noi a) $\|(x,y)\|= max\{|x|,|y|\}$; 
+
+\noi b) $\|(x,y)\|=\sqrt{x^2+y^2}$, norma Euclídea;  
+
+\noi c) $\|(x,y)\|=|x| +|y|$ .
+
+\noi d) En $V$ cualquiera sea $\ve{t}$ un tensor simétrico positivo definido de
+tipo (0,2), es decir $\ve{t}(\ve u,\ve v)=\ve{t}(\ve v,\ve u)$, 
+$\ve{t}(\ve u,\ve u)\geq 0$ 
+$(=\sii\;\ve u=0)$. 
+La función $\|\ve u\|_{\ve{t}} =\sqrt{\ve{t}(\ve u,\ve u)}$ es una norma.
+Cada tensor de este tipo genera una norma, pero hay muchas normas que
+no provienen de ningún tensor de este tipo. Dé un ejemplo.
+\espa
+
+\ejer:
+Pruebe que 
+$|\ve{t}(\ve{u},\ve{v})|^2 \leq ||\ve{u}||_{\ve{t}} ||\ve{v}||_{\ve{t}}$.
+Ayuda: Considere el polinomio: 
+$P(\lambda) := \ve{t}(\ve{u} + \lambda \ve{v},\ve{u} + \lambda \ve{v})$.
+\espa
+
+\ejer: Pruebe que los ejemplos dados son en realidad normas.
+Grafique las curvas de nivel de las tres primeras normas, es decir
+los conjuntos $S_a=\{(x,y)\in \re^2\;/\;\|(x,y)\|=\,a\}$ y las ``bolas
+de radio $a$", es decir $B_a=\{(x,y)\in \re^2/\|(x,y)\|\leq a\}$.
+
+\espa
+\ejer: Pruebe que el mapa $d:V\times V \to \re^+$ dado por 
+$d(\ve x,\ve y) = \|\ve x-\ve y\|$ es una métrica.
+
+\espa
+¿Qué es, geométricamente una norma? Dado un vector $\ve{x}\neq 0$
+de $V$ y un n\u mero positivo cualquiera, $a$, existe un único n\u
+mero $\alpha > 0$ tal que $\|\alpha \ve x\|=a$. Esto indica que las
+superficies de nivel de la norma, es decir las hiper-superficies
+$S_a=\{\ve x\in V / \|\ve x\|=a\}$, $a>0$ forman una familia suave de capas
+una dentro de la otra y cada una de ellas divide a $V$ en tres
+conjuntos disjuntos, el {\it interior}\footnote{No confundir con el
+interior de un conjunto que definimos en el capítulo anterior,
+que en este caso sería $S_a$.} de $S_a$ --conteniendo el elemento
+$\ve x=0$-- , $S_a$ y el {\it exterior} de $S_a$. 
+El {\it interior} de $S_a$ es un
+conjunto convexo, es decir si $\ve x$ e $\ve y$ pertenecen al interior de
+$S_a$ luego $\alpha \ve x+(1-\alpha)\ve y,\;\alpha\in[0,1]$ también
+pertenece [ya que $\|\alpha \ve x + (1-\alpha )\ve y\| \leq \alpha
+\|\ve x\| + (1-\alpha )\|\ve y\| \leq \alpha a + (1-\alpha )a = a$].  
+Una curva de nivel caracteriza completamente una norma en
+el sentido que si damos un subconjunto $N$ de $V$, tal que $N$  tiene
+la propiedad radial, es decir  dado $\ve x\neq 0$ existe $\alpha >0$ tal
+que $\alpha \,\ve x\in N$, y su interior es convexo, luego existe una
+única norma tal que $N$ es la superficie de nivel $S_1$.
+Esta norma se define de la siguiente forma: dado $\ve x$ habrá un 
+$\alpha > 0$ tal que $\alpha \ve x \in N$ y entonces la norma de 
+$\ve x$ será $\|\ve x\| = \frac1{\alpha}$. 
+
+\espa
+\ejer: Pruebe que esta es una norma.
+\espa
+
+De esta imagen se ve que dadas dos normas de un espacio vectorial de
+dimensión finita y una superficie de nivel de una, habrá 
+superficies de nivel de la otra que tendrán la primera en su
+interior o en su exterior. En las normas  a) y b) del ejemplo
+anterior vemos que dado un cuadrado conteniendo al cero, habrá dos
+círculos conteniendo al cero, uno conteniendo el cuadrado y otro
+contenido por éste. Esto nos lleva al siguiente Teorema.
+
+\bteo
+Sea $V$ un espacio vectorial de dimensión finita. Luego todas sus
+normas son equivalentes entre sí, en el sentido que dadas $\|\cdot\|$ y
+$\|\cdot\|'$  existen constantes positivas $M_1$ y $M_2$ tal que para
+todo $\ve x\in V$ se cumple $M_1\,\|\ve x\|\leq\|\ve x\|'\leq M_2\|\ve x\|$.
+\eteo
+
+\pru: 
+Mostraremos que todas son equivalentes a la norma
+$\|\ve x\|_1=\sum_{i=m}^n |a^i|$, donde los $a^i$ son las componentes
+de $\ve x$, con respecto a una base $\{\ve{e}_i\}$ que supondremos  dada,
+$ \ve x=a^i\,e_i$. Sea $\ve y=b^i\,e_i$ y $\|\cdot \|$ otra norma cualquiera, luego
+\beq\barr{rcl}
+  \left|\,\|\ve x\|-\|\ve y\|\,\right| & \leq & \|\ve x-\ve y\|=\|(a^i-b^i)\,e_i\|  \\
+ &  \leq &|a^i-b^i|\,\|e_i\|\leq(max_{i=1,n}\|e_i\|)\sum_{i=n}^n|a^i-b^i|  \\
+ & =&(max_{i=1,n}\|e_i\|)\;\|\ve x-\ve y\|_1
+ \earr
+\eeq
+
+Esto demuestra que la norma $\|\cdot\|$ es una función continua con
+respecto a la norma $\|\cdot\|_1$. Sea $S_1$ la superficie de nivel de
+radio 1 con respecto a la métrica $\|\cdot\|_1$. $S_1$ es un conjunto cerrado 
+y acotado y por lo tanto
+compacto\footnote{Con respecto a la topología generada por
+$\|\cdot \|_1$.}.
+Por lo tanto, por continuidad, $\|\cdot\|$ tiene un valor
+máximo, $M_2$, y un mínimo, $M_1$, que dan la desigualdad buscada.
+
+\noi\yaya{Notas}:
+
+\noi
+$i$) En esta prueba es crucial el hecho de que $S_1$ es compacto. Si
+$V$ es de dimensión infinita esto no es así y hay muchas normas no
+equivalentes.
+
+\noi
+$ii$) Para nuestros propósitos cualquier norma es suficiente --ya que
+si por ejemplo, $f:V\to \re$ es diferenciable con respecto a una
+norma lo es también con respecto a cualquier otra equivalente a
+ésta--  y por simplicidad de ahora en más  usaremos la Euclídea.
+
+\noi $iii$) 
+En este sentido las normas de espacios vectoriales son
+equivalentes a la generada por
+cualquier elemento simétrico-positivo del producto exterior de su dual
+consigo mismo. 
+
+\noi $iv$)
+Como normas equivalentes generan una misma topología, vemos que
+en los espacios vectoriales de dimensión finita existe una única 
+topología asociada con todas sus posibles normas. Esta usualmente
+se denomina la {\bf topología fuerte}~\index{topología!fuerte}.
+
+\subsection{Las normas inducidas en $V^{\star}$}
+
+Las normas definidas en $V$ inducen naturalmente normas en su dual, $V^{\star}$.
+Esta viene dada por: 
+\begin{equation}
+  \label{eq:norma_inducida_en_dual}
+  \|\ve{\omega}\| := max_{\|\ve{v}\|=1}\{|\ve{\omega}(\ve{v})|\}.
+\end{equation}
+\espa
+
+\ejer:
+Vea que esta es una norma y que 
+$|\ve{\omega}(\ve{v})| \leq \|\ve{\omega}\|\|\ve{v}\|$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% Mejorar la seccion que sigue, lo que dice parece falso....
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\subsection{Completitud, Teorema del Mapa Abierto}
+%\label{Completitud,_Teorema_del_Mapa_Abierto}
+
+%Una importante propiedad de los espacios vectoriales de  dimensión 
+%finita es que son completos, es decir que toda sucesión de Cauchy,
+%$\{\ve x_i\}\;\;i=1, \ldots, n$ converge a un vector $\ve x\in V$. [Una
+%sucesión es de Cauchy si dado $\eps>0$ existe $N$ tal que
+%$\|\ve x_i-\ve x_j\|<\eps\;\;\forall\;i,j>N$.] 
+%La demostración de este hecho es
+%idéntica a la del caso $V=\re$, en este caso usando la norma $\|\cdot\|_1$.
+%Como veremos más adelante esto no es así en los espacios de dimensión
+%infinita. Usando este concepto de completitud se puede extender el
+%resultado del teorema anterior al caso de dimensión infinita. Este
+%se llama el teorema del {\bf mapa abierto}~\index{mapa abierto} 
+%y es un resultado fundamental
+%del análisis funcional. Esencialmente dice que a lo sumo hay una única
+%norma (hasta clase equivalente)
+%tal que el espacio es completo. En este caso la topología
+%resultante también se llama fuerte. 
+
+%\bteo
+%Sea $V$ un espacio vectorial y sean $\|\cdot \|$ y $\|\cdot \|'$ dos normas
+%tales que $V$ es completo con respecto a ambas. Luego estas normas
+%son equivalentes entre sí.
+%\eteo
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Teoría de Operadores Lineales}
+\label{Teoria_de_Operadores_Lineales}
+
+Un {\bf operador lineal}\index{operador!lineal} 
+\ve{A} de un espacio vectorial $V$ es un mapa 
+continuo\footnote{Con respecto a la topología inducida por 
+cualquiera de las normas equivalentes de $V$.}
+de $V$ en $V$ tal que $\forall \; \ve x,\ve y \in V,\; \alpha \in \re$, 
+$\ve{A}(\alpha \ve x+ \ve y)=\alpha\,\ve{A}(\ve x) + \ve{A}(\ve y)\;$,
+es decir un tensor de tipo (1,1).
+
+El conjunto de los operadores lineales
+$\cL$ es un álgebra, es decir un espacio vectorial con producto.
+En efecto, si $\ve{A}\,,\;\ve{B}\in \cL\,,\;\alpha\in \re$, 
+luego $\ve{A}+\alpha\ve{B}\in\cL$ y además 
+$\ve{A}\cdot\ve{B}$ (el operador que a $\ve x\in V$ 
+lo envía a $A(B(\ve x)) \in V$) también pertenece a $\cL$.
+Debido a esta propiedad podemos además definir  funciones no
+lineales de $\cL$ en $\re$ y mapas de $\cL$ en $\cL$. Para estudiar la
+continuidad y diferenciabilidad de estos mapas introduciremos una
+norma en $\cL$, la más conveniente es la siguiente norma inducida de
+la usada en $V$,
+\beq
+\|A\|_{\cL}=\mbox{max}_{\|\ve x\|_V=1}\|A(\ve x)\|_V.
+\eeq
+Si $V$ es de dimensión finita (lo que asumiremos de ahora en más), 
+el espacio vectorial $\cL$ es también de
+dimensión finita y por lo tanto todas sus normas son
+equivalentes. El hecho que la norma de $A$ sea finita usa nuevamente que 
+$A:V\to V$ es continua y que $\{\ve x\in V/\|\ve x\|_V=1\}$ es compacto,
+en el caso de dimensión infinita ninguna de estas cosas es
+necesariamente cierta y dentro de $\cL$ tenemos solo un subespacio de
+operadores lineales de norma finita (acotados).
+\espa
+
+\ejer:
+Muestre que $\|\;\|_{\cL}:\cL\to \re^+$ es una norma.
+\espa
+
+\ejer: Muestre que $\|\ve{A}(\ve{v})\| \leq \|\ve{A}\|_{\cL} \|\ve{v}\|$.
+\espa
+
+\ejer: Usando el resultado del ejercicio anterior muestre que 
+$\|\ve{A}\ve{B}\|_{\cL} \leq \|\ve{A}\|_{\cL}\|\ve{B}\|_{\cL}$.
+\espa
+
+Estudiamos a continuación varias funciones en el espacio de operadores.
+\espa
+
+El determinante de un operador, introducido en la sección
+anterior es un polinomio de grado $n$ = $\dim V$ en $\ve{A}$ y por lo
+tanto diferenciable. Usando la regla de la cadena se ve que
+$det(I+\eps A)$ es diferenciable en $\eps$, y de hecho un polinomio
+de grado $n$ en $\eps$. Cada uno de los coeficientes de este
+polinomio es una función de $\ve{A}$. De importancia en lo que
+sigue es el coeficiente lineal en $\ve{A}$ que se obtiene usando la
+fórmula
+\beq
+\der{\eps} det(\ve{I} + \left.\eps \ve{A})\right|_{\eps=0} =
+\dip\frac{\eps (\ve{A}(u_1),u_2,\ldots,u_n)\,+\cdots
++\,\eps(u_1,\ldots, \ve{A}(u_n))}{\eps(u_1,\ldots,u_n)}
+\label{eqn:2_traza}
+\eeq
+\noi esta función se llama la {\bf traza}~\index{traza} de 
+$\ve{A}$ y se denota $tr(\ve{A})$. 
+
+Entre los mapas de $\cL$ en $\cL$ consideremos el mapa exponencial,
+definido como,
+
+\beq
+e^{\dip \ve{A}}=\sum_{i=0}^{\infty}\frac{\ve{A}^i}{i!} =
+\ve{I}+\ve{A}+\frac{\ve{A}^2}2 +\cdots
+\eeq
+\espa
+\bteo
+$e^{\dip\ve{A}}\in\cL$ si $\ve{A}\in \cL$ y $e^{t\ve{A}}$ es
+infinitamente diferenciable con respecto a $t$.
+\eteo
+
+
+\pru:
+ Considere la sucesión de Cauchy $\{e^{\ve{A}}_n\}$, donde
+$e^{\ve{A}}_n \equiv\dip\sum_{i=0}^n \frac{\ve{A}^i}{i!}$. Esta
+sucesión es de Cauchy ya que, tomando $m > n$, tenemos
+
+\begin{eqnarray}
+\|e^{\ve{A}}_m - e^{\ve{A}}_n\|_{\cL} 
+&=&
+\|\frac{\ve{A}^{m-1}}{(m-1)!} + \frac{\ve{A}^{m-2}}{(m-2)!} + \dots 
++ \frac{\ve{A}^{n+1}}{(n+1)!} \|_{\cL} \nn
+&\leq&
+\|\frac{\ve{A}^{m-1}}{(m-1)!}\|_{\cL} + \| \frac{\ve{A}^{m-2}}{(m-2)!} \|_{\cL}
++ \dots 
++ \|\frac{\ve{A}^{n+1}}{(n+1)!} \|_{\cL} \nn
+&\leq& 
+\frac{\|\ve{A}\|_{\cL}^{m-1}}{(m-1)!} +  \frac{\|\ve{A}\|_{\cL}^{m-2}}{(m-2)!} 
++ \dots 
++ \frac{\|\ve{A}\|_{\cL}^{n+1}}{(n+1)!} \nn
+&=& 
+|e^{\|\ve{A}\|_{\cL}}_m - e^{\|\ve{A}\|_{\cL}}_n|
+\to 0.
+  \label{eq:2_exp}
+\end{eqnarray}
+%
+Donde 
+$e^{\|\ve{A}\|_{\cL}}_m  \equiv \dip \sum_{i=0}^n \frac{\|\ve{A}^i\|_{\cL}}{i!}$ 
+y la última implicación sigue del hecho que  la serie numérica
+$e^{\|\ve{A}\|_{\cL}}$ converge. 
+Pero por completitud~\footnote{Todo espacio vectorial real de dimensión finita es completo.} de $\cL$ toda sucesión de Cauchy 
+converge a algún elemento de $\cL$ que llamaremos $e^{\ve{A}}$. 
+La diferenciabilidad de $e^{t\ve{A}}$ sigue del hecho de que si una serie
+$\sum_{i=0}^{\infty}\;f_i(t)$ es convergente y
+$\sum_{i=0}^{\infty}\;\dip\derc{f_i}{t}$ es uniformemente
+convergente, luego $\der{t}\sum_{i=0}^{\infty}\,
+f_i(t)=\sum_{i=0}^{\infty}\der{t} f_i(t)$
+\epru
+
+\espa
+\ejer: 
+Muestre que 
+
+\noi a) $e^{(t+s)\ve{A}}=e^{t\ve{A}}\cdot e^{s\ve{A}},$
+
+\noi b) Si $\ve{A} $ y $\ve{B}$ conmutan, es decir si $\ve{A}\ve{B} = \ve{B}\ve{A}$, luego
+$e^{\ve{A} + \ve{B}} = e^{\ve{A}}\;e^{\ve{B}}.$
+
+\noi c) $det(e^{\ve{A}})=e^{tr(\ve{A})}$
+
+\noi d) $\dip\der{t} e^{t\ve{A}}=\ve{A}\,e^{t\ve{A}}.$
+
+\noi Ayuda: 
+
+\noi Para el punto c) use que $e^{\ve{A}}$ se puede definir también como
+$\dip \lim_{m\to\infty}(\ve{I} + \frac{\ve{A}}m)^m$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Representación Matricial}
+\label{Representacion_Matricial}
+
+Para describir ciertos aspectos de los operadores lineales es conveniente 
+introducir la siguiente representación matricial.~\index{matrices!representación matricial}
+
+Sea $\{\ve{u}_i\}$, $i=1,\ldots,n$ una base de $V$, es decir un
+conjunto de vectores linealmente independientes de $V$ 
+[$ \sum_{i=1}^n c^i\,\ve{u}_i=0 \Longrightarrow c^i=0$] 
+que lo expanden 
+[si $\ve{v} \in V$, existen números 
+$\{v^i\}$, $i=1,\ldots,n$ tal que $\ve{v}= \sum_{i=1}^n v^i\,\ve{u}_i)$]. 
+Aplicando el
+operador $\ve{A}$ a un miembro de la base $\ve{u}_i$ obtenemos un vector
+$\ve{A}(\ve{u}_i)$ que a su vez puede ser expandido en la base,
+$\ve{A}(\ve{u}_i)= \sum_{j=1}^n A^j{}_i\,\ve{u}_j$. 
+La matriz así construida, $A^j{}_i$, es una
+representación del operador $\ve{A}$ en esa base. 
+En este lenguaje
+vemos que la matriz $A^j{}_i$ transforma el vector de componentes
+$\{v^i\}$ en el vector de componentes $\{A^j{}_iv^i\}$.
+Dada una base, $\{\ve{u}_i\}$, y una matriz $A^j{}_i$ podemos construir un
+operador lineal de la siguiente forma: Dada la base definimos su
+co-base, es decir una base en $V^*$ como $\{\ve{\theta}^i\}$,
+$i=1,\ldots,n$,  tal que $\ve{\theta}^i(\ve{u}_j)=\delta^i_j$, luego $\ve{A} =
+\sum_{i,j=1}^n A^j{}_i\, \ve{u}_j\ve{\theta}^i$.
+
+Si cambiamos de base las matrices representando los operadores
+cambiarán. En efecto, si tomamos otra base $\{\hat{\ve{u}}_i\}$ y
+escribimos sus componentes con respecto a la base anterior como  
+$\hat{\ve{u}}_i= P_i{}^k\ve{u}_k$ entonces la relación entre las componentes del
+operador $\ve{A}$ en ambas bases está dado por
+\beq
+\hat A^j{}_i= P_k{}^j\,A^k{}_l\,(P^{-1})^l{}_i\;\;\;\;\mbox{o}\;\;\;\;\hat A=
+P\,A\,P^{-1}
+\eeq
+\noi es decir que $\hat A$ y $A$ son \textbf{matrices semejantes}.
+\espa
+
+\ejer: Ver, a partir de su definición (ecuación (\ref{eqn:2_traza})), que
+$tr{A}= \sum_{i=1}^n A^i{}_i$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Subespacios Invariantes}
+\label{Subespacios_Invariantes}
+
+\defi: Sea $\ve{A}: V \to V$ un operador y sea $W$ un subespacio de $V$. 
+Diremos que $W$ es un \textbf{subespacio invariante}~\index{subespacio invariante} 
+de $\ve{A}$ si $\ve{A}W \subseteq W$.
+
+Los subespacios invariantes de un operador son importantes pues nos permiten entender
+cual es su acción.
+Note que dado cualquier operador $\ve{A}$ siempre existen al menos dos espacios 
+invariantes, $V$ y $\{\ve{0}\}$ y en realidad muchos más. Por ejemplo, y como veremos
+más adelante, dado cualquier número entre $1$ y $n$ (=$\dim V$) existe un subespacio
+invariante con ese número como dimensión. Los que verdaderamente codifican la acción
+del operador son sus subespacios invariantes 
+\textbf{irreducibles},~\index{subespacio invariante!irreducible} 
+es decir aquellos que no pueden ser a su vez descompuestos en subespacios
+invariantes. 
+\espa
+
+\ejer: Sea el $V$ el espacio de pares de números, es decir con elementos de la forma
+$\ve{v}=(a,b), \; a,b \in \re$ y sea $\ve{A}$ dado por $\ve{A}(a,b) = (b,0)$.
+Encuentre sus subespacios invariantes irreducibles.
+
+
+Estudiaremos en detalle los subespacios invariantes de dimensión $1$, note
+que los mismos son irreducibles. 
+Para estudiar los espacios invariantes resulta conveniente estudiar los subespacios
+invariantes del operador cuando su acción se extiende a $V^{\Complex}$, es decir la 
+\textbf{complexificación}~\index{complexificación} de $V$.
+
+Veamos a continuación que un operador siempre tiene al menos un subespacio
+invariante de dimensión $1$ (y por lo tanto que siempre tiene un subespacio invariante
+irreducible no trivial).
+
+\begin{lem}
+Dado $\ve{A}: V^{\Complex} \to V^{\Complex}$, siempre existe un $\ve{u} \in V^{\Complex}$
+y un $\lambda \in \Complex$ tal que,
+\beq
+(\ve{A}-\lambda \ve{I})\ve{u}=0   
+\label{eqn:2_av_av}
+\eeq
+\end{lem}
+
+\pru:
+
+Una solución de esta ecuación
+consiste así de un escalar $\lambda$, llamado {\bf autovalor}~\index{autovalor} del
+operador $\ve{A}$ y de un vector $\ve{u}$, llamado {\bf autovector}~\index{autovector}
+del operador $\ve{A}$. El subespacio de $V^{\Complex}$ dado por 
+$\{\alpha \ve{u}\;|\; \alpha \in \Complex\}$ es el subespacio invariante buscado.
+
+Es claro que el sistema tiene solución si  y solo
+si $ \det(\ve{A}-\lambda\ve{I})=0$. Pero este es un polinomio en
+$\lambda$ de orden igual a la dimensión  de $V$ y por lo tanto, por el Teorema
+Fundamental del álgebra tiene
+al menos una solución o raíz, (en general complejas), $\lambda_1$, 
+y por lo tanto habrá, asociada a ella, 
+al menos un $\ve{u}_1$ solución de (\ref{eqn:2_av_av}) con $\lambda = \lambda_1$
+\epru
+\espa
+La necesidad de considerar todas estas soluciones es lo que nos lleva
+a tratar el problema para espacios vectoriales complejos. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Aplicación: Lema de triangulación de Schur}
+\label{subsub:Aplicacion:_Lema_de_triangulacion_de_Schur}
+
+\defi: Una matriz $n \times n$ $A^j{}_i$ tiene forma triangular superior si 
+$A^j{}_i = 0 \;\; \forall j>i, \; j,i=1,\ldots, n$. 
+Es decir es una matriz de la forma,
+
+\beq 
+A=
+\left(\barr{ccccc}
+            a_{11}   & a_{12}  & \cdots  & \cdots & a_{1n}    \\
+            0        & a_{22}  & \cdots   & \cdots & a_{2n}    \\
+            0        &   0     & \ddots  & \ddots & a_{3n}   \\
+            \vdots   & \ddots  & \ddots  & \ddots & \vdots  \\
+            0        & \cdots  & \cdots  & 0      & a_{nn}
+            \earr\right).
+\label{2.S1}
+\eeq 
+
+Como veremos más adelante, en el capítulo \ref{Sistemas_Lineales},
+esta es una forma muy conveniente para poder entender cómo son las soluciones
+a sistemas de ecuaciones diferenciales ordinarias. Y lo más atractivo de la misma
+es que cualquier operador tiene una representación matricial con forma
+diagonal superior! Es más, si un producto escalar está presente, la base
+para esta representación puede ser elegida en forma orto-normal.
+
+\begin{lem}[Schur]
+\label{2_lem_Schur}
+Sea $\ve{A}:V\to V$ un operador lineal actuando en un espacio vectorial 
+complejo $V$ de dimensión finita, $n$ y sea $(\cdot,\cdot)$ un 
+producto escalar en $V$. Luego, existe una base orto-normal 
+$\{\ve{u}_i\},\; i=1,\ldots,n$ con respecto a la cual la representación 
+matricial de $\ve{A}$ es triangular superior.
+\end{lem}
+
+\pru: 
+Consideremos el problema de autovalores-autovectores para $\ve{A}$,
+\begin{equation}
+(\ve{A} - \lambda \ve{I})\ve{u} = \ve{0}.
+\end{equation}
+%
+Como ya vimos este problema siempre tiene al menos una solución no
+trivial y por lo tanto tenemos un par $(\lambda_1,\ve{u}_1)$ solución
+del problema. Tomamos $\ve{u}_1$ de norma unidad y como primer elemento
+de la base a determinar. 
+Tenemos entonces 
+$A^j{}_1 = \ve{\theta}^j(\ve{A}(\ve{u}_1))
+         = \ve{\theta}^j(\lambda_1 \ve{u}_1)
+         = \lambda_1 \delta^j{}_1$.
+
+Consideremos ahora el espacio 
+$V_{n-1} = \{\ve{u}_1^{\perp}\} := \{\ve{u} \in V | (\ve{u}_1,\ve{u}) = 0 \}$
+y el operador de $V_{n-1} \to V_{n-1}$ dado por $(\ve{I} - \ve{u}_1 \ve{\theta}^1)\ve{A}$.
+%
+Note que como formaremos una base orto-normal conocemos
+ya el primer miembro de la co-base, $\ve{\theta}^1 = (\ve{u}_1,\cdot)$.
+%
+Para este operador, en este espacio, podemos plantear también la ecuación de 
+autovalores-autovectores, 
+\begin{equation}
+((\ve{I} - \ve{u}_1 \ve{\theta}^1)\ve{A} - \lambda \ve{I})\ve{u} = \ve{0}.
+\end{equation}
+%
+
+Obtenemos así un nuevo par $(\lambda_2,\ve{u}_2)$, con $\ve{u}_2$ perpendicular
+a $\ve{u}_1$ y además,
+$\ve{A} \ve{u}_2 = \lambda_2 \ve{u}_2 + \ve{u}_1 \ve{\theta}^1(\ve{A}(\ve{u}_2))$.
+Por lo tanto 
+$A^j{}_2 = \ve{\theta}^j(\ve{A}(\ve{u}_2))
+         = \ve{\theta}^j(\lambda_2 \ve{u}_2 + \ve{u}_1 \ve{\theta}^1(\ve{A}(\ve{u}_2)))
+         = \lambda_2 \delta^j{}_2 + \delta^j{}_1 A^1{}_2$.
+El próximo paso es considerar ahora el subespacio 
+$V_{n-2} = \{\ve{u}_1^{\perp}\} \cup \{\ve{u}_2^{\perp}\} 
+        := \{\ve{u} \in V | (\ve{u}_1,\ve{u}) = (\ve{u}_2,\ve{u}) = 0 \}$
+y allí la ecuación de autovalores-autovectores para el operador
+$(\ve{I} - \ve{u}_1 \ve{\theta}^1 - \ve{u}_2 \ve{\theta}^2)\ve{A}$.
+Prosiguiendo de esta forma generamos toda la base\epru
+\espa
+
+\bpro:
+Pruebe el teorema anterior usando ahora la noción de espacio
+cociente y prescindiendo así del producto escalar. 
+Ayuda: en vez de usar los espacios perpendiculares a
+los autovectores que vaya obteniendo, use los espacios cociente por estos
+autovectores. Vea que un operador lineal induce una acción natural
+en un espacio cociente.
+\epro
+
+\espa
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Mejorar..
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Continuamos ahora con el estudio de los subespacios invariantes.
+Si $\det(\ve{A}-\lambda\ve{I})$ tiene $1\leq m \leq n$ raíces distintas, 
+$\{\lambda_i\}, \; i=1,\ldots,m$ habrá entonces al menos un autovector 
+complejo $\ve{u}_i$ asociado a cada una de ellas. 
+Veamos que estos conforman subespacios invariantes distintos.
+
+
+\espa
+\blem
+Sea $\{(\lambda_i,\ve{u}_i)\}\;\;i=1\ldots m$ un conjunto de pares de autovalores autovectores.
+Si $\lambda_i\neq\lambda_j\;\;\;\;\forall\;i\neq j, \; i,j=1\ldots m$ entonces 
+estos autovectores son linealmente independientes.
+\elem
+\espa
+
+\pru:
+Supongamos por contradicción que no y por lo tanto que existen cons\-tantes 
+$c^i\in\ve{C}$, $i=1,\ldots,m-1\,$, tales que
+\beq
+\ve{u}_m=\sum_{i=1}^{m-1}\; c^i\,\ve{u}_i   \label{2_***}
+\eeq
+%
+Aplicando $\ve{A}$ en ambos lados obtenemos
+\beq
+\ve{A}\ve{u}_m=\lambda_m\:\ve{u}_m=\sum_{i=1}^{m-1}\;c^i\,\lambda_i\,\ve{u}_i
+\eeq
+o sea,
+\beq
+0=\sum_{i=1}^{m-1}\;c^i\,(\lambda_m - \lambda_i)\,\ve{u}_i.
+\eeq
+Concluimos así que $\{\ve{u}_i\}\;\;i=1,\ldots,m-1$
+son linealmente dependientes. Debido a~\ref{2_***} y a la hipótesis que los
+autovalores son distintos, al menos uno de los coeficientes tiene que ser distinto de cero
+y por lo tanto podemos despejar uno de los restantes autovectores en función de función
+otros $m-2$. Repitiendo este procedi\-miento
+$(m-1) $ veces llegamos a que necesariamente $\ve{u}_1=0$ lo que es una
+contradicción ya que, como hemos visto, la ecuación de autovectores siempre tiene
+una solución no-trivial para cada autovalor distinto\epru
+\espa
+
+Si por cada autovalor existe más de un autovector entonces éstos forman un subespacio
+vectorial invariante de mayor dimensión (reducible). Dentro de cada uno de estos subespacios
+podemos tomar una base compuesta por autovectores. El lema anterior nos asegurará entonces
+que todos estos autovectores así elegidos, para todos los autovalores, forman un gran
+conjunto linealmente independiente.
+
+\ejer: Convénzase de que el conjunto de autovectores con un mismo autovalor forman
+un subespacio vectorial.
+ 
+
+Si un dado operador $\ve{A}$ tiene todos sus autovalores distintos entonces tenemos que los
+correspondientes autovectores son linealmente independientes e igualan en número
+a la dimensión de $V$, es decir generan una base de $V^{\Complex}$. 
+En esa base la representación 
+matricial de $\ve{A}$ es diagonal, es decir $A^j{}_i = \delta^j{}_i \lambda_i$. 
+Cada uno de sus autovectores genera un subespacio invariante irreducible
+y en su conjunto generan $V^{\Complex}$. En cada uno de ellos el operador $\ve{A}$
+actúa meramente por multiplicación por $\lambda_i$. Note que los $\lambda_i$ son
+en general complejos y por lo tanto tal multiplicación es en realidad una rotación
+más una dilatación. Note, que a diferencia con la base del Lema de triangulación de
+Schur, ésta no es en general ortogonal con respecto a algún producto escalar dado de 
+antemano.~\footnote{Note sin embargo que se puede \textsl{declarar} ortogonal definiendo
+como producto escalar 
+$(\ve{u},\ve{v}) = \sum_{i=1}^{n} \ve{\theta}^i(\bar{\ve{u}})\ve{\theta}^i(\ve{v})$}
+\espa
+
+\ejem: Sea $V$ el conjunto de 2-tuplas de números reales con elemento genérico
+$(a,b)$ y sea $\ve{A}$ dado por $\ve{A}(a,b) = (b,-a)$. Esta es una rotación de
+$-\pi/2$ en el plano. Tomando una base, 
+$\ve{e}_1=(1,0)$, 
+$\ve{e}_2=(0,1)$ vemos que
+
+\begin{eqnarray}
+\det(\ve{A}- \lambda\ve{I}) 
+ & = &
+\eps((\ve{A}- \lambda\ve{I})\ve{e}_1,(\ve{A}- \lambda\ve{I})\ve{e}_2)/
+\eps(\ve{e}_1,\ve{e}_2) \nn
+ & = &
+\eps(-\ve{e}_2-\lambda \ve{e}_1,\ve{e}_1-\lambda \ve{e}_2)/
+\eps(\ve{e}_1,\ve{e}_2) \nn
+ & = &
+ 1 + \lambda^2.
+\end{eqnarray}                        
+%
+y por lo tanto los autovalores son $\lambda_{1} = \imath , \;\;1\; \lambda_2 = -\imath$.
+Los autovectores son $\ve{u}_1=(1,-\imath)$ y $\ve{u}_2=(1,\imath) = \bar{\ve{u}}_1$. 
+Vemos entonces que la acción de $\ve{A}$ en estos subespacios es multiplicación por 
+$\pm \imath$ y que ambos subespacios invariantes son genuinamente complejos.
+En esta nueva base el espacio $V$ es generado por todas las combinaciones lineales de
+la forma $z\ve{u}_1 + \bar{z}\ve{u}_2$ y la acción de $\ve{A}$ es simplemente 
+multiplicación por $-\imath$ de $z$.
+\espa
+
+Si la multiplicidad de alguna de las raíces $\det(\ve{A}-\lambda\ve{I})=0$ es 
+mayor que uno habrá menos autovalores que la dimensión del espacio y por
+tanto no tendremos garantía de que habrá suficientes autovectores como para 
+formar una base, ya que solo podemos garantizar la existencia de uno por cada autovalor.
+Debemos analizar por lo tanto qué pasa en estos casos. Para ello definamos, 
+dado $\lambda_i$ un autovalor de $\ve{A}$,  los 
+siguientes subespacios:
+
+\begin{equation}
+  \label{eq:W_lm}
+  W_{\lambda_i}{}_p = \{ \ve{u} \in V | \; (\ve{A} - \lambda_i \ve{I})^p \ve{u} = 0 \}
+\end{equation}
+
+Note que estos son espacios invariantes: 
+$\ve{A} W_{\lambda_i}{}_p \subset W_{\lambda_i}{}_p$.
+Además $W_{\lambda_i}{}_p \subset W_{\lambda_i}{}_{p+1}$ y por lo tanto, para un $p$
+suficientemente grande ($p \leq n$) tendremos que 
+$W_{\lambda_i}{}_p = W_{\lambda_i}{}_{p+1}$ tomando el mínimo entre los
+$p$'s donde esto ocurre definimos $W_{\lambda_i} := W_{\lambda_i}{}_p$.
+Note que si para algún $\lambda_i$, $p=1$ entonces el subespacio $W_{\lambda_i}$
+está compuesto por autovectores.
+Estos son los máximos espacios invariantes asociados con el autovalor $\lambda_i$,
+en efecto tenemos:
+
+\blem
+El único autovalor de $\ve{A}$ en $W_{\lambda_i}$ es $\lambda_i$.
+\elem
+
+\pru: Sea $\lambda$ un autovalor de $\ve{A}$ en $W_{\lambda_i}$. 
+Veamos que $\lambda = \lambda_i$. 
+Como ya hemos visto habrá entonces un autovector $\ve{\zeta} \in W_{\lambda_i}$ 
+con $\lambda$ como autovalor.
+Como esta en $W_{\lambda_i}$ habrá algún $p \geq 1$ tal que 
+$(\ve{A} - \lambda_i \ve{I})^p \ve{\zeta} = 0$ pero como es un autovector tenemos que
+$(\lambda - \lambda_i)^p \ve{\zeta} = 0$, y por lo tanto que $\lambda = \lambda_i$
+\epru
+
+
+Veamos ahora que estos subespacios son linealmente independientes y generan
+todo $V^{\Complex}$. 
+Probaremos nuevamente este teorema en el Capítulo \ref{Sistemas_Lineales}.
+
+%Si los autovalores se repiten no tenemos garantía de que los subespacios invariantes
+%sean unidimensionales y habrá casos en que no lo serán. De todos modos cada uno de
+%ellos estará asociado a un par autovalor-autovector. En efecto, sea $W$ un subespacio
+%invariante e irreducible de $\ve{A}$. Como $\ve{A}W \subseteq W$ podemos plantearnos
+%el problema de autovalores-autovectores considerando a $\ve{A}$ como un operador de $W$
+%en $W$. Por lo visto anteriormente habrá entonces un par autovalor-autovector con este
+%último en $W$. Este es el único que puede haber, de lo contrario,
+%si hubiese algún otro $W$ incluiría a dos subespacios irreducibles, 
+%los generados por ambos autovectores y no sería irreducible.
+%Más adelante veremos, como una consecuencia de la teoría de ecuaciones en derivadas
+%parciales que, al igual que en el caso anterior donde todos los autovalores de un operador 
+%eran distintos, el conjunto de los subespacios invariantes irreducibles de un operador
+%cualquiera generan todo el espacio donde $V$ actúa.
+%Más precisamente el teorema que probaremos en el capítulo \ref{Sistemas_Lineales}
+%es el siguiente:
+
+\bteo[Ver capítulo \ref{Sistemas_Lineales}, Teorema \ref{5_teo_2}]
+Dado un operador $A: V \to V$, con autovectores $\{ \lambda_i \}, \; i=1...m$ 
+el espacio $V^{\Complex}$ admite una descomposición directa en subespacios 
+invariantes $W_{\lambda_i}$,
+donde en cada uno de ellos $\ve{A}$ tiene solo a $\lambda_i$ como autovalor.
+\eteo
+
+\pru:
+
+Los $W_{\lambda_i}$ son independientes. 
+Sea $\ve{v}_1 + \dots + \ve{v}_s = 0$, con
+$\ve{v}_i \in W_{\lambda_i}$, luego debemos probar que cada $\ve{v}_i=0$.
+Aplicando 
+$(\ve{A} - \lambda_2 \ve{I})^{p_2}\dots (\ve{A} - \lambda_s \ve{I})^{p_s}$
+a la suma anterior obtenemos,
+$(\ve{A} - \lambda_2 \ve{I})^{p_2}\dots (\ve{A} - \lambda_s \ve{I})^{p_s}\ve{v}_1 =0$,
+pero como $\lambda_i$, $i \neq 1$ no es un autovalor de $\ve{A}$ en $W_{\lambda_1}$
+el operador 
+$(\ve{A} - \lambda_2 \ve{I})^{p_2}\dots (\ve{A} - \lambda_s \ve{I})^{p_s}$ es 
+invertible~\footnote{
+Note que $(\ve{A} - \lambda_i \ve{I})^{s}|_{W_{\lambda_j}}$ 
+es invertible si su determinante es distinto de cero. 
+Pero 
+$\det (\ve{A} - \lambda_i \ve{I})^{s} = (\det(\ve{A} - \lambda_i \ve{I}))^s 
+= (\lambda_j - \lambda_i)^{s \dim (W_{\lambda_j})} \neq 0$
+}
+es ese subespacio y por lo tanto $\ve{v}_1 =0$. Continuando de esa forma vemos que todos
+los $\ve{v}_i$ se deben anular.
+
+Los $W_{\lambda_i}$ generan todo $V^{\Complex}$. Supongamos por contradicción que este
+no es el caso, y consideremos $V^{\Complex}/W$, donde $W$ es el espacio generado por todos
+los $W_{\lambda_i}$, es decir el espacio de todas las combinaciones lineales de 
+elementos en los $W_{\lambda_i}$. El operador $\ve{A}$ actúa en $V^{\Complex}/W$
+[$\ve{A}\{\ve{u}\} = \{\ve{A}\ve{u}\}$] y por lo tanto tiene allí un par
+autovalor-autovector. Esto implica, que para algún elemento $\ve{\zeta}$ de $V^{\Complex}$ 
+en alguna clase equivalente de $V^{\Complex}/W$ se cumple:
+\begin{equation}
+  \ve{A}\ve{\zeta} = \lambda \ve{\zeta} + \ve{u}_1 + \dots + \ve{u}_s
+\end{equation}
+%
+donde los $\ve{u}_i$ pertenecen a cada $W_{\lambda_i}$.
+Supongamos ahora que $\lambda \neq \lambda_i\;\; \forall\; i=1..s$, luego 
+$\ve{A} - \lambda\ve{I}$ es invertible en cada $W_{\lambda_i}$ y por lo
+tanto existen vectores 
+$\ve{\zeta}_i = (\ve{A} - \lambda\ve{I})^{-1} \ve{u}_i \in W_{\lambda_i}$.
+Pero entonces 
+$\tilde{\ve{\zeta}} := \ve{\zeta} - \ve{\zeta}_1 - \dots - \ve{\zeta}_s$
+es un autovalor de $\ve{A}$! 
+Esto es imposible pues $\lambda$ no es una raíz del
+polinomio característico ni $\tilde{\ve{\zeta}}=0$, pues 
+al pertenecer $\ve{\zeta}$ a $V^{\Complex}/W$  no es
+una combinación lineal de elementos en los $W_{\lambda_i}$.
+Tenemos así una contradicción.
+Supongamos ahora que $\lambda = \lambda_j$ para algún $j \in \{1..s\}$.
+Todavía podemos definir los vectores 
+$\ve{\zeta}_i =(\ve{A} - \lambda_j\ve{I})^{-1} \ve{u}_i  $ para todo $i\neq j$ y
+$\tilde{\ve{\zeta}}$, donde solo sustraemos a $\ve{\zeta}$ todos los 
+$\ve{\zeta}_i$ con $i\neq j$,
+por lo tanto tenemos que 
+\begin{equation}
+  (\ve{A} - \lambda_j\ve{I})\tilde{\ve{\zeta}} = \ve{u}_i
+\end{equation}
+Pero aplicando $(\ve{A} - \lambda_j\ve{I})^{p_j}$ a esta ecuación, con
+$p_j$ el mínimo valor para el cual $W_{\lambda_j}{}_{p_j} = W_{\lambda_j}{}_{p_j+1}$ 
+obtenemos que $\tilde{\ve{\zeta}} \in W_{\lambda_j}$ y así otra contradicción,
+por lo tanto solo puede ser que $V^{\Complex}/W$ sea el espacio trivial y los $W_{\lambda_i}$
+generan todo $V^{\Complex}$
+\epru
+
+
+
+Vemos así que solo necesitamos estudiar ahora cada uno de estos subespacios
+$W_{\lambda_i}$ para encontrar todas sus partes irreducibles (de ahora en más
+suprimiremos el subíndice $i$).
+Pero en estos subespacios el operador
+$\ve{A}$ actúa en forma muy sencilla! 
+
+En efecto, sea $\ve{\Delta}_{\lambda}: W_{\lambda} \to W_{\lambda}$ 
+definido por  
+$\ve{\Delta}_{\lambda}:= \ve{A}|_{W_{\lambda}} - \lambda \ve{I}|_{W_{\lambda}}$, 
+luego $\Delta$ tiene solo al $0$ como autovalor y por lo tanto es 
+\textbf{nilpotente}~\index{nilpotente}, es decir, existe un entero $m \leq n$
+tal que $\ve{\Delta}_{\lambda}^m =0$.
+
+\blem
+Sea $\ve{\Delta}: W \to W$ tal que su único autovalor es $0$, luego 
+$\ve{\Delta}$ es nilpotente.
+\elem
+
+\pru:
+Sea $W^p := \ve{\Delta}^p W$, luego tenemos que $W^p \subseteq W^q$ si $p \geq q$.
+Como la dimensión de $W$ es finita deberá suceder que para algún $p$ 
+entero tendremos que $W^p = W^{p+1}$ vemos entonces que $\ve{\Delta}^p$ actúa
+inyectivamente en $W^p$ y por lo tanto no puede tener al $0$ como autovalor.
+Pero hemos visto que todo operador tiene algún autovalor y por lo tanto tenemos
+una contradicción a menos que $W^p = \{\ve{0}\}$. 
+Es decir $\ve{\Delta}^p = \ve{0}$\epru
+
+Los operadores nilpotentes tienen la importante propiedad de generar una base del
+espacio en que actúan a partir de su aplicación repetidas veces sobre conjunto
+menor de vectores linealmente independiente.
+
+\blem
+Sea $\ve{\Delta}: W \to W$ nilpotente, luego existe una base de $W$ constituida
+por elementos de la forma:
+$\{\{\ve{v}_1, \ve{\Delta}\ve{v}_1, \ldots ,\ve{\Delta}^{p_1}\ve{v}_1\},\ldots,
+\{\{\ve{v}_d, \ve{\Delta}\ve{v}_d, \ldots ,\ve{\Delta}^{p_d}\ve{v}_d\}\}
+$ donde $p_i$ es tal que $\ve{\Delta}^{p_i+1}\ve{v}_i=0$
+\elem
+%
+Note que si $n=\dim W$ luego $n = \sum_{i=1}^{d} p_i$. 
+Cada uno de estos conjuntos formados por repetidas aplicaciones de un operador se
+llama un \textbf{ciclo}~\index{ciclo}. En este caso la base está formada por los
+elementos de $d$ ciclos. Note que no necesariamente los ciclos son entes únicos,
+en efecto, si tenemos dos ciclos con el mismo número de elementos, entonces cualquier
+combinación lineal de los mismos será también un ciclo.
+Note que cada ciclo contiene un solo autovector.
+\espa
+
+\pru:
+Lo probaremos por inducción en la dimensión de $W$. Si $n=1$ tomamos cualquier vector
+para generar la base, ya que en este caso $\ve{\Delta}=0$.
+Suponemos ahora que es cierto para toda dimensión menor que $n$.
+En particular, como $\ve{\Delta}$ tiene un autovalor nulo 
+$\dim(\ker \; \ve{\Delta}) \geq 1$ y por lo tanto tenemos que $W' \;(= \ve{\Delta}(W))$
+tiene dimensión menor que $n$, digamos $n'$ y por la hipótesis inductiva una base de la forma
+$\{\{\ve{v}'_1, \ve{\Delta}\ve{v}'_1, \ldots ,\ve{\Delta}^{p'_1}\ve{v}'_1\},\ldots,
+\{\{\ve{v}'_{d'}, \ve{\Delta}\ve{v}'_{d'}, \ldots ,\ve{\Delta}^{p'_{d'}}\ve{v}'_{d'}\}\}
+$. 
+Para formar una base de $W$ agregaremos a estos vectores $d'$ vectores 
+$\ve{v}_i$ tales que $ \ve{\Delta}\ve{v}_i = \ve{v}'_i, \;\;i=1,\dots,d'$.
+Esto siempre se puede hacer pues $\ve{v}'_i \in W' = \ve{\Delta}W$.
+%
+Vemos así
+que hemos incrementado el conjunto de vectores a
+$\{\{\ve{v}_1, \ve{\Delta}\ve{v}_1, \ldots ,\ve{\Delta}^{p'_1+1}\ve{v}_1\},\ldots,
+\{\{\ve{v}_{d'}, \ve{\Delta}\ve{v}_{d'}, \ldots ,\ve{\Delta}^{p'_{d'}+1}\ve{v}_{d'}\}\}
+$, es decir tenemos ahora $r=\sum_{i=1}^{d'} (p'_i+1)= n' + d'$ vectores. 
+%
+Para obtener una base debemos entonces
+incrementar este conjunto con $n-n'-d'$ vectores. 
+Note que este número es no-negativo, en efecto, 
+$n-n'= \dim(\ker\ve{\Delta}) \geq \dim(\ker\ve{\Delta} \cap W') = d'$ 
+y es precisamente la dimensión del subespacio de 
+$\ker\ve{\Delta}$ que no está en $W'$.
+Completamos entonces la base propuesta para $W$ incorporando al conjunto ya
+obtenido $n-n'-d'$ vectores $\{\ve{z}_i\}, i=1,..n-n'-d'$ del espacio nulo de $\ve{\Delta}$
+que sean linealmente independientes entre sí y con los otros elementos de $\ker \ve{\Delta}$
+en $W$ y que además no estén en $W'$.
+Hemos obtenido así un conjunto de $d=d'+n-n'-d'=n-n'$ ciclos.
+Veamos que el conjunto así obtenido es una base. 
+Como son $n$ en número solo tenemos que ver que son linealmente independientes.
+Debemos entonces probar que si tenemos constantes $\{C_{i,j}\},\;\; i=1..d,\;j=0..p'_i+1$
+tales que 
+\begin{equation}
+  \ve{0} = \sum_{i=1}^d \sum_{j=0}^{p'_i+1} C_{ij}\ve{\Delta}^{p_i}\ve{v}_i
+\end{equation}
+entonces $C_{ij}=0$.
+Aplicando $\ve{\Delta}$ a esta relación obtenemos,
+\begin{eqnarray}
+  \ve{0} &=& \ve{\Delta}\sum_{i=1}^d \sum_{j=0}^{p'_i+1} C_{ij}\ve{\Delta}^{p_i}\ve{v}_i \nn 
+         &=& \sum_{i=1}^{d'} \sum_{j=0}^{p'_i} C_{ij}\ve{\Delta}^{p'_i}\ve{v}'_i,
+\end{eqnarray}
+donde hemos usado que $\ve{\Delta}^{p'_i+1}\ve{v}'_i=0$.
+Pero esta es la relación de ortogonalidad de la base de $W'$ y por lo tanto
+concluimos que $C_{ij}=0\;\forall i \leq d',\;\; j \leq p'_i$.
+La relación inicial queda entonces reducida a 
+\begin{eqnarray}
+  \ve{0} &=& \sum_{i=1}^d  C_{ip'_i+1}\ve{\Delta}^{p'_i+1}\ve{v}_i \nn 
+         &=& \sum_{i=1}^{d'} C_{ip'_i}\ve{\Delta}^{p'_i}\ve{v}'_i 
+           + \sum_{i=d'+1}^{d} C_{i1}\ve{z}_i,
+\end{eqnarray}
+pero los miembros de la primera sumatoria son parte de la base de $W'$ y por lo tanto
+linealmente independientes entre sí, mientras que los de la segunda son un conjunto
+de elementos fuera de $W'$ elegidos de forma que sean linealmente independientes
+entre sí y con los de la
+primera sumatoria, y por lo tanto concluimos que todos los $C_{ij}$ se anulan 
+\epru
+\espa
+%
+\textbf{Prueba alternativa:}
+%
+Alternativamente el lema anterior se puede probar en forma constructiva. 
+En efecto, si $m+1$ es la potencia para la cual $\ve{\Delta}$ se anula, 
+podemos tomar el espacio
+$W^m = \ve{\Delta}^m(W)$ y una base $\{\ve{v}^m_i\}$,  del mismo.
+Luego considerar el espacio $W^{m-1} = \ve{\Delta}^{m-1}(W)$. 
+Como $W^{m} = \ve{\Delta}(W)^{m-1}$
+por cada vector $\ve{v}^{m}_i$ de la base $\{\ve{v}^m_i\}$ de $W^m$ 
+habrá un vector 
+$\ve{v}^{m-1}_i$ tal que $\ve{\Delta} \ve{v}^{m-1}_i = \ve{v}^m_i$.
+Como $W^{m} \subset W^{m-1}$ el conjunto $\{\ve{v}^m_i\} \cup \{\ve{v}^{m-1}_i\}$
+está contenido en $W^{m-1}$. 
+Note que 
+$\dim W^m = \dim \ker \ve{\Delta} \cap W^m$, y 
+$\dim W^{m-1} - \dim W^m = \dim (\ker \ve{\Delta} \cap W^{m-1})$
+Por lo tanto, 
+\begin{eqnarray}
+\dim W^{m-1} &=& \dim W^m + \dim (\ker \ve{\Delta} \cap W^{m-1})  \nn
+             &=& 2\dim W^m + \dim (\ker \ve{\Delta} \cap W^{m-1})
+                 - \dim W^m \nn
+             &=& 2\dim W^m + \dim (\ker \ve{\Delta} \cap W^{m-1})
+                 - \dim \ker \ve{\Delta} \cap W^m \nn
+             & & \;
+\end{eqnarray}
+%
+Agregando entonces al conjunto anterior un conjunto $\{\ve{z}_i\}$ de 
+$\dim (\ker \ve{\Delta} \cap W^{m-1}) - \dim (\ker \ve{\Delta} \cap W^m)$ 
+vectores del espacio 
+nulo de $\ve{\Delta}$ en $W^{n-1}$, tales que sean linealmente independientes 
+entre sí y con los elementos de la base de $W^m$, obtenemos un conjunto de 
+$\dim W^{m-1}$ vectores.
+Note que la mencionada elección de los elementos $\{\ve{z}_i\}$ se puede hacer pues
+es meramente una extensión de la base $\{\ve{v}^m_i\}$ de $W^m$ a una base de 
+$\ker \ve{\Delta} \cap W^{m-1}$.
+Probemos ahora que son linealmente independientes y por lo tanto que forman una base
+de $W^{m-1}$. Para ello habrá que probar que si
+\begin{equation}
+  \ve{0} = \sum_i C^m_i \ve{v}^m_i + \sum_i C^{m-1}_i \ve{v}^{m-1}_i + \sum_j C^z_j \ve{z}_j
+\end{equation}
+entonces cada uno de los coeficientes $C^m_i,\; C^{m-1}_i,\; C_j$ debe anularse.
+Multiplicando la expresión anterior por $\ve{\Delta}$ obtenemos,
+\begin{equation}
+  \ve{0} =  \sum_i C^{m-1}_i \ve{\Delta}\ve{v}^{m-1}_i = \sum_i C^{m-1}_i \ve{v}^{m}_i,
+\end{equation}
+pero entonces la independencia lineal de la base de $W^m$ nos asegura que los 
+$\{C^{m-1}_i\}$ son todos nulos. Tenemos entonces que,
+\begin{equation}
+  \ve{0} = \sum_i C^m_i \ve{v}^m_i + \sum_j C^z_j \ve{z}_j.
+\end{equation}
+Pero estos vectores fueron elegidos linealmente independientes entre sí y por lo
+tanto todos los coeficientes en esta suma deben anularse. Vemos así que el
+conjunto $\{\ve{v}^m_i\} \cup \{\ve{v}^{m-1}_i\} \cup \{\ve{z}_i\}$ forman una
+base cíclica de $W^{m-1}$. Continuando con $W^{m-2}$ y así sucesivamente
+obtenemos una base cíclica para todo $W$.
+
+
+
+
+Vemos así que los subespacios invariantes irreducibles de un operador están
+constituidos por ciclos dentro de subespacios invariantes asociados a con un dado
+autovector. Cada ciclo contiene un único autovalor del operador. 
+Denotaremos a los subespacios generados por estos ciclos (y usualmente llamados también
+ciclos) por $C^{k}_{\lambda_i}$, donde el índice inferior se refiere al autovalor del
+ciclo y el superior indexa los distintos ciclos dentro de cada $W_{\lambda_i}$.
+
+\ejer: Muestre que los ciclos obtenidos son subespacios invariantes irreducibles de $\ve{A}$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Forma Canónica de Jordan}
+\label{sub:Forma_Canonica_de_Jordan}
+
+\defi: {\sl Sea  $\ve{A}:V\to V$ un operador lineal.
+Diremos que $\ve{A}$ es de tipo Jordan
+\index{Jordan!de tipo} con autovalor $\lambda$  si
+existe una base $\{\ve{u}_i\}$ de $V$ tal que~\footnote{
+En el sentido que $\ve{A}(\ve{v}) =\lambda \sum_{i=1}^n \; \ve{u}_i \ve{\theta}^i(\ve{v})
+ + \sum_{i=2}^{n}\; \ve{u}_{i} \ve{\theta}^{i-1}(\ve{v}) \;\; \forall \ve{v} \in V$}
+
+\beq
+\ve{A} =\lambda \sum_{i=1}^n \; \ve{u}_i \ve{\theta}^i + \sum_{i=2}^{n}\;
+\ve{u}_{i} \ve{\theta}^{i-1}\equiv \lambda I + \Delta
+\eeq
+\noi donde $\{\ve{\theta}^i\}$ es la co-base de la base $\{\ve{u}_i\}$.
+
+\rm
+Es decir, en esta base las componentes de $\ve{A}$ forman una matriz
+$A^j{}_i$ dada por
+\beq 
+A=\left(\barr{ccccc}
+          \lap &  1    &   0   &  \cdots    &   0    \\
+            0  &\ddots &\ddots &  \ddots    &   \vdots  \\
+               &       & \lap  &     1      &   0    \\
+               &   0   &       &   \lap     &   1    \\
+               &       &       &            & \lap 
+            \earr\right)
+\label{2.J1}
+\eeq 
+\noi Note que la matriz $\Delta $ es n-nilpotente, es decir 
+$\Delta^n = 0$.
+
+
+No es cierto que todo operador sea del tipo Jordan --encuentre uno que
+no lo sea-- pero es claro que la restricción de cualquier operador
+a uno de sus subespacios invariantes irreducibles (ciclos) lo es.
+Esto se puede ver numerando los elementos de la base generada por el ciclo
+convenientemente.
+\espa
+
+\ejer: Encuentre dicho ordenamiento de los elementos de la base.
+
+Por lo tanto podemos resumir los resultados hallados anteriormente en el
+siguiente teorema sobre las representaciones matriciales de un operador
+cualquiera actuando en un espacio de dimensión finita.
+
+
+\bteo{de Jordan} Sea $\ve{A}:V\to V$ un operador lineal
+actuando en un espacio vectorial complejo $V$. Luego, existe una 
+única descomposición en suma directa~\footnote{Recordemos que un espacio vectorial 
+$V$ se dice que es suma directa de dos espacios vectoriales $W$ y $Z$,
+y lo denotamos como $V = W \oplus Z$ si cada vector en $V$ puede ser obtenido de
+una única manera como la suma de un elemento en $W$ y otro de $Z$.} 
+ de $V$ en subespacios
+$C^{k}_{\lambda_i}\;,\;\; V = C^1_{\lambda_1}\oplus \cdots C^{k_i}_{\lambda_1}\oplus \cdots
+\oplus  C^1_{\lambda_d} \oplus \cdots C^{k_d}_{\lambda_d} \;,\;\;d\leq n $ tal que 
+
+i) Los $C^k_{\lambda_i}$ son invariantes bajo la acción de $\ve{A}$, es decir ,
+$\ve{A}\,C^k_{\lambda_i} \subseteq C^k_{\lambda_i}$
+
+ii) Los $C^k_{\lambda_i}$ son irreducibles, es decir no existen 
+subespacios invariantes de $C^k_{\lambda_i}$ tales que sus sumas sea todo $C^k_{\lambda_i}$.
+
+iii) Debido a la propiedad i) el operador $\ve{A}$ induce en cada
+$C^k_{\lambda_i}$ un operador $\ve{A}_i:C^k_{\lambda_i}\to C^k_{\lambda_i}$, 
+este es del tipo de Jordan
+con $\lambda_i$ una de las raíces del polinomio de grado  $n_i$,
+\beq
+det(\ve{A_i}-\lambda_i \ve{I}) = 0.
+\eeq
+\eteo
+
+Este teorema nos dice que dado $\ve{A}$  existe una base, en general
+compleja, tal que la matriz de sus componentes tiene forma de bloques
+diagonales cuadrados de $n_i \times n_i$ , donde $n_i$ es la
+dimensión del subespacio $C^k_{\lambda_i}$, cada uno con la forma dada en~\ref{2.J1}. 
+Esta forma de la matriz se llama 
+{\bf forma canónica  de Jordan}.~\index{Jordan!forma canónica} 
+
+\ejer: 
+Muestre que las raíces, $\lambda_i$, que aparecen
+en los operadores $\ve{A}_i$ son invariantes ante transformaciones de
+semejanza, es decir $\lambda_i(\ve{A})=\lambda_i(\ve{P}\ve{A}\ve{P}^{-1})$.
+\espa
+\ejem: 
+Sea $\ve{A}:\ve{C}^3\to \ve{C}^3$,  luego $det(\ve{A}-\lambda\ve{I})$
+es un polinomio de $3^{\mbox{\underbar {er}}}$ grado, y por lo
+tanto tiene tres raíces. Si éstas son distintas habrá al menos tres
+subespacios invariantes e irreducibles de $\ve{C}^3$, pero
+$dim\ve{C}^3=3$ y por lo tanto cada uno de ellos tiene $n_i=1$. La
+forma canónica de Jordan es entonces,
+\beq\left(\barr{ccc}
+     \lap_1 & 0  &  0  \\
+     0 &  \lap_2  &  0  \\
+     0  &  0  &  \lap_3
+     \earr\right)
+\eeq
+
+\noi Si dos de ellas coinciden tenemos dos posibilidades, o tenemos
+tres subespacios, en cuyo caso la forma C. de J. será 
+\beq\left(\barr{ccc}
+     \lap_1 & 0  &  0  \\
+     0 &  \lap  &  0  \\
+     0  &  0  &  \lap
+     \earr\right)
+\eeq
+\noi o, tenemos dos subespacios, uno necesariamente de dimensión 2,
+la forma C. de J. será 
+\beq \left(\barr{ccc}
+     \lap_1 & 0  &  0  \\
+     0 &  \lap  &  1  \\
+     0  &  0  &  \lap
+     \earr\right)
+\eeq
+Si las tres raíces coinciden entonces habrá tres posibilidades,
+\beq\barr{ccc}
+      \left(\barr{ccc}
+     \lap & 0  &  0  \\
+     0 &  \lap  &  0  \\
+     0  &  0  &  \lap
+     \earr\right),  &  \left(\barr{ccc}
+                        \lap & 0  &  0  \\
+                         0 &  \lap  &  1  \\
+                         0  &  0  &  \lap
+                            \earr\right)\;y\;\;  & \left(\barr{ccc}
+                                                    \lap & 1  &  0  \\
+                                                       0 &  \lap  &  1  \\
+                                                         0  &  0  &  \lap
+                                                           \earr\right)
+\earr
+\eeq
+\espa
+
+
+\ejem:
+Ilustraremos ahora el caso de autovalores coincidentes en dos
+dimensiones. Este caso  no es genérico, en el sentido que cualquier
+perturbación en el sistema --es decir cualquier cambio mínimo en
+las ecuaciones-- separa las raíces haciéndolas distintas. 
+
+Sea $\ve{A}:\ve{C}^2\to\ve{C}^2$. En este caso el polinomio
+característico $det(\ve{A}-\lambda\ve{I})$ tiene solo dos raíces las
+que supondremos coincidentes, $\lambda_1=\lambda_2=\lambda$. Nos
+encontramos aquí ante dos posibilidades, o existen dos autovectores
+linealmente independientes $\ve{u}_1$ y $\ve{u}_2$, en cuyo caso  $V=B_1\oplus
+B_2$ y $\ve{A}$ es diagonalizable
+($A=diag(\lambda,\lambda)=\ve{I}\lambda)$, 
+o existe solo un autovector
+$\tilde{\ve{u}}_1$. En tal caso sea $\tilde{\ve{u}}_2$ cualquier vector
+linealmente independiente de $\tilde{\ve{u}}_1$, luego
+$\ve{A}\tilde{\ve{u}}_2=c^1\tilde{\ve{u}}_1+c^2\tilde{\ve{u}}_2 $
+para algunos escalares
+$c^1$ y $c^2$ en $\ve{C}$. Calculando el determinante de
+$\ve{A}-\tilde{\lambda}\ve{I}$ en esta base obtenemos
+$(\lambda-\tilde{\lambda})(c^2-\tilde{\lambda})$, pero $\lambda$ es una
+raíz doble y por lo tanto $c^2=\lambda$.
+
+Reordenando y re-escaleando las bases 
+$\ve{u}_1=\tilde{\ve{u}}_1 \;,\;\; \ve{u}_2=c^1\tilde{\ve{u}}_2$ obtenemos
+
+\beq\barr{rcl}
+      \ve{A}\,\ve{u}_1 & = & \lambda\,\ve{u}_1 +  \;\;\;\;\;\mbox{y}\;  \\
+      \ve{A}\,\ve{u}_2 & = & \lambda \ve{u}_2 + \ve{u}_1 , 
+      \earr
+\eeq
+y por lo tanto 
+\beq
+\ve{A}=\lambda (\ve{u}_1\oplus\ve{\theta}^1+\ve{u}_2\oplus\ve{\theta}^2)
++\ve{u}_1\oplus\ve{\theta}^2,
+\eeq
+\noi donde $\{\ve{\theta}^i\}$ es la co-base de la base $\{\ve{u}_i\}$.
+
+Note que $(\ve{A} -\lambda\ve{I})\,\ve{u}_2=\ve{u}_1$ y
+$(\ve{A}-\lambda\ve{I})\ve{u}_1=0 $ o sea  $\Delta^2 = (\ve{A}-\lambda
+\ve{I})^2 =0$. 
+
+Como veremos más adelante en las aplicaciones físicas los
+subespacios invariantes tienen un significado físico claro,
+son los llamados modos normales --caso unidimensional-- y 
+ciclos --en los otros casos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Relación de Semejanza}
+
+En las aplicaciones en física es frecuente la siguiente relación
+de equivalencia: [Ver recuadro al final del capítulo.] 
+Diremos que el operador $\ve{A}$ es semejante al
+operador $\ve{B}$ si existe otro operador $\ve{P}$, invertible, tal
+que 
+\beq
+\ve{A}=\ve{P}\ve{B}\ve{P}^{-1}.
+\eeq
+Es decir, si a $V$ lo {\it rotamos} con un operador invertible
+$\ve{P}$ y luego le aplicamos $\ve{A}$, obtenemos la misma acción a
+que si primero aplicamos $\ve{B}$ y luego {\it rotamos} con $\ve{P}$.
+
+\espa
+\ejer:
+
+\noi a) Probar que semejanza es una relación de equivalencia.
+
+\noi b) Probar que las funciones y los mapas definidos anteriormente
+lo son en las distintas clases equivalentes, es decir,
+\beq\barr{rcl}
+  det(\ve{P}\ve{A}\ve{P}^{-1}) & = & det(\ve{A})\\
+  tr(\ve{P}\ve{A}\ve{P}^{-1})  & = & tr(\ve{A}) \\
+  e^{\ve{P}\ve{A}\ve{P}^{-1}}  & = & \ve{P} e^{\ve{A}}\ve{P}^{-1}.
+  \earr
+\eeq
+
+
+\vfill
+\newpage
+
+
+\recu{
+\noi\yaya{Relaciones de Equivalencia.}
+\espa
+
+\defi: Una {\bf relación de equivalencia}, $\approx$, entre elementos de un
+conjunto $X$ es una relación que satisface las siguientes condiciones:
+
+\begin{enumerate}
+
+\item Reflexiva: Si $x \in X$, luego $x \approx x$. 
+\item Simétrica: Si $x,x' \in X$ y $x \approx x'$, luego $x' \approx x$.
+\item Transitiva: Si $x, x',x'' \in X$, $x \approx x'$ y $x' \approx x''$, 
+luego $x \approx x''$.
+\end{enumerate}
+
+Note que la primer propiedad nos asegura que cada elemento de $X$
+cumple una relación de equivalencia con algún elemento de $X$, en
+este caso consigo mismo. Relaciones de equivalencia aparecen muy a
+menudo en física, esencialmente cuando usamos para describir algún
+proceso físico un ente matemático que tiene partes superfluas en lo
+que respecta a este proceso y que por lo tanto querríamos ignorarlas.
+Esto se logra declarando dos entes que describen el mismo fenómeno
+entes equivalentes.
+
+\ejem: Sea $X$ el conjunto de los números reales y sea $x \approx y$
+si y solo si existe un entero $n$ tal que $x = n + y$, esta
+claramente es una relación de equivalencia. Esta se usa cuando 
+interesa  describir algo usando la línea recta pero que en
+realidad se debería describir usando un círculo de circunferencia  unitaria.
+
+
+Dada una relación de equivalencia en un conjunto podemos agrupar los
+elementos de éste en {\bf clases equivalentes} de elementos, es decir
+en subconjuntos donde todos sus elementos son equivalentes entre sí
+y no hay ningún elemento que no esté en este subconjunto que sea
+equivalente a alguno de los elementos del subconjunto.
+(Si $X$ es el conjunto, $Y \subset X$ es una de sus clases equivalentes,
+y si $y \in Y$, luego $y \approx y'\sii y' \in Y$.)
+
+La propiedad fundamental de las relaciones de equivalencia es la siguiente.
+
+\bteo
+Una relación de equivalencia en un conjunto $X$ permite re-agrupar
+sus elementos en clases equivalentes de modo que cada elemento de $X$
+está en una y solo en una de éstas.
+\eteo
+
+\pru: 
+Sea $x \in X$ e $Y$ el subconjunto de todos los elementos de $X$
+equivalentes a $x$. Veamos que este subconjunto es una clase equivalente.
+Sean $y$ e $y'$ dos elementos de $Y$, es decir $y \approx x$ e $y'
+\approx x$, pero por la propiedad de transitividad entonces $y \approx y'$.
+Si $y \in Y$ y $z \notin Y$ entonces $y \napprox z$, ya que de otro
+modo $z$ sería equivalente a $x$ y por lo tanto estaría en $Y$. Por
+último note que por reflexividad $x$ también está en $Y$.
+Solo resta ver que si $y$ está en $Y$ y también en otra clase equivalente,
+digamos $Z$, luego $Y = Z$. Como $y \in Y$ luego $y$ es equivalente a
+todo elemento de $Y$, como $y \in Z$ luego $y$ es equivalente a todo
+elemento de $Z$, pero por transitividad entonces todo elemento de $Y$
+es equivalente a todo elemento de $Z$, pero al ser estas clases equivalentes
+y por lo tanto cada una contener todos sus elementos equivalentes
+ambas deben coincidir.
+
+\espa
+\ejer: ¿Cuales son las clases equivalentes del ejemplo anterior?
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Operadores Adjuntos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Sea $\ve{A}$ un operador lineal entre dos espacios vectoriales, 
+$\ve{A}: V \to W$, es decir
+$\ve{A} \in {\cal{L}}(V,W)$.
+Debido  a que $V$ y $W$ tienen espacios duales este operador induce naturalmente un operador lineal de $W'$ a $V'$ llamado su 
+\textbf{dual}~\index{operador!dual},
+\begin{equation}
+  \label{eq:dual}
+  \ve{A}'(\ve{\omega})(\ve{v}) := \ve{\omega}(\ve{A}(\ve{v})) \;\;\; 
+                                   \forall \;\; \ve{\omega} \in W', \;\;\;
+                                   \ve{v} \in V.
+\end{equation}
+%
+Es decir el operador que al aplicarlo a un elemento $\ve{\omega} \in W'$
+nos da el elemento $\ve{A}'(\ve{\omega})$ de $V'$ que cuando actúa
+en $\ve{v} \in V$ da el número $\ve{\omega}(\ve{A}(\ve{v}))$.
+Ver figura.
+
+\espa 
+
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{5cm}{!}{\myinput{Figure/m2_2}}
+    \caption{Diagrama del operador dual.}
+    \label{fig:2_2}
+  \end{center}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Figura
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Notemos que éste es un operador lineal ya que,
+\begin{eqnarray}
+  \label{eq:dual_linealidad}
+  \ve{A}'(\alpha \ve{\omega} + \ve{\sigma})(\ve{v}) &=& 
+                         (\alpha \ve{\omega} + \ve{\sigma})(\ve{A}(\ve{v})) \nn
+                                                    &=&
+             \alpha \ve{\omega}(\ve{A}(\ve{v})) + \ve{\sigma}(\ve{A}(\ve{v})) \nn
+                                                    &=&
+             \alpha \ve{A}'(\ve{\omega})(\ve{v}) + \ve{A}'(\ve{\sigma})(\ve{v}).
+\end{eqnarray}
+%
+
+En la representación matricial este operador está representado meramente por la misma matriz que el original, pero ahora actuando por izquierda, ${A}'({w})_i = {w}_j A^j{}_i$, es decir, $A'_i{}^j = A^j{}_i$.
+
+
+Si hay normas definidas en $V$ y $W$ y definimos la norma de 
+$\ve{A}: V \to W$ de la manera usual,
+
+\begin{equation}
+  \label{eq:norma_A}
+  \|\ve{A}\| := \sup_{\|\ve{v}\|_V=1}\{\|\ve{A}(\ve{v})\|_W\}
+\end{equation}
+%
+Entonces vemos que 
+
+\begin{eqnarray}
+  \label{eq:norma_A_dual}
+  \|\ve{A}'\| &:=& 
+            \sup_{\|\ve{\omega}\|_{W'}=1}\{\|\ve{A}'(\ve{\omega})\|_{V'}\} \nn
+              &=& 
+            \sup_{\|\ve{\omega}\|_{W'}=1}\{ 
+            \sup_{\|\ve{v}\|_V=1}\{|\ve{A}'(\ve{\omega})(\ve{v})|\}\} \nn
+              &=&
+              \sup_{\|\ve{\omega}\|_{W'}=1}\{ 
+            \sup_{\|\ve{v}\|_V=1}\{|\ve{\omega}(\ve{A}(\ve{v}))|\}\} \nn
+              &\leq&
+              \sup_{\|\ve{\omega}\|_{W'}=1}\{ 
+            \sup_{\|\ve{v}\|_V=1}\{\|\ve{\omega}\|_{W'}
+                           \|(\ve{A}(\ve{v}))\|_{W}\}\} \nn
+              &=&
+           \sup_{\|\ve{v}\|_V=1}\{\|(\ve{A}(\ve{v}))\|_{W}\} \nn
+              &=& \|\ve{A}\|.
+\end{eqnarray}
+%
+Vemos así que si un operador es acotado, luego su dual también lo es.
+
+Veamos cuales son las componentes del dual de un operador en término de
+las componentes del operador original. 
+Sea entonces $\{\ve{u}_i\}$, $\{\ve{\theta}^i\}$, $i=1,..n$ una base, respectivamente
+una co-base de $V$ y sea $\{\hat{\ve{u}}_i\}$, $\{\hat{\ve{\theta}}^i\}$, 
+$i=1,..m$
+un par base-co-base de $W$.
+Tenemos entonces que las componentes de $\ve{A}$ con respecto a estas bases
+son: 
+$A^i{}_j := \hat{\ve{\theta}}^i(\ve{A}(\ve{u}_j))$, 
+es decir,
+$\ve{A}(\ve{v}) = 
+\sum_{i=1}^{m} \sum_{j=1}^{n} A^i{}_j \hat{\ve{u}}_i\ve{\theta}^j(\ve{v})$.
+
+Por lo tanto, si $\ve{v}$ tiene componentes $(v^1,v^2,\dots,v^n)$ en la 
+base $\{\ve{u}_i\}$, $\ve{A}(\ve{v})$ tiene componentes 
+$(\sum_{i=1}^{n} A^1{}_iv^i, \sum_{i=1}^{n} A^2{}_iv^i,\dots,\sum_{i=1}^{n} A^m{}_iv^i)$ en la base $\{\hat{\ve{u}}_i\}$
+
+Veamos ahora las componentes de $\ve{A}'$. 
+Por definición tenemos,
+
+\[
+(\ve{A}')^i{}_j := \ve{A}'(\hat{\ve{\theta}}^i)(\ve{u}_j) 
+                  =  \hat{\ve{\theta}}^i(\ve{A}(\ve{u}_j)) = A^i{}_j.
+\]
+O sea las mismas componentes, pero ahora la matriz actúa por izquierda en
+las componentes $(\omega_1,\omega_2,\dots, \omega_m)$ de un elemento 
+$\ve{\omega}$ de $W'$ en la co-base $\{\hat{\ve{\theta}}^i\}$.
+Las componentes de $\ve{A}'(\omega)$ en la co-base $\{\ve{\theta}^i\}$ son,
+\[ 
+(\sum_{i=1}^{m}A^i{}_1\omega_i, \sum_{i=1}^{m}A^i{}_2\omega_i,\dots,\sum_{i=1}^{m}A^i{}_n\omega_i).
+\]
+%
+Un caso particularmente interesante de esta construcción es cuando
+$W=V$ y este es un espacio con producto interno, es decir un espacio de
+Hilbert. En tal caso el producto interno nos da un mapa canónico entre
+$V$ y su dual $V'$:
+\begin{equation}
+  \label{eq:mapa_canonico}
+  \phi:V \to V', \;\;\;\; \phi(\ve{v}) := (\ve{v},\cdot),
+\end{equation}
+%
+y por lo tanto si $\ve{A}: V \to V$ luego $\ve{A}': V' \to V'$
+puede también ser considerado como un operador entre $V$ y $V$
+que llamaremos $\ve{A}^{\star}$.
+
+Note que $\phi^{-1}: V' \to V$ está definido por 
+$(\phi^{-1}(\ve{\omega}),\ve{u}) = \ve{\omega}(\ve{u})$,
+ya que 
+\[
+((\phi^{-1}(\phi(\ve{v})),\ve{u}) = ((\phi^{-1}((\ve{v},\cdot)),\ve{u}) 
+= (\ve{v},\ve{u}) \;\;\;\; \forall \ve{u}\; \in V.
+\]
+%
+Con la ayuda de este mapa definimos $\ve{A}^{\star}: V \to V$ dado por:
+(Ver figura)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Figura
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\espa 
+
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{5cm}{!}{\myinput{Figure/m2_3}}
+    \caption{Diagrama del operador estrella.}
+    \label{fig:2_3}
+  \end{center}
+\end{figure}
+
+\begin{equation}
+  \label{eq:A_adjunto}
+  \ve{A}^{\star}(\ve{v}) := \phi^{-1}(\ve{A}'(\phi(\ve{v}))).
+\end{equation}
+%
+En término del producto escalar esto es:
+\begin{equation}
+  \label{eq:A_adjunto_2}
+  (\ve{A}^{\star}(\ve{v}),\ve{u}) = (\phi^{-1}(\ve{A}'((\ve{v},\cdot)),\ve{u}) = \ve{A}'((\ve{v},\cdot)),(\ve{u}) = (\ve{v},\ve{A}(\ve{u})).
+\end{equation}
+%
+En su representación matricial este operador es, $A^{\star}{}^j{}_i = t_{il} A^l{}_k (t^{-1}){}^{kj} $,
+donde $t_{li}$ es la representación del producto escalar y $(t^{-1}){}^{jk}$ el de su inversa 
+($t_{il} (t^{-1})^{lk} = \delta^k{}_i$). 
+En el caso de que $t_{ik} = \delta_{ik}$, la delta de Kronecker, la representación matricial del adjunto es simplemente la matriz transpuesta, $A^{\star}{}^j{}_i = A^{\dagger}{}^j{}_i = A^i{}_j$, 
+
+Un subconjunto de operadores particularmente interesante es aquel para el
+cual se cumple $\ve{A} = \ve{A}^{\star}$. Estos operadores se llaman 
+\textbf{Hermitianos}~\index{operadores!Hermitianos} o 
+\textbf{Autoadjuntos}~\index{operadores!Autoadjuntos}.~\footnote{
+En el caso de dimensión infinita estos nombres dejan de coincidir para
+algunos autores.}
+
+Los operadores autoadjuntos tienen importantes propiedades:
+
+\blem
+Sea $M = Span\{\ve{u},\ve{u}_2,\dots,\ve{u}_m\}$, donde $\{\ve{u}_i\}$
+son un conjunto de autovalores de $\ve{A}$, un operador autoadjunto.
+Luego $M$ y $M^{\perp}$ son espacios invariantes de $\ve{A}$.
+\elem
+
+\bpru 
+La primera afirmación es clara y general, la segunda depende de la
+Hermiticidad de $\ve{A}$. Sea $\ve{v} \in M^{\perp}$ cualquiera, veamos
+que $\ve{A}(\ve{v}) \in M^{\perp}$. Sea $\ve{u} \in M$ arbitrario, luego
+\begin{equation}
+  (\ve{u},\ve{A}(\ve{v})) = (\ve{A}(\ve{u}),\ve{v}) = 0,
+\end{equation}
+%
+ya que $\ve{A}(\ve{u}) \in M$ si $\ve{u} \in M$
+\epru
+%
+Esta propiedad tiene el siguiente corolario:
+
+\bcor
+Sea $\ve{A}:H \to H$ autoadjunto. Luego los autovalores de $\ve{A}$ forman una base ortonormal de $H$.
+\ecor
+
+\bpru
+$\ve{A}: H \to H$ tiene al menos un autovector, digamos $\ve{u}_1$. 
+Consideremos ahora su restricción al espacio perpendicular a  $\ve{u}_1$
+que denotamos también con $\ve{A}$ pues por el lema anterior este es
+un espacio invariante, $\ve{A}:\{\ve{u}_1\}^{\perp} \to \{\ve{u}_1\}^{\perp}$.
+Este operador también tiene un autovector, digamos $\ve{u}_2$ y 
+$\ve{u}_1 \perp \ve{u}_2$. Consideremos ahora la restricción de $\ve{A}$ a
+$Span\{\ve{u}_1,\ve{u}_2\}^{\perp}$ allí también tenemos 
+$\ve{A}:Span\{\ve{u}_1,\ve{u}_2\}^{\perp} \to Span\{\ve{u}_1,\ve{u}_2\}^{\perp}$
+y por lo tanto un autovector de $\ve{A}$, $\ve{u}_3$ con 
+$\ve{u}_3 \perp \ve{u}_1$, $\ve{u}_3 \perp \ve{u}_2$.
+Continuando de esta manera llegamos a tener $n = \dim H$ autovectores todos
+ortogonales entre sí
+\epru
+
+Este teorema tiene varias extensiones al caso donde el espacio vectorial es
+de dimensión infinita. 
+Más adelante en el capítulo \ref{ecuaciones_elipticas} veremos una de ellas.
+
+Notemos que en esta base $\ve{A}$ es diagonal y por 
+lo tanto tenemos
+\bcor
+Todo operador autoadjunto es diagonalizable
+\ecor
+%
+Notemos también que si $\ve{u}$ es un autovector de $\ve{A}$ autoadjunto,
+con autovalor $\lambda$ luego,
+\begin{equation}
+  \bar{\lambda}(\ve{u},\ve{u}) = (\ve{A}(\ve{u}),\ve{u}) 
+                               = (\ve{u},\ve{A}(\ve{u}))
+                               = \lambda(\ve{u},\ve{u})
+\end{equation}
+y por lo tanto $\bar{\lambda} = \lambda$, es decir,
+
+\blem
+Los autovalores de un operador autoadjunto son reales
+\elem
+
+Veamos qué quiere decir la condición de hermiticidad en término
+de las componentes del operador en una base ortonormal.
+Sea entonces $\ve{A}$ un operador autoadjunto y sea 
+$\{\ve{e}_i\}$, $i=1,\dots,n$
+una base ortonormal del espacio donde éste actúa.
+Tenemos que $(\ve{A}(\ve{e}_i),\ve{e}_j) = (\ve{e}_i,\ve{A}(\ve{e}_j))$
+y por lo tanto, notando que 
+$\ve{I} = \sum_{i=1}^{n} \ve{e}_i\ve{\theta}^i$,
+obtenemos,
+\begin{eqnarray}
+  0 &=& (\sum_{k=1}^{n} \ve{e}_k\ve{\theta}^k(\ve{A}(\ve{e}_i),\ve{e}_j)
+       -(\ve{e}_i,\sum_{l=1}^{n} \ve{e}_l\ve{\theta}^l(\ve{A}(\ve{e}_j)) \nn
+    &=& \sum_{k=1}^{n} \bar{A}^k{}_i(\ve{e}_k,\ve{e}_j) 
+       -\sum_{l=1}^{n} A^l{}_j(\ve{e}_i,\ve{e}_l) \nn
+    &=& \sum_{k=1}^{n} \bar{A}^k{}_i \delta_{kj} 
+       - \sum_{l=1}^{n} A^l{}_j \delta_{li}.
+\end{eqnarray}
+%
+de lo que concluimos que 
+
+\begin{equation}
+  \bar{A}^j{}_i = A^i{}_j
+\end{equation}
+%
+o sea que la matriz transpuesta es la complejo conjugada de la original.
+En el caso de matrices reales vemos que la condición es que en esa base
+la matriz  sea igual a su transpuesta, lo que usualmente se denota diciendo
+que la matriz es simétrica.
+
+Una propiedad interesante de los operadores autoadjuntos es que su norma
+es igual al supremo de los módulos de sus autovalores. Como la cuenta 
+demostrando esto será usada más adelante en el curso damos una demostración de este hecho a continuación.
+
+\blem 
+Si $\ve{A}$ es autoadjunto luego $\|\ve{A}\| = \sup\{|\lambda_i|\}$.
+\elem
+
+\bpru 
+Sea $F(\ve{u}) := (\ve{A}(\ve{u}),\ve{A}(\ve{u}))$
+definida en la esfera $\|\ve{u}\| = 1$. Como dicho conjunto es compacto
+(aquí estamos usando el hecho que el espacio es de dimensión finita)
+tiene un máximo que denotaremos $\ve{u}_0$. Notemos entonces que
+$F(\ve{u}_0) := \|\ve{A}\|^2$.
+Como $F(\ve{u})$ es diferenciable en la esfera se debe cumplir que 
+\begin{equation}
+  \frac{d}{d\lambda} F(\ve{u}_0+ \lambda \ve{\delta u})|_{\lambda=0} =0,
+\end{equation}
+%
+a lo largo de toda curva tangente a la esfera en el punto $\ve{u}_0$, 
+es decir, para todo 
+$\ve{\delta u}$ tal que $(\ve{u}_0,\ve{\delta u})=0$.
+Ver figura.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Figura
+
+
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m2_4}}
+    \caption{Vectores normales y tangentes a la esfera.}
+    \label{fig:2_4}
+  \end{center}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent Pero 
+\begin{eqnarray}
+  \frac{d}{d\lambda} F(\ve{u}_0+ \lambda \ve{\delta u})|_{\lambda=0} 
+       &=&
+       \frac{d}{d\lambda}(\ve{A}(\ve{u}_0 + \lambda \ve{\delta u}),
+                          \ve{A}(\ve{u}_0 + \lambda \ve{\delta u}))
+                          |_{\lambda=0} \nn
+       &=&
+           (\ve{A}(\ve{\delta u}),\ve{A}(\ve{u}_0)) 
+           + (\ve{A}(\ve{u}_0),\ve{A}(\ve{\delta u})) \nn
+       &=&
+           2\Re(\ve{A}^{\star}\ve{A} \ve{u}_0, \ve{\delta u}) \nn
+       &=&
+           0 \;\;\;\;\; \forall \ve{\delta u}, 
+           \;\;\; (\ve{u}_0,\ve{\delta u})=0
+\end{eqnarray}
+%
+Como $\ve{\delta u}$ es arbitrario en $\{\ve{u}_0\}^{\perp}$ esto 
+simplemente implica
+\begin{equation}
+  \ve{A}^{\star}\ve{A}(\ve{u}_0) \;\; \in \; 
+       \{\ve{\delta u}\}^{\perp} = \{\ve{u}_0\}^{\perp \perp} = \{\ve{u_0}\}.
+\end{equation}
+%
+y por lo tanto que existirá $\alpha \in \Complex$ tal que
+\begin{equation}
+  \ve{A}^{\star}\ve{A}(\ve{u}_0) = \alpha \ve{u}_0.
+\end{equation}
+%
+Tomando producto escalar con $\ve{u}_0$ obtenemos,
+\begin{eqnarray}
+  (\ve{A}^{\star}\ve{A}(\ve{u}_0),\ve{u}_0) 
+     &=& \bar{\alpha}(\ve{u}_0,\ve{u}_0) \nn
+     &=& (\ve{A}(\ve{u}_0),\ve{A}(\ve{u}_0)) \nn
+     &=& \|\ve{A}\|^2
+\end{eqnarray}
+%
+y por lo tanto tenemos que 
+$\alpha = \bar{\alpha} = \|\ve{A}\|^2$.
+
+Sea ahora $\ve{v} := \ve{A} \ve{u}_0 - \|\ve{A}\|\ve{u}_0$,
+luego, usando ahora que $\ve{A}$ es autoadjunto tenemos,
+\begin{eqnarray}
+  \ve{A}(\ve{v}) &=& \ve{A}\ve{A}(\ve{u}_0) - \|\ve{A}\|\ve{A}(\ve{u}_0) \nn
+                 &=& \ve{A}^{\star}\ve{A}(\ve{u}_0) - \|\ve{A}\|\ve{A}(\ve{u}_0) \nn
+                 &=& \|\ve{A}\|^2 \ve{u}_0 - \|\ve{A}\|\ve{A}(\ve{u}_0) \nn
+                 &=& \|\ve{A}\|(\|\ve{A}\|\ve{u}_0 - \ve{A}(\ve{u}_0)) \nn
+                 &=& - \|\ve{A}\|\ve{v},
+\end{eqnarray}
+%
+por lo tanto o $\ve{v}$ es un autovector de $\ve{A}$, con autovalor 
+$\lambda = - \|\ve{A}\|$, o $\ve{v} = 0$, en cuyo caso $\ve{u}_0$ es un
+autovector de $\ve{A}$ con autovector $\lambda = \|\ve{A}\|$
+\epru
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Operadores Unitarios}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Otra subclase de operadores lineales que aparece muy a menudo en física
+cuando hay un producto interno privilegiado es la de los 
+\textbf{operadores unitarios}~\index{operadores!unitarios},
+es decir aquellos tales que su acción preserva el producto escalar,
+\begin{equation}
+  \label{eq:operadores_unitarios}
+  (\ve{U}(\ve{u}), \ve{U}(\ve{v})) = (\ve{u},\ve{v}), 
+                        \;\;\; \forall \ve{u}, \ve{v} \;\in H.
+\end{equation}
+El caso más típico de operador unitario es una transformación 
+que envía una base ortonormal en otra. Ejemplos usuales son las rotaciones 
+en $\ren$.
+
+\noindent
+Observemos también que 
+$\|\ve{U}\| = \sup_{\|\ve{v}\|=1}\{\|\ve{U}(\ve{v})\|\} = 1$.
+
+\noindent Notemos que 
+\begin{equation}
+  (\ve{U}(\ve{u}), \ve{U}(\ve{v})) = (\ve{U}^{\star}\ve{U}(\ve{u}),\ve{v}) 
+                                   = (\ve{u},\ve{v}),
+                                   \;\;\; \forall \ve{u}, \ve{v} \;\in H,
+\end{equation}
+o sea,
+\begin{equation}
+  \ve{U}^{\star}\ve{U} = \ve{I}
+\end{equation}
+y por lo tanto,
+\begin{equation}
+  \ve{U}^{-1} = \ve{U}^{\star}.
+\end{equation}
+
+Veamos cómo son los autovalores de un operador unitario $\ve{U}$.
+Sea $\ve{v}_1$ un autovector de $\ve{U}$ (sabemos que al menos tiene uno),
+luego,
+\begin{eqnarray}
+  (\ve{U}(\ve{v}_1), \ve{U}(\ve{v}_1)) 
+               &=& \lambda_1 \bar{\lambda}_1 (\ve{v}_1,\ve{v}_1) \nn
+               &=& (\ve{v}_1,\ve{v}_1)
+\end{eqnarray}
+%
+y por lo tanto $\lambda_1 = e^{i \theta_1}$ para algún ángulo $\theta_1$.
+
+Si el operador $\ve{U}$ representa una rotación entonces habrá solo
+un autovector real, correspondiente al eje que queda fijo en una rotación.
+Si tenemos más de un autovalor, luego sus correspondientes autovectores
+son ortogonales, en efecto, sean $\ve{v}_1$ y $\ve{v}_2$ dos autovectores
+luego
+\begin{eqnarray}
+  (\ve{U}(\ve{v}_1), \ve{U}(\ve{v}_2)) 
+               &=&  \bar{\lambda}_1 \lambda_2 (\ve{v}_1,\ve{v}_2) \nn
+               &=& (\ve{v}_1,\ve{v}_2)
+\end{eqnarray}
+%
+y por lo tanto si $\lambda_1 \neq \lambda_2$ debemos tener 
+$(\ve{v}_1,\ve{v}_2)=0$.
+
+\ejer:
+Muestre que si $\ve{A}$ es un operador autoadjunto, luego
+$\ve{U} := e^{i\ve{A}}$ es un operador unitario.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newpage
+\section{Problemas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bpro
+Sea el operador $\ve{A}: V \to V$ donde $\dim V=n$, tal que $\ve{A}\ve{x} = \lambda \ve{x}$. Calcule $\det{\ve{A}}$ y $tr\ve{A}$.
+\epro
+
+\bpro
+Sea $V=\re^3$ y $\ve{x}$ un vector no nulo cualquiera. Encuentre geométricamente y analíticamente el espacio cociente $V/W_{\ve{x}}$, donde 
+$W_{\ve{x}}$ es el espacio generado por $\ve{x}$. Tome otro vector, $\ve{x}'$,
+linealmente independiente con el primero y calcule ahora 
+$V/W_{(\ve{x},\ve{x}')}$.
+\epro
+
+\bpro
+La norma sobre operadores se define como:
+\beq
+\|A\|_{\cL}=\mbox{max}_{\|\ve x\|_V=1}\|A(\ve x)\|_V.
+\eeq
+
+Encuentre las normas de los siguientes operadores, dados por su
+representación matricial con respecto a una base y donde la norma en el 
+espacio vectorial es la euclídea con respecto a dicha base. 
+
+a)
+\begin{equation}
+  \left(
+    \begin{array}{cc}
+      3 & 5  \\
+      4 & 1 
+    \end{array}
+  \right)
+\end{equation}
+
+b)
+\begin{equation}
+  \left(
+    \begin{array}{ccc}
+      3 & 5 & 2 \\
+      4 & 1 & 7 \\
+      8 & 3 & 2
+    \end{array}
+  \right)
+\end{equation}
+
+\epro
+
+
+\bpro
+Sea $V$ un espacio vectorial cualquiera y sea $\|\cdot\|$ una norma Euclídea en dicho
+espacio. La norma $Hilbert-Schmidt$ de un operador se define como:
+\begin{equation}
+  \label{eq:Hilbert_Schmidt}
+  \|\ve{A}\|_{HS}^2 = \sum_{i,j=1}^n |A^j{}_i|^2.
+\end{equation}
+donde la base empleada ha sido la ortonormal con respecto a la norma Euclídea.
+
+a) Muestre que esta es una norma.
+
+b) Muestre que $\|\ve{A}\|_{\cL} \leq \|\ve{A}\|_{HS}$.
+
+c) Muestre que $\sum_{j=1}^n |A^j{}_k|^2 \leq \|\ve{A}\|_{\cL}^2\;\;\mbox{para cada}\; k$. Por lo tanto $\|\ve{A}\|_{HS}^2 \leq n \|\ve{A}\|_{\cL}^2$, y las dos normas
+son equivalentes.
+
+\noi Ayuda:  use que 
+$\ve{\theta}^j(\ve{A}(\ve{u})) = \ve{\theta}^j(\ve{A})(\ve{u})$ 
+y luego que
+$|\ve{\theta}(\ve{u})| \leq \|\ve{\theta}\| \|\ve{u}\|$.
+\epro
+
+\bpro
+Calcule los autovalores-vectores de las siguientes matrices:
+
+a)
+\begin{equation}
+  \left(
+    \begin{array}{cc}
+      3 & 6  \\
+      4 & 1 
+    \end{array}
+  \right)
+\end{equation}
+
+b)
+\begin{equation}
+  \left(
+    \begin{array}{cc}
+      3 & 6  \\
+      0 & 1 
+    \end{array}
+  \right)
+\end{equation}
+
+c)
+\begin{equation}
+  \left(
+    \begin{array}{ccc}
+      2 & 4 & 2 \\
+      4 & 1 & 0 \\
+      3 & 3 & 1
+    \end{array}
+  \right)
+\end{equation}
+\epro
+
+\bpro
+Lleve a forma triangular superior las siguientes matrices:
+Nota: De la transformación de las bases.
+
+a)
+\begin{equation}
+  \left(
+    \begin{array}{cc}
+      3 & 4  \\
+      2 & 1 
+    \end{array}
+  \right)
+\end{equation}
+
+b)
+\begin{equation}
+  \left(
+    \begin{array}{ccc}
+      2 & 4 & 2 \\
+      4 & 1 & 0 \\
+      3 & 3 & 1
+    \end{array}
+  \right)
+\end{equation}
+
+c)
+\begin{equation}
+  \left(
+    \begin{array}{ccc}
+      1 & 4 & 3 \\
+      4 & 4 & 0 \\
+      3 & 3 & 1
+    \end{array}
+  \right)
+\end{equation}
+
+\epro
+
+\bpro
+Muestre nuevamente que $\det e^{\ve{A}} = e^{tr\ve{A}}$. Ayuda: exprese la representación
+matricial de $\ve{A}$ en una base donde tenga la forma canónica de Jordan.
+Alternativamente use una base donde $\ve{A}$ sea diagonal superior y vea que
+el producto de matrices diagonal superior da una matriz diagonal superior y
+por lo tanto que la exponencial de una matriz diagonal superior es también
+diagonal superior.
+\epro
+
+
+\recubib{Este capítulo está basado en los siguientes libros: 
+\cite{Geroch}, \cite{Arnold}, \cite{Lefschetz} y \cite{TaylorI}. También son de interés los siguientes, \cite{Lang_LA} y \cite{Lax}.
+El álgebra lineal es una de las áreas más grandes y más prolífica de las matemáticas, sobre todo cuando trata de espacios de dimensión infinita, lo que usualmente se llama análisis real y teoría de operadores. En mi experiencia personal la mayoría de los problemas terminan reduciéndose a un problema algebraico y uno siente que ha hecho un avance cuando puede resolver dicho problema.}
+ 
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot.tex"
+%%% End: 

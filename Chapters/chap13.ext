@@ -1,0 +1,425 @@
+\section{Unicidad}
+
+El teorema anterior se puede generalizar a cualquier dimensi\'on y a
+resultados locales de unicidad que implican la causalidad de las
+ecuaciones. Estos resultados se deducen de la siguiente
+{\bf desigualdad de la energ\'{\i}a}.
+
+\blem 
+\label{lem13.1}
+Sea $\re^{n+1}$ con coordenadas $(t,x^1,...,x^n)$ y m\'etrica 
+$g_{ab} = -(dt)^2 + (dx^1)^2 +...+ (dx^n)^2$.
+Sea $t^a = \frac{\pa}{\pa t}$, sea $\Sigma_T$ un disco en la hipersuperficie 
+$t = T $ tal que su
+dominio de influencia hacia el pasado en $t=0$ es $\Sigma_0$. (Ver figura.)
+Sea $\Omega$ el cono truncado entre $\Sigma_0$ y $\Sigma_T$ y $S$ 
+su superficie.
+Luego si $u \in H^1(\re^{n+1})$ satisface $\Box u = 0$ en $\Omega$ se cumple 
+\beq E(T) \leq E(0),
+\eeq
+donde
+\beq
+E(t) \equiv \frac12 
+\int_{\Sigma_t} \{|t^a \na_a u|^2 + e^{ab} \na_a u \na_b u\}
+\eeq
+y $e_{ab} = g_{ab} + t_a t_b $ es la m\'etrica euclidea en $\Sigma_t$.
+\elem
+
+
+\fig{6cm}{Desigualdad de la Energ\'{\i}a.} 
+
+\pru: 
+Considere el tensor $T^{ab} \equiv (\na^a u \na^b u - \frac12 g^{ab}
+g^{cd}\na_c u \na_d u)$ si $u \in C^2(\re^n)$ es tal que $\Box u = 0$ en 
+$\Omega$ entonces 
+tenemos que 
+\beq\barr{rcl}
+\na_a T^{ab} &=&
+\Box u \; \na^b u + \na^a u \na_a \na^b u - \frac12( g^{cd}(\na^b
+\na_c) \na_d u + g^{cd}(\na^b \na_d u) \na_c u)\\ [3mm]
+&=& (\Box u) \na^b u + \na^a u \na_a \na^b u - (\na^b \na_a u) \na^a u\\ [3mm]
+&=& (\Box u) \na^b u\\ [3mm]
+&=& 0,
+\earr
+\eeq
+en $\Omega$.
+
+Como $\na_a t_b = 0$ tenemos que,
+$\na_a J^a \equiv \na_a (T^{ab} t_b) = 0$ en $\Omega$.
+
+Usando el teorema de la divergencia tenemos entonces,
+\beq
+0=\int_{\Omega}\na_a J^a = \int_{\Sigma_T} n^T_a J^a + 
+\int_{\Sigma_0} n^0_a J^a + \int_S n^S_a J^a,
+\eeq
+donde $n^T_a$, $n^0_a$ y $n^S_a$ son las respectivas normales a las 
+hipersuperficies, apuntando
+hacia afuera en $\Sigma_0$ y $\Sigma_T$ (es decir $n^0_a = -\na_a t =
+- t_a$, $n^T_a = \na_a\,t=t_a$) y en $S$ es un vector nulo con
+componente temporal positiva.
+
+Usando que 
+$T^{ab}t_b = \na^au t^b\na_b u - \frac12t^a(-t^c\na_c u t^d\na_d u
++ e^{cd} \na_cu \na_d u)$
+obtenemos que 
+$\frac12 E(T) = \frac12 E(0) - n^S_a \na^a u t^b\na_bu +\frac12 t^an^S_a
+((t^c\na_c u)^2 - e^{cd} \na_c u \na_d u)$.
+Pero $n^S_a = t_a + r_a$ con $r_at^{a^2} =0$, $r^{a^2}r_a = 1$ y $r^a$ 
+apuntando hacia afuera de $S$,~\footnote{En el caso de un disco
+esf\'erico de radio $r=cte.$, $n^S_a= d_a(t+r)$ o sea $r_a = \na_a r$.}
+llamando $u'\equiv r^a \na_a u$ y $\dot u \equiv
+t^a \na_a u$, $h^{cd} = e^{cd} - r^c r^d$ obtenemos,
+\beq\barr{rcl}
+E(T) &=& E(0) + \int_S(-2u'\dot u - \dot u^2 -u'^2 - h^{cd} \na_c
+u\na_d u)\\
+     &=& E(0) - \int_S[(u' + \dot u)^2 + h^{cd} \na_c u \na_d u],
+\earr
+\eeq
+de donde sigue trivialmente la desigualdad buscada.~\footnote{
+Note que $h^{cd}$ es positiva definida.}
+     
+\ejer:
+Haga la cuenta expl\'{\i}cita en el caso $\Omega \subset \re^2$.
+
+Como consecuencia directa tenemos el siguiente teorema de unicidad local.
+
+\bteo{Unicidad Local}: Sea $u_1$ y $u_2$ soluciones de $\Box u = f$ en una 
+regi\'on conteniendo $\Omega$ y
+tales que $(u_1 - u_2)|_{\Sigma_0} = (\frac{\pa u_1}{\pa t} -
+\frac{\pa u_2}{\pa t})|_{\Sigma_0} = 0$ 
+luego $u_1 = u_2$ en casi todo punto de $\Omega$.
+\eteo
+
+\espa
+\pru:
+Las suposiciones sobre $u_1$ y $u_2$ en $\Sigma_0$ implican que para 
+$\delta u = u_1 - u_2$, $E(0) = 0$. 
+Pero esto implica $E(t) = 0\;\;\; \forall t\in[0,T]$ 
+(ya que la prueba del lema anterior vale para $t$ arbitrario).
+Pero 
+\beq
+\int_0^T E(t)\;dt = \int_{\Omega} \{|\pa_t \delta u|^2 + \sum^n_{i=1}
+|\pa_i \del u|^2\} \geq C\int_{\Omega} |\del u|^2
+\eeq
+para alguna constante $C$ independientemente de $\delta u$ si
+$\delta u|_{\Sigma} = 0$.~\footnote{Esto es una aplicaci\'on inmediata del 
+Lema de Poincar\'e-Hardy.}
+Concluimos as\'{\i} con que $u_1=u_2$ en casi todo punto de 
+$\Omega $.~\footnote{Si $u \in C^1$
+este lema no es necesario para concluir que $u_1 = u_2$ en $\Omega$. 
+?`Por qu\'e?}
+
+Este teorema, que se puede generalizar f\'acilmente a toda ecuaci\'on
+hiperb\'olica, es de suma importancia ya que nos dice que la
+soluci\'on en un punto cualquiera solo depende de la soluci\'on y la
+fuente en el dominio de dependencia de la fuente~\footnote{En el caso
+general el borde $S$ tendr\'a una forma distinta pero seguir\'a siendo
+"un cilindro deformado"}.
+
+\section{Existencia.}
+
+Pasamos ahora al problema de la existencia de estas soluciones.
+Existen muchas formas de probar existencia para el operador de onda,
+ya que como en el caso 2-dimensional podemos escribir esta soluci\'on
+expl\'{\i}citamente. En este curso daremos una prueba que no depender\'a
+-en esencia- del hecho de que la ecuaci\'on sea precisamente la de
+onda y por lo tanto nos dar\'a una idea de como lograr una prueba
+para los sistemas hiperb\'olicos en general.
+El primer paso hacia este objetivo es la siguiente desigualdad.
+
+\blem[Energ\'etico] 
+\label{lem13.2}
+Existe $C>0$ tal que si $m \geq 1$, $u \in H^m(\Omega)$,
+$\Box u = f \in H^{m-1}(\Omega)$, $u|_{\Sigma_0} = u_0 \in H^m(\Sigma_0)$
+y $\pa_tu|_{\Sigma_0} = u_1 \in H^{m-1}(\Sigma_0)$, luego 
+\beq
+\|u\|_{H^m(\Omega)} \leq 
+\{\|f\|_{H^{m-1}(\Omega)} + \|u_0\|_{H^m(\Sigma_0)} 
++ \|u_1\|_{H^{m-1}(\Sigma_0)} \}.
+\eeq
+\elem
+
+\espa
+\pru:
+Repitiendo el lema~\ron{lem13.1} con $f \neq 0$ obtenemos,
+\beq
+E(t) \leq E(0) + 2\int_0^t(\int_{\Sigma_{\ti t}} f \;t^a\na_a u) d t,
+\eeq
+de lo que sigue,
+\beq
+E(t) \leq E(0) + \|f\|^2_{H^0(\Omega)} 
++ \int_0^t \|\frac{\pa u}{\pa t}\|_{H^0(\Sigma_t)}\;dt
+\label{1*}
+\eeq
+Por otro lado, usando que 
+\beq
+|u(x,t)|^2 = |u(x,0)|^2 + 2 \int_0^t u\pa_t u d \ti t
+           \leq |u(x,0)|^2 + \{\int^t_0 |u|^2\; d\ti t + 
+	   \int_0^t|\pa_t u|^2\;d\ti t\},
+\eeq	   
+obtenemos,
+\beq
+\dip\int_{\Sigma_t} |u(x,t)|^2 \leq \int_{\Sigma_0} |u(x,0)|^2 \;dt+ 
+\{\int^t_0 \int_{\Sigma_t}|u|^2 \;dt+ \int_0^t \int_{\Sigma_t} |\pa_t u|^2\;dt\}.
+\label{2*}
+\eeq
+Sumando \ron{1*} y \ron{2*} obtenemos
+\beq
+{\dip 
+\barr{rcl}
+\int_{\Sigma_t} \{|u|^2 + |\pa_t u|^2 + \sum^n_{i=1} |\pa_i u|^2\;dt\}
+&\leq& \int_{\Sigma_0} \{|u|^2 + |\pa_t u|^2 + \sum^n_{i=1} |\pa_i
+u|^2\}\\ [3mm]
+&+& \|f\|^2_{H^0(\Omega)} +
+2 \int^t_0 \int_{\Sigma_{\ti t}} 
+\{|u|^2 + |\pa_t u|^2 + \sum^n_{i=1} |\pa_i u|^2\}.
+\earr
+}
+\eeq
+o definiendo
+\beq
+I(t) = \int^t_0 \int_{\Sigma_{\ti t}} 
+       \{|u|^2 + |\pa_t u|^2 + \sum^n_{i=1} |\pa_i u|^2\}
+\eeq       
+y $ A = \{\|f\|_{H^{m-1}(\Omega)} + \|u\|_{H^M(\Sigma_0)} 
++ \|\pa u\|_{H^{m-1}(\Sigma_0)} \}$,
+obtenemos
+\beq
+I'(t) \leq A + 2I(t).
+\eeq
+La soluci\'on a $y'(t) = A + 2y(t)$, $y(0) =0$
+es $y(t) = \frac A2(e^{2t} - 1)$
+y por lo tanto
+\beq
+I(t) \leq \frac A2(e^{2t} - 1).
+\eeq
+Tomando $C= \dip\frac{e^{2t} - 1}2$ obtenemos la desigualdad buscada para $m=1$.
+Para $m=2$ se usa que 
+$\Box(\na_a u) = \na_a f$ y el argumento anterior, de la misma forma se procede hasta
+llegar al valor de $m$ deseado.
+
+Note que a diferencia con el caso el\'{\i}ptico aqu\'{\i} la diferencia
+entre la diferenciabilidad de $u$ y la de $f$ es de uno y no de dos.
+Esto se debe a que como vimos en el ejemplo en algunas coordenadas la
+ecuaci\'on de ondas tiene derivadas cruzadas.
+
+Utilizando esta desigualdad y el teorema expectral como segundo pa\-so
+de\-mos\-tra\-re\-mos el siguiente teorema.
+
+\bteo[de existencia Local] 
+Sea $\Sigma_T$  una regi\'on acotada y conexa de la hi\-per\-su\-per\-fi\-cie 
+$t=T$,
+$\Sigma_{\ti t}$, la intersecci\'on de su dominio de influencia hacia el 
+pasado y la hipersuperficia $t=\ti t$ 
+(por lo tanto tambi\'en acotada y conexa) y $\Omega = \bigcup 
+\Sigma_{\ti t}$ $\ti t\in [0,t_0]$.
+Dado cualquier $u_0 \in H^m(\Sigma_0)$, $u_1 \in H^{m-1} ( \Sigma_0)$, $f \in
+H^{m-1}(\Omega)$, $m \geq 1$ existe una \'unica $u \in H^m(\Omega)$ 
+satisfaciendo,
+\beq
+{\dip
+\barr{rcl}
+\mbox{$\Box$} u &=& f \;\;\; \mbox{en} \Omega\\
+u|_{\Sigma_0} &=& u_0\\
+\frac{\pa u}{\pa t}|_{\Sigma_0} &=& u_1.
+\earr
+}
+\eeq
+\eteo
+
+\fig{6cm}{Existencia Local.}
+\espa
+\pru:
+Para probar este teorema consideremos una regi\'on $S_0$ de la
+hipersuperficie $t=0$ tambi\'en acotada y conexa conteniendo a $\Sigma_0$ y
+definiremos las regiones de la hipersuperficie $t=\ti t$, $S_{\ti t}$, 
+como aquella
+obtenida trasladando los puntos de $S_0$ una distancia $\ti t$ a lo largo de
+la curva $\{x^i = cte.,\;\; i=1,...,n.\}$, 
+es decir a lo largo de la curva integral del vector
+$\frac{\pa}{\pa t}$. 
+Similarmente con $\Omega$ definiremos $C = \cup S_{\ti t}$ $\ti t\in[0,t_0]$.
+Ver figura para el caso de $n=1$.
+Consideremos ahora el problema auxiliar,
+\beq\barr{rcl}
+\Box \ti u &=& \ti f \;\;\; \mbox{en} C\\
+\ti u|_{S_0} &=& \ti u_0\\
+\frac{\pa \ti u}{\pa t}|_{S_0} &=& /ti u_1,
+\earr
+\eeq
+m\'as la condici\'on de contorno $\ti u|_L = 0$ donde $L = \cup_{\ti t} \pa
+S_{\ti t}$ es el borde del cilindro C y donde 
+$\ti f$, $\ti u_0$ y $\ti u_1$ son extensiones de las respectivas funciones 
+sin tilde
+a todo $C$ o $S_0$ seg\'un corresponda. 
+
+El caracter de esta extensi\'on no
+es de importancia pero para fijar ideas supondremos que estan en los
+mismos espacios que sus funciones originales pero ahora tomados de
+forma de contener las regiones donde se ha hecho la extensi\'on y
+supondremos adem\'as que $\ti f$, $\ti u_0$, $\ti u_1$ y sus derivadas 
+decaen a cero en $L$, es decir $\ti f \in H^{m-1}_0(\Omega)$,
+$\ti u_0 \in H^m_0(S_0)$ y $\ti u_1 \in H^{m-1}_0(S_0)$.~\footnote{
+$H^{m-1}_0(C) =$ espacio completado con respecto a la norma de
+$H^{m-1}(C)$ de funciones suaves de soporte compacto en cada $S_{\ti t}$.}
+De la desigualdad del lema anterior y la unicidad de las soluciones
+que esto implica concluimos que si $\ti u$ existe luego $\ti u
+|_{\Omega} = u$ y por lo tanto
+que hemos embebido nuestro problema en otro que por tener condiciones
+de contorno quiz\'a podamos resolver usando nuestro conocimiento previo.
+
+Sea $\{\lap_n\}$ y $\{v_n\}$ los autovalores y autofunciones 
+del Laplaciano en $S_0$.
+Como $S_{\ti t}=S_0$ en lo que respecta al Lapalaciano estos conjuntos no dependen
+de t. Usando el teorema expectral podemos expandir todas las
+funciones que entran en el problema,
+${\dip\ti u=\sum_{n=0}^{\ifi}u_n(t)\,v_n(x^j)}$, 
+${\dip\ti f=\sum_{n=1}^{\ifi}f_n(t)\,v_n(x^j)}$, 
+${\dip\ti u_0=\sum_{n=0}^{\ifi}c_n^0\,v_n(x^j)}$, 
+${\dip\ti u_1=\sum_{n=0}^{\ifi}c_n^1\,v_n(x^j)}$.
+ 
+Usando la ortonormalidad de las autofunciones y aplicando el
+Laplaciano obtenemos el siguiente conjunto infinito de ecuaciones
+ordinarias lineales y condiciones de contorno,
+\beqarr
+\ddot u_n(t)+\lap_n\,u_n(t)=f_n(t)\\
+u_n|_{t=0}=C_n^0\\
+\dot u_n|_{t=0}=C_n^1.
+\eeqarr
+Usando que la soluci\'on homogenea general es
+$A_n\sin(\omega_nt)+B_n\cos(\omega_n t)$, $\omega_n=\sqrt{\lap_n}$ vemos que 
+$u^H_n(t)=C_n^0\,\cos(\omega_nt)+\dip\frac{C_n^1}{\omega}\,\sin(\omega_nt)$ es
+la soluci\'on de la ecuaci\'on homogenea con las condiciones de
+contorno dadas. Usando el m\'etodo de variaci\'on de las constantes
+o de la transformaci\'on de Laplace obtenemos la soluci\'on
+inhomogenea con condici\'on inicial cero,
+\beq
+u^I_n(t)=Re\lc e^{i\omega_nt}\int_0^t e^{-2i\omega_nt'}\int_0^{t'}f_n(t'')\,
+e^{i\omega_nt''}\;dt''\rc.
+\eeq
+
+\espa
+\ejer:
+Vea que $u^I_n(t)$ efectivamente satisface la ecuaci\'on 
+y que $u^I_n(0)=\dot u^I_n(0)=0$.
+
+Hemos as\'{\i} determinado completamente $u_n(t)=u^H_n(t)+u^I_n(t)$ 
+como funci\'on de los datos iniciales, $C^0_n$, $C^1_n$,
+obtenidos a su vez expandiendo en autofunciones a $u_0$ y  a $u_1$, y de la
+inhomogeneidad, obtenida expandiendo para cada t, en autofunciones a $f$.
+?`Es $\ti u=\sum_{n=1}^{\ifi}u_n(t)\,v_n(x^j)$ la soluci\'on del problema 
+auxiliar y $u=\ti u|_{\Omega}$ la soluci\'on del original?
+La respuesta es afirmativa pero bien podr\'\i a no serlo ya que si bien
+las $v_n(x^j)$ son infinitamente diferenciables y las $u_n(t)$ son
+dos veces m\'as diferenciables que los correspondientes $f_n(t)$ al
+tratarse de una sumatoria infinita en principio es solo una
+expresi\'on formal, ya que dicha sumatoria podr\'{\i}a no converger.
+Consideremos primero el caso de $u$, ya que eso concluir\'a la
+prueba del teorema. Para ello definamos 
+$\ti u^N \equiv \sum^N_{n=0} u_n(t)v_n(x^j)$, $u^N \equiv \ti u^N|_{\Omega}$.
+Como se trata de sumas finitas $u^N$ es infinitamente diferenciable y
+por lo tanto en $H^m$ para todo $m$. Definiendo similarmente
+$f^N,u_0^N$ y $u_1^N$se puede
+ver que estas son suceciones de Cauchy en los respectivos espacios de
+Sobolev que tienden a, $f,u_0$ y $u_1$, respectivamente. Considere ahora $M
+> N$ y $\del^{M-N}\equiv u^M-u^N\in H^m(\Omega)$. Por linealidad $\del^{M-N}$ 
+satisface
+\beq
+{\dip
+\barr{rcl}
+\Box\del^{M-N} & = & f^M-f^N\\
+\del^{M-N}|_{\Sigma_0}&=&u_0^M-u_0^N\\
+\frac{\pa}{\pa t}\del^{M-N}|_{\Sigma_0}&=&u_1^M-u_1^N
+\earr
+}
+\eeq
+y por lo tanto satisface la desigualdad de la energ\'{\i}a con el
+miembro de la derecha llendo a cero cuando $N\to\ifi$. Pero esto implica que
+$\{u^N\}$ es una sucesi\'on de Cauchy en $H^m(\Omega)$. Por completitud de 
+$H^m(\Omega)$ habr\'a
+entonces un elemento $u^{\ifi}$ en $H^m(\Omega)$ al cual esta 
+sucesi\'on converger\'a.
+Cl\'aramente $u^{\ifi}=u$, la sumatoria formal que construimos. Hemos as\'{\i}
+demostrado el teorema local de existencia.
+
+Consideremos ahora la pregunta de que si $\ti u$, la suma formal, es una
+soluci\'on del problema auxiliar. Cl\'aramente esto depender\'a de como
+hemos extendido $f$, $u_0$ y $u_1$ a todo $C$, aqui es importante la elecci\'on
+que hicimos con respecto a la "suavidad" de esta extensi\'on. El
+argumento es el mismo que para el caso anterior donde ahora usamos
+una desigualdad energ\'etica en $C$, que esta se satisface se demuestra
+de la misma forma que la otra desigualdad con la ventaja que los
+t\'erminos de superficie (en $L$) que aparecen  al aplicar el teorema de
+la divergencia a la regi\'on C se anulan por la condici\'on de
+contorno. Concluimos as\'{\i} con el siguiente teorema.
+
+\bteo[de Existencia con condiciones de contorno]
+\footnote{En realidad la prueba es un poco m\'as complicada pues en la
+desigualdad energ\'etica correspondiente se deben eliminar todos los
+t\'erminos de superficie para $m$ arbitrario usando {\bf solo} que 
+$u|_L=0$ y no es
+cierto que $f^n\to f $ fuertemente en $H^m(C)$ por problemas de borde}.
+Sea $C,\,L$ y $S_0$ como en el teorema anterior y sean $m\geq1$, 
+$\ti f\in H^{m-1}(C)$, $\ti u_0\in H^m(S_0)\cap H_0'(S_0)$ y 
+$\ti u_1\in H^{m-1}(S_0)(\cap H_0'(S_0))$ si $m\geq2$), luego existe
+una \'unica $\ti u\in H^m(C)$, $\ti u(t,x^j)\in H'_0(S_t)$, satisfaciendo,
+\beq
+{\dip
+\barr{rcl}
+\Box\ti u &= &f\;\;\;\mbox{ en }C\\
+\ti u|_{S_0} &= &\ti u_0,\\
+\derp{\ti u}{t}|_{S_0} &= & \ti u_1.
+\earr
+}
+\eeq
+\eteo
+
+Finalmente probaremos el siguiente teorema, que en realidad es un
+simple corolario del teorema local ya tratado.
+
+\bteo[de Existencia Global]
+Sea $S_{\ti t}=\{(t,x^j)\;/\;t=\ti{t}_n\}\approx
+\ren$, $C=\dip\bigcup_{\ti t\in[0,t_0]}\,S_{\ti t}$, y sean
+$f\in H^{m-1}(C)$, $u_0\in H^M(S_0)$, $u_1\in H^{m-1}(S_0)$ 
+luego existe una \'unica $u\in H^m(C)$, satisfaciendo,
+\beq
+{\dip
+\barr{rcl}
+\Box u & = & f\;\mbox{ en }C\\
+u|_{S_0} & = & u_0\\
+\derp ut|_{S_0} & = & u_1,
+\earr
+}
+\eeq
+\eteo
+
+\espa
+
+\pru: 
+Agrandando $\sum_{t_0}$ en el lema energ\'etico a todo 
+$S_{t_0}$ obtenemos una
+desigualdad v\'alida en $C$. Sigue trivialmente que si existe una
+soluci\'on esta es \'unica. Usaremos su unicidad para probar su
+existencia. La idea es construir {\bf la} soluci\'on emparchando soluciones
+locales cuya existencia ya ha sido probada. Para ello cubrimos $S_{t_0}$ con
+regiones acotadas $\sum_{t_0}^n$, $S_{t_0}=\cup_n\sum_{t_0}^n$. 
+Cada una de ellas determina una regi\'on
+acotada correspondiente $\sum_{0}^n\su S_0$ y datos iniciales 
+$u^n_0=u_0|_{\Sigma_0^n}$, $u_1^n=u_1|_{\Sigma_0^n}$ esto a su vez
+determina una soluci\'on $u^n$ en $\Omega_n$. 
+Obtenemos as\'{\i} una colecci\'on de
+regiones $\{\Omega^n\}$ y soluciones locales $\{u^n\}$, como los 
+$\Omega_n$ cubren $C$ si los $u^n$
+coincidiesen en las intersecciones de los $\Omega_n$ obtendr\'{\i}amos 
+una
+soluci\'on $\bar u$ global pero esta es entonces {\bf la} soluci\'on buscada.
+Para ver que coinciden consideremos $\Omega_n\cap\Omega_m$, esta regi\'on 
+es el $\Omega_p$ de $\sum_0^p=\sum_0^n\cup\sum_0^m$
+la unicidad local nos asegura entonces que $\dip u_p=u_n|_{\Omega_p=\Omega_n
+\cup\Omega_m}=u_m|_{\Omega_p=\Omega_n\cup\Omega_m}$ que es el resultado 
+buscado.
+%
+\fig{5cm}{Construyendo la Soluci\'on Global.}
+%
+
+ 

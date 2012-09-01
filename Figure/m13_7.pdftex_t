@@ -1,0 +1,19 @@
+\begin{picture}(0,0)%
+\includegraphics{Figure/m13_7.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3333sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(5874,1837)(439,-2387)
+\put(5276,-721){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Sigma^n_{t_1}$}%
+}}}}
+\put(5584,-1459){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$\Sigma^n_{t_0}$}%
+}}}}
+\put(5212,-2314){\makebox(0,0)[lb]{\smash{{\SetFigFont{9}{10.8}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$S_{t_0}$}%
+}}}}
+\end{picture}%

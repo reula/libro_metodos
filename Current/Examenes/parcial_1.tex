@@ -1,0 +1,121 @@
+\documentclass{article}
+%\input{extdef}
+\newcommand{\ve}[1]{\mbox{\boldmath ${#1}$}}
+\begin{document}
+
+\begin{center}
+ \textbf{ Parcial de An\'alisis Matem\'atico IV (ODEs) \\
+Noviembre 9, 1999 }
+\end{center}
+
+Problema 1.- Escribir la matriz $A$ y el vector $\vec{x}$
+en la base en la cual $A$ es diagonal.
+
+
+\begin{equation}
+  A := \left( 
+             \begin{array}{ccccc}
+               0 & -i& 0 & 0 & 0 \\
+               i & 0 & 0 & 0 & 0 \\
+               0 & 0 & 3 & 0 & 0 \\
+               0 & 0 & 0 & 1 & -i \\
+               0 & 0 & 0 & i & 1
+             \end{array}
+             \right) 
+\;\;\;\;\;\;
+ \vec{x} := \left( 
+             \begin{array}{c}
+               0  \\
+               a  \\
+               i  \\
+               b  \\    
+               -1 
+             \end{array}
+         \right).
+\end{equation}
+
+
+Problema 2.-
+%
+Dos cuerpos de masa $m_1$ y $m_2$ estan unidos entre si por un resorte , 
+de constante $k_2$, mientras que el primero est\'a unido a una pared por
+otro resorte de constante $k_1$.
+
+Las ecuaciones del sistema son:
+\begin{eqnarray}
+  m_1\frac{d^2x_1}{dt^2} &=& -k_1 x_1 + k_2 x_2  \\
+  m_2\frac{d^2x_2}{dt^2} &=& -k_2 x_2
+\end{eqnarray}
+Lleve a un sistema de primer orden y encuentre su soluci\'on general.
+Descr\'\i{}bala usando el operador $\ve{X}^t_{t_0}$ dando sus
+componentes en la base en la que queda el sistema de primer orden.
+
+Problema 3.-
+%
+Encuentre las soluciones estacionarias del siguiente sistema y determine si son
+estables o no.
+
+\begin{eqnarray}
+  \dot{x} &=& x - x^3 - xy^2 \\
+  \dot{y} &=& 2y - y ^5 -x^4y
+\end{eqnarray}
+
+Problema 4.-
+%
+Resuelva por el m\'etodo de variaci\'on de constantes la siguiente 
+ecuaci\'on:
+
+\begin{equation}
+\frac{dx}{dt} + x \cos(t) = \frac{1}{2} \sin(2t).
+\end{equation}
+
+
+
+
+%Sea una masa $m$ conectada a un resorte de constante $k_$ y con constante 
+%de disipaci\'on $\gamma$ sobre la que actua una fuerza 
+%$f(t) = F\cos(\omega t)$.
+%La ecuaci\'on de evoluci\'on es: 
+%$m\frac{d^2 x}{dt^2} = -kx -\gamma \frac{dx}{dt} + F\cos(\omega t)$.
+%Encuentre la soluci\'on general.
+
+
+Problema 5.-
+Verdadero o Falso? Justifique.
+
+\begin{itemize}
+
+\item[a] Sea $\ve{A}$ un operador cuya representaci\'on matricial en una dada base tiene forma triangular superior y en ella sus componentes a lo largo de la
+diagonal son distintas [$A^i{}_i \neq A^j{}_j $ si $i\neq j$]. Luego el operador es 
+diagonalizable, es decir existe una base en la cual los \'unicos elementos
+distintos de cero son los diagonales.
+
+\item[b] Sea $V$ el espacio vectorial de polinomios de grado igual o menor
+que $n$. Sea $\ve{D}$ el operador lineal derivada, es decir 
+$\ve{D} P(x) := \frac{dP(x)}{dx}$. Luego el \'unico autovalor de $\ve{D}$ es cero.
+
+\item[c] La ecuaci\'on $\frac{dx}{dt} = 2 + \sqrt{x}$ tiene m\'as de una soluci\'on para cierto dato inicial.
+
+\item[d] Sea $f: R \to R$ diferenciable y tal que existen constantes
+positivas $A$ y $B$ tales que $|f(x)| < A + B|x|$. Luego cualquier soluci\'on
+de $\frac{dx}{dt} = f(x)$ existe para todo $t$.
+
+\item[e] La ecuaci\'on 
+\begin{equation}
+\frac{d^5x}{dt^5} + 3 \frac{d^3x}{dt^3} + 9x =0
+\end{equation}
+tiene $5$ soluciones linealmente independientes.
+
+\end{itemize}
+
+
+
+
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

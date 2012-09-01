@@ -1,0 +1,593 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: m13_6.fig
+%%Creator: fig2dev Version 3.2 Patchlevel 5
+%%CreationDate: Wed Apr  8 12:25:35 2009
+%%For: reula@surubi (Oscar Reula)
+%%BoundingBox: 0 0 298 233
+%Magnification: 1.1461
+%%EndComments
+/$F2psDict 200 dict def
+$F2psDict begin
+$F2psDict /mtrx matrix put
+/col-1 {0 setgray} bind def
+/col0 {0.000 0.000 0.000 srgb} bind def
+/col1 {0.000 0.000 1.000 srgb} bind def
+/col2 {0.000 1.000 0.000 srgb} bind def
+/col3 {0.000 1.000 1.000 srgb} bind def
+/col4 {1.000 0.000 0.000 srgb} bind def
+/col5 {1.000 0.000 1.000 srgb} bind def
+/col6 {1.000 1.000 0.000 srgb} bind def
+/col7 {1.000 1.000 1.000 srgb} bind def
+/col8 {0.000 0.000 0.560 srgb} bind def
+/col9 {0.000 0.000 0.690 srgb} bind def
+/col10 {0.000 0.000 0.820 srgb} bind def
+/col11 {0.530 0.810 1.000 srgb} bind def
+/col12 {0.000 0.560 0.000 srgb} bind def
+/col13 {0.000 0.690 0.000 srgb} bind def
+/col14 {0.000 0.820 0.000 srgb} bind def
+/col15 {0.000 0.560 0.560 srgb} bind def
+/col16 {0.000 0.690 0.690 srgb} bind def
+/col17 {0.000 0.820 0.820 srgb} bind def
+/col18 {0.560 0.000 0.000 srgb} bind def
+/col19 {0.690 0.000 0.000 srgb} bind def
+/col20 {0.820 0.000 0.000 srgb} bind def
+/col21 {0.560 0.000 0.560 srgb} bind def
+/col22 {0.690 0.000 0.690 srgb} bind def
+/col23 {0.820 0.000 0.820 srgb} bind def
+/col24 {0.500 0.190 0.000 srgb} bind def
+/col25 {0.630 0.250 0.000 srgb} bind def
+/col26 {0.750 0.380 0.000 srgb} bind def
+/col27 {1.000 0.500 0.500 srgb} bind def
+/col28 {1.000 0.630 0.630 srgb} bind def
+/col29 {1.000 0.750 0.750 srgb} bind def
+/col30 {1.000 0.880 0.880 srgb} bind def
+/col31 {1.000 0.840 0.000 srgb} bind def
+
+end
+save
+newpath 0 233 moveto 0 0 lineto 298 0 lineto 298 233 lineto closepath clip newpath
+-18.6 251.5 translate
+1 -1 scale
+
+/cp {closepath} bind def
+/ef {eofill} bind def
+/gr {grestore} bind def
+/gs {gsave} bind def
+/sa {save} bind def
+/rs {restore} bind def
+/l {lineto} bind def
+/m {moveto} bind def
+/rm {rmoveto} bind def
+/n {newpath} bind def
+/s {stroke} bind def
+/sh {show} bind def
+/slc {setlinecap} bind def
+/slj {setlinejoin} bind def
+/slw {setlinewidth} bind def
+/srgb {setrgbcolor} bind def
+/rot {rotate} bind def
+/sc {scale} bind def
+/sd {setdash} bind def
+/ff {findfont} bind def
+/sf {setfont} bind def
+/scf {scalefont} bind def
+/sw {stringwidth} bind def
+/tr {translate} bind def
+/tnt {dup dup currentrgbcolor
+  4 -2 roll dup 1 exch sub 3 -1 roll mul add
+  4 -2 roll dup 1 exch sub 3 -1 roll mul add
+  4 -2 roll dup 1 exch sub 3 -1 roll mul add srgb}
+  bind def
+/shd {dup dup currentrgbcolor 4 -2 roll mul 4 -2 roll mul
+  4 -2 roll mul srgb} bind def
+ /DrawEllipse {
+	/endangle exch def
+	/startangle exch def
+	/yrad exch def
+	/xrad exch def
+	/y exch def
+	/x exch def
+	/savematrix mtrx currentmatrix def
+	x y tr xrad yrad sc 0 0 1 startangle endangle arc
+	closepath
+	savematrix setmatrix
+	} def
+
+/$F2psBegin {$F2psDict begin /$F2psEnteredState save def} def
+/$F2psEnd {$F2psEnteredState restore end} def
+
+$F2psBegin
+10 setmiterlimit
+0 slj 0 slc
+ 0.07220 0.07220 sc
+%
+% Fig objects follow
+%
+% 
+% here starts figure with depth 100
+% Ellipse
+7.500 slw
+n 2250 900 540 225 0 360 DrawEllipse gs col0 s gr
+
+% Ellipse
+n 2250 900 540 225 0 360 DrawEllipse gs col0 s gr
+
+% Ellipse
+n 2261 895 1215 495 0 360 DrawEllipse gs col0 s gr
+
+% Ellipse
+n 2250 2790 1035 360 0 360 DrawEllipse gs col0 s gr
+
+% Ellipse
+n 2250 2790 1035 360 0 360 DrawEllipse gs col0 s gr
+
+% Ellipse
+n 2250 2790 1215 495 0 360 DrawEllipse gs col0 s gr
+
+% Polyline
+0 slj
+0 slc
+ [60] 0 sd
+n 1530 1350 m
+ 1710 855 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2970 1350 m
+ 2790 855 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2049 1106 m
+ 2397 684 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2134 1122 m
+ 2482 700 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2224 1131 m
+ 2568 714 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2326 1122 m
+ 2634 747 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2437 1101 m
+ 2706 777 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2539 1089 m
+ 2757 825 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2662 1038 m
+ 2793 879 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1965 1082 m
+ 2304 672 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1872 1064 m
+ 2193 675 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1803 1028 m
+ 2088 687 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1749 986 m
+ 1980 705 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1725 914 m
+ 1878 735 l gs col0 s gr  [] 0 sd
+% Polyline
+n 2970 1350 m
+ 3465 2835 l gs col0 s gr 
+% Polyline
+n 1530 1350 m
+ 1035 2745 l gs col0 s gr 
+% Polyline
+ [60] 0 sd
+n 1530 1350 m
+ 1710 855 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2970 1350 m
+ 2790 855 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2049 1106 m
+ 2397 684 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2134 1122 m
+ 2482 700 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2224 1131 m
+ 2568 714 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2326 1122 m
+ 2634 747 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2437 1101 m
+ 2706 777 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2539 1089 m
+ 2757 825 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2662 1038 m
+ 2793 879 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1965 1082 m
+ 2304 672 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1872 1064 m
+ 2193 675 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1803 1028 m
+ 2088 687 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1749 986 m
+ 1980 705 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1725 914 m
+ 1878 735 l gs col0 s gr  [] 0 sd
+% Polyline
+n 270 1530 m
+ 1350 270 l gs col0 s gr 
+% Polyline
+n 270 1530 m
+ 3600 1530 l gs col0 s gr 
+% Polyline
+n 1350 270 m
+ 4140 270 l gs col0 s gr 
+% Polyline
+n 4140 270 m
+ 3600 1530 l gs col0 s gr 
+% Polyline
+n 1035 900 m
+ 1035 2745 l gs col0 s gr 
+% Polyline
+n 3465 900 m
+ 3465 2835 l gs col0 s gr 
+% Polyline
+ [60] 0 sd
+n 1213 2834 m
+ 1431 2568 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1263 2883 m
+ 1563 2520 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1319 2929 m
+ 1686 2487 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1376 2971 m
+ 1788 2469 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1440 3011 m
+ 1899 2451 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1518 3044 m
+ 2016 2442 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1602 3074 m
+ 2127 2433 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1692 3098 m
+ 2238 2433 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1779 3116 m
+ 2340 2430 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1887 3116 m
+ 2448 2436 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1977 3137 m
+ 2550 2442 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2070 3134 m
+ 2631 2454 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2154 3149 m
+ 2709 2472 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2250 3155 m
+ 2799 2487 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2355 3155 m
+ 2883 2514 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2475 3137 m
+ 2973 2535 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2580 3125 m
+ 3045 2559 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2679 3119 m
+ 3117 2589 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2787 3095 m
+ 3171 2628 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2892 3074 m
+ 3225 2667 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 3020 3030 m
+ 3267 2727 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1213 2834 m
+ 1431 2568 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1263 2883 m
+ 1563 2520 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1319 2929 m
+ 1686 2487 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1376 2971 m
+ 1788 2469 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1440 3011 m
+ 1899 2451 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1518 3044 m
+ 2016 2442 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1602 3074 m
+ 2127 2433 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1692 3098 m
+ 2238 2433 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1779 3116 m
+ 2340 2430 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1887 3116 m
+ 2448 2436 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 1977 3137 m
+ 2550 2442 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2070 3134 m
+ 2631 2454 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2154 3149 m
+ 2709 2472 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2250 3155 m
+ 2799 2487 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2355 3155 m
+ 2883 2514 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2475 3137 m
+ 2973 2535 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2580 3125 m
+ 3045 2559 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2679 3119 m
+ 3117 2589 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2787 3095 m
+ 3171 2628 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 2892 3074 m
+ 3225 2667 l gs col0 s gr  [] 0 sd
+% Polyline
+ [60] 0 sd
+n 3020 3030 m
+ 3267 2727 l gs col0 s gr  [] 0 sd
+% Polyline
+n 270 3420 m
+ 1350 2160 l gs col0 s gr 
+% Polyline
+n 1350 2160 m
+ 4095 2160 l gs col0 s gr 
+% Polyline
+n 4095 2160 m
+ 3600 3420 l gs col0 s gr 
+% Polyline
+n 270 3420 m
+ 3600 3420 l gs col0 s gr 
+% Polyline
+15.000 slw
+gs  clippath
+1769 2053 m 1876 1945 l 1834 1903 l 1726 2010 l 1726 2010 l 1833 1947 l 1769 2053 l cp
+eoclip
+n 720 2430 m 945 2430 l 1170 2430 l 1395 2340 l 1620 2160 l
+ 1845 1935 l gs col0 s gr gr
+
+% arrowhead
+7.500 slw
+n 1769 2053 m 1833 1947 l 1726 2010 l  col0 s
+% Polyline
+2 slj
+15.000 slw
+gs  clippath
+2893 2516 m 2762 2591 l 2791 2643 l 2923 2568 l 2923 2568 l 2804 2602 l 2893 2516 l cp
+eoclip
+n 2790 2610 m 2825 2590 l 2846 2578 l 2870 2564 l 2897 2549 l 2926 2534 l
+ 2955 2518 l 2983 2504 l 3010 2490 l 3036 2478 l 3061 2467 l
+ 3084 2457 l 3107 2448 l 3129 2441 l 3151 2434 l 3173 2428 l
+ 3195 2423 l 3216 2418 l 3237 2414 l 3260 2410 l 3283 2407 l
+ 3307 2403 l 3332 2401 l 3358 2398 l 3385 2396 l 3413 2394 l
+ 3441 2392 l 3469 2390 l 3498 2389 l 3526 2388 l 3555 2387 l
+ 3583 2386 l 3611 2386 l 3638 2385 l 3664 2385 l 3690 2385 l
+ 3716 2385 l 3741 2385 l 3765 2385 l 3789 2385 l 3814 2385 l
+ 3838 2385 l 3864 2385 l 3890 2385 l 3918 2385 l 3947 2385 l
+ 3978 2385 l 4011 2385 l 4046 2385 l 4082 2385 l 4119 2385 l
+ 4157 2385 l 4193 2385 l 4226 2385 l 4256 2385 l 4280 2385 l
+ 4298 2385 l 4310 2385 l 4317 2385 l
+ 4320 2385 l gs col0 s gr gr
+
+% arrowhead
+0 slj
+7.500 slw
+n 2893 2516 m 2804 2602 l 2923 2568 l  col0 s
+% Polyline
+2 slj
+15.000 slw
+gs  clippath
+3420 3003 m 3285 2936 l 3258 2990 l 3393 3057 l 3393 3057 l 3300 2977 l 3420 3003 l cp
+eoclip
+n 3285 2970 m 3309 2982 l 3325 2990 l 3344 3000 l 3363 3009 l 3382 3018 l
+ 3399 3027 l 3414 3035 l 3428 3042 l 3441 3048 l 3453 3054 l
+ 3465 3060 l 3477 3066 l 3489 3072 l 3501 3078 l 3514 3084 l
+ 3528 3091 l 3542 3097 l 3556 3103 l 3570 3109 l 3585 3114 l
+ 3599 3119 l 3613 3124 l 3626 3128 l 3639 3132 l 3653 3135 l
+ 3666 3138 l 3680 3140 l 3694 3142 l 3709 3144 l 3725 3146 l
+ 3741 3147 l 3758 3148 l 3774 3149 l 3790 3149 l 3806 3150 l
+ 3821 3150 l 3835 3150 l 3849 3150 l 3863 3150 l 3878 3150 l
+ 3893 3150 l 3910 3150 l 3928 3150 l 3948 3150 l 3970 3150 l
+ 3993 3150 l 4015 3150 l 4033 3150 l 4044 3150 l 4049 3150 l
+
+ 4050 3150 l gs col0 s gr gr
+
+% arrowhead
+0 slj
+7.500 slw
+n 3420 3003 m 3300 2977 l 3393 3057 l  col0 s
+% Polyline
+2 slj
+15.000 slw
+gs  clippath
+1197 1969 m 1292 1852 l 1246 1814 l 1150 1932 l 1150 1932 l 1250 1858 l 1197 1969 l cp
+eoclip
+n 720 2025 m 721 2025 l 725 2025 l 734 2025 l 750 2025 l 770 2025 l
+ 793 2025 l 817 2025 l 839 2025 l 860 2025 l 879 2025 l
+ 895 2025 l 910 2025 l 924 2025 l 938 2025 l 953 2025 l
+ 968 2025 l 984 2024 l 1000 2024 l 1017 2023 l 1033 2021 l
+ 1049 2018 l 1064 2015 l 1079 2011 l 1092 2007 l 1105 2001 l
+ 1118 1995 l 1128 1989 l 1138 1981 l 1149 1972 l 1160 1962 l
+ 1172 1949 l 1185 1935 l 1200 1918 l 1215 1901 l 1229 1883 l
+
+ 1260 1845 l gs col0 s gr gr
+
+% arrowhead
+0 slj
+7.500 slw
+n 1197 1969 m 1250 1858 l 1150 1932 l  col0 s
+% Polyline
+2 slj
+15.000 slw
+gs  clippath
+1303 2055 m 1455 2055 l 1455 1995 l 1303 1995 l 1303 1995 l 1423 2025 l 1303 2055 l cp
+eoclip
+n 1080 2025 m
+ 1440 2025 l gs col0 s gr gr
+
+% arrowhead
+0 slj
+7.500 slw
+n 1303 2055 m 1423 2025 l 1303 1995 l  col0 s
+% Polyline
+2 slj
+15.000 slw
+gs  clippath
+1333 999 m 1369 1146 l 1427 1132 l 1392 985 l 1392 985 l 1391 1109 l 1333 999 l cp
+eoclip
+n 585 855 m 586 855 l 589 855 l 598 855 l 613 855 l 634 855 l
+ 661 855 l 692 855 l 724 855 l 756 855 l 787 855 l
+ 816 855 l 843 855 l 867 855 l 888 855 l 908 855 l
+ 927 855 l 944 855 l 960 855 l 980 855 l 1000 855 l
+ 1020 855 l 1039 855 l 1059 855 l 1078 856 l 1096 856 l
+ 1114 857 l 1131 857 l 1147 858 l 1162 859 l 1175 860 l
+ 1188 861 l 1200 863 l 1214 864 l 1227 867 l 1240 870 l
+ 1253 873 l 1266 878 l 1278 883 l 1290 889 l 1301 895 l
+ 1311 903 l 1320 911 l 1328 920 l 1335 930 l 1341 939 l
+ 1346 950 l 1351 962 l 1356 976 l 1362 992 l 1367 1011 l
+ 1373 1032 l 1378 1054 l 1384 1077 l 1388 1096 l
+ 1395 1125 l gs col0 s gr gr
+
+% arrowhead
+0 slj
+7.500 slw
+n 1333 999 m 1391 1109 l 1392 985 l  col0 s
+% Polyline
+2 slj
+15.000 slw
+gs  clippath
+2458 690 m 2353 799 l 2396 841 l 2502 732 l 2502 732 l 2397 798 l 2458 690 l cp
+eoclip
+n 2385 810 m 2416 778 l 2433 760 l 2453 740 l 2475 720 l 2497 699 l
+ 2520 679 l 2542 661 l 2563 644 l 2584 630 l 2605 617 l
+ 2626 605 l 2647 595 l 2669 586 l 2693 578 l 2711 572 l
+ 2730 566 l 2751 561 l 2772 556 l 2794 551 l 2818 546 l
+ 2843 542 l 2868 538 l 2895 534 l 2923 530 l 2951 527 l
+ 2979 524 l 3008 521 l 3038 518 l 3067 516 l 3096 513 l
+ 3125 511 l 3154 510 l 3182 508 l 3209 507 l 3236 505 l
+ 3263 504 l 3289 503 l 3315 503 l 3341 502 l 3367 501 l
+ 3392 500 l 3419 500 l 3445 499 l 3472 498 l 3499 498 l
+ 3527 497 l 3554 497 l 3582 497 l 3609 496 l 3637 496 l
+ 3664 496 l 3690 496 l 3716 495 l 3742 495 l 3766 495 l
+ 3790 495 l 3813 495 l 3835 495 l 3856 495 l 3876 495 l
+ 3896 495 l 3915 495 l 3937 495 l 3959 495 l 3981 495 l
+ 4003 495 l 4026 495 l 4049 495 l 4074 495 l 4100 495 l
+ 4127 495 l 4155 495 l 4184 495 l 4213 495 l 4240 495 l
+ 4264 495 l 4285 495 l 4300 495 l 4311 495 l 4317 495 l
+
+ 4320 495 l gs col0 s gr gr
+
+% arrowhead
+0 slj
+7.500 slw
+n 2458 690 m 2397 798 l 2502 732 l  col0 s
+% here ends figure;
+$F2psEnd
+rs
+showpage
+%%Trailer
+%EOF

@@ -1,0 +1,85 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Problemas de estabilidad
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\epro
+Encuentre los puntos de equilibrio de las siguientes ecuaciones (para
+diversos valores del par\'ametro $\lambda$) y vea cuales son estables
+y cuales no.
+
+a) $\dot{x} = \lambda - x^2$.
+
+b) $\dot{x} = \lambda x  - x^2$.
+
+c) $\dot{x} = -(1+\lambda^2)x^2$.
+
+
+\bpro[La ecuaci\'on de Volterra-Lotka]
+
+Sea el sistema:
+
+\begin{eqnarray}
+  \label{eq:Volterra_Lotka}
+  \dot{x}_1 &=& (a-bx_2)x_1 \nn
+  \dot{x}_2 &=& -(c-f x_1)x_2
+\end{eqnarray}
+
+a) Haga una trasformaci\'on de coordenadas y tiempo que lo lleve a la forma,
+\begin{eqnarray}
+  \label{eq:Volterra_Lotka_adim}
+  \dot{x}_1 &=& (1 - 1x_2)x_1 \nn
+  \dot{x}_2 &=& -(1 - x_1)x_2
+\end{eqnarray}
+%
+
+b) Grafique el campo vectorial y vea que no hay integrales primeras no
+triviales en los cuadrantes donde al menos una de las coordenadas es
+negativa.
+
+c) Encuentre las soluciones de equilibrio y determine cuales son 
+estables y cuales no.
+
+d) Examine el cuadrante positivo mediante la transformaci\'on:
+$x_1 = e^{q_1}$, $x_2 = e^{q_2}$ y vea que alli la cantidad
+$f(q_1,q_2) := q_1 + q_2 -(e^{q_1} + e^{q_2})$ es una integral
+de movimiento. Utilize esta informaci\'on para inferir que en ese
+cuadrante las trayectorias permanecen en regiones acotadas.
+
+Nota, esta ecuaci\'on describe la poblaci\'on de dos especies en competencia.
+Lo que acabamos de ver es que las especies no crecen indefinidamente ni
+desaparecen. Esto \'ultimo nos dice que la aproximaci\'on no es
+muy buena...
+\epro
+
+\bpro[Ciclo l\'imite]
+Considere el sistema:
+\begin{eqnarray}
+  \label{eq:Ciclo_Limite_Prob}
+  \dot{x}_1 &=& x_2 + x_1(1-(x_1^2+x_2^2)) \nn
+  \dot{x}_2 &=& -x_1 + x_2(1-(x_1^2+x_2^2)).
+\end{eqnarray}
+%
+
+a) Lleve este sistema a un par de ecuaciones desacopladas,
+\begin{eqnarray}
+  \label{eq:Ciclo_Limite_Prob_des}
+  \dot{r} &=&  f(r) \nn
+  \dot{\theta} &=& -1.
+\end{eqnarray}
+%
+
+b) Estudie los puntos de equilibrio de la primera ecuaci\'on y su estabilidad.
+?'Cual es la soluci\'on del sistema original correspondiente a este punto
+de equilibrio?
+
+
+c) Grafique soluciones cerca de estos puntos, en el plano $(r,\theta)$ y en el
+plano $(x_1,x_2)$.
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End: 

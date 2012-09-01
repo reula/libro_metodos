@@ -1,0 +1,148 @@
+\documentclass{article}
+
+\input{../Current/extdef}
+\begin{document}
+
+\begin{center}
+  \textbf{Serie de Fourier}
+\end{center}
+
+Problema 1.- Calcule la serie de Fourier en el intervalo $[0,2\pi]$ 
+correspondiente a la siguiente funci\'on:
+
+\begin{equation}
+  f(x) := \sin(\alpha x) \;\;\;\; \alpha \mbox{irracional}
+\end{equation}
+
+
+Problema 2.- Calcule la serie de Fourier en el intervalo $[0,2\pi]$ 
+correspondiente a la siguiente funci\'on:
+
+\begin{equation}
+ 
+\end{equation}
+
+
+
+Problema 3.- Calcule la serie de Fourier en el intervalo $[0,2\pi]$ 
+correspondiente a la siguiente funci\'on:
+
+\begin{equation}
+ 
+\end{equation}
+
+
+\newpage
+
+\begin{center}
+  \textbf{Operadores Autoadjuntos y Unitarios}
+\end{center}
+
+Problema 1.- Sea $\ve{A} : V \to V$ un operador autoadjunto, probar que
+$e^{i\ve{A}}$ es un operador unitario.
+
+Problema 2.- Sea $\ve{U} : V \to V$ un operador unitario, probar:
+
+a) Si $f:{\cal{L}}(V,V) \to \re$ es una funci\'on real anal\'\i{}tica
+(es decir, admite una representaci\'on como una serie de potencias en las
+componentes de los elementos de ${\cal{L}}(V,V)$ con coeficientes reales).
+Luego $f(\ve{A}^{\star}) = \bar{f}(\ve{A})$ para todo 
+$\ve{A} \in {\cal{L}}(V,V)$.
+
+b) $|\det(\ve{U})| = 1$.
+
+Problema 3.- Probar que los autovectores correspondintes a distintos autovalores de un operador unitario son ortogonales.
+
+
+
+\newpage
+
+
+\begin{center}
+  \textbf{Verdadero / Falso: ODEs, Sistemas Lineales}
+\end{center}
+
+Problema 1.- El sistema 
+\begin{equation}
+\\frac{d^3x}{dt^3} + \sin(x)\frac{dx}{dt} = \cos(\omega t), \;\;\;\;
+              \omega \mbox{racional},
+\end{equation}
+%
+tiene tres soluciones linealmente independientes.
+
+Problema 2.- El Wronskiano del sistema,
+\begin{equation}
+  \frac{d^4x}{dt^4} + cosh(x) \frac{dx^2}{dt^2} = senh(x),
+\end{equation}
+%
+se anula solo en un punto.
+
+Problema 3.- Sea $X^t_{t_0}: V \to V$ el mapa que envia un vector $\ve{x}_0$
+en el vector $\ve{x}(t)$ soluci\'on de la ecuaci\'on,
+\begin{equation}
+  \frac{d\ve{x}}{dt} = A(t)\ve{x} + \ve{b}(t),
+\end{equation}
+con $A(t)$ diferenciable y $\ve{b}(t)$ acotada, con condici\'on inicial
+$\ve{x}(t_0) = \ve{x}_0$.
+Luego, $(X^t_{t_0})^{-1}$ existe.
+
+\newpage
+
+\begin{center}
+  \textbf{Verdadero / Falso: ODEs, Unicidad}
+\end{center}
+
+Problema 1.- Las ecuaciones siguientes tienen soluci\'on \'unica:
+
+a) $\frac{d\ve{x}}{dt} = \frac{\sin(x)}{x}$.
+
+b) $\frac{d\ve{x}}{dt} = x^{\frac{3}{2}$.
+
+c) $\frac{d\ve{x}}{dt} = x^{\frac{1}{2} + 2$.
+
+Problema 2.- Las ecuaciones siguientes tienen soluci\'on \'unica:
+
+a) $\frac{d\ve{x}}{dt} = \frac{1 - \cos(x)}{x}$.
+
+b) $\frac{d\ve{x}}{dt} = e^{-\frac{1}{x^2}}$.
+
+c) $\frac{d\ve{x}}{dt} = x^{\frac{5}{4}$.
+
+
+Problema 3.- Las ecuaciones siguientes tienen soluci\'on \'unica:
+
+a) $\frac{d\ve{x}}{dt} = x\sin(1/x)$.
+
+b) $\frac{d\ve{x}}{dt} = e^{-\frac{1}{x^2}}$.
+
+c) $\frac{d\ve{x}}{dt} = (\sin(x))^{1/2}$.
+
+
+\newpage
+
+\begin{center}
+  \textbf{Verdadero / Falso: Fourier}
+\end{center}
+
+Problema 1.- Es necesario que una funci\'on sea diferenciable para que su
+serie de Fourier converja punto a punto y uniformente.
+
+Problema 2.- Existe una sucesi\'on de funciones $\{f_n(x)\}$ en $L^2$ tal 
+que $\|f_n\|_{L^2} = 1$ y tal que la norma en $l^2$ de sus coeficientes de
+Fourier tiende a cero.
+
+Problema 3.- El espacio $L^2(\re)$ tiene una base ortonormal numerable.
+
+
+
+
+
+
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

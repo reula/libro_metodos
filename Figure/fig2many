@@ -1,0 +1,18 @@
+#!/bin/sh
+# Convert all fig files to four other formats, using fig2dev.
+for FILE in *.fig; do
+    FILE=`basename $FILE .fig`
+    if [ $FILE.fig -nt $FILE.pstex ]; then
+        fig2dev -L pstex -Z 10cm $FILE.fig $FILE.pstex
+    fi
+    if [ $FILE.fig -nt $FILE.pstex_t ]; then
+        fig2dev -L pstex_t -p Figure/$FILE.pstex -Z 10cm $FILE.fig $FILE.pstex_t
+    fi
+    if [ $FILE.fig -nt $FILE.pdf ]; then
+        fig2dev -L pdftex -Z 10cm $FILE.fig $FILE.pdf
+    fi
+    if [ $FILE.fig -nt $FILE.pdftex_t ]; then
+        fig2dev -L pdftex_t -p Figure/$FILE.pdf -Z 10cm $FILE.fig $FILE.pdftex_t
+    fi
+done
+

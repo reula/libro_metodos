@@ -1,0 +1,974 @@
+
+
+\chapter{Ecuaciones simétrico--hiperbólicas}
+
+\section{Introducción}
+
+En este capítulo estudiaremos sistemas de ecuaciones hiperbólicas
+bajo la siguiente restricción:
+\espa
+
+\defi: Diremos que un sistema es {\bf simétrico--hiperbólico} si:
+
+\begin{itemize}
+\item[a.)] El espacio de llegada del mapa lineal $M^a_{A'B}k_a$ es de
+la misma dimensión que el espacio de partida para todo $k_a \neq 0$.
+Por lo tanto de ahora  en más usaremos índices sin primar.
+
+\item[b.)] El mapa $M^a_{AB}k_a$ es simétrico para todo $k_a \neq 0$.
+
+\item[c.)] En un entorno de cada punto existe una función $\tau$
+tal que si llamamos a su diferencial por $t_a$ ($=\na_a \tau$), el
+mapa  $H_{AB} := M^a_{AB}t_a$ es positivo definido. (Es decir
+$H_{AB}u^Au^B \geq 0$ ($= 0\; \mbox{sii} \; u^A = 0$).)
+
+\end{itemize}
+Note que esta última condición implica que $H_{AB}$ es una
+métrica en el espacio de las variables independientes. Esta y su inversa,
+que denotaremos por $H^{AB}$ serán usadas para subir y bajar índices.
+
+Esta tampoco en una restricción importante desde el punto de vista
+de la física, ya que todos los sistemas físicos que conocemos
+son simétrico--hiperbólicos.
+
+
+También, pero solo por simplicidad en la exposición ya que
+así evitaremos algunas complicaciones técnicas, solo consideraremos
+sistemas lineales.
+
+Comenzaremos este capítulo con un ejemplo simple que ilustra las
+características básicas de esta clase de ecuaciones.
+
+\section{Un ejemplo}
+
+
+Sea una cuerda infinita en el plano $x,y$ y sea $y = u(x,t)$ la posición
+de la cuerda al tiempo $t$ en dicho plano.
+Ajustando las dimensiones (de longitud o de tiempo) se puede ver que
+$u(x,t)$ satisface la ecuación,
+\beq
+ -\frac{\pa^2u}{\pa t^2} + \frac{\pa^2 u}{\pa x^2} = f(x,t),
+\label{1)}
+\eeq
+donde $f(x,t)$ es la densidad de fuerza que se  ejerce sobre la
+cuerda y que
+suponemos no depende de la posición de la cuerda con respecto a la
+coordenada $y$.\footnote{De otro modo deberíamos considerar $f(x,t,u)$ lo
+que complica el problema.}
+Tenemos así el problema matemático de encontrar las soluciones de la ecuación,
+\beq 
+\Box u = g^{ab} \na_a \na_b u = f,
+\eeq
+en $M = \re^2$ con métrica pseudo-euclídea $g_{ab} = -(dt)^2 + (dx)^2.$
+Para tratar esta ecuación es conveniente introducir un sistema
+coordenado apropiado a esta métrica, es decir uno que tiene sus líneas 
+características como ejes,
+\beq\barr{rcl}
+\xi &=& x + t = cte.,\\
+\eta& =& x - t = cte.
+\earr
+\eeq
+
+\espa 
+%\fig{6cm}{Sistema Coordenado {\it Nulo}}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_1}}
+    \caption{Sistema coordenado {\it nulo}.}
+    \label{fig:13_1}
+  \end{center}
+\end{figure}
+
+tenemos entonces que
+\beq\barr{rcl}
+x &=& \frac{\xi + \eta}2\\
+t &=& \frac{\xi - \eta}2
+\earr
+\eeq
+y
+\beq\barr{rcl}
+g_{ab} = -(dt)^2 + (dx)^2 &=& \frac14[\{-(d\xi)^2 - (d\eta)^2 + d\xi
+\otimes d\eta + d\eta \otimes d\xi \}\\
+& & + \{(d\xi)^2 + (d\eta)^2 +
+d\xi\otimes d\eta + d\eta\otimes d\xi\}]\\
+&=& \frac12[d\xi \otimes d \eta + d \eta \otimes d \xi]
+\earr
+\eeq
+Notando que $g^{ab} = 2[\pa \xi \otimes \pa \eta + 
+\pa \eta \otimes \pa \xi]$
+y que los símbolos de Christoffel se anulan debido a que la métrica tiene
+componentes constantes tenemos,\footnote{
+Note además que $g(\pa_{\eta},\pa_{\eta}) = g(\pa\xi,\pa \xi) = 0$, es decir estos vectores coordenados
+tienen norma nula.}
+\beq \Box u = 4\frac{\pa^2u}{\pa \eta \pa \xi} = f(\eta,\xi).
+\eeq
+Esta ecuación puede ser integrada inmediatamente, obteniéndose
+\beq\barr{rcl}
+\dip\frac {\pa u}{\pa \eta}(\eta,\xi)&=& 4\dip\int^{\xi}_{\xi_0} f(\eta,\ti \xi)
+\;d\ti \xi \;C(\eta)\\ [3mm]
+u(\eta,\xi) &=& 4\dip\int^{\eta}_{\eta_0}\dip\int^{\xi}_{\xi_0} f(\ti \eta,\ti \xi)
+d\ti \xi d\ti \eta + u_I(\xi) + u_{II} (\eta),
+\earr
+\eeq
+donde $u_I(\xi)$ y $u_{II} (\eta)$ son funciones arbitrarias.
+Consideremos primero el caso $f \equiv 0$, es decir la ecuación homogénea. 
+Sus soluciones son entonces suma de una función cualquiera de $\xi$ 
+y otra cualquiera de $\eta$.
+Volviendo a las coordenadas $x,t$ obtenemos
+\beq 
+u(x,t) = u_I(x+t) + u_{II}(x-t). 
+\eeq
+Por ejemplo,
+\beq
+u_I(x+t) = \lb\barr{cl}e^{\frac1{(x+t)^2 - 1}}& x+t \in [-1,1]\\
+            0               &            x+t \in (-\infty,-1]\cup [1,+\infty)
+\earr\right.
+\eeq          
+es una solución que representa una {\bf onda}
+($\equiv$ solución de la ecuación
+homogénea) mo\-vién\-do\-se hacia la izquierda sin cambiar de forma y con
+velocidad 1.
+
+\espa 
+%\fig{6cm}{Propagación de Ondas.} 
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_2}}
+    \caption{Propagación de ondas.}
+    \label{fig:13_2}
+  \end{center}
+\end{figure}
+
+Similarmente $u_{II}$ representa una onda moviéndose hacia la derecha.
+Ver figura.
+Veamos ahora que el problema de Cauchy en este caso tiene solución.
+Esto es extremadamente importante en física: nos dice que si tomamos
+una superficie no característica (por ejemplo la $t=0$) y damos allí
+como dato $u$ y su derivada temporal obtendremos una única solución para
+tiempos futuros. 
+Esto es lo que nos permite, si conocemos el presente,
+predecir el futuro, es decir, si preparamos un experimento, predecir
+el resultado. Este hecho es el que distingue a la física de las
+otras ciencias naturales.
+Supongamos entonces que a $t=0$ $(\xi = \eta = x)$ damos $u(x,0) = u_0(x)$ 
+y su derivada
+$\frac{\pa u}{\pa t}(x,0) = u_1(x)$. 
+Tenemos entonces que
+\beq
+u_0(x) = u(x,0) = u_I(x) + u_{II}(x),
+\label{2)}
+\eeq
+\beq
+ u_1(x) = \frac{\pa u}{\pa t} (x,0) = u'_I (x) - u'_{II}(x).
+\label{3)}
+\eeq
+Diferenciando \ron{2)} con respecto a $x$ y resolviendo el sistema lineal así
+obtenido tenemos,
+\beq\barr{rcl}
+u'_I(x) &=& \dip\frac{u'_0(x) + u_1(x)}2\\
+u'_{II} &=& \dip\frac{u'_0(x) - u_1(x)}2,
+\earr
+\eeq
+e integrando,
+\beq\barr{rcl}
+u_I(x) &=& \dip\frac{u_0(x)}2  + \dip\frac12 \dip\int^x_0 u_1(\ti x) d\ti x +
+C_I,\\ [3mm]
+u_{II}(x) &=& \dip\frac{u_0(x)}2  - \dip\frac12 \dip\int^x_0 u_1(\ti x) d\ti x 
++ C_{II}.
+\earr
+\eeq
+Para que \ron{2)} se satisfaga debemos tener $C_I=-C_{II}$ y por lo tanto
+\beq
+ u(x,t) = \frac12 (u_0(x+t) + u_0(x-t)) + \frac12 \int^{x+t}_{x-t}
+u_1(\ti x) d\ti x.
+\label{4)}
+\eeq
+Vemos entonces que si damos como dato $u_0(x) \in C^2(\re)$ y $u_1(x)
+\in C^1(\re)$ obtenemos una
+solución $u(x,t) \in C^2(\re \times \re)$.
+Por construcción esta solución es única.
+
+\espa
+\ejer:
+Muestre explícitamente que \ron{4)} satisface \ron{1)} 
+con $f \equiv 0$.
+
+La ecuación \ron{4)} nos dice que a $u(x,t)$ contribuyen \textit{solo} 
+el promedio de los
+valores de $u_0$ en $x-t$ y $x+t$ y la integral de $u_1$, entre estos
+dos valores. [Ver figura 13.3.]
+%
+\espa 
+%\fig{6cm}{Solución General Homogénea en Dos Dimensiones.} 
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_3}}
+    \caption{Solución general homogénea en 1+1 dimensiones.}
+    \label{fig:13_3}
+  \end{center}
+\end{figure}
+
+%
+¿Qué pasa si tenemos una fuente $f(x,t)$? Como ya tenemos la solución
+general (para dato de Cauchy arbitrario) de la homogénea solo
+necesitamos la solución de la inhomogenea con cero dato. 
+Esto se logra integrando $f(\xi, \eta)$ primero con respecto a $\ti \xi$ 
+entre $\ti \eta$ y $\xi$  y
+luego $\ti \eta $ entre $\xi$ y $\eta$.
+\beq
+v(\eta,\xi) = 4 \int^{\eta}_{\xi}\lp\int^{\xi}_{\ti \eta} f(\ti \xi, \ti
+\eta) d \ti \xi \rp d\ti \eta.
+\eeq
+
+\espa 
+%\fig{6cm}{Solución General Inhomogenea.} 
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_4}}
+    \caption{Solución general inhomogenea.}
+    \label{fig:13_4}
+  \end{center}
+\end{figure}
+
+\espa
+
+\ejer:
+Muestre que 
+\beq
+v(x,t) = \int^t_0\lp\int^{x+(t-\ti t)}_{x-(t-\ti t)} f(\ti x, \ti
+t) d \ti x \rp d\ti t,
+\eeq
+que
+\beq v(x,t)|_{t=0} = \frac{\pa v}{\pa t} (x,t)|_{t=0} = 0,\eeq
+y que $v(x,t)$ satisface \ron{1)}.
+\espa
+
+\noi Vemos entonces que la solución buscada es,
+{\small
+\beq
+u(x,t) = \frac12 (u_0(x+t) + u_0(x-t)) + \frac12 \int^{x+t}_{x-t}
+u_1(\ti x) d\ti x +
+\int^t_0\lp\int^{x+(t-\ti t)}_{x-(t-\ti t)} f(\ti x, \ti
+t) d \ti x \rp d\ti t,
+\eeq
+}
+que por construcción es única y que $u(x_0,t_0)$  depende de los valores 
+iniciales
+y de $f$ en la región cónica con vértice $(x_0,t_0)$ dada por,
+\beq
+\lb\barr{l}
+t \leq t_0\\
+|x-x_0| \leq t_0 -t.
+\earr\right.
+\eeq
+Esta región se llama {\bf dominio de dependencia} del punto $(x_0,t_0)$, 
+solo lo que acontece en esta
+región puede afectar el valor de $u$ en dicho punto.
+Similarmente se define el {\bf dominio de influencia} de un punto $(x_0,t_0)$
+como el conjunto de
+puntos en los cuales se puede cambiar el valor de $u$ si se cambia el
+valor de $u$, de su derivada o de $f$ en $(x_0,t_0)$.
+En este caso este viene dado por: $\{(x,t) | t \geq t_0, |x-x_0| \leq
+t - t_0 \}$.
+
+El comportamiento de las soluciones de las ecuaciones hiperbólicas
+es en general el mismo que el de este simple ejemplo: Dados datos de
+Cauchy genéricos habrá una única solución (tanto hacia el
+futuro como hacia el pasado). En el caso de las ecuaciones li\-nea\-les
+esta solución se puede extender indefinidamente en ambas
+direcciones temporales, en el caso no-lineal las soluciones tienen
+solo validez en un intervalo temporal finito y es un problema
+físico interesante ver si las ecuaciones físicas no-lineales
+pueden o no ser extendidas indefinidamente y que significa
+físicamente la aparición de singularidades en las
+soluciones.~\footnote{Una singularidad es un punto donde u deja de ser
+lo suficientemente diferenciable como para que la ecuación tenga
+sentido o peor aún donde $u$ deja de tener sentido incluso como
+distribución.} 
+Una cantidad de gran importancia física y matemática relacionada
+con la ecuación de onda es la energía de las soluciones. En dos
+dimensiones ésta está dada por,
+\beq
+E(u,t_0) = \frac12 \int_{t=t_0} [(\frac{\pa u}{\pa t})^2 + (\frac{\pa
+u}{\pa x})^2 ] dx.
+\eeq
+Observe que la energía es positiva y su tasa de variación está
+dada por,
+\beq\barr{rcl}
+\dip \frac{dE}{dt}(u,t_0) &=&
+\dip\int_{t=t_0} (\frac{\pa u}{\pa t} \frac{\pa^2 u}{\pa t^2} +
+\dip\frac{\pa^2 u}{\pa t \pa x} \frac{\pa u}{\pa x}) dx\\ [3mm]
+&=&
+\dip\int_{t=t_0} [\frac{\pa u}{\pa t} (\frac{\pa^2 u}{\pa t^2} -
+\dip\frac{\pa^2 u}{\pa x^2}) +
+\dip\frac{\pa }{\pa x}(\frac{\pa u}{\pa t} \frac{\pa u}{\pa x})] dx\\ [3mm]
+&=& 
+\dip\int_{t=t_0} [\frac{\pa u}{\pa t} f ] dx,
+\earr
+\eeq
+donde en la última igualdad hemos usado \ron{1)} y supuesto que 
+$\dip\lim_{x \to \infty} \dip\frac{\pa u}{\pa t} \frac{\pa u}{\pa x} = 0$.
+Si $f=0$ luego la energía se conserva y esto nos da una prueba
+alternativa de la unicidad de las soluciones.
+
+\bteo[de Unicidad] A lo más existe una única solución $u(x,t)$ a la 
+ecuación de
+onda entre las funciones en $u(x,t) \in H^1(\re)$, $\frac{\pa u}{\pa
+t} (x,t) \in H^0(\re)$  (donde $\re$ es la superficie
+$t = cte$) para un dado dato de Cauchy.
+\eteo
+
+\espa
+
+\pru:
+Supongamos existen dos soluciones $u_1$  y $u_2$ con los mismos datos de
+Cauchy en, digamos $t = 0$. Luego $\delta u = u_1 - u_2$ 
+satisface la ecuación homogénea
+y tiene dato de Cauchy igual a cero. 
+Por lo tanto $E(\delta u,t=0) = 0$, pero la
+energía de $\delta u$ es conservada y por lo tanto $E(\delta u
+,t-t_0) = 0 \;\;\; \forall t_0$. Esto implica que 
+$\|\frac{\pa \delta u}{\pa t} (x,t)|_{t=t_0} \|_{H^0(R)} = 0$
+y por lo tanto $\frac{\pa \delta u}{\pa t} (x,t) |_{t=t_0} = 0$
+en casi todo punto. 
+Análogamente tenemos que 
+$\|\frac{\pa \delta u}{\pa x} (x,t)|_{t=t_0} \|_{H^0(R)} = 0$
+y por lo tanto $\frac{\pa \delta u}{\pa x} (x,t) |_{t=t_0} = 0$
+o $\delta u = cte$. 
+Pero las constantes no son de cuadrado
+integrable en \re{} y por lo tanto $\delta u(x,t) = u_1(x,t) - u_2(x,t)
+= 0$ como elemento de $H^1(\re)$ $\spadesuit$
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Desigualdad de la energía para sistemas si\-mé\-tri\-co--hi\-per\-bó\-li\-cos}
+
+En esta sección consideraremos un sistema
+simétrico--hiperbólico lineal general. Es decir un sistema de la forma:
+\beq
+M^a_{AB} \na_a u^B = I_A,    \label{en1}
+\eeq
+con $M^a_{AB}$ y $I_A$ en general dependientes de la posición,
+con $M^a_{AB}$ simétrico en los índices mayúsculos y tal que exista
+una función $\tau$ con gradiente $t_a$ tal que $H_{AB}$ sea
+positiva definida y por lo tanto invertible.
+
+Sea $\Sigma_t$ la familia de superficies dadas por las superficies de
+nivel $\tau = t$
+Sea $\Gamma$ una región cualquiera de $\Sigma_0$ y sea $\Omega $ una región tal que
+$\Omega \cap \Sigma_0= \Gamma$ sea además $\Gamma(t) = \Omega \cap \Sigma_t$
+
+Sea $u^A$ una solución de \ref{en1} y sea,
+
+\beq
+E(u^A,t) = \int_{\Gamma(t)} n_aM^a_{AB}u^Au^B,
+\eeq
+es decir la integral de $H_{AB}u^Au^B$ sobre una región de la
+hipersuperficie $\tau=t=const.$, 
+donde hemos definido $H_{AB}$ usando $n_a = t_a/|t_a|$, es decir
+hemos normalizado a $t_a$. 
+
+Veamos la diferencia de esta cantidad entre dos superficies como
+muestra la figura.
+
+\espa 
+%
+%\fig{6cm}{Desigualdad de la energía}
+%
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_5b}}
+    \caption{Desigualdad de la energía}
+    \label{fig:13_5b}
+  \end{center}
+\end{figure}
+
+\espa 
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_5}}
+    \caption{Desigualdad de la energía, vista en perspectiva.}
+    \label{fig:13_5}
+  \end{center}
+\end{figure}
+
+Para ello usaremos el teorema de la divergencia, que nos dice que,
+\beq
+E(u^A,t) - E(u^A,0) + E(u^A,s) = \int_{\Omega(0,t)} \na_a( M^a_{AB} u^Au^B),
+\eeq
+donde el signo negativo del segundo término de la izquierda es debido a que en la
+definición de $E(u^A,0)$ tomamos la normal entrante a la región
+$\Omega(0,t)$. El último término representa la integral de la energía
+sobre una superficie $S$ que supondremos dada por la ecuación
+$\sigma = s$ donde $\sigma$ es una función suave y $s \in \re$.
+Este 
+término representa la energía que escapa de la región a
+través de la superficie $S$.
+
+Usando la ecuación \ref{en1} en el miembro derecho obtenemos,
+\begin{eqnarray}
+\!\!\!\!\!\!E(u^A,t) - E(u^A,0) + E(u^A,s) &=& 
+\int_{\Omega(0,t)} [(\na_a M^a_{AB}) u^Au^B + 2I_Au^A] \\ 
+%
+&\leq& \int^t_0 \int_{\Sigma_{\tilde{t}}} \{|(\na_a M^a_{AB}) u^Au^B| 
+       + 2|I_Au^A|\} d \tilde{t} \nonumber \\
+%
+&\leq& \int^t_0 \int_{\Sigma_{\tilde{t}}} \{|C H_{AB} u^Au^B| \nonumber \\
+      & + & 2\sqrt{|I_AI_B H^{AB}|}\sqrt{|H_{AB}u^Au^B|}\} d \tilde{t} \nonumber \\
+%
+&\leq& \int^t_0 [(C+1)E(u^A,\tilde{t}) + D(\tilde{t})] d \tilde{t}, \nonumber
+\end{eqnarray}
+donde en el primer miembro de la segunda desigualdad hemos usado la
+desigualdad de Schwartz (ver ejercicio) y hemos definido,
+\beq
+C^2 := \sup_{\Omega} \{(\na_aM^A_{AB})(\na_bM^b_{CD})H^{AC}H^{BD} \}.
+\eeq
+En la tercer desigualdad hemos usado que $2ab \leq a^2 + b^2$ y hemos
+definido,
+\beq
+D(t) := \int_{\Sigma_t} H^{AB}I_AI_B.
+\eeq
+\espa
+
+\ejer: Sea $H_{AB}$ simétrica y positiva definida, con inversa $H^{AB}$.
+Probar:
+
+\noi a.) $S^{AB}S^{CD}H_{AC}H_{BD} \geq 0$, $(=0\;sii\;S^{AB}=0)$.
+
+\noi b.) $|S_{AB}u^Au^B| \leq \sqrt{H^{AC}H^{BD}S_{AB}S_{CD}}\;
+H_{AB}u^A u^B $. 
+\espa
+
+Haremos ahora una suposición importante que luego discutiremos en detalle:
+\espa
+
+\noi{\bf supondremos de ahora en más que $E(u^A,s) \geq 0 \;\forall\; u^A$}.
+\espa
+
+Con esta suposición podemos ignorar dicho término en la
+desigualdad anterior y obtener,
+\beq
+E(u^A,t) - E(u^A,0)  
+\leq \int^t_0 [(C+1)E(u^A,\tilde{t}) + D(\tilde{t})] d \tilde{t}.
+\eeq
+
+Diferenciando esta desigualdad integral obtendremos una cota máxima
+para la energía. En efecto, diferenciando esta expresión y notando
+que el signo de la desigualdad se mantiene obtenemos la siguiente
+desigualdad diferencial,
+\beq
+\frac{d}{dt} E(u^A,t) \leq (1+C) E(u^A,t) + D(t),
+\eeq
+La igualdad diferencial tiene como solución (usando el método de
+variación de constantes, sección $5.2$),
+\beq 
+Y(t) = e^{(1+C)t)}\;[Y(0) + \int_0^t e^{-(1+C)\tilde{t}}D(\tilde{t})
+d \tilde{t}].
+\eeq
+Usando ahora el lema $4.1$ vemos que $E(u^A,t) \leq
+Y(t)\;\forall\;t\geq 0$ si $E(u^A,0) = Y(0)$,
+y por lo tanto tenemos que,
+\beq 
+E(u^A,t) = e^{(1+C)t)}\;[E(u^A,0) + \int_0^t e^{-(1+C)\tilde{t}}D(\tilde{t})
+d \tilde{t}].
+\eeq
+
+Esta desigualdad es extremadamente importante, no solo permite
+inferir la unicidad de las soluciones (como veremos a continuación)
+sino también juega un papel fundamental para probar la existencia
+de soluciones y para lograr algoritmos numéricos convergentes y fiables.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Unicidad de las soluciones}
+
+Usando la desigualdad obtenida anteriormente probaremos el siguiente teorema:
+
+\bteo
+Sea una ecuación simétrico--hiperbólica en una variedad $M$,
+Sea $\Sigma_0$ una superficie dada por la ecuación $\tau = 0$ con
+y tal que $M^a_{AB}\na_a\tau$ sea positiva definida. Sea $\Gamma$ una
+región cualquiera de $\Sigma_0$ y sea $\Omega $ una región tal que
+$\Omega \cap \Sigma_0= \Gamma$ y tal que $E(u^A,s) \geq 0 \;\forall u^A$.
+[Ver figura anterior.] Luego si $u^C$ y $\tilde{u}^C$ son dos
+soluciones que coinciden en $\Gamma$ luego éstas coinciden en todo $\Omega$.
+\eteo
+
+\pru:
+Sea $\delta^A := u^A - \tilde{u}^A$. Luego $\delta^A$ satisface,
+\beq
+M^a_{AB}\na_a \delta^A = 0.
+\eeq
+Por lo tanto tenemos una desigualdad de la energía para
+$\delta^C$ con $D(t) \equiv 0$ y además con $E(\delta^C,0)=0$ ya
+que las dos soluciones coinciden en $\Gamma$. Pero entonces la desigualdad
+nos dice que $E(\delta^C,t)=0$ para todo $t$ y por lo tanto
+$\delta^C=0$ en todo $\Omega$ probando así el teorema $\spadesuit$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Dominio de dependencia}
+
+El teorema de unicidad anterior se basó en la suposición de que 
+\beq
+E(u^C,s) = \int_S n_aM^a_{AB}u^Au^B \geq 0
+\eeq
+y por lo tanto es importante determinar cuáles son las posibles regiones
+donde esto pasa. En particular, dada una región $\Gamma$, la mayor región
+$\Omega$ donde tenemos unicidad de las soluciones con idénticos
+datos iniciales en $\Gamma$ se llama el {\bf dominio de dependencia
+de $\Gamma$}, es la región que depende completamente de los datos iniciales
+dados en $\Gamma$, o sea dando datos iniciales en $\Gamma$ podemos controlar
+completamente el valor de la solución en cualquier punto de su
+dominio de dependencia.
+
+Veamos primero que este dominio de dependencia no es vacío.
+Para ello tomemos $\Gamma$ compacto en $\Sigma_0$ y 
+consideremos $H_{AB} = t_aM^a_{AB}$. 
+Sea ahora $\sigma = \tau - \delta \xi$ con $\xi$ una función suave en
+un entorno de $\Gamma$ positiva en dentro de este conjunto y negativa
+en $\Sigma_0 - \Gamma$ (o sea que se anula en su frontera) y $\delta$ un 
+número real que supondremos peque\~no. [Ver figura \ref{fig:13_6c}.]
+
+\espa 
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_6c}}
+    \caption{Región en forma de ampolla}
+    \label{fig:13_6c}
+  \end{center}
+\end{figure}
+
+En cada punto $p \in \Gamma$
+$H_{AB}$ es una métrica positiva 
+definida y por lo tanto, como el conjunto de métricas positivas
+definidas es abierto en el espacio de todos los tensores simétricos,
+dado otro covector $w_a$ cualquiera existirá $\eps > 0 $ suficientemente
+peque\~no tal que \\
+$(t_a + \eps w_a)M^a_{AB} = H_{AB} + \eps w_aM^a{AB}$
+es también positiva definida. Como $\Gamma$ es compacta dado un
+$w_a$ en ella habrá un $\eps$ mínimo y positivo tal que el
+tensor definido arriba será positivo\footnote{
+%
+Para ver
+esto considere el mapa entre $(B_1 \times \Gamma) \times (B_1 \times
+\Gamma) \times \Gamma \to \re$ dado por,
+$w_a(p)M^a_{AB}(p)u^A(p)u^B(p) $ donde $B_1(p) =
+\{u^A(p)|H_{AB}(p)u^Au^B = 1\}$. Este es un mapa continuo y su
+dominio es compacto por lo tanto tiene un máximo, $m < \infty$. 
+Podremos tomar entonces $0 < \eps < 1/m$.}
+%
+Por el mismo argumento de continuidad habrá una región compacta
+alrededor de $\Gamma$ y un $\eps > 0$, un poco menor que el anterior 
+tal que allí $\na_a\sigma M^a_{AB}$ será positiva definida.
+Hemos logrado así tener una región $\Omega$ entre las superficies
+de nivel $\tau = 0$ y $\sigma = 0$, es decir, una peque\~na {\sl ampolla} donde 
+la integral de la energía saliente por $S = \{p\in M|\sigma(p) = 0\}$
+es positiva para toda solución $u^A$.
+
+¿Cuán grande podemos hacer esta ampolla, es decir cuánto más
+podemos inclinar la superficie $S$ y todavía mantener positividad?
+Esta pregunta tiene mucho que ver con la siguiente: ¿cuánto podemos
+inclinar a $t_a$ en cada punto y todavía tener positividad de
+$t_aM^a_{AB}$ en dicho punto?
+
+Obsérvese primero que si $t_aM^a_{AB}$ es positivo luego $\alpha
+t_aM^a_{AB}, \alpha >0 $ también lo es, con lo que el conjunto de
+los $t_a$ para los cuales tenemos positividad forman un cono. Esto
+también nos asegura de que no todos los co-vectores están en este cono,
+ya que si $t_a$ lo está, $(-t_a)$ no lo está.
+
+Segundo obsérvese que si $t_a$ y $\tilde{t}_a$ están en el cono, [es
+decir cada uno de ellos da una métrica positiva definida] 
+también lo están todos los
+co-vectores de la forma, $\alpha t_a + (1-\alpha)\tilde{t}_a,
+\;\alpha \in [0,1]$ ya que $(\alpha t_aM^a_{AB} +
+(1-\alpha)\tilde{t}_aM^a_{AB})u^A u^B$ es positivo si los coeficientes de
+$\alpha$ y $(1-\alpha)$ lo son.
+Es decir el conjunto de los co-vectores que dan métricas positivas definidas
+forman un cono convexo de $T_p^*$, en cada punto $p \in M$. Este cono
+se denomina {\bf cono característico}. [Ver figura \ref{fig:13_6b}.]
+
+\espa 
+%
+%\fig{5cm}{Cono característico}
+%
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_6b}}
+    \caption{Cono característico}
+    \label{fig:13_6b}
+  \end{center}
+\end{figure}
+
+¿Qué pasa con los co-vectores en la frontera de dicho cono? Allí la
+condición de positividad definida debe fallar, es decir dado un
+co-vector $t_a$ en dicha frontera habrá algún $u^A$ tal que 
+$t_aM^a_{AB}u^Au^B = 0$. Esto implica que allí el rango de $t_aM^a_{AB}$
+deja de ser máximo.
+
+\subsection{Construcción de una superficie característica}
+
+Ahora construiremos la superficie frontera del máximo dominio de
+dependencia. 
+A partir de una región $\Gamma$ dada por $\{ q \in \Sigma_0
+\;|\;\sigma_0(p) = 0\}$ construiremos una superficie $S$ tal que su
+normal en cada uno de sus puntos pertenezca a la frontera del cono
+característico.
+Esta superficie vendrá dada por una función $\sigma = 0$ tal que 
+$\sigma|_{\Sigma_0} = \sigma_0$. Para encontrar la ecuación que esta
+función deberá satisfacer es conveniente introducir un sistema
+apropiado de coordenadas, el mismo que usamos en nuestra clasificación
+de las ecuaciones en derivadas parciales. Una de estas coordenadas será
+$t = \tau$ y llamaremos a las otras $x^i$, también por conveniencia
+definiremos $\sigma_t=\derp{\sigma}{t}$ y
+$\sigma_i=\derp{\sigma}{x^i}$.   
+Con estas coordenadas obtenemos que,
+\begin{eqnarray}
+\na_a\sigma M^a_{AB} &=& \sigma_t M^t_{AB} + \sum_i \sigma_i M^i_{AB} \nonumber \\
+                     &=& \sigma_t H_{AB} + \sum_i \sigma_i M^i_{AB}. 
+\end{eqnarray}
+Multiplicando por la inversa de $H_{AB}$, $H^{AB}$, obtenemos
+\beq
+H^{CA}\na_a\sigma M^a_{AB} = \sigma_t \delta^C{}_B 
++ \sum_i \sigma_i H^{CA}M^i_{AB},
+\eeq
+el cual es un operador, es decir un mapa lineal de un espacio
+vectorial en sí mismo, y por lo tanto le podemos tomar su
+determinante, obteniendo,
+\beq
+det\left(\sigma_t \delta^C{}_B 
++ \sum_i \sigma_i H^{CA}M^i_{AB}\right) = 0,
+\eeq
+ya que el determinante de $H^{CA}\na_a\sigma M^a_{AB}$ se anula pues hemos
+supuesto que el rango de $\na_a\sigma M^a_{AB}$ dejaba de ser máximo.
+Para cada valor fijo de las derivadas espaciales $\sigma_i$
+esta ecuación tendrá en general $n$ soluciones (raíces) reales,
+$\sigma_t$, (los autovalores del operador 
+$\sum_i \sigma_i H^{CA}M^i_{AB}$), de 
+todas ellas tomaremos aquella que nos dé la frontera del menor cono
+conteniendo a $t_a$, es decir la mayor raíz. Tendremos así para
+esta raíz una ecuación de la forma:
+\beq
+\sigma_t + H(\sigma_i,x^i,t) = 0. \label{eiko}
+\eeq
+La función $H$ tiene una propiedad muy importante, note que si 
+$(\sigma_t,\sigma_i)$ es una solución también
+lo es $(\alpha \sigma_t,\alpha \sigma_i)$ y por lo
+tanto $H$ debe ser {\bf homogénea de primer grado}, es decir 
+$ H(\alpha \sigma_i,x^i,t) = \alpha H(\sigma_i,x^i,t)$.
+Estas ecuaciones, con $H$ homogénea de primer grado se llaman
+ecuaciones {\bf eikonales} y son casos particulares de la ecuación
+de Hamilton--Jacobi que se estudia en mecánica. 
+
+Este tipo de ecuaciones, que en principio son ecuaciones en derivadas
+parciales pueden ser resueltos transformándolos a un problema equivalente
+en derivadas ordinarias proveniente de un Hamiltoniano.
+En efecto, considere el sistema de ecuaciones ordinarias Hamiltonianas:
+\begin{eqnarray}
+\derc{x^i}{t} &=& \derp{H}{p_i} \nonumber \\
+\derc{p_i}{t} &=& -\derp{H}{x^i},                    \label{hamil}
+\end{eqnarray} 
+donde $H(p_i,x^i,t) := H(\sigma_i,x^i,t)|_{\sigma_i=p_i}$.
+Integrando este sistema con condiciones iniciales:
+\begin{eqnarray}
+x^i(0) &=& x^i_0  \nonumber \\
+p_i(0) &=& \sigma_{0i},                     \label{condii}
+\end{eqnarray}
+y luego restringiendo las curvas integrales obtenidas en el espacio
+de fase $(x^i,p_j)$ al espacio de configuración $x^i$, obtenemos
+una serie de curvas en nuestra variedad emanando de la superficie $\Gamma$.
+Llamaremos a estas curvas, {\bf curvas características} ya que
+tienen la importante propiedad de que a lo largo de ellas la función
+$\sigma$ que andamos buscando es constante! Para probar esto primero
+veamos que con las condiciones iniciales elegidas 
+$p_i(t) = \sigma_i(x^i(t),t)\;\forall\;t$.
+Pero tomando la derivada con respecto a $x^i$ de la ecuación \ref{eiko}
+obtenemos:
+\begin{eqnarray}
+     \frac{\partial\sigma_i}{\partial t} &=&  \derssp{\sigma}{t}{x^i}  \nonumber \\
+                       &=& \derssp{\sigma}{x^i}{t}  \nonumber \\
+                       &=& -\sum_{j}\derp{H}{\sigma_j} 
+                             (\sigma_k,x^k,t) 
+                             \derp{\sigma_i}{x^j} 
+                            - \derp{H}{x^i}(\sigma_k,x^k,t),
+              \label{deri} 
+\end{eqnarray} 
+y por lo tanto 
+\begin{eqnarray}
+\derc{(p_i - \sigma_i)}{t} &=& - \derp{H}{x^i}(p_k,x^k,t) 
+- \sum_{j}\derp{\sigma_i}{x^j} \derc{x^j}{t} -
+\derp{\sigma_i}{t}  \nonumber \\
+                                   &=& - \derp{H}{x^i}(p_k,x^k,t) 
+- \sum_{j}\derp{\sigma_i}{x^j} \derp{H}{p_j}(p_k,x^k,t)  \nonumber \\
+&+&  \sum_{j}\derp{H}{\sigma_j}
+                             (\sigma_k,x^k,t) 
+                             \derp{\sigma_i}{x^j} 
+                             + \derp{H}{x^i}(\sigma_k,x^k,t) \nonumber \\
+&=& - \derp{H}{x^i}(p_k,x^k,t) + \derp{H}{x^i}(\sigma_k,x^k,t)  \nonumber \\
+&-& \sum_{j}\derp{\sigma_i}{x^j} \left( \derp{H}{p_j}(p_k,x^k,t) 
+- \derp{H}{\sigma_j}(\sigma_k,x^k,t) \right),
+\end{eqnarray}                       
+donde en la segunda igualdad hemos usado las ecuaciones \ref{hamil} y
+\ref{deri}. Esta última ecuación, con las condiciones iniciales
+elegidas  tiene solución trivial, pero el teorema de unicidad de
+las soluciones de ecuaciones ordinarias nos garantiza que esta es la
+única y por lo tanto la igualdad buscada.
+Por lo tanto de ahora en más no deberemos distinguir en el
+argumento de $H$ si está evaluada en $\sigma_i$ o en $p_i$.
+
+Pero entonces note que la derivada a lo largo de una curva
+característica de $\sigma$ es,
+\begin{eqnarray}
+\derc{\sigma}{t} &=& \sum_i \sigma_i\derc{x^i}{t} 
+                     + \sigma_t  \nonumber \\
+                 &=& \sum_i \derp{H}{\sigma_i} \sigma_i
+                     - H(\sigma_k,x^k,t) \nonumber \\
+                 &=& 0,
+\end{eqnarray}
+donde en la última igualdad hemos usado que por ser $H$ homogénea
+de primer grado en $\sigma_i$ se cumple la igualdad                  
+$  H(\sigma_k,x^k,t) = 
+\sum_i \derp{H}{\sigma_i} \sigma_i$.
+        
+Hemos demostrado entonces que $\sigma$ será constante a lo largo de
+las líneas integrales de la ecuación \ref{hamil} con condiciones
+iniciales dadas por \ref{condii}. Por lo tanto conocemos $S$, esta será
+la superficie reglada por las curvas características emanando de 
+$\partial \Gamma$\footnote{En general las curvas características
+se cruzan entre sí y por lo tanto aún dando una región $\Gamma$
+con frontera suave luego de un cierto tiempo la superficie reglada
+desarrollará singularidades y $\sigma$ será multivaluada. Sin
+embargo estas singularidades se conocen perfectamente bien y  
+se sabe cómo descartar regiones hasta obtener dominios de dependencia con 
+frontera continuas.}. 
+[Ver figura \ref{fig:13_7b}.]
+
+\espa 
+%
+%\fig{5cm}{Construcción de $S$ y una singularidad en $S$}
+%
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{9cm}{!}{\myinput{Figure/m13_7b}}
+    \caption{Construcción de $S$ y una singularidad en $S$}
+    \label{fig:13_7b}
+  \end{center}
+\end{figure}
+
+
+
+
+\subsection{Dominio de dependencia, ejemplos}
+
+A continuación damos un par de ejemplos de la construcción de
+curvas características y determinación de los dominios de dependencia.
+\espa
+
+\ejem: {\bf Fluidos en una dimensión}
+
+Consideremos un fluido con densidad promedio $\rho_0$,
+moviéndose con velocidad promedio $v_0$ y con una ecuación de
+estado para la presión en función de la densidad $p=p(\rho)$.  
+Estamos interesados en peque\~nas
+fluctuaciones de estas cantidades alrededor del estado de
+equilibrio $(\rho_0,v_0)$, es decir en la teoría del sonido en
+este fluido. En este caso $u^A = (\rho,v)$ será
+dichas fluctuaciones y las ecuaciones del fluido son 
+\begin{eqnarray}
+\derp{\rho}{t} - v_0 \derp{\rho}{x} - \rho_0 \derp{v}{x} &=& 0  \nonumber \\
+\derp{v}{t} - v_0 \derp{v}{x} - \frac{1}{\rho_0}\derp{p}{x} &=& 0.
+\end{eqnarray}
+Si $c^2 := \derc{p}{\rho}|_{\rho_0} > 0$, ($c$ es la velocidad del sonido en el
+medio) entonces el sistema es simétrico--hiperbólico con
+$M^a_{AB}$ obtenido reescribiendo las ecuaciones como:
+\beq
+\left( \begin{array}{cc}
+       c^2 & 0 \\
+       0   & \rho^2_0
+       \end{array}
+\right) 
+\left( \begin{array}{c}
+       \rho \\
+       v
+       \end{array}
+\right)_t
++
+\left( \begin{array}{cc}
+       -c^2 v_0 & -c^2 \rho_0 \\
+       - c^2 \rho_0   & -\rho^2_0 v_0
+       \end{array}
+\right) 
+\left( \begin{array}{c}
+       \rho \\
+       v
+       \end{array}
+\right)_x
+= 0,
+\eeq
+donde hemos usado que $\derp{p}{x} = \derp{p}{\rho} \derp{\rho}{x}$.
+
+El determinante que debemos estudiar es entonces:
+\beq
+det
+\left( \begin{array}{cc}
+      \sigma_t c^2 - \sigma_x c^2 v_0  
+      & -\sigma_x c^2 \rho_0 \\
+      & \\
+      - \sigma_x c^2 \rho_0   
+      & \sigma_t \rho^2_0 - \sigma_x \rho v
+       \end{array}
+\right), 
+\eeq
+que tiene como raíces,
+\beq
+\sigma_t = (v_0 \pm c) \sigma_x.
+\eeq
+Supongamos $c > v_0$ (fluido normal, subsónico), y que $\Gamma = [0,1]$
+con $\sigma_0 = x(x-1)$.
+En $x=0$ $\sigma_{0x} $ es negativa y entonces la mayor raíz
+es $v_0-c$ y la solución es $\sigma_- = t(c-v_0) - x$.
+En $x=1$ $\sigma_{0x} $ es positiva y entonces la mayor raíz
+es $v_0+c$ y la solución es $\sigma_- = t(v_0+c) - (x-1)$.
+[Ver figura.]
+
+\espa 
+%
+%\fig{5cm}{Dominio de dependencia de un fluido}
+%
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_8b}}
+    \caption{Dominio de dependencia de un fluido}
+    \label{fig:13_8b}
+  \end{center}
+\end{figure}
+
+\espa
+
+\ejem: {\bf Ecuación de onda en $2+1$ dimensiones.}
+
+La ecuación es:
+\beq
+-\derssp{\phi}{t}{t} + \derssp{\phi}{x}{x} + \derssp{\phi}{y}{y} = \rho,
+\label{onda2d}
+\eeq
+y usando $u^A = (\phi,\derp{\phi}{t},\derp{\phi}{x},\derp{\phi}{y})$
+el sistema se puede escribir como,
+{\small
+\arraycolsep=2pt
+%\begin{equation}
+$$
+\left(
+      \begin{array}{cccc}
+      1&0&0&0 \\
+      0&1&0&0 \\
+      0&0&1&0 \\
+      0&0&0&1
+      \end{array}
+\right)      
+\left(
+      \begin{array}{c}
+      u^1\\u^2\\u^3\\u^4
+      \end{array}
+\right)_t
+-
+\left(
+      \begin{array}{cccc}
+      0&0&0&0 \\
+      0&0&1&0 \\
+      0&1&0&0 \\
+      0&0&0&0
+      \end{array}
+\right)      
+\left(
+      \begin{array}{c}
+      u^1\\u^2\\u^3\\u^4
+      \end{array}
+\right)_x
+-
+\left(
+      \begin{array}{cccc}
+      0&0&0&0 \\
+      0&0&0&1 \\
+      0&0&0&0 \\
+      0&1&0&0
+      \end{array}
+\right)      
+\left(
+      \begin{array}{c}
+      u^1\\u^2\\u^3\\u^4
+      \end{array}
+\right)_y
+= 
+\left(
+      \begin{array}{c}
+     - u^2\\-\rho\\0\\0
+      \end{array}
+\right) 
+\nonumber
+%\end{equation}
+$$
+}
+\arraycolsep=5pt
+\espa
+
+\ejer: Pruebe que si los datos iniciales son tales que 
+$u^2=\derp{u^1}{x}$ y $u^3=\derp{u^1}{y}$, luego $u^1$ satisface
+\ref{onda2d}. 
+\espa
+
+Las ecuaciones para $\sigma$ son:
+\beq
+det \left(
+          \begin{array}{cccc}
+          \sigma_t&0&0&0 \\
+          0&\sigma_t&\sigma_x&\sigma_y\\
+          0&\sigma_x&\sigma_t&0 \\
+          0&\sigma_y&0&\sigma_t
+          \end{array}
+    \right)
+= (\sigma_t)^2[(\sigma_t)^2 - (\sigma_x)^2 
+                       -(\sigma_y)^2],
+\eeq
+o sea 
+\beq
+\sigma_t = \sqrt{(\sigma_x)^2 + (\sigma_y)^2}
+                 := - H(\sigma_x,\sigma_y).
+\eeq
+Las ecuaciones de Hamilton para este sistema son:
+\begin{eqnarray}
+\derc{x}{t} &=& \derp{H}{\sigma_x}
+             = \frac{-\sigma_x}{\sqrt{(\sigma_x)^2 
+                + (\sigma_y)^2}}  \nonumber \\
+            & & \nonumber \\
+\derc{y}{t} &=& \derp{H}{\sigma_y} 
+             = \frac{-\sigma_y}{\sqrt{(\sigma_x)^2 
+                + (\sigma_y)^2}} \nonumber \\             
+            & & \nonumber \\    
+\derc{\sigma_x}{t} &=& - \derp{H}{x} 
+             = 0  \nonumber \\
+            & & \nonumber \\
+\derc{\sigma_y}{t} &=& - \derp{H}{y} 
+             = 0,
+\end{eqnarray}
+y sus soluciones son:
+\begin{eqnarray}
+x(t) &=&  \frac{-\sigma_{0x}}{\sqrt{(\sigma_{0x})^2 
+                + (\sigma_{0y})^2}} t + x_0    \nonumber \\
+y(t) &=& \frac{-\sigma_{0y}}{\sqrt{(\sigma_0x)^2 
+                + (\sigma_{0y})^2}} t + y_0.      
+\end{eqnarray}      
+
+
+
+
+%\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

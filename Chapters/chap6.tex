@@ -1,0 +1,589 @@
+\chapter{Estabilidad}
+
+
+Las soluciones estacionarias o de equilibrio son muy importantes en 
+física ya que muchos sistemas (especialmente aquellos donde hay disipación) se comportan de forma tal que la solución
+se aproxima, en su evolución, a estas soluciones.
+
+Otra particularidad que las hace importantes es el hecho que éstas están
+simplemente dadas por los puntos donde el campo vectorial se anula, y
+por lo tanto a lo sumo se debe resolver una ecuación algebraica para
+encontrarlas, en contraste con el caso general donde debemos resolver
+una ecuación diferencial.
+Incluso en algunos casos es posible inferir que el campo vectorial se debe anular,
+tal es el caso por ejemplo si la variedad es una esfera bi-dimensional
+ya que cualquier campo vectorial continuo definido sobre ésta es tal que
+al menos existen dos  puntos donde éste se anula, y por lo tanto en este caso siempre
+habrá soluciones estacionarias.
+
+\espa
+\ejer: Convénzase que esto es así.
+\espa
+
+Por lo dicho anteriormente se desprende que es importante estudiar el
+comportamiento de las soluciones  que se originan de datos iniciales 
+cercanos a una solución estacionaria.
+Para ello definimos los siguientes conceptos de estabilidad.
+
+\defi: 
+Sea $\ve{v}$ un campo vectorial en $M$ y sea $p \in M$ tal que 
+$\ve{v}(p) = 0$. Diremos que la solución estacionaria $\gamma (t)\equiv p$ es
+{\bf estable} si dado un entorno $U_p$ de $p$ existe otro entorno
+$V_p$ de $p$ tal que toda solución $\sigma(t)$ con $\sigma(0) \in
+V_p$ satisface $\sigma(t) \in U_p \;\;\;\forall\;\; t \geq 0$.
+[Ver figura \ref{fig:6_1}.]
+
+\defi: 
+Diremos que la solución anterior es 
+{\bf asintóticamente estable} si
+es estable y además si $\sigma (0) \in V_p$  luego $\dip\lim_{t\to+\ifi}
+\sigma(t)=p$. 
+
+\espa 
+%\fig{6cm}{Estabilidad.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{5cm}{!}{\myinput{Figure/m6_1}}
+    \caption{Estabilidad.}
+    \label{fig:6_1}
+  \end{center}
+\end{figure}
+
+Si una solución estacionaria no es estable entonces no tiene mucho interés físico
+ya que la más mínima perturbación nos {\sl aleja mucho} de ésta.
+
+\espa
+\noi\yaya{Ejemplos}:
+
+\noi
+a) La ecuación del crecimiento bacteriano $\dot x = ax -bx^2$ tiene como
+soluciones estacionarias $x(t) \equiv 0$ y $x(t) \equiv \frac ab$.
+Como la solución general es, 
+\beq
+x(t) = \frac{x(0) e^{at}}{1 + \frac{bx(0)}{a}(e^{at}-1)}, x(0) \geq 0
+\eeq
+se ve claramente que $x(t)=0$ no es una solución estable (a estas
+las llamaremos inestables) y que $x(t) \equiv \frac ab$ es asintóticamente
+estable.
+Si contaminamos un recipiente de cultivo con una sola bacteria  esto
+es suficiente para que ésta se reproduzca~\footnote{Note que en el proceso real no
+tenemos una variable continua y por lo tanto en él las perturbaciones
+son como mínimo de una bacteria, esto hace que sea posible tener
+recipientes estériles y por lo tanto la inestabilidad matemática no
+se manifiesta en la realidad.} hasta alcanzar (asintóticamente)
+la concentración $\frac ab$.
+Si ahora sacamos o agregamos algunas bacterias cosa de cambiar su concentración
+las bacterias se reproducirán o aniquilarán hasta alcanzar
+nuevamente {\sl la concentración estable} $\frac ab$.
+\espa
+\noi
+b) La ecuación $\dot x = A x$ tiene entre sus soluciones
+estacionarias la dada por $x(t) \equiv 0$. ¿Cuáles otras?
+Éstas serán estables cuando los autovalores de $A$, $\lambda_i$, satisfagan
+$\Re(\lambda_i) \leq 0$, $\lambda_i \neq \lambda_j$ o $\Re(\lambda_i) <0$ si 
+$\lambda_i=\lambda_j$, donde $\Re$ indica parte real.
+Esto es claro ya que la solución general es 
+$x(t) = e^{At}x(0)$ y la condición mencionada implica que 
+$\|e^{At}\|_{\cal L} < C$, $C >0$ $\forall t\geq 0$.
+En este caso podemos tomar como 
+$U_{p=0} = \{x \in \re^n |\;|x| < \epsilon\}$ y por 
+$V_{p=0} = \{x \in \re^n |\;|x| < \frac{\epsilon}{C}\}$.
+Si además se cumple que $\Re(\lambda_i) < 0 \;\forall i=1,...,n$ luego
+$x(t) \equiv 0$ es asintóticamente estable.
+
+El siguiente teorema nos brinda una herramienta muy práctica para
+conocer cuando una solución estacionaria es estable o no.
+
+\bteo[de Estabilidad] 
+Sea $\gamma(t) \equiv p$ una solución estacionaria de $\ve{v} \in TM$, es decir
+$\ve{v}(p) = 0$, y sea $A:T_pM\rightarrow T_pM $ definido por,
+\beq
+Ax \equiv \frac d{ds}\ve{v}(\sigma_x(s))|_{s=0},
+\eeq
+donde $\sigma_x(s)$ es una curva en $M$ satisfaciendo: 
+$\sigma_x(0)=p$ y $\frac d{ds}\sigma_x|_{s=0} = \ve{x} \in T_pM$, es
+decir es una curva suave cualquiera que pasa por $p$ cuando $s=0$ y en ese
+punto tiene como tangente a $\ve{x} \in T_pM$. Si $\Re (\lambda_i) < 0$, donde 
+$\lambda_i$ son los autovalores de $A$, luego $\gamma(t) \equiv p$ es 
+asintóticamente estable. Si algún $\lambda_i$ tiene parte real positiva
+luego $\gamma(t)=p$ es inestable.
+\eteo
+
+\espa
+\noi
+\yaya{Ejercicios}:
+
+\noi
+a) Muestre que $A$ es realmente un operador lineal.
+
+\espa
+\noi
+b) Muestre que $A\ve{x} = [\ve{v},\ti{\ve{x}}]|_p$, donde $\ti{\ve{x}}$ es cualquier campo vectorial
+tal que $\ti{\ve{x}}|_p = \ve{x}$. Ayuda: no olvide que $\ve{v}|_p = 0$.
+
+\espa
+\noi\yaya{Ejemplos}:
+
+\noi a) Considere la ecuación del crecimiento bacteriano en $x=0$ y $x = \frac ab$.
+Para el primer caso tomamos $\sigma_{\delta x}(s) = \delta x s$ y obtenemos,
+\beq 
+A\delta x =\frac d{ds} (a\delta x s - b\,(\delta x)^2 s^2)|_{s=0} = a\delta x,
+\eeq
+lo que muestra que $x=0$ es una solución inestable ya que $a>0$.
+Para el segundo caso tomamos $\sigma_{\delta x} = \frac ab + \delta x s$ luego
+\beq 
+A\delta x = \frac d{ds} (\frac {a^2}b  + a\delta x s - b(\frac ab + \delta x s)^2)|_{s=0} 
+= a\delta x - 2a\delta x = -a\delta x,
+\eeq
+lo que muestra que es asintóticamente estable.
+\espa
+\noi
+b) Péndulo físico con fricción: $\ddot \theta = - sen \theta - k \dot
+\theta$, $k>0$.
+El campo vectorial en este caso está dado por,
+\beq \barr{rcl}
+\dot \theta &=& z \\
+     \dot z &=& -sen \theta - k z,
+\earr
+\eeq
+es decir el vector con componentes $(z, -sen \theta - kz)$ en el espacio
+de las fases que es este caso es un cilindro, $z \in [-\infty,+\infty]$,
+$\theta \in [0,2\pi]$.      
+
+\espa 
+%\fig{6cm}{Péndulo físico con fricción.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m6_2}}
+    \caption{Péndulo físico con fricción.}
+    \label{fig:6_2}
+  \end{center}
+\end{figure}
+
+Este vector se anula sólo en $p_1 = (\theta =0, z=0)$ y $p_2 =
+(\theta = \pi, z=0)$. Para la primera solución estacionaria, usando
+$\sigma(s)$ tal que,
+\beq 
+ \phi \circ \sigma (s) = 
+\left( \barr{c}\delta \theta \;s \\ 
+             \delta z \;s 
+             \earr \right),
+\eeq
+obtenemos,
+\beq
+ A\left( \barr{c} \delta \theta \\ 
+                 \delta z 
+           \earr \right) = \left( \barr{cc} 0 & 1 \\ 
+                                          -1 & -k 
+                           \earr \right)  
+                           \left( \barr{c} \delta \theta \\ \delta z 
+                           \earr \right). 
+\eeq
+En este caso la ecuación de autovalores es $\lambda^2 + k \lambda +1 =0$ de lo
+cual obtenemos,
+$\lambda_{\pm} = \dip\frac{-k \pm \sqrt{k^2 - 4}}{2}$, lo que implica
+$\Re (\lambda_{\pm}) <0$ y así estabilidad.
+
+Para la segunda solución estacionaria tomamos $\sigma(s)$ tal que,
+\beq 
+ \phi \circ \sigma(s) = \left( \barr{c} \delta \theta s + \pi \\ \delta z 
+\earr \right)
+\eeq 
+y obtenemos
+\beq
+ A\left( \barr{c} \delta \theta \\ 
+                 \delta z 
+           \earr \right) = \left( \barr{cc} 0 & 1 \\ 
+                                          1 & -k 
+                           \earr \right)  
+                           \left( \barr{c} \delta \theta \\ \delta z 
+                           \earr \right). 
+\eeq
+con autovalores  $\lambda_{\pm} = \dip\frac{-k \pm \sqrt{k^2 + 4}}{2}$, lo que 
+implica
+$\Re (\lambda_{\pm}) > 0$ y así inestabilidad.
+
+De los ejemplos se ve que este teorema es de aplicación amplia.
+Como estabilidad es una noción local para facilitar la demostración tomaremos
+$M = \re^n$ y un sistema coordenado cartesiano con origen en la solución
+estable a considerar. Usaremos varios resultados previos que probamos
+a continuación.
+
+\bteo[de Lyapunov] 
+Sea $A:\re^n \rightarrow \re^n$ un operador lineal cuyos autovalores
+tienen parte real negativa. 
+Luego existe un tensor de tipo $(2,0)$, $\ve{\ro}(\cdot,\cdot)$,
+simétrico y positivo definido 
+[$\ve{\ve{\ro}}(\ve{w},\ve{v}) = \ve{\ve{\ro}} (\ve{v},\ve{w})$ y $
+\ve{\ve{\ro}}(\ve{w},\ve{w}) \geq 0$ $(=\;\; sii\;\; \ve{w}=0)$] 
+tal que,
+$$
+A\ve{x}(\ve{\ve{\ro}}(\ve{x},\ve{x})) < 0 \;\;\;\forall \;\;\ve{x} \neq 0,
+$$
+es decir la derivada de $\ve{\ve{\ro}}(\ve{x},\ve{x}) $ en la dirección $A\ve{x}$ es negativa.
+\eteo
+
+La interpretación geométrica de esta condición es que $\ve{\ve{\ro}}(\ve{x},\ve{x})$
+define una norma cuyas superficies de nivel son tales que en cada una
+de éstas el
+vector $A\ve{x}$ en $p=\ve{x}$ apunta hacia adentro.
+Ver figura.
+
+\espa 
+%\fig{6cm}{La norma $\rho(x,x)$.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{5cm}{!}{\myinput{Figure/m6_3}}
+    \caption{La norma $\rho(x,x)$.}
+    \label{fig:6_3}
+  \end{center}
+\end{figure}
+
+\noi
+\pru: Si todos los autovalores de $A$ son distintos luego
+existe una base de Jordan $\{\ve{u}_i\}, \;i=1,...,n$ y la correspondiente
+co-base $\{\ve{\theta}^i\}, \;i=1,...,n$ (con $\ve{\theta}^i(\ve{u}_j) = \delta^i_j$)
+tal que 
+$A= \sum_{i=1}^{n} \lambda_i \ve{u}_i \ve{\theta}^i$.
+Sea en este caso 
+$\ve{\ro} = \sum_{i=1}^{n} \ve{\theta}^i \bar{\ve{\theta}}^i$.
+Si $z = \sum_{i=1}^n z^i\ve{u}_i$ e $y= \sum_{i=1}^n y^i\ve{u}_i \in C^n$, luego
+$\ve{\ro}(z,y) = \sum_{i=1}^{n'} z^i y^i 
++ \sum_{n'+1}^{(n-n')/2}(z^i \bar{y}^i + \bar{z}^i y^i)$ 
+donde hemos separado la suma en la de los autovectores reales y 
+en la de los complejos conjugados. 
+Es fácil ver que el $\ve{\ro}(\:,\:)$
+obtenido al restringir $z$ e $y$ a $\re^n$ es la norma cartesiana
+usual en la base real correspondiente.
+Calculemos ahora $A\ve{x}(\ve{\ro}(\ve{x},\ve{x}))$.
+\beq \barr{rcl}
+\dip A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) &=& \lim_{\eps \rightarrow 0} 
+\dip               \frac{\ve{\ro}(\ve{x}+\varepsilon A\ve{x},\ve{x}+\varepsilon A\ve{x}) - \ve{\ro}(\ve{x},\ve{x})}
+{\varepsilon}\\ [3mm]
+\dip             &=& \ve{\ro}(A\ve{x},\ve{x}) + \ve{\ro}(\ve{x},A\ve{x}) \\ [3mm]
+\dip         &=& 2\sum_{i=1}^n (\Re\lambda_i){x}^i{x}^i < 0.
+\earr \eeq
+Hemos probado así el teorema para el caso diagonalizable. El caso en que $A$
+no lo es es más complicado y para ello usaremos los siguientes lemas.
+
+\blem Dado $\epsilon > 0$ existe una base $\{\ve{u}_i\}$ tal que en esa base
+\[
+A = diag.(\lambda_1,...,\lambda_n) + \epsilon \Delta, 
+\]
+con $\Delta$ una matriz con componentes distintas de cero (e igual a uno) a lo sumo en la diagonal 
+inferior, es decir,
+\beq
+A = \lp \barr{ccccccc} \lam_1 &0&0&.&.&.&0\\
+                       \eps &\lam_2& 0&.&.&.& 0\\
+                       .&.&.&.&.&.&.\\
+                       0&.&.&.&.&.&0 \\
+                       0&.&.&.&.&\eps &\lam_r
+\earr \rp .                    
+\eeq
+\elem
+
+\espa
+\pru: Es un simple cambio de escala 
+de la base de Jordan de $A$. Por ejemplo
+en $C^3$ si $\{\ti{\ve{u}}_i\}$ es tal que en ella,
+\beq
+A = \lp \barr{ccc} \lam &0   &  0  \\
+                   1    &\lam & 0  \\
+                   0    & 1   &\lam \\
+\earr \rp .
+\eeq
+definiendo $\dip\ve{u}_1 = \frac{\ti{\ve{u}}_1}{\epsilon^2}$, 
+$\dip \ve{u}_2 = \frac{\ti{\ve{u}}_2}{\epsilon}$, 
+y $\ve{u}_3 = \ti{\ve{u}}_3$, vemos que en esta nueva base,
+\beq
+A = \lp \barr{ccc} \lam & 0    &  0  \\
+                   \eps &\lam  &  0  \\
+                   0    & \eps &\lam \\
+\earr \rp .
+\eeq
+[$\dip A\ve{u}_1=A\frac{\ti{\ve{u}}_1}{\epsilon^2} =\frac{\lambda \ti{\ve{u}}_1}{\epsilon^2} 
+=\lambda \ve{u}_1$, $\dip A\ve{u}_2=A\frac{\ti{\ve{u}}_2}{\epsilon} =\frac{\ti{\ve{u}}_1 + 
+\lambda \ti{\ve{u}}_2}{\epsilon} 
+=\epsilon \ve{u}_1 + \lambda \ve{u}_2$, etc.].
+
+\blem El conjunto de tensores simétricas positivas es abierto en el
+conjunto de formas simétricas, es decir si $\ve{\ro}_0$ es simétrica y
+positiva y $\ve{\ro}_1 $ es simétrica luego existe $\epsilon > 0$ tal que
+$\ve{\ro}_0 + \epsilon \ve{\ro}_1 $ es también positiva.
+\elem
+
+\espa
+\noi
+\pru:
+Sea $B_1$ la esfera unidad con respecto a alguna  norma en $\ren$ y
+consideremos $\ve{\ro}_0(\ve{x},\ve{x}):B_1 \rightarrow \re^+$. 
+Como $B_1$ es compacta $\ve{\ro}_0$ alcanza allí su mínimo,
+$\alpha_{min}$. Análogamente $\ve{\ro}_1$ alcanza allí su máximo, que
+llamaremos $\beta_{max}$.
+Tomando $\eps < \dip\frac{\alpha_{min}}{\beta_{max}}$ se cumple lo requerido.
+
+\espa
+\ejem: En $\re^2$ sea $\ve{\ro}_0((x_1,y_1),(x_2,y_2)) = 
+x_1x_2 + y_1y_2$ y $\ve{\ro}_1((x_1,y_1),(x_2,y_2)) = x_1y_2 + x_2y_1$,
+luego $\ve{\ro}_0 + \eps \ve{\ro}_1$ es positiva si $|\eps| < 2$.
+
+\espa
+
+Para completar la demostración del teorema de Lyapunov
+tomaremos 
+\[
+\ve{\ro} = \sum_i\ve{\theta}^i\otimes \bar{\ve{\theta}}^i,
+\]
+%
+donde $\{\ve{\theta}^i\}$
+es la co-base encontrada en el lema 6.1 con $\eps > 0$ a
+determinar. 
+Luego,
+\beq \barr{rcl}
+-A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) &=& - \ve{\ro}(A\ve{x},\ve{x}) - \ve{\ro}(\ve{x},A\ve{x})\\
+              &=& -2 \sum_{i=1}^n\Re(\lambda_i)x^ix^i - 2\eps\sum_{i=1}^{n-1}
+f_ix^ix^{i+1},
+\earr \eeq
+con $f_i = 1$ ó $0$ según haya $\eps$ o no en ese lugar de la diagonal 
+inmediata superior. 
+El primer término es una forma positiva definida $\ve{\ro}_0$
+evaluada en $\ve{x}$ en ambas entradas. 
+El segundo es una forma simétrica
+$\eps \ve{\ro}_1$ evaluada en $\ve{x}$ en ambas entradas. 
+El segundo lema nos dice que
+tomando $\eps$ peque\~no $\ve{\ro}_0 + \eps \ve{\ro}_1$ 
+es también positiva definida.
+Esto concluye la prueba del teorema. 
+
+\noi
+Note ahora que no solo la $\ve{\ro}$ que hemos encontrado es simétrica y
+positiva definida y por lo tanto una norma en $\ren$, sino que también 
+$-A\ve{x}(\ve{\ro}(\ve{x},\ve{x}))$ es positiva definida y define una norma 
+[ya que 
+$-A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) = -\ve{\ro}(A\ve{x},\ve{x}) - \ve{\ro}(\ve{x},A\ve{x})$]. 
+Pero ya vimos
+que en $\ren$ todas las normas son equivalentes y por lo tanto existirá
+$\gamma>0$ tal que
+\beq
+-\frac{1}{2\gamma} \ve{\ro}(\ve{x},\ve{x}) 
+\leq A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) 
+\leq - 2\gamma \ve{\ro}(\ve{x},\ve{x}).
+\eeq
+Este es el resultado que utilizaremos para la prueba del teorema de
+estabilidad que damos a continuación.
+
+\espa
+\noi
+\yaya{Prueba del Teorema de Estabilidad:}
+Hemos visto que si $\Re(\lambda_i) <0$ luego existe una constante $\gamma >0$ 
+y una forma simétrica positiva definida
+$\ve{\ro}(\;,\;)$ tal que
+\beq
+A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) \leq - 2\gamma \ve{\ro}(\ve{x},\ve{x}).
+\eeq
+Aplicando el campo vectorial que define la ecuación, $\ve{v}(\ve{x})$ a 
+$\ve{\ro}(\ve{x},\ve{x})$ obtenemos,
+\beq
+v(\ve{x})(\ve{\ro}(\ve{x},\ve{x})) = A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) + O(\ve{\ro}(\ve{x},\ve{x})^{3/2}),
+\eeq
+donde hemos supuesto $\ve{v}$ es diferenciable y por lo tanto 
+$\ve{v}(\ve{x}) = A\ve{x} + O(|\ve{x}|^2)$.
+
+\espa
+\ejem:
+$v(x)=(ax+bx^2)\frac{\pa}{\pa x}$ y $\ve{\ro}(x,x) = \alpha x^2$ luego,
+\beq \barr{rcl}
+\dip v(x)(\ve{\ro}(x,x)) &=& ax\frac{\pa}{\pa x} \ve{\ro}(x,x) + 2b\alpha x^3
+\\  [3mm]
+\dip               &=& ax\frac{\pa}{\pa x} \ve{\ro}(x,x) 
+               + \frac{2b}{\alpha^{1/2}}\ve{\ro}(x,x)^{3/2}
+\earr \eeq
+
+Si $\ve{x}$ es suficientemente peque\~no, [$|\ve{x}| < C$ para algún $C>0$] 
+se cumple que 
+$O(\ve{\ro}(\ve{x},\ve{x})^{3/2}) < \gamma (\ve{\ro}(\ve{x},\ve{x}))$ y por lo tanto tenemos que
+\beq
+v(\ve{x})(\ve{\ro}(\ve{x},\ve{x})) \leq -2\gamma \ve{\ro}(\ve{x},\ve{x}) + \gamma\ve{\ro}(\ve{x},\ve{x})
+               \leq -\gamma \ve{\ro}(\ve{x},\ve{x}).
+\eeq
+
+
+Sea entonces $\fit$ una solución con dato inicial suficientemente cercano a $\ve{x}=0$,
+es decir $\dot\varphi(t) = v(\fit)$, $|\varphi(0)|<C$.
+Definiendo \footnote{Por unicidad de la solución $\fit \neq 0$ y por lo tanto 
+$\ve{\ro}(\fit,\fit) > 0$
+y el logaritmo está bien definido.}
+\beq
+r(t) = \ln \ve{\ro}(\fit,\fit)
+\eeq
+y derivando con respecto a $t$ obtenemos,
+\beq \barr{rcl}
+\dot{r}(t) &=& \frac{2\;\dot{\ve{\ro}(\fit,\fit)}}{\ve{\ro}(\fit,\fit)}=
+       \frac{\ve{v}(\fit )(\ve{\ro}(\fit,\fit))}{\ve{\ro} (\fit,\fit)} \\ [3mm]
+     &\leq& - \gamma.
+\earr \eeq       
+Por lo tanto $r(t) \leq r(0) - \gamma t$, he integrando concluimos que
+\beq
+\ve{\ro}(\fit,\fit) \leq \ve{\ro}(\fip(0),\fip(0))e^{-\gamma t},
+\eeq
+lo que implica que $\barr{c} \\ \fit \rightarrow 0 \\^{t \rightarrow
+\infty} \earr$ 
+y concluye la demostración del teorema.
+\footnote{En realidad debemos probar además que si $|\fip(0)| <C$ luego 
+$\fit$ existe para todo $t$. 
+Pero la última desigualdad probada nos dice que $\fit$ no
+puede abandonar la región compacta 
+$\{\ve{x}|\ve{\ro}(\ve{x},\ve{x}) \leq \ve{\ro}(\fip(0),\fip(0))\}$ y por lo tanto el teorema de
+extensión nos asegura que $\fit$ existe para todo $t \in [0,+\infty)$.}
+
+Es instructivo observar que la prueba se basa en la construcción de
+una norma, $\ve{\ro}(\ve{x},\ve{x})$, especialmente adaptada al problema en el sentido que
+nos asegura que en sus superficies de nivel el vector $\ve{v}(\ve{x})$ (si $\ve{x}$ es
+suficientemente peque\~no) apunta hacia adentro.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newpage
+\section{Problemas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% 1
+\bpro[La ecuación de Volterra-Lotka]
+
+Sea el sistema:
+
+\begin{eqnarray}
+  \label{eq:Volterra_Lotka}
+  \dot{x}_1 &=& (a-bx_2)x_1 \nn
+  \dot{x}_2 &=& -(c-f x_1)x_2,
+\end{eqnarray}
+$a, b, c, f \geq 0$.
+
+a) Haga una trasformación de coordenadas y tiempo que lo lleve a la forma,
+\begin{eqnarray}
+  \label{eq:Volterra_Lotka_adim}
+  \dot{x}_1 &=& (1 - x_2)x_1 \nn
+  \dot{x}_2 &=& -(e - x_1)x_2
+\end{eqnarray}
+%
+
+b) Grafique el campo vectorial y vea que no hay integrales primeras no
+triviales en los cuadrantes donde al menos una de las coordenadas es
+negativa.
+
+c) Encuentre las soluciones de equilibrio y determine cuáles son 
+estables y cuáles no.
+
+d) Examine el cuadrante positivo mediante la transformación:
+$x_1 = e^{q_1}$, $x_2 = e^{q_2}$ y vea que allí la cantidad
+$f(q_1,q_2) := e q_1 + q_2 -(e^{q_1} + e^{q_2})$ es una integral
+de movimiento. Utilice esta información para inferir que en ese
+cuadrante las trayectorias permanecen en regiones acotadas.
+
+e) Examine las ecuaciones linealizadas alrededor de la solución
+de equilibrio en el cuadrante positivo y determine cuál sería
+la frecuencia de oscilaciones de las variaciones cercanas a equilibrio
+que tendría el sistema.
+
+Nota, esta ecuación describe la población de dos especies en competencia.
+Lo que acabamos de ver es que las especies no crecen indefinidamente ni
+desaparecen. Esto último nos dice que la aproximación no es
+muy buena...
+Note que $x_2$ representa un predador que depende exclusivamente para
+su subsistencia de la presa $x_1$, ya que si ésta se extingue el predador
+lo sigue.
+\epro
+
+%2
+\bpro
+Si en el sistema anterior las especies tienen otros medios alternativos de
+subsistencia entonces las ecuaciones resultantes son:
+\begin{eqnarray}
+  \label{eq:Volterra_Lotka_adim_alt}
+  \dot{x}_1 &=& (1 -x_1 - ax_2)x_1 \nn
+  \dot{x}_2 &=& (1 -x_2 + bx_1)x_2
+\end{eqnarray}
+%
+donde se ha usado otra parametrización.
+
+a) Encuentre las soluciones de equilibrio para los casos i) $0< a <1$, 
+y ii) $1 < a$.
+
+b) Se observa que $b \approx 3a$ ($a$ nos indica cuan agresivo es el
+predador). ¿Cuál es el valor de $a$ si su instinto lo lleva a maximizar la
+población de su especie manteniendo un equilibrio estable?
+
+c) Mire el sistema cerca de su solución de equilibrio y determine la
+frecuencia de las oscilaciones en el número de especies que esperaría
+en ese entorno.
+\epro
+
+%3
+\bpro[Ciclo límite]
+Considere el sistema:
+\begin{eqnarray}
+  \label{eq:Ciclo_Limite_Prob}
+  \dot{x}_1 &=& x_2 + x_1(1-(x_1^2+x_2^2)) \nn
+  \dot{x}_2 &=& -x_1 + x_2(1-(x_1^2+x_2^2)).
+\end{eqnarray}
+%
+
+a) Lleve este sistema a un par de ecuaciones desacopladas,
+\begin{eqnarray}
+  \label{eq:Ciclo_Limite_Prob_des}
+  \dot{r} &=&  f(r) \nn
+  \dot{\theta} &=& -1.
+\end{eqnarray}
+%
+
+b) Estudie los puntos de equilibrio de la primera ecuación y su estabilidad.
+¿Cuál es la solución del sistema original correspondiente a este punto
+de equilibrio?
+
+
+c) Grafique soluciones cerca de estos puntos, en el plano $(r,\theta)$ y en el
+plano $(x_1,x_2)$.
+
+d) Utilice el método descripto al final de capítulo 
+\ref{Ecuaciones_Diferenciales_Ordinarias} para corroborar la estabilidad 
+encontrada en el punto b).
+\epro
+
+%4
+\bpro[Verhulst]
+Encuentre las soluciones de equilibrio (y analice su estabilidad) del sistema:
+\begin{eqnarray}
+  \dot{x} &=& y \nn
+  \dot{y} &=& x-2x^3 
+\end{eqnarray}
+Grafique algunas soluciones.
+\epro
+
+%5
+\bpro[Verhulst]
+Encuentre las soluciones de equilibrio (y analice su estabilidad) del sistema:
+\begin{eqnarray}
+  \dot{x} &=& x^2 - y^3 \nn
+  \dot{y} &=& 2x(x^2-y) 
+\end{eqnarray}
+Grafique algunas soluciones.
+\epro
+
+%6
+\bpro[Verhulst]
+Encuentre las soluciones de equilibrio (y analice su estabilidad) del sistema:
+\begin{eqnarray}
+  \dot{x} &=& -x \nn
+  \dot{y} &=& 1 - (x^2+y^2) 
+\end{eqnarray}
+Grafique algunas soluciones.
+\epro
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End: 

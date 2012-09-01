@@ -1,0 +1,1823 @@
+
+\chapter{Elementos Básicos de Análisis Funcional}
+\label{elementos_basicos_de_analisis_funcional}
+
+
+\section{Introducción}
+Esta área de la matemática estudia los espacios funcionales, es decir
+los espacios cuyos elementos son ciertas funciones. Usualmente éstos son
+de dimensión infinita. Así es que sus resultados principales forman 
+dos clases. Algunos son resultados generales, válidos para espacios
+vectoriales más generales que aquellos cuyos elementos son funciones.
+Éstos tienen un carácter geométrico o topológico el cual trataremos
+de rescatar en todo momento. Los otros son resultados particulares
+que nos relacionan distintos espacios funcionales entre sí. Estos
+son más cercanos a los resultados del análisis usual. 
+Presentaremos aquí 
+resultados de ambos tipos ya que de su conjunción obtendremos
+algunos aspectos de la teoría de las EDP. Por razones de brevedad
+solo consideraremos los puntos que nos serán útiles o aquellos para
+los que se requiera un mínimo de esfuerzo extra para obtenerlos y
+su importancia cultural así lo justifique.
+
+\section{Completando un Espacio Normado}
+
+En la primera parte de este curso introdujimos los espacios de Banach,
+es decir espacios vectoriales con una norma definida en ellos y que
+eran completos con respecto a ella. Allí también probamos que el 
+conjunto de funciones continuas en un intervalo $[a,b] \in \re $
+con la norma
+\beq
+\|f\|_1 = Sup_{x \in [a,b] } \{ | f(x)  | \} 
+\eeq
+era completo y por lo tanto Banach.
+
+Cabe preguntarse si dado un espacio vectorial normado $W$ es posible 
+{\it engordarlo }, es decir agregarle vectores, y así hacerlo completo.
+Note que eso es lo que se hace con los racionales $\ve Q$ (el cual es un
+espacio vectorial si solo permitimos la multiplicación de sus elementos
+por números racionales!). El espacio engordado es en este caso el de
+los reales. La respuesta es afirmativa y está dada por el siguiente teorema.
+
+\bteo
+Sea $W$ un espacio vectorial normado. Luego existe un espacio
+de Banach $V$ y un mapa lineal continuo $\fip :W \to V $ tal que
+$\|\fip(w)\|_V=\|w\|_W$ y $\fip [W] $ es un subespacio denso de $V$, es decir 
+la clausura de $\fip [W] $ es $V$.
+\eteo
+\espa
+
+\pru:
+Los detalles de esta pueden ser encontrados en, por ejemplo [Y], pag.
+56. Aquí solo daremos las ideas. Si $W$ es completo entonces tomamos
+$V=W $ y $\fip = id $. Por lo tanto supondremos que $W$ no es completo.
+Entonces habrán sucesiones de Cauchy $\{w_n\}$ en $w$ que no convergen a ningún punto
+de $W$. La idea es tomar estas sucesiones como nuevos puntos con los cuales
+engordar $W$. Como muchas sucesiones distintas podrían tender a un mismo
+punto, a los efectos de no engordar demasiado a $W$, todas ellas deberán
+ser consideradas como un solo elemento. Esto se logra tomando clases
+equivalentes de sucesiones como elementos de $V$. Diremos que dos sucesiones,
+$\{w_n\}$, $\{w'_n\}$,
+son equivalentes  si su diferencia tiende al elemento cero,
+\beq
+\lim_{n \to \infty} \|w_n - w'_n\|_W = 0.
+\eeq
+%
+Como el conjunto de sucesiones de Cauchy de elementos de $W$ forma un
+espacio vectorial, el conjunto de clases equivalentes de sucesiones también
+es un espacio vectorial, este será $V$. Este espacio hereda una
+norma naturalmente de $W$, dada por,
+\beq
+\|\{w_n\}\|_V=\lim_{n\to \infty} \|w_n\|_W,
+\eeq
+%
+la cual es claramente independiente de la sucesión particular que uno
+elija, para calcularla, dentro de la clase equivalente. Se puede probar
+fácilmente que con esta norma $V$ es completo y por lo tanto Banach.
+\espa
+
+\ejer: Pruebe que la sucesión de Cauchy de sucesiones de Cauchy,
+$\{\{w_n\}_N\}$ converge en esta norma a la sucesión
+$\{\bar{w}_n\} \equiv \{\{w_n\}_n\}$.
+\espa
+ 
+¿Cuál es el mapa $\fip $? Este toma un elemento $w \in W$ y nos da
+un elemento en $V$, es decir una clase equivalente de sucesiones.
+Esta es la clase equivalente que converge a $w$ y un representante es,
+por ejemplo,
+\beq
+\{w_n\}=(w,w,w,\ldots).
+\eeq
+
+El teorema anterior nos dice que siempre podemos completar un espacio vectorial
+normado y esto de una manera esencialmente única. De esta forma entonces
+se puede hablar de completar un espacio normado $W$ en uno $V$. Como
+$W$ es denso en $V$ y el mapa $\fip $ es continuo todas las propiedades
+que son continuas en $W$ valen automáticamente en $V$.
+El teorema anterior nos dice también que los elementos del espacio completado
+pueden tener un carácter muy diferente al de los elementos del espacio
+original. Debido a esto es que en la práctica uno debe ser muy
+cuidadoso al momento de atribuirle propiedades a los elementos de un dado
+espacio de Banach.
+Como ejemplo de lo anterior veremos la integral de Lebesgue.
+
+\section{*Integral de Lebesgue}
+
+La integral de Lebesgue es una extensión de la integral de Riemann a
+una clase de funciones más general que aquella donde la de Riemann está
+definida. Tenemos dos maneras de definirla, uno como la norma de un espacio
+de Banach completado, cuyos elementos son entonces {\bf las funciones
+integrables en el sentido de Lebesgue}. La otra manera es usando un
+proceso de límite similar al empleado
+para definir la integral de Riemann. Veremos las dos.
+
+Sea $W$ el espacio de funciones continuas en el intervalo $[a,b]$ y sea
+
+\beq
+\|f\|_w=\int_a^b |f(x)|\;dx
+\eeq
+su norma, donde la integral es en el sentido de Riemann. Esta
+definición tiene sentido
+ya que los elementos de $W$ son funciones continuas y por lo tanto la
+integral está bien definida. Note también que esta es una norma ya que
+como $f$ es continua si la integral de su módulo es cero, su módulo,
+y así $f$, es también cero. Sea $L^1([a,b])$ el espacio completado
+de $W$. Este es el espacio de {\bf funciones integrables de Lebesgue}.
+¿Qué funciones están allí?\footnote{
+En realidad las funciones no son propiamente elementos
+de $L^1$ sino que éstos son la imagen por el mapa $\fip$ (definido
+en la sección anterior) de éstas.}
+Sea $\{f_n\}$ la sucesión dada por el gráfico de la fig. 8.1.
+
+\espa 
+%\fig{6cm}{Una sucesión de Cauchy.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m8_1}}
+    \caption{Una sucesión de Cauchy.}
+    \label{fig:8_1}
+  \end{center}
+\end{figure}
+
+
+Esta sucesión es de Cauchy en $L^1([0,1])$ y por lo tanto converge
+a un elemento de $L^1 ([0,1])$, la función, 
+\beq
+   f(x)=\left\{\barr{cl}
+              0 & \;\;\;\;\;0\leq x\leq1/4\,,\;3/4\leq x\leq 1 \\
+              1 & \;\;\;\;\;1/4< x < 3/4.
+              \earr\right. 
+\eeq
+              
+Esto no es de sorprender ya que aunque esta función no es continua 
+ésta es integrable aún en el sentido de Riemann.
+Sea ahora la sucesión $\{f_n\}$ dada por el gráfico de la fig. 8.2,
+
+\espa 
+%\fig{6cm}{Otra sucesión de Cauchy.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m8_2}}
+    \caption{Otra sucesión de Cauchy.}
+    \label{fig:8_2}
+  \end{center}
+\end{figure}
+
+
+
+esta también es de Cauchy y tiende a la función, 
+\beq
+   f(x)=\left\{\barr{cl}
+              0 & \;\;\;\;\;0\leq x<1/2 < x \leq 1 \\
+              1 & \;\;\;\;\;x = 1/2,
+              \earr\right. 
+\eeq
+la cual sí es muy extra\~na. Cualquiera sea el sentido de la
+integral de Lebesgue la integral de esta función es de esperar 
+que sea cero, y de hecho lo es ya que 
+\beq
+\lim_{n\to\infty} \int_0^1 |f_n(x)|\;dx =0.
+\eeq
+
+Pero entonces la norma de $f$ es cero y por lo tanto parecería ser
+tenemos una contradicción, a menos que $f$ sea cero. La resolución
+de este problema consiste en notar que cuando completamos el espacio
+$W$ tomamos como sus elementos a ciertas clases equivalentes. 
+La función descripta arriba está en la clase equivalente correspondiente
+al elemento cero. Como veremos luego los elementos de $L^1$ son
+funciones, pero solo definidas en {\bf casi todos los puntos}.
+
+El segundo método consiste en definir la integral de Lebesgue de
+forma similar a como se define la integral de Riemann. 
+Para ello debemos definir lo que se llama una {\bf medida } en
+ciertos subconjuntos de $\re$, es decir una función de estos subconjuntos
+en los reales positivos, que generaliza el concepto de extensión (o medida)
+de un abierto $(a,b)$, $\mu ((a,b)) = b-a $.
+
+Una vez introducido este concepto de medida la integral de Lebesgue
+de una función positiva $f:\re \to \re^+ $ se define
+como,
+\[
+\int f(x)\;dx =\lim_{n\to\infty}\sum_n\:(f)
+=\lim_{n\to\infty}\sum_{m=0}^{\infty} \frac mn \mu \left(f^{-1} \left[
+[\frac mn, \frac {m+1}n)\right]\right),
+\]
+%
+donde hemos usado el mismo símbolo para denotar la integral de Lebesgue
+que el normalmente usado para la integral de Riemann, esto es natural
+ya que como vimos en la primera definición si una función es integrable
+en el sentido de Riemann lo es también en el sentido de Lebesgue y el
+valor de las integrales coincide.
+ 
+La interpretación de esta definición es la siguiente:
+se divide la imagen de $f$ en intervalos regulares de longitud
+$\frac 1n $, se considera la imagen por $f^{-1}$ de estos intervalos, 
+se los {\it mide} con $\mu $ y estas medidas se suman 
+convenientemente. Ver figura.
+Finalmente se toma el límite n yendo a infinito,
+es decir los intervalos yendo a cero.
+Note que $\sum_{2n} (f) \geq\sum_n (f)$ y por lo tanto 
+$\lim_{n\to\infty}\sum_n(f)=Sup_n \left\{\sum_n (f)\right\}$ 
+ existe (pudiendo ser infinito).
+
+\espa 
+%\fig{6cm}{Integral de Lebesgue.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m8_3}}
+    \caption{Integral de Lebesgue.}
+    \label{fig:8_3}
+  \end{center}
+\end{figure}
+
+¿Para qué funciones está definida esta operación? La condición de
+que $f$ fuese positiva no es realmente una restricción ya que
+cualquiera sea ésta siempre se la puede escribir como 
+$f = f_+ - f_-$ con $f_+$ y $f_-$ ambas positivas y la integral es una
+operación lineal [lo cual no es obvio de la definición dada arriba].
+La condición que sí es restrictiva es que $f^{-1} (A)$, con $A$ abierto,
+sea un subconjunto medible, ya que como veremos si le pedimos a la
+función medida que satisfaga ciertas propiedades naturales luego no todo
+subconjunto de $\re$ puede estar en el dominio de esta función.
+Para estudiar esta restricción debemos tener en claro qué
+propiedades queremos que la medida cumpla, encontrar la colección de 
+subconjuntos de $\re$ que son medibles y finalmente definir la medida.
+Estas propiedades definirán la noción de medida, o más específicamente
+de espacio medible, ya que las propiedades que le asignaremos
+dependen tanto de la medida como de su dominio de definición.
+\espa
+
+\defi: Un {\bf espacio medible} consta de una terna $(X,M,\mu)$ 
+donde $X$ es un conjunto (el dominio de las funciones a integrar), $M$ 
+una colección
+de subconjuntos de $X$ llamados los {\bf subconjuntos medibles} de
+$X$ y $\mu $ es una función (llamada la {\bf medida}) de $M$ en 
+$\re{}^*=\re{}^+ \cup \{\infty\}$ satisfaciendo las siguientes condiciones:
+\begin{itemize}
+\item[$i)$] $\emptyset \in M$ y $\mu(\emptyset ) = 0$.
+\item[$ii)$] Si $A \in M$ luego $A^c$ (el complemento de $A$ en
+$X$) también está en $M$.
+\item[$iii)$]  Si $A_i \in M, i=1,2,\ldots,\;$ luego $\dip\bigcup_i A_i \in M$.
+\item[$iv)$] Si $A_i \in M, i=1,2,...$ y $A_i \cap A_j = \emptyset$ si $i
+\neq j$ luego $\mu \left( \dip\bigcup_i A_i \right)=\sum _i \mu\;(A_i)$.
+\end{itemize}
+
+
+Intuitivamente los conjuntos medibles son los conjuntos que admiten una
+noción de {\sl longitud} o {\sl área} y su medida es el valor de esta
+{\sl longitud} o {\sl área}.
+
+\ejer: Muestre que:
+
+\begin{enumerate}
+\item $X \in M$
+\item Si $A_i \in M$, $i=1,2,...$ luego $\dip\bigcap_i A_i \in M$. Esta es
+la razón por la cual se pide {\it ii)}, ya que esperaríamos
+que $\mu \left( \dip\bigcap_i A_i \right) \leq \sum _i \mu\;(A_i)$.
+\item Si $A \subset B$ luego $\mu (A) \leq \mu (B). $
+\end{enumerate}
+
+\noi\yaya{Ejemplos}:
+
+\begin{enumerate}
+\item 
+Sea $X$ un conjunto cualquiera y sea $M$ la colección de todos
+los subconjuntos de $X$. Sea $\mu $ tal que $\mu (\emptyset ) = 0$ y 
+$\mu (A) = \infty $ para todo $A \in M$ no vacío.
+\item 
+Sea $M=\{\emptyset , X\}$ y sea $\mu $ tal que $\mu (\emptyset )=0$ 
+y $\mu (X)=7$.
+\item 
+Sea $X = Z^+ =\{$números enteros positivos$\}$ y sea $\{x_i\},
+x_i \in \re{}^+$, una sucesión. Sea $M$ la colección de todos los 
+subconjuntos de $Z^+$ y $\mu (A) = \sum_{i \in A} (x_i )$.
+
+\noi El siguiente no es un espacio medible (¿por qué?) pero nos será útil
+para construir luego el que deseamos.
+\item
+Sea $X=\re{}$ y $M=\cJ$ el conjunto de todas las uniones (contables) de
+intervalos abiertos disjuntos, es decir un elemento, $I$, de $\cJ$ es un
+subconjunto de $\re{} $ de la forma,
+\beq 
+I= \dip\bigcup_i (a_i,b_i), 
+\eeq
+con 
+$a_1 \leq b_1 < a_2 \leq b_2 < a_3 \cdots\; $.
+Sea $\mu \equiv m : \cJ \to \re{}^* $ definida como,
+\beq m(I) = \sum_i (b_i - a_i). \eeq
+\end{enumerate}
+ 
+\ejer: Muestre que el tercer ejemplo es un espacio medible.
+
+\espa
+Como se ve de estos ejemplos la noción de espacio medible es amplia.
+Distintos ejemplos de espacios medibles
+aparecen en diversas ramas de la física. 
+De ahora en más nos restringiremos
+a un espacio medible y éste es el de Lebesgue, el cual construiremos
+a partir del cuarto ejemplo.
+
+Sea $X = \re{}$, $\bar M$ todo subconjunto de $X$ y $\bar \mu : \bar M
+\rightarrow \re{}^* $ dada por,
+\beq
+\barr{rccl}
+\bar\mu(A) & = & inf & (m(I)) \\
+           &   & I\in\cal I&  \\
+           &   & A\su I & .
+           \earr
+\eeq
+Es decir, dado un subconjunto de $\re{}$, $A$, consideramos todos los
+elementos de $\cJ$ tales que $A$ está contenido en éstos, calculamos su
+medida y tomamos el ínfimo sobre todos los elementos de $\cJ$.
+
+\noi\yaya{Ejemplos}:
+\begin{enumerate}
+
+\item Sea $A = (0,1) $, luego un candidato es $I_1 = (-1,1) \cup (3,5)
+$, $m(I_1) = 2 + 2 =4$, pero también tenemos $I_2 = (0,1) $ con 
+$m(I_2) = 1$ y claramente $\bar \mu(A) = 1 $.
+
+\item Sea $B= 1 \cup 2 \cup 3 \cup \ldots$ luego 
+$\bar \mu (B) = 0$ ya que podemos cubrir $B$ con 
+$I = (1-\eps, 1+\eps ) \cup (2-\eps, 2+\eps) \cup \ldots\;$.
+\end{enumerate}
+
+Como vemos esta terna $(\re{} , \bar M, \bar \mu)$ parece tener las
+condiciones deseadas para ser la medida que buscamos, pero en realidad
+ni siquiera es un espacio medible!
+
+\espa
+\noi\yaya{Contraejemplo}: 
+Sea $(S^1,M,\mu)$, donde $S^1 $ es el círculo, un
+espacio medible con $\mu $ una medida finita e invariante ante translaciones,
+es decir $\mu (A) = \mu (A_r)$ donde $A_r = \{a + r |a \in A \} $
+-note que nuestra $\bar \mu $ lo es, pero este resultado es mucho más
+general-. Luego $M$ no puede ser la colección de todos los
+subconjuntos de $S^1 $. 
+
+La idea es encontrar un subconjunto $A$ de $S^1$ tal que si suponemos
+que sea medible obtenemos una contradicción. Para ello pensamos a
+$S^1 $ como $\re{} $ con sus extremos identificados (0=1). Introducimos
+ahora una relación de equivalencia: Diremos que dos puntos de $S^1 $
+son equivalentes $a \approx b$ si $a-b$ es un número racional.
+
+\ejer: Muestre que es una relación de equivalencia.
+
+Construimos $A$ tomando exactamente un elemento de cada clase equivalente
+-note que hay infinitas maneras de elegir un conjunto $A$-
+Supongamos que $A$ es medible con $\mu (A) = \alpha \in \re{}^+ $ y
+sea $A_r = \{a |\; (a+r)\;(mod 1) \in A\}$, con $r$ racional, es decir una
+translación por $-r$ de $A$. Luego es fácil ver que si $r \neq r'$ 
+luego $A_r \cap A_{r'} = \emptyset $, es decir los $A_r $ son
+disjuntos [Si $x \in A_r$ y $x \in A_{r'}$ luego $x=a+r = b+r'$, con $a,b
+\in A$, pero entonces $a-b = r-r' \in \ve Q$ lo que es una contradicción.]
+y que $S^1 =\dip \bigcup_{r\in\ve Q} A_r $ [Sea $x \in S^1$, luego $x$
+pertenece a alguna de las clases equivalentes en que hemos separado a
+$S^1$, pero entonces existe $a \in A$ y $r \in \ve Q$ tal que $a+r
+=x$, o sea $x \in A_r$.]. 
+Como por hipótesis 
+$\mu(A_r) = \mu (A) = \alpha $ entonces, 
+
+\beq
+1=\mu(S^1)= \mu \left(\bigcup_{r\in\ve Q}A_r\right)=\sum_{r\in \ve Q} \mu (A_r)
+                      = \sum^{\infty} \alpha,
+\eeq
+lo cual lleva a una contradicción ya que si $\alpha = 0 $ luego
+la sumatoria da cero y si $\alpha \neq 0 $ la sumatoria da infinito.
+
+Este contraejemplo nos dice entonces que debemos restringir $M$ a ser
+un subconjunto de $\bar M$ si queremos tener una medida. Hay muchas maneras
+de caracterizar esta restricción una de ellas está dada por el siguiente
+teorema (que no probaremos).
+
+\bteo
+Sea $M$ el subespacio de $\bar M$ tal que si $A \in M$ luego
+\beq \bar \mu (E) =\bar \mu(A\cap E) + \bar \mu ((X-A) \cap E) 
+\; \forall E \in \bar M.
+\eeq
+Sea $\mu $ la restricción de $\bar \mu $ a $M$, luego
+$(X,M, \mu)$ es el espacio medible de Lebesgue.
+\eteo
+
+Intuitivamente vemos que los conjuntos medibles son aquellos que 
+{\it cuando usados para separar otros conjuntos en dos partes dan una
+división que es {\bf aditiva} con respecto a $\bar \mu$}.
+
+Como en general solo tenemos que 
+$\bar \mu(E) \leq \bar \mu (A \cap E) + \bar \mu ((X-A)\cap E) $
+vemos entonces que los conjuntos no-medibles son aquellos 
+{\it cuyos puntos están distribuidos en $X$ de tal forma que cuando
+uno trata de cubrir $A\cap E$ y $(X-A)\cap E$ con abiertos éstos se
+superponen tanto que en realidad uno puede obtener un ínfimo
+menor cubriendo directamente $E$ con abiertos.}
+
+Existe un gran número de teoremas que nos dan información  acerca
+de cuáles son los conjuntos medibles. Bastará decir que todos los
+conjuntos abiertos de $\re{}$ (y muchos más ) están en $M$ y que si 
+$f:\re{} \rightarrow \re{}$ es una función continua luego 
+$f^{-1}[M] \in M$.
+
+Retornamos ahora a la integral de Lebesgue. Naturalmente diremos 
+que $f$ es {\bf medible } si $f^{-1}[(a,b)] \in M$ para
+todo intervalo abierto $(a,b) \in \re{}$. 
+
+\bteo Las funciones medibles tienen
+las siguientes propiedades:
+
+
+\begin{itemize}
+
+\item[a)] Si $f$ y $g$ son medibles y $\lambda \in \re $ luego
+$f + \lambda g$ es me\-di\-ble.
+
+\item[b)] También son medibles $fg$, $max\{f,g\} $ y $min\{f,g\} $.
+
+
+\item[c)] Sea $\{f_n(x)\} $ una sucesión de funciones medibles que convergen
+punto a punto a $f(x)$, es decir $\lim_{n\to\infty} f_n(x) = f(x) $,   luego $f(x)$ es también
+medible.
+\end{itemize}
+
+\noi Note que $|f|=max\{f,-f\}$ y $f_{\pm}=^{max}_{min}\{f,0\}$.
+\eteo
+
+La primera parte de este teorema nos dice que el conjunto de
+funciones medibles es un espacio vectorial. Esto sigue siendo cierto 
+si nos restringimos al espacio de funciones integrables en el sentido
+de Lebesgue, es decir $f$ medible y $\int |f|\;dx < \infty $.
+Denotaremos a este espacio como ${\cal L}_1$ o ${\cal L}_1(\re{})$. Similarmente definiremos
+${\cal L}_1[a,b]$  al espacio de funciones integrables $f:[a,b] \to \re{} $
+donde en este caso la integral se define como antes pero extendiendo
+la función $f$ a todo $\re{}$ con valor cero fuera del intervalo $[a,b]$.
+
+Como ya vimos antes para hacer de ${\cal L}_1$ un espacio normado debemos
+tomar como sus elementos las clases equivalentes de funciones donde 
+diremos que $f,g \in {\cal L}_1 $ son {\bf equivalentes } si 
+$\int |f-g| dx = 0$. Esto es equivalente a decir que el subconjunto 
+de $\re{}$ donde $f$ es distinta de $g$ es de medida cero, o en otras
+palabras que $f$ es igual a $g$ en {\bf casi todo punto}.
+
+Denotaremos al espacio de clases equivalentes de funciones
+integrables (Lebesgue) con $L_1$ y sus elementos con letras tildadas.
+Note que un elemento $\tilde f $ de $L_1$ es una clase equivalente de
+funciones y por lo tanto en general {\it el valor de $\tilde f$ en $x$,
+$\tilde{f}(x)$}, no tiene sentido alguno ya que podemos tener funciones en la
+clase equivalente $\tilde f$, $f_1$ y $f_2$ con $f_1(x) \neq f_2(x)$
+para algún $x \in \re{}$. Por lo tanto debemos ser precavidos al respecto.
+
+?`Es este espacio $L_1$ el mismo que habíamos obtenido anteriormente? 
+La respuesta es sí  y sigue trivialmente de los siguientes teoremas.
+
+\bteo[Riez-Fisher]: 
+$L_1 $ es completo.
+\eteo
+
+\bteo
+$C^1[a,b] $ es denso en $L^1[a,b]$, es decir $L^1[a,b] $
+es el espacio completado de $C^1[a,b]$.
+\eteo
+
+
+
+\section{Espacios de Hilbert}
+
+
+Los espacios de Hilbert son espacios de Banach\footnote{ 
+De ahora en más y esencialmente por la misma razón  que 
+dimos en el caso del teorema de la forma canónica de Jordan,
+consideraremos espacios vectoriales complejos.} cuya norma proviene
+de un producto escalar, es decir de un mapa $(\cdot,\cdot)$ de 
+$V \times V \rightarrow \ve C$ 
+satisfaciendo:
+\begin{itemize}
+\item[$i)$]$ (x,y+cz) = (x,y) +c (x,z), $
+               
+               $ (x+cy,z) = (x,z) + \bar c (y,z) $
+               
+\noi para cualquier $x,y,z$  en $V$     y $c$ en $C$.
+
+\item[$ii)$] $ \overline{(x,y)} = (y,x) $
+
+\item[$iii)$] $(x,x) \geq 0 \;\; (0\;\mbox{sii}\; x=0). $
+
+\end{itemize}
+
+La primera parte de la condición {\it i)} indica que el mapa
+producto escalar es lineal con respecto a su segundo argumento.
+La segunda parte indica que es lineal en el primer argumento, 
+excepto por el hecho de que se toma el complejo conjugado del escalar.
+Se dice que este mapa es {\bf anti-lineal} con respecto al primer argumento.
+La condición {\it ii)} nos dice que el mapa es todo lo simétrico
+que puede ser, dado que en el primer argumento es anti-lineal.
+Esta condición nos garantiza que $(x,x)$ es un
+número real y , junto con $ iii)$, que es no-negativo.
+\espa
+
+\ejer:
+Pruebe que dando un tensor de tipo $(2,0)$, $\ve{t}(\cdot,\cdot)$,
+simétrico, real y positivo definido, entonces 
+$(\ve{x},\ve{y}) \equiv \ve{t}(\bar{\ve{x}},\ve{y})$ es un producto
+escalar.
+\espa
+
+
+
+La norma que este producto escalar induce es simplemente la función,
+$\|\cdot \|_V : \ve V \rightarrow \re{}^+$ dada por,
+\beq 
+\|x\|_V = \sqrt{(x,x)}.
+\eeq
+Que esta es en realidad una norma sigue de los siguientes lemas:
+
+
+\blem[Desigualdad de Schwarz]:
+$|(x,y)|\leq\|x\|\,\|y\|$. 
+\elem
+
+\pru: Para cualquier $x,y \in V$, $\lambda \in \re{}$ tenemos por
+{\it iii)},
+\beq\barr{rcl}
+0&\leq& (y+\lap(x,y)\,x,y+\lap (x,y)\,x) \\
+&=&\|y\|^2+\lap^2\,|(x,y)|^2\,\|x\|^2+ \\
+ & & \;\;\;+\lap\,\overline{(x,y)}(x,y) +\lap\,(x,y)(y,x) \\
+ & = &\|y\|^2+2\,\lap\,|(x,y)|^2+\lap^2\,|(x,y)|^2\,\|x\|^2.
+ \earr
+ \eeq
+
+Como esta relación debe valer para todo $\lambda \in \re{}$ entonces el
+discriminante del polinomio en $\lambda$ de la derecha debe ser no-positivo,
+es decir,
+\beq 
+4\,|(x,y)|^4-4\,\|x\|^2\|y\|^2|(x,y)|^2\leq0.
+\eeq
+lo que nos da la desigualdad buscada.
+
+\blem[Desigualdad triangular]: 
+$\|x+y\|\leq\|x\|+\|y\|$.
+\elem
+
+
+\pru:
+$$\barr{rcl}
+\|x+y\|^2 & = & \|x\|^2 + \|y\|^2 +2\,\mbox{Re}\,(x,y) \\
+          & \leq & \|x\|^2+\|y\|^2+ 2\,|(x,y)| \\
+          &\leq& \|x\|^2+\|y\|^2+2\,\|x\|\,\|y\| \\
+          & \leq & \lp\|x\|+\|y\|\rp^2, 
+          \earr
+$$
+Lo que nos da la desigualdad buscada.
+
+\noi \yaya{Ejemplos}:
+
+\begin{enumerate}
+\item $C^{\,n}$, el espacio vectorial de n-tuplas de números  
+complejos.
+
+
+Sea $x = (x_1,x_2,...,x_n)$ e $y = (y_1,y_2,...,y_n)$, luego 
+$$(x,y) = \sum^n_{j=1} \bar x_j y_j . $$
+
+\item $l^2$, el espacio vectorial de sucesiones de números complejos
+$\{x_i\}$ tales que 
+$$\|\{x_j\}\|_2 \equiv \sqrt{\sum^{\infty}_{j=1} |x_j|^2 } < \infty, $$
+con el producto escalar,
+$$ (\{x_j\},\{y_j\}) = \sum^{\infty}_{j=1} \bar x_j\, y_j .$$
+
+Note que la desigualdad de Schwarz nos garantiza que el producto escalar
+está bien definido para todo par de vectores  de $l^2$.
+
+Para asegurarnos que $l^2$ es un espacio de Hilbert debemos probar
+que es completo, es decir que toda sucesión de Cauchy 
+(con respecto a la norma de $l^2$)
+converge a un elemento de $l^2$.
+
+\blem 
+$l^2$ es un espacio de Hilbert.
+\elem
+
+\pru:
+Sea $\{\{x_i\}_N\}$ una sucesión de sucesiones. Que esta sea de
+Cauchy significa que dado $\eps > 0$ existe $\bar N$ tal que
+\[
+\|\{x_i\}_N-\{x_i\}_M\|^2 = \sum_{i=1}^{\ifi}|x_i^N-x_i^M|^2 < \eps^2
+\;\;\; \forall \;\;\; N,M > \bar{N},
+\]
+%
+pero eso implica que para cada $i$
+\beq
+|x_i^N-x_i^M| < \eps
+\eeq
+es decir la sucesión  de
+números complejos (en $N,i$ fijo) $\{x_i^N\}$ es Cauchy. Pero el
+plano complejo es completo y por lo tanto para cada $i$, $\{x_i^N\} $
+converge a un número complejo que denotaremos $\bar x_i$
+
+Sea $\{\bar x_i\}$ la sucesión (en $i$) de estos números, 
+probaremos ahora que $\{\bar x_i\} \in l^2$ y que 
+ $\{\{x_i\}_N\}\longrightarrow\{\bar {x_i}\}$ para $N\to\ifi$.
+ 
+Tomando el límite $N \to \infty$ vemos que si $M > \bar{N}$ luego
+
+$$ 
+\sum_{j=1}^k |x^M_j - \bar{x}_j|^2 < \eps^2 
+$$
+%
+Pero esta es una sucesión (en $k$) de números reales que es
+acotada (por $\eps^2$) y por lo tanto, 
+tomando ahora el límite $k \to \infty$ vemos que 
+$\{\{x_i\}_N\} - \{\bar x_i\} \in l^2$ y que si $\{\bar x_i\} \in l^2$
+luego $\{\{x_i\}_N\} \to \{\bar x_i\}$ en norma.
+%
+Pero 
+\begin{eqnarray*}
+\|\{\bar x_i\}\|^2 &=& 
+\| \{\{x_i\}_N\} + (\{\bar x_i\} - \{\{x_i\}_N\} )\|^2 \\
+&\leq& \|\{\{x_i\}_N\}\|^2 + \|\{\bar x_i\} - \{\{x_i\}_N\}\|^2,
+\end{eqnarray*}
+y por lo tanto que $\{\bar x_i\} \in l^2$ $\spadesuit$
+
+
+Este ejemplo y el que lo sigue son ejemplos clásicos a tener en
+cuenta,  
+esencialmente todo espacio de Hilbert que trataremos es alguna de
+estas variantes.
+
+\item $L^2$ (o $H^0$), el espacio de funciones medibles con cuadrado 
+integrable en \re{}
+e identificadas entre sí,  si su diferencia está en un conjunto de
+medida cero $(f\sim g\mbox{ si }\int |f-g|^2\,dx<0)$. El producto escalar 
+es $(f,g)=\int \bar f \,g\;dx$  y su norma obviamente
+$\|f\|_{H^0}=\sqrt{\int |f|^2\;dx}$.
+
+\item (Espacios de Sobolev)
+Sea la norma
+\begin{eqnarray*} 
+\|f\|^2_{H^m} &=&  \dip\int_{\Omega}\{|f|^2+\sum^n_{i=1}|\pa_i
+f|^2+\sum^n_{i,j=1}|\pa_i\pa_jf|^2+\cdots \\
+&+&\sum_
+{\underbrace{i,j,\ldots,k=1}_m}^n|\pa_i\pa_j\ldots\pa_k f|^2\}, \nonumber \\
+\;
+\end{eqnarray*}
+%
+ donde las derivadas parciales son con respecto a un
+sistema cartesiano de coordenadas en \ren. Definiremos el espacio de
+Sobolev de orden $m$ como,
+$\ve H^m(\Omega)=\{$ Completamiento del espacio de funciones $m$ veces 
+diferenciables en $\Omega\su\ren$ con respecto a la norma $\|\;\;\|_{H^m}\}$
+
+Es obvio cuál es el producto escalar correspondiente, además no\-te que
+por de\-fi\-ni\-ción $H^m$ es completo. $H^0$ coincide con el definido en
+el ejemplo anterior, ya que las funciones continuas son densas en $L^2$.
+
+\end{enumerate}
+
+Como vemos de estos ejemplos los espacios de Hilbert son la
+generalización inmediata de $\ren $ ( o $C^n$) a dimensión 
+infinita donde hemos
+preservado la noción no solo de la magnitud de un vector sino
+también la del ángulo entre dos vectores.
+Esto hace que los espacios de Hilbert tengan propiedades más
+interesantes que las que tienen los espacios de Banach en general. La
+más interesante se refiere a los subespacios de $H$. Sea $M$ un
+subespacio cerrado de $H$. Este subespacio hereda el producto escalar
+definido en $H$ (simplemente restringiendo el mapa $(\cdot ,\cdot )$ a actuar
+solo en elementos de $M$) y por ser cerrado es completo, por lo tanto
+es también un espacio de Hilbert.
+\espa
+
+\noi \yaya{Ejemplos}:
+\begin{itemize}
+\item[a)] 
+Sea $M$ el subespacio generado por el vector $( 1, 0, 0)$ en $C^3$, es
+decir todos los vectores de la forma $( c, 0, 0 )$ con $c\in C$.
+
+\item[b)] 
+Sea $M$ el subespacio de $H^0$ que consiste de todas las funciones que
+se anulan en el intervalo $( 0, 1 )$ excepto en un subconjunto de medida
+nula. $M$ es cerrado, ya que si una sucesión de Cauchy de funciones se
+anula en ( 0, 1) luego la función límite (que existe pues $H$ es
+completo) también se anula en dicho intervalo y por lo tanto está
+en $M$.
+
+\item[c)] 
+Sea $M=C[a,b]$ el subespacio de funciones continuas  de 
+$H^0([a,b])$. Este no es cerrado y por lo tanto no es un espacio de Hilbert.
+[Muestre, encontrando una sucesión de Cauchy de funciones continuas
+que no tiene como límite una función continua, que este
+subespacio no es cerrado.]
+
+\item[d)] 
+Sea $K$ un subconjunto cualquiera de $H$ y considere la intersección
+de todos los subespacios cerrados de $H$ que contienen a $K$. Esta
+intersección nos da el subespacio más peque\~no que contiene a
+$K$  y se llama el subespacio generado por $K$. 
+En el
+ejemplo a) $K=\{(1,0,0)\}$ genera el plano complejo que contiene a este vector.
+En el ejemplo c) $K=C[a,b]$
+genera todo $H^0([a,b])$.
+
+\end{itemize}
+
+El concepto definido anteriormente no usa del producto escalar y por
+lo tanto también es válido para espacios de Banach en general (un
+subespacio cerrado de un espacio de Banach es también un espacio de
+Banach). 
+
+El producto escalar nos permite introducir el concepto de
+ortogonalidad y así definir el complemento ortogonal de $M$, es decir
+el conjunto,
+\beq
+M^{\perp}=\{x\in H\,|\,(x,y)=0\;\forall\;y\in M\},
+\eeq
+que tiene la siguiente propiedad,
+
+\bteo
+ Sea $M$ un subespacio cerrado de un espacio de Hilbert $H$.
+Luego $M^{\perp}$ es también un espacio de Hilbert. Además $M$ y $M^{\perp}$ son
+complementarios, es decir todo vector en $H$ puede ser escrito  de
+una única manera como la suma de un vector en $M$ y otro en $M^{\perp}$.
+\beq
+H=M\oplus M^{\perp}
+\eeq
+\eteo
+
+\pru:
+
+Es inmediato que $M^{\perp}$ es un subespacio vectorial y que es cerrado.
+[Si $\{x_i\}$ es una sucesión en $M^{\perp}$ convergiendo a $x$ en $H$ luego
+$|(x,y)|=|(x-x_i,y)|\leq\|x-x_i\|\,\|y\|\to 0\;\;\forall \; y \in M$
+ y por lo tanto $x\in M^{\perp}$.]
+Solo debemos probar la complementaridad. Para ello, dado $x\in H$,
+buscaremos el elemento $z$ en $M$ más próximo a $x$, ver figura.
+
+\espa 
+%\fig{5cm}{El espacio perpendicular.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m8_4}}
+    \caption{El espacio perpendicular.}
+    \label{fig:8_4}
+  \end{center}
+\end{figure}
+
+Sea $d=inf_{w\in M}\|x-w\|_H$ y elijamos una sucesión $\{z_n\}$ en
+$M$  tal que  $\|x-z_n\|_H\to d$. Esto es posible por la definición
+de ínfimo.  
+
+Luego
+{%\small
+\[\barr{rcl}
+\|z_n-z_m\|^2_H & = & \|(z_n-x)-(z_m-x)\|^2_H \\
+                & = & 2\|z_n-x\|^2_H +2\|z_m-x\|^2_H \\
+                && -\|(z_n-x)+(z_m-x)\|^2_H \\
+                & = & 2\|z_n-x\|^2_H +
+2\|z_m-x\|^2_H-4\|\frac{z_n+z_m}2 -x\|^2 \\
+                & \leq& 2\|z_n-x\|^2_H +2\|z_m-x\|^2_H-4\,d^2 \\ %\longrightarrow\\
+               &  &
+               \barr{cl}
+                %& \\ & \\ 
+                \longrightarrow & 2\,d^2+2\,d^2-4\,d^2=0 \\
+                ^{m \to \ifi} & \\
+                ^{ n\to\ifi} & 
+                \earr
+                                \earr
+\]                           
+}
+La segunda igualdad proviene de la llamada ley del paralelogramo, ver
+figura. 
+
+\espa 
+%\fig{5cm}{Ley del paralelogramo.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m8_5}}
+    \caption{Ley del paralelogramo.}
+    \label{fig:8_5}
+  \end{center}
+\end{figure}
+
+Esto  nos dice que $\{z_n\}$ es Cauchy y por lo tanto que converge a
+un único $z$ en $M$.
+
+Sea $y=x-z$, solo resta ver que $y$ está en $M^{\perp}$, es decir que
+$(y,v)=0\;\;\forall \;v\in M$. Sea $v\in M$ y $t\in \re{}$, luego
+\beq\barr{rcl}
+d^2 &\equiv &\|x-z\|^2\leq\|x-(z+t\,v)\|^2=\|y-t\,v\|^2 \\
+    & = & d^2-2\,t\,Re(y,v) +t^2\,\|v\|^2 
+    \earr
+\eeq
+y por lo tanto $-2t\,Re(y,v)+t^2\,\|v\|^2\geq 0\;\;\forall \; t$
+ lo que implica que $ Re(y,v)=0$. Tomando $it$ se obtiene que $Im(y,v)=0$
+y se completa la prueba 
+\epru
+\espa
+
+\bpro 
+En la prueba solo usó la ley del paralelogramo,
+\beq
+\label{paralelogramo}
+\|\ve{x} + \ve{y}\|^2 + \|\ve{x} - \ve{y}\|^2  = 
+                     2(\|\ve{x}\|^2 + \|\ve{y}\|^2) 
+\eeq
+%
+Muestre que una norma la satisface si y solo si ésta proviene de un
+producto escalar. 
+Ayuda: Utilice la denominada identidad de polarización para definir un 
+producto interno a partir de la norma,
+\begin{equation}
+  \label{eq:polarizacion}
+  (\ve{x}, \ve{y}) = \frac{1}{4}\{
+               [\|\ve{x} + \ve{y}\|^2 - \|\ve{x} - \ve{y}\|^2]
+              -\Im [\|\ve{x} + \Im \ve{y}\|^2 - \|\ve{x} - \Im \ve{y}\|^2]
+\end{equation}
+\epro
+
+Este teorema tiene importantes corolarios que veremos a continuación.
+
+\bcor 
+$(M^{\perp})^{\perp}=M$
+\ecor
+
+\pru:
+
+Probaremos éste mostrando que $M\su (M^{\perp})^{\perp}$ y que 
+$(M^{\perp})^{\perp}\su M$.
+
+La primera inclusión es obvia ya que $(M^{\perp})^{\perp}$ 
+es el conjunto de vectores ortogonales
+a $M^{\perp}$ el cual a su vez es el conjunto de vectores ortogonales a $M$.
+
+La segunda inclusión sigue de que si descomponemos cualquier vector
+$x\in (M^{\perp})^{\perp}$ en su parte en $M$ y en parte en $M^{\perp}$, $
+x=x_1+x_2$, $x_1\in M$, $x_2\in M^{\perp}$,  
+la primera inclusión nos dice que $x_1\in(M^{\perp})^{\perp}$ pero
+$(M^{\perp})^{\perp}$ y $M^{\perp}$ son también
+complementarios y por lo tanto $x_2=0$ 
+\epru
+
+Este nos dice que tomando complementos no obtendremos más
+que un solo espacio de Hilbert extra.
+
+Para formular el siguiente corolario es necesario introducir un nuevo
+concepto, el de espacio dual de un espacio de Hilbert. Podríamos
+definir el dual de un espacio de Hilbert de la misma forma que lo
+hicimos para espacios vectoriales de dimensión finita, es decir como
+el conjunto de mapas lineales de $H$ en $\ve C$. El espacio vectorial así
+obtenido no hereda $H$ ninguna propiedad interesante por ser éste un
+espacio demasiado grande.
+Para lograr un espacio más peque\~no y con propiedades atractivas
+restringiremos los mapas lineales a aquellos que sean continuos. 
+Es decir
+el {\bf espacio dual} a $H,\;H'$ será el conjunto de mapas lineales 
+continuos de $H$ en $\ve C$. 
+¿Qué mapas están en $H'$? 
+Note que si $y\in H$ luego el mapa $\fip_y:H\to \ve C$ 
+definido por $\fip_y(x)=(y,x)$ es lineal y como $|\fip(x)|\leq\|y\|_H\:\|x\|_H$
+también es continuo. Este mapa nos da una correspondencia 
+inyectiva (no canónica, ya que depende del producto escalar) entre los
+elementos de $H$ y los de su dual.
+Vemos así que $H$ está contenido naturalmente en $H'$.
+
+\ejer: Medite sobre cuál es la norma natural en $H'$. 
+Pruebe que con esa norma tenemos $\|\phi_y\|_{H'} = \|y\|_H$.
+\espa
+
+\bpro
+Sea $\phi: H \to \Complex$ un mapa lineal. Muestre que la continuidad
+del mapa en el origen asegura la continuidad del mapa en todo punto.
+\epro
+
+Si la dimensión de $H$ es finita luego sabemos que
+$H'$ tendrá la misma dimensión y entonces tendremos una
+correspondencia (no canónica) uno a uno entre vectores y covectores.
+En principio esto no tiene por qué ser así en el caso de dimensión 
+infinita y efectivamente si usamos una definición análoga y definimos
+el dual de un espacio de Banach en general no habrá ninguna
+relación entre éste y el espacio original.
+En el caso de espacios de Hilbert todo es más simple, como
+muestra el siguiente corolario.
+
+\bcor[Teorema de representaciones de Riez]:
+Sea $\fip \in H'$, luego existe un único $y \in H$ tal que 
+$\fip(x) = (y,x) \forall \; x \in H$,
+es decir $H \approx H'$ en el sentido que existe un mapa
+natural invertible entre $H$ y $H'$.
+\ecor
+
+\pru: Sea $M = \{ x \in H \mbox{ tal que } \fip(x)=0\}$. Como $\fip$
+es lineal, $M$ es un subespacio de $H$, como $\fip $ es continuo este
+es cerrado. Por el teorema anterior $M^{\perp}$ es un espacio de
+Hilbert y complementa a $M$. Si $M^{\perp} $ es cero luego $M=H$
+y $\fip$ es el mapa {\sl cero} e $y= 0$ será su representante 
+en $H$.
+Supongamos entonces $M^{\perp} \neq \{0\}$ y elijamos $w \in M^{\perp}$
+tal que $\fip (w) = 1$\footnote{El lector debe convencerse que si
+$\fip$ no es el mapa nulo entonces siempre existe $w\in H$ tal que 
+$\fip(w)=1$.}. 
+Para cualquier $v \in M^{\perp}$ 
+$v-\fip(v)w \in M^{\perp}$, pero $\fip(v - \fip(v)w) = 0$ y por lo tanto 
+también $v-\fip(v)w \in M$. 
+Así concluimos que $v-\fip(v)w =0\; \forall\;
+v \in M^{\perp}$ o sea que $v=\fip(v)w \;\forall\; v \in M^{\perp}$, es decir que
+$M^{\perp} $ es unidimensional. Veamos ahora que 
+$\fip(x) = (\dip\frac w{\|w\|^2},x) \; \forall x \in H$.
+En efecto por el teorema anterior $x = \alpha w + y$ con $\alpha \in C$
+e $y \in M$ y por lo tanto, 
+$\fip(x) = \fip(\alpha w + y) = \alpha \fip(w) + \fip(y) = \alpha$,
+pero por otro lado,
+$(\dip\frac w{\|w\|^2},x) = \alpha$ 
+\epru
+\espa
+
+\ejer: Concluya la prueba probando unicidad. 
+\espa
+
+Para enunciar el tercer corolario necesitamos
+el concepto de base ortonormal.
+Una {\bf base ortonormal } de $H$ es un subconjunto de vectores
+ de $H$ que tienen norma uno, que son mutuamente ortogonales
+y que generan $H$ (es decir que dado $x \in H$ y $\eps > 0$
+existe una combinación lineal {\bf finita} de elementos de esta  base $y$  tal
+que $\|x-y\|_H < \eps $.
+
+\ejem: 
+En $l^2$ sea $e_1 = (1,0,0,...)$, $e_2 = (0,1,0,...)$, etc.
+
+\ejer: 
+Muestre que si $a \in l^2 $ luego 
+$\|a-\sum_{n=1}^i(a,e_n)e_n \|_{l^2_{i\to \ifi}} \longrightarrow 0 $.
+
+\bcor 
+Todo espacio de Hilbert tiene una base ortonormal.
+\ecor
+
+Este resultado, como el anterior, es muy poderoso ya que nos dice que
+siempre podemos aproximar distintos elementos de $H$ usando una dada
+base. No probaremos este Corolario pues para ello se necesitan herramientas
+que no se verán en este curso. Pero sí otro resultado más simple,
+para lo cual introducimos la siguiente definición.
+
+\defi: Diremos que un espacio de Banach (y en particular de
+Hilbert) es {\bf separable} si tiene un subconjunto denso con una cantidad
+numerable de elementos.
+
+\noi \yaya{Ejemplos}:
+
+a) El subconjunto $S$ de sucesiones $l^2$ que tienen un número finito
+de elementos {\sl racionales} es denso en $l^2$ [ya que como veremos
+más adelante cualquier elemento de $l^2$ se puede expresar como el límite
+de una sucesión $S$] y numerable [ya que los racionales lo son].
+
+b) El subconjunto $S(\re{})$ que consiste de las funciones 
+$f_{r,s,t}(x) = re^{-s|x-t|}$ (note que estas son suaves), donde
+$r,s,t $ son números racionales y $s>0$, es denso y numerable  en 
+$L^2(\re{})$.
+
+La mayoría de los espacios de Hilbert que aparecen en la práctica
+son separables y por lo tanto tienen la siguiente propiedad:
+
+\bteo 
+\label{teo7.2}
+Un espacio de Hilbert $H$ es separable si y solo si tiene una base 
+ortonormal numerable $S$. Si $S$ tiene un número finito de elementos,
+N, luego $H$ es isomorfo a $C^N$ (es decir existe un mapa 
+$\fip :H \rightarrow C^N $, en este caso lineal, con 
+$\|\fip(x)\|_{C^N} = \|x\|_H \forall x \in H$ que es continuo e invertible
+y su inversa es también continua). 
+Si $S$ tiene un número infinito de elementos luego $H$ es isomorfo
+a $l^2$.
+\eteo
+
+
+Este teorema nos dice que entre los espacios de Hilbert separables esencialmente
+no hay más estructura que la ya presente en $C^N$ o $l^2$.
+\espa
+
+\pru: Para obtener la base ortonormal (numerable) primero
+descartamos de un subconjunto denso y numerable de $H$, $S$, algunos
+de sus elementos hasta obtener una subcolección de vectores (por construcción
+numerable) linealmente independientes y que todavía expanden $S$. 
+Luego aplicamos a esta subcolección el procedimiento de Gram-Schmidt
+para obtener la base ortonormal. Para probar el resto del teorema 
+necesitamos los siguientes lemas.
+
+\blem[Pitágoras]:
+\label{lem8.1}
+ Sea $\{x_n\}_{n=1}^N$ un conjunto ortonormal de
+$H$, no necesariamente una base. Luego, 
+\elem
+\beq
+\|x\|_H^2=\sum_{n=1}^N |(x_n,x)|^2+\|x-\sum_{n=1}^N(x_n,x)x_n\|^2\;\;\;
+\forall\;\;x\in H.
+\eeq
+
+\pru: 
+Sea $v = \sum_{n=1}^N (x_n,x)x_n$ y $w=(x - \sum^N_{n=1}
+(x_n,x)x_n)$.
+Es fácil de ver que $v\in V$, el subespacio de Hilbert generado por los
+$\{x_n\}^N_{n=1} $ y $w \in V^{\perp}$, pero entonces 
+\begin{eqnarray*}
+\|x\|^2_H &=& (x,x) \\
+                 &=& (v+w,v+w) \\
+                 &=& (v,v)+(w,w) \\
+                 &=&\sum_{n=1}^N |(x_n,x)|^2+\|w\|^2_H.
+\end{eqnarray*}
+\epru 
+
+
+
+\blem[Desigualdad de Bessel]:
+\label{lem8.2}
+
+Sea $\{x_n\}_{n=1}^N$ un conjunto ortonormal de
+$H$, no necesariamente una base. Luego,
+\beq
+\|x\|_H^2\geq\sum_{n=1}^N|(x,x_n)|^2\;\;\;\forall\;x\in H
+\eeq
+\elem
+
+\pru: 
+Obvia conclusión del lema anterior 
+\epru
+
+\blem 
+\label{lem7.5}
+Sea $S = \{x_n\}$ una base ortonormal numerable\footnote{Un resultado
+similar es válido aún en el caso de que la base no sea numerable,
+o sea aún cuando $H$ no sea separable.} de $H$.
+Luego $\forall \; y \in H$,
+\beq
+y=\sum_n(x_n,y)x_n
+\eeq
+y
+\beq
+\|y\|^2=\sum_n|(x_n,y)|^2,
+\eeq
+donde la primera igualdad significa que la suma converge con respecto
+a la norma de $H$ a $y \in H$. La última igualdad es llamada 
+{\bf relación de Parseval } y los coeficientes $(x_n,y)$ los 
+{\bf coeficientes de Fourier} de $y$. 
+Inversamente si $\{c_n\} \in l^2$ luego $\sum_n c_nx_n \in H$.
+\elem
+
+\espa
+\pru:
+De la desigualdad de Bessel sigue que dado cualquier
+subconjun\-to fi\-ni\-to  $\{x_n\}^N_{n=1}$,
+\beq
+a_N=\sum_{n=1}^N|(x_n,y)|^2\leq\|y\|^2
+\eeq
+lo que implica que la sucesión $\{a_N\}$, que es monótonamente
+creciente, es acotada y por lo tanto converge a un valor límite finito.
+Esto a su vez implica que $\{a_N\}$ es Cauchy.
+Sea $y_N = \sum_{n=1}^N (x_n,y)x_n$, luego para $N> M$
+\[
+\|y_N-y_M\|^2_H=\|\sum_{j=M+1}^N (x_j,y)x_j\|^2_H =\sum_{j=M+1}^N
+|(x_j,y)|^2=a_N-a_M 
+\]
+
+
+La convergencia de $\{a_N\}$ garantiza así que $\{y_N\}$ es una
+sucesión de Cauchy y así que esta converge a un elemento $y'$
+de $H$. Probemos entonces que $y' =y $.
+Pero para cualquier elemento de $S$, $x_n$
+\beq\barr{rcl}
+(y-y',x_n) &=&\dip\lim_{N\to\ifi}(y-\sum_{j=1}^N(x_j,y)x_j,x_n) \\
+           &=&(y,x_n)-(y,x_n) =0
+           \earr
+\eeq       
+y por lo tanto $y - y'$ es perpendicular al espacio generado
+por $S$, que es todo $H$ y por lo tanto tiene que ser el elemento cero.
+Solo resta ver que si $\{c_n\} \in l^2$ luego 
+$\sum^{\infty}_{n=1} c_nx_n \in H$.
+Un cálculo idéntico al anterior muestra que 
+$\{y_N = \sum^N_{n=1} c_nx_n\}$ es una sucesión de Cauchy y por lo tanto
+que $\lim_{N\to\ifi} y_N \in H$ 
+\epru
+
+Continuamos ahora la prueba del Teorema~\ref{teo7.2}
+El último argumento del 
+Lema~\ref{lem7.5}
+nos muestra que dada una base
+numerable $\{x_n\}^\infty_{n=1} $ de $H$ el conjunto numerable
+$Span_{\ve{Q}}\{S\} = \{x | x = \sum^{\infty}_{n=1} c_nx_n$ con $\{c_n\}$ una sucesión
+finita de racionales $\}$ es denso en $H$ y por lo tanto que $H$ es separable.
+Esto concluye la parte {\sl sii} de la prueba, solo resta encontrar
+un isomorfismo entre $H$ y $C^N$ o $l^2$. Sea $\{x_n\}$ una base
+numerable de $H$ y sea $\fip:H \rightarrow C^N$ o $l^2$ el mapa 
+\beq
+\fip(y)=\{(x_n,y)\}.
+\eeq
+Si la base es finita, con dimensión $N$ este es claramente un mapa
+en $C^N$. Si la base es infinita la imagen de $H$ por $\fip$ está 
+incluida en el espacio de sucesiones complejas infinitas, pero usando
+el Lema~\ref{lem7.5} vemos que ,
+\beq
+\|\fip(y)\|^2_{l^2}=\sum_{n=1}^{\ifi}|(x_n,y)|^2=\|y\|^2_H
+\eeq
+y por lo tanto que dicha imagen está contenida en $l^2$. La continuidad
+e invertibilidad del mapa quedan como ejercicio para el lector 
+\epru
+\espa
+
+El teorema anterior, entre otras cosas sirve para dar una
+caracterización que diferencia los espacios de Hilbert de dimensión
+finita de los de dimensión infinita. (En realidad esta
+caracterización es válida para espacios de Banach en general).
+
+\bteo 
+Sea $H$ un espacio de Hilbert y sea 
+\[
+B_1(H) = \{x\in H \dip/\;\;\|x\|_H \leq 1\}
+\]
+%
+la bola de radio uno en $H$.
+Luego $B_1(H)$ es compacta sii $H$ es de dimensión finita.
+[Se puede ver que en este caso un subconjunto $B$ de $H$ es compacto
+sii toda sucesión $\{x_n\}$ de elementos de $H$ en $B$ tiene una
+subsucesión que converge a un elemento de $B$.]
+\eteo
+
+\pru: 
+Veremos solo el caso en que el espacio es separable.
+Si $H$ es de dimensión finita es isomorfo a $C^N$, pero $B_1(C^N)$
+es un subconjunto cerrado y acotado, y por lo tanto compacto. 
+Si $H$ es de dimensión infinita (y separable) entonces es isomorfo a
+$l^2$, pero la sucesión en $B_1(l^2)$, $\{x_n\}$ con 
+$\{x_n = (0,...,0,\barr{c} \\ 1\\ ^n \earr,0,...)\}$
+claramente no tiene ninguna
+subsucesión convergente 
+\epru
+\espa
+
+\ejer: Ver que ninguna subsucesión de la sucesión anterior es de Cauchy.
+\espa
+
+\ejem:
+Sea $H= L^2 ([0,2\pi])$ y $S = \{\frac1{\sqrt{2\pi}}e^{inx}$, 
+ $n=0, \pm 1, \pm 2,\ldots\}$. El desarrollo de este ejemplo será
+nuestra ocupación hasta el final de este capítulo.
+\espa
+
+\ejer: Muestre que los elementos de $L^2(0,2\pi)$ de la forma 
+$f_n(x) = \frac1{\sqrt{2\pi}} e^{inx}$, $n=0, \pm 1, \pm2, ...$,
+forman un conjunto ortonormal.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Serie de Fourier}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bteo 
+$S = \lb\frac{e^{inx}}{\sqrt{2\pi}},\;n=0,\pm1,\pm2\ldots\rb$ 
+es un conjunto completo de vectores or\-to\-nor\-ma\-les 
+(es decir una base ortonormal) de $L^2[0,2\pi]$.
+\eteo
+
+Note que por 
+Lema~\ref{lem7.5} 
+esto es equivalente a asegurar que si $f \in L^2[0,2\pi]$
+luego $f_N(x)$ converge (en la norma de $L^2[0,2\pi]$) a $f$ cuando $N\to\ifi$.
+\espa
+
+\bpru
+La ortogonalidad es trivial y forma parte de un ejercicio anterior, por lo
+tanto solo nos concentraremos en la completitud. 
+El espacio de funciones Lipschitz en $[0,2\pi]$,
+$Lip[0,2\pi]$ es denso [esencialmente por definición! ya que contiene a todas
+las funciones suaves] en $L^2[0,2\pi]$,
+pero entonces su subespacio consistente de funciones periódicas $Lip_p[0,2\pi]$
+también lo es [ya que los elementos de $L^2[0,2\pi]$ son clases
+equivalentes de funciones y en cada clase siempre hay una que es periódica].
+Supongamos ahora que 
+\begin{equation}
+  \label{eq:S_N}
+  S_N(g)(x) := \frac{1}{\sqrt{2\pi}} \sum_{n=-N}^{N} g_n e^{inx} \to g(x)
+\end{equation}
+punto a punto y uniformemente si $g(x) \in Lip_p([0,2\pi])$.
+Luego por densidad, dada cualquier función $f(x) \in L^2([0,2\pi])$ y 
+$\eps > 0$ existirá $f_{\eps} \in Lip_p([0,2\pi])$ tal que 
+$\|f-f_{\eps}\|_{L^2} < \eps/3$ y por lo tanto tendremos,
+
+\begin{eqnarray*}
+  \|f-S_N(f)\|_{L^2} \!\!\!\!
+                     &=& \!\!\!
+      \|f-S_N(f) - f_{\eps} + S_N(f_{\eps}) + f_{\eps} - S_N(f_{\eps}) \|_{L^2}
+                                   \nn
+                     &\leq&\!\!\
+      \|f-f_{\eps}\|_{L^2} + \|f_{\eps}-S_N(f_{\eps})\|_{L^2}
+      + \|S_N(f-f_{\eps})\|_{L^2}
+\end{eqnarray*}
+%
+pero
+\begin{eqnarray}
+  \|S_N(f-f_{\eps})\|_{L^2} &=& \sum_{n=-N}^{N}|(f-f_{\eps})_n|^2  \nn
+                            &\leq& \|f-f_{\eps}\|^2 \nn
+                            &\leq& \eps/3
+\end{eqnarray}
+%
+y por lo tanto eligiendo $N$ tal que 
+$|f_{\eps}(x) - S_N(f_{\eps})(x)| < \frac{\eps}{6\pi}$,
+lo que sigue de nuestra suposición anterior (todavía no probada),
+tenemos que 
+$\|f_{\eps} - S_N(f_{\eps})\|_{L^2} < \frac{\eps}{3}$
+y por lo tanto concluimos que para dicho $N$,
+$\|f - S_N(f)\|_{L^2} < \eps$
+\epru
+
+Vemos así que solo resta probar nuestra suposición de convergencia
+uniforme de $S_N(f)$ a $f$ para funciones Lipschitz periódicas.
+La prueba de esta afirmación es muy instructiva y nos muestra como
+trabaja la serie de Fourier. Preparatoriamente para este resultado probamos
+una serie de lemas:
+
+\blem
+Si $f$ es integrable ($f \in L^1$) luego,
+\begin{equation}
+  \sup_n\{|f_n|\} \leq \frac{1}{\sqrt{2\pi}} \int_0^{2\pi}|f(x)| dx.
+\end{equation}
+\elem
+
+\bpru
+\begin{eqnarray}
+  |f_n| &=& |(\frac{e^{inx}}{\sqrt{2\pi}},f)| \nn
+        &\leq&  \frac{1}{\sqrt{2\pi}}\int_0^{2\pi}|e^{-inx}f(x)|dx \nn
+        &\leq&  \frac{1}{\sqrt{2\pi}}\int_0^{2\pi}|f(x)|dx
+\end{eqnarray}
+\epru
+
+\blem
+Si $f$ tiene derivada integrable, luego $f_n \to 0$ cuando $n \to \infty$.
+\elem
+
+\bpru
+Integrando por partes tenemos,
+\begin{eqnarray*}
+  f_n &=& (\frac{e^{inx}}{\sqrt{2\pi}},f) \nn
+      &=& \frac{1}{\sqrt{2\pi}}\int_0^{2\pi} e^{-inx}f(x)dx \nn
+      &=& \frac{1}{in\sqrt{2\pi}}\int_0^{2\pi} e^{-inx}f'(x)dx
+          -\frac{1}{in\sqrt{2\pi}}e^{-inx}f(x)|_0^{2\pi} \nn
+      &=& \frac{1}{in\sqrt{2\pi}}\int_0^{2\pi} e^{-inx}f'(x)dx 
+          -\frac{1}{in\sqrt{2\pi}}[f(2\pi)-f(0)] \nn
+\end{eqnarray*}
+y por lo tanto
+\begin{equation}
+  |f_n| \leq \frac{1}{n\sqrt{2\pi}}[\|f'\|_{L^1} + |f(2\pi)-f(0)|],
+\end{equation}
+con lo que el lema queda demostrado
+\epru
+
+Este lema y su generalización a un número mayor de derivadas nos indica
+que cuanto más diferenciable es una función más rápido decaen sus
+coeficientes de Fourier (asintóticamente).
+
+\ejer:
+Pruebe un lema similar que dé una mejor cota para $f_n$ si la función es periódica y es $m$ veces diferenciable.
+
+\blem[Riemann-Lebesgue]
+Si $f \in L^1([0,2\pi])$, es decir una función integrable. Luego,
+
+\begin{equation}
+  \label{eq:R_L}
+  \lim_{n \to \infty} f_n = 0
+\end{equation}
+\elem
+
+\bpru 
+Si $f\in L^1([0,2\pi])$, luego es aproximable por funciones suaves, en 
+particular, dado cualquier $\eps >0$ existe 
+$f_{\eps}:[0,2\pi]$, suave, tal que 
+$\|f-f_{\eps}\|_{L^1} < \frac{\eps}{2\sqrt{2\pi}}$.
+Pero como,
+\begin{eqnarray}
+  |f_n - f_{\eps n}| &=& |(\frac{e^{inx}}{\sqrt{2\pi}},f - f_{\eps})| \nn
+                     &\leq& \frac{1}{\sqrt{2\pi}}
+                            \int_0^{2\pi}|f(x) - f_{\eps}(x)|dx \nn
+                     &\leq& \frac{1}{\sqrt{2\pi}}\|f-f_{\eps}\|_{L^1} \nn
+                     &\leq& \eps/2
+\end{eqnarray}
+%
+tenemos que 
+\begin{equation}
+  |f_n| \leq |f_n - f_{\eps n}| + |f_{\eps n}| \leq \eps/2 + |f_{\eps n}|.
+\end{equation}
+Aplicando el lema anterior y notando que $f_{\eps}$ es diferenciable vemos
+que $f_{\eps n} \to 0$ y por lo tanto, dado $\eps >0$ puedo elegir $N$ tal que 
+para todo $n>N$ $|f_{\eps n}| < \eps/2$ con lo que $|f_n| < \eps$ para todo
+$n>N$ y por lo tanto concluimos que $f_n \to 0$ cuando $n \to \infty$
+\epru
+
+Ahora estamos en condiciones de probar el teorema sobre convergencia puntual
+de funciones Lipschitz.
+
+\bteo
+Sea $f:[0,2\pi] \to \Complex$ periódica y Lipschitz. Luego 
+
+\begin{equation}
+S_N(f)(x) := \frac{1}{\sqrt{2\pi}}\sum_{n=-N}^{N} f_n e^{inx}  
+\end{equation}
+converge puntualmente y uniformemente a $f(x)$.
+\eteo
+
+\bpru 
+Probaremos solo la convergencia puntual, la uniforme sigue fácilmente y la
+prueba de ello no agrega nada nuevo.
+Comenzamos con el siguiente cálculo,
+\begin{eqnarray}
+  S_N(f)(\theta) &:=& \frac{1}{\sqrt{2\pi}}\sum_{n=-N}^{N} f_n e^{inx} \nn
+            &=&  \frac{1}{{2\pi}}\sum_{n=-N}^{N} 
+                 \int_0^{2\pi}e^{in\theta'}f(\theta') e^{in\theta}d\theta' \nn
+            &=& \frac{1}{{2\pi}}\int_0^{2\pi}f(\theta')
+                (\sum_{n=-N}^{N}e^{in(\theta-\theta')})d\theta' \nn
+            &=&  \int_0^{2\pi}f(\theta')D_N(\theta-\theta')d\theta'          
+\end{eqnarray}
+donde hemos definido el \textbf{núcleo de Dirichlet}~\index{Dirichlet!núcleo}
+\begin{equation}
+  D_N(\theta-\theta'):= \frac{1}{{2\pi}}\sum_{n=-N}^{N}e^{in(\theta-\theta')}.
+\end{equation}
+Estudiamos ahora algunas propiedades del núcleo de Dirichlet.
+Notemos primero que,
+\begin{eqnarray}
+  \label{eqn:nucleo=1}
+  \int_0^{2\pi}D_N(\theta-\theta')d\theta' &=& 
+                       \frac{1}{{2\pi}}\sum_{n=-N}^{N}
+                       \int_0^{2\pi}e^{in(\theta-\theta')}d\theta' \nn
+            &=&
+                \frac{1}{{2\pi}}[
+                  \sum_{n=-N,\;n\neq0}^{N}\frac{-i}{n}
+                  [e^{in(\theta-2\pi)}-e^{in\theta}] + 2\pi] \nn
+            &=& 1.
+\end{eqnarray}
+%
+Por otro lado tenemos que
+\begin{eqnarray}
+  2\pi D_N(\theta) &=& \sum_{n=-N}^{N}e^{in\theta} \nn
+                   &=& \sum_{n=-N}^{N}(e^{i\theta})^n 
+\end{eqnarray}
+y llamando $q := e^{i\theta}$ para simplificar la escritura tenemos,
+{\small
+\begin{eqnarray}
+ && 2\pi D_N(\theta) \nn 
+          &=& \sum_{n=-N}^{N}q^n \nn
+          &=& \sum_{n=0}^{N}q^n  + \sum_{n=0}^{N}q^{-n} -1 \nn
+          &=& \frac{q^{N+1}-1}{q-1} + \frac{q^{-(N+1)}-1}{q^{-1}-1} -1 \nn
+          &=& \frac{(q^{N+1}-1)(q^{-1}-1)+(q^{-(N+1)}-1)(q-1)-(q-1)(q^{-1}-1)}{(q-1)(q^{-1}-1)} \nn
+          &=& \left[(q^{N+1/2}-q^{-1/2})(q^{-1/2}-q^{1/2})+(q^{-(N+1/2)}-q^{1/2})(q^{1/2}-q^{-1/2}) \right.           \nn 
+	  &-& \left.(q^{1/2}-q^{-1/2})(q^{-1/2}-q^{1/2}) \right] 
+	  /(q^{1/2}-q^{-1/2})(q^{-1/2}-q^{1/2}) \nn
+          &=& \frac{q^{N+1/2}-q^{-N-1/2}}{q^{1/2}-q^{-1/2}} \nn
+          &=& \frac{e^{i\theta(N+1/2)}-e^{-i\theta(N+1/2)}}{e^{i\theta/2}-e^{-i\theta/2}} \nn
+          &=& \frac{\sin((N+1/2)\theta)}{\sin(\theta/2)}.
+\end{eqnarray}
+}
+%
+Por lo tanto
+\begin{equation}
+  D_N(\theta) = \frac{1}{{2\pi}} \frac{\sin((N+1/2)\theta)}{\sin(\theta/2)}.
+\end{equation}
+%
+Tenemos por lo tanto,
+{\small
+\begin{eqnarray*}
+\! S_N(f)(\theta) \!\!\!
+            &=& \!\!\! \int_0^{2\pi}f(\theta')D_N(\theta-\theta')d\theta'  \nn
+            &=& \!\!\! \int_0^{2\pi}f(\theta-\theta')D_N(\theta)d\theta'  \nn
+            &=&  \!\!\! \frac{1}{{2\pi}}\int_0^{2\pi}[f(\theta-\theta')-f(\theta)]
+                 \frac{\sin((N+1/2)\theta')}{\sin(\theta'/2)}d\theta' 
+                 + f(\theta)
+\end{eqnarray*}
+}
+%
+donde en la segunda igualdad hemos usado que la integral de una función 
+periódica sobre su período es independiente del punto donde comienza
+el intervalo de integración, y en la última hemos restado y sumado
+$f(\theta)$ y usado que la integral del núcleo de Dirichlet es uno (\ref{eqn:nucleo=1}).
+
+Si $f(\theta)$ es Lipschitz, $|f(\theta-\theta') -f(\theta)| \leq k|\theta'|$
+y por lo tanto
+\begin{equation}
+g_{\theta}(\theta') := \frac{|f(\theta-\theta') -f(\theta)|}{\sin(\theta'/2)}
+\end{equation}
+%
+es continua en $(0,2\pi)$ y acotada en los extremos, por lo tanto 
+integrable.
+Aplicando ahora el Lema de Riemann-Lebesgue concluimos entonces que la
+integral tiende a cero con $N$ y por lo tanto que 
+$\lim_{N\to \infty} S_N(f)(\theta) = f(\theta)$ en todo punto donde $f(\theta)$ es Lipschitz.
+\epru
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Para probar que $S$ es completo solo tenemos que ver que si 
+$(e^{inx},g)=0\; \forall\; n $ luego $g =0$.
+Sea $f \in C^1_p[0,2\pi]$ y $c_n$ sus coeficientes de Fourier con respecto
+a $S$, luego
+\beq
+(f,g)=\lim_{M\to \ifi}\lp\sum_{-M}^Mc_n\frac{e^{inx}}{\sqrt{2\pi}},g\rp=0
+\eeq
+Concluimos entonces que $g$ es ortogonal a toda $f \in
+C^1_p[0,2\pi]$, pero como vimos este espacio es denso en
+$L^2[0,2\pi]$ y por lo tanto por continuidad debemos tener entonces
+que $(f,g) = 0\; \forall\; f \in H$, o sea $g=0$ 
+\epru
+\espa
+
+\ejem $\;$ [\textbf{Aplicación de la serie de Fourier}]
+Sea $S$ un aro de metal de circunferencia $2\pi$ y sea $T_0(\theta)$ una distribución de temperatura que supondremos de cuadrado integrable ($\in L^2(S)$).
+La evolución temporal de $T(\theta,t)$, 
+(despreciando pérdidas al medio circundante por conducción o por radiación) está dada por,
+
+\begin{equation}
+  \label{eq:calor}
+  \frac{\partial T}{\partial t} = k \frac{\partial^2 T}{\partial \theta^2}
+\end{equation}
+%
+con $k$ una constante positiva. Supondremos $T(\theta,0)=T_0(\theta)$.
+Suponiendo además que $T(\theta,t)$  admite
+una descomposición en serie de Fourier,
+\begin{equation}
+  \label{eq:T_fourier}
+  T(\theta,t) = \sum^{\infty}_{n=-\infty} T_n(t) \frac{e^{in\theta}}{\sqrt{2\pi}}
+\end{equation}
+%
+y que se puede pasar las derivadas
+dentro de la sumatoria infinita obtenemos,
+\begin{eqnarray}
+  0&=&\frac{\partial T}{\partial t} - k \frac{\partial^2 T}{\partial \theta^2}\nn
+   &=& \sum^{\infty}_{n=-\infty}(\frac{dT_n(t)}{dt} + k n^2 T_n(t)) \frac{e^{in\theta}}{\sqrt{2\pi}}
+\end{eqnarray}
+%
+y tomando el producto escalar con $\frac{e^{in\theta}}{\sqrt{2\pi}}$ vemos que
+se debe cumplir,
+\begin{equation}
+  \frac{dT_n(t)}{dt} = - k n^2 T_n(t) \;\;\;\; \forall \; n
+\end{equation}
+%
+o sea,
+\begin{equation}
+  T_n(t) = T_n(0) e^{-kn^2t}.
+\end{equation}
+
+Si la temperatura inicial era 
+\begin{equation}
+  T_0(\theta) = \sum^{\infty}_{n=-\infty} T_n^0 \frac{e^{in\theta}}{\sqrt{2\pi}}
+\end{equation}
+%
+vemos entonces que $T_n(t) = T_n^0 e^{-kn^2t}$ y
+\begin{equation}
+  \label{eq:T_fourier_solucion}
+  T(\theta,t) = \sum^{\infty}_{n=-\infty} T_n^0 e^{-kn^2t} \frac{e^{in\theta}}{\sqrt{2\pi}}
+\end{equation}
+%
+nos da la solución del problema.
+
+Notemos que: 
+a) La distribución de temperatura en la barra solo depende de
+la distribución inicial. 
+%
+b) El hecho de haber podido reducir un problema en derivadas parciales en un problema en derivadas ordinarias de debe a que hemos elegido representar a las funciones en una base de autovectores del operador derivada. En efecto, lo que
+hemos usado fundamentalmente es que 
+$\frac{\partial}{\partial \theta} e^{in\theta} = in\theta d^{in\theta}$.
+%
+c) No importa cuan mala (no diferenciable) es la 
+distribución inicial $T_0(\theta)$, mientras esté en $L^2(S)$, la solución se suaviza para tiempos positivos. En efecto si por ejemplo la distribución inicial es solo Lipschitz luego para todo $t > 0$ la solución 
+es infinitamente diferenciable, tanto en $t$ como en $\theta$. 
+Para ver esto, por ejemplo tomemos,
+\begin{equation}
+   \frac{\partial^pT(\theta,t)}{\partial t^p}  
+   = \sum^{\infty}_{n=-\infty} T_n^0 (-kn^2)^p e{-kn^2t} \frac{e^{in\theta}}{\sqrt{2\pi}},
+\end{equation}
+%
+pero como para $t>0$, $n^{2p} e^{-kn^2t} \to 0$ rápidamente cuando $n \to \infty$ la serie converge absolutamente. Por el contrario, para dato inicial genérico, aun infinitamente diferenciable, la solución no existe para tiempos
+negativos, ya que en ese caso los coeficientes de la serie crecen rápidamente
+con n. 
+
+
+\ejer: Pruebe que un conjunto ortogonal $\{\ve{x}_n\}$ es completo 
+si y solo si
+$(\ve{x}_n,\ve{g}) =  0 \;\;\; \forall n \Rightarrow \ve{g}=0$.
+\espa
+
+\bpro:
+Use Gram-Schmidt para obtener una base ortonormal a partir
+de los monomios 
+\beq
+1,\;x,\;x^2,\;\ldots,x^n,\ldots,
+\eeq
+con respecto a los espacios de Hilbert obtenidos a partir de los siguientes
+productos escalares:
+\begin{enumerate}
+\item $(f,g) = \int^1_{-1} \bar fg \;dx$ (En este caso obtendrá los
+polinomios de Legendre.)
+
+\item $(f,g) = \int^{\infty}_{-\infty} \bar f g e^{-x^2} \;dx$
+(En este caso obtendrá los polinomios de Hermite.)
+
+\item $(f,g) = \int^{\infty}_0 \bar f g e^{-x}\; dx$
+(En este caso obtendrá los polinomios de Laguerre.)
+
+\end{enumerate}
+
+Estas bases polinómicas reciben el nombre genérico  de sistemas de 
+polinomios de Tchebyschev. 
+\epro
+\espa
+
+El hecho de que los polinomios de Legendre son una
+base sigue del Teorema de Aproximación de Weirstrass y del hecho de
+que las funciones continuas son densas en $L^2$.
+\espa
+
+
+\recu{
+{\bf *\yaya{Método de Gram -- Schmidt.}}
+
+Dado un conjunto numerable de elementos linealmente independientes de
+$H$, $\{\ve{x}_i\}$ generamos recursivamente los siguientes conjuntos:
+$$
+\ve{y}_i = \ve{x}_i - \sum_{l=1}^{i-1} (\ve{u}_l,\ve{x}_i)\ve{u}_l, \;\;\; \ve{u}_i = \frac{\ve{y}_i}{\|\ve{y}_i\|}.
+$$
+Note que la segunda operación está bien definida ya que $\ve{y}_i \neq 0$.
+Esta aseveración sigue del hecho de que el lado derecho en la
+definición de $\ve{y}_i$ es una combinación lineal de los $\ve{x}_j$,
+$j=1,...,i$ y hemos supuesto que estos son linealmente independientes.
+
+Veamos ahora que $(\ve{u}_i,\ve{u}_j) = \delta_{ij}$.
+Para ello probaremos por inducción que dado $i$, $(\ve{u}_i,\ve{u}_j) = 0
+\;\forall\; j < i$ positivo.
+Esto es cierto para $i=1$ [ya que no hay $j$]. Supongamos entonces que es
+cierto para $i-1$ y veamos que también lo es para $i$.
+Pero, dado $j < i$ tenemos,
+$$
+(\ve{u}_j,\ve{y}_i) = [(\ve{u}_j,\ve{x}_i) - \sum_{l=1}^{j-1} (\ve{u}_l,\ve{x}_i)(\ve{u}_j,\ve{u}_l)] =
+[(\ve{u}_j,\ve{x}_i) - (\ve{u}_j,\ve{x}_i)] =0.
+$$
+
+Si el conjunto de partida es un conjunto completo, es decir un conjunto
+que no es subconjunto de un conjunto mayor de vectores linealmente independientes, luego el conjunto resultante es una base ortogonal. En particular, si
+$(\ve{x},\ve{u}_i)=0 \;\; \forall i$, luego $\ve{x}=0$. 
+Caso contrario tomamos $\ve{u}=\frac{\ve{x}}{\|\ve{x}\|}$ y tendríamos otro elemento
+de la base, lo que sería una contradicción con respecto a la 
+completitud de los $\{\ve{u}_i\}$.
+%
+}
+
+
+%\newpage
+\section{Problemas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% 1
+\bpro
+Sea $\phi:H \to \Complex$ un mapa lineal. Muestre que $\phi$ es continuo
+si y solo si es acotado. 
+\epro
+
+%2
+\bpro
+Muestre que el mapa $I:C[a,b] \to \Re$ dado por 
+\begin{equation}
+  \label{eq:mapa_integral}
+  I(f) \equiv \int_a^b f(x)dx,
+\end{equation}
+es un mapa lineal y continuo.
+\epro
+
+%3
+\bpro
+Sea $V$ un espacio de dimensión finita y sea $\{\ve{u}_i\},\;\;i=1..n$
+una base y $\{\ve{\theta}^i\},\;\;i=1..n$ la correspondiente co-base.
+Sea $\ve{x} = \sum_{i=1}^n x^i \ve{u}_i$ un vector de $V$ cualquiera y
+$\ve{\omega} = \sum_{i=1}^n \omega_i \ve{\theta}^i$ 
+una funcional lineal cualquiera,
+es decir un elemento de $V'$. 
+Considere en $V$ la norma
+\begin{equation}
+  \label{eq:norma_p}
+  \|\ve{x}\|_p \equiv (\sum_{i=1}^n |x^i|^p)^{\frac{1}{p}}.
+\end{equation}
+Vea que esta es una norma y pruebe que
+la norma inducida en $V'$ por ésta está dada por,
+\begin{equation}
+  \label{eq:norma_q}
+  \|\ve{\omega}\|_q \equiv (\sum_{i=1}^n |\omega_i|^q)^{\frac{1}{q}},
+\end{equation}
+%
+donde 
+\begin{equation}
+  \label{eq:relacion_p_q}
+  \frac{1}{p} + \frac{1}{q} = 1\;\;\;\;\;\;\; (p,q \geq 1);
+\end{equation}
+%
+Ayuda: Exprese $\ve{\omega}(\ve{x})$ en componentes con respecto a la 
+base/co-base dada y luego use (pruebe) la desigualdad:
+\begin{equation}
+  \label{eq:holder}
+  |\sum_{i=1}^{n} x^i \omega_i | \leq 
+        (\sum_{i=1}^n |x^i|^p)^{\frac{1}{p}} 
+        (\sum_{i=1}^n |\omega_i|^q)^{\frac{1}{q}}.
+\end{equation}
+
+\epro
+
+
+%4
+\bpro
+Sea $c_0$ el espacio de sucesiones 
+$\{x\} = (x_1,x_2, \dots)$
+convergiendo a cero con la norma
+\begin{equation}
+  \label{eq:norma_c_0}
+  \|\{x\}\|_{c_0} \equiv \sup_{i} \{|x_i|\}.
+\end{equation}
+%
+Probar que el dual del espacio $c_0$ es el espacio $l_1$ de las sucesiones
+absolutamente sumables
+$\{\omega\}= (\omega_1,\omega_2, \dots)$ con la norma
+\begin{equation}
+  \label{eq:norma_l_1}
+  \|\{\omega\}\|_{l_1} \equiv \sum_{i=1}^{\infty} |\omega_i|.
+\end{equation}
+%
+Ayudas: 
+Note que dado un elemento de $l_1$, $\{\omega\}=(\omega_1,\omega_2,\dots)$,
+tenemos un funcional lineal dado por,
+\begin{equation}
+  \label{representacion_del-dual}
+  \ve{\omega}(\{x\}) \equiv \sum_{i=1}^{\infty} x_i \omega_i.
+\end{equation}
+Pruebe que este cumple 
+\begin{equation}
+  \|\ve{\omega}\| \leq \|\{\omega\}\|_{l_1}.
+\end{equation}
+Luego encuentre un elemento de norma igual o menor que la unidad en $c_0$ 
+y con su ayuda vea que 
+\begin{equation}
+  \|\ve{\omega}\| \geq \|\{\omega\}\|_{l_1}.
+\end{equation}
+de lo cual se concluye que las normas son las mismas.
+Solo resta ver que para cada elemento del dual de $c_0$, $\ve{\omega}$,
+existe un elemento de $l_1$, $\{\omega\}=(\omega_1,\omega_2,\dots)$  tal que 
+la ecuación \ref{representacion_del-dual} valga. 
+Para ello construya una base de $c_0$ y la respectiva base de su dual.
+Atención: en algún punto tendrá que usar que las funcionales lineales
+consideradas son continuas.
+\epro
+
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Problemas de Series de Fourier}
+
+%1
+\bpro
+Sea $f$ una función integrable de período $T$. Muestre que
+\begin{equation}
+  \int_0^T f(x)dx = \int_a^{T+a} f(x)dx, \;\;\;\; \forall a \in \re
+\end{equation}
+\epro
+
+
+%2
+\bpro
+\espa
+a.- Encuentre la serie de Fourier de la función $f(x) := x$ en el
+intervalo $[-\pi,\pi]$.
+
+b.- Use la relación de Parseval para probar que 
+\begin{equation}
+  \sum_{n=1}^{\infty} \frac{1}{n^2} = \pi^2/6
+\end{equation}
+
+\epro
+
+%3
+\bpro
+\espa
+a.- Encuentre la serie de Fourier de la función $f(x):= e^{sx}$ en el
+intervalo $[-\pi, \pi]$.
+
+b.- Use la relación de Parseval para probar que 
+\begin{equation}
+  \pi coth(\pi s)/s = \sum_{n=-\infty}^{\infty} \frac{1}{s^2+n^2}
+\end{equation}
+\epro
+
+%4
+\bpro
+Sea $S_n: L^2 \to L^2$ el mapa que envía $f \in L^2$ en la serie
+parcial de Fourier,
+\begin{equation}
+  S_n(f) := \sum_{m=-n}^{n} c_m e^{imx}, \;\;\;\;\;\;\; 
+                 c_m:= \frac{1}{2\pi}(e^{imx},f(x)).
+\end{equation}
+%
+Muestre que los $S_n$ son proyecciones ortogonales y que 
+$S_n S_m = S_m S_n = S_m$ si $m \leq n$.
+\epro
+
+\bpro
+En este problema se intenta probar que la serie de Fourier de
+una función continua es sumable en el sentido de Césaro en todo punto.
+Sea $f(\theta)$ una función periódica en $L^2$, 
+$f(\theta) \in L^2[0,2\pi]$,
+$c_m:= \frac{1}{2\pi}(e^{im\theta},f(\theta))$
+y \\
+$ S_n(f) := \sum_{m=-n}^{n} c_m e^{imx}$
+
+a.- Probar que 
+\begin{equation}
+  S_n(f)(\theta) = \frac{1}{2\pi} \int_0^{2\pi} f(\theta + x) 
+                      \frac{\sin((n+1/2)x)}{\sin(x/2)} dx
+\end{equation}
+
+b.- Sea $SS_n(f)(\theta) = \frac{1}{n+1} \sum_0^n S_m(f)(\theta)$ (suma de Césaro), pruebe que:
+
+\begin{equation}
+  SS_n(f)(\theta) = \frac{1}{2\pi (n+1)} \int_0^{2\pi} f(\theta + x)
+                           \frac{\sin^2((n+1)x/2)}{\sin^2(x/2)} dx
+\end{equation}
+%
+
+c.- Sea $K_n(x) = \frac{\sin^2((n+1)x/2)}{2\pi (n+1) \sin^2(x/2)}$ pruebe que para todo $\delta > 0$, \hfill \\$K_n(x) \to 0$ uniformemente en $[\delta, 2\pi-\delta]$.
+
+d.- Pruebe que $SS_n(f)(\theta_0) \to f(\theta_0)$ si $f$ es acotada y continua en $\theta_0$.
+
+e.- Probar que si $f$ es continua y periódica, entonces 
+$SSL_n(f)(\theta) \to f(\theta)$ uniformemente en $\theta$.
+Ayuda: recuerde que si $f$ es continua en $[0.2\pi]$ entonces $f$ es 
+uniformemente continua.
+
+f.- Mostrar que $\| f-S_n(f)\| \leq \|f - SSL_n(f)\|$ y concluir que 
+$S_n(f) \to f$ en $L^2$ si $f$ es continua.
+
+\epro
+
+\bpro
+Suponga que $f \in C_p^1([0,2\pi])$ y sea $c_n = (e^{in\theta},f)$ y
+$b_n = (e^{in\theta},f')$.
+
+a.- Vea que $\sum_{-\infty}^{\infty} |b_n|^2 < \infty$ y concluya que 
+    $\sum_{-\infty}^{\infty} n^2 |c_n|^2 < \infty$.
+
+b.- Probar que $\sum_{-\infty}^{\infty} |c_n| < \infty$.
+
+c.- Probar que $\sum_{m=-n}^{n} c_m e^{mi\theta}$ es uniformemente convergente
+para $n \to \infty$.
+
+d.- Utilice el ítem f.- del problema anterior para concluir que \hfill \\
+     $\sum_{m=-n}^{n} c_m e^{mi\theta} \to 2\pi f(\theta)$
+    uniformemente.
+\epro
+
+\bpro
+Considere la expansión en serie de Fourier para la siguiente función:
+
+
+\begin{equation}
+  f(x) := \left\{ \begin{array}{cc}
+                      -1 & \;\;\; 0 < x < \pi \\
+                      +1 & \;\;\; \pi < x 2\pi
+                    \end{array}
+                    \right.
+\end{equation}
+%
+$f(\theta + 2\pi) = f(\theta)$.
+La suma de los primeros $n$ términos produce una función que tiene un
+máximo absoluto en las cercanías positivas de $0$ de altura $1+ \delta_n$.
+Mostrar que $\lim_{n \to \infty} \delta_n \approx 0.18$. Esto se conoce como
+fenómeno de Gibbs.
+\epro
+
+
+\recubib{Estas notas están basadas en los siguientes libros: \cite{Reed}, \cite{Lang}, \cite{Yosida}, \cite{Geroch} y \cite{Kolmogorov}.
+Ésta es una de las áreas mas bellas y útiles de las matem\'aticas, básica para casi todo, en particular la mecánica cuántica.
+No deje de profundizar un poquito en ella, sobre todo recomiendo los libros \cite{Reed} y \cite{Geroch} de lectura placentera.}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot.tex~/Metodos/"
+%%% End: 
+
+
+%Se verá en el práctico que si $f \in C^1_p [0,2\pi]$, es decir si
+%$f$ es periódica y contínuamente diferenciable luego las funciones 
+%\beq
+%f_N(x)=\frac1{\sqrt{2\pi}}\sum_{-N}^N c_n\,e^{inx}
+%\eeq
+%con
+%\beq
+%c_n=\frac1{\sqrt{2\pi}}\int_0^{2\pi}e^{-inx}\,f(x)\;dx=\lp
+%\frac{e^{inx}}{\sqrt{2\pi}},f\rp_{L^2([0,2\pi])}
+%\eeq
+%convergen uniformemente a $f$ cuando $N \rightarrow \infty$.
+%Con ayuda de este resultado veremos que 
+%$\lb\frac{e^{inx}}{\sqrt{2\pi}}\rb $ es una base.
