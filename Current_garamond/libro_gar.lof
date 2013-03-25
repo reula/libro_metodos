@@ -1,64 +1,64 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Interpretaci\'on geom\'etrica del espacio cociente.}}{34}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama del operador dual.}}{56}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama del operador estrella.}}{58}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Vectores normales y tangentes a la esfera.}}{60}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Interpretaci\'on geom\'etrica del espacio cociente.}}{30}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagrama del operador dual.}}{50}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagrama del operador estrella.}}{52}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Vectores normales y tangentes a la esfera.}}{54}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Un atlas de la esfera.}}{66}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Relaci\'on entre cartas.}}{67}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Sucesiones en $M$.}}{67}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Ejemplo de variedad no--Hausdorff.}}{69}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Composici\'on del mapa de una carta con una funci\'on.}}{70}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces La relaci\'on entre las $f_i$.}}{71}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Diferenciabilidad de curvas en $M$.}}{71}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Definici\'on de vector.}}{75}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Un atlas de la esfera.}}{60}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Relaci\'on entre cartas.}}{60}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Sucesiones en $M$.}}{61}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Ejemplo de variedad no--Hausdorff.}}{62}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Composici\'on del mapa de una carta con una funci\'on.}}{63}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces La relaci\'on entre las $f_i$.}}{64}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Diferenciabilidad de curvas en $M$.}}{65}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Definici\'on de vector.}}{68}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Interpretaci\'on geom\'etrica de la ecuaci\'on $f(x)=x^{1/2}$.}}{91}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Prueba del Lema \ref {lem}.}}{94}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Prueba de la unicidad de la soluci\'on.}}{94}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Distintas soluciones de la ecuaci\'on de crecimiento bacteriano}}{97}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Unicidad global.}}{99}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Extendiendo la soluci\'on.}}{99}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces El p\'endulo F\IeC {\'\i }sico.}}{105}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces La variedad P\'endulo F\IeC {\'\i }sico.}}{105}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Estabilidad.}}{132}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces P\'endulo f\IeC {\'\i }sico con fricci\'on.}}{134}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces La norma $\rho (x,x)$.}}{135}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Entornos usados en la prueba del Teorema Fundamental.}}{148}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Una sucesi\'on de Cauchy.}}{154}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Otra sucesi\'on de Cauchy.}}{154}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Integral de Lebesgue.}}{156}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces El espacio perpendicular.}}{165}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Ley del paralelogramo.}}{166}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Interpretaci\'on geom\'etrica de la ecuaci\'on $f(x)=x^{1/2}$.}}{80}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Prueba del Lema \ref {lem}.}}{83}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Prueba de la unicidad de la soluci\'on.}}{84}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Distintas soluciones de la ecuaci\'on de crecimiento bacteriano}}{86}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Unicidad global.}}{87}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Extendiendo la soluci\'on.}}{88}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces El p\'endulo F\IeC {\'\i }sico.}}{92}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces La variedad P\'endulo F\IeC {\'\i }sico.}}{93}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Estabilidad.}}{114}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces P\'endulo f\IeC {\'\i }sico con fricci\'on.}}{116}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces La norma $\rho (x,x)$.}}{117}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {11.1}{\ignorespaces Curvas caracter\IeC {\'\i }sticas.}}{217}
-\contentsline {figure}{\numberline {11.2}{\ignorespaces Intersecci\'on de soluciones.}}{218}
-\contentsline {figure}{\numberline {11.3}{\ignorespaces Construyendo la soluci\'on a partir de la curva $\gamma $.}}{219}
-\contentsline {figure}{\numberline {11.4}{\ignorespaces Construyendo la soluci\'on local.}}{223}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Entornos usados en la prueba del Teorema Fundamental.}}{127}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {12.1}{\ignorespaces La membrana de un tambor.}}{228}
-\contentsline {figure}{\numberline {12.2}{\ignorespaces Problema mixto.}}{229}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Una sucesi\'on de Cauchy.}}{131}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Otra sucesi\'on de Cauchy.}}{132}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Integral de Lebesgue.}}{133}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces El espacio perpendicular.}}{142}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Ley del paralelogramo.}}{142}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {13.1}{\ignorespaces Sistema coordenado {\it nulo}.}}{242}
-\contentsline {figure}{\numberline {13.2}{\ignorespaces Propagaci\'on de ondas.}}{244}
-\contentsline {figure}{\numberline {13.3}{\ignorespaces Soluci\'on general homog\'enea en 1+1 dimensiones.}}{245}
-\contentsline {figure}{\numberline {13.4}{\ignorespaces Soluci\'on general inhomogenea.}}{246}
-\contentsline {figure}{\numberline {13.5}{\ignorespaces Desigualdad de la energ\IeC {\'\i }a}}{249}
-\contentsline {figure}{\numberline {13.6}{\ignorespaces Desigualdad de la energ\IeC {\'\i }a, vista en perspectiva.}}{249}
-\contentsline {figure}{\numberline {13.7}{\ignorespaces Regi\'on en forma de ampolla}}{252}
-\contentsline {figure}{\numberline {13.8}{\ignorespaces Cono caracter\IeC {\'\i }stico}}{254}
-\contentsline {figure}{\numberline {13.9}{\ignorespaces Construcci\'on de $S$ y una singularidad en $S$}}{257}
-\contentsline {figure}{\numberline {13.10}{\ignorespaces Dominio de dependencia de un fluido}}{258}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {14.1}{\ignorespaces Condiciones de contorno para la ecuaci\'on del calor.}}{261}
-\contentsline {figure}{\numberline {14.2}{\ignorespaces Prueba del Lema 14.1}}{265}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Curvas caracter\IeC {\'\i }sticas.}}{188}
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Intersecci\'on de soluciones.}}{189}
+\contentsline {figure}{\numberline {11.3}{\ignorespaces Construyendo la soluci\'on a partir de la curva $\gamma $.}}{190}
+\contentsline {figure}{\numberline {11.4}{\ignorespaces Construyendo la soluci\'on local.}}{193}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {12.1}{\ignorespaces La membrana de un tambor.}}{197}
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Problema mixto.}}{199}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Sistema coordenado {\it nulo}.}}{210}
+\contentsline {figure}{\numberline {13.2}{\ignorespaces Propagaci\'on de ondas.}}{211}
+\contentsline {figure}{\numberline {13.3}{\ignorespaces Soluci\'on general homog\'enea en 1+1 dimensiones.}}{213}
+\contentsline {figure}{\numberline {13.4}{\ignorespaces Soluci\'on general inhomogenea.}}{214}
+\contentsline {figure}{\numberline {13.5}{\ignorespaces Desigualdad de la energ\IeC {\'\i }a}}{216}
+\contentsline {figure}{\numberline {13.6}{\ignorespaces Desigualdad de la energ\IeC {\'\i }a, vista en perspectiva.}}{216}
+\contentsline {figure}{\numberline {13.7}{\ignorespaces Regi\'on en forma de ampolla}}{219}
+\contentsline {figure}{\numberline {13.8}{\ignorespaces Cono caracter\IeC {\'\i }stico}}{220}
+\contentsline {figure}{\numberline {13.9}{\ignorespaces Construcci\'on de $S$ y una singularidad en $S$}}{223}
+\contentsline {figure}{\numberline {13.10}{\ignorespaces Dominio de dependencia de un fluido}}{224}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {14.1}{\ignorespaces Condiciones de contorno para la ecuaci\'on del calor.}}{227}
+\contentsline {figure}{\numberline {14.2}{\ignorespaces Prueba del Lema 14.1}}{231}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,3 +1,5 @@
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
 %%ultima modificación 15-09-99
 %\input format
 %\input extdef
@@ -70,9 +72,10 @@ a(\ve{v}  + \ve{v}') = a\ve{v} + a\ve{v}'.
 
 \end{itemize}
 
-Las primeras son condiciones que involucran solo la regla de la suma.
+Las primeras son condiciones que involucran solo la regla de la suma, estas en realidad son las reglas que 
+definen un grupo, estructura a la cual visitaremos en un capítulo posterior, donde la suma representa el producto entre elementos del grupo.
 Las siguientes solo involucran a la regla del producto, mientras que
-las dos últimas tratan de la relación entre estas dos operaciones.
+las dos últimas tratan de la relación entre estas dos operaciones. Como veremos con ejemplos más adelante, los números reales pueden ser suplantados por cualquier cuerpo, los racionales, $\Rationals$, los enteros, $\Integers$, los complejos, $\Complex$, e incluso por cuerpos finitos.
 
 \espa
 
@@ -89,20 +92,39 @@ $a \in \re$ con la función $\ve{v}$ es la función que a $s \in S$
 le asigna el valor $a\ve{v}(s)$.
 Este ejemplo aparecerá muy a menudo en los capítulos siguientes.
 
-\defi: diremos que un conjunto de vectores $\{\ve{v_i}\}$ $i=1, \ldots ,n$
+\defi: diremos que un conjunto de vectores $\{\ve{e_i}\}$ $i=1, \ldots ,n$
 son {\bf linealmente independientes}~\index{lineal!independencia} 
-si $\sum_i a^i \ve{v_i} = \ve{0}$ $a^i \in \re$, 
+si $\sum_i a^i \ve{e_i} = \ve{0}$ $a^i \in \re$, 
 $i= 1, \ldots ,n$ $\Longrightarrow $ $a^i = 0$, $i= 1, \ldots ,n$,
 es decir si cualquier combinación lineal no trivial de estos vectores nos
-da un vector no trivial. Si un número finito de vectores linealmente independientes, 
+da un vector no trivial. 
+
+\defi: El $Span$ de un conjunto de vectores $\{\ve{u_{i}}\}$ es el conjunto de todas las combinaciones lineales posibles de estos elementos. Generan en sí un subespacio de $V$, al que denotaremos por $Span\{\ve{u_{i}}\}\subset V$. 
+
+Si un número finito de vectores linealmente independientes, 
 $n$, son suficientes para {\bf expandir} $V$, [es decir si 
 cualquier vector  en $V$ puede ser obtenido como una combinación lineal de 
 estos $n$ vectores], entonces diremos que estos forman una {\bf base} de 
-$V$ y que la {\bf dimensión} de $V$ es $n$, $\dim V = n$.
+$V$ y que la {\bf dimensión}~\index{dimensión}  de $V$ es $n$, $\dim V = n$.
 \espa
+
+\ejer: Muestre que dado un vector $\ve{v}$ y una base, $\{\ve{e_i}\}$ $i=1, \ldots ,n$,  existe una 
+única combinación lineal de elementos de la base que lo determinan. Es decir, si 
+$\ve{v} =  \sum_i v^i \ve{e_i} $ y $\ve{v} = \sum_i \tilde{v}^i \ve{e_i} $, entonces $v^i=\tilde{v}^i$ para todo
+$i=1, \ldots ,n$.
+
+\ejer: Si tenemos dos bases, $\{\ve{e_i}\}$ y $\{\ve{\tilde{e}_i}\}$, podemos escribir los elementos de una en función de la otra, 
+
+\[
+\ve{\tilde{e}_j} = \sum_i P_{j}{}^i \ve{e_i}, \;\;\;\;\;\; \ve{e_i} = \sum_l R_{i}{}^l \ve{e_l}.
+\]
+%
+Vea que $R_{i}{}^l = P^{-1}_{i}{}^l $.
+
 
 \ejer: Muestre que la dimensión de $V$ es única, es decir que no depende de
 la base empleada para definirla. 
+
 
 Note que si en el ejemplo anterior $S$ consta de un número finito de elementos, 
 luego la dimensión de $V$ es finita.\footnote{Es decir un número finito de vectores
@@ -110,6 +132,13 @@ linealmente independientes expanden $V$.} En el caso de que $S$
 tuviese un número infinito de elementos diríamos que la dimensión de $V$
 sería infinita. En lo que sigue de este capítulo solo
 consideraremos espacios vectoriales de dimensión finita.
+
+Sea $V$ un espacio vectorial de dimensión $n$ y una base del mismo, $\{\ve{e_i}\}$ $i=1, \ldots ,n$. 
+Dada una n-tupla de números reales, $\{c^{i}\}$ tenemos entonces determinado un elemento de $V$, 
+es decir el vector,  $\ve{v}=\sum_{i=1}^{n} c^{i}\ve{e_i}$. 
+Por otro lado, hemos visto en un ejercicio anterior que dado un vector cualquiera este nos determina una única n-tupla de números reales, los elementos de $\ve{v}$ en dicha base. 
+Vemos que tenemos entonces un mapa invertible entre $V$ y el espacio de n-tuplas, $\re^{n}$.
+Este mapa es lineal, asigna a la suma de dos vectores $\ve{v}$ y $\ve{\tilde{v}}$ la n-tupla suma de las respectivas n-tuplas. Este mapa depende de la base, pero aún así nos dice que los espacios vectoriales de dimensión finita no deparan muchas sorpresas, son siempre copias de $\re^{n}$.
 
 \bpro 
 Sea $S$ un conjunto finito, $S = \{s_1,s_2,\dots,s_n\}$, encuentre una base 
@@ -125,24 +154,25 @@ Encuentre la dimensión de este espacio.
 
 Sea $V$ un espacio vectorial de dimensión $n$. 
 Asociado con este espacio vectorial consideremos el conjunto,
-$V^*=\{$ el espacio de mapas lineales $f:V\to \re\}$. 
+$V^*=\{$ el espacio de mapas lineales $f\ve{\omega}:V\to \re\}$. 
 Este es también
 un espacio vectorial, llamado el {\bf espacio dual a $V$}~\index{espacio dual}, 
 o {\bf espacio de covectores},~\index{covectores} con suma y producto dados por: 
-$(f+\alpha g)(\ve{ v})=
-f(\ve{ v})+\alpha g(\ve{ v})\;\;\;\;\forall\;\ve{v}\in V$ 
+$(\ve{\omega}+\alpha \ve{\tau})(\ve{ v})=
+\ve{\omega}(\ve{ v})+\alpha \ve{\tau}(\ve{ v})\;\;\;\;\forall\;\ve{v}\in V$ 
 con 
-$f,g\,\in V^*\;,\,\alpha \in \re$. 
-¿Cuál es su dimensión? Note que si
-$\{\ve{ v}_i\}$ $i=1,\ldots,n$ es una base de $V$, es decir un conjunto
+$\ve{\omega},\ve{\tau}\,\in V^*\;,\,\alpha \in \re$. 
+¿Cuál es su dimensión? 
+Note que si
+$\{\ve{ e}_i\}$ $i=1,\ldots,n$ es una base de $V$, es decir un conjunto
 linealmente independiente de vectores que expanden $V$, podemos definir $n$
 elementos de $V^*$ (llamados co-vectores) por la relación 
 \beq
-\ve{ \theta^i}(\ve{ v}_j)=\delta^i_{\;j}.
+\ve{ \theta^i}(\ve{ e}_j)=\delta^i_{\;j}.
 \eeq
-Es decir definimos la acción de $\ve{ \theta^i}$ sobre los $\{\ve{v_j}\}$
+Es decir definimos la acción de $\ve{ \theta^i}$ sobre los $\{\ve{e_j}\}$
 como en la ecuación de arriba y luego extendemos su acción a cualquier
-elemento de $V$ escribiendo a este elemento en la base $\{\ve{ v}_i\}$
+elemento de $V$ escribiendo a este elemento en la base $\{\ve{ e}_i\}$
 y usando el hecho que la acción debe ser lineal.
   
 Se puede ver fácilmente que cualquier $\rho \in V^*$ se puede obtener
@@ -163,19 +193,19 @@ copias de $V$? La respuesta es no, ya que existe una identificación
 natural entre $V$ y su doble dual $V^{**}$.
 
 En efecto a cada $\ve{v}\in V$ le podemos asociar un elemento $\ve{
-x}_v$ de
+X}_v$ de
 $V^{**}$, es decir una funcional lineal de $V^*$ en $\re$, de la
-siguiente forma: $\ve{ x}_v(\omega)=\omega(\ve{v}) \;\;\;\forall
-\;\;\omega\in V^{*}$ . Es decir el elemento $\ve{ x}_v$ de $V^{**}$
+siguiente forma: $\ve{X}_v(\omega):=\omega(\ve{v}) \;\;\;\forall
+\;\;\omega\in V^{*}$ . Es decir el elemento $\ve{X}_v$ de $V^{**}$
 asociado a $\ve{ v}\in V$ es aquel que al actuar sobre un covector
-cualquiera $\omega$ da el número $\omega (\ve{v})$. Note que $\ve{x}_v$ actúa
+cualquiera $\omega$ da el número $\omega (\ve{v})$. Note que $\ve{X}_v$ actúa
 linealmente en los elementos de $V^*$ y por lo tanto es un elemento
 de $V^{**}$. ¿Hay elementos de $V^{**}$ que no provengan de algún
 vector en $V$? 
-La respuesta es no, ya que el mapa  $\ve x_v:V\to V^{**}$ es
-inyectivo [$\ve x_v(\omega)=0\;\;\forall \; \omega\Longrightarrow \ve{v}=0$] y
-por lo tanto~\footnote{Denotando por $\ve{x}_V$ la imagen por $\ve{x}_{(\cdot)}$ 
-de $V$.} $\dim \ve{x}_V = \dim V$.
+La respuesta es no, ya que el mapa  $\ve{X_v}:V\to V^{**}$ es
+inyectivo [$\ve{X}_v(\omega)=0\;\;\forall \; \omega\Longrightarrow \ve{v}=0$] y
+por lo tanto~\footnote{Denotando por $\ve{X}_V$ la imagen por $\ve{X}_{(\cdot)}$ 
+de $V$.} $\dim \ve{X}_V = \dim V$.
 Por otro lado $\dim V^{**} = \dim V^*$ ya que $V^{**}$ es el dual de $V^*$ y así 
 $\dim V = \dim V^* = \dim V^{**}$ , lo que indica que el mapa en cuestión es también 
 suryectivo y por lo tanto invertible.
@@ -184,7 +214,15 @@ $V$ y $V^{**}$ y concluir que {\it dualizando} no podremos
 construir más espacios vectoriales interesantes.
 \espa
 
-\ejer: Vea que efectivamente $\dim \ve{x}_V = \dim V$.
+\ejer: Dada una base en $V$, $\{\ve{e_{i}}\}$ y la correspondiente co-base, $\{\ve{\theta^{j}}\}$.
+Defina la co-co-base en $V^{**}$, $\{\ve{E_{i}}\}$. 
+Encuentre la relación entre las componentes de un vector de la forma $X_{v}$ en la base $\{\ve{E_{i}}\}$ y 
+las del vector $\ve{v}$ en la base $\{\ve{e_{i}}\}$.
+
+
+\ejer: Vea que efectivamente $\dim \ve{X}_V = \dim V$.
+
+
 
 Sin embargo nada nos impide considerar también  \index{mapas multilineales}
 {\bf mapas multilineales}~\footnote{O sea mapas separadamente lineales en cada 
@@ -199,21 +237,24 @@ o más generalmente,
 %
 El conjunto de estos mapas (para cada par $(k,l)$ dado) es también un espacio 
 vectorial, --con las operaciones obvias-- y sus elementos son llamados
-{\bf tensores de tipo $(k,l)$}~\index{tensores!tipo}.
+{\bf tensores de tipo ${l\choose k}$}~\index{tensores!tipo}.
 
-\ejer: ¿Cuál es la dimensión de estos espacios como función del par $(k,l)$?
+\ejer: ¿Cuál es la dimensión de estos espacios como función del par ${l \choose k}$?
 
 
 \noi\yaya{Nota}:
-En dimensión finita se puede demostrar que cualquier tensor de tipo $(k,l)$
+En dimensión finita se puede demostrar que cualquier tensor de tipo ${l \choose k}$
 se puede escribir como combinación lineal de elementos del producto cartesiano de $k$ copias de $V^*$ y $l$ copias de $V$ 
 --donde hemos identificado a $V$ con $V^{**}$--. 
-Por ejemplo si $\ve{t}$ es de tipo $(0,2)$, --o sea un mapa que tiene como argumentos  a dos covectores--, 
-entonces dada una base $\{\ve{v_{i}}\}$ de $V$ habrá $n \times n$ números reales $t^{ij}$, $i=1, \ldots ,n$ tales que 
+Por ejemplo si $\ve{t}$ es de tipo ${0 \choose 2}$, --o sea un mapa que tiene como argumentos  a dos covectores--, 
+entonces dada una base $\{\ve{e_{i}}\}$ de $V$, y la correspondiente base de $V^{**}$, $\{\ve{E}_{i}\}$ habrá $n \times n$ números reales $t^{ij}$, $i=1, \ldots ,n$ tales que 
 \beq
-\ve{t}(\ve{\sigma},\ve{\omega}) = \sum_{i,j=1}^{n} t^{ij} \ve{v_i}(\ve{\sigma})
-\ve{v_j}(\ve{\omega}), \;\;\;\; \forall \ve{\sigma},\;\ve{\omega} \in V^*.
+\ve{t}(\ve{\sigma},\ve{\omega}) = 
+\sum_{i,j=1}^{n} t^{ij} \ve{E_i}(\ve{\sigma})\ve{E_j}(\ve{\omega})
+\sum_{i,j=1}^{n} t^{ij} \ve{\sigma}(\ve{e_i}) \ve{\omega}(\ve{e_j}), 
+\;\;\;\; \forall \ve{\sigma},\;\ve{\omega} \in V^*.
 \eeq
+%
 Pero el producto de combinaciones lineales de productos cartesianos de
 $k$ copias de $V^*$ y $l$ copias de $V$ es también un espacio
 vectorial, se lo llama {\bf producto externo}~\index{producto!externo} 
@@ -230,40 +271,54 @@ de estos productos externos.
 
 
 
-\ejem: a) Sea $\ve{ t}$ de tipo $(2,0)$, o sea $\ve{ t}\in\;V^*\otimes V^*$. 
-Este es un mapa bilineal de $V\otimes V$ en $\re$, $\ve{ t}(v,u)\in \re$. Sea
-$\ve{ t}$ simétrico $[\ve{ t}(v,u)=\ve{ t}(u,v)]$ y no degenerado 
-[$\; \ve{ t}(v,\;\;)= 0
-\in V^*\Longrightarrow v=0$]. Como $\ve{ t}$ es no degenerado define un mapa
-invertible entre $V$ y su dual.
+\ejem: a) Sea $\ve{ t}$ de tipo ${0 \choose 2}$, o sea $\ve{ t}\in\;V^*\otimes V^*$. 
+Este es un mapa bilineal de $V\otimes V$ en $\re$, $\ve{ t}(\ve{v},\ve{u})\in \re$. Sea
+$\ve{ t}$ simétrico $[\ve{ t}(\ve{v},\ve{u})=\ve{ t}(\ve{u},\ve{v})]$ y no degenerado 
+[$\; \ve{ t}(\ve{v},\;\;)= 0
+\in V^*\Longrightarrow \ve{v}=0$]. 
+Como $\ve{ t}$ es no degenerado define un mapa invertible entre $V$ y su dual. 
+En efecto, dado $\ve{v} \in V$, $\ve{t}(\ve{v},\cdot)$ es un elemento de $V^*$. 
+Pero si $\ve{v}$ y $\ve{\tilde{v}}$ nos determinan el mismo elemento de $V^*$, es decir si 
+$\ve{ t}(\ve{v},\ve{u}) = \ve{ t}(\ve{\tilde{v}},\ve{u}) \;\; \forall \; \ve{v} \in V$ luego $\ve{v}=\ve{\tilde{v}}$,
+lo que se puede ver tomando $\ve{u} = \ve{v} - \ve{\tilde{v}}$ y usando que $\ve{t}$ es no degenerado.
+Como las dimensiones de $V$ y $V^{*}$ son iguales el mapa así definido es invertible.
 
 \ejem: b) Sea $\ve{\varepsilon}$ un elemento de $(n,0)$ tal que 
 \beq
-\ve{\varepsilon} (\ldots,\underbrace{v}_i,\ldots,\underbrace{u}_j,\ldots)
+\ve{\varepsilon} (\ldots,\underbrace{\ve{v}}_i,\ldots,\underbrace{\ve{u}}_j,\ldots)
 =-\ve{\varepsilon}
-(\ldots,\underbrace{u}_i,\ldots,\underbrace{v}_j,\ldots) 
+(\ldots,\underbrace{\ve{u}}_i,\ldots,\underbrace{\ve{v}}_j,\ldots) 
 \eeq
 \noi cualquiera sea la casilla $i$ y $j$, es decir un tensor
-totalmente antisimétrico. Sea $\{\ve{u}_i\}$ una base de $V$ y
-$\ve{\varepsilon}_{123\ldots n}=
-\ve{\varepsilon} (\ve{u}_1,\ve{u}_2,\ldots,\ve{u}_n)$, 
+totalmente antisimétrico. Sea $\{\ve{e}_i\}$ una base de $V$ y
+$\varepsilon_{123\ldots n}:=
+\ve{\varepsilon} (\ve{e}_1,\ve{e}_2,\ldots,\ve{e}_n)$, 
 luego cualquier otra componente de
 $\ve{\varepsilon}$ en esta base será o bien cero o 
-$\ve{\varepsilon}_{123\ldots n}$ o $-\ve{\varepsilon}_{123\ldots n}$ 
+$\varepsilon_{123\ldots n}$ o $-\varepsilon_{123\ldots n}$ 
 de acuerdo a que
-algún $\ve{u}_i$ se repita o sea una permutación par de la de
-arriba o una impar. Por lo tanto basta un número,
-$\ve{\varepsilon}_{123\ldots n}$, para determinar el tensor
+algún $\ve{e}_i$ se repita o sea una permutación par de la de
+arriba o una impar. En efecto, por ejemplo, 
+
+\begin{eqnarray*}
+\varepsilon_{3124\ldots n} &:=& \ve{\varepsilon}(\ve{e_3},\ve{e_1}, \ve{e_{2}}, \ve{e_{4}},\ldots,\ve{e}_n) \\
+&=& -\ve{\varepsilon}(\ve{e_1},\ve{e_3}, \ve{e_{2}}, \ve{e_{4}},\ldots,\ve{e}_n) \\
+&=& \ve{\varepsilon}(\ve{e_1},\ve{e_2}, \ve{e_{3}}, \ve{e_{4}},\ldots,\ve{e}_n) \\
+&=&\varepsilon_{1234\ldots n}.
+\end{eqnarray*}
+%
+Por lo tanto basta un número,
+$\varepsilon_{123\ldots n}$, para determinar el tensor
 $\ve{\varepsilon}$ y dado y otro tensor
 $\ve{\tilde{\varepsilon} }$ no idénticamente cero con las propiedades
 arriba mencionadas luego existirá un número $\alpha$ tal que
 $\ve{\varepsilon} = \alpha\ve{\tilde{\varepsilon}}$.
 
 \ejer: Sea $\ve{\varepsilon}$ no idénticamente cero y
-$\{\ve{u}_i\}$ un conjunto de $n=\dim V$ vectores de $V$. Muestre que estos
-forman una base si y solo si 
+$\{\ve{u}_i\}$ un conjunto de $n=\dim V$ vectores de $V$. 
+Muestre que estos forman una base si y solo si 
 \beq
-\ve{\varepsilon} (u_1,\ldots,u_n)\neq 0.
+\ve{\varepsilon} (\ve{u_1},\ldots, \ve{u_n})\neq 0.
 \eeq
 
 \ejem: c) Sea $\ve{ A}$ un elemento de $(1,1)$, 
@@ -277,19 +332,18 @@ $\ve{A}(\ve{u},\ve{\omega})$). Tenemos así un mapa lineal de $V$ en
 $V$, o sea un operador lineal en $V$.
 
 \ejer: Sea $\{\ve{u}_i\}$ una base de $V$ y sean
-$\ve{ a}_i$ los vectores $A(u_i,\;\;)$, luego 
+$\ve{ a}_i$ los vectores $\ve{A}(\ve{u_i},\;\;)$, luego 
 $$
-\ve{\varepsilon}
-(a_1,\ldots,a_n)=\ve{\varepsilon}(A(u_1,\;\;),\ldots ,A(u_n,\;\;))
+\ve{\varepsilon}(\ve{a_1},\ldots,\ve{a_n})=\ve{\varepsilon}(\ve{A}(\ve{u_1},\;\;),\ldots ,\ve{A}(\ve{u_n},\;\;))
 $$ 
 es totalmente antisimétrico en los $\{u_i\}$ y por lo tanto proporcional a s\'\i{} mismo;
 
 \[
-\ve{\varepsilon}(A(u_1,\;\;),\ldots ,A(u_n,\;\;)) \propto \ve{\varepsilon}(u_1. \ldots, u_n).
+\ve{\varepsilon}(\ve{A}(\ve{u_1},\;\;),\ldots ,\ve{A}(\ve{u_n},\;\;)) \propto \ve{\varepsilon}(\ve{u_1}. \ldots, \ve{u_n}).
 \]
 %
 La constante de proporcionalidad se
-llama {\bf determinante} \index{determinante} del operador $A$, $\det(A)$. 
+llama {\bf determinante} \index{determinante} del operador $\ve{A}$, $\det(A)$. 
 
 \bpro
 Muestre que esta definición no depende del $\ve{\varepsilon} $ empleado ni
@@ -298,8 +352,8 @@ operadores de $V$ en $\re$.
 \epro
 
 \ejer:
-Si $A$ y $B$ son dos operadores de $V$ , luego $A\cdot B (v)\equiv
-A(B(v))$. Muestre que $\det(AB)=\det(A)\cdot \det(B)$.
+Si $\ve{A}$ y $\ve{B}$ son dos operadores de $V$, luego $\ve{A}\cdot \ve{B} (\ve{v}):=
+\ve{A}(\ve{B}(\ve{v}))$. Muestre que $\det(AB)=\det(A)\cdot \det(B)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Complexificación}
@@ -307,7 +361,8 @@ A(B(v))$. Muestre que $\det(AB)=\det(A)\cdot \det(B)$.
 
 Otra manera de obtener campos vectoriales a partir de uno dado, digamos $V$, es
 extendiendo el campo donde está definida la operación de multiplicación,
-si esto es posible. El caso más común es la 
+si esto es posible. 
+El caso más común es la 
 \textbf{complexificación}~\index{complexificación} de un espacio
 vectorial real en ese caso simplemente se extiende el producto a los números
 complejos resultando un campo vectorial de la misma dimensión. Una manera de
@@ -321,9 +376,27 @@ Como la base es la misma, la dimensión también es la misma.
 Estas extensiones de espacios vectoriales aparecen a menudo y más adelante
 veremos otras.
 
+Los mapas multilineales deben ser extendidos de la misma forma, es decir, por ejemplo el dual
+de $V$ estará constituido por todos los mapas de $V$ en $C$.
+
+También podemos tomar cuerpos más pequeños, por ejemplo, $Q^n$ o $Z^n$.
+
 \ejem: Considere el espacio vectorial $Q^n$ consistente de todas las n-tuplas de
 números racionales. En este espacio el campo es también el conjunto de los
 racionales. Si extendemos el campo a los reales obtenemos $\ren$.
+
+\ejem: Considere un espacio $V$ y una base cualquiera en el mismo, $\{\ve{e_{i}}\}$. 
+Dicha elección nos caracteriza un sub-espacio de $V$, el dado por todos los elementos de la forma,
+\[
+v=\sum_{i}^{n} m^{i}\ve{e_{i}} \;\;\;\;\; m^{i} \in Z.
+\]
+%
+
+
+\ejer: Considere ahora el conjunto de todos los mapas lineales de este sub-espacio a $Z$.
+¿Qué forma tienen sus elementos?
+
+
   
 \subsection{Espacios cociente}
 
@@ -340,8 +413,9 @@ se denota como $V/W$.
 \espa
 
 Veamos que este es un espacio vectorial.
-Los elementos de $V/W$ son clases equivalentes, las cuales denotamos como
-$\{\ve{v}\}$, dos elementos de $V$, $\ve{v}$ y $\ve{v}'$ pertenecen a 
+Los elementos de $V/W$ son clases equivalentes, 
+%las cuales denotamos como $\{\ve{v}\}$, 
+dos elementos de $V$, $\ve{v}$ y $\ve{v}'$ pertenecen a 
 la misma clase equivalente si $\ve{v}-\ve{v}' \in W$. Sean $\ve{\zeta}$ y
 $\ve{\zeta}'$ dos elementos de $V/W$, es decir dos clases equivalentes
 de elementos de $V$. Definiremos las operaciones propias en los espacios
@@ -350,8 +424,13 @@ $\ve{\zeta} + \alpha \ve{\zeta}'$ será la clase equivalente correspondiente
 un elemento $\tilde{\ve{v}}$ obtenido tomando un elemento de $V$ en 
 $\ve{\zeta}$, digamos $\ve{v}$, otro de 
 $\ve{\zeta}'$, digamos $\ve{v}'$, y definiendo 
-$\tilde{\ve{v}} = \ve{v} + \alpha \ve{v}'$, tenemos 
-$\{\tilde{\ve{v}}\}= \ve{\zeta} + \alpha \ve{\zeta}'$.
+$\ve{\tilde{v}} := \ve{v} + \alpha \ve{v'}$, tenemos 
+$\tilde{\ve{\zeta}}= \ve{\zeta} + \alpha \ve{\zeta}'$, donde $\tilde{\ve{\zeta}}$ es la clase equivalente que contiene al elemento $\ve{\tilde{v}} = \ve{v} + \alpha \ve{v'}$. 
+Para facilitar la notación se suele representar a la clase equivalente que contiene un dado elemento, digamos $\ve{v}$, como $\{\ve{v}\}$. En este caso entonces tenemos que,
+
+\[
+\{\ve{v}\} + \alpha \{\ve{v'}\} = \{\ve{v} + \alpha \ve{v'}\}.
+\]
 \espa
 
 \ejer: Vea que esta definición no depende de la elección de elementos
@@ -452,16 +531,21 @@ $S_a$ luego $\alpha \ve x+(1-\alpha)\ve y,\;\alpha\in[0,1]$ también
 pertenece [ya que $\|\alpha \ve x + (1-\alpha )\ve y\| \leq \alpha
 \|\ve x\| + (1-\alpha )\|\ve y\| \leq \alpha a + (1-\alpha )a = a$].  
 Una curva de nivel caracteriza completamente una norma en
-el sentido que si damos un subconjunto $N$ de $V$, tal que $N$  tiene
-la propiedad radial, es decir  dado $\ve x\neq 0$ existe $\alpha >0$ tal
-que $\alpha \,\ve x\in N$, y su interior es convexo, luego existe una
-única norma tal que $N$ es la superficie de nivel $S_1$.
-Esta norma se define de la siguiente forma: dado $\ve x$ habrá un 
+el sentido que si damos un subconjunto $N$ de $V$, tal que $N$: 
+\textbf{a)}  tiene la propiedad radial, es decir  dado $\ve x\neq 0$ existe un único $\alpha >0$ tal
+que $\alpha \,\ve x\in N$ y $-\alpha \,\ve x\in N$ y 
+\textbf{b)} es convexo, 
+luego existe una única norma tal que $N$ es la superficie de nivel $S_1$.
+Esta norma se define de la siguiente forma: dado $\ve x$ sabemos que habrá un único 
 $\alpha > 0$ tal que $\alpha \ve x \in N$ y entonces la norma de 
-$\ve x$ será $\|\ve x\| = \frac1{\alpha}$. 
+$\ve x$ será $\|\ve x\| := \frac1{\alpha}$. 
 
 \espa
-\ejer: Pruebe que esta es una norma.
+\ejer: Pruebe que esta es una norma. Ayuda, dado dos vectores cualquiera $\ve{x},\;\; \ve{y} \; \in V$, 
+luego $\frac{\ve{x}}{||\ve{x}||}$ y $\frac{\ve{y}}{||\ve{y}||}$ son unitarios y por lo tanto están en $N$.
+Pero entonces tenemos que 
+$||\lambda \frac{\ve{x}}{||\ve{x}||} - (1-\lambda)\frac{\ve{y}}{||\ve{y}||}|| \leq 1\;\;\;\forall \; \lambda \in [0,1]$.
+Encuentre ahora un valor conveniente para $\lambda$. 
 \espa
 
 De esta imagen se ve que dadas dos normas de un espacio vectorial de
@@ -483,11 +567,26 @@ todo $\ve x\in V$ se cumple $M_1\,\|\ve x\|\leq\|\ve x\|'\leq M_2\|\ve x\|$.
 Mostraremos que todas son equivalentes a la norma
 $\|\ve x\|_1=\sum_{i=m}^n |a^i|$, donde los $a^i$ son las componentes
 de $\ve x$, con respecto a una base $\{\ve{e}_i\}$ que supondremos  dada,
-$ \ve x=a^i\,e_i$. Sea $\ve y=b^i\,e_i$ y $\|\cdot \|$ otra norma cualquiera, luego
+$ \ve x=a^i\,\ve{e}_i$. 
+
+Sea otra norma cualquiera, luego
+
 \beq\barr{rcl}
-  \left|\,\|\ve x\|-\|\ve y\|\,\right| & \leq & \|\ve x-\ve y\|=\|(a^i-b^i)\,e_i\|  \\
- &  \leq &|a^i-b^i|\,\|e_i\|\leq(max_{i=1,n}\|e_i\|)\sum_{i=n}^n|a^i-b^i|  \\
- & =&(max_{i=1,n}\|e_i\|)\;\|\ve x-\ve y\|_1
+ \left|\,\|\ve x\|\,\right| & \leq & \|\ve x\|=\|a^i\,\ve{e}_i\|  \\
+ &  \leq &|a^i|\,\|\ve{e}_i\|\leq(max_{j=1,n}\|\ve{e}_j\|)\sum_{i=1}^n|a^i|  \\
+ & =&(max_{j=1,n}\|\ve{e}_j\|)\;\|\ve x\|_1.
+ \earr
+ \eeq
+%
+Y hemos obtenido fácilmente la cota superior. Veamos ahora la inferior.
+Para ello debemos probar que la norma $\| \cdot \|$ es, como función de $V$ en $\re^{+}$
+una función continua. Esto sigue fácilmente de la cota ya encontrada. 
+
+
+Sea otro vector cualquiera, $\ve y=b^i\,\ve{e}_i$, luego
+\beq\barr{rcl}
+ \left|\,\|\ve x\|-\|\ve y\|\,\right| & \leq & \|\ve x-\ve y\| \\
+ & =&(max_{j=1,n}\|\ve{e}_j\|)\;\|\ve x-\ve y\|_1
  \earr
 \eeq
 
@@ -499,17 +598,19 @@ compacto\footnote{Con respecto a la topología generada por
 $\|\cdot \|_1$.}.
 Por lo tanto, por continuidad, $\|\cdot\|$ tiene un valor
 máximo, $M_2$, y un mínimo, $M_1$, que dan la desigualdad buscada.
+El valor máximo ya lo hemos encontrado, el mínimo es el que nos permite acotar la norma
+por debajo y concluir el teorema.
 
 \noi\yaya{Notas}:
 
 \noi
 $i$) En esta prueba es crucial el hecho de que $S_1$ es compacto. Si
 $V$ es de dimensión infinita esto no es así y hay muchas normas no
-equivalentes.
+equivalentes. 
 
 \noi
 $ii$) Para nuestros propósitos cualquier norma es suficiente --ya que
-si por ejemplo, $f:V\to \re$ es diferenciable con respecto a una
+si por ejemplo, $f:V\to \re$ es contínua con respecto a una
 norma lo es también con respecto a cualquier otra equivalente a
 ésta--  y por simplicidad de ahora en más  usaremos la Euclídea.
 
@@ -524,6 +625,8 @@ Como normas equivalentes generan una misma topología, vemos que
 en los espacios vectoriales de dimensión finita existe una única 
 topología asociada con todas sus posibles normas. Esta usualmente
 se denomina la {\bf topología fuerte}~\index{topología!fuerte}.
+
+\ejer: Pruebe que la anterior es realmente una relación de equivalencia.
 
 \subsection{Las normas inducidas en $V^{\star}$}
 
@@ -581,6 +684,8 @@ $|\ve{\omega}(\ve{v})| \leq \|\ve{\omega}\|\|\ve{v}\|$.
 \section{Teoría de Operadores Lineales}
 \label{Teoria_de_Operadores_Lineales}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Un {\bf operador lineal}\index{operador!lineal} 
 \ve{A} de un espacio vectorial $V$ es un mapa 
 continuo\footnote{Con respecto a la topología inducida por 
@@ -613,10 +718,6 @@ necesariamente cierta y dentro de $\cL$ tenemos solo un subespacio de
 operadores lineales de norma finita (acotados).
 \espa
 
-\ejer:
-Muestre que $\|\;\|_{\cL}:\cL\to \re^+$ es una norma.
-\espa
-
 \ejer: Muestre que 
 \[
 \|\ve{A}(\ve{v})\| \leq \|\ve{A}\|_{\cL} \|\ve{v}\|.
@@ -628,6 +729,12 @@ Muestre que $\|\;\|_{\cL}:\cL\to \re^+$ es una norma.
 \|\ve{A}\ve{B}\|_{\cL} \leq \|\ve{A}\|_{\cL}\|\ve{B}\|_{\cL}.
 \]
 \espa
+
+\ejer:
+Muestre que $\|\;\|_{\cL}:\cL\to \re^+$ es una norma.
+\espa
+
+
 
 Estudiamos a continuación varias funciones en el espacio de operadores.
 \espa
@@ -761,8 +868,10 @@ P^{-1}\,A\,P
 \noi es decir que $\hat A$ y $A$ son \textbf{matrices semejantes}.
 \espa
 
-\ejer: Ver, a partir de su definición (ecuación (\ref{eqn:2_traza})), que
+\ejer: Ver, a partir de su definición (ecuación (\ref{eqn:2_traza})), que en una base tenemos,
 $tr{A}= \sum_{i=1}^n A^i{}_i$.
+
+\ejer: Vea con un ejemplo en dos dimensiones que la definición de determinante conforma con la usual cuando empleamos una base.
 
 
 
@@ -917,14 +1026,24 @@ $(\ve{I} - \ve{u}_1 \ve{\theta}^1 - \ve{u}_2 \ve{\theta}^2)\ve{A}$.
 Prosiguiendo de esta forma generamos toda la base\epru
 \espa
 
-\bpro:
-Pruebe el teorema anterior usando ahora la noción de espacio
+La prueba anterior usó un producto escalar que en realidad es exógeno a la propiedad en sí.
+Lo hicimos pues así la prueba es conceptualmente  simple y útil en el caso de que estemos en presencia de un producto escalar dado.
+Sin embargo el teorema anterior puede ser probado usando la noción de espacio
 cociente y prescindiendo así del producto escalar. 
-Ayuda: en vez de usar los espacios perpendiculares a
-los autovectores que vaya obteniendo, use los espacios cociente por estos
-autovectores. Vea que un operador lineal induce una acción natural
-en un espacio cociente.
-\epro
+Dicha prueba puede ser obtenida haciendo los siguientes ejercicios:
+
+\ejer: Sea $\ve{A}: V \to V$ un operador lineal, sea $W\subset V$ invariante por $\ve{A}$, es decir $\ve{A}[W]\subset W$.
+Este operador induce un operador en el espacio cociente $V/W$ de la siguiente forma: 
+$\ve{\hat{A}}\zeta = \tilde{\zeta}$ donde $\tilde{\zeta}$ es la clase equivalente a la que pertenece $\ve{A}(\ve{u})$ cuando $\ve{u}$ pertenece a $\zeta$. Vea que esta definición es consistente, es decir, si elegimos otro elemento $\ve{v} \in \zeta$, obtenemos que $\ve{A}(\ve{v}) \in \tilde{\zeta}$.
+
+\ejer: El operador inducido tendrá al menos un par autovalor-autovector, en $V/W$, es decir habrá un par
+$(\hat{\lambda}, \zeta)$ tal que $\ve{\hat{A}\zeta} = \hat{\lambda}\zeta$. ¿Qué significa esta ecuación en términos del operador $\ve{A}$ en $V$?
+
+\ejer: Especialize el caso anterior cuando $W$ es el subespacio de $V$ generado por un autovector de $\ve{A}$.
+$\ve{A}\ve{u}_{1} = \lambda_{1} \ve{u}_{1}$, $W_{1} = Span\{u_{1}\}$. 
+¿Qué significa, en términos de espacio $V$ y el operador $\ve{A}$ que $\ve{\hat{A}}:V/W_{1} \to V/W_{1}$ tenga un par autovector-autovalor?
+
+\ejer: Itere el procedimiento anterior, tomando en cada paso un elemento de cada clase equivalente de autovectores generalizados para formar una base donde la representación matricial de $A$ sea diagonal superior.
 
 \espa
 
@@ -1019,7 +1138,7 @@ $\ve{e}_2=(0,1)$ vemos que
  1 + \lambda^2.
 \end{eqnarray}                        
 %
-y por lo tanto los autovalores son $\lambda_{1} = \imath , \;\;1\; \lambda_2 = -\imath$.
+y por lo tanto los autovalores son $\lambda_{1} = \imath$, y $\lambda_2 = -\imath$.
 Los autovectores son $\ve{u}_1=(1,-\imath)$ y $\ve{u}_2=(1,\imath) = \bar{\ve{u}}_1$. 
 Vemos entonces que la acción de $\ve{A}$ en estos subespacios es multiplicación por 
 $\pm \imath$ y que ambos subespacios invariantes son genuinamente complejos.
@@ -1032,7 +1151,34 @@ Si la multiplicidad de alguna de las raíces $\det(\ve{A}-\lambda\ve{I})=0$ es
 mayor que uno habrá menos autovalores que la dimensión del espacio y por
 tanto no tendremos garantía de que habrá suficientes autovectores como para 
 formar una base, ya que solo podemos garantizar la existencia de uno por cada autovalor.
-Debemos analizar por lo tanto qué pasa en estos casos. Para ello definamos, 
+
+\ejem: Sea $V$ el conjunto de 2-tuplas de números reales con elemento genérico
+$(a,b)$ y sea $\ve{A}$ dado por $\ve{A}(a,b) = (\lambda a+\epsilon b,\lambda b)$.  Tomando una base, 
+$\ve{e}_1=(1,0)$, 
+$\ve{e}_2=(0,1)$ vemos que su representación matricial es:
+
+\beq\left(\barr{cc}
+     \lambda & \epsilon    \\
+     0 &  \lambda
+     \earr\right)
+\eeq
+%
+Vemos que este operador tiene solo un autovalor con multiplicidad 2. Pero tiene solo un autovector, proporcional a $\ve{e}_1=(1,0)$. Para uso posterior note que si definimos 
+$\ve{\Delta} = \ve{A}-\lambda \ve{I}$ entonces $\ve{e}_{1} = \frac{1}{\epsilon}\ve{\Delta}\ve{e}_2$
+y por ende, en la base $\{\ve{\tilde{e}}_{1} = \ve{e}_{1}, \ve{\tilde{e}}_{2} = \frac{1}{\epsilon}\ve{e}_{2}\}$
+el operador queda representado por la matriz, 
+
+\beq\left(\barr{cc}
+     \lambda & 1    \\
+     0 &  \lambda
+     \earr\right)
+\eeq
+
+
+\espa
+
+Debemos analizar por lo tanto qué pasa en estos casos. 
+Para ello definamos, 
 dado $\lambda_i$ un autovalor de $\ve{A}$,  los 
 siguientes subespacios:
 
@@ -1064,7 +1210,7 @@ Como esta en $W_{\lambda_i}$ habrá algún $p \geq 1$ tal que
 $(\ve{A} - \lambda_i \ve{I})^p \ve{\zeta} = 0$ pero como es un autovector tenemos que
 $(\lambda - \lambda_i)^p \ve{\zeta} = 0$, y por lo tanto que $\lambda = \lambda_i$
 \epru
-
+\espa
 
 Veamos ahora que estos subespacios son linealmente independientes y generan
 todo $V^{\Complex}$. 
@@ -1154,7 +1300,7 @@ obtenemos que $\tilde{\ve{\zeta}} \in W_{\lambda_j}$ y así otra contradicción,
 por lo tanto solo puede ser que $V^{\Complex}/W$ sea el espacio trivial y los $W_{\lambda_i}$
 generan todo $V^{\Complex}$
 \epru
-
+\espa
 
 
 Vemos así que solo necesitamos estudiar ahora cada uno de estos subespacios
@@ -1169,6 +1315,7 @@ $\ve{\Delta}_{\lambda}:= \ve{A}|_{W_{\lambda}} - \lambda \ve{I}|_{W_{\lambda}}$,
 luego $\Delta$ tiene solo al $0$ como autovalor y por lo tanto es 
 \textbf{nilpotente}~\index{nilpotente}, es decir, existe un entero $m \leq n$
 tal que $\ve{\Delta}_{\lambda}^m =0$.
+\espa
 
 \blem
 Sea $\ve{\Delta}: W \to W$ tal que su único autovalor es $0$, luego 
@@ -1176,13 +1323,17 @@ $\ve{\Delta}$ es nilpotente.
 \elem
 
 \pru:
-Sea $W^p := \ve{\Delta}^p W$, luego tenemos que $W^p \subseteq W^q$ si $p \geq q$.
+Sea $W^p := \ve{\Delta}^p [W]$, luego tenemos que $W^p \subseteq W^q$ si $p \geq q$.
+En efecto, 
+$W^p = \ve{\Delta}^p [W] = \ve{\Delta}^q[\ve{\Delta}^{p-q}[W]] \subset \ve{\Delta}^q[W]] $.
 Como la dimensión de $W$ es finita deberá suceder que para algún $p$ 
 entero tendremos que $W^p = W^{p+1}$ vemos entonces que $\ve{\Delta}^p$ actúa
 inyectivamente en $W^p$ y por lo tanto no puede tener al $0$ como autovalor.
 Pero hemos visto que todo operador tiene algún autovalor y por lo tanto tenemos
 una contradicción a menos que $W^p = \{\ve{0}\}$. 
-Es decir $\ve{\Delta}^p = \ve{0}$\epru
+Es decir $\ve{\Delta}^p = \ve{0}$
+\epru
+\espa
 
 Los operadores nilpotentes tienen la importante propiedad de generar una base del
 espacio en que actúan a partir de su aplicación repetidas veces sobre conjunto
@@ -1207,6 +1358,100 @@ en efecto, si tenemos dos ciclos con el mismo número de elementos, entonces cual
 combinación lineal de los mismos será también un ciclo.
 Note que cada ciclo contiene un solo autovector.
 \espa
+
+\ejem: Considere la matriz, 
+
+\beq
+\ve{\Delta}:=
+     \left(\barr{cccc}
+     0 &  1  &  0  &  0 \\
+     0 &  0  &  1  &  0 \\
+     0 &  0  &  0  &  1 \\
+     0 &  0  &  0  &  0 
+     \earr
+     \right)
+\eeq
+%
+sus potencias son, 
+
+\beq
+\ve{\Delta}^{2}:=
+     \left(\barr{cccc}
+     0 &  0  &  1  &  0 \\
+     0 &  0  &  0  &  1 \\
+     0 &  0  &  0  &  0 \\
+     0 &  0  &  0  &  0 
+     \earr
+     \right) \;\;\;
+     \ve{\Delta}^{3}:=
+     \left(\barr{cccc}
+     0 &  0  &  0  &  1 \\
+     0 &  0  &  0  &  0 \\
+     0 &  0  &  0  &  0 \\
+     0 &  0  &  0  &  0 
+     \earr
+     \right) \;\;\;
+     \ve{\Delta}^{4}:=
+     \left(\barr{cccc}
+     0 &  0  &  0  &  0 \\
+     0 &  0  &  0  &  0 \\
+     0 &  0  &  0  &  0 \\
+     0 &  0  &  0  &  0 
+     \earr
+     \right) \;\;\;
+\eeq
+%
+En este caso tenemos un solo ciclo, correspondiente al autovalor $\ve{e}_{1}=(1,0,0,0)$, 
+que es el vector cuyo span es $\ve{\Delta}^{3}[\re^{4}]$, el ciclo es,
+\begin{eqnarray*}
+\ve{e_{4}}&=&(0,0,0,1) \\ 
+\ve{e_{3}}&=&(0,0,1,0)=\ve{\Delta}\ve{e_{4}} \\
+\ve{e_{2}}&=&(0,1,0,0)=\ve{\Delta}\ve{e_{3}}=\ve{\Delta}^{2}\ve{e_{4}} \\
+\ve{e_{1}}&=&(1,0,0,0)=\ve{\Delta}\ve{e_{2}}=\ve{\Delta}^{2}\ve{e_{3}}=\ve{\Delta}^{3}\ve{e_{4}}.
+\end{eqnarray*}
+
+\ejem:
+Considere la matriz, 
+
+\beq
+\ve{\Delta}:=
+     \left(\barr{cccccc}
+     0 &  1  &  0  &  0 & 0 & 0\\
+     0 &  0  &  0  &  0 & 0 & 0\\
+     0 &  0  &  0  &  1 & 0 & 0 \\
+     0 &  0  &  0  &  0 & 1 & 0 \\
+     0 &  0  &  0  &  0 & 0 & 1 \\
+     0 &  0  &  0  &  0 & 0 & 0 \\
+     \earr
+     \right)
+\eeq
+%
+sus potencias no triviales son, 
+
+\beq
+\ve{\Delta}^{2}:=
+     \left(\barr{cccccc}
+     0 &  0  &  0  &  0 &  0  &  0 \\
+     0 &  0  &  0  &  0 &  0  &  0 \\
+     0 &  0  &  0  &  0 &  1  &  0 \\
+     0 &  0  &  0  &  0 &  0  &  1 \\
+     0 &  0  &  0  &  0 &  0  &  0 \\
+     0 &  0  &  0  &  0 &  0  &  0 \\
+     \earr
+     \right) \;\;\;
+     \ve{\Delta}^{3}:=
+     \left(\barr{cccccc}
+     0 &  0  &  0  &  0 &  0  &  0 \\
+     0 &  0  &  0  &  0 &  0  &  0 \\
+     0 &  0  &  0  &  0 &  0  &  1 \\
+     0 &  0  &  0  &  0 &  0  &  0 \\
+     0 &  0  &  0  &  0 &  0  &  0 \\
+     0 &  0  &  0  &  0 &  0  &  0 \\
+          \earr
+     \right) 
+     \eeq
+%
+En este caso tenemos dos ciclos, correspondientes a los dos autovalores, $\ve{e_{1}}$ y $\ve{e_{3}}$.
 
 \pru:
 Lo probaremos por inducción en la dimensión de $W$. Si $n=1$ tomamos cualquier vector
@@ -1275,34 +1520,45 @@ primera sumatoria, y por lo tanto concluimos que todos los $C_{ij}$ se anulan
 \epru
 \espa
 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \textbf{Prueba alternativa:}
 %
 Alternativamente el lema anterior se puede probar en forma constructiva. 
 En efecto, si $m+1$ es la potencia para la cual $\ve{\Delta}$ se anula, 
 podemos tomar el espacio
-$W^m = \ve{\Delta}^m(W)$ y una base $\{\ve{v}^m_i\}$,  del mismo.
-Luego considerar el espacio $W^{m-1} = \ve{\Delta}^{m-1}(W)$. 
-Como $W^{m} = \ve{\Delta}(W)^{m-1}$
+$W^m = \ve{\Delta}^m[W]$ y una base $\{\ve{v}^m_i\}$,  del mismo. Note que todos los elementos de 
+$W^m$ son autovectores de $\ve{A}$, y por ende los elementos de la base.
+Luego consideramos el espacio $W^{m-1} = \ve{\Delta}^{m-1}[W]$. 
+Note que $W^{m} = \ve{\Delta}^m[W] = \ve{\Delta}^{m-1}[\ve{\Delta}[W]]$ y $\ve{\Delta}[W] \subset W$, 
+por lo tanto $W^{m} \subset W^{m-1}$.
+Como también $W^{m} = \ve{\Delta}[W^{m-1}]$,
 por cada vector $\ve{v}^{m}_i$ de la base $\{\ve{v}^m_i\}$ de $W^m$ 
-habrá un vector 
-$\ve{v}^{m-1}_i$ tal que $\ve{\Delta} \ve{v}^{m-1}_i = \ve{v}^m_i$.
-Como $W^{m} \subset W^{m-1}$ el conjunto $\{\ve{v}^m_i\} \cup \{\ve{v}^{m-1}_i\}$
+habrá un vector $\ve{v}^{m-1}_i$ tal que $\ve{\Delta} \ve{v}^{m-1}_i = \ve{v}^m_i$.
+Como  $W^{m} \subset W^{m-1}$, el conjunto $\{\ve{v}^m_i\} \cup \{\ve{v}^{m-1}_i\}$
 está contenido en $W^{m-1}$. 
-Note que 
-$\dim W^m = \dim \ker \ve{\Delta} \cap W^m$, y 
-$\dim W^{m-1} - \dim W^m = \dim (\ker \ve{\Delta} \cap W^{m-1})$
-Por lo tanto, 
-{\small
-\begin{eqnarray}
-\dim W^{m-1} &=& \dim W^m + \dim (\ker \ve{\Delta} \cap W^{m-1})  \nn
-             &=& 2\dim W^m + \dim (\ker \ve{\Delta} \cap W^{m-1})
-                 - \dim W^m \nn
-             &=& 2\dim W^m + \dim (\ker \ve{\Delta} \cap W^{m-1})
-                 - \dim \ker \ve{\Delta} \cap W^m \nn
-             & & \;
-\end{eqnarray}
-}
+%Note que 
+%$\dim W^m = \dim \ker \ve{\Delta} \cap W^m$, y 
+%$\dim W^{m-1} - \dim W^m = \dim (\ker \ve{\Delta} \cap W^{m-1})$
+%Por lo tanto, 
+%{\small
+%\begin{eqnarray}
+%\dim W^{m-1} &=& \dim W^m + \dim (\ker \ve{\Delta} \cap W^{m-1})  \nn
+%             &=& 2\dim W^m + \dim (\ker \ve{\Delta} \cap W^{m-1})
+%                 - \dim W^m \nn
+%             &=& 2\dim W^m + \dim (\ker \ve{\Delta} \cap W^{m-1})
+%                 - \dim \ker \ve{\Delta} \cap W^m \nn
+%             & & \;
+%\end{eqnarray}
+%}
 %
+%
+Note que 
+%$\dim W^m = \dim \ker \ve{\Delta} \cap W^m$, 
+$\dim W^m = \dim (\ve{\Delta}[W^{m-1}] \leq  \dim (\ker \ve{\Delta} \cap W^{m-1})$,
+ya que $W^m \subset W^{m-1}$ y todos sus elementos pertenecen a $\ker \ve{\Delta} \cap W^{m-1}$.
+
 Agregando entonces al conjunto anterior un conjunto $\{\ve{z}_i\}$ de %\phantom{xxxx}
 {\small $\dim (\ker \ve{\Delta} \cap W^{m-1}) - \dim (\ker \ve{\Delta} \cap W^m)$} 
 vectores del espacio 
@@ -1354,6 +1610,10 @@ ciclo y el superior indexa los distintos ciclos dentro de cada $W_{\lambda_i}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Forma Canónica de Jordan}
 \label{sub:Forma_Canonica_de_Jordan}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \defi: {\sl Sea  $\ve{A}:V\to V$ un operador lineal.
 Diremos que $\ve{A}$ es de tipo Jordan
@@ -1426,7 +1686,7 @@ det(\ve{A_i}-\lambda_i \ve{I}) = 0.
 
 Este teorema nos dice que dado $\ve{A}$  existe una base, en general
 compleja, tal que la matriz de sus componentes tiene forma de bloques
-diagonales cuadrados de $n_i \times n_i$ , donde $n_i$ es la
+diagonales cuadrados de $n_i \times n_i$, donde $n_i$ es la
 dimensión del subespacio $C^k_{\lambda_i}$, cada uno con la forma dada en~\ref{2.J1}. 
 Esta forma de la matriz se llama 
 {\bf forma canónica  de Jordan}.~\index{Jordan!forma canónica} 
@@ -1443,12 +1703,6 @@ tanto tiene tres raíces. Si éstas son distintas habrá al menos tres
 subespacios invariantes e irreducibles de $\ve{C}^3$, pero
 $dim\ve{C}^3=3$ y por lo tanto cada uno de ellos tiene $n_i=1$. La
 forma canónica de Jordan es entonces,
-\beq\left(\barr{ccc}
-     \lap_1 & 0  &  0  \\
-     0 &  \lap_2  &  0  \\
-     0  &  0  &  \lap_3
-     \earr\right)
-\eeq
 
 \noi Si dos de ellas coinciden tenemos dos posibilidades, o tenemos
 tres subespacios, en cuyo caso la forma C. de J. será 
@@ -1513,7 +1767,7 @@ Reordenando y re-escaleando las bases
 $\ve{u}_1=\tilde{\ve{u}}_1 \;,\;\; \ve{u}_2=c^1\tilde{\ve{u}}_2$ obtenemos
 
 \beq\barr{rcl}
-      \ve{A}\,\ve{u}_1 & = & \lambda\,\ve{u}_1 +  \;\;\;\;\;\mbox{y}\;  \\
+      \ve{A}\,\ve{u}_1 & = & \lambda\,\ve{u}_1   \\
       \ve{A}\,\ve{u}_2 & = & \lambda \ve{u}_2 + \ve{u}_1 , 
       \earr
 \eeq
@@ -1536,6 +1790,9 @@ ciclos --en los otros casos.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Relación de Semejanza}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 En las aplicaciones en física es frecuente la siguiente relación
 de equivalencia: [Ver recuadro al final del capítulo.] 
@@ -1567,10 +1824,14 @@ lo son en las distintas clases equivalentes, es decir,
 \vfill
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \recu{
 \noi\yaya{Relaciones de Equivalencia.}
 \espa
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \defi: Una {\bf relación de equivalencia}, $\approx$, entre elementos de un
 conjunto $X$ es una relación que satisface las siguientes condiciones:
@@ -1812,7 +2073,7 @@ Con la ayuda de este mapa definimos $\ve{A}^{\star}: V \to V$ dado por:
 En término del producto escalar esto es:
 \begin{equation}
   \label{eq:A_adjunto_2}
-  (\ve{A}^{\star}(\ve{v}),\ve{u}) = (\phi^{-1}(\ve{A}'((\ve{v},\cdot)),\ve{u}) = \ve{A}'((\ve{v},\cdot)),(\ve{u}) = (\ve{v},\ve{A}(\ve{u})).
+  (\ve{A}^{\star}(\ve{v}),\ve{u}) = (\phi^{-1}(\ve{A}'((\ve{v},\cdot)),\ve{u}) = \ve{A}'((\ve{v},\cdot))(\ve{u}) = (\ve{v},\ve{A}(\ve{u})).
 \end{equation}
 %
 En su representación matricial este operador es, 

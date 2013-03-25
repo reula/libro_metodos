@@ -1,6 +1,5 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=pdflatex 2010.8.12)  15 JUN 2012 10:00
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=latex 2010.8.12)  20 MAR 2013 08:14
 entering extended mode
- \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **extdef_libro.tex
@@ -16,19 +15,19 @@ lish, portuguese, romanian, russian, sanskrit, serbian, slovak, slovenian, span
 ish, swedish, turkish, ukenglish, ukrainian, uppersorbian, welsh, loaded.
 \c@teo=\count79
 
-./extdef_libro.tex:94: LaTeX Error: No counter 'chapter' defined.
+./extdef_libro.tex:96: LaTeX Error: No counter 'chapter' defined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.94 \newtheorem{teo}{Teorema}[chapter]
+l.96 \newtheorem{teo}{Teorema}[chapter]
                                        
 ? 
-./extdef_libro.tex:94: Emergency stop.
+./extdef_libro.tex:96: Emergency stop.
  ...                                              
                                                   
-l.94 \newtheorem{teo}{Teorema}[chapter]
+l.96 \newtheorem{teo}{Teorema}[chapter]
                                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -36,11 +35,11 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 62 strings out of 493848
- 482 string characters out of 3149207
+ 64 strings out of 493849
+ 499 string characters out of 3149230
  48936 words of memory out of 3000000
- 3437 multiletter control sequences out of 15000+200000
+ 3439 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  8i,0n,11p,88b,14s stack positions out of 5000i,500n,10000p,200000b,50000s
-./extdef_libro.tex:94:  ==> Fatal error occurred, no output PDF file produced!
+No pages of output.
