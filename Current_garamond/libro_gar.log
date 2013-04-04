@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=latex 2010.8.12)  24 MAR 2013 23:42
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=latex 2010.8.12)  4 APR 2013 08:54
 entering extended mode
  file:line:error style messages enabled.
  %&-line parsing enabled.
@@ -494,7 +494,7 @@ mdugm/m/n/9 \ \OML/mdugm/m/it/9 W[]\OT1/mdugm/m/n/9 ) \OMS/mdugm/m/n/9 ^^@
  []
 
 [44] [45] [46]
-Overfull \hbox (22.19641pt too wide) in paragraph at lines 1785--1789
+Overfull \hbox (22.19641pt too wide) in paragraph at lines 1786--1790
 \T1/mdugm/m/n/10 tie-nen un sig-ni-fi-ca-do fí-si-co cla-ro, son los lla-ma-dos
  mo-dos nor-ma-les --caso unidimensional--
  []
@@ -509,7 +509,7 @@ File: Figure/m2_2.pstex Graphic file (type eps)
 File: Figure/m2_3.pstex Graphic file (type eps)
 
 <Figure/m2_3.pstex>) [51]
-Overfull \hbox (10.99156pt too wide) in paragraph at lines 2082--2087
+Overfull \hbox (10.99156pt too wide) in paragraph at lines 2083--2088
 \T1/mdugm/m/n/10 donde $\OML/mdugm/m/it/10 t[]$ \T1/mdugm/m/n/10 es la re-pre-s
 en-ta-ción del pro-duc-to es-ca-lar y $\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t[
 ]\OT1/mdugm/m/n/10 )[][]$ \T1/mdugm/m/n/10 el de su in-ver-sa ($\OML/mdugm/m/it
@@ -834,7 +834,7 @@ ma es-pec-tral. Dé ejem-
 (./Chapters/chap15.aux) (./Chapters/preguntas.aux) (./Chapters/bib.aux)) )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 1618 ({)
+### simple group (level 1) entered at line 1619 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  4083 strings out of 493849
@@ -845,4 +845,4 @@ Here is how much of TeX's memory you used:
  714 hyphenation exceptions out of 8191
  31i,15n,31p,860b,437s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on libro_gar.dvi (249 pages, 1051820 bytes).
+Output written on libro_gar.dvi (249 pages, 1051844 bytes).

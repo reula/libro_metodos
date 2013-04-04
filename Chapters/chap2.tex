@@ -1448,7 +1448,7 @@ sus potencias no triviales son,
      0 &  0  &  0  &  0 &  0  &  0 \\
      0 &  0  &  0  &  0 &  0  &  0 \\
           \earr
-     \right) 
+     \right) \nonumber
      \eeq
 %
 En este caso tenemos dos ciclos, correspondientes a los dos autovalores, $\ve{e_{1}}$ y $\ve{e_{3}}$.
@@ -1587,7 +1587,8 @@ Pero estos vectores fueron elegidos linealmente independientes entre sí y por lo
 tanto todos los coeficientes en esta suma deben anularse. Vemos así que el
 conjunto $\{\ve{v}^m_i\} \cup \{\ve{v}^{m-1}_i\} \cup \{\ve{z}_i\}$ forman una
 base cíclica de $W^{m-1}$. Continuando con $W^{m-2}$ y así sucesivamente
-obtenemos una base cíclica para todo $W$.
+obtenemos una base cíclica para todo $W$
+\epru
 
 
 
@@ -2095,7 +2096,7 @@ algunos autores.}
 Los operadores autoadjuntos tienen importantes propiedades:
 
 \blem
-Sea $M = Span\{\ve{u},\ve{u}_2,\dots,\ve{u}_m\}$, donde $\{\ve{u}_i\}$
+Sea $M = Span\{\ve{u}_{1},\ve{u}_2,\dots,\ve{u}_m\}$, donde $\{\ve{u}_i\}$
 son un conjunto de autovalores de $\ve{A}$, un operador autoadjunto.
 Luego $M$ y $M^{\perp}$ son espacios invariantes de $\ve{A}$.
 \elem
@@ -2110,7 +2111,7 @@ que $\ve{A}(\ve{v}) \in M^{\perp}$. Sea $\ve{u} \in M$ arbitrario, luego
 %
 ya que $\ve{A}(\ve{u}) \in M$ si $\ve{u} \in M$
 \epru
-%
+\espa
 Esta propiedad tiene el siguiente corolario:
 
 \bcor
@@ -2165,8 +2166,8 @@ y por lo tanto, notando que
 $\ve{I} = \sum_{i=1}^{n} \ve{e}_i\ve{\theta}^i$,
 obtenemos,
 \begin{eqnarray}
-  0 &=& (\sum_{k=1}^{n} \ve{e}_k\ve{\theta}^k(\ve{A}(\ve{e}_i),\ve{e}_j)
-       -(\ve{e}_i,\sum_{l=1}^{n} \ve{e}_l\ve{\theta}^l(\ve{A}(\ve{e}_j)) \nn
+  0 &=& (\sum_{k=1}^{n} \ve{e}_k\ve{\theta}^k(\ve{A}(\ve{e}_i)),\ve{e}_j)
+       -(\ve{e}_i,\sum_{l=1}^{n} \ve{e}_l\ve{\theta}^l(\ve{A}(\ve{e}_j))) \nn
     &=& \sum_{k=1}^{n} \bar{A}^k{}_i(\ve{e}_k,\ve{e}_j) 
        -\sum_{l=1}^{n} A^l{}_j(\ve{e}_i,\ve{e}_l) \nn
     &=& \sum_{k=1}^{n} \bar{A}^k{}_i \delta_{kj} 
