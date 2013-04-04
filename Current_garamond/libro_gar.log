@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=latex 2010.8.12)  4 APR 2013 08:54
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=latex 2010.8.12)  4 APR 2013 15:23
 entering extended mode
  file:line:error style messages enabled.
  %&-line parsing enabled.
@@ -845,4 +845,4 @@ Here is how much of TeX's memory you used:
  714 hyphenation exceptions out of 8191
  31i,15n,31p,860b,437s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on libro_gar.dvi (249 pages, 1051844 bytes).
+Output written on libro_gar.dvi (249 pages, 1051836 bytes).
