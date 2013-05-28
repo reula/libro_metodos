@@ -30,76 +30,76 @@
 \contentsline {subsection}{\numberline {3.5.1}El Corchete de Lie}{68}
 \contentsline {subsection}{\numberline {3.5.2}Difeomorfismos y la Teor\IeC {\'\i }a de las Ecuaciones Diferenciales Ordinarias}{69}
 \contentsline {subsection}{\numberline {3.5.3}Campos de Covectores y Tensores}{70}
-\contentsline {subsection}{\numberline {3.5.4}La M\'etrica}{70}
-\contentsline {subsection}{\numberline {3.5.5}Notaci\'on de \'Indices Abstractos}{73}
+\contentsline {subsection}{\numberline {3.5.4}La M\'etrica}{71}
+\contentsline {subsection}{\numberline {3.5.5}Notaci\'on de \'Indices Abstractos}{74}
 \contentsline {section}{\numberline {3.6}Derivada Covariante}{74}
-\contentsline {chapter}{\numberline {4}Ecuaciones Diferenciales Ordinarias}{79}
-\contentsline {section}{\numberline {4.1}Introducci\'on}{79}
-\contentsline {section}{\numberline {4.2}El Caso de una \'Unica Ecuaci\'on Ordinaria de Primer Orden}{80}
-\contentsline {subsection}{\numberline {4.2.1}Ecuaci\'on Aut\'onoma de Primer Orden}{80}
-\contentsline {subsection}{\numberline {4.2.2}Extendiendo la Soluci\'on Local}{86}
-\contentsline {subsection}{\numberline {4.2.3}El Caso No-aut\'onomo}{88}
-\contentsline {section}{\numberline {4.3}Reducci\'on a Sistemas de Primer Orden}{89}
-\contentsline {section}{\numberline {4.4}Sistemas de EDO}{92}
-\contentsline {subsection}{\numberline {4.4.1}Integrales Primeras}{94}
-\contentsline {subsection}{\numberline {4.4.2}Teorema Fundamental de los Sistemas de EDO}{95}
-\contentsline {subsection}{\numberline {4.4.3}Dependencia en Par\'ametros, Ecuaci\'on de Variaciones}{95}
-\contentsline {section}{\numberline {4.5}Problemas}{98}
-\contentsline {chapter}{\numberline {5}Sistemas Lineales}{101}
-\contentsline {section}{\numberline {5.1}Sistema lineal homog\'eneo}{101}
-\contentsline {section}{\numberline {5.2}Sistema Lineal Inhomogeneo -- Variaci\'on de constantes}{103}
-\contentsline {section}{\numberline {5.3}Sistemas lineales homog\'eneos: coeficientes constantes}{104}
-\contentsline {section}{\numberline {5.4}Problemas}{111}
-\contentsline {chapter}{\numberline {6}Estabilidad}{113}
-\contentsline {section}{\numberline {6.1}Problemas}{120}
-\contentsline {chapter}{\numberline {7}Prueba del Teorema Fundamental}{123}
-\contentsline {paragraph}{Prueba de los puntos $i$) y $ii)$ del teorema fundamental.}{126}
-\contentsline {section}{\numberline {7.1}Problemas}{128}
-\contentsline {chapter}{\numberline {8}Elementos B\'asicos de An\'alisis Funcional}{129}
-\contentsline {section}{\numberline {8.1}Introducci\'on}{129}
-\contentsline {section}{\numberline {8.2}Completando un Espacio Normado}{129}
-\contentsline {section}{\numberline {8.3}*Integral de Lebesgue}{130}
-\contentsline {section}{\numberline {8.4}Espacios de Hilbert}{137}
-\contentsline {section}{\numberline {8.5}Serie de Fourier}{148}
-\contentsline {section}{\numberline {8.6}Problemas}{155}
-\contentsline {section}{\numberline {8.7}Problemas de Series de Fourier}{156}
-\contentsline {chapter}{\numberline {9}Distribuciones}{159}
-\contentsline {section}{\numberline {9.1}Introducci\'on}{159}
-\contentsline {section}{\numberline {9.2}La derivada de una distribuci\'on}{163}
-\contentsline {section}{\numberline {9.3}Nota sobre la completitud de $\unhbox \voidb@x \hbox {$\cal D$}$ y su dual $\unhbox \voidb@x \hbox {$\cal D$}{}'$}{166}
-\contentsline {section}{\numberline {9.4}Convergencia y Compacidad D\'ebil }{167}
-\contentsline {chapter}{\numberline {10}La Transformaci\'on de Fourier}{171}
-\contentsline {section}{\numberline {10.1}Introducci\'on}{171}
-\contentsline {section}{\numberline {10.2}*Propiedades b\'asicas de los Espacios de Sobolev}{177}
-\contentsline {chapter}{\numberline {11}Teor\IeC {\'\i }a de ecuaciones en derivadas parciales}{185}
-\contentsline {section}{\numberline {11.1}Introducci\'on}{185}
-\contentsline {section}{\numberline {11.2}La ecuaci\'on de primer orden}{187}
-\contentsline {subsection}{\numberline {11.2.1}El Problema de Cauchy}{189}
-\contentsline {section}{\numberline {11.3}Clasificaci\'on de ecuaciones en derivadas parciales}{191}
-\contentsline {chapter}{\numberline {12}Ecuaciones El\IeC {\'\i }pticas}{197}
-\contentsline {section}{\numberline {12.1}La Ecuaci\'on de Laplace}{197}
-\contentsline {subsection}{\numberline {12.1.1}Existencia}{199}
-\contentsline {subsection}{\numberline {12.1.2}*Regularidad de las Soluciones}{201}
-\contentsline {section}{\numberline {12.2}Teorema Espectral}{203}
-\contentsline {chapter}{\numberline {13}Ecuaciones sim\'etrico--hiperb\'olicas}{209}
-\contentsline {section}{\numberline {13.1}Introducci\'on}{209}
-\contentsline {section}{\numberline {13.2}Un ejemplo}{209}
-\contentsline {section}{\numberline {13.3}Desigualdad de la energ\IeC {\'\i }a para sistemas si\discretionary {-}{}{}m\'e\discretionary {-}{}{}tri\discretionary {-}{}{}co--hi\discretionary {-}{}{}per\discretionary {-}{}{}b\'o\discretionary {-}{}{}li\discretionary {-}{}{}cos}{215}
-\contentsline {section}{\numberline {13.4}Unicidad de las soluciones}{218}
-\contentsline {section}{\numberline {13.5}Dominio de dependencia}{219}
-\contentsline {subsection}{\numberline {13.5.1}Construcci\'on de una superficie caracter\IeC {\'\i }stica}{220}
-\contentsline {subsection}{\numberline {13.5.2}Dominio de dependencia, ejemplos}{223}
-\contentsline {chapter}{\numberline {14}Ecuaciones Parab\'olicas}{227}
-\contentsline {section}{\numberline {14.1}Introducci\'on}{227}
-\contentsline {section}{\numberline {14.2}Unicidad y el Teorema del M\'aximo}{229}
-\contentsline {chapter}{\numberline {15}Grupos}{233}
-\contentsline {section}{\numberline {15.1}Introducci\'on}{233}
-\contentsline {section}{\numberline {15.2}Isomorfismos}{235}
-\contentsline {section}{\numberline {15.3}Subgrupos}{235}
-\contentsline {section}{\numberline {15.4}La construcci\'on universal}{236}
-\contentsline {section}{\numberline {15.5}Grupos Lineales}{236}
-\contentsline {subsection}{\numberline {15.5.1}El grupo $SO(3)$.}{237}
-\contentsline {section}{\numberline {15.6}Cosets}{238}
-\contentsline {subsection}{\numberline {15.6.1}Espacios Homog\'eneos}{240}
-\contentsline {section}{\numberline {15.7}Subgrupos Normales}{240}
-\contentsline {chapter}{\numberline {16}Preguntas Te\'oricas de Ex\'amen}{243}
+\contentsline {chapter}{\numberline {4}Ecuaciones Diferenciales Ordinarias}{81}
+\contentsline {section}{\numberline {4.1}Introducci\'on}{81}
+\contentsline {section}{\numberline {4.2}El Caso de una \'Unica Ecuaci\'on Ordinaria de Primer Orden}{82}
+\contentsline {subsection}{\numberline {4.2.1}Ecuaci\'on Aut\'onoma de Primer Orden}{82}
+\contentsline {subsection}{\numberline {4.2.2}Extendiendo la Soluci\'on Local}{88}
+\contentsline {subsection}{\numberline {4.2.3}El Caso No-aut\'onomo}{90}
+\contentsline {section}{\numberline {4.3}Reducci\'on a Sistemas de Primer Orden}{91}
+\contentsline {section}{\numberline {4.4}Sistemas de EDO}{94}
+\contentsline {subsection}{\numberline {4.4.1}Integrales Primeras}{96}
+\contentsline {subsection}{\numberline {4.4.2}Teorema Fundamental de los Sistemas de EDO}{97}
+\contentsline {subsection}{\numberline {4.4.3}Dependencia en Par\'ametros, Ecuaci\'on de Variaciones}{97}
+\contentsline {section}{\numberline {4.5}Problemas}{100}
+\contentsline {chapter}{\numberline {5}Sistemas Lineales}{103}
+\contentsline {section}{\numberline {5.1}Sistema lineal homog\'eneo}{103}
+\contentsline {section}{\numberline {5.2}Sistema Lineal Inhomogeneo -- Variaci\'on de constantes}{105}
+\contentsline {section}{\numberline {5.3}Sistemas lineales homog\'eneos: coeficientes constantes}{106}
+\contentsline {section}{\numberline {5.4}Problemas}{113}
+\contentsline {chapter}{\numberline {6}Estabilidad}{115}
+\contentsline {section}{\numberline {6.1}Problemas}{122}
+\contentsline {chapter}{\numberline {7}Prueba del Teorema Fundamental}{125}
+\contentsline {paragraph}{Prueba de los puntos $i$) y $ii)$ del teorema fundamental.}{128}
+\contentsline {section}{\numberline {7.1}Problemas}{130}
+\contentsline {chapter}{\numberline {8}Elementos B\'asicos de An\'alisis Funcional}{131}
+\contentsline {section}{\numberline {8.1}Introducci\'on}{131}
+\contentsline {section}{\numberline {8.2}Completando un Espacio Normado}{131}
+\contentsline {section}{\numberline {8.3}*Integral de Lebesgue}{132}
+\contentsline {section}{\numberline {8.4}Espacios de Hilbert}{139}
+\contentsline {section}{\numberline {8.5}Serie de Fourier}{150}
+\contentsline {section}{\numberline {8.6}Problemas}{157}
+\contentsline {section}{\numberline {8.7}Problemas de Series de Fourier}{158}
+\contentsline {chapter}{\numberline {9}Distribuciones}{161}
+\contentsline {section}{\numberline {9.1}Introducci\'on}{161}
+\contentsline {section}{\numberline {9.2}La derivada de una distribuci\'on}{165}
+\contentsline {section}{\numberline {9.3}Nota sobre la completitud de $\unhbox \voidb@x \hbox {$\cal D$}$ y su dual $\unhbox \voidb@x \hbox {$\cal D$}{}'$}{168}
+\contentsline {section}{\numberline {9.4}Convergencia y Compacidad D\'ebil }{169}
+\contentsline {chapter}{\numberline {10}La Transformaci\'on de Fourier}{173}
+\contentsline {section}{\numberline {10.1}Introducci\'on}{173}
+\contentsline {section}{\numberline {10.2}*Propiedades b\'asicas de los Espacios de Sobolev}{179}
+\contentsline {chapter}{\numberline {11}Teor\IeC {\'\i }a de ecuaciones en derivadas parciales}{187}
+\contentsline {section}{\numberline {11.1}Introducci\'on}{187}
+\contentsline {section}{\numberline {11.2}La ecuaci\'on de primer orden}{189}
+\contentsline {subsection}{\numberline {11.2.1}El Problema de Cauchy}{191}
+\contentsline {section}{\numberline {11.3}Clasificaci\'on de ecuaciones en derivadas parciales}{193}
+\contentsline {chapter}{\numberline {12}Ecuaciones El\IeC {\'\i }pticas}{199}
+\contentsline {section}{\numberline {12.1}La Ecuaci\'on de Laplace}{199}
+\contentsline {subsection}{\numberline {12.1.1}Existencia}{201}
+\contentsline {subsection}{\numberline {12.1.2}*Regularidad de las Soluciones}{203}
+\contentsline {section}{\numberline {12.2}Teorema Espectral}{205}
+\contentsline {chapter}{\numberline {13}Ecuaciones sim\'etrico--hiperb\'olicas}{211}
+\contentsline {section}{\numberline {13.1}Introducci\'on}{211}
+\contentsline {section}{\numberline {13.2}Un ejemplo}{211}
+\contentsline {section}{\numberline {13.3}Desigualdad de la energ\IeC {\'\i }a para sistemas si\discretionary {-}{}{}m\'e\discretionary {-}{}{}tri\discretionary {-}{}{}co--hi\discretionary {-}{}{}per\discretionary {-}{}{}b\'o\discretionary {-}{}{}li\discretionary {-}{}{}cos}{217}
+\contentsline {section}{\numberline {13.4}Unicidad de las soluciones}{220}
+\contentsline {section}{\numberline {13.5}Dominio de dependencia}{221}
+\contentsline {subsection}{\numberline {13.5.1}Construcci\'on de una superficie caracter\IeC {\'\i }stica}{222}
+\contentsline {subsection}{\numberline {13.5.2}Dominio de dependencia, ejemplos}{225}
+\contentsline {chapter}{\numberline {14}Ecuaciones Parab\'olicas}{229}
+\contentsline {section}{\numberline {14.1}Introducci\'on}{229}
+\contentsline {section}{\numberline {14.2}Unicidad y el Teorema del M\'aximo}{231}
+\contentsline {chapter}{\numberline {15}Grupos}{235}
+\contentsline {section}{\numberline {15.1}Introducci\'on}{235}
+\contentsline {section}{\numberline {15.2}Isomorfismos}{237}
+\contentsline {section}{\numberline {15.3}Subgrupos}{237}
+\contentsline {section}{\numberline {15.4}La construcci\'on universal}{238}
+\contentsline {section}{\numberline {15.5}Grupos Lineales}{238}
+\contentsline {subsection}{\numberline {15.5.1}El grupo $SO(3)$.}{239}
+\contentsline {section}{\numberline {15.6}Cosets}{240}
+\contentsline {subsection}{\numberline {15.6.1}Espacios Homog\'eneos}{242}
+\contentsline {section}{\numberline {15.7}Subgrupos Normales}{242}
+\contentsline {chapter}{\numberline {16}Preguntas Te\'oricas de Ex\'amen}{245}

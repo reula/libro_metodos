@@ -1,3 +1,8 @@
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%%ultima modificación 28/05/2013
+
 \chapter{La Transformación de Fourier}
 
 
@@ -96,7 +101,7 @@ $\|\hat f\|_{L^2}=\|\cF{}(f)\|_{L^2}=\|f\|_{L^2}$ (identidad de Plancherel).
 \noi b) Su inversa está dada por
 \beq
 \check g(x)={\cal F}^{-1}(\hat
-g)=\frac1{(2n)^{n/2}}\int_{\ren{}}e^{ix\cdot \lambda}\,\hat g(\lambda)\;d\lambda.
+g)=\frac1{(2\pi)^{n/2}}\int_{\ren{}}e^{ix\cdot \lambda}\,\hat g(\lambda)\;d\lambda.
 \eeq
 
 \espa
@@ -120,10 +125,10 @@ lectura atenta y no automática de la misma.
 \espa
 \pru: 
 El mapa \cF{} es obviamente lineal y claramente está definido
-para cualquier función en $\cifrn$, es decir infinitamente diferenciable
+para cualquier función en $\cifrncs$, es decir infinitamente diferenciable
 y de soporte compacto. Veamos primero que \cF{} preserva la norma $L^2(\ren{})$ 
 para estas funciones. 
-Sea $f\in\cifrn$ cualquiera y tomemos un n-cubo $C_{\eps}$ de
+Sea $f\in\cifrncs$ cualquiera y tomemos un n-cubo $C_{\eps}$ de
 volumen $(\dip\frac{2}{\eps})^n$ con $\eps>0$ suficientemente peque\~no 
 como para que $sop(f)\su C_{\eps}$.
 Sea $K_{\eps}=\{k\in\ren{} \;|\;k_i=\pi p\eps\mbox{ para algún entero } 
@@ -165,7 +170,7 @@ serie de Riemann de la función $|\hat f(k)|^2$. Si esta función fuese
 continua
 luego la serie de Riemann convergería a $\|\hat f\|^2_{L^2}$ y 
 habríamos
-probado que la transformada de Fourier de una función en $\cifrn$
+probado que la transformada de Fourier de una función en $\cifrncs$
 preserva la norma $L^2(\ren{})$.
 Pero 
 \beq\barr{rcl}
@@ -174,25 +179,25 @@ sup_k|\derp{\hat f(k)}{k_j}| &=& sup_k|\frac1{(2\pi)^{n/2}}\dip\int_{R^n}
 &\leq&\frac1{(2\pi)^{n/2}}\dip\int_{R^n}|x^j\,f(x)|\;d^nx<\ifi,
 \earr
 \eeq
-ya que $f\in\cifrn$.
+ya que $f\in\cifrncs$.
 Vemos entonces que las derivadas de $\hat f(k)$ están acotadas y por lo
 tanto que $\hat f$ es continua. Este resultado no solo completa la
 demostración de que \cF{} preserva la norma sino también, ya que
 $\hat f(k)$
 es continua, que la serie de Riemann en el lado derecho de la
 ecuación \ron{10.f1} converge a la integral y por lo tanto que $\cF{}^{-1}
-(\cF{}(f))=f(x)$ $\forall\;\;f\in\cifrn$.
+(\cF{}(f))=f(x)$ $\forall\;\;f\in\cifrncs$.
 
-Si $f\in\;\cifrn$ luego la identidad del punto c) se muestra trivialmente. Solo
+Si $f\in\;\cifrncs$ luego la identidad del punto c) se muestra trivialmente. Solo
 resta entonces extender estos resultados para $f$ arbitraria en $L^2(\ren{})$,
-pero $\cifrn$ es una subespacio denso de $L^2(\ren{})$, es decir todo elemento 
+pero $\cifrncs$ es una subespacio denso de $L^2(\ren{})$, es decir todo elemento 
 $f\in L^2(\ren{})$
 puede obtenerse como límite (con respecto a la norma
 $L^2(\ren{})$) de una 
-sucesión $\{f_n\}$ de funciones en $\cifrn$, esto nos permite extender la
+sucesión $\{f_n\}$ de funciones en $\cifrncs$, esto nos permite extender la
 acción de \cF{} a todo elemento de $L^2(\ren{})$. 
 En efecto, sea $f\in L^2(\ren{})$ arbitraria y
-sea $\{f_n\}\to f \in\cifrn$ luego la sucesión $\hat f_n(k)=\cF{}(f_n)$ 
+sea $\{f_n\}\to f \in\cifrncs$ luego la sucesión $\hat f_n(k)=\cF{}(f_n)$ 
 satisface,
 \beq
 \|\hat f_n(k)-\hat f_m(k)\|_{L^2(R^n)}=\|f_n(x)-f_m(x)\|_{L^2(\ren{})}.
@@ -201,7 +206,7 @@ Como $\{f_n\}$ es convergente es de Cauchy y por lo tanto $\{\hat f_n\}$
 es también de
 Cauchy en $L^2(\ren{})$, pero $L^2(\ren{})$ es completo y por lo tanto existe 
 $\hat f\in L^2(\ren{})$ tal que $\{\hat f_n\}\to\hat f$.
-Extenderemos el mapa \cF{} a \LR{} definiendo $\cF{}(f)\equiv\hat f$.
+Extenderemos el mapa \cF{} a \LR{} definiendo $\cF{}(f) \equiv \hat f$.
 Esta extensión es claramente lineal y acotada por lo tanto es
 continua. Usando el mismo razonamiento extendemos $\cF{}^{-1}$ a todo \LR{} y
 vemos que $\cF{}^{-1}(\cF{}(f(x)))=f(x)$ $ \forall\;f(x)\in\LR$ 
@@ -210,7 +215,7 @@ $\cF{}^{-1}$ y es continua. El mismo argumento muestra que la fórmula en c)
 también es válida para todo $f$ tal que su gradiente también
 está en \LR{}. Esto completa la prueba del teorema $\spadesuit$
 
-Note que la estrategia ha sido primero tomar un espacio ($\cifrn$) donde
+Note que la estrategia ha sido primero tomar un espacio ($\cifrncs$) donde
 todas las propiedades valen obviamente, luego tomar un espacio que
 contiene al anterior y donde este es denso, ver que el mapa es allí
 continuo (con respecto a la noción de continuidad del espacio
@@ -279,10 +284,10 @@ espacio $\cS(\ren{})$ es completo.
 
 \blem 
 \label{lem10.2}
-El espacio $\cifrn$ es denso en \cS, es decir cualquier elemento 
+El espacio $\cifrncs$ es denso en \cS, es decir cualquier elemento 
 $\fip\in\cS$
 puede ser obtenido como límite de una sucesión convergente con
-cada uno de sus miembros en $\cifrn$.
+cada uno de sus miembros en $\cifrncs$.
 \elem
 
 \espa
@@ -387,19 +392,19 @@ Una vez probado el punto $b)$ los otros siguen
 trivialmente. Asegúrese! 
 Probaremos entonces $b)$.
 Como ya vimos $(\fip,\psi)=(\hat{\fip},\hat\psi)\;\;\;\forall\;
-\fip,\psi\in\cS(\ren{})$. Aplicando esta identidad a $e^{iy\cdot x}\bar
-f(x)$ y $g(x)$ obtenemos $(e^{iy\cdot x} \bar{f} ,g) = 
-(\widehat{e^{iy\cdot x}\bar f},\hat g)$. pero
+\fip,\psi\in\cS(\ren{})$. Aplicando esta identidad a $e^{ik\cdot x}\bar
+f(x)$ y $g(x)$ obtenemos $(e^{ik\cdot x} \bar{f} ,g) = 
+(\widehat{e^{i k\cdot x}\bar f},\hat g)$. pero
 \beq
-(e^{iy\cdot x}\bar f, g)=\int_{\ren{}}e^{-iy\cdot x}\,f(x)\,g(x)\;d^{n}x=
-(2\pi)^{n/2}\;\widehat{fg}
+(e^{ik\cdot x}\bar f, g)=\int_{\ren{}}e^{-i k\cdot x}\,f(x)\,g(x)\;d^{n}x=
+(2\pi)^{n/2}\;\widehat{fg}(k)
 \eeq
 \noi y
 \beq\barr{rcl}
-(\widehat{e^{iy\cdot x} \bar{f}},\hat g) &=&\int_{\ren{}}\lp\overline{
-(2\pi)^{-n/2}\int_{\ren{}}e^{-i\lam\cdot x + iy\cdot x}\,\bar
+(\widehat{e^{i k\cdot x} \bar{f}},\hat g) &=&\int_{\ren{}}\lp\overline{
+(2\pi)^{-n/2}\int_{\ren{}}e^{-i\lambda\cdot x + i k\cdot x}\,\bar
 f(x)\;d^nx}\rp\;\hat g(\lambda)\;d^n\lambda\\ [3mm]
-&=&\int_{\ren{}}\hat f(y-\lambda)\,\hat g(\lambda)\;d^n\lambda\\ [3mm]
+&=&\int_{\ren{}}\hat f(k-\lambda)\,\hat g(\lambda)\;d^n\lambda\\ [3mm]
 &=&\hat f*\hat g.
 \earr
 \eeq

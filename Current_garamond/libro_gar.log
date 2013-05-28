@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=latex 2010.8.12)  4 APR 2013 15:23
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=latex 2010.8.12)  28 MAY 2013 08:39
 entering extended mode
  file:line:error style messages enabled.
  %&-line parsing enabled.
@@ -509,7 +509,7 @@ File: Figure/m2_2.pstex Graphic file (type eps)
 File: Figure/m2_3.pstex Graphic file (type eps)
 
 <Figure/m2_3.pstex>) [51]
-Overfull \hbox (10.99156pt too wide) in paragraph at lines 2083--2088
+Overfull \hbox (10.99156pt too wide) in paragraph at lines 2088--2093
 \T1/mdugm/m/n/10 donde $\OML/mdugm/m/it/10 t[]$ \T1/mdugm/m/n/10 es la re-pre-s
 en-ta-ción del pro-duc-to es-ca-lar y $\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t[
 ]\OT1/mdugm/m/n/10 )[][]$ \T1/mdugm/m/n/10 el de su in-ver-sa ($\OML/mdugm/m/it
@@ -553,49 +553,50 @@ File: Figure/m3_8.pstex Graphic file (type eps)
 Overfull \vbox (0.50299pt too high) has occurred while \output is active []
 
 
-[69] [70] [71] [72] [73] [74] [75] [76] [77]) [78]
+[69] [70] [71] [72] [73] [74] [75] [76] [77] [78]) [79]
 \openout2 = `Chapters/chap4.aux'.
 
  (./Chapters/chap4.tex
+[80
+
+
+
+]
 \hfil Cap\'{\i }tulo 4.
-[79
-
-
-
-] (./Figure/m4_1.pstex_t
+[81] (./Figure/m4_1.pstex_t
 File: Figure/m4_1.pstex Graphic file (type eps)
- <Figure/m4_1.pstex>) [80] [81] [82]
+ <Figure/m4_1.pstex>) [82] [83] [84]
 (./Figure/m4_2_b.pstex_t
 File: Figure/m4_2_b.pstex Graphic file (type eps)
  <Figure/m4_2_b.pstex>) (./Figure/m4_2.pstex_t
 File: Figure/m4_2.pstex Graphic file (type eps)
 
-<Figure/m4_2.pstex>) [83] [84] (./Figure/m4_3.pstex_t
+<Figure/m4_2.pstex>) [85] [86] (./Figure/m4_3.pstex_t
 File: Figure/m4_3.pstex Graphic file (type eps)
  <Figure/m4_3.pstex>)
-[85] [86] (./Figure/m4_4.pstex_t
+[87] [88] (./Figure/m4_4.pstex_t
 File: Figure/m4_4.pstex Graphic file (type eps)
  <Figure/m4_4.pstex>
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 14.
 ) (./Figure/m4_5.pstex_t
 File: Figure/m4_5.pstex Graphic file (type eps)
 
-<Figure/m4_5.pstex>) [87] [88] [89] [90] [91] (./Figure/m4_6.pstex_t
+<Figure/m4_5.pstex>) [89] [90] [91] [92] [93] (./Figure/m4_6.pstex_t
 File: Figure/m4_6.pstex Graphic file (type eps)
 
-<Figure/m4_6.pstex>) [92] (./Figure/m4_7.pstex_t
+<Figure/m4_6.pstex>) [94] (./Figure/m4_7.pstex_t
 File: Figure/m4_7.pstex Graphic file (type eps)
- <Figure/m4_7.pstex>) [93]
-[94] [95] [96] [97] [98] [99]) [100]
+ <Figure/m4_7.pstex>) [95]
+[96] [97] [98] [99] [100] [101]) [102]
 \openout2 = `Chapters/chap5.aux'.
 
  (./Chapters/chap5.tex
 \hfil Cap\'{\i }tulo 5.
-[101
+[103
 
 
 
-] [102] [103] [104] [105] [106] [107] [108] [109] [110] [111]) [112]
+] [104] [105] [106] [107] [108] [109] [110] [111] [112] [113]) [114]
 \openout2 = `Chapters/chap6.aux'.
 
 
@@ -603,111 +604,111 @@ File: Figure/m4_7.pstex Graphic file (type eps)
 \hfil Cap\'{\i }tulo 6.
 (./Figure/m6_1.pstex_t
 File: Figure/m6_1.pstex Graphic file (type eps)
- <Figure/m6_1.pstex>) [113
+ <Figure/m6_1.pstex>) [115
 
 
 
-] [114] (./Figure/m6_2.pstex_t
+] [116] (./Figure/m6_2.pstex_t
 File: Figure/m6_2.pstex Graphic file (type eps)
 
-<Figure/m6_2.pstex>) [115] (./Figure/m6_3.pstex_t
+<Figure/m6_2.pstex>) [117] (./Figure/m6_3.pstex_t
 File: Figure/m6_3.pstex Graphic file (type eps)
- <Figure/m6_3.pstex>) [116]
-[117] [118] [119] [120] [121]) [122]
+ <Figure/m6_3.pstex>) [118]
+[119] [120] [121] [122] [123]) [124]
 \openout2 = `Chapters/chap7.aux'.
 
  (./Chapters/chap7.tex
 \hfil Cap\'{\i }tulo 7.
-[123
+[125
 
 
 
-] [124] [125] [126] (./Figure/m7_1.pstex_t
+] [126] [127] [128] (./Figure/m7_1.pstex_t
 File: Figure/m7_1.pstex Graphic file (type eps)
- <Figure/m7_1.pstex>) [127])
-[128]
+ <Figure/m7_1.pstex>) [129])
+[130]
 \openout2 = `Chapters/chap8.aux'.
 
  (./Chapters/chap8.tex
 \hfil Cap\'{\i }tulo 8.
-[129
+[131
 
 
 
-] [130] (./Figure/m8_1.pstex_t
+] [132] (./Figure/m8_1.pstex_t
 File: Figure/m8_1.pstex Graphic file (type eps)
  <Figure/m8_1.pstex>) (./Figure/m8_2.pstex_t
 File: Figure/m8_2.pstex Graphic file (type eps)
 
-<Figure/m8_2.pstex>) [131] [132] (./Figure/m8_3.pstex_t
+<Figure/m8_2.pstex>) [133] [134] (./Figure/m8_3.pstex_t
 File: Figure/m8_3.pstex Graphic file (type eps)
  <Figure/m8_3.pstex>)
-[133] [134] [135] [136] [137] [138] [139]
-Overfull \hbox (1.44281pt too wide) in paragraph at lines 660--667
+[135] [136] [137] [138] [139] [140] [141]
+Overfull \hbox (1.44281pt too wide) in paragraph at lines 669--676
 \T1/mdugm/m/n/10 de-na-das en []. De-fi-ni-re-mos el es-pa-cio de So-bo-lev de 
 or-den $\OML/mdugm/m/it/10 m$ \T1/mdugm/m/n/10 co-mo, $[][]\OT1/mdugm/m/n/10 (
 ) =
  []
 
-[140] (./Figure/m8_4.pstex_t
+[142] (./Figure/m8_4.pstex_t
 File: Figure/m8_4.pstex Graphic file (type eps)
  <Figure/m8_4.pstex>) (./Figure/m8_5.pstex_t
 File: Figure/m8_5.pstex Graphic file (type eps)
 
-<Figure/m8_5.pstex>) [141] [142] [143] [144] [145] [146] [147] [148] [149]
-[150] [151] [152] [153] [154] [155] [156] [157]) [158]
+<Figure/m8_5.pstex>) [143] [144] [145] [146] [147] [148] [149] [150] [151]
+[152] [153] [154] [155] [156] [157] [158] [159]) [160]
 \openout2 = `Chapters/chap9.aux'.
 
  (./Chapters/chap9.tex
 \hfil Cap\'{\i }tulo 9.
-[159
+[161
 
 
 
-] [160] [161] [162] [163] [164] [165] [166] [167] [168]) [169]
+] [162] [163] [164] [165] [166] [167] [168] [169] [170]) [171]
 \openout2 = `Chapters/chap10.aux'.
 
 
-(./Chapters/chap10.tex [170
+(./Chapters/chap10.tex [172
 
 
 
 ]
 \hfil Cap\'{\i }tulo 10.
-[171] [172] [173] [174] [175] [176]
-Overfull \hbox (4.9774pt too wide) in paragraph at lines 408--413
+[173] [174] [175] [176] [177] [178]
+Overfull \hbox (4.9774pt too wide) in paragraph at lines 413--418
 []\T1/mdugm/m/n/10 Otra pro-pie-dad in-tere-san-te de la con-vo-lu-ción se ob-t
 ie-ne al no-tar que co-mo $[]\OT1/mdugm/m/n/10 ([][])$
  []
 
-[177] [178] [179] [180] [181]
+[179] [180] [181] [182] [183]
 Overfull \vbox (1.43752pt too high) has occurred while \output is active []
 
 
-[182]) [183]
+[184]) [185]
 \openout2 = `Chapters/chap11.aux'.
 
- (./Chapters/chap11.tex [184
+ (./Chapters/chap11.tex [186
 
 
 
 ]
 \hfil Cap\'{\i }tulo 11.
-[185] [186] [187] (./Figure/m11_1.pstex_t
+[187] [188] [189] (./Figure/m11_1.pstex_t
 File: Figure/m11_1.pstex Graphic file (type eps)
- <Figure/m11_1.pstex>) [188]
+ <Figure/m11_1.pstex>) [190]
 (./Figure/m11_2.pstex_t
 File: Figure/m11_2.pstex Graphic file (type eps)
- <Figure/m11_2.pstex>) [189] (./Figure/m11_3.pstex_t
+ <Figure/m11_2.pstex>) [191] (./Figure/m11_3.pstex_t
 File: Figure/m11_3.pstex Graphic file (type eps)
 
-<Figure/m11_3.pstex>) [190] [191] [192] (./Figure/m11_4.pstex_t
+<Figure/m11_3.pstex>) [192] [193] [194] (./Figure/m11_4.pstex_t
 File: Figure/m11_4.pstex Graphic file (type eps)
 
-<Figure/m11_4.pstex>) [193] [194]) [195]
+<Figure/m11_4.pstex>) [195] [196]) [197]
 \openout2 = `Chapters/chap12.aux'.
 
- (./Chapters/chap12.tex [196
+ (./Chapters/chap12.tex [198
 
 
 
@@ -715,51 +716,51 @@ File: Figure/m11_4.pstex Graphic file (type eps)
 \hfil Cap\'{\i }tulo 12.
 (./Figure/m12_1.pstex_t
 File: Figure/m12_1.pstex Graphic file (type eps)
- <Figure/m12_1.pstex>) [197] (./Figure/m12_2.pstex_t
+ <Figure/m12_1.pstex>) [199] (./Figure/m12_2.pstex_t
 File: Figure/m12_2.pstex Graphic file (type eps)
 
-<Figure/m12_2.pstex>) [198] [199] [200] [201] [202] [203] [204] [205] [206]
-[207]) [208]
+<Figure/m12_2.pstex>) [200] [201] [202] [203] [204] [205] [206] [207] [208]
+[209]) [210]
 \openout2 = `Chapters/chap13.aux'.
 
  (./Chapters/chap13.tex
 \hfil Cap\'{\i }tulo 13.
-[209
+[211
 
 
 
 ] (./Figure/m13_1.pstex_t
 File: Figure/m13_1.pstex Graphic file (type eps)
- <Figure/m13_1.pstex>) [210]
+ <Figure/m13_1.pstex>) [212]
 (./Figure/m13_2.pstex_t
 File: Figure/m13_2.pstex Graphic file (type eps)
- <Figure/m13_2.pstex>) [211] (./Figure/m13_3.pstex_t
+ <Figure/m13_2.pstex>) [213] (./Figure/m13_3.pstex_t
 File: Figure/m13_3.pstex Graphic file (type eps)
 
 <Figure/m13_3.pstex>) (./Figure/m13_4.pstex_t
 File: Figure/m13_4.pstex Graphic file (type eps)
- <Figure/m13_4.pstex>) [212]
-[213] [214] (./Figure/m13_5b.pstex_t
+ <Figure/m13_4.pstex>) [214]
+[215] [216] (./Figure/m13_5b.pstex_t
 File: Figure/m13_5b.pstex Graphic file (type eps)
  <Figure/m13_5b.pstex>)
 (./Figure/m13_5.pstex_t
 File: Figure/m13_5.pstex Graphic file (type eps)
- <Figure/m13_5.pstex>) [215] [216] [217] [218]
+ <Figure/m13_5.pstex>) [217] [218] [219] [220]
 (./Figure/m13_6c.pstex_t
 File: Figure/m13_6c.pstex Graphic file (type eps)
- <Figure/m13_6c.pstex>) [219] (./Figure/m13_6b.pstex_t
+ <Figure/m13_6c.pstex>) [221] (./Figure/m13_6b.pstex_t
 File: Figure/m13_6b.pstex Graphic file (type eps)
 
-<Figure/m13_6b.pstex>) [220] [221] [222] (./Figure/m13_7b.pstex_t
+<Figure/m13_6b.pstex>) [222] [223] [224] (./Figure/m13_7b.pstex_t
 File: Figure/m13_7b.pstex Graphic file (type eps)
 
-<Figure/m13_7b.pstex>) [223] (./Figure/m13_8b.pstex_t
+<Figure/m13_7b.pstex>) [225] (./Figure/m13_8b.pstex_t
 File: Figure/m13_8b.pstex Graphic file (type eps)
  <Figure/m13_8b.pstex>)
-[224]) [225]
+[226]) [227]
 \openout2 = `Chapters/chap14.aux'.
 
- (./Chapters/chap14.tex [226
+ (./Chapters/chap14.tex [228
 
 
 
@@ -767,7 +768,7 @@ File: Figure/m13_8b.pstex Graphic file (type eps)
 \hfil Cap\'{\i }tulo 14.
 (./Figure/m14_1.pstex_t
 File: Figure/m14_1.pstex Graphic file (type eps)
- <Figure/m14_1.pstex>) [227]
+ <Figure/m14_1.pstex>) [229]
 Overfull \hbox (4.51013pt too wide) in paragraph at lines 91--95
 \T1/mdugm/m/n/10 donde vi-mos que las au-to-fun-cio-nes $\OML/mdugm/m/it/10 v[]
 \OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 x\OT1/mdugm/m/n/10 )$ \T1/mdugm/m/n/10 co
@@ -777,7 +778,7 @@ gm/m/n/10 (1) = 0$ \T1/mdugm/m/n/10 son $\OML/mdugm/m/it/10 v[]\OT1/mdugm/m/n/1
 ugm/m/n/10 )$
  []
 
-[228] [229] (./Figure/m14_2.pstex_t
+[230] [231] (./Figure/m14_2.pstex_t
 File: Figure/m14_2.pstex Graphic file (type eps)
  <Figure/m14_2.pstex>)
 Overfull \hbox (10.73665pt too wide) in paragraph at lines 265--285
@@ -790,39 +791,39 @@ dugm/m/n/10 y $\OT1/mdugm/m/n/10
 m/n/10 .
  []
 
-[230]) [231]
+[232]) [233]
 \openout2 = `Chapters/chap15.aux'.
 
- (./Chapters/chap15.tex [232
+ (./Chapters/chap15.tex [234
 
 
 
 ]
 \hfil Cap\'{\i }tulo 15.
-[233] [234] [235] [236] [237] [238] [239] [240]) [241]
+[235] [236] [237] [238] [239] [240] [241] [242]) [243]
 \openout2 = `Chapters/preguntas.aux'.
 
 
-(./Chapters/preguntas.tex [242
+(./Chapters/preguntas.tex [244
 
 
 
 ]
 \hfil Cap\'{\i }tulo 16.
-[243] [244]
+[245] [246]
 Overfull \hbox (1.35669pt too wide) in paragraph at lines 199--201
 []\T1/mdugm/m/it/10 Enuncie y en-tien-da las ge-ne-ra-li-za-cio-nes del teo-re-
 ma es-pec-tral. Dé ejem-
  []
 
-) [245]
+) [247]
 \openout2 = `Chapters/bib.aux'.
 
- (./Chapters/bib.tex [246
+ (./Chapters/bib.tex [248
 
 
 
-] [247]) [248] [249
+] [249]) [250] [251
 
 ] (./libro_gar.aux
 (./extdef_libro.aux) (./Chapters/title_KINDLE.aux) (./Chapters/chap0.aux)
@@ -837,12 +838,12 @@ ma es-pec-tral. Dé ejem-
 ### simple group (level 1) entered at line 1619 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 4083 strings out of 493849
- 55594 string characters out of 3149230
- 100789 words of memory out of 3000000
- 6992 multiletter control sequences out of 15000+200000
+ 4084 strings out of 493849
+ 55601 string characters out of 3149230
+ 100792 words of memory out of 3000000
+ 6993 multiletter control sequences out of 15000+200000
  217426 words of font info for 164 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  31i,15n,31p,860b,437s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on libro_gar.dvi (249 pages, 1051836 bytes).
+Output written on libro_gar.dvi (251 pages, 1055508 bytes).

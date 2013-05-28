@@ -1991,31 +1991,31 @@ Vemos así que si un operador es acotado, luego su dual también lo es.
 
 Veamos cuales son las componentes del dual de un operador en término de
 las componentes del operador original. 
-Sea entonces $\{\ve{u}_i\}$, $\{\ve{\theta}^i\}$, $i=1,..n$ una base, respectivamente
-una co-base de $V$ y sea $\{\hat{\ve{u}}_i\}$, $\{\hat{\ve{\theta}}^i\}$, 
+Sea entonces $\{\ve{e}_i\}$, $\{\ve{\theta}^i\}$, $i=1,..n$ una base, respectivamente
+una co-base de $V$ y sea $\{\hat{\ve{e}}_i\}$, $\{\hat{\ve{\theta}}^i\}$, 
 $i=1,..m$
 un par base-co-base de $W$.
 Tenemos entonces que las componentes de $\ve{A}$ con respecto a estas bases
 son: 
-$A^i{}_j := \hat{\ve{\theta}}^i(\ve{A}(\ve{u}_j))$, 
+$A^i{}_j := \hat{\ve{\theta}}^i(\ve{A}(\ve{e}_j))$, 
 es decir,
 $\ve{A}(\ve{v}) = 
-\sum_{i=1}^{m} \sum_{j=1}^{n} A^i{}_j \hat{\ve{u}}_i\ve{\theta}^j(\ve{v})$.
+\sum_{i=1}^{m} \sum_{j=1}^{n} A^i{}_j \hat{\ve{e}}_i\ve{\theta}^j(\ve{v})$.
 
 Por lo tanto, si $\ve{v}$ tiene componentes $(v^1,v^2,\dots,v^n)$ en la 
-base $\{\ve{u}_i\}$, $\ve{A}(\ve{v})$ tiene componentes 
+base $\{\ve{e}_i\}$, $\ve{A}(\ve{v})$ tiene componentes 
 \[
 (\sum_{i=1}^{n} A^1{}_iv^i, \sum_{i=1}^{n} A^2{}_iv^i,\dots,\sum_{i=1}^{n} A^m{}_iv^i)
 \]
 %
- en la base $\{\hat{\ve{u}}_i\}$
+ en la base $\{\hat{\ve{e}}_i\}$
 
 Veamos ahora las componentes de $\ve{A}'$. 
 Por definición tenemos,
 
 \[
-(\ve{A}')^i{}_j := \ve{A}'(\hat{\ve{\theta}}^i)(\ve{u}_j) 
-                  =  \hat{\ve{\theta}}^i(\ve{A}(\ve{u}_j)) = A^i{}_j.
+(\ve{A}')^i{}_j := \ve{A}'(\hat{\ve{\theta}}^i)(\ve{e}_j) 
+                  =  \hat{\ve{\theta}}^i(\ve{A}(\ve{e}_j)) = A^i{}_j.
 \]
 O sea las mismas componentes, pero ahora la matriz actúa por izquierda en
 las componentes $(\omega_1,\omega_2,\dots, \omega_m)$ de un elemento 
@@ -2031,20 +2031,22 @@ Hilbert. En tal caso el producto interno nos da un mapa canónico entre
 $V$ y su dual $V'$:
 \begin{equation}
   \label{eq:mapa_canonico}
-  \phi:V \to V', \;\;\;\; \phi(\ve{v}) := (\ve{v},\cdot),
+  \phi:V \to V', \;\;\;\; \phi(\ve{v}) := \langle \ve{v},\cdot \rangle.
 \end{equation}
 %
-y por lo tanto si $\ve{A}: V \to V$ luego $\ve{A}': V' \to V'$
+Este mapa es inyectivo, y como  $V$ y $V'$ tienen la misma dimensión es también suryectivo, y por lo tanto invertible. Es decir, dato $\omega \in V'$ existe $\ve{v}=\phi^{-1}(\omega) \in V$ tal que $\langle \ve{v},\cdot \rangle = \omega$. Note entonces que $\phi^{-1}: V' \to V$ satisface, 
+$\langle \phi^{-1}(\ve{\omega}),\ve{u} \rangle = \langle \ve{v},\ve{u} \rangle = \ve{\omega}(\ve{u})$.
+
+
+Si $\ve{A}: V \to V$ luego $\ve{A}': V' \to V'$
 puede también ser considerado como un operador entre $V$ y $V$
 que llamaremos $\ve{A}^{\star}$.
 
-Note que $\phi^{-1}: V' \to V$ está definido por 
-$(\phi^{-1}(\ve{\omega}),\ve{u}) = \ve{\omega}(\ve{u})$,
-ya que 
-\[
-((\phi^{-1}(\phi(\ve{v})),\ve{u}) = ((\phi^{-1}((\ve{v},\cdot)),\ve{u}) 
-= (\ve{v},\ve{u}) \;\;\;\; \forall \ve{u}\; \in V.
-\]
+
+%\[
+%((\phi^{-1}(\phi(\ve{v})),\ve{u}) = ((\phi^{-1}((\ve{v},\cdot)),\ve{u}) 
+%= (\ve{v},\ve{u}) \;\;\;\; \forall \ve{u}\; \in V.
+%\]
 %
 Con la ayuda de este mapa definimos $\ve{A}^{\star}: V \to V$ dado por:
 (Ver figura)
@@ -2074,7 +2076,10 @@ Con la ayuda de este mapa definimos $\ve{A}^{\star}: V \to V$ dado por:
 En término del producto escalar esto es:
 \begin{equation}
   \label{eq:A_adjunto_2}
-  (\ve{A}^{\star}(\ve{v}),\ve{u}) = (\phi^{-1}(\ve{A}'((\ve{v},\cdot)),\ve{u}) = \ve{A}'((\ve{v},\cdot))(\ve{u}) = (\ve{v},\ve{A}(\ve{u})).
+  \langle \ve{A}^{\star}(\ve{v}),\ve{u} \rangle = \langle \phi^{-1}(\ve{A}'(\phi(\ve{v}))),\ve{u} \rangle
+                                               = \ve{A}'(\phi(\ve{v}))(\ve{u}) 
+                                               = \phi(\ve{v})(\ve{A}(\ve{u}))
+                                               = \langle \ve{v},\ve{A}(\ve{u}) \rangle.
 \end{equation}
 %
 En su representación matricial este operador es, 
@@ -2106,7 +2111,7 @@ La primera afirmación es clara y general, la segunda depende de la
 Hermiticidad de $\ve{A}$. Sea $\ve{v} \in M^{\perp}$ cualquiera, veamos
 que $\ve{A}(\ve{v}) \in M^{\perp}$. Sea $\ve{u} \in M$ arbitrario, luego
 \begin{equation}
-  (\ve{u},\ve{A}(\ve{v})) = (\ve{A}(\ve{u}),\ve{v}) = 0,
+  \langle \ve{u},\ve{A}(\ve{v}) \rangle = \langle \ve{A}(\ve{u}),\ve{v} \rangle = 0,
 \end{equation}
 %
 ya que $\ve{A}(\ve{u}) \in M$ si $\ve{u} \in M$
@@ -2146,9 +2151,9 @@ Todo operador autoadjunto es diagonalizable
 Notemos también que si $\ve{u}$ es un autovector de $\ve{A}$ autoadjunto,
 con autovalor $\lambda$ luego,
 \begin{equation}
-  \bar{\lambda}(\ve{u},\ve{u}) = (\ve{A}(\ve{u}),\ve{u}) 
-                               = (\ve{u},\ve{A}(\ve{u}))
-                               = \lambda(\ve{u},\ve{u})
+  \bar{\lambda} \langle \ve{u},\ve{u} \rangle = \langle \ve{A}(\ve{u}),\ve{u} \rangle
+                               = \langle \ve{u},\ve{A}(\ve{u})\rangle
+                               = \lambda \langle \ve{u},\ve{u} \rangle
 \end{equation}
 y por lo tanto $\bar{\lambda} = \lambda$, es decir,
 
@@ -2161,15 +2166,15 @@ de las componentes del operador en una base ortonormal.
 Sea entonces $\ve{A}$ un operador autoadjunto y sea 
 $\{\ve{e}_i\}$, $i=1,\dots,n$
 una base ortonormal del espacio donde éste actúa.
-Tenemos que $(\ve{A}(\ve{e}_i),\ve{e}_j) = (\ve{e}_i,\ve{A}(\ve{e}_j))$
+Tenemos que $\langle \ve{A}(\ve{e}_i),\ve{e}_j \rangle = \langle \ve{e}_i,\ve{A}(\ve{e}_j) \rangle$
 y por lo tanto, notando que 
 $\ve{I} = \sum_{i=1}^{n} \ve{e}_i\ve{\theta}^i$,
 obtenemos,
 \begin{eqnarray}
-  0 &=& (\sum_{k=1}^{n} \ve{e}_k\ve{\theta}^k(\ve{A}(\ve{e}_i)),\ve{e}_j)
-       -(\ve{e}_i,\sum_{l=1}^{n} \ve{e}_l\ve{\theta}^l(\ve{A}(\ve{e}_j))) \nn
-    &=& \sum_{k=1}^{n} \bar{A}^k{}_i(\ve{e}_k,\ve{e}_j) 
-       -\sum_{l=1}^{n} A^l{}_j(\ve{e}_i,\ve{e}_l) \nn
+  0 &=& \langle \sum_{k=1}^{n} \ve{e}_k\ve{\theta}^k(\ve{A}(\ve{e}_i)),\ve{e}_j \rangle
+       - \langle \ve{e}_i,\sum_{l=1}^{n} \ve{e}_l\ve{\theta}^l(\ve{A}(\ve{e}_j)) \rangle \nn
+    &=& \sum_{k=1}^{n} \bar{A}^k{}_i \langle \ve{e}_k,\ve{e}_j \rangle
+       -\sum_{l=1}^{n} A^l{}_j \langle \ve{e}_i,\ve{e}_l \rangle \nn
     &=& \sum_{k=1}^{n} \bar{A}^k{}_i \delta_{kj} 
        - \sum_{l=1}^{n} A^l{}_j \delta_{li}.
 \end{eqnarray}
@@ -2194,7 +2199,7 @@ Si $\ve{A}$ es autoadjunto luego $\|\ve{A}\| = \sup\{|\lambda_i|\}$.
 \elem
 
 \bpru 
-Sea $F(\ve{u}) := (\ve{A}(\ve{u}),\ve{A}(\ve{u}))$
+Sea $F(\ve{u}) := \langle \ve{A}(\ve{u}),\ve{A}(\ve{u}) \rangle$
 definida en la esfera $\|\ve{u}\| = 1$. Como dicho conjunto es compacto
 (aquí estamos usando el hecho que el espacio es de dimensión finita)
 tiene un máximo que denotaremos $\ve{u}_0$. Notemos entonces que
@@ -2206,7 +2211,7 @@ Como $F(\ve{u})$ es diferenciable en la esfera se debe cumplir que
 %
 a lo largo de toda curva tangente a la esfera en el punto $\ve{u}_0$, 
 es decir, para todo 
-$\ve{\delta u}$ tal que $(\ve{u}_0,\ve{\delta u})=0$.
+$\ve{\delta u}$ tal que $\langle \ve{u}_0,\ve{\delta u} \rangle =0$.
 Ver figura.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2231,17 +2236,17 @@ Ver figura.
 \begin{eqnarray}
   \frac{d}{d\lambda} F(\ve{u}_0+ \lambda \ve{\delta u})|_{\lambda=0} 
        &=&
-       \frac{d}{d\lambda}(\ve{A}(\ve{u}_0 + \lambda \ve{\delta u}),
-                          \ve{A}(\ve{u}_0 + \lambda \ve{\delta u}))
+       \frac{d}{d\lambda} \langle \ve{A}(\ve{u}_0 + \lambda \ve{\delta u}),
+                          \ve{A}(\ve{u}_0 + \lambda \ve{\delta u}) \rangle 
                           |_{\lambda=0} \nn
        &=&
-           (\ve{A}(\ve{\delta u}),\ve{A}(\ve{u}_0)) 
-           + (\ve{A}(\ve{u}_0),\ve{A}(\ve{\delta u})) \nn
+           \langle \ve{A}(\ve{\delta u}),\ve{A}(\ve{u}_0) \rangle 
+           + \langle \ve{A}(\ve{u}_0),\ve{A}(\ve{\delta u}) \rangle  \nn
        &=&
-           2\Re(\ve{A}^{\star}\ve{A} \ve{u}_0, \ve{\delta u}) \nn
+           2\Re \langle \ve{A}^{\star}\ve{A} \ve{u}_0, \ve{\delta u} \rangle  \nn
        &=&
            0 \;\;\;\;\; \forall \ve{\delta u}, 
-           \;\;\; (\ve{u}_0,\ve{\delta u})=0
+           \;\;\; \langle \ve{u}_0,\ve{\delta u} \rangle =0
 \end{eqnarray}
 %
 Como $\ve{\delta u}$ es arbitrario en $\{\ve{u}_0\}^{\perp}$ esto 
@@ -2258,9 +2263,9 @@ y por lo tanto que existirá $\alpha \in \Complex$ tal que
 %
 Tomando producto escalar con $\ve{u}_0$ obtenemos,
 \begin{eqnarray}
-  (\ve{A}^{\star}\ve{A}(\ve{u}_0),\ve{u}_0) 
-     &=& \bar{\alpha}(\ve{u}_0,\ve{u}_0) \nn
-     &=& (\ve{A}(\ve{u}_0),\ve{A}(\ve{u}_0)) \nn
+  \langle \ve{A}^{\star}\ve{A}(\ve{u}_0),\ve{u}_0 \rangle  
+     &=& \bar{\alpha} \langle \ve{u}_0,\ve{u}_0 \rangle  \nn
+     &=& \langle \ve{A}(\ve{u}_0),\ve{A}(\ve{u}_0) \rangle \nn
      &=& \|\ve{A}\|^2
 \end{eqnarray}
 %
@@ -2299,7 +2304,7 @@ cuando hay un producto interno privilegiado es la de los
 es decir aquellos tales que su acción preserva el producto escalar,
 \begin{equation}
   \label{eq:operadores_unitarios}
-  (\ve{U}(\ve{u}), \ve{U}(\ve{v})) = (\ve{u},\ve{v}), 
+  \langle \ve{U}(\ve{u}), \ve{U}(\ve{v}) \rangle  = \langle \ve{u},\ve{v} \rangle , 
                         \;\;\; \forall \ve{u}, \ve{v} \;\in H.
 \end{equation}
 El caso más típico de operador unitario es una transformación 
@@ -2312,8 +2317,8 @@ $\|\ve{U}\| = \sup_{\|\ve{v}\|=1}\{\|\ve{U}(\ve{v})\|\} = 1$.
 
 \noindent Notemos que 
 \begin{equation}
-  (\ve{U}(\ve{u}), \ve{U}(\ve{v})) = (\ve{U}^{\star}\ve{U}(\ve{u}),\ve{v}) 
-                                   = (\ve{u},\ve{v}),
+  \langle \ve{U}(\ve{u}), \ve{U}(\ve{v}) \rangle  = \langle \ve{U}^{\star}\ve{U}(\ve{u}),\ve{v} \rangle 
+                                   = \langle \ve{u},\ve{v} \rangle ,
                                    \;\;\; \forall \ve{u}, \ve{v} \;\in H,
 \end{equation}
 o sea,
@@ -2329,9 +2334,9 @@ Veamos cómo son los autovalores de un operador unitario $\ve{U}$.
 Sea $\ve{v}_1$ un autovector de $\ve{U}$ (sabemos que al menos tiene uno),
 luego,
 \begin{eqnarray}
-  (\ve{U}(\ve{v}_1), \ve{U}(\ve{v}_1)) 
-               &=& \lambda_1 \bar{\lambda}_1 (\ve{v}_1,\ve{v}_1) \nn
-               &=& (\ve{v}_1,\ve{v}_1)
+  \langle \ve{U}(\ve{v}_1), \ve{U}(\ve{v}_1) \rangle  
+               &=& \lambda_1 \bar{\lambda}_1 \langle \ve{v}_1,\ve{v}_1 \rangle  \nn
+               &=& \langle \ve{v}_1,\ve{v}_1 \rangle 
 \end{eqnarray}
 %
 y por lo tanto $\lambda_1 = e^{i \theta_1}$ para algún ángulo $\theta_1$.
@@ -2342,13 +2347,13 @@ Si tenemos más de un autovalor, luego sus correspondientes autovectores
 son ortogonales, en efecto, sean $\ve{v}_1$ y $\ve{v}_2$ dos autovectores
 luego
 \begin{eqnarray}
-  (\ve{U}(\ve{v}_1), \ve{U}(\ve{v}_2)) 
-               &=&  \bar{\lambda}_1 \lambda_2 (\ve{v}_1,\ve{v}_2) \nn
-               &=& (\ve{v}_1,\ve{v}_2)
+  \langle \ve{U}(\ve{v}_1), \ve{U}(\ve{v}_2) \rangle 
+               &=&  \bar{\lambda}_1 \lambda_2 \langle \ve{v}_1,\ve{v}_2 \rangle \nn
+               &=& \langle \ve{v}_1,\ve{v}_2 \rangle 
 \end{eqnarray}
 %
 y por lo tanto si $\lambda_1 \neq \lambda_2$ debemos tener 
-$(\ve{v}_1,\ve{v}_2)=0$.
+$\langle \ve{v}_1,\ve{v}_2 \rangle =0$.
 
 \ejer:
 Muestre que si $\ve{A}$ es un operador autoadjunto, luego

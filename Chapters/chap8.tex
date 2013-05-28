@@ -1,3 +1,8 @@
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%%ultima modificación 11/04/2013
+
 
 \chapter{Elementos Básicos de Análisis Funcional}
 \label{elementos_basicos_de_analisis_funcional}
@@ -20,9 +25,13 @@ solo consideraremos los puntos que nos serán útiles o aquellos para
 los que se requiera un mínimo de esfuerzo extra para obtenerlos y
 su importancia cultural así lo justifique.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Completando un Espacio Normado}
 
-En la primera parte de este curso introdujimos los espacios de Banach,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En el capítulo anterior introdujimos los espacios de Banach,
 es decir espacios vectoriales con una norma definida en ellos y que
 eran completos con respecto a ella. Allí también probamos que el 
 conjunto de funciones continuas en un intervalo $[a,b] \in \re $
@@ -1325,7 +1334,7 @@ Probaremos solo la convergencia puntual, la uniforme sigue fácilmente y la
 prueba de ello no agrega nada nuevo.
 Comenzamos con el siguiente cálculo,
 \begin{eqnarray}
-  S_N(f)(\theta) &:=& \frac{1}{\sqrt{2\pi}}\sum_{n=-N}^{N} f_n e^{inx} \nn
+  S_N(f)(\theta) &:=& \frac{1}{\sqrt{2\pi}}\sum_{n=-N}^{N} f_n e^{in\theta} \nn
             &=&  \frac{1}{{2\pi}}\sum_{n=-N}^{N} 
                  \int_0^{2\pi}e^{in\theta'}f(\theta') e^{in\theta}d\theta' \nn
             &=& \frac{1}{{2\pi}}\int_0^{2\pi}f(\theta')

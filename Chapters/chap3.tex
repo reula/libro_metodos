@@ -1,4 +1,7 @@
-%%ultima modificación 26/04/2012
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%%ultima modificación 28/04/2013
 
 \chapter{Geometría}
 
@@ -187,7 +190,7 @@ sentido de que la topologías permitidas pueden aún ser patológicas
 desde el punto de vista de la física. Por ello
 en este curso impondremos a las variedades una condición extra.
 Supondremos que éstas son {\bf separables o Hausdorff}. Eso es si
-$p$ y $q\,\in\;M$ luego: o pertenecen al dominio de una misma carta 
+$p$ y $q\,\in\;M$, distintos, luego: o pertenecen al dominio de una misma carta 
 $U_i$ (en cuyo caso existen entornos $W_p$ de $\fip_i(p)$ y 
 $W_q$ de $\fip_i(q)$ tales
 que $\fip_i^{-1}(W_p)\,\cap\,\fip_i^{-1}(W_q)=\;\emptyset$, o sea los
@@ -225,8 +228,11 @@ I_3\;,\,\fip_2\,=\,id\,)\}$.
 cualquier entorno $W_2$ de $\fip_2(0)$ tenemos  necesariamente que \hfill \\
 $\fip_1^{-1}(W_1)\,\cap\,\fip_2^{-1}(W_2)\,\neq \,\emptyset$.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section {Funciones Diferenciables en $M$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 De ahora en más asumiremos que $M$ es una variedad $C^\infty$, o sea
 que todos sus mapas $\fip_i\circ\fip_j^{-1}$ son infinitamente
@@ -249,8 +255,8 @@ $q\,\in\;M\;,\,f\,\in\,C_q^p $ si dada $(U_i,\fip_i)$ con
 $q\,\in\,U_i\;,\,f\circ\fip_i^{-1}\,:\fip_i(U_i)\subset
 \,\re^n\,\to\re$ es $p$-veces continuamente diferenciable en $\fip_i(q)$.
 
-\noi Note que esta propiedad es independiente de la carta empleada [
-mientras consideremos solo cartas de la clase compatible de atlas ].
+\noi Note que esta propiedad es independiente de la carta empleada 
+[mientras consideremos solo cartas de la clase compatible de atlas].
 Diremos que $f\,\in\,C^p(M)$ si $f\,\in\,C_q^p\;\;\forall\,q\,\in\,M$.
 [Ver figura 3.5.]
 
@@ -298,7 +304,12 @@ construcción inversa es decir definiremos la diferenciabilidad de un
 mapa de $\re^m$ en $M$. Haremos el caso $\re\,\to\,M$, en cuyo caso
 el mapa así  obtenido se llama curva. El caso general es obvio.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section {Curvas en $M$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \defi: {\bf Una curva en $M$} es un mapa entre un intervalo
 $I\,\subset\,\re$ y $M$, $\gamma\,:\,I\,\to\,M$. 
@@ -350,7 +361,12 @@ invertible. Se llaman {\bf Difeomorfismos}.
 De ahora en más supondremos que todas las variedades, curvas, difeomorfismos y
 funciones son suaves, es decir, son $C^\infty$.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section {Vectores}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 Para definir vectores en puntos de $M$ utilizaremos el concepto de
 derivada direccional en puntos de $\re^n$, es decir, explotaremos el
@@ -386,8 +402,9 @@ $h(q)=c\;\;\forall\,q\in M$, luego ${\ve{ v}}(h)=0$. [ $i$) $\Longrightarrow
 
 \espa
 Sea $T_p$ el conjunto de todos los vectores en $p$. Este conjunto
-tiene la estructura de un espacio vectorial y es llamado el espacio
-tangente al punto $p$. En efecto, podemos definir la suma de dos
+tiene la estructura de un espacio vectorial y es llamado el 
+\textbf{espacio tangente al punto}~\index{espacio tangente} $p$. 
+En efecto, podemos definir la suma de dos
 vectores ${\ve{ v}}_1\,,\,{\ve{ v}}_2$ como el vector, es decir el
 mapa, satisfaciendo $i$) y $ii$), $({\ve{ v}}_1\,+\,{\ve{v}}_2)(f)
 =\,{\ve{ v}}_1(f)\,+\,{\ve{ v}}_2(f)$ 
@@ -407,8 +424,9 @@ dim $T_p\,=\,dim M$.
 para $T_p$. Sea $dim\;M=n$ y $(U,\fip)$ tal que $p\,\in\,U$ y
 $f\,\in\,C^{\infty}(M)$  cualquiera. Para $i=1,\ldots,n$ definimos
 los vectores $\ve{ x}_i:C^{\infty}(M)\,\to\,\re$ dados por,
+
 \beq
-\ve{ x}_i(f)=\left.\frac{\partial}{\partial x^i}(f\circ
+\ve{ x}_i(f):=\left.\frac{\partial}{\partial x^i}(f\circ
 \fip^{-1})\right|_{\fip(p)} .  \label{eq10}
 \label{eq34}
 \eeq
@@ -422,7 +440,7 @@ $(U,\fip)$ pero esto no importa en la prueba ya que $T_p$ no depende
 de carta alguna. Estos vectores son linealmente independientes, es
 decir si $x=\sum_{i=1}^n c^i\,\ve{ x}_i=0$ luego $c^i=0\;\;\forall\,i=1,\ldots,n$. Esto
 se ve fácilmente considerando las funciones (en rigor definidas
-solamente en $U$), $f^j =x^j\circ\fip$, ya que
+solamente en $U$), $f^j :=x^j\circ\fip$, ya que
 $\ve{ x}_i(f^j)=\delta_i^{\,j}$ y por lo tanto $0=\ve{x}(f^j)=c^j$. 
 Solo resta mostrar que cualquier vector ${\ve{ v}}$ puede ser expresado como
 combinación lineal de  los $\ve{ x}_i$. Para ello usaremos el siguiente
@@ -469,7 +487,7 @@ f(q)=f(p)\,+\, \sum_{i=1}^n (x^i\circ \fip(q)\,-\,x^i\circ\fip(p))\,H_i\circ\fip
 \noi donde $v^i\equiv \,{\ve{ v}}(x^i\circ\fip)$, y por lo tanto hemos
 expresado ${\ve{ v}}$ como combinación lineal de los $\ve{ x}_i$,
 finalizando así 
-la prueba.
+la prueba \epru
 
 La base $\{\ve{ x}_i\}$ se llama una {\bf base coordenada} y los $\{v^i\}$, las
 {\bf componentes de ${\ve{ v}}$} en esa base.
@@ -520,8 +538,12 @@ x^i(t)=\fip\circ\gamma(t)
  &=& \sum_{i=1}^n \frac{dx^i}{dt}\,{\ve{ x}}_i(f)
 \end{eqnarray}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Campos Vectoriales y Tensoriales}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 Si a cada punto  $q$ de $M$ le asignamos un vector ${\ve{ v}}|_q \in T_q$
 tendremos un {\bf campo vectorial}. Este estará\ en $C^{\infty}(M)$ si
@@ -531,7 +553,11 @@ $C^{\infty}(M)$ . Al conjunto de los campos vectoriales $C^{\infty}$
 lo denotaremos $TM$ y obviamente es un espacio vectorial, de
 dimensión infinita.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{El Corchete de  Lie}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Consideremos ahora la operación en el conjunto $TM$ de
 campos vectoriales, $[\cdot,\cdot]$ : $TM\times TM\to TM$. Esta operación se
@@ -563,11 +589,15 @@ coordenada, ¿cuáles son las de $[\ve{ x},\ve{ y}]$?
 Con esta operación $TM$ adquiere el carácter de un álgebra, llamada
 {\bf Álgebra de Lie.}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Difeomorfismos y la Teoría de las Ecuaciones
 Diferenciales Ordinarias}
 
-\defi: Un {\bf grupo monoparamétrica de difeomorfismos} $g^t$ es un mapa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\defi: Un {\bf grupo monoparamétrico de difeomorfismos} $g^t$ es un mapa
 $\re\times M\to M$ tal que:
 
 1) Para cada $t$ fijo  es un difeomorfismo~\footnote{Es decir un mapa
@@ -638,9 +668,12 @@ por lo tanto $g^t$ de los siguientes sistemas lineales.
 
 \vskip \baselineskip
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Campos de Covectores y Tensores}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 Así como introdujimos la noción de campo vectorial podemos
 también introducir la de campo de co-vectores, es decir un mapa
@@ -650,30 +683,67 @@ se define el campo {\bf diferencial de $f$}.
 
 \ejem: Sea $f\in C^{\infty}_p$ . Un vector en
 $p\in M$ es una derivación sobre funciones en $C_p^{\infty}$,
-$\ve{v}(f)\in \re$. Pero dados $\ve{v}_1$ y $\ve{v}_2 \;\in T_p$\ \ \
-$(\ve{v}_1+\ve{v}_2)(f)= \ve{v}_1(f)+ \ve{v}_2(f)$ y por lo tanto $f$ 
-define una funcional
-lineal $df\mid_p:T_p\to \re$, llamada la diferencial de $f$, es
-decir un elemento de $T_p^*$. De esta forma la diferencial de una
-función $df$ es un co-vector que al actuar sobre un vector $\ve{v}$ nos
+$\ve{v}(f)\in \re$. 
+Pero dados $\ve{v}_1$ y $\ve{v}_2 \;\in T_p$, $a \in \re$ y $f\in C_p^{\infty}$,
+$(\ve{v}_1+a\ve{v}_2)(f)= \ve{v}_1(f)+ a\ve{v}_2(f)$ y por lo tanto cada $f$ dada
+define una funcional lineal 
+$\ve{df}\mid_p:T_p\to \re$, llamada la diferencial de $f$, es
+decir un elemento de $T_p^*$,
+
+\[
+\ve{df}(\ve{v}) := \ve{v}(f), \;\;\;\;\; \forall \ve{v} \in T_{p}.
+\]
+%
+De esta forma la diferencial de una
+función, $\ve{df}$, es un co-vector que al actuar sobre un vector $\ve{v}$ nos
 da el número {\it la derivada de $f$  en el punto $p$ en la dirección  de $\ve{v}$}.
 
 
 
-Considere el subconjunto $S$ de $M$ tal que $f(M)=\mbox{cte.}$ 
-Esta será una  subvariedad
-de $M$, es decir superficies embebidas en $M$, de dimensión $n-1$.
-La condición $df|_p(\ve{ v})=0$ en vectores de $T_p$ con $p\in S$
-significa que estos son en realidad vectores tangentes a $S$, es
-decir elementos de $T_p(S)$. Por el contrario, si $df(\ve{v})|_p \neq
-0$ entonces en ese punto $\ve{v}$ {\it pincha} a $S$. 
+Sea $f$ una función suave en $M$, $a\in\re$ y considere el subconjunto 
+$S_{a}$ de $M$ tal que $f(S_{a})=a$.
+Se puede ver que si $df\neq0$ esta será una  subvariedad de $M$, 
+es decir una superficie embebida en $M$, de dimensión $n-1$.
+La condición $df|_p(\ve{ v})=0$ en vectores de $T_p$ con $p\in S_{a}$
+significa que estos son en realidad vectores tangentes a $S_{a}$, es
+decir elementos de $T_p(S_{a})$. Por el contrario, si $df(\ve{v})|_p \neq
+0$ entonces en ese punto $\ve{v}$ {\it pincha} a $S_{a}$. 
 
 \ejem: La función $f(x,y,z)=x^2+y^2+z^2$ en $\re^3$. \par
-$S=\{(x,y,z)\in \re^3 / f(x,y,z) = a^2\;,\,a^2>0\}$ es la esfera de radio
-$a$, y como ya hemos visto  una variedad. Sea $(v_x,v_y,v_z)$ un vector
-en $(x,y,z)\in\re$, luego la condición $df(v)=2(xv_x+yv_y+zv_z)=0$
-implica que $v$ es tangente a $S$.
+$S_{a}=\{(x,y,z)\in \re^3 / f(x,y,z) = a^2,\;\; a>0\}$ es la esfera de radio
+$a$, y como ya hemos visto  una variedad. Sea $(v^{x}x,v^{y},vz^{z})$ un vector
+en $(x,y,z)\in\re^{3}$, luego la condición $\ve{df}(\ve{v})=2(xv^{x}+yv^{y}+zv^{z})=0$
+implica que $\ve{v}$ es tangente a $S$.
 
+Dado un sistema coordenado (carta) que cubre un punto $p \in M$ hemos visto que tenemos una base canónica de $T_{p}$ asociada con el mismo dada por los vectores,
+
+\[
+\ve{x}_{i} (f) := \frac{\partial f\circ \phi^{-1}}{\partial x^{i}}|_{\phi(p)}.
+\]
+%
+¿Cuál será la combase asociada con la misma? 
+Note que el sistema coordenado nos da también un conjunto de $n$ funciones privilegiadas, es decir, las componentes del mapa $\phi$ que define la carta, $\{x^{j}\}$, $j=1..n$, $f^{i}(p)=x^{i}\circ\fip$
+Si aplicamos los vectores base a estas funciones obtenemos, 
+
+\[
+ \ve{x}_{i} (f^{j}) := \frac{\partial x^{j}}{\partial x^{i}}|_{\phi(p)} = \delta^{j}_{i},
+ \]
+ %
+ pero entonces como, $\ve{df}^{j}(\ve{x}_{i})=\ve{x}_{i} (f^{j})$, vemos que los diferenciales
+ $ \ve{df}^{j}$ son la co-base de la base coordenada. 
+ Usualmente se denotan estas componentes como $ \ve{dx}^{j}$.
+ En particular tenemos que las componentes coordenadas de un vector $\ve{v}$ están dadas por:
+ 
+ \[
+ v^{j} = \ve{dx}^{j}(v),
+ \]
+%
+y las componentes de un co-vector $\ve{\omega} \in T_{p}^{*}$ por,
+
+\[
+\omega_{i} = \ve{\omega}(\ve{x}_{i}).
+\]
+ 
 Similarmente definimos {\bf campos tensoriales} como los mapas multilineales
 que al actuar sobre campos vectoriales y co-vec\-to\-ria\-les dan funciones
 de la variedad en los reales y que en cada punto  de la variedad sólo 
@@ -682,7 +752,11 @@ Esta última aclaración es
 necesaria pues de lo contrario incluiremos entre los tensores, por
 ejemplo, integrales lineales sobre los campos vectoriales.
  
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{La Métrica}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Sea $M$ una variedad n-dimensional. Hemos definido anteriormente en $M$
 las nociones de curvas, campos vectoriales y co-vec\-to\-ria\-les, etc. pero
@@ -727,11 +801,12 @@ este momento tenemos no contiene una noción de distancia privilegiada o
 natural. Esta debe ser introducida como una estructura adicional.
 Una manera de obtener distancias
 infinitesimales independientes del sistema coordenado (es decir geométricas)
-es introduciendo en cada  punto $p \in M$ un tensor de tipo (2,0), simétrico
-$[\mathbf{g(u,v) = g(v,u) \forall u,v} \in T_pM]$ y no degenerado $[\mathbf{g(u,v) = 0
-\forall v} \in T_pM \Ra \mathbf{u=0}]$.
+es introduciendo en cada  punto $p \in M$ un tensor de tipo ${0\choose 2}$, simétrico
+$[\mathbf{g(u,v) = g(v,u) \;\; \forall \; u,\;v} \; \in T_pM]$ y no degenerado 
+$[\mathbf{g(u,v) = 0\;\; \forall v} \; \in T_pM \;\;\Ra \mathbf{u=0}]$.
 Si además pedimos que este tensor sea
-definido positivo $[\mathbf{g(u,u) \geq 0 (=\;\;\Sii\;\; u=0)}] $
+definido positivo 
+$[\mathbf{g(u,u) \geq 0 \;\; (=\;\;\Sii\;\; u=0)}] $
 se puede ver fácilmente que este
 define un producto escalar en $T_pM$ (o seudoescalar
 si $\mathbf{g(u,u) =0}$ para algún $u \neq 0 \in T_pM$).
@@ -769,7 +844,7 @@ longitud de una curva midiendo las longitudes infinitesimales entre puntos
 cercanos de ésta y luego integramos con respecto a t.
 
 \espa
-\ejer: Pruebe que la distancia $L(\gamma) $ es independiente del parámetro
+\ejer: Pruebe que la longitud $L(\gamma) $ es independiente del parámetro
 elegido.
 
  Definimos la distancia
@@ -812,14 +887,14 @@ que a cada vector $\ve{v}\in T_p$ le asigna el co-vector $\ve{g}(\ve{v},\;)\in T
 Como esto es válido para cada $p$ obtenemos así un mapa entre campos
 vectoriales y co-vectoriales. 
 Como $\ve{g}$ es no degenerada este mapa es invertible, es decir existe un
-tensor de tipo $(2,0)$ simétrico $\ve{g^{-1}}$ tal que 
+tensor de tipo ${2\choose 0}$ simétrico $\ve{g^{-1}}$ tal que 
 \beq
 \ve{g}(\ve{g^{-1}}(\tita,\;),\;)=\tita
 \eeq
 para todo campo co-vectorial $\tita$. Esto indica que cuando tenemos una
 variedad con una métrica se hace irrelevante distinguir entre
-vectores  y co-vectores o por ejemplo entre tensores tipo (0,2),
-(2,0) o (1,1).
+vectores  y co-vectores o por ejemplo entre tensores tipo ${0 \choose 2}$,
+${2 \choose 0}$ o ${1\choose1}$.
 
 \subsection{Notación de Índices Abstractos}
 
@@ -864,7 +939,7 @@ inversa de $\ve{g}$) como $g^{ab}$, es decir $\ve{g}$ con
 La simetría de $\ve{g}$ es entonces el equivalente a $g_{ab}=g_{ba}$.
 
 \espa
-\ejer: ¿Cómo denotaría un tensor de tipo $(2,0)$ antisimétrico?
+\ejer: ¿Cómo denotaría un tensor de tipo ${0\choose 2}$ antisimétrico?
 
 \espa
 Usando índices repetidos para la contracción vemos que $l(f)$ se
@@ -881,7 +956,7 @@ $\na_a f$.
 ¿Existirá la noción de la derivada de un campo tensorial? Por
 ejemplo, ¿{}existirá una extensión del operador $\na_a$ a vectores tal que
 si $l^a$ es un vector diferenciable luego $\na_a l^b$ sea un tensor 
-del tipo (1,1)?
+del tipo ${1\choose1}$?
 Para fijar ideas definamos a esta extensión del diferencial $\na_a$,
 llamada derivada covariante, pidiendo que satisfaga las siguientes propiedades:
 \footnote {Note que son una extensión de las que se pide para
@@ -889,7 +964,7 @@ definir derivaciones.}
 
 \noi
 $i)$ Linealidad: Si $A^{a_1\cdots a_k}_{b_1\ldots b_l},B^{a_1\cdots a_k}
-_{b_1\ldots b_l}$ son tensores de tipo $(k,l)$ y $\alpha\in \re$  luego
+_{b_1\ldots b_l}$ son tensores de tipo ${k \choose l}$ y $\alpha\in \re$  luego
 \beq
 \na_c \lp \alf A^{a_1\cdots a_k}_{b_1\ldots b_l}+B^{a_1\cdots a_k}
 _{b_1\ldots b_l}\rp
@@ -908,9 +983,11 @@ B^{c_1\ldots c_m}_{d_1\ldots d_n}
 
 \noi $iii)$ Conmutatividad con contracciones:
 \beq
-\na_e \lp \delta^i{}_j  A^{a_1\ldots,j,\ldots,a_k}_{b_1\ldots,i,\ldots,b_k}\rp 
-= \delta^i{}_j \na_e A^{a_1\ldots,j,\ldots,a_k}_{b_1\ldots,i,\ldots,b_k}
+\na_e \lp \delta^c{}_d  A^{a_1\ldots,d,\ldots,a_k}_{b_1\ldots,c,\ldots,b_k}\rp 
+= \delta^c{}_d \na_e A^{a_1\ldots,d,\ldots,a_k}_{b_1\ldots,c,\ldots,b_k},
 \eeq
+%
+donde $\delta^c{}_d$ es el tensor identidad.
 Es decir si primero contraemos algunos índices de un tensor y
 luego tomamos su derivada obtenemos el mismo tensor que si tomamos
 primero la derivada y luego contraemos.
@@ -930,7 +1007,7 @@ l^a\na_a f = \ve{l}(f)
 \espa
 \ejem: Sea $\{x^i\}$ un sistema coordenado global en $\ren$ y sea 
 $\na_c$ el operador que cuando
-actúa en $A^{a_1\cdots a_k}_{b_1\ldots b_l}$ general el campo 
+actúa en $A^{a_1\cdots a_k}_{b_1\ldots b_l}$ genera el campo 
 tensorial que en estas coordenadas
 tiene componentes.
 \beq
@@ -982,7 +1059,7 @@ Note que por propiedad $iii)$ y $iv)$ de la definición, si sabemos
 cómo actúa $\na_c$ en co-vectores sabemos cómo actúa en vectores y
 así por $i)$ y $ii)$ en cualquier tensor. En efecto, si conocemos
 $\na_c w_a$
-para cualquier $w_a$ luego $\na_c l^a$ es el tensor de tipo (1,1) tal que cuando
+para cualquier $w_a$ luego $\na_c l^a$ es el tensor de tipo ${1\choose 1}$ tal que cuando
 contraído con un $w_a$ arbitrario nos da el co-vector  
 \beq
 \lp\na_c l^a\rp w_a= \na_c\lp w_a l^a \rp-l^a\lp \na_c w_a\rp,
@@ -1000,27 +1077,27 @@ depende solo de $w_a|_p$ y no de su derivada.
 Sea $w'_a$ cualquier otro co-vector tal que en $p$
 coinciden, es decir $(w_a-w'_a)|_p=0$.
 Luego dada una co-base suave $\{\mu_a^{i}\}$ en un entorno de $p$
-tendremos que $w_a-w'_a=\sum_{i} f^{i}\mu^{i}_a$ con
-$f^{i}$ funciones suaves que se anulan en $p$. En $p$ tenemos
+tendremos que $w_a-w'_a=\sum_{i} f_{i}\mu^{i}_a$ con
+$f_{i}$ funciones suaves que se anulan en $p$. En $p$ tenemos
 entonces
 \beq \barr{rcl}
 \bar\na_c\lp w_a-w'_a\rp-\na_c\lp w_a-w'_a\rp 
-&=&\sum_{i}\bar\na_c \lp f^{i}\mu^{i}_a\rp-\sum_{i} \na_c\lp
-f^{i}\mu^{i}_a\rp \\
-&=& \sum_i \mu^{i}_a\lp\bar\na_c f^{i}-\na_c f^{i}\rp=0
+&=&\sum_{i}\bar\na_c \lp f_{i}\mu^{i}_a\rp-\sum_{i} \na_c\lp
+f_{i}\mu^{i}_a\rp \\
+&=& \sum_i \mu^{i}_a\lp\bar\na_c f_{i}-\na_c f_{i}\rp=0
 \earr
 \eeq
 ya que por {\it iv)} $\bar \na_c $ y $\na_c$ deben actuar del 
-mismo modo en escalares --y en particular en las $f^{i}$--. 
+mismo modo en escalares --y en particular en las $f_{i}$--. 
 Esto muestra que
 \beq
 \lp\bar\na_c-\na_c\rp w'_a = \lp\bar\na_c-\na_c\rp w_a 
 \eeq
 y por lo tanto que $\lp\bar\na_c-\na_c\rp w_a$ depende de solo $w_a|_p$
 y obviamente en forma lineal.
-Pero entonces $\lp\bar\na_c-\na_c\rp $ debe ser un tensor de tipo (1,2) 
+Pero entonces $\lp\bar\na_c-\na_c\rp $ debe ser un tensor de tipo ${1\choose2}$ 
 que está esperando {\it comerse} una forma para darnos el tensor de 
-tipo (0,2) $\lp\bar\na_c -\na_c\rp w_a.$ 
+tipo ${0 \choose 2}$, $\lp\bar\na_c -\na_c\rp w_a.$ 
 Es decir $\lp\bar\na_c-\na_c\rp w_a = C^b{}_{ca} w_b$, lo que prueba el teorema.
 
 
