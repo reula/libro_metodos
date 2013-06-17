@@ -70,7 +70,8 @@
 \contentsline {section}{\numberline {9.4}Convergencia y Compacidad D\'ebil }{169}
 \contentsline {chapter}{\numberline {10}La Transformaci\'on de Fourier}{173}
 \contentsline {section}{\numberline {10.1}Introducci\'on}{173}
-\contentsline {section}{\numberline {10.2}*Propiedades b\'asicas de los Espacios de Sobolev}{179}
+\contentsline {section}{\numberline {10.2}*Propiedades b\'asicas de los Espacios de Sobolev}{180}
+\contentsline {section}{\numberline {10.3}Compacidad D\'ebil e Inmersiones Compactas}{185}
 \contentsline {chapter}{\numberline {11}Teor\IeC {\'\i }a de ecuaciones en derivadas parciales}{187}
 \contentsline {section}{\numberline {11.1}Introducci\'on}{187}
 \contentsline {section}{\numberline {11.2}La ecuaci\'on de primer orden}{189}
@@ -83,7 +84,7 @@
 \contentsline {section}{\numberline {12.2}Teorema Espectral}{205}
 \contentsline {chapter}{\numberline {13}Ecuaciones sim\'etrico--hiperb\'olicas}{211}
 \contentsline {section}{\numberline {13.1}Introducci\'on}{211}
-\contentsline {section}{\numberline {13.2}Un ejemplo}{211}
+\contentsline {section}{\numberline {13.2}Un ejemplo}{212}
 \contentsline {section}{\numberline {13.3}Desigualdad de la energ\IeC {\'\i }a para sistemas si\discretionary {-}{}{}m\'e\discretionary {-}{}{}tri\discretionary {-}{}{}co--hi\discretionary {-}{}{}per\discretionary {-}{}{}b\'o\discretionary {-}{}{}li\discretionary {-}{}{}cos}{217}
 \contentsline {section}{\numberline {13.4}Unicidad de las soluciones}{220}
 \contentsline {section}{\numberline {13.5}Dominio de dependencia}{221}

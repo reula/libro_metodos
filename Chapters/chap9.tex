@@ -1,3 +1,7 @@
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%%ultima modificación 10/06/2013
 
 \chapter{Distribuciones}
 
@@ -605,31 +609,31 @@ $B_1$ es débilmente compacta.
 \espa
 \noi
 \yaya{Prueba}: Sólo probaremos el caso en que $H$ es separable. Sea $\{x_n\}$
-con $\|x_n\|_H \leq 1 $ y $S=\{y_m\}$ una base ortonormal numerable de $H$.
+con $\|x_n\|_H \leq 1 $ y $S=\{e_m\}$ una base ortonormal numerable de $H$.
 Construiremos, usando inducción, una subsucesión $\{x_n^{\infty}\}$ tal que,
 \beq 
-(x_n^{\infty},y_m) \stackrel{n \to \infty}{\rightarrow} \alpha_m \;\;\forall \;y_m \in S.
+(x_n^{\infty},e_m) \stackrel{n \to \infty}{\rightarrow} \alpha_m \;\;\forall \;e_m \in S.
 \eeq
-Sea $m=1$, luego $|(x_n,y_1)| \leq \|x_n\|_H\|y_1\|_H \leq 1$.
-Vemos entonces que $\{(x_n,y_1)\}$ es una sucesión acotada en $\ve C$.
+Sea $m=1$, luego $|(x_n,e_1)| \leq \|x_n\|_H\|e_1\|_H \leq 1$.
+Vemos entonces que $\{(x_n,e_1)\}$ es una sucesión acotada en $\ve C$.
 Pero la bola de radio unidad en $\ve C$ es compacta y por
-lo tanto habrá alguna subsucesión $(x_n^1,y_1)$ convergiendo a algún 
+lo tanto habrá alguna subsucesión $(x_n^1,e_1)$ convergiendo a algún 
 $\alpha_1$ en $\ve C$. 
 Supongamos ahora que tenemos una subsucesión 
 $\{x_n^{m-1}\}$ tal que 
 \beq 
-(x_n^{m-1},y_p) \rightarrow \alpha_p \;\;\;\;\forall \;1\leq p \leq m-1.
+(x_n^{m-1},e_p) \rightarrow \alpha_p \;\;\;\;\forall \;1\leq p \leq m-1.
 \eeq
 De la misma forma que como hicimos para el caso $m=1$, considerando
-en este caso $\{(x_n^{m-1},y_m)\}$ obtenemos una subsucesión $\{x_n^m\}$
+en este caso $\{(x_n^{m-1},e_m)\}$ obtenemos una subsucesión $\{x_n^m\}$
 de $\{x_n^{m-1}\}$ que satisface,
 \beq 
-(x_n^m,y_m) \stackrel{n \to \infty}{\rightarrow} \alpha_m, 
+(x_n^m,e_m) \stackrel{n \to \infty}{\rightarrow} \alpha_m, 
 \eeq
 lo que completa la inducción.
-Tenemos así un mapa $\sigma:\{y_m\} \rightarrow \ve C$ dado por 
-$\sigma(y_m) = \alpha_m$,
-como $\{y_m\}$ es una base podemos extender este mapa linealmente a
+Tenemos así un mapa $\sigma:\{e_m\} \rightarrow \ve C$ dado por 
+$\sigma(e_m) = \alpha_m$,
+como $\{e_m\}$ es una base podemos extender este mapa linealmente a
 todo $H$. 
 Como $\{x_n^{\infty}\}$ es acotada,
 \beq

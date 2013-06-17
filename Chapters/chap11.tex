@@ -1,3 +1,8 @@
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%%ultima modificación 28/05/2013
+
 \chapter{Teoría de ecuaciones en derivadas parciales}
 \label{teoria_de_ecuaciones_en_derivadas_parciales}
 
@@ -250,14 +255,14 @@ Por ejemplo en el caso de los EDO, el problema
 consiste en dada un campo vectorial suave $v^a$ en $M$ encontrar algún
 conjunto tal que a cada elemento de éste le corresponda una curva
 integral de $v^a$.
-Claramente podríamos tomar este conjunto a los puntos de $M$
+Claramente podríamos tomar como este conjunto a los puntos de $M$
 donde $v^a\neq0$ ya que por cada uno de estos puntos pasa una única
 curva integral. Claramente también podríamos tomar como conjunto de 
 datos --al menos localmente--
 una hiper-superficie $s$ de $M$ tal que en ninguno de sus puntos
 $v^a$ sea tangente a ésta. 
 En tal caso tenemos además la muy deseable
-propiedad de que cada punto de $S$ determina una única solución, es
+propiedad de que cada punto de $S$ determina (localmente) una única solución, es
 decir {\it no contamos cada solución más que una vez.}
 
 
@@ -497,9 +502,9 @@ encontrar $\partial_n u^A |_{\Sigma}$ y así sucesivamente encontrar
 todas las derivadas de $u$ en $p$ (o cualquier otro punto de $\Sigma$).
 Si lo lográsemos podríamos, al menos formalmente y en un
 entorno de $p$, construir $u^A$ como su serie de Taylor alrededor de $p$.
-Si pudiésemos encontrar las derivadas normales a $\Sigma$, si
+Por lo tanto, si pudiésemos despejar las derivadas normales a $\Sigma$, si además los 
 $\Phi^A$  fuesen datos analíticos, y si los coeficientes de la
-ecuación fuesen también analíticos, luego se puede demostrar
+ecuación fuesen también analíticos, luego podríamos demostrar
 (Teorema de Cauchy-Kowalevski) que la solución $u^A$ construida
 formalmente arriba en realidad existe y es analítica en un
 entorno de $p$ en $M$.
@@ -528,13 +533,17 @@ pediremos que {\bf el rango de dicho mapa tenga la dimensión máxima}
 (es decir la dimensión del espacio de partida --la de los vectores $u^A$--).
 En particular esto implica que estamos suponiendo que la dimensión
 del espacio de llegada es mayor o igual que la del espacio de partida.
-Estamos pidiendo la posibilidad mínima de tener soluciones.
+Estamos pidiendo la posibilidad mínima de tener soluciones únicas, en efecto,
+la maximalidad del rango de $M(\Phi^C,q)^n_{A'B}$ es equivalente a que su núcleo
+es de dimensión nula y por ende, si una solución existe ésta será única.
 
-Si esto no sucede entonces es claro que la ecuación será
-una relación entre términos determinados a partir de los datos dados
-y en general no se satisfará. En ese caso los datos a dar
+Si esto no sucede, es decir si el núcleo no se anula, no podremos despejar 
+las derivadas normales de la solución en término de los datos iniciales y por 
+ende o habrá solución única. Note que todavía puede suceder que al tener que 
+satisfacer más ecuaciones que las incógnitas presentes puede que las ecuaciones 
+sean inconsistentes y no haya ninguna solución. En algunos casos los datos a dar
 libremente serán un número menor al de la dimensión del
-espacio de partida, solo se podrán dar algunas componentes de $u^A$.
+espacio de partida, solo se podrán dar algunas componentes de $u^A$ como dato inicial.
 
 ¿Qué es geométricamente la condición de maximalidad del rango de
 $M^a_{A'B}$ en lo que hace a las coordenadas elegidas?

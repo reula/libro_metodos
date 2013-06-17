@@ -1,4 +1,7 @@
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
 
+%%ultima modificación 28/05/2013
 
 \chapter{Ecuaciones simétrico--hiperbólicas}
 
@@ -17,10 +20,14 @@ Por lo tanto de ahora  en más usaremos índices sin primar.
 
 \item[b.)] El mapa $M^a_{AB}k_a$ es simétrico para todo $k_a \neq 0$.
 
-\item[c.)] En un entorno de cada punto existe una función $\tau$
-tal que si llamamos a su diferencial por $t_a$ ($=\na_a \tau$), el
-mapa  $H_{AB} := M^a_{AB}t_a$ es positivo definido. (Es decir
-$H_{AB}u^Au^B \geq 0$ ($= 0\; \mbox{sii} \; u^A = 0$).)
+\item[c.)] En cada punto de la variedad existe un co-vector $t_{a}$ tal que el mapa,
+$H_{AB} := M^a_{AB}t_a$ es positivo definido. (Es decir
+$H_{AB}u^Au^B \geq 0$ ($= 0\; \mbox{sii} \; u^A = 0$).)~\footnote{Como el conjunto de mapas simétricos y positivos es abierto si $x_{a}$ es cualquier otro co-vector, luego $H_{AB}(\eps) := M^a_{AB}(t_a+\eps x_{a})$ también será positivo por $\eps$ suficientemente cercano a cero. Por lo tanto se podrán definir localmente superficies de nivel $\tau = cte.$ tales que $H_{AB} := M^a_{AB}\nabla_{a}\tau$ es positivo en toda dicha superficie local.}
+
+%En un entorno de cada punto existe una función $\tau$
+%tal que si llamamos a su diferencial por $t_a$ ($=\na_a \tau$), el
+%mapa  $H_{AB} := M^a_{AB}t_a$ es positivo definido. (Es decir
+%$H_{AB}u^Au^B \geq 0$ ($= 0\; \mbox{sii} \; u^A = 0$).)
 
 \end{itemize}
 Note que esta última condición implica que $H_{AB}$ es una
@@ -104,9 +111,9 @@ tienen norma nula.}
 \eeq
 Esta ecuación puede ser integrada inmediatamente, obteniéndose
 \beq\barr{rcl}
-\dip\frac {\pa u}{\pa \eta}(\eta,\xi)&=& 4\dip\int^{\xi}_{\xi_0} f(\eta,\ti \xi)
-\;d\ti \xi \;C(\eta)\\ [3mm]
-u(\eta,\xi) &=& 4\dip\int^{\eta}_{\eta_0}\dip\int^{\xi}_{\xi_0} f(\ti \eta,\ti \xi)
+\dip\frac {\pa u}{\pa \eta}(\eta,\xi)&=& \frac{1}{4}\dip\int^{\xi}_{\xi_0} f(\eta,\ti \xi)
+\;d\ti \xi \;+ C(\eta)\\ [3mm]
+u(\eta,\xi) &=& \frac{1}{4}\dip\int^{\eta}_{\eta_0}\dip\int^{\xi}_{\xi_0} f(\ti \eta,\ti \xi)
 d\ti \xi d\ti \eta + u_I(\xi) + u_{II} (\eta),
 \earr
 \eeq
@@ -193,6 +200,11 @@ Por construcción esta solución es única.
 Muestre explícitamente que \ron{4)} satisface \ron{1)} 
 con $f \equiv 0$.
 
+\espa
+\ejer: 
+Utilice la solución general encontrada anteriormente para ver que las soluciones homogéneas de la ecuación de onda en dos dimensiones cumplen que $u(t,x) = u(0,x+t) + u(0,x-t) - u(-t,x)$. 
+\espa
+
 La ecuación \ron{4)} nos dice que a $u(x,t)$ contribuyen \textit{solo} 
 el promedio de los
 valores de $u_0$ en $x-t$ y $x+t$ y la integral de $u_1$, entre estos
@@ -216,7 +228,7 @@ Esto se logra integrando $f(\xi, \eta)$ primero con respecto a $\ti \xi$
 entre $\ti \eta$ y $\xi$  y
 luego $\ti \eta $ entre $\xi$ y $\eta$.
 \beq
-v(\eta,\xi) = 4 \int^{\eta}_{\xi}\lp\int^{\xi}_{\ti \eta} f(\ti \xi, \ti
+v(\eta,\xi) = \frac{1}{4} \int^{\eta}_{\xi}\lp\int^{\xi}_{\ti \eta} f(\ti \xi, \ti
 \eta) d \ti \xi \rp d\ti \eta.
 \eeq
 
@@ -252,9 +264,10 @@ u_1(\ti x) d\ti x +
 t) d \ti x \rp d\ti t,
 \eeq
 }
-que por construcción es única y que $u(x_0,t_0)$  depende de los valores 
-iniciales
-y de $f$ en la región cónica con vértice $(x_0,t_0)$ dada por,
+
+\noi que por construcción es única y que $u(x_0,t_0)$  depende de los valores 
+iniciales y de $f$ en la región cónica con vértice $(x_0,t_0)$ dada por,
+
 \beq
 \lb\barr{l}
 t \leq t_0\\
@@ -423,7 +436,7 @@ Usando la ecuación \ref{en1} en el miembro derecho obtenemos,
 donde en el primer miembro de la segunda desigualdad hemos usado la
 desigualdad de Schwartz (ver ejercicio) y hemos definido,
 \beq
-C^2 := \sup_{\Omega} \{(\na_aM^A_{AB})(\na_bM^b_{CD})H^{AC}H^{BD} \}.
+C^2 := \sup_{\Omega} \{(\na_aM^a_{AB})(\na_bM^b_{CD})H^{AC}H^{BD} \}.
 \eeq
 En la tercer desigualdad hemos usado que $2ab \leq a^2 + b^2$ y hemos
 definido,
@@ -664,8 +677,7 @@ Estas ecuaciones, con $H$ homogénea de primer grado se llaman
 ecuaciones {\bf eikonales} y son casos particulares de la ecuación
 de Hamilton--Jacobi que se estudia en mecánica. 
 
-Este tipo de ecuaciones, que en principio son ecuaciones en derivadas
-parciales pueden ser resueltos transformándolos a un problema equivalente
+Este tipo de ecuaciones pueden ser resueltos transformándolos a un problema equivalente
 en derivadas ordinarias proveniente de un Hamiltoniano.
 En efecto, considere el sistema de ecuaciones ordinarias Hamiltonianas:
 \begin{eqnarray}
@@ -685,7 +697,7 @@ Llamaremos a estas curvas, {\bf curvas características} ya que
 tienen la importante propiedad de que a lo largo de ellas la función
 $\sigma$ que andamos buscando es constante! Para probar esto primero
 veamos que con las condiciones iniciales elegidas 
-$p_i(t) = \sigma_i(x^i(t),t)\;\forall\;t$.
+$p_i(t) = \sigma_i(x^j(t),t)\;\forall\;t$.
 Pero tomando la derivada con respecto a $x^i$ de la ecuación \ref{eiko}
 obtenemos:
 \begin{eqnarray}

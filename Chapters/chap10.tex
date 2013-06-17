@@ -341,8 +341,30 @@ Esto nos induce a definir en general
 \eeq
 
 \espa
+
+\ejem: La transformada de la delta de Dirac.
+%
+De la definición anterior tenemos que,
+
+\[
+\hat{\delta}_{a} (\hat{\phi}) = \phi(a),
+\]
+%
+pero 
+
+\[
+\phi(a) = \frac1{(2\pi)^{1/2}} \int_{-\infty}^{\infty} e^{ika} \hat{\phi}(k) dk,
+\]
+%
+y por lo tanto la transformada de Fourier de la delta de Dirac es la distribución regular dada por,
+
+\[
+\hat{\delta}_{a} = T_{e^{ika}}.
+\]
+
+
 \ejer:
-Calcule $\cF{}(\del_a)$ y $\cF{}(\del'_a)$.
+Calcule $\cF{}(\del'_a)$.
 
 \espa
 \noi
@@ -419,16 +441,60 @@ una función en $\cS(\ren{})$ como,
 (T*f)(\fip)=T(\ti f*\fip)\;\;\;\mbox{ donde } \ti f(x) := f(-x).
 \label{10.t**}
 \eeq
+ 
+\noi Pero,
+
+\beq
+T_{[x]}(\ti f*\fip) = T_{[x]}(\int f(y - x)\phi(y) \; dy) = \int T_{[x]}(f(y-x))\phi(y) \; dy,
+\eeq
+%
+Donde hemos incluido una sub-expresión en $T$ para indicar que la distribución actúa sobre la función de  prueba como función de $x$.
+Como $f \in \cS(\ren{})$, $T_{[x]}(f(y-x)) :=g(y)$ nos dá un valor finito para cada $y \in \ren{}$ considerado como un parámetro, y por lo tanto una función $g(y)$, esta función es de hecho continua.~\footnote{Es decir, para cualquier $\{y_{n}\} \to y$ tenemos, $g(y_{n}) = T_{[x]}(f(y_{n}-x)) \to T_{[x]}(f(y-x)) = g(y)$, ya que $(f(y_{n}-x) \to f(y-x)$ en $\cS(\ren{})$ y las distribuciones son continuas como mapas de $\cS(\ren{})$ en $\re$.} Por lo tanto la integral de la expresión anterior está bien definida y concluimos, que,
+
+\beq
+\label{eqn:dist-conv-reg}
+(T*f)(\fip) = T_{g}(\phi).
+\eeq
+%
+Es decir esta convolución es una distribución regular!
 
 \espa
 \noi
 \yaya{Ejercicio}: Aplique \ron{10.t**} a $T=T_g$ para $g\in\cS(\ren{})$ y
 vea que esta definición tiene sentido.
 
-\noi La propiedad interesante se ve en el siguiente lema.
+Por otro lado, note que si $f$ es una función integrable y $g \in \cS(\ren{})$,
+$f*g$ es infinitamente diferenciable! Eso sigue del hecho que, como
+
+\beq
+\barr{rcl}
+\frac{d(f*g)}{dx}(x) &=& \frac{d}{dx}\int_{-\infty}^{\infty} f(x-y)g(y) \;dy \\
+                             &=& \int_{-\infty}^{\infty} \frac{df}{dx}(x-y)g(y) \; dy \\
+                             &=& -\int_{-\infty}^{\infty} \frac{df}{dy}(x-y)g(y) \; dy \\
+                             &=& \int_{-\infty}^{\infty} f(x-y)\frac{dg}{dy}(y) \; dy,\\
+\earr
+\eeq
+%
+todas las derivadas están bien definidas y son acotadas, y por lo tanto dicha convolución es infinitamente diferenciable aunque $f$ solo haya sido integrable. 
+
+\noi Esta interesante propiedad puede incluso ser extendida a distribuciones tal como se ve en el siguiente lema.
 \blem
-$T*f$ es equivalente a una función infinitamente diferenciable.
+Si $f \in \cS(\ren{})$, y $T \in \cS'(\ren{})$, $T*f$ es equivalente a una función infinitamente diferenciable.
 \elem
+
+De hecho tenemos, 
+
+\beq
+\barr{rcl}
+(T*f)'(\phi) &=& (T*f)(-\phi') \\
+                 &=& T(\tilde{f}*(-\phi')) \\
+                 &=& T(\tilde{f}'*\phi) \\
+                 &=& (T*f')(\phi). \\
+\earr
+\eeq                 
+
+\ejer: Convine este resultado con el anterior, ecuación (\ref{eqn:dist-conv-reg}) y encuentre la distribución regular correspondiente. 
+
 
 \section{*Propiedades básicas de los Espacios de Sobolev}
 
@@ -538,7 +604,7 @@ resto sigue por la continuidad de la norma.
 Pero
 \beq
 \barr{rcl}
-\|f\|_{c^0}=sup_{x\in R^n}|f(x)|&=&sup_{x\in R^n}\lpi\dip\int_{R^n}
+\|f\|_{c^0}=sup_{x\in R^n}|f(x)|&=&sup_{x\in R^n}\frac1{(2\pi)^{n/2}} \lpi\dip\int_{R^n}
 e^{i\lambda\cdot x}\,\hat f(\lambda)\;d^nx\rpi \\ [3mm]
 &\leq&\frac1{(2\pi)^{n/2}}\dip\int_{R^n}|\hat f(\lambda)|\;d^n\lambda \\ [3mm]
 &\leq&\frac1{(2\pi)^{n/2}}\dip\int_{R^n}\dip\frac{|\hat f(\lambda)|
@@ -595,8 +661,8 @@ e integrando con
 respecto a $\lambda'$ obtenemos,
 
 \beq\barr{rcl}
-\|\tau f\|_{H^{1/2}(R^{n-1}})&=&\dip\int_{R^{n-1}}|\hat
-f(\lambda',0)|^2\;d^{n-1}\lambda' \\ [3mm]
+\|\tau f\|_{H^{1/2}(R^{n-1})}&=&\dip\int_{R^{n-1}}|
+(1+|\lambda'|^2)^{1/2}\hat{f}(\lambda',0)|^2\;d^{n-1}\lambda' \\ [3mm]
 &=&2\lpi\dip\int_{R^{n-1}}\dip\int_0^{\ifi}(1+|\lambda'|^2)^{1/2}
 \derp{\hat f(\lambda',t)}{x_n}\overline{\hat f(\lambda',t)}\;dt\,d^{n-1}\lambda'
 \rpi\\ [3mm]
@@ -629,7 +695,7 @@ de la desigualdad anterior como ejercicio.
 
 En las aplicaciones tendremos que considerar funciones definidas solo
 en abiertos de \ren{}, $\Omega$ y sus bordes $\pa\Omega$.
-Supondremos que $\Omega$ es tal que su borde, $\pa\Omega=Cl\Omega-\Omega$, 
+Supondremos que $\Omega$ es tal que su borde, $\pa\Omega=\bar{\Omega}-\Omega$, 
 es una variedad suave.
 
 Sea $H^m(\Omega)$ el espacio de Sobolev obtenido tomando la integral en el
@@ -698,6 +764,8 @@ suficientemente peque\~no como para que exista $\fip_i$, tal que $(U_i,\fip_i)$
 sea una carta de $\pa\Omega$ entonces $f\in H^{m-1/2}(U_i)\;\forall
 \; i$.
 
+\section{Compacidad Débil e Inmersiones Compactas}
+
 Finalizamos este capítulo con dos lemas. El segundo de ellos, consecuencia del primero,
 es de gran importancia en la teoría de ecuaciones en derivadas parciales.
 
@@ -719,15 +787,15 @@ u(y)-u(x) = \sum^n_{j=1} \int^{y^j}_{x^j} \pa_j u (y^1,...,y^{j-1},s,x^{j+1},
 ...,x^n) ds.
 \eeq
 Tomando su cuadrado y usando la desigualdad de Schwarzt obtenemos,
-\begin{eqnarray}
-&& |u|^2(x) + |u|^2(y) - 2\Re(u(x) u(y)) \nn 
+\begin{eqnarray*}
+ |u(x)|^2 + |u(y)|^2&-&2\Re(u(x) u(y)) \nn 
 &\leq& nd\sum^n_{j=1} \int^{d/2}_{-d/2} |\pa_j u (y^1,\dots,y^{j-1},s,x^{j+1},\ldots,x^n)|^2 ds.
-\end{eqnarray}
+\end{eqnarray*}
 %
 Integrando con respecto a todos los $x^j$ e $y^j$ obtenemos, 
 \beq
 2\,d^n\:\|u\|^2_{H^0(\Gamma_d)}\leq 2\,\lpi\dip\int_{\Gamma_d}
-u\;d^nx\rpi^2+n\,d^{n+2}\;\dip\sum_{j=1}^n\|\pa_j\,u\|_{H^0(
+u\;d^nx\rpi^2+n\,d^{n+2}\;\dip\sum_{j=1}^n\|\pa_j\,u\|^{2}_{H^0(
 \Gamma_d)},
 \eeq
 de la cual
@@ -748,7 +816,7 @@ y extender cada $u_n$ como cero en $\Gamma_D - \Omega$.
 Sea $\eps > 0$ y $M$ lo suficientemente
 grande como para que $\frac{2nk^2D^2}{M^2} < \eps$.
 Descomponiendo $\Gamma_D$ en $M^n$ cubos $\Gamma_d^j$ con $d = D/M$ y usando
-que como $\{u_n\}$ es también acotada en $H^0(\Omega)$ existe una 
+que como $\{u_n\}$ es también acotada en $H^0(\Omega)$ la compacidad débil de las bolas en espacios de Hilbert nos asegura que existe una 
 subsucesión 
 $\{\ti u_p\}$  y $u \in H^0(\Omega)$
 tal que esta converge débilmente a $u$. 
@@ -761,10 +829,9 @@ $N$ tal que si $p$ y $q >N$,
 Si aplicamos a cada $\Gamma_d^j$ el lema~\ron{lem10.9}
 y sumamos sobre $j$ obtenemos que 
 $\forall \;p$ y $q > N$,
-\beq \barr{rcl}
-\|\ti u_p -\ti u_q\|^2_{H^0(\Omega)} &\leq& \lp\frac{D}{M}\rp^n
-\lp\sum^{M^n}_{j=1}\frac{\eps}2 \lp\frac DM\rp^{2n}\rp + \frac n2
-\lp\frac DM \rp^2(2k^2) \\ [3mm]
+\beq \barr{rcl} \|\ti u_p -\ti u_q\|^2_{H^0(\Omega)} 
+&\leq& \lp\frac{D}{M}\rp^{-n} \lp\sum^{M^n}_{j=1}\frac{\eps}2 \lp\frac DM\rp^{2n} \frac{1}{D^{n}} \rp 
+           + \frac n2 \lp\frac DM \rp^2(2k^2) \\ [3mm]
 &\leq& \frac{\eps}2 + \frac{\eps}2\\ [3mm]
 &\leq& \eps.
 \earr 

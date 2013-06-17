@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=latex 2010.8.12)  28 MAY 2013 08:39
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009) (format=latex 2010.8.12)  13 JUN 2013 11:30
 entering extended mode
  file:line:error style messages enabled.
  %&-line parsing enabled.
@@ -676,25 +676,21 @@ File: Figure/m8_5.pstex Graphic file (type eps)
 ]
 \hfil Cap\'{\i }tulo 10.
 [173] [174] [175] [176] [177] [178]
-Overfull \hbox (4.9774pt too wide) in paragraph at lines 413--418
+Overfull \hbox (4.9774pt too wide) in paragraph at lines 435--440
 []\T1/mdugm/m/n/10 Otra pro-pie-dad in-tere-san-te de la con-vo-lu-ción se ob-t
 ie-ne al no-tar que co-mo $[]\OT1/mdugm/m/n/10 ([][])$
  []
 
-[179] [180] [181] [182] [183]
-Overfull \vbox (1.43752pt too high) has occurred while \output is active []
-
-
-[184]) [185]
+[179] [180] [181] [182] [183] [184] [185]) [186]
 \openout2 = `Chapters/chap11.aux'.
 
- (./Chapters/chap11.tex [186
-
-
-
-]
+ (./Chapters/chap11.tex
 \hfil Cap\'{\i }tulo 11.
-[187] [188] [189] (./Figure/m11_1.pstex_t
+[187
+
+
+
+] [188] [189] (./Figure/m11_1.pstex_t
 File: Figure/m11_1.pstex Graphic file (type eps)
  <Figure/m11_1.pstex>) [190]
 (./Figure/m11_2.pstex_t
@@ -705,18 +701,22 @@ File: Figure/m11_3.pstex Graphic file (type eps)
 <Figure/m11_3.pstex>) [192] [193] [194] (./Figure/m11_4.pstex_t
 File: Figure/m11_4.pstex Graphic file (type eps)
 
-<Figure/m11_4.pstex>) [195] [196]) [197]
+<Figure/m11_4.pstex>) [195] [196]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [197])
+[198]
 \openout2 = `Chapters/chap12.aux'.
 
- (./Chapters/chap12.tex [198
-
-
-
-]
+ (./Chapters/chap12.tex
 \hfil Cap\'{\i }tulo 12.
 (./Figure/m12_1.pstex_t
 File: Figure/m12_1.pstex Graphic file (type eps)
- <Figure/m12_1.pstex>) [199] (./Figure/m12_2.pstex_t
+ <Figure/m12_1.pstex>) [199
+
+
+
+] (./Figure/m12_2.pstex_t
 File: Figure/m12_2.pstex Graphic file (type eps)
 
 <Figure/m12_2.pstex>) [200] [201] [202] [203] [204] [205] [206] [207] [208]
@@ -734,30 +734,36 @@ File: Figure/m13_1.pstex Graphic file (type eps)
  <Figure/m13_1.pstex>) [212]
 (./Figure/m13_2.pstex_t
 File: Figure/m13_2.pstex Graphic file (type eps)
- <Figure/m13_2.pstex>) [213] (./Figure/m13_3.pstex_t
+ <Figure/m13_2.pstex>) [213]
+Overfull \hbox (1.17966pt too wide) in paragraph at lines 204--206
+\T1/mdugm/m/n/10 cio-nes ho-mo-gé-neas de la ecua-ción de on-da en dos di-men-s
+io-nes cum-plen que $\OML/mdugm/m/it/10 u\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 
+t; x\OT1/mdugm/m/n/10 ) =
+ []
+
+(./Figure/m13_3.pstex_t
 File: Figure/m13_3.pstex Graphic file (type eps)
-
-<Figure/m13_3.pstex>) (./Figure/m13_4.pstex_t
+ <Figure/m13_3.pstex>) [214] (./Figure/m13_4.pstex_t
 File: Figure/m13_4.pstex Graphic file (type eps)
- <Figure/m13_4.pstex>) [214]
-[215] [216] (./Figure/m13_5b.pstex_t
+
+<Figure/m13_4.pstex>) [215] [216] [217] (./Figure/m13_5b.pstex_t
 File: Figure/m13_5b.pstex Graphic file (type eps)
- <Figure/m13_5b.pstex>)
-(./Figure/m13_5.pstex_t
+
+<Figure/m13_5b.pstex>) (./Figure/m13_5.pstex_t
 File: Figure/m13_5.pstex Graphic file (type eps)
- <Figure/m13_5.pstex>) [217] [218] [219] [220]
-(./Figure/m13_6c.pstex_t
+ <Figure/m13_5.pstex>) [218]
+[219] [220] (./Figure/m13_6c.pstex_t
 File: Figure/m13_6c.pstex Graphic file (type eps)
- <Figure/m13_6c.pstex>) [221] (./Figure/m13_6b.pstex_t
+ <Figure/m13_6c.pstex>) [221]
+(./Figure/m13_6b.pstex_t
 File: Figure/m13_6b.pstex Graphic file (type eps)
-
-<Figure/m13_6b.pstex>) [222] [223] [224] (./Figure/m13_7b.pstex_t
+ <Figure/m13_6b.pstex>) [222] [223] [224]
+(./Figure/m13_7b.pstex_t
 File: Figure/m13_7b.pstex Graphic file (type eps)
-
-<Figure/m13_7b.pstex>) [225] (./Figure/m13_8b.pstex_t
+ <Figure/m13_7b.pstex>) [225] (./Figure/m13_8b.pstex_t
 File: Figure/m13_8b.pstex Graphic file (type eps)
- <Figure/m13_8b.pstex>)
-[226]) [227]
+
+<Figure/m13_8b.pstex>) [226]) [227]
 \openout2 = `Chapters/chap14.aux'.
 
  (./Chapters/chap14.tex [228
@@ -769,7 +775,7 @@ File: Figure/m13_8b.pstex Graphic file (type eps)
 (./Figure/m14_1.pstex_t
 File: Figure/m14_1.pstex Graphic file (type eps)
  <Figure/m14_1.pstex>) [229]
-Overfull \hbox (4.51013pt too wide) in paragraph at lines 91--95
+Overfull \hbox (4.51013pt too wide) in paragraph at lines 96--100
 \T1/mdugm/m/n/10 donde vi-mos que las au-to-fun-cio-nes $\OML/mdugm/m/it/10 v[]
 \OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 x\OT1/mdugm/m/n/10 )$ \T1/mdugm/m/n/10 co
 n $\OML/mdugm/m/it/10 v[]\OT1/mdugm/m/n/10 (0) = \OML/mdugm/m/it/10 v[]\OT1/mdu
@@ -781,7 +787,7 @@ ugm/m/n/10 )$
 [230] [231] (./Figure/m14_2.pstex_t
 File: Figure/m14_2.pstex Graphic file (type eps)
  <Figure/m14_2.pstex>)
-Overfull \hbox (10.73665pt too wide) in paragraph at lines 265--285
+Overfull \hbox (10.73665pt too wide) in paragraph at lines 270--290
 $[]$\T1/mdugm/m/n/10 : Vea-mos pri-me-ro el ca-so $\OML/mdugm/m/it/10 u[] \OMS/
 mdugm/m/n/10 ^^@ \OT1/mdugm/m/n/10 ^^A\OML/mdugm/m/it/10 u < \OT1/mdugm/m/n/10 
 0$ \T1/mdugm/m/n/10 en $\OT1/mdugm/m/n/10 
@@ -838,12 +844,12 @@ ma es-pec-tral. Dé ejem-
 ### simple group (level 1) entered at line 1619 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 4084 strings out of 493849
- 55601 string characters out of 3149230
- 100792 words of memory out of 3000000
- 6993 multiletter control sequences out of 15000+200000
+ 4085 strings out of 493849
+ 55620 string characters out of 3149230
+ 100806 words of memory out of 3000000
+ 6994 multiletter control sequences out of 15000+200000
  217426 words of font info for 164 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  31i,15n,31p,860b,437s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on libro_gar.dvi (251 pages, 1055508 bytes).
+Output written on libro_gar.dvi (251 pages, 1062708 bytes).
