@@ -16,7 +16,7 @@
 \contentsline {subsection}{\numberline {2.3.1}Representaci\'on Matricial}{35}
 \contentsline {subsection}{\numberline {2.3.2}Subespacios Invariantes}{35}
 \contentsline {subsubsection}{Aplicaci\'on: Lema de triangulaci\'on de Schur}{36}
-\contentsline {subsection}{\numberline {2.3.3}Forma Can\'onica de Jordan}{45}
+\contentsline {subsection}{\numberline {2.3.3}Forma Can\'onica de Jordan}{46}
 \contentsline {subsection}{\numberline {2.3.4}Relaci\'on de Semejanza}{48}
 \contentsline {section}{\numberline {2.4}Operadores Adjuntos}{50}
 \contentsline {section}{\numberline {2.5}Operadores Unitarios}{55}

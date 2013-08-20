@@ -98,18 +98,18 @@ $f_{3}$ & $f_{1}$ & $f_{2}$ & $g$ & $g'$ & $e$ \\
 \label{tabla-15-2}
 \end{table}%
 
-\ejem:
-Considere el grupo de todos los mapas lineales de $\re2 \mapsto \re2$ que preservan un triángulo equilátero.
+\ejer:
+Considere el grupo de todos los mapas lineales de $\re^{2} \mapsto \re^{2}$ que preservan un triángulo equilátero. Construya su tabla de multiplicación y compare con la tabla anterior.
 
 
-\ejer: Considere el espacio todos los mapas lineales de $\re2 \mapsto \re2$ que preservan un cuadrado.
+\ejer: Considere el espacio todos los mapas lineales de $\re^{2} \mapsto \re^{2}$ que preservan un cuadrado.
 Compare su tabla con la de $P(1,2,3,4)$.
 
 \section{Isomorfismos}
 
-Como hemos visto, el grupo de transformaciones lineales en $\re2$ que preservan un triángulo equilátero y el grupo $P(1,2,3)$ tienen la misma tabla de multiplicación. Por para todo fin práctico, de forma abstracta estos dos grupos son idénticos, el estudio de uno nos da toda la información sobre el otro. Esto no se una excepción, en física los mismos grupos aparecen como transformaciones en situaciones y espacios muy diversos y no es tan fácil establecer la relación entre los mismos. Formalmente la relación entre ellos se puede definir de la siguiente manera:
+Como hemos visto, el grupo de transformaciones lineales en $\re^{2}$ que preservan un triángulo equilátero y el grupo $P(1,2,3)$ tienen la misma tabla de multiplicación. Por para todo fin práctico, de forma abstracta estos dos grupos son idénticos, el estudio de uno nos da toda la información sobre el otro. Esto no se una excepción, en física los mismos grupos aparecen como transformaciones en situaciones y espacios muy diversos y no es tan fácil establecer la relación entre los mismos. Formalmente la relación entre ellos se puede definir de la siguiente manera:
 
-\defi: Dos grupos, $G$ y $H$ son {\sl isomórfos} si existe un mapa invertible entre ambos, 
+\defi: Dos grupos, $G$ y $H$ son {\sl isomorfos} si existe un mapa invertible entre ambos, 
 $\Psi: G \mapsto H$ tal que,
 
 \[
@@ -118,7 +118,7 @@ $\Psi: G \mapsto H$ tal que,
  %
  Note que en el lado izquierdo el producto es el producto de $H$, mientras que en el derecho el producto es el de $G$. Es decir el mapa $\Psi$ preserva el producto entre los espacios. Si dos grupos son isomórficos entonces son idénticos en cuanto a sus propiedades intrínsecas.
  
- \ejer: Encuentre el mapa que hace $P(1,2)$ y grupo de todos los mapas lineales de $\re2 \mapsto \re2$ que preservan un triángulo equilátero.
+ \ejer: Encuentre el mapa que hace $P(1,2)$ y grupo de todos los mapas lineales de $\re^{2} \mapsto \re^{2}$ que preservan un triángulo equilátero.
  
  \section{Subgrupos}
  
@@ -134,7 +134,7 @@ $\Psi: G \mapsto H$ tal que,
  
  \ejer: Demuestre las afirmaciones del ejemplo anterior.
  
- \ejer: Considere un conjunto $S$ y el grupo de permutaciones sobre el mismo, $P(S)$.  Sea $S'$ un subconjunto de $S$ y considere todos los mapas que cuando restringidos a $S'$ son la identidad. 
+ \ejer: Considere un conjunto finito $S$ y el grupo de permutaciones sobre el mismo, $P(S)$.  Sea $S'$ un subconjunto de $S$ y considere todos los mapas que cuando restringidos a $S'$ son la identidad. 
  Vea que este conjunto es un subgrupo.
  
  \ejer: Sea $A$ subconjunto de $G$. Vea que $A$ es un subgrupo sii $\forall \; a, \; a'\; \in A$, 
@@ -148,7 +148,7 @@ $\Psi: G \mapsto H$ tal que,
  \section{La construcción universal}
  
 Vimos varios ejemplos de grupos que aparecen como grupos de transformaciones, es decir como mapas invertibles de un conjunto en sí mismo. En realidad todos los grupos se pueden obtener de esta forma.
-Citamos el siguiente teorema, el cual no probaremos, pero que es muy importante pues sitúa a los grupos en sy justa dimensión:
+Citamos el siguiente teorema, el cual no probaremos, pero que es muy importante pues sitúa a los grupos en su justa dimensión:
 
 \bteo
 Dado un grupo $G$ existe un conjunto $S$ tal que $G$ es isomórfico a un subgrupo de $P(S)$.
@@ -260,7 +260,9 @@ Debemos ver que si $g_{1} \approx g_{2}$ y $g_{2} \approx g_{3}$, entonces $g_{1
 Las dos primeras condiciones nos dan, 
 $g_{1}=g h_{1}$ y $g_{2}=g h_{2}$ para algún $g \in G$ y $g_{2}=\tilde{g} \tilde{h}_{2}$ y $g_{3}=\tilde{g} \tilde{h}_{3}$ para algún $\tilde{g} \in G$. Usando las dos relaciones para $g_{2}$ vemos que 
 $\tilde{g} = g h_{2} \tilde{h}^{-1}_{2}$. 
-Por lo tanto,  $g_{3}=\tilde{g} \tilde{h}_{3} = g h_{2} \tilde{h}^{-1}_{2}\tilde{h}_{3} = g h_{2} \tilde{h}^{-1}_{2}\tilde{h}_{3}$. Lo que prueba la afirmación ya que $h_{2} \tilde{h}^{-1}_{2}\tilde{h}_{3} \;\in\;H$.
+Por lo tanto,  $g_{3}=\tilde{g} \tilde{h}_{3} = g h_{2} \tilde{h}^{-1}_{2}\tilde{h}_{3}$.
+% = g h_{2} \tilde{h}^{-1}_{2}\tilde{h}_{3}$
+Lo que prueba la afirmación ya que $h_{2} \tilde{h}^{-1}_{2}\tilde{h}_{3} \;\in\;H$.
 
 Definimos así, $L=G/H_{L}$, el conjunto de clases equivalentes con respecto a esta relación de equivalencia.
 El subíndice $L$ se refiere a que hacemos equivalencias multiplicando los elementos de $H$ por la izquierda.
@@ -298,7 +300,7 @@ $L_{1}=H_{0}$ y $L_{2}=\{f_{1},f_{2},f{3}\}$.
 El conjunto $L=G/H_{L}$ no es en general un grupo, pero tiene propiedades interesantes y estos conjuntos aparecen muy a menudo en aplicaciones, usualmente bajo el nombre de Espacios Homogéneos.
 
 Ya vimos que $G$ actúa sobre $L$, dado un elemento de $L$, $A$, la acción de $g \in G$ en $A$ es el elemento de $L$ dado por $gA$. Denotaremos dicho mapa como $\Psi_{g}:L \mapsto L$. 
-Como ya vimos, dados dos elementos de $L$, $A$ y $B$, siempre existe un elemento de $G$, $g$ tal que
+Como ya vimos, dados dos elementos de $L$, $\;\;A$ y $B$, siempre existe un elemento $g \in G$ tal que
 $\Psi_{g}(A)=B$, es decir actúa transitivamente. La inversa de este mapa es $\Psi_{g^{-1}}$. 
 Esto nos dice que todos los puntos de $L$ tiene la misma estructura, el grupo los mueve a todos en todos.
 De ahí su nombre de espacios homogéneos.
