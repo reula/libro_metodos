@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013.6.21)  25 JUL 2013 10:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013.11.15)  10 MAR 2014 21:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -474,7 +474,7 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
  [26] [27] [28] [29] (./Figure/m2_1.pstex_t
 File: Figure/m2_1.pstex Graphic file (type eps)
  <Figure/m2_1.pstex>)
-Overfull \hbox (6.8691pt too wide) in paragraph at lines 501--506
+Overfull \hbox (6.8691pt too wide) in paragraph at lines 508--513
 $[]$\T1/mdugm/m/n/10 : Prue-be que $\OMS/mdugm/m/n/10 j[]\OT1/mdugm/m/n/10 ([]\
 OML/mdugm/m/it/10 ; []\OT1/mdugm/m/n/10 )\OMS/mdugm/m/n/10 j[] ^^T jj[]jj[]jj[]
 jj[]$\T1/mdugm/m/n/10 . Ayu-da: Con-si-de-re el po-li-no-mio: $\OML/mdugm/m/it/
@@ -482,31 +482,23 @@ jj[]$\T1/mdugm/m/n/10 . Ayu-da: Con-si-de-re el po-li-no-mio: $\OML/mdugm/m/it/
  []
 
 [30]
-Overfull \hbox (0.62445pt too wide) in paragraph at lines 544--549
+Overfull \hbox (0.62445pt too wide) in paragraph at lines 551--556
 $[]$\T1/mdugm/m/n/10 : Prue-be que es-ta es una nor-ma. Ayu-da, da-do dos vec-t
 o-res cual-quie-ra $[]\OML/mdugm/m/it/10 ;   []  \OMS/mdugm/m/n/10 2
  []
 
 [31] [32] [33]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 788.
- [34] [35]
-Underfull \vbox (badness 1817) has occurred while \output is active []
-
- [36]
-[37]
-Underfull \vbox (badness 1360) has occurred while \output is active []
-
- [38]
-[39] [40] [41] [42] [43] [44]
-Overfull \hbox (0.68692pt too wide) in paragraph at lines 1570--1581
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 795.
+ [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44]
+Overfull \hbox (0.68692pt too wide) in paragraph at lines 1581--1592
 []\T1/mdugm/m/n/10 Agregando en-ton-ces al con-jun-to an-te-rior un con-jun-to 
 $\OMS/mdugm/m/n/10 f[][]g$ \T1/mdugm/m/n/10 de $[]\OT1/mdugm/m/n/9 ([] [] \OMS/
 mdugm/m/n/9 \ \OML/mdugm/m/it/9 W[]\OT1/mdugm/m/n/9 ) \OMS/mdugm/m/n/9 ^^@
  []
 
 [45] [46] [47]
-Overfull \hbox (22.19641pt too wide) in paragraph at lines 1794--1798
+Overfull \hbox (22.19641pt too wide) in paragraph at lines 1805--1809
 \T1/mdugm/m/n/10 tie-nen un sig-ni-fi-ca-do fí-si-co cla-ro, son los lla-ma-dos
  mo-dos nor-ma-les --caso unidimensional--
  []
@@ -521,7 +513,7 @@ File: Figure/m2_2.pstex Graphic file (type eps)
 File: Figure/m2_3.pstex Graphic file (type eps)
 
 <Figure/m2_3.pstex>) [51]
-Overfull \hbox (10.99156pt too wide) in paragraph at lines 2097--2102
+Overfull \hbox (10.99156pt too wide) in paragraph at lines 2108--2113
 \T1/mdugm/m/n/10 donde $\OML/mdugm/m/it/10 t[]$ \T1/mdugm/m/n/10 es la re-pre-s
 en-ta-ción del pro-duc-to es-ca-lar y $\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t[
 ]\OT1/mdugm/m/n/10 )[][]$ \T1/mdugm/m/n/10 el de su in-ver-sa ($\OML/mdugm/m/it
@@ -856,15 +848,15 @@ LaTeX Info: Redefining \% on input line 8.
 (./Chapters/chap15.aux) (./Chapters/preguntas.aux) (./Chapters/bib.aux)) )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 1627 ({)
+### simple group (level 1) entered at line 1638 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  4284 strings out of 493316
- 58295 string characters out of 6137930
+ 58295 string characters out of 6137929
  117232 words of memory out of 5000000
  7366 multiletter control sequences out of 15000+600000
  217426 words of font info for 164 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  31i,15n,31p,860b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on libro_gar.dvi (251 pages, 1063528 bytes).
+Output written on libro_gar.dvi (251 pages, 1064896 bytes).

@@ -7,7 +7,7 @@
 \chapter{Álgebra Lineal}
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Espacios Vectoriales}
 
@@ -154,7 +154,7 @@ Encuentre la dimensión de este espacio.
 
 Sea $V$ un espacio vectorial de dimensión $n$. 
 Asociado con este espacio vectorial consideremos el conjunto,
-$V^*=\{$ el espacio de mapas lineales $f\ve{\omega}:V\to \re\}$. 
+$V^*=\{$ el espacio de mapas lineales $\ve{\omega}:V\to \re\}$. 
 Este es también
 un espacio vectorial, llamado el {\bf espacio dual a $V$}~\index{espacio dual}, 
 o {\bf espacio de covectores},~\index{covectores} con suma y producto dados por: 
@@ -279,11 +279,11 @@ $\ve{ t}$ simétrico $[\ve{ t}(\ve{v},\ve{u})=\ve{ t}(\ve{u},\ve{v})]$ y no degen
 Como $\ve{ t}$ es no degenerado define un mapa invertible entre $V$ y su dual. 
 En efecto, dado $\ve{v} \in V$, $\ve{t}(\ve{v},\cdot)$ es un elemento de $V^*$. 
 Pero si $\ve{v}$ y $\ve{\tilde{v}}$ nos determinan el mismo elemento de $V^*$, es decir si 
-$\ve{ t}(\ve{v},\ve{u}) = \ve{ t}(\ve{\tilde{v}},\ve{u}) \;\; \forall \; \ve{v} \in V$ luego $\ve{v}=\ve{\tilde{v}}$,
+$\ve{ t}(\ve{v},\ve{u}) = \ve{ t}(\ve{\tilde{v}},\ve{u}) \;\; \forall \; \ve{u} \in V$ luego $\ve{v}=\ve{\tilde{v}}$,
 lo que se puede ver tomando $\ve{u} = \ve{v} - \ve{\tilde{v}}$ y usando que $\ve{t}$ es no degenerado.
 Como las dimensiones de $V$ y $V^{*}$ son iguales el mapa así definido es invertible.
 
-\ejem: b) Sea $\ve{\varepsilon}$ un elemento de $(n,0)$ tal que 
+\ejem: b) Sea $\ve{\varepsilon}$ un elemento de ${0 \choose n}$ tal que 
 \beq
 \ve{\varepsilon} (\ldots,\underbrace{\ve{v}}_i,\ldots,\underbrace{\ve{u}}_j,\ldots)
 =-\ve{\varepsilon}
@@ -307,12 +307,14 @@ arriba o una impar. En efecto, por ejemplo,
 &=&\varepsilon_{1234\ldots n}.
 \end{eqnarray*}
 %
-Por lo tanto basta un número,
+Por lo tanto, dada una base, basta un número,
 $\varepsilon_{123\ldots n}$, para determinar el tensor
-$\ve{\varepsilon}$ y dado y otro tensor
+$\ve{\varepsilon}$ y dado otro tensor
 $\ve{\tilde{\varepsilon} }$ no idénticamente cero con las propiedades
 arriba mencionadas luego existirá un número $\alpha$ tal que
 $\ve{\varepsilon} = \alpha\ve{\tilde{\varepsilon}}$.
+Esta última igualdad no depende de la base empleada y nos dice que la dimensión del
+subespecie de tensores de tipo ${0 \choose n}$ antisimétricos es de dimensión 1. Basta conocer uno para generar todo el espacio multiplicando por en número real cualquiera.
 
 \ejer: Sea $\ve{\varepsilon}$ no idénticamente cero y
 $\{\ve{u}_i\}$ un conjunto de $n=\dim V$ vectores de $V$. 
@@ -321,7 +323,7 @@ Muestre que estos forman una base si y solo si
 \ve{\varepsilon} (\ve{u_1},\ldots, \ve{u_n})\neq 0.
 \eeq
 
-\ejem: c) Sea $\ve{ A}$ un elemento de $(1,1)$, 
+\ejem: c) Sea $\ve{ A}$ un elemento de ${1 \choose 1}$, 
 \beq
 \ve{ u}\in V, \;\;\ve{ v}^*\in V^*\to \ve{A}(\ve{ u},\ve{v}^*)\in\re.
 \eeq
@@ -343,7 +345,12 @@ es totalmente antisimétrico en los $\{u_i\}$ y por lo tanto proporcional a s\'\i
 \]
 %
 La constante de proporcionalidad se
-llama {\bf determinante} \index{determinante} del operador $\ve{A}$, $\det(A)$. 
+llama {\bf determinante} \index{determinante} del operador $\ve{A}$, 
+
+\[
+\ve{\varepsilon}(\ve{A}(\ve{u_1},\;\;),\ldots ,\ve{A}(\ve{u_n},\;\;))  =: \det(\ve{A}) \ve{\varepsilon}(\ve{u_1}. \ldots, \ve{u_n}).
+\]
+%
 
 \bpro
 Muestre que esta definición no depende del $\ve{\varepsilon} $ empleado ni
@@ -353,7 +360,7 @@ operadores de $V$ en $\re$.
 
 \ejer:
 Si $\ve{A}$ y $\ve{B}$ son dos operadores de $V$, luego $\ve{A}\cdot \ve{B} (\ve{v}):=
-\ve{A}(\ve{B}(\ve{v}))$. Muestre que $\det(AB)=\det(A)\cdot \det(B)$.
+\ve{A}(\ve{B}(\ve{v}))$. Muestre que $\det(\ve{A}\ve{B})=\det(\ve{A})\cdot \det(\ve{B})$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Complexificación}
@@ -420,7 +427,7 @@ la misma clase equivalente si $\ve{v}-\ve{v}' \in W$. Sean $\ve{\zeta}$ y
 $\ve{\zeta}'$ dos elementos de $V/W$, es decir dos clases equivalentes
 de elementos de $V$. Definiremos las operaciones propias en los espacios
 vectoriales de la siguiente forma: 
-$\ve{\zeta} + \alpha \ve{\zeta}'$ será la clase equivalente correspondiente
+$\ve{\zeta} + \alpha \ve{\zeta}'$ será la clase equivalente correspondiente a
 un elemento $\tilde{\ve{v}}$ obtenido tomando un elemento de $V$ en 
 $\ve{\zeta}$, digamos $\ve{v}$, otro de 
 $\ve{\zeta}'$, digamos $\ve{v}'$, y definiendo 
@@ -490,7 +497,7 @@ $iii$) $\|\ve x+\ve y\|\leq\|\ve x\|+\|\ve y\|$
 \noi d) $\|(x,y)\|_{p}:=(|x|^{p} + |y|^{p})^{\frac{1}{p}} \;\;\;\;\; p\geq 1$;
 
 \noi e) En $V$ cualquiera sea $\ve{t}$ un tensor simétrico positivo definido de
-tipo (0,2), es decir $\ve{t}(\ve u,\ve v)=\ve{t}(\ve v,\ve u)$, 
+tipo ${0 \choose 2}$, es decir $\ve{t}(\ve u,\ve v)=\ve{t}(\ve v,\ve u)$, 
 $\ve{t}(\ve u,\ve u)\geq 0$ 
 $(=\sii\;\ve u=0)$. 
 La función $\|\ve u\|_{\ve{t}} =\sqrt{\ve{t}(\ve u,\ve u)}$ es una norma.
@@ -700,7 +707,7 @@ continuo\footnote{Con respecto a la topología inducida por
 cualquiera de las normas equivalentes de $V$.}
 de $V$ en $V$ tal que $\forall \; \ve x,\ve y \in V,\; \alpha \in \re$, 
 $\ve{A}(\alpha \ve x+ \ve y)=\alpha\,\ve{A}(\ve x) + \ve{A}(\ve y)\;$,
-es decir un tensor de tipo (1,1).
+es decir un tensor de tipo ${1 \choose 1}$.
 
 El conjunto de los operadores lineales
 $\cL$ es un álgebra, es decir un espacio vectorial con producto.
@@ -993,7 +1000,8 @@ Consideremos el problema de autovalores-auto\-vec\-to\-res para $\ve{A}$,
 %
 Como ya vimos este problema siempre tiene al menos una solución no
 trivial y por lo tanto tenemos un par $(\lambda_1,\ve{u}_1)$ solución
-del problema. Tomamos $\ve{u}_1$ de norma unidad y como primer elemento
+del problema. 
+Tomamos $\ve{u}_1$ de norma unidad y como primer elemento
 de la base a determinar. 
 Tenemos entonces 
 $A^j{}_1 = \ve{\theta}^j(\ve{A}(\ve{u}_1))
@@ -1004,19 +1012,22 @@ Consideremos ahora el espacio
 \[
 V_{n-1} = \{\ve{u}_1^{\perp}\} := \{\ve{u} \in V | (\ve{u}_1,\ve{u}) = 0 \}
 \]
-y el operador de $V_{n-1} \to V_{n-1}$ dado por $(\ve{I} - \ve{u}_1 \ve{\theta}^1)\ve{A}$.
+y el operador de $V_{n-1} \to V_{n-1}$ dado por $\ve{A}_1 :=(\ve{I} - \ve{u}_1 \ve{\theta}^1)\ve{A}$.
 %
 Note que como formaremos una base orto-normal conocemos
 ya el primer miembro de la co-base, $\ve{\theta}^1 = (\ve{u}_1,\cdot)$.
 %
-Para este operador, en este espacio, podemos plantear también la ecuación de 
-autovalores-auto\-vec\-to\-res, 
+El operador $P_1:=\ve{I} - \ve{u}_1 \ve{\theta}^1$ satisface $P_1(\ve{u}_1)=0$, 
+$(P_1(\ve{v}),\ve{u}_1)=0$ y $P_1\cdot P_1 = P_1$, es decir es un operador proyección en el subespacio $V_{n-1}$.
+
+Para el operador, $\ve{A}_1$, en el espacio donde está definido, es decir $V_{n-1}$, podemos plantear también la ecuación de autovalores-auto\-vec\-to\-res, 
+
 \begin{equation}
-((\ve{I} - \ve{u}_1 \ve{\theta}^1)\ve{A} - \lambda \ve{I})\ve{u} = \ve{0}.
+(\ve{A}_1 - \lambda \ve{I})\ve{u} = ((\ve{I} - \ve{u}_1 \ve{\theta}^1)\ve{A} - \lambda \ve{I})\ve{u} = \ve{0}.
 \end{equation}
 %
 
-Obtenemos así un nuevo par $(\lambda_2,\ve{u}_2)$, con $\ve{u}_2$ perpendicular
+Obtenemos así un nuevo par $(\lambda_2,\ve{u}_2)$, con $\ve{u}_2 \;\in V_{n-1}$, y por lo tanto perpendicular
 a $\ve{u}_1$ y además,
 $\ve{A} \ve{u}_2 = \lambda_2 \ve{u}_2 + \ve{u}_1 \ve{\theta}^1(\ve{A}(\ve{u}_2))$.
 Por lo tanto 
@@ -1027,7 +1038,7 @@ A^j{}_2 = \ve{\theta}^j(\ve{A}(\ve{u}_2))
 \]
 %
 El próximo paso es considerar ahora el subespacio 
-$V_{n-2} = \{\ve{u}_1^{\perp}\} \cup \{\ve{u}_2^{\perp}\} 
+$V_{n-2} = \{\ve{u}_1^{\perp}\} \cap \{\ve{u}_2^{\perp}\} 
         := \{\ve{u} \in V | (\ve{u}_1,\ve{u}) = (\ve{u}_2,\ve{u}) = 0 \}$
 y allí la ecuación de autova\-lo\-res-auto\-vec\-to\-res para el operador
 $(\ve{I} - \ve{u}_1 \ve{\theta}^1 - \ve{u}_2 \ve{\theta}^2)\ve{A}$.
