@@ -122,6 +122,14 @@ $i=1, \ldots ,n$.
 Vea que $R_{i}{}^l = P^{-1}_{i}{}^l $.
 
 
+\ejer:
+Sea $S$ un conjunto finito, $S = \{s_1,s_2,\dots,s_n\}$, encuentre una base 
+del espacio vectorial de todas las funciones de $S$ en $\re$. 
+Encuentre la dimensión de este espacio.
+
+
+
+
 \ejer: Muestre que la dimensión de $V$ es única, es decir que no depende de
 la base empleada para definirla. 
 
@@ -140,13 +148,6 @@ Por otro lado, hemos visto en un ejercicio anterior que dado un vector cualquier
 Vemos que tenemos entonces un mapa invertible entre $V$ y el espacio de n-tuplas, $\re^{n}$.
 Este mapa es lineal, asigna a la suma de dos vectores $\ve{v}$ y $\ve{\tilde{v}}$ la n-tupla suma de las respectivas n-tuplas. Este mapa depende de la base, pero aún así nos dice que los espacios vectoriales de dimensión finita no deparan muchas sorpresas, son siempre copias de $\re^{n}$.
 
-\bpro 
-Sea $S$ un conjunto finito, $S = \{s_1,s_2,\dots,s_n\}$, encuentre una base 
-del espacio vectorial de todas las funciones de $S$ en $\re$. 
-Encuentre la dimensión de este espacio.
-\epro
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Covectores y Tensores}
@@ -158,10 +159,14 @@ $V^*=\{$ el espacio de mapas lineales $\ve{\omega}:V\to \re\}$.
 Este es también
 un espacio vectorial, llamado el {\bf espacio dual a $V$}~\index{espacio dual}, 
 o {\bf espacio de covectores},~\index{covectores} con suma y producto dados por: 
-$(\ve{\omega}+\alpha \ve{\tau})(\ve{ v})=
-\ve{\omega}(\ve{ v})+\alpha \ve{\tau}(\ve{ v})\;\;\;\;\forall\;\ve{v}\in V$ 
-con 
-$\ve{\omega},\ve{\tau}\,\in V^*\;,\,\alpha \in \re$. 
+
+\[
+(\ve{\omega}+\alpha \ve{\tau})(\ve{ v})=
+\ve{\omega}(\ve{ v})+\alpha \ve{\tau}(\ve{ v})\;\;\;\;\forall\;\ve{v}\in V
+\]
+%
+con  $\ve{\omega},\ve{\tau}\,\in V^*\;,\,\alpha \in \re$. 
+
 ¿Cuál es su dimensión? 
 Note que si
 $\{\ve{ e}_i\}$ $i=1,\ldots,n$ es una base de $V$, es decir un conjunto
@@ -183,6 +188,27 @@ tanto forman una base y por lo tanto la dimensión de $V^*$ es también $n$.
 
 \ejer: Vea que $V^*$ es un espacio vectorial y que las $\{\ve{ \theta^i}\}$
 forman realmente una base.
+
+\ejer: Vea que si $\ve{v} = \sum_{i=1}^{n} v^i \ve{e}_i$ entonces,
+
+\[
+v^i = \ve{\theta}(\ve{v}).
+\]
+
+\ejer:
+Sea $V$ el espacio de funciones de un conjunto con un número finito de elementos, $n$, a los reales.
+Sea una base dada por:
+
+\[
+\ve{e}_i (a) := \left\{
+\begin{array}{cl}
+1 & a \;\; \mbox{ es el i-esimo elemento} \\
+0 & \mbox{si no lo es}
+\end{array}
+\right.
+\]
+%
+Encuentre la correspondiente co-base de su espacio dual. 
 
 Como $V$ y $V^*$ tienen la misma dimensión son, como espacios
 vectoriales, la misma cosa, pero como no existe ningún mapa que los
@@ -211,7 +237,7 @@ $\dim V = \dim V^* = \dim V^{**}$ , lo que indica que el mapa en cuestión es tam
 suryectivo y por lo tanto invertible.
 Esto nos permite identificar
 $V$ y $V^{**}$ y concluir que {\it dualizando} no podremos
-construir más espacios vectoriales interesantes.
+construir más espacios vectoriales interesantes. En el caso en que la dimensión del espacio vectorial no es finita esto ya no es cierto y existen casos -- de uso frecuente -- en donde $\ve{X}_V \subset V^{**}$ estrictamente.
 \espa
 
 \ejer: Dada una base en $V$, $\{\ve{e_{i}}\}$ y la correspondiente co-base, $\{\ve{\theta^{j}}\}$.
@@ -314,7 +340,8 @@ $\ve{\tilde{\varepsilon} }$ no idénticamente cero con las propiedades
 arriba mencionadas luego existirá un número $\alpha$ tal que
 $\ve{\varepsilon} = \alpha\ve{\tilde{\varepsilon}}$.
 Esta última igualdad no depende de la base empleada y nos dice que la dimensión del
-subespecie de tensores de tipo ${0 \choose n}$ antisimétricos es de dimensión 1. Basta conocer uno para generar todo el espacio multiplicando por en número real cualquiera.
+subespecio de tensores de tipo ${0 \choose n}$ antisimétricos es de dimensión 1. 
+Basta conocer un elemento para generar todo el espacio multiplicándolo por números reales cualquiera.
 
 \ejer: Sea $\ve{\varepsilon}$ no idénticamente cero y
 $\{\ve{u}_i\}$ un conjunto de $n=\dim V$ vectores de $V$. 
@@ -330,8 +357,8 @@ Muestre que estos forman una base si y solo si
 Esto implica que $\ve{A}(\ve{u},\;\;)$ es también un vector
 (identificando $V$ con $V^{**}$, aquel
 que toma una forma $\ve{\omega} \in V^*$ y da el número
-$\ve{A}(\ve{u},\ve{\omega})$). Tenemos así un mapa lineal de $V$ en
-$V$, o sea un operador lineal en $V$.
+$\ve{A}(\ve{u},\ve{\omega})$). 
+Tenemos así un \textbf{mapa lineal} de $V$ en $V$, o sea un operador lineal en $V$.
 
 \ejer: Sea $\{\ve{u}_i\}$ una base de $V$ y sean
 $\ve{ a}_i$ los vectores $\ve{A}(\ve{u_i},\;\;)$, luego 
@@ -472,6 +499,12 @@ escalar.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\ejer: Sea $V$ el conjunto de funciones continuas de $\re$ en $\re$ y sea $W$ el subconjunto de las mismas que se anulan en el intervalo $[0,1]$. Vea que este es un subespacio vectorial. Considere el espacio $V/W$. 
+¿Con que espacio puede asociarlo a este?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \section{Normas}
 \label{sec:Normas}
 
@@ -579,8 +612,8 @@ $ \ve x=a^i\,\ve{e}_i$.
 Sea otra norma cualquiera, luego
 
 \beq\barr{rcl}
- \left|\,\|\ve x\|\,\right| & \leq & \|\ve x\|=\|a^i\,\ve{e}_i\|  \\
- &  \leq &|a^i|\,\|\ve{e}_i\|\leq(max_{j=1,n}\|\ve{e}_j\|)\sum_{i=1}^n|a^i|  \\
+ \left|\,\|\ve x\|\,\right| & \leq & \|\ve x\|=\|\sum_i^n a^i\,\ve{e}_i\|   \leq \sum_i^n  \| a^i\,\ve{e}_i\| \\
+ &  \leq & \sum_i^n |a^i|\,\|\ve{e}_i\|\leq(max_{j=1,n}\|\ve{e}_j\|)\sum_{i=1}^n|a^i|  \\
  & =&(max_{j=1,n}\|\ve{e}_j\|)\;\|\ve x\|_1.
  \earr
  \eeq
@@ -617,12 +650,12 @@ equivalentes.
 
 \noi
 $ii$) Para nuestros propósitos cualquier norma es suficiente --ya que
-si por ejemplo, $f:V\to \re$ es contínua con respecto a una
+si por ejemplo, $f:V\to \re$ es continua con respecto a una
 norma lo es también con respecto a cualquier otra equivalente a
-ésta--  y por simplicidad de ahora en más  usaremos la Euclídea.
+ésta--  y por simplicidad de ahora en más  usaremos la Euclidea.
 
 \noi $iii$) 
-En este sentido las normas de espacios vectoriales son
+En este sentido las normas de espacios vectoriales de dimensión finita son
 equivalentes a la generada por
 cualquier elemento simétrico-positivo del producto exterior de su dual
 consigo mismo. 
@@ -927,7 +960,7 @@ invariante de dimensión $1$ (y por lo tanto que siempre tiene un subespacio inva
 irreducible no trivial).
 
 \begin{lem}
-Dado $\ve{A}: V^{\Complex} \to V^{\Complex}$, siempre existe un $\ve{u} \in V^{\Complex}$
+Dado $\ve{A}: V^{\Complex} \to V^{\Complex}$, donde $V^{\Complex}$ es de dimensión finita, siempre existe un $\ve{u} \in V^{\Complex}$
 y un $\lambda \in \Complex$ tal que,
 \beq
 (\ve{A}-\lambda \ve{I})\ve{u}=0   
@@ -954,6 +987,8 @@ al menos un $\ve{u}_1$ solución de (\ref{eqn:2_av_av}) con $\lambda = \lambda_1$
 \espa
 La necesidad de considerar todas estas soluciones es lo que nos lleva
 a tratar el problema para espacios vectoriales complejos. 
+
+\ejer: En el caso de dimensión infinita el teorema deja de ser cierto. Encuentre un ejemplo de un operador sobre el conjunto de tuplas infinitas sin ningún autovector. Encuéntrelo buscando matrices infinitas construidas de forma de que solo tengan un autovector y considere el límite a infinitas componentes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
