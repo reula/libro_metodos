@@ -620,10 +620,8 @@ Sea otra norma cualquiera, luego
 %
 Y hemos obtenido fácilmente la cota superior. Veamos ahora la inferior.
 Para ello debemos probar que la norma $\| \cdot \|$ es, como función de $V$ en $\re^{+}$
-una función continua. Esto sigue fácilmente de la cota ya encontrada. 
-
-
-Sea otro vector cualquiera, $\ve y=b^i\,\ve{e}_i$, luego
+una función continua. 
+Esto sigue fácilmente de la cota ya encontrada, en efecto, sea otro vector cualquiera, $\ve y=b^i\,\ve{e}_i$, luego
 \beq\barr{rcl}
  \left|\,\|\ve x\|-\|\ve y\|\,\right| & \leq & \|\ve x-\ve y\| \\
  & =&(max_{j=1,n}\|\ve{e}_j\|)\;\|\ve x-\ve y\|_1
@@ -827,14 +825,14 @@ sucesión es de Cauchy ya que, tomando $m > n$, tenemos
 \begin{eqnarray}
 \|e^{\ve{A}}_m - e^{\ve{A}}_n\|_{\cL} 
 &=&
-\|\frac{\ve{A}^{m-1}}{(m-1)!} + \frac{\ve{A}^{m-2}}{(m-2)!} + \dots 
+\|\frac{\ve{A}^{m}}{(m)!} + \frac{\ve{A}^{m-1}}{(m-1)!} + \frac{\ve{A}^{m-2}}{(m-2)!} + \dots 
 + \frac{\ve{A}^{n+1}}{(n+1)!} \|_{\cL} \nn
 &\leq&
-\|\frac{\ve{A}^{m-1}}{(m-1)!}\|_{\cL} + \| \frac{\ve{A}^{m-2}}{(m-2)!} \|_{\cL}
+\|\frac{\ve{A}^{m}}{(m)!}\|_{\cL} +  \frac{\ve{A}^{m-1}}{(m-1)!}\|_{\cL} + \| \frac{\ve{A}^{m-2}}{(m-2)!} \|_{\cL}
 + \dots 
 + \|\frac{\ve{A}^{n+1}}{(n+1)!} \|_{\cL} \nn
 &\leq& 
-\frac{\|\ve{A}\|_{\cL}^{m-1}}{(m-1)!} +  \frac{\|\ve{A}\|_{\cL}^{m-2}}{(m-2)!} 
+\frac{\|\ve{A}\|_{\cL}^{m}}{(m)!} +  \frac{\|\ve{A}\|_{\cL}^{m-1}}{(m-1)!} +  \frac{\|\ve{A}\|_{\cL}^{m-2}}{(m-2)!} 
 + \dots 
 + \frac{\|\ve{A}\|_{\cL}^{n+1}}{(n+1)!} \nn
 &=& 
@@ -845,7 +843,7 @@ sucesión es de Cauchy ya que, tomando $m > n$, tenemos
 }
 %
 Donde 
-$e^{\|\ve{A}\|_{\cL}}_m  \equiv \dip \sum_{i=0}^n \frac{\|\ve{A}^i\|_{\cL}}{i!}$ 
+$e^{\|\ve{A}\|_{\cL}}_n  \equiv \dip \sum_{i=0}^n \frac{\|\ve{A}\|^i_{\cL}}{i!}$ 
 y la última implicación sigue del hecho que  la serie numérica
 $e^{\|\ve{A}\|_{\cL}}$ converge. 
 Pero por completitud~\footnote{Todo espacio vectorial real de dimensión finita es completo.} de $\cL$ toda sucesión de Cauchy 
@@ -940,13 +938,22 @@ más adelante, dado cualquier número entre $1$ y $n$ (=$\dim V$) existe un subesp
 invariante con ese número como dimensión. Los que verdaderamente codifican la acción
 del operador son sus subespacios invariantes 
 \textbf{irreducibles},~\index{subespacio invariante!irreducible} 
-es decir aquellos que no pueden ser a su vez descompuestos en subespacios
-invariantes. 
+es decir aquellos que no pueden ser a su vez descompuestos en subespacios invariantes tales que su suma
+directa es todo $V$~\footnote{Se dice que un espacio vectorial es suma directa de dos de sus subespacios, $W_1$ y $W_2$ y se denota por $V=.W_1 \oplus W_2$ si cada elemento de $V$ puede escribirse de una única manera como suma de dos elementos, uno de cada uno de estos subespacios.}
 \espa
 
-\ejer: Sea el $V$ el espacio de pares de números, es decir con elementos de la forma
-$\ve{v}=(a,b), \; a,b \in \re$ y sea $\ve{A}$ dado por $\ve{A}(a,b) = (b,0)$.
-Encuentre sus subespacios invariantes irreducibles.
+\ejem: Sea $V$ con $\dim(V)=2$ y $\ve{A}: V \to V$ dado por, $\ve{A}(\ve{u_1}) = \lambda_1 \ve{u}_1$,
+$\ve{A}(\ve{u_2}) = \lambda_2 \ve{u}_2$, donde $(\ve{u}_1, \ve{u}_2)$ son linealmente independientes (y por 
+lo tanto una base). Note que esto define completamente al operador, ya que dado $\ve{v} \in V$ cualquiera, lo 
+podemos escribir de manera unívoca como $\ve{v} = v^1 \ve{u}_1 + v^2 \ve{u}_2$ y por lo tanto, 
+\[
+\ve{A}(\ve{v}) = \lambda_1 v^1 \ve{u}_1 + \lambda_2 v^2 \ve{u}_2.
+\]
+En ese caso los subespacios invariantes son $Span\{\ve{u}_1\}$ y $Span\{\ve{u}_2\}$ y claramente tenemos, 
+$V= Span\{\ve{u}_1\} \oplus Span\{\ve{u}_2\}$. Como cada uno de estos subespacios invariantes es unidimensional la acción del operador sobre los mismos es simplemente una dilatación, es decir la multiplicación de sus elementos por un número. Notemos que en el caso en que $\lambda_1=\lambda_2$ el operador es proporcional a la identidad y  por lo tanto  tenemos infinitos espacios invariantes.
+
+\ejer: Sea el $V$ el espacio del ejemplo anterior y sea $\ve{A}$ dado por $\ve{A}(\ve{u}_1) = 0$,  $\ve{A}(\ve{u}_2) = \ve{u}_1$. Encuentre sus subespacios invariantes irreducibles. Haga lo mismo para el operador dado por 
+$\ve{A}(\ve{u}_1) = \ve{u}_1$,  $\ve{A}(\ve{u}_2) = a \ve{u}_2 + \ve{u}_1$. ¿Que sucede cuando $a=1$?
 
 
 Estudiaremos en detalle los subespacios invariantes de dimensión $1$, note
@@ -1030,7 +1037,7 @@ matricial de $\ve{A}$ es triangular superior.
 \pru: 
 Consideremos el problema de autovalores-auto\-vec\-to\-res para $\ve{A}$,
 \begin{equation}
-(\ve{A} - \lambda \ve{I})\ve{u} = \ve{0}.
+(\ve{A} - \lambda \ve{I})(\ve{u}) = \ve{0}.
 \end{equation}
 %
 Como ya vimos este problema siempre tiene al menos una solución no
@@ -1039,23 +1046,26 @@ del problema.
 Tomamos $\ve{u}_1$ de norma unidad y como primer elemento
 de la base a determinar. 
 Tenemos entonces 
-$A^j{}_1 = \ve{\theta}^j(\ve{A}(\ve{u}_1))
+\[
+A^j{}_1 := \ve{\theta}^j(\ve{A}(\ve{u}_1))
          = \ve{\theta}^j(\lambda_1 \ve{u}_1)
-         = \lambda_1 \delta^j{}_1$.
+         = \lambda_1 \delta^j{}_1,
+\]         
+%
+lo cual nos da el resultado para la primer columna de la matriz. 
 
 Consideremos ahora el espacio 
 \[
-V_{n-1} = \{\ve{u}_1^{\perp}\} := \{\ve{u} \in V | (\ve{u}_1,\ve{u}) = 0 \}
+V_{n-1} = Span\{\ve{u}_1\}^{\perp} := \{\ve{u} \in V | (\ve{u}_1,\ve{u}) = 0 \}
 \]
 y el operador de $V_{n-1} \to V_{n-1}$ dado por $\ve{A}_1 :=(\ve{I} - \ve{u}_1 \ve{\theta}^1)\ve{A}$.
 %
-Note que como formaremos una base orto-normal conocemos
-ya el primer miembro de la co-base, $\ve{\theta}^1 = (\ve{u}_1,\cdot)$.
+Note que como iremos formando una base orto-normal conocemos ya el primer miembro de la co-base, $\ve{\theta}^1 = (\ve{u}_1,\cdot)$.
 %
 El operador $P_1:=\ve{I} - \ve{u}_1 \ve{\theta}^1$ satisface $P_1(\ve{u}_1)=0$, 
 $(P_1(\ve{v}),\ve{u}_1)=0$ y $P_1\cdot P_1 = P_1$, es decir es un operador proyección en el subespacio $V_{n-1}$.
 
-Para el operador, $\ve{A}_1$, en el espacio donde está definido, es decir $V_{n-1}$, podemos plantear también la ecuación de autovalores-auto\-vec\-to\-res, 
+Tenemos entonces que $\ve{A}_1 : V_{n-1} \to V_{n-1}$. Por lo tanto, en este espacio, podemos plantear también la ecuación de autovalores-auto\-vec\-to\-res, 
 
 \begin{equation}
 (\ve{A}_1 - \lambda \ve{I})\ve{u} = ((\ve{I} - \ve{u}_1 \ve{\theta}^1)\ve{A} - \lambda \ve{I})\ve{u} = \ve{0}.
@@ -1072,9 +1082,14 @@ A^j{}_2 = \ve{\theta}^j(\ve{A}(\ve{u}_2))
          = \lambda_2 \delta^j{}_2 + \delta^j{}_1 A^1{}_2.
 \]
 %
-El próximo paso es considerar ahora el subespacio 
-$V_{n-2} = \{\ve{u}_1^{\perp}\} \cap \{\ve{u}_2^{\perp}\} 
-        := \{\ve{u} \in V | (\ve{u}_1,\ve{u}) = (\ve{u}_2,\ve{u}) = 0 \}$
+Vemos así que con esta elección de elemento de base la segunda columna de $A$ satisface la condición del Lema.
+El próximo paso es considerar ahora el subespacio,
+
+\[
+V_{n-2} = Span\{\ve{u}_1, \ve{u}_2\}^{\perp}
+        = \{\ve{u} \in V | (\ve{u}_1,\ve{u}) = (\ve{u}_2,\ve{u}) = 0 \},
+\]
+%
 y allí la ecuación de autova\-lo\-res-auto\-vec\-to\-res para el operador
 $(\ve{I} - \ve{u}_1 \ve{\theta}^1 - \ve{u}_2 \ve{\theta}^2)\ve{A}$.
 Prosiguiendo de esta forma generamos toda la base\epru
@@ -1174,11 +1189,10 @@ como producto escalar
 $(\ve{u},\ve{v}) = \sum_{i=1}^{n} \ve{\theta}^i(\bar{\ve{u}})\ve{\theta}^i(\ve{v})$}
 \espa
 
-\ejem: Sea $V$ el conjunto de 2-tuplas de números reales con elemento genérico
-$(a,b)$ y sea $\ve{A}$ dado por $\ve{A}(a,b) = (b,-a)$. Esta es una rotación de
-$-\pi/2$ en el plano. Tomando una base, 
-$\ve{e}_1=(1,0)$, 
-$\ve{e}_2=(0,1)$ vemos que
+\ejem: Sea $V$ un espacio vectorial de $\dim(V)=2$ y sea 
+$\ve{A}$ dado por $\ve{A}(\ve{e}_1) = \ve{e}_2$, $\ve{A}(\ve{e}_2) = -\ve{e}_1$, donde $(\ve{e}_1,\ve{e}_2)$ son dos vectores linealmente independientes cualesquiera. Si los interpretamos como dos vectores orto-normales entonces $A$  es una rotación de $\pi/2$ en el plano. 
+
+Calculemos ahora el determinante de $\ve{A} - \lambda \ve{I}$,
 
 \begin{eqnarray}
 \det(\ve{A}- \lambda\ve{I}) 
@@ -1186,19 +1200,19 @@ $\ve{e}_2=(0,1)$ vemos que
 \eps((\ve{A}- \lambda\ve{I})\ve{e}_1,(\ve{A}- \lambda\ve{I})\ve{e}_2)/
 \eps(\ve{e}_1,\ve{e}_2) \nn
  & = &
-\eps(-\ve{e}_2-\lambda \ve{e}_1,\ve{e}_1-\lambda \ve{e}_2)/
+\eps(\ve{e}_2-\lambda \ve{e}_1,-\ve{e}_1-\lambda \ve{e}_2)/
 \eps(\ve{e}_1,\ve{e}_2) \nn
  & = &
  1 + \lambda^2.
 \end{eqnarray}                        
 %
 y por lo tanto los autovalores son $\lambda_{1} = \imath$, y $\lambda_2 = -\imath$.
-Los autovectores son $\ve{u}_1=(1,-\imath)$ y $\ve{u}_2=(1,\imath) = \bar{\ve{u}}_1$. 
+Los autovectores son $\ve{u}_1= \ve{e}_1+\imath \ve{e}_2$ y $\ve{u}_2=\ve{e}_1 - \imath \ve{e}_2 = \bar{\ve{u}}_1$. 
 Vemos entonces que la acción de $\ve{A}$ en estos subespacios es multiplicación por 
 $\pm \imath$ y que ambos subespacios invariantes son genuinamente complejos.
 En esta nueva base el espacio $V$ es generado por todas las combinaciones lineales de
 la forma $z\ve{u}_1 + \bar{z}\ve{u}_2$ y la acción de $\ve{A}$ es simplemente 
-multiplicación por $-\imath$ de $z$.
+multiplicación por $\imath$ de $z$.
 \espa
 
 Si la multiplicidad de alguna de las raíces $\det(\ve{A}-\lambda\ve{I})=0$ es 
@@ -2069,7 +2083,7 @@ Veamos ahora las componentes de $\ve{A}'$.
 Por definición tenemos,
 
 \[
-(\ve{A}')^i{}_j := \ve{A}'(\hat{\ve{\theta}}^i)(\ve{e}_j) 
+\ve{A}'{}^i{}_j := \ve{A}'(\hat{\ve{\theta}}^i)(\ve{e}_j) 
                   =  \hat{\ve{\theta}}^i(\ve{A}(\ve{e}_j)) = A^i{}_j.
 \]
 O sea las mismas componentes, pero ahora la matriz actúa por izquierda en
@@ -2089,8 +2103,12 @@ $V$ y su dual $V'$:
   \phi:V \to V', \;\;\;\; \phi(\ve{v}) := \langle \ve{v},\cdot \rangle.
 \end{equation}
 %
-Este mapa es inyectivo, y como  $V$ y $V'$ tienen la misma dimensión es también suryectivo, y por lo tanto invertible. Es decir, dato $\omega \in V'$ existe $\ve{v}=\phi^{-1}(\omega) \in V$ tal que $\langle \ve{v},\cdot \rangle = \omega$. Note entonces que $\phi^{-1}: V' \to V$ satisface, 
-$\langle \phi^{-1}(\ve{\omega}),\ve{u} \rangle = \langle \ve{v},\ve{u} \rangle = \ve{\omega}(\ve{u})$.
+Este mapa es inyectivo, y como  $V$ y $V'$ tienen la misma dimensión es también suryectivo, y por lo tanto invertible. 
+Es decir, dado $\omega \in V'$ existe $\ve{v}=\phi^{-1}(\omega) \in V$ tal que $\langle \ve{v},\cdot \rangle = \omega$. 
+Note entonces que $\phi^{-1}: V' \to V$ satisface, 
+\[
+\langle \phi^{-1}(\ve{\omega}),\ve{u} \rangle = \langle \ve{v},\ve{u} \rangle = \ve{\omega}(\ve{u}).
+\]
 
 
 Si $\ve{A}: V \to V$ luego $\ve{A}': V' \to V'$
@@ -2144,7 +2162,7 @@ A^{\star}{}^j{}_i = t_{il} A^l{}_k (t^{-1}){}^{kj} ,
 %
 donde $t_{li}$ es la representación del producto escalar y $(t^{-1}){}^{jk}$ el de su inversa 
 ($t_{il} (t^{-1})^{lk} = \delta^k{}_i$). 
-En el caso de que $t_{ik} = \delta_{ik}$, la delta de Kronecker, la representación matricial del adjunto es simplemente la matriz transpuesta, $A^{\star}{}^j{}_i = A^{\dagger}{}^j{}_i = A^i{}_j$, 
+Si elegimos una base tal que $t_{ik} = \delta_{ik}$, la delta de Kronecker, la representación matricial del adjunto es simplemente la matriz transpuesta, $A^{\star}{}^j{}_i = A^{\dagger}{}^j{}_i = A^i{}_j$, 
 
 Un subconjunto de operadores particularmente interesante es aquel para el
 cual se cumple $\ve{A} = \ve{A}^{\star}$. Estos operadores se llaman 
@@ -2205,13 +2223,13 @@ Todo operador autoadjunto es diagonalizable
 %
 Notemos también que si $\ve{u}$ es un autovector de $\ve{A}$ autoadjunto,
 con autovalor $\lambda$ luego,
-\begin{equation}
+\begin{equation} 
   \bar{\lambda} \langle \ve{u},\ve{u} \rangle = \langle \ve{A}(\ve{u}),\ve{u} \rangle
                                = \langle \ve{u},\ve{A}(\ve{u})\rangle
                                = \lambda \langle \ve{u},\ve{u} \rangle
 \end{equation}
 y por lo tanto $\bar{\lambda} = \lambda$, es decir,
-
+   	
 \blem
 Los autovalores de un operador autoadjunto son reales
 \elem
@@ -2231,7 +2249,8 @@ obtenemos,
     &=& \sum_{k=1}^{n} \bar{A}^k{}_i \langle \ve{e}_k,\ve{e}_j \rangle
        -\sum_{l=1}^{n} A^l{}_j \langle \ve{e}_i,\ve{e}_l \rangle \nn
     &=& \sum_{k=1}^{n} \bar{A}^k{}_i \delta_{kj} 
-       - \sum_{l=1}^{n} A^l{}_j \delta_{li}.
+       - \sum_{l=1}^{n} A^l{}_j \delta_{li} \nn
+    &=&  \bar{A}^j{}_i - A^i{}_j
 \end{eqnarray}
 %
 de lo que concluimos que 
