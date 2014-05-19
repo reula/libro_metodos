@@ -2156,9 +2156,10 @@ En término del producto escalar esto es:
 \end{equation}
 %
 En su representación matricial este operador es, 
-\[
-A^{\star}{}^j{}_i = t_{il} A^l{}_k (t^{-1}){}^{kj} ,
-\]
+\begin{eqnarray}
+A^{\star}{}^j{}_i &=& t_{il} A^l{}_k (t^{-1}){}^{kj} , \;\;\;\; \mbox{producto escalar real} \\
+A^{\star}{}^j{}_i &=& t_{il} \bar{A}^l{}_k (t^{-1}){}^{kj} , \;\;\;\; \mbox{producto escalar complejo} 
+\end{eqnarray}
 %
 donde $t_{li}$ es la representación del producto escalar y $(t^{-1}){}^{jk}$ el de su inversa 
 ($t_{il} (t^{-1})^{lk} = \delta^k{}_i$). 
@@ -2197,7 +2198,7 @@ Sea $\ve{A}:H \to H$ autoadjunto. Luego los autovectores de $\ve{A}$ forman una 
 \ecor
 
 \bpru
-$\ve{A}: H \to H$ tiene al menos un autovector, digamos $\ve{u}_1$. 
+$\ve{A}: H \to H$ tiene al menos un autovector, llamémoslo $\ve{u}_1$. 
 Consideremos ahora su restricción al espacio perpendicular a  $\ve{u}_1$
 que denotamos también con $\ve{A}$ pues por el lema anterior este es
 un espacio invariante, $\ve{A}:\{\ve{u}_1\}^{\perp} \to \{\ve{u}_1\}^{\perp}$.
@@ -2415,8 +2416,9 @@ luego,
 %
 y por lo tanto $\lambda_1 = e^{i \theta_1}$ para algún ángulo $\theta_1$.
 
-Si el operador $\ve{U}$ representa una rotación entonces habrá solo
-un autovector real, correspondiente al eje que queda fijo en una rotación.
+Si el operador $\ve{U}$ representa una rotación no trivial en $\re^3$, entonces, dado que tenemos un 
+número impar de autovalores, habrá uno que es real, los otros dos complejos conjugados entre si.
+El autovector correspondiente al autovalor real, define al eje que queda fijo en dicha rotación.
 Si tenemos más de un autovalor, luego sus correspondientes autovectores
 son ortogonales, en efecto, sean $\ve{v}_1$ y $\ve{v}_2$ dos autovectores
 luego

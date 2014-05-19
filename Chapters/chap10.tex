@@ -22,13 +22,13 @@ $\lb\frac{1}{\sqrt{2\pi}}e^{in\theta}\rb$ de $L^2(S^1)$.
 Sea $F:L^2(S^1)\to l^2$  el mapa entre estos espacios generado por esta 
 base, es decir,
 \beq
-F(f)=\lb\lp\frac1{\sqrt{2\pi}}e^{in\theta},f\rp\rb\equiv\lb c_n\rb.
+F(f)=\lb\langle \frac1{\sqrt{2\pi}}e^{in\theta},f\rangle \rb\equiv\lb c_n\rb .
 \eeq
 Luego 
 \beq
 \barr{rcl}
-F\lp\dersp{f}{\theta}-\rho\rp &=& \lb\lp\frac1{\sqrt{2\pi}}e^{in\theta},
-\dersc{f}{\theta}-\rho\rp\rb \\ [3mm]
+F\lp\dersp{f}{\theta}-\rho\rp &=& \lb\langle \frac1{\sqrt{2\pi}}e^{in\theta},
+\dersc{f}{\theta}-\rho\rangle \rb \\ [3mm]
 & = & \lb-n^2\,c_n -a_n\rb
 \earr
 \eeq
@@ -142,8 +142,8 @@ ortogonal de $L^2(C_{\eps})$.
 Pero $f\in L^2(C_{\eps})$ y es continuamente diferenciable, por lo tanto 
 {\small
 \beq
-\sum_{k\in K_{\eps}}\lp\lp\frac{\eps}2\rp^{n/2}\;e^{ik\cdot
-\tilde{x}},f(\tilde{x} )\rp \lp
+\sum_{k\in K_{\eps}}\langle \lp\frac{\eps}2\rp^{n/2}\;e^{ik\cdot
+\tilde{x}},f(\tilde{x} )\rangle \lp
 \frac{\eps}2\rp^{n/2}\;e^{ik\cdot x}=\sum_{k\in K_{\eps}}\frac
 {\hat f(k)}{(2\pi)^{n/2}}e^{ik\cdot x}(2\pi\eps/2)^n,
 \label{10.f1}
@@ -157,7 +157,7 @@ Tenemos entonces que
 \begin{eqnarray}
 \|f\|^2_{L^2}&=&\int_{\ren{}}|f(x)|^2\;d^nx \nn 
 &=&\int_{C_{\eps}}|f(x)|^2\;d^nx \nn 
-&=&\sum_{k\in K_{\eps}}\lpi\lp(\frac{\eps}2)^{n/2}\,e^{ik\cdot x},f(x)\rp\rpi^2 \nn
+&=&\sum_{k\in K_{\eps}}\lpi\langle (\frac{\eps}2)^{n/2}\,e^{ik\cdot x},f(x)\rangle \rpi^2 \nn
 &=&\sum_{k\in K_{\eps}}|\hat f(k)|^2\;(\pi\eps)^n. 
 \label{10.f2}
 \end{eqnarray}
@@ -325,9 +325,9 @@ Ayuda: Encuentre $f$ tal que $T_f\in\cD'$ y no a $\cS'$.
 
 ¿Cómo extender \cF{} a $\cS'$? 
 Usando la identidad de Plancherel y la de
-polarización\footnote{Es decir que $(x,y) = \frac14 \{ ||x+y||^2 -
+polarización\footnote{Es decir que $\langle x,y \rangle = \frac14 \{ ||x+y||^2 -
 ||x-y||^2 + i ||x-iy||^2 - i ||x+iy||^2 \}$ }
- tenemos que $(\fip,\psi)=(\hat{\fip},\hat\psi)$ .
+ tenemos que $\langle \fip,\psi \rangle = \langle \hat{\fip},\hat\psi \rangle$ .
 Pero entonces 
 \beq
 T_{\hat\sigma}(\hat{\psi})=\int\hat\sigma\,\hat\psi\;dk =
@@ -413,23 +413,31 @@ en $\cS(\ren{})$ es continuo.
 Una vez probado el punto $b)$ los otros siguen
 trivialmente. Asegúrese! 
 Probaremos entonces $b)$.
-Como ya vimos $(\fip,\psi)=(\hat{\fip},\hat\psi)\;\;\;\forall\;
-\fip,\psi\in\cS(\ren{})$. Aplicando esta identidad a $e^{ik\cdot x}\bar
-f(x)$ y $g(x)$ obtenemos $(e^{ik\cdot x} \bar{f} ,g) = 
-(\widehat{e^{i k\cdot x}\bar f},\hat g)$. pero
+Como ya vimos $\langle \fip,\psi \rangle = \langle \hat{\fip},\hat\psi \rangle \;\;\;\forall\;
+\fip,\psi\in\cS(\ren{})$. 
+Aplicando esta identidad a $e^{ik\cdot x}\bar
+f(x)$ y $g(x)$ obtenemos,
+ 
+\[
+\langle e^{ik\cdot x} \bar{f} ,g \rangle = 
+\langle \widehat{e^{i k\cdot x}\bar f},\hat g \rangle ,
+\] 
+%
+pero
 \beq
-(e^{ik\cdot x}\bar f, g)=\int_{\ren{}}e^{-i k\cdot x}\,f(x)\,g(x)\;d^{n}x=
+\langle e^{ik\cdot x}\bar f, g \rangle =\int_{\ren{}}e^{-i k\cdot x}\,f(x)\,g(x)\;d^{n}x=
 (2\pi)^{n/2}\;\widehat{fg}(k)
 \eeq
-\noi y
-\beq\barr{rcl}
-(\widehat{e^{i k\cdot x} \bar{f}},\hat g) &=&\int_{\ren{}}\lp\overline{
+\noi 
+y
+\begin{eqnarray}
+\langle \widehat{e^{i k\cdot x} \bar{f}},\hat g \rangle &=&\int_{\ren{}}\lp\overline{
 (2\pi)^{-n/2}\int_{\ren{}}e^{-i\lambda\cdot x + i k\cdot x}\,\bar
-f(x)\;d^nx}\rp\;\hat g(\lambda)\;d^n\lambda\\ [3mm]
-&=&\int_{\ren{}}\hat f(k-\lambda)\,\hat g(\lambda)\;d^n\lambda\\ [3mm]
+f(x)\;d^nx}\rp\;\hat g(\lambda)\;d^n\lambda \nonumber \\
+&=&\int_{\ren{}}\hat f(k-\lambda)\,\hat g(\lambda)\;d^n\lambda \nonumber \\
 &=&\hat f*\hat g.
-\earr
-\eeq
+\end{eqnarray}
+%
 La otra fórmula se obtiene aplicando $\cF{}^{-1}$ a la anterior $\spadesuit$
 
 Otra propiedad interesante de la convolución se obtiene al notar
@@ -466,14 +474,13 @@ vea que esta definición tiene sentido.
 Por otro lado, note que si $f$ es una función integrable y $g \in \cS(\ren{})$,
 $f*g$ es infinitamente diferenciable! Eso sigue del hecho que, como
 
-\beq
-\barr{rcl}
-\frac{d(f*g)}{dx}(x) &=& \frac{d}{dx}\int_{-\infty}^{\infty} f(x-y)g(y) \;dy \\
-                             &=& \int_{-\infty}^{\infty} \frac{df}{dx}(x-y)g(y) \; dy \\
-                             &=& -\int_{-\infty}^{\infty} \frac{df}{dy}(x-y)g(y) \; dy \\
-                             &=& \int_{-\infty}^{\infty} f(x-y)\frac{dg}{dy}(y) \; dy,\\
-\earr
-\eeq
+
+\begin{eqnarray}
+\frac{d(f*g)}{dx}(x) &=& \frac{d}{dx}\int_{-\infty}^{\infty} f(x-y)g(y) \;dy \nonumber \\
+                             &=& \int_{-\infty}^{\infty} \frac{df}{dx}(x-y)g(y) \; dy \nonumber \\
+                             &=& -\int_{-\infty}^{\infty} \frac{df}{dy}(x-y)g(y) \; dy \nonumber \\
+                             &=& \int_{-\infty}^{\infty} f(x-y)\frac{dg}{dy}(y) \; dy,
+\end{eqnarray}
 %
 todas las derivadas están bien definidas y son acotadas, y por lo tanto dicha convolución es infinitamente diferenciable aunque $f$ solo haya sido integrable. 
 
@@ -506,7 +513,7 @@ El primer paso será una generalización de los espacios de
 Sobolev. Como vimos los espacios de Sobolev son espacios de Hilbert
 con norma proveniente del siguiente producto escalar.
 \beq
-(f,g)_{H^m}=\sum_{k=0}^m \sum_{i,j,p=1}^n \lp\underbrace{\pa_i\pa_j\ldots\pa_p}
+\langle f,g \rangle_{H^m}=\sum_{k=0}^m \sum_{i,j,p=1}^n \lp\underbrace{\pa_i\pa_j\ldots\pa_p}
 _{ k\mbox{ veces }}f,\,\pa_i\pa_j\ldots\pa_pg\rp_{L^2},
 \label{10.tr1}
 \eeq
@@ -515,7 +522,7 @@ de \ren{}.
 Si $\Omega=\ren{}$ luego de las propiedades de la transformación de Fourier 
 obtenemos
 \beq\barr{rcl}
-(f,g)_{H^m}&=&\sum_{k=0}^m \sum_{i,j,p=1}^n (\lambda_i\lambda_j\ldots\lambda_p\hat
+\langle f,g \rangle_{H^m}&=&\sum_{k=0}^m \sum_{i,j,p=1}^n (\lambda_i\lambda_j\ldots\lambda_p\hat
 f(\lambda),\lambda_i\lambda_j\ldots \lambda_p,\hat g(\lambda))_{L^2}\\
 &=&(\hat f(\lambda)\sqrt{\dip\sum_{k=0}^m|\lambda|^{2k}},\hat g(\lambda)
 \sqrt{\dip\sum_{k=0}^m|\lambda|^{2k}}),
@@ -529,7 +536,7 @@ cuadrado integrable.
 Esto nos sugiere generalizar los espacios permitiendo índices no
 enteros y aún negativos por medio del siguiente producto escalar,
 \beq
-(f,g)_{H^s}=(\hat f(\lambda)(1+|\lambda|^2)^{s/2},\hat g(\lambda)(1+|\lambda|^2)^{s/2})_{L^2}.
+\langle f,g \rangle_{H^s}=(\hat f(\lambda)(1+|\lambda|^2)^{s/2},\hat g(\lambda)(1+|\lambda|^2)^{s/2})_{L^2}.
 \eeq
 
 \espa

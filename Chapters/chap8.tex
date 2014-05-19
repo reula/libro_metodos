@@ -495,19 +495,19 @@ Los espacios de Hilbert son espacios de Banach\footnote{
 De ahora en más y esencialmente por la misma razón  que 
 dimos en el caso del teorema de la forma canónica de Jordan,
 consideraremos espacios vectoriales complejos.} cuya norma proviene
-de un producto escalar, es decir de un mapa $(\cdot,\cdot)$ de 
+de un producto escalar, es decir de un mapa $\langle \cdot,\cdot \rangle $ de 
 $V \times V \rightarrow \ve C$ 
 satisfaciendo:
 \begin{itemize}
-\item[$i)$]$ (x,y+cz) = (x,y) +c (x,z), $
+\item[$i)$]$ \langle x,y+cz \rangle = \langle x,y \rangle +c \langle x,z \rangle, $
                
-               $ (x+cy,z) = (x,z) + \bar c (y,z) $
+               $ \langle x+cy,z \rangle = \langle x,z \rangle + \bar c \langle y,z\rangle $
                
 \noi para cualquier $x,y,z$  en $V$     y $c$ en $C$.
 
-\item[$ii)$] $ \overline{(x,y)} = (y,x) $
+\item[$ii)$] $ \overline{\langle x,y \rangle} = \langle y,x \rangle $
 
-\item[$iii)$] $(x,x) \geq 0 \;\; (0\;\mbox{sii}\; x=0). $
+\item[$iii)$] $ \langle x,x \rangle \geq 0 \;\; (0\;\mbox{sii}\; x=0). $
 
 \end{itemize}
 
@@ -518,14 +518,14 @@ excepto por el hecho de que se toma el complejo conjugado del escalar.
 Se dice que este mapa es {\bf anti-lineal} con respecto al primer argumento.
 La condición {\it ii)} nos dice que el mapa es todo lo simétrico
 que puede ser, dado que en el primer argumento es anti-lineal.
-Esta condición nos garantiza que $(x,x)$ es un
+Esta condición nos garantiza que $ \langle x,x\rangle $ es un
 número real y , junto con $ iii)$, que es no-negativo.
 \espa
 
 \ejer:
-Pruebe que dando un tensor de tipo $(2,0)$, $\ve{t}(\cdot,\cdot)$,
+Pruebe que dando un tensor de tipo $(2,0)$, $\ve{t}\langle\cdot,\cdot\rangle $,
 simétrico, real y positivo definido, entonces 
-$(\ve{x},\ve{y}) \equiv \ve{t}(\bar{\ve{x}},\ve{y})$ es un producto
+$\langle \ve{x},\ve{y}\rangle  \equiv \ve{t}\langle\bar{\ve{x}},\ve{y}\rangle $ es un producto
 escalar.
 \espa
 
@@ -534,22 +534,22 @@ escalar.
 La norma que este producto escalar induce es simplemente la función,
 $\|\cdot \|_V : \ve V \rightarrow \re{}^+$ dada por,
 \beq 
-\|x\|_V = \sqrt{(x,x)}.
+\|x\|_V = \sqrt{\langle x,x\rangle }.
 \eeq
 Que esta es en realidad una norma sigue de los siguientes lemas:
 
 
 \blem[Desigualdad de Schwarz]:
-$|(x,y)|\leq\|x\|\,\|y\|$. 
+$|\langle x,y)|\leq\|x\|\,\|y\|$. 
 \elem
 
 \pru: Para cualquier $x,y \in V$, $\lambda \in \re{}$ tenemos por
 {\it iii)},
 \beq\barr{rcl}
-0&\leq& (y+\lap(x,y)\,x,y+\lap (x,y)\,x) \\
-&=&\|y\|^2+\lap^2\,|(x,y)|^2\,\|x\|^2+ \\
- & & \;\;\;+\lap\,\overline{(x,y)}(x,y) +\lap\,(x,y)(y,x) \\
- & = &\|y\|^2+2\,\lap\,|(x,y)|^2+\lap^2\,|(x,y)|^2\,\|x\|^2.
+0&\leq& \langle y+\lap\langle x,y\rangle\,x,y+\lap \langle x,y\rangle\,x\rangle \\
+&=&\|y\|^2+\lap^2\,|\langle x,y\rangle|^2\,\|x\|^2+ \\
+ & & \;\;\;+\lap\,\overline{\langle x,y\rangle}\langle x,y\rangle +\lap\,\langle x,y\rangle\langle y,x\rangle \\
+ & = &\|y\|^2+2\,\lap\,|\langle x,y\rangle|^2+\lap^2\,|\langle x,y\rangle|^2\,\|x\|^2.
  \earr
  \eeq
 
@@ -557,7 +557,7 @@ Como esta relación debe valer para todo $\lambda \in \re{}$ entonces el
 discriminante del polinomio en $\lambda$ de la derecha debe ser no-positivo,
 es decir,
 \beq 
-4\,|(x,y)|^4-4\,\|x\|^2\|y\|^2|(x,y)|^2\leq0.
+4\,|\langle x,y\rangle|^4-4\,\|x\|^2\|y\|^2|\langle x,y\rangle|^2\leq0.
 \eeq
 lo que nos da la desigualdad buscada.
 
@@ -568,8 +568,8 @@ $\|x+y\|\leq\|x\|+\|y\|$.
 
 \pru:
 $$\barr{rcl}
-\|x+y\|^2 & = & \|x\|^2 + \|y\|^2 +2\,\mbox{Re}\,(x,y) \\
-          & \leq & \|x\|^2+\|y\|^2+ 2\,|(x,y)| \\
+\|x+y\|^2 & = & \|x\|^2 + \|y\|^2 +2\,\mbox{Re}\,\langle x,y\rangle \\
+          & \leq & \|x\|^2+\|y\|^2+ 2\,|\langle x,y\rangle| \\
           &\leq& \|x\|^2+\|y\|^2+2\,\|x\|\,\|y\| \\
           & \leq & \lp\|x\|+\|y\|\rp^2, 
           \earr
@@ -584,13 +584,13 @@ complejos.
 
 
 Sea $x = (x_1,x_2,...,x_n)$ e $y = (y_1,y_2,...,y_n)$, luego 
-$$(x,y) = \sum^n_{j=1} \bar x_j y_j . $$
+$$\langle x,y\rangle = \sum^n_{j=1} \bar x_j y_j . $$
 
 \item $l^2$, el espacio vectorial de sucesiones de números complejos
 $\{x_i\}$ tales que 
 $$\|\{x_j\}\|_2 \equiv \sqrt{\sum^{\infty}_{j=1} |x_j|^2 } < \infty, $$
 con el producto escalar,
-$$ (\{x_j\},\{y_j\}) = \sum^{\infty}_{j=1} \bar x_j\, y_j .$$
+$$ \langle\{x_j\},\{y_j\}\rangle = \sum^{\infty}_{j=1} \bar x_j\, y_j .$$
 
 Note que la desigualdad de Schwarz nos garantiza que el producto escalar
 está bien definido para todo par de vectores  de $l^2$.
@@ -631,9 +631,9 @@ $$
 \sum_{j=1}^k |x^M_j - \bar{x}_j|^2 < \eps^2 
 $$
 %
-Pero esta es una sucesión (en $k$) de números reales que es
-acotada (por $\eps^2$) y por lo tanto, 
-tomando ahora el límite $k \to \infty$ vemos que 
+Pero esta es una sucesión creciente (en $k$) de números reales que es
+acotada (por $\eps^2$) y por lo tanto convergente.
+Tomando ahora el límite $k \to \infty$ vemos que 
 $\{\{x_i\}_N\} - \{\bar x_i\} \in l^2$ y que si $\{\bar x_i\} \in l^2$
 luego $\{\{x_i\}_N\} \to \{\bar x_i\}$ en norma.
 %
@@ -654,8 +654,8 @@ estas variantes.
 \item $L^2$ (o $H^0$), el espacio de funciones medibles con cuadrado 
 integrable en \re{}
 e identificadas entre sí,  si su diferencia está en un conjunto de
-medida cero $(f\sim g\mbox{ si }\int |f-g|^2\,dx<0)$. El producto escalar 
-es $(f,g)=\int \bar f \,g\;dx$  y su norma obviamente
+medida cero $(f\sim g\mbox{ si }\int |f-g|^2\,dx=0)$. El producto escalar 
+es $\langle f,g\rangle=\int \bar f \,g\;dx$  y su norma obviamente
 $\|f\|_{H^0}=\sqrt{\int |f|^2\;dx}$.
 
 \item (Espacios de Sobolev)
@@ -689,7 +689,7 @@ Esto hace que los espacios de Hilbert tengan propiedades más
 interesantes que las que tienen los espacios de Banach en general. La
 más interesante se refiere a los subespacios de $H$. Sea $M$ un
 subespacio cerrado de $H$. Este subespacio hereda el producto escalar
-definido en $H$ (simplemente restringiendo el mapa $(\cdot ,\cdot )$ a actuar
+definido en $H$ (simplemente restringiendo el mapa $\langle\cdot ,\cdot \rangle$ a actuar
 solo en elementos de $M$) y por ser cerrado es completo, por lo tanto
 es también un espacio de Hilbert.
 \espa
@@ -736,7 +736,7 @@ El producto escalar nos permite introducir el concepto de
 ortogonalidad y así definir el complemento ortogonal de $M$, es decir
 el conjunto,
 \beq
-M^{\perp}=\{x\in H\,|\,(x,y)=0\;\forall\;y\in M\},
+M^{\perp}=\{x\in H\,|\,\langle x,y\rangle=0\;\forall\;y\in M\},
 \eeq
 que tiene la siguiente propiedad,
 
@@ -754,7 +754,7 @@ H=M\oplus M^{\perp}
 
 Es inmediato que $M^{\perp}$ es un subespacio vectorial y que es cerrado.
 [Si $\{x_i\}$ es una sucesión en $M^{\perp}$ convergiendo a $x$ en $H$ luego
-$|(x,y)|=|(x-x_i,y)|\leq\|x-x_i\|\,\|y\|\to 0\;\;\forall \; y \in M$
+$|\langle x,y\rangle|=|\langle x-x_i,y\rangle|\leq\|x-x_i\|\,\|y\|\to 0\;\;\forall \; y \in M$
  y por lo tanto $x\in M^{\perp}$.]
 Solo debemos probar la complementaridad. Para ello, dado $x\in H$,
 buscaremos el elemento $z$ en $M$ más próximo a $x$, ver figura.
@@ -809,14 +809,14 @@ Esto  nos dice que $\{z_n\}$ es Cauchy y por lo tanto que converge a
 un único $z$ en $M$.
 
 Sea $y=x-z$, solo resta ver que $y$ está en $M^{\perp}$, es decir que
-$(y,v)=0\;\;\forall \;v\in M$. Sea $v\in M$ y $t\in \re{}$, luego
+$\langle y,v\rangle=0\;\;\forall \;v\in M$. Sea $v\in M$ y $t\in \re{}$, luego
 \beq\barr{rcl}
-d^2 &\equiv &\|x-z\|^2\leq\|x-(z+t\,v)\|^2=\|y-t\,v\|^2 \\
-    & = & d^2-2\,t\,Re(y,v) +t^2\,\|v\|^2 
+d^2 &\equiv &\|x-z\|^2\leq\|x-\langle z+t\,v\rangle\|^2=\|y-t\,v\|^2 \\
+    & = & d^2-2\,t\,Re\langle y,v\rangle +t^2\,\|v\|^2 
     \earr
 \eeq
-y por lo tanto $-2t\,Re(y,v)+t^2\,\|v\|^2\geq 0\;\;\forall \; t$
- lo que implica que $ Re(y,v)=0$. Tomando $it$ se obtiene que $Im(y,v)=0$
+y por lo tanto $-2t\,Re\langle y,v\rangle+t^2\,\|v\|^2\geq 0\;\;\forall \; t$
+ lo que implica que $ Re\langle y,v\rangle=0$. Tomando $it$ se obtiene que $Im\langle y,v\rangle=0$
 y se completa la prueba 
 \epru
 \espa
@@ -835,7 +835,7 @@ Ayuda: Utilice la denominada identidad de polarización para definir un
 producto interno a partir de la norma,
 \begin{equation}
   \label{eq:polarizacion}
-  (\ve{x}, \ve{y}) = \frac{1}{4}\{
+  \langle\ve{x}, \ve{y}\rangle = \frac{1}{4}\{
                [\|\ve{x} + \ve{y}\|^2 - \|\ve{x} - \ve{y}\|^2]
               -\Im [\|\ve{x} + \Im \ve{y}\|^2 - \|\ve{x} - \Im \ve{y}\|^2]
 \end{equation}
@@ -881,7 +881,7 @@ el {\bf espacio dual} a $H,\;H'$ será el conjunto de mapas lineales
 continuos de $H$ en $\ve C$. 
 ¿Qué mapas están en $H'$? 
 Note que si $y\in H$ luego el mapa $\fip_y:H\to \ve C$ 
-definido por $\fip_y(x)=(y,x)$ es lineal y como $|\fip(x)|\leq\|y\|_H\:\|x\|_H$
+definido por $\fip_y(x)=\langle y,x\rangle$ es lineal y como $|\fip(x)|\leq\|y\|_H\:\|x\|_H$
 también es continuo. Este mapa nos da una correspondencia 
 inyectiva (no canónica, ya que depende del producto escalar) entre los
 elementos de $H$ y los de su dual.
@@ -908,7 +908,7 @@ muestra el siguiente corolario.
 
 \bcor[Teorema de representaciones de Riez]:
 Sea $\fip \in H'$, luego existe un único $y \in H$ tal que 
-$\fip(x) = (y,x) \forall \; x \in H$,
+$\fip(x) = \langle y,x\rangle \forall \; x \in H$,
 es decir $H \approx H'$ en el sentido que existe un mapa
 natural invertible entre $H$ y $H'$.
 \ecor
@@ -923,18 +923,18 @@ Supongamos entonces $M^{\perp} \neq \{0\}$ y elijamos $w \in M^{\perp}$
 tal que $\fip (w) = 1$\footnote{El lector debe convencerse que si
 $\fip$ no es el mapa nulo entonces siempre existe $w\in H$ tal que 
 $\fip(w)=1$.}. 
-Para cualquier $v \in M^{\perp}$ 
+Para cualquier $v \in M^{\perp}$,
 $v-\fip(v)w \in M^{\perp}$, pero $\fip(v - \fip(v)w) = 0$ y por lo tanto 
 también $v-\fip(v)w \in M$. 
 Así concluimos que $v-\fip(v)w =0\; \forall\;
 v \in M^{\perp}$ o sea que $v=\fip(v)w \;\forall\; v \in M^{\perp}$, es decir que
 $M^{\perp} $ es unidimensional. Veamos ahora que 
-$\fip(x) = (\dip\frac w{\|w\|^2},x) \; \forall x \in H$.
+$\fip(x) = \langle\dip\frac w{\|w\|^2},x\rangle \; \forall x \in H$.
 En efecto por el teorema anterior $x = \alpha w + y$ con $\alpha \in C$
 e $y \in M$ y por lo tanto, 
 $\fip(x) = \fip(\alpha w + y) = \alpha \fip(w) + \fip(y) = \alpha$,
 pero por otro lado,
-$(\dip\frac w{\|w\|^2},x) = \alpha$ 
+$\langle\dip\frac w{\|w\|^2},x\rangle = \alpha$ 
 \epru
 \espa
 
@@ -954,7 +954,7 @@ En $l^2$ sea $e_1 = (1,0,0,...)$, $e_2 = (0,1,0,...)$, etc.
 
 \ejer: 
 Muestre que si $a \in l^2 $ luego 
-$\|a-\sum_{n=1}^i(a,e_n)e_n \|_{l^2_{i\to \ifi}} \longrightarrow 0 $.
+$\|a-\sum_{n=1}^i\langle a,e_n\rangle e_n \|_{l^2_{i\to \ifi}} \longrightarrow 0 $.
 
 \bcor 
 Todo espacio de Hilbert tiene una base ortonormal.
@@ -1016,20 +1016,20 @@ necesitamos los siguientes lemas.
 $H$, no necesariamente una base. Luego, 
 \elem
 \beq
-\|x\|_H^2=\sum_{n=1}^N |(x_n,x)|^2+\|x-\sum_{n=1}^N(x_n,x)x_n\|^2\;\;\;
+\|x\|_H^2=\sum_{n=1}^N |\langle x_n,x\rangle|^2+\|x-\sum_{n=1}^N\langle x_n,x\rangle x_n\|^2\;\;\;
 \forall\;\;x\in H.
 \eeq
 
 \pru: 
-Sea $v = \sum_{n=1}^N (x_n,x)x_n$ y $w=(x - \sum^N_{n=1}
-(x_n,x)x_n)$.
+Sea $v = \sum_{n=1}^N \langle x_n,x\rangle x_n$ y $w=\langle x - \sum^N_{n=1}
+\langle x_n,x\rangle x_n\rangle$.
 Es fácil de ver que $v\in V$, el subespacio de Hilbert generado por los
 $\{x_n\}^N_{n=1} $ y $w \in V^{\perp}$, pero entonces 
 \begin{eqnarray*}
-\|x\|^2_H &=& (x,x) \\
-                 &=& (v+w,v+w) \\
-                 &=& (v,v)+(w,w) \\
-                 &=&\sum_{n=1}^N |(x_n,x)|^2+\|w\|^2_H.
+\|x\|^2_H &=& \langle x,x\rangle \\
+                 &=& \langle v+w,v+w\rangle \\
+                 &=& \langle v,v\rangle+\langle w,w\rangle \\
+                 &=&\sum_{n=1}^N |\langle x_n,x\rangle|^2+\|w\|^2_H.
 \end{eqnarray*}
 \epru 
 
@@ -1041,7 +1041,7 @@ $\{x_n\}^N_{n=1} $ y $w \in V^{\perp}$, pero entonces
 Sea $\{x_n\}_{n=1}^N$ un conjunto ortonormal de
 $H$, no necesariamente una base. Luego,
 \beq
-\|x\|_H^2\geq\sum_{n=1}^N|(x,x_n)|^2\;\;\;\forall\;x\in H
+\|x\|_H^2\geq\sum_{n=1}^N|\langle x,x_n\rangle|^2\;\;\;\forall\;x\in H
 \eeq
 \elem
 
@@ -1056,15 +1056,15 @@ similar es válido aún en el caso de que la base no sea numerable,
 o sea aún cuando $H$ no sea separable.} de $H$.
 Luego $\forall \; y \in H$,
 \beq
-y=\sum_n(x_n,y)x_n
+y=\sum_n\langle x_n,y\rangle x_n
 \eeq
 y
 \beq
-\|y\|^2=\sum_n|(x_n,y)|^2,
+\|y\|^2=\sum_n|\langle x_n,y\rangle|^2,
 \eeq
 donde la primera igualdad significa que la suma converge con respecto
 a la norma de $H$ a $y \in H$. La última igualdad es llamada 
-{\bf relación de Parseval } y los coeficientes $(x_n,y)$ los 
+{\bf relación de Parseval } y los coeficientes $\langle x_n,y\rangle$ los 
 {\bf coeficientes de Fourier} de $y$. 
 Inversamente si $\{c_n\} \in l^2$ luego $\sum_n c_nx_n \in H$.
 \elem
@@ -1074,15 +1074,15 @@ Inversamente si $\{c_n\} \in l^2$ luego $\sum_n c_nx_n \in H$.
 De la desigualdad de Bessel sigue que dado cualquier
 subconjun\-to fi\-ni\-to  $\{x_n\}^N_{n=1}$,
 \beq
-a_N=\sum_{n=1}^N|(x_n,y)|^2\leq\|y\|^2
+a_N=\sum_{n=1}^N|\langle x_n,y\rangle|^2\leq\|y\|^2
 \eeq
 lo que implica que la sucesión $\{a_N\}$, que es monótonamente
 creciente, es acotada y por lo tanto converge a un valor límite finito.
 Esto a su vez implica que $\{a_N\}$ es Cauchy.
-Sea $y_N = \sum_{n=1}^N (x_n,y)x_n$, luego para $N> M$
+Sea $y_N = \sum_{n=1}^N \langle x_n,y\rangle x_n$, luego para $N> M$
 \[
-\|y_N-y_M\|^2_H=\|\sum_{j=M+1}^N (x_j,y)x_j\|^2_H =\sum_{j=M+1}^N
-|(x_j,y)|^2=a_N-a_M 
+\|y_N-y_M\|^2_H=\|\sum_{j=M+1}^N \langle x_j,y\rangle x_j\|^2_H =\sum_{j=M+1}^N
+|\langle x_j,y\rangle|^2=a_N-a_M 
 \]
 
 
@@ -1091,8 +1091,8 @@ sucesión de Cauchy y así que esta converge a un elemento $y'$
 de $H$. Probemos entonces que $y' =y $.
 Pero para cualquier elemento de $S$, $x_n$
 \beq\barr{rcl}
-(y-y',x_n) &=&\dip\lim_{N\to\ifi}(y-\sum_{j=1}^N(x_j,y)x_j,x_n) \\
-           &=&(y,x_n)-(y,x_n) =0
+\langle y-y',x_n\rangle &=&\dip\lim_{N\to\ifi}\langle y-\sum_{j=1}^N\langle x_j,y\rangle x_j,x_n\rangle \\
+           &=&\langle y,x_n\rangle-\langle y,x_n\rangle =0
            \earr
 \eeq       
 y por lo tanto $y - y'$ es perpendicular al espacio generado
@@ -1115,14 +1115,14 @@ Esto concluye la parte {\sl sii} de la prueba, solo resta encontrar
 un isomorfismo entre $H$ y $C^N$ o $l^2$. Sea $\{x_n\}$ una base
 numerable de $H$ y sea $\fip:H \rightarrow C^N$ o $l^2$ el mapa 
 \beq
-\fip(y)=\{(x_n,y)\}.
+\fip(y)=\{\langle x_n,y\rangle\}.
 \eeq
 Si la base es finita, con dimensión $N$ este es claramente un mapa
 en $C^N$. Si la base es infinita la imagen de $H$ por $\fip$ está 
 incluida en el espacio de sucesiones complejas infinitas, pero usando
 el Lema~\ref{lem7.5} vemos que ,
 \beq
-\|\fip(y)\|^2_{l^2}=\sum_{n=1}^{\ifi}|(x_n,y)|^2=\|y\|^2_H
+\|\fip(y)\|^2_{l^2}=\sum_{n=1}^{\ifi}|\langle x_n,y\rangle|^2=\|y\|^2_H
 \eeq
 y por lo tanto que dicha imagen está contenida en $l^2$. La continuidad
 e invertibilidad del mapa quedan como ejercicio para el lector 
@@ -1250,7 +1250,7 @@ Si $f$ es integrable ($f \in L^1$) luego,
 
 \bpru
 \begin{eqnarray}
-  |f_n| &=& |(\frac{e^{inx}}{\sqrt{2\pi}},f)| \nn
+  |f_n| &=& |\langle \frac{e^{inx}}{\sqrt{2\pi}},f \rangle | \nn
         &\leq&  \frac{1}{\sqrt{2\pi}}\int_0^{2\pi}|e^{-inx}f(x)|dx \nn
         &\leq&  \frac{1}{\sqrt{2\pi}}\int_0^{2\pi}|f(x)|dx
 \end{eqnarray}
@@ -1263,7 +1263,7 @@ Si $f$ tiene derivada integrable, luego $f_n \to 0$ cuando $n \to \infty$.
 \bpru
 Integrando por partes tenemos,
 \begin{eqnarray*}
-  f_n &=& (\frac{e^{inx}}{\sqrt{2\pi}},f) \nn
+  f_n &=& \langle \frac{e^{inx}}{\sqrt{2\pi}},f \rangle \nn
       &=& \frac{1}{\sqrt{2\pi}}\int_0^{2\pi} e^{-inx}f(x)dx \nn
       &=& \frac{1}{in\sqrt{2\pi}}\int_0^{2\pi} e^{-inx}f'(x)dx
           -\frac{1}{in\sqrt{2\pi}}e^{-inx}f(x)|_0^{2\pi} \nn
@@ -1300,7 +1300,7 @@ $f_{\eps}:[0,2\pi]$, suave, tal que
 $\|f-f_{\eps}\|_{L^1} < \frac{\eps}{2\sqrt{2\pi}}$.
 Pero como,
 \begin{eqnarray}
-  |f_n - f_{\eps n}| &=& |(\frac{e^{inx}}{\sqrt{2\pi}},f - f_{\eps})| \nn
+  |f_n - f_{\eps n}| &=& |\langle \frac{e^{inx}}{\sqrt{2\pi}},f - f_{\eps} \rangle | \nn
                      &\leq& \frac{1}{\sqrt{2\pi}}
                             \int_0^{2\pi}|f(x) - f_{\eps}(x)|dx \nn
                      &\leq& \frac{1}{\sqrt{2\pi}}\|f-f_{\eps}\|_{L^1} \nn
@@ -1460,7 +1460,7 @@ dentro de la sumatoria infinita obtenemos,
    &=& \sum^{\infty}_{n=-\infty}(\frac{dT_n(t)}{dt} + k n^2 T_n(t)) \frac{e^{in\theta}}{\sqrt{2\pi}}
 \end{eqnarray}
 %
-y tomando el producto escalar con $\frac{e^{in\theta}}{\sqrt{2\pi}}$ vemos que
+de la independencia lineal de los elementos de la base, o simplemente  tomando el producto escalar con $\frac{e^{in\theta}}{\sqrt{2\pi}}$ vemos que
 se debe cumplir,
 \begin{equation}
   \frac{dT_n(t)}{dt} = - k n^2 T_n(t) \;\;\;\; \forall \; n
@@ -1490,7 +1490,7 @@ la distribución inicial.
 %
 b) El hecho de haber podido reducir un problema en derivadas parciales en un problema en derivadas ordinarias de debe a que hemos elegido representar a las funciones en una base de autovectores del operador derivada. En efecto, lo que
 hemos usado fundamentalmente es que 
-$\frac{\partial}{\partial \theta} e^{in\theta} = in\theta d^{in\theta}$.
+$\frac{\partial}{\partial \theta} e^{in\theta} = in e^{in\theta}$.
 %
 c) No importa cuan mala (no diferenciable) es la 
 distribución inicial $T_0(\theta)$, mientras esté en $L^2(S)$, la solución se suaviza para tiempos positivos. En efecto si por ejemplo la distribución inicial es solo Lipschitz luego para todo $t > 0$ la solución 
@@ -1498,7 +1498,7 @@ es infinitamente diferenciable, tanto en $t$ como en $\theta$.
 Para ver esto, por ejemplo tomemos,
 \begin{equation}
    \frac{\partial^pT(\theta,t)}{\partial t^p}  
-   = \sum^{\infty}_{n=-\infty} T_n^0 (-kn^2)^p e{-kn^2t} \frac{e^{in\theta}}{\sqrt{2\pi}},
+   = \sum^{\infty}_{n=-\infty} T_n^0 (-kn^2)^p e^{-kn^2t} \frac{e^{in\theta}}{\sqrt{2\pi}},
 \end{equation}
 %
 pero como para $t>0$, $n^{2p} e^{-kn^2t} \to 0$ rápidamente cuando $n \to \infty$ la serie converge absolutamente. Por el contrario, para dato inicial genérico, aun infinitamente diferenciable, la solución no existe para tiempos

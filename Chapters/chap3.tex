@@ -11,7 +11,7 @@
 
 \section{Variedades}
 
-Hay dos motivos principales que justifican el estudio 
+Hay varios motivos  que justifican el estudio 
 del concepto de variedad, o más generalmente de la geometría
 diferencial por parte de los físicos.
 Uno es que en física aparecen naturalmente las variedades y por lo tanto no las podemos eludir.
@@ -22,21 +22,31 @@ embebida en $\re^3$ y usamos las coordenadas naturales de $\re^3$
 para describir sus movimientos.
 
 El segundo motivo es que el concepto de variedad es de
-gran utilidad conceptual, ya que por ejemplo en el caso 
+gran utilidad conceptual, ya que, por ejemplo, en el caso 
 de una partícula moviéndose en $\re^3$ este nos permite discernir
 claramente entre la posición de una partícula y su
 vector velocidad como entes matemáticos de naturaleza diferente.
 Este hecho se enmascara en $\re^3$ ya que este tipo especial de
 variedad tiene la estructura de un espacio vectorial.
 
+Desde el tiempo de Galileo sabemos que el lenguaje de la física son las matemáticas.
+Como todo lenguaje, su utilidad va más allá de su uso diario para entendernos entre nosotros
+y trabajar nuestras ideas. El lenguaje permite realizar una síntesis de los conceptos y conocimientos
+que logran encapsular en un número menor de conceptos toda una área de conocimiento.
+Esto permite a las generaciones futuras comprender un inmenso cúmulo de de conocimientos que para 
+las generaciones anteriores eran aspectos dispares de la realidad como aspectos particulares de un
+mismo tronco de conocimiento. 
+El ejemplo más claro de esto son las teorías del modelo estándar de partículas, que unifican bajo un 
+mismo fenómeno lo que antes entendíamos como propiedades distintas de la materia. 
+En particular estas teorías incorporan de forma natural y determinate elementos propios de la geometría,
+tales como fibrados y conexiones, simetrías, etc. 
+
 Una variedad es una generalización de los espacios Euclídeos
 $\re^n$ en la cual uno preserva el concepto de continuo, es decir su
 topología en el sentido local pero descarta su carácter de
 espacio vectorial. Una variedad de dimensión $n$ es en términos
-imprecisos un
-conjunto de puntos que localmente es como $\re^n$, pero que no
-lo es necesariamente en su forma
-global. 
+imprecisos un conjunto de puntos que localmente es como $\re^n$, pero que no
+lo es necesariamente en su forma global. 
 
 
 Un ejemplo de una variedad en dos
@@ -65,16 +75,29 @@ uno debe seguir la regla de la economía de conceptos y
 objetos y descartar todo lo que no sea fundamental a la descripción
 de un fenómeno: si queremos describir cosas sucediendo en la
 esfera, ¿para qué necesitamos un espacio de más dimensiones?
-
 Esta regla de economía nos fuerza a precisar los conceptos y
-descartar todo lo superfluo.
+descartar todo lo superfluo. 
+Es de esa forma que se avanza en nuestra maduración como 
+físicos. Es la forma en que realmente penetramos en los misterios de la naturaleza.
+
+
+Nótese que la primera manera de trabajar con la esfera es lo que normalmente hacemos
+cuando buscamos localizar puntos y caminos sobre el globo terrestre.
+De hecho usamos mapas planos, antiguamente llamadas cartas, para describir que sucede en nuestras ciudades y países.
+Cuando deseamos tener una colección de mapas que cubren todo el globo adquirimos un
+atlas, es decir un conjunto de mapas que cubren todo el globo y que entre uno y otro tienen 
+sectores en común. Algunos de estos sectores son internos, por ejemplo cuando describen una
+ciudad dentro de un país (en el mapa que cubre dicho país), o en los bordes cuando vamos de una hoja a otra.
+Solo cuando queremos ver la estructura global del globo terrestre, por ejemplo si queremos hacer un viaje
+en avión cubriendo gran parte del globo, es que usamos una versión en pequeño del planeta como implantado en $\re^3$.
+
 
 \noi Damos a continuación una serie de definiciones para desembocar
 finalmente en la definición de variedad de dimensión $n$.
 
 \defi: Sea $M$ un conjunto. Una {\bf carta de $M$} es un par $(U,\fip)$
 donde $U$ es un subconjunto de $M$ y $\fip$ un mapa inyectivo entre
-$U$ y $\re^n$, tal que su imagen, $\fip(U)$ es abierta en $\re^n$.
+$U$ y $\re^n$, tal que su imagen, $\fip[U]$ es abierta en $\re^n$.
 
 \defi: Un {\bf atlas de $M$} es una colección de cartas $\{(U_i,\fip_i)\}$
  satisfaciendo las siguientes condiciones: 
@@ -95,8 +118,8 @@ $U$ y $\re^n$, tal que su imagen, $\fip(U)$ es abierta en $\re^n$.
  \label{it1}
  \item Si dos cartas se superponen entonces $\fip_i(U_i\cap U_j)$ es
 también un abierto de $\re^n$.\label{it2}
-\item El mapa $\fip_j \circ \fip_i^{-1}:\fip_i(U_i\cap U_j) \to
-\fip_j(U_i\cap U_j) $ es continuo, inyectivo y suryectivo.
+\item El mapa $\fip_j \circ \fip_i^{-1}:\fip_i[U_i\cap U_j] \to
+\fip_j[U_i\cap U_j] $ es continuo, inyectivo y suryectivo.
 \label{it3}
 \end{enumerate}
 
@@ -315,7 +338,7 @@ el mapa así  obtenido se llama curva. El caso general es obvio.
 $I\,\subset\,\re$ y $M$, $\gamma\,:\,I\,\to\,M$. 
 
 Note que la curva
-es el mapa y no su gráfico en $M$, es decir el conjunto $\gamma(I)$. 
+es el mapa y no su gráfico en $M$, es decir el conjunto $\gamma[I]$. 
 Se puede así tener
 dos curvas distintas con el mismo gráfico. Esto no es un capricho
 matemático sino una necesidad física : no es lo mismo que un
@@ -527,7 +550,7 @@ $t_0\in I$, de $M$ podemos definir un vector de la siguiente forma,
 
 Sus componentes en una base coordenada se obtienen por medio de las funciones
 \beq
-x^i(t)=\fip\circ\gamma(t)
+x^i(t)= x^i \circ \fip\circ\gamma(t)
 \eeq
 
 \begin{eqnarray}
@@ -631,7 +654,7 @@ $g^t$ definidos en $I(\su \re)\times U(\su M)\to M$.
 
 \espa
 \ejem: En $\re^1$ sea el vector con componente
-coordenada $x^2$, es decir $V(x)=x^2\frac d{dx}$. La ecuación
+coordenada $x^2$, es decir $\ve{v}(x)=x^2\frac{\partial}{\partial x}$. La ecuación
 diferencial ordinaria asociada con este vector es $\frac{dx}{dt}=x^2$, 
 cuya solución es 
 \beq 
@@ -641,7 +664,9 @@ t-t_0=\frac {-1}x +\frac 1{x_0}
 \noi
 donde hemos tomado $t_0=0$. O sea $g^t(x_0)=\displaystyle\frac{-1}{t-\frac
 1{x_0}}$. Note que cualquiera sea $t$ este mapa no está definido para
-todo $\re$ y por lo tanto no es un difeomorfismo.
+todo $\re$ y por lo tanto no es un difeomorfismo. Nótese también que cualquiera sea el intervalo que
+tomemos para su definición el intervalo de tiempo de existencia de la solución será finito, o bien hacia el
+futuro o hacia el pasado.
 
 \ejem: Sea $g^t$ un difeomorfismo lineal en
 $\re$, es decir $ g^t(x+\alpha y)=g^t(x)\,+\,\alpha\,g^t(y)$. Luego tiene la
@@ -650,7 +675,7 @@ forma $g^t(x)=f(t)\,x$. La propiedad de grupo implica $f(t)\cdot f(s)
 Por lo tanto $g^t(x)=\mbox{e}^{kt}\,x$. 
 La ecuación diferencial asociada
 es: $x(t)=\mbox{e}^{kt}\,x_0\;\;\Longrightarrow\;\;\dot
-x=k\,\mbox{e}^{kt}\,x_0=$ \fbox{$k\,x=\dot x$}.
+x=k\,\mbox{e}^{kt}\,x_0=$ \fbox{$k\,x=\dot x.$}
 
 \ejer: Grafique en un entorno del origen  $\re^2$ las curvas integrales y
 por lo tanto $g^t$ de los siguientes sistemas lineales.
@@ -710,10 +735,13 @@ decir elementos de $T_p(S_{a})$. Por el contrario, si $df(\ve{v})|_p \neq
 0$ entonces en ese punto $\ve{v}$ {\it pincha} a $S_{a}$. 
 
 \ejem: La función $f(x,y,z)=x^2+y^2+z^2$ en $\re^3$. \par
-$S_{a}=\{(x,y,z)\in \re^3 / f(x,y,z) = a^2,\;\; a>0\}$ es la esfera de radio
-$a$, y como ya hemos visto  una variedad. Sea $(v^{x}x,v^{y},vz^{z})$ un vector
+$S_{a}=\{(x,y,z)\in \re^3 | f(x,y,z) = a^2,\;\; a>0\}$ es la esfera de radio
+$a$, y como ya hemos visto  una variedad. Sea $(v^{x},v^{y},v^{z})$ un vector en el punto
 en $(x,y,z)\in\re^{3}$, luego la condición $\ve{df}(\ve{v})=2(xv^{x}+yv^{y}+zv^{z})=0$
-implica que $\ve{v}$ es tangente a $S$.
+implica que $\ve{v}$ es tangente a $S$. En efecto, vemos que esta es la condición que nos dice que 
+$\ve{v}$ es \textsl{perpendicular} a $(x,y,z)$ cuando estamos en la estructura Euclidea convencional.
+
+\espa
 
 Dado un sistema coordenado (carta) que cubre un punto $p \in M$ hemos visto que tenemos una base canónica de $T_{p}$ asociada con el mismo dada por los vectores,
 
@@ -722,16 +750,18 @@ Dado un sistema coordenado (carta) que cubre un punto $p \in M$ hemos visto que 
 \]
 %
 ¿Cuál será la combase asociada con la misma? 
-Note que el sistema coordenado nos da también un conjunto de $n$ funciones privilegiadas, es decir, las componentes del mapa $\phi$ que define la carta, $\{x^{j}\}$, $j=1..n$, $f^{i}(p)=x^{i}\circ\fip$
-Si aplicamos los vectores base a estas funciones obtenemos, 
+Note que el sistema coordenado nos da también un conjunto de $n$ funciones privilegiadas, es decir, las componentes del mapa $\phi$ que define la carta, 
+$\{x^{j}\}$, $j=1..n$, 
+$x^{i}(p):=$\textsl{valor de la coordenada $i$ asignada por $\phi$ al punto $p$}. 
+Notemos que $x^{i}\circ\fip^{-1}$ es entonces el mapa identidad para la $i$-esima coordenada.
+Si aplicamos los vectores base a estas funciones obtenemos entonces, 
 
 \[
- \ve{x}_{i} (f^{j}) := \frac{\partial x^{j}}{\partial x^{i}}|_{\phi(p)} = \delta^{j}_{i},
+ \ve{x}_{i} (x^{j}) := \frac{\partial x^{j}\circ\fip^{-1}}{\partial x^{i}}|_{\phi(p)} = \delta^{j}_{i},
  \]
  %
- pero entonces como, $\ve{df}^{j}(\ve{x}_{i})=\ve{x}_{i} (f^{j})$, vemos que los diferenciales
- $ \ve{df}^{j}$ son la co-base de la base coordenada. 
- Usualmente se denotan estas componentes como $ \ve{dx}^{j}$.
+ pero entonces como, $\ve{dx}^{j}(\ve{x}_{i})=\ve{x}_{i} (x^{j}) = \delta^{j}_{i}$, vemos que los diferenciales
+ $ \ve{dx}^{j}$ son la co-base de la base coordenada. 
  En particular tenemos que las componentes coordenadas de un vector $\ve{v}$ están dadas por:
  
  \[
@@ -1096,7 +1126,7 @@ Esto muestra que
 y por lo tanto que $\lp\bar\na_c-\na_c\rp w_a$ depende de solo $w_a|_p$
 y obviamente en forma lineal.
 Pero entonces $\lp\bar\na_c-\na_c\rp $ debe ser un tensor de tipo ${1\choose2}$ 
-que está esperando {\it comerse} una forma para darnos el tensor de 
+que está esperando {\it comerse} un covector para darnos el tensor de 
 tipo ${0 \choose 2}$, $\lp\bar\na_c -\na_c\rp w_a.$ 
 Es decir $\lp\bar\na_c-\na_c\rp w_a = C^b{}_{ca} w_b$, lo que prueba el teorema.
 
