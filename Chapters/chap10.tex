@@ -85,10 +85,11 @@ considerado anteriormente.
 \bteo[de Fourier] La transformación de Fourier 
 \beq
 \hat f(\lambda) := \cF{} (f)(\lambda) := \frac1{(2\pi)^{n/2}}\int_{\ren{}}
-e^{-ix\cdot\lambda}\;f(x)\;dx^n 
+e^{-ix\cdot\lambda}\;f(x)\;d^nx 
 \eeq
 %
-donde  $x\cdot\lambda=\sum_{i=1}x^i\,\lambda_i$. 
+donde  $x\cdot\lambda=\sum_{i=1}x^i\,\lambda_i$. \\
+
 Satisface: 
 \espa
 
@@ -101,7 +102,7 @@ $\|\hat f\|_{L^2}=\|\cF{}(f)\|_{L^2}=\|f\|_{L^2}$ (identidad de Plancherel).
 \noi b) Su inversa está dada por
 \beq
 \check g(x)={\cal F}^{-1}(\hat
-g)=\frac1{(2\pi)^{n/2}}\int_{\ren{}}e^{ix\cdot \lambda}\,\hat g(\lambda)\;d\lambda.
+g)=\frac1{(2\pi)^{n/2}}\int_{\ren{}}e^{ix\cdot \lambda}\,\hat g(\lambda)\;d^n\lambda.
 \eeq
 
 \espa
@@ -188,27 +189,28 @@ es continua, que la serie de Riemann en el lado derecho de la
 ecuación \ron{10.f1} converge a la integral y por lo tanto que $\cF{}^{-1}
 (\cF{}(f))=f(x)$ $\forall\;\;f\in\cifrncs$.
 
-Si $f\in\;\cifrncs$ luego la identidad del punto c) se muestra trivialmente. Solo
-resta entonces extender estos resultados para $f$ arbitraria en $L^2(\ren{})$,
+Si $f\in\;\cifrncs$ luego la identidad del punto c) se muestra trivialmente. 
+%
+Solo resta entonces extender estos resultados para $f$ arbitraria en $L^2(\ren{})$,
 pero $\cifrncs$ es una subespacio denso de $L^2(\ren{})$, es decir todo elemento 
 $f\in L^2(\ren{})$
-puede obtenerse como límite (con respecto a la norma
-$L^2(\ren{})$) de una 
+puede obtenerse como límite (con respecto a la norma $L^2(\ren{})$) de una 
 sucesión $\{f_n\}$ de funciones en $\cifrncs$, esto nos permite extender la
 acción de \cF{} a todo elemento de $L^2(\ren{})$. 
 En efecto, sea $f\in L^2(\ren{})$ arbitraria y
-sea $\{f_n\}\to f \in\cifrncs$ luego la sucesión $\hat f_n(k)=\cF{}(f_n)$ 
+sea $\{f_n\}\to f $ con $f_n \in\cifrncs$ luego la sucesión $\hat f_n(k)=\cF{}(f_n)$ 
 satisface,
 \beq
 \|\hat f_n(k)-\hat f_m(k)\|_{L^2(R^n)}=\|f_n(x)-f_m(x)\|_{L^2(\ren{})}.
 \eeq
-Como $\{f_n\}$ es convergente es de Cauchy y por lo tanto $\{\hat f_n\}$ 
-es también de
-Cauchy en $L^2(\ren{})$, pero $L^2(\ren{})$ es completo y por lo tanto existe 
+Como $\{f_n\}$ es convergente es de Cauchy y por lo tanto la igualdad de normas 
+implica que $\{\hat f_n\}$ es también de
+Cauchy en $L^2(\ren{})$, pero $L^2(\ren{})$ es completo y por lo tanto existe una única
 $\hat f\in L^2(\ren{})$ tal que $\{\hat f_n\}\to\hat f$.
-Extenderemos el mapa \cF{} a \LR{} definiendo $\cF{}(f) \equiv \hat f$.
+Extenderemos el mapa \cF{} a \LR{} definiendo $\cF{}(f) := \hat f$.
 Esta extensión es claramente lineal y acotada por lo tanto es
-continua. Usando el mismo razonamiento extendemos $\cF{}^{-1}$ a todo \LR{} y
+continua. 
+Usando el mismo razonamiento extendemos $\cF{}^{-1}$ a todo \LR{} y
 vemos que $\cF{}^{-1}(\cF{}(f(x)))=f(x)$ $ \forall\;f(x)\in\LR$ 
 lo que demuestra que \cF{} es invertible, que su inversa es
 $\cF{}^{-1}$ y es continua. El mismo argumento muestra que la fórmula en c)
@@ -233,9 +235,10 @@ enteros no-negativos
 $\alpha=<\alpha_1,\ldots,\alpha_n>$ 
 y 
 $|\alpha|=\sum_{i=1}^n\alpha_i$.
+Definimos,  $x^{\alpha} := (x^1)^{\alpha_1} (x^2)^{\alpha_2} \cdots (x^n)^{\alpha_n}$
 Similarmente denotamos por 
 $D^{\alpha}\equiv\dip\frac{\pa^{\alpha}}{\pa x^{\alpha}}\equiv\dip\frac{\pa^{|\alpha|}}
- {\pa x_1^{\alpha_1}\cdots\pa x_n^{\alpha_n}}$, 
+ {\pa (x^1)^{\alpha_1}\cdots\pa (x^n)^{\alpha_n}}$, 
  es decir $D^{\alpha}$ es el operador diferencial que toma $\alpha_1$, derivadas parciales con respecto a $x_1$, $\alpha_2$ derivadas parciales con respecto a $x_2$, etc. El grado de $D^{\alpha}$ es $|\alpha|$.
 
 \espa
@@ -367,6 +370,13 @@ y por lo tanto la transformada de Fourier de la delta de Dirac es la distribució
 Calcule $\cF{}(\del'_a)$.
 
 \espa
+
+%\ejer: Use el resultado anterior para probar que
+%\[
+%\overline{\cF(\overline{\cF(f)})} = f
+%\]
+
+\espa
 \noi
 ¿Qué otras propiedades tiene la transformación de Fourier?
 Note que de la identidad del punto c) del Teorema de Fourier sigue
@@ -446,7 +456,7 @@ convolución $(f,g\in\cS(\ren{})\Longrightarrow f*g\in\cS(\ren{}))$
  podemos definir la convolución de una distribución temperada con
 una función en $\cS(\ren{})$ como,
 \beq
-(T*f)(\fip)=T(\ti f*\fip)\;\;\;\mbox{ donde } \ti f(x) := f(-x).
+(T*f)(\fip) := T(\ti f*\fip)\;\;\;\mbox{ donde } \ti f(x) := f(-x).
 \label{10.t**}
 \eeq
  
@@ -502,8 +512,11 @@ De hecho tenemos,
 
 \ejer: Convine este resultado con el anterior, ecuación (\ref{eqn:dist-conv-reg}) y encuentre la distribución regular correspondiente. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{*Propiedades básicas de los Espacios de Sobolev}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Como una aplicación de la transformación de Fourier
 veremos a continuación las propiedades básicas de los espacios de Sobolev.
@@ -513,8 +526,8 @@ El primer paso será una generalización de los espacios de
 Sobolev. Como vimos los espacios de Sobolev son espacios de Hilbert
 con norma proveniente del siguiente producto escalar.
 \beq
-\langle f,g \rangle_{H^m}=\sum_{k=0}^m \sum_{i,j,p=1}^n \lp\underbrace{\pa_i\pa_j\ldots\pa_p}
-_{ k\mbox{ veces }}f,\,\pa_i\pa_j\ldots\pa_pg\rp_{L^2},
+\langle f,g \rangle_{H^m}=\sum_{k=0}^m \sum_{i,j,p=1}^n \langle \underbrace{\pa_i\pa_j\ldots\pa_p}
+_{ k\mbox{ veces }}f,\,\pa_i\pa_j\ldots\pa_pg\rangle_{L^2},
 \label{10.tr1}
 \eeq
 donde $f$ y $g$ son funciones definidas en un abierto $\Omega$ cualquiera 
@@ -522,10 +535,10 @@ de \ren{}.
 Si $\Omega=\ren{}$ luego de las propiedades de la transformación de Fourier 
 obtenemos
 \beq\barr{rcl}
-\langle f,g \rangle_{H^m}&=&\sum_{k=0}^m \sum_{i,j,p=1}^n (\lambda_i\lambda_j\ldots\lambda_p\hat
-f(\lambda),\lambda_i\lambda_j\ldots \lambda_p,\hat g(\lambda))_{L^2}\\
-&=&(\hat f(\lambda)\sqrt{\dip\sum_{k=0}^m|\lambda|^{2k}},\hat g(\lambda)
-\sqrt{\dip\sum_{k=0}^m|\lambda|^{2k}}),
+\langle f,g \rangle_{H^m}&=&\sum_{k=0}^m \sum_{i,j,p=1}^n \langle \lambda_i\lambda_j\ldots\lambda_p\hat
+f(\lambda),\lambda_i\lambda_j\ldots \lambda_p,\hat g(\lambda)\rangle_{L^2}\\
+&=&\langle \hat f(\lambda)\sqrt{\dip\sum_{k=0}^m|\lambda|^{2k}},\hat g(\lambda)
+\sqrt{\dip\sum_{k=0}^m|\lambda|^{2k}}\rangle_{L^2},
 \earr
 \eeq
 es decir las funciones $f(x)\in H^m(\ren{})$ son aquellas que su transformada de
@@ -536,7 +549,7 @@ cuadrado integrable.
 Esto nos sugiere generalizar los espacios permitiendo índices no
 enteros y aún negativos por medio del siguiente producto escalar,
 \beq
-\langle f,g \rangle_{H^s}=(\hat f(\lambda)(1+|\lambda|^2)^{s/2},\hat g(\lambda)(1+|\lambda|^2)^{s/2})_{L^2}.
+\langle f,g \rangle_{H^s}=\langle \hat f(\lambda)(1+|\lambda|^2)^{s/2},\hat g(\lambda)(1+|\lambda|^2)^{s/2}\rangle_{L^2}.
 \eeq
 
 \espa
@@ -570,8 +583,7 @@ En particular si $s>0$ luego $H^s \su H^0=L^2$, si $s<0$ luego $L^2\su H^s$.
 
 Dada $g \in H^{-s}$ puedo definir el siguiente mapa de $H^s$ en $\ve C$,
 $$
-\Psi_g(f) := (\hat g, \hat f)_{H^0} = ( \frac{\hat g}{(1+|\lambda|^2)^{s/2}},
-\hat f (1+|\lambda|^2)^{s/2})_{H^0}.
+\Psi_g(f) := \langle \hat g, \hat f \rangle_{H^0} = \langle \frac{\hat g}{(1+|\lambda|^2)^{s/2}}, \hat f (1+|\lambda|^2)^{s/2} \rangle_{H^0}.
 $$
 Este mapa es lineal, está bien definido $\forall \; f,g \in C^{\infty}_0$
 y puede ser extendido a todo $H^s$ (y $H^{-s}$) por continuidad, ya que,

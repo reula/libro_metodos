@@ -87,7 +87,7 @@ fácilmente que con esta norma $V$ es completo y por lo tanto Banach.
 
 \ejer: Pruebe que la sucesión de Cauchy de sucesiones de Cauchy,
 $\{\{w_n\}_N\}$ converge en esta norma a la sucesión
-$\{\bar{w}_n\} \equiv \{\{w_n\}_n\}$.
+$\{\bar{w}_n\} := \{\{w_n\}_n\}$.
 \espa
  
 ¿Cuál es el mapa $\fip $? Este toma un elemento $w \in W$ y nos da
@@ -312,7 +312,7 @@ I= \dip\bigcup_i (a_i,b_i),
 \eeq
 con 
 $a_1 \leq b_1 < a_2 \leq b_2 < a_3 \cdots\; $.
-Sea $\mu \equiv m : \cJ \to \re{}^* $ definida como,
+Sea $\mu := m : \cJ \to \re{}^* $ definida como,
 \beq m(I) = \sum_i (b_i - a_i). \eeq
 \end{enumerate}
  
@@ -525,7 +525,7 @@ número real y , junto con $ iii)$, que es no-negativo.
 \ejer:
 Pruebe que dando un tensor de tipo $(2,0)$, $\ve{t}\langle\cdot,\cdot\rangle $,
 simétrico, real y positivo definido, entonces 
-$\langle \ve{x},\ve{y}\rangle  \equiv \ve{t}\langle\bar{\ve{x}},\ve{y}\rangle $ es un producto
+$\langle \ve{x},\ve{y}\rangle  := \ve{t}\langle\bar{\ve{x}},\ve{y}\rangle $ es un producto
 escalar.
 \espa
 
@@ -588,7 +588,7 @@ $$\langle x,y\rangle = \sum^n_{j=1} \bar x_j y_j . $$
 
 \item $l^2$, el espacio vectorial de sucesiones de números complejos
 $\{x_i\}$ tales que 
-$$\|\{x_j\}\|_2 \equiv \sqrt{\sum^{\infty}_{j=1} |x_j|^2 } < \infty, $$
+$$\|\{x_j\}\|_2 := \sqrt{\sum^{\infty}_{j=1} |x_j|^2 } < \infty, $$
 con el producto escalar,
 $$ \langle\{x_j\},\{y_j\}\rangle = \sum^{\infty}_{j=1} \bar x_j\, y_j .$$
 
@@ -654,7 +654,7 @@ estas variantes.
 \item $L^2$ (o $H^0$), el espacio de funciones medibles con cuadrado 
 integrable en \re{}
 e identificadas entre sí,  si su diferencia está en un conjunto de
-medida cero $(f\sim g\mbox{ si }\int |f-g|^2\,dx=0)$. El producto escalar 
+medida cero $(f\sim g \mbox{ si }\int |f-g|^2\,dx=0)$. El producto escalar 
 es $\langle f,g\rangle=\int \bar f \,g\;dx$  y su norma obviamente
 $\|f\|_{H^0}=\sqrt{\int |f|^2\;dx}$.
 
@@ -811,7 +811,7 @@ un único $z$ en $M$.
 Sea $y=x-z$, solo resta ver que $y$ está en $M^{\perp}$, es decir que
 $\langle y,v\rangle=0\;\;\forall \;v\in M$. Sea $v\in M$ y $t\in \re{}$, luego
 \beq\barr{rcl}
-d^2 &\equiv &\|x-z\|^2\leq\|x-\langle z+t\,v\rangle\|^2=\|y-t\,v\|^2 \\
+d^2 &:= &\|x-z\|^2\leq\|x-\langle z+t\,v\rangle\|^2=\|y-t\,v\|^2 \\
     & = & d^2-2\,t\,Re\langle y,v\rangle +t^2\,\|v\|^2 
     \earr
 \eeq
@@ -1594,7 +1594,7 @@ si y solo si es acotado.
 Muestre que el mapa $I:C[a,b] \to \Re$ dado por 
 \begin{equation}
   \label{eq:mapa_integral}
-  I(f) \equiv \int_a^b f(x)dx,
+  I(f) := \int_a^b f(x)dx,
 \end{equation}
 es un mapa lineal y continuo.
 \epro
@@ -1610,13 +1610,13 @@ es decir un elemento de $V'$.
 Considere en $V$ la norma
 \begin{equation}
   \label{eq:norma_p}
-  \|\ve{x}\|_p \equiv (\sum_{i=1}^n |x^i|^p)^{\frac{1}{p}}.
+  \|\ve{x}\|_p := (\sum_{i=1}^n |x^i|^p)^{\frac{1}{p}}.
 \end{equation}
 Vea que esta es una norma y pruebe que
 la norma inducida en $V'$ por ésta está dada por,
 \begin{equation}
   \label{eq:norma_q}
-  \|\ve{\omega}\|_q \equiv (\sum_{i=1}^n |\omega_i|^q)^{\frac{1}{q}},
+  \|\ve{\omega}\|_q := (\sum_{i=1}^n |\omega_i|^q)^{\frac{1}{q}},
 \end{equation}
 %
 donde 
@@ -1644,7 +1644,7 @@ $\{x\} = (x_1,x_2, \dots)$
 convergiendo a cero con la norma
 \begin{equation}
   \label{eq:norma_c_0}
-  \|\{x\}\|_{c_0} \equiv \sup_{i} \{|x_i|\}.
+  \|\{x\}\|_{c_0} := \sup_{i} \{|x_i|\}.
 \end{equation}
 %
 Probar que el dual del espacio $c_0$ es el espacio $l_1$ de las sucesiones
@@ -1652,7 +1652,7 @@ absolutamente sumables
 $\{\omega\}= (\omega_1,\omega_2, \dots)$ con la norma
 \begin{equation}
   \label{eq:norma_l_1}
-  \|\{\omega\}\|_{l_1} \equiv \sum_{i=1}^{\infty} |\omega_i|.
+  \|\{\omega\}\|_{l_1} := \sum_{i=1}^{\infty} |\omega_i|.
 \end{equation}
 %
 Ayudas: 
@@ -1660,7 +1660,7 @@ Note que dado un elemento de $l_1$, $\{\omega\}=(\omega_1,\omega_2,\dots)$,
 tenemos un funcional lineal dado por,
 \begin{equation}
   \label{representacion_del-dual}
-  \ve{\omega}(\{x\}) \equiv \sum_{i=1}^{\infty} x_i \omega_i.
+  \ve{\omega}(\{x\}) := \sum_{i=1}^{\infty} x_i \omega_i.
 \end{equation}
 Pruebe que este cumple 
 \begin{equation}

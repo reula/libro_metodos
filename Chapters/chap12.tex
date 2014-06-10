@@ -55,13 +55,13 @@ del tambor}\}.
 \eeq
 
 \ejer:
-Convénzase de que~\ron{ec2*} es la ecuación de equilibrio.
+Convénzase de que~\ron{ec2*} es la ecuación de equilibrio para el caso de que la fuerza aplicada sea lo suficientemente pequeña como para producir una deformación pequeña de la membrana.
 Ayuda: Haga primero el caso unidimensional.
 
 Como el borde del tambor sujeta la membrana allí tendremos la siguiente
 {\bf condición de contorno},
 \beq 
-u|_{\partial \Omega} =0, \;\; \partial \Omega=\{(x,y)| \sqrt{x^2+y^2} = 
+u|_{\partial \Omega} =0, \;\; \partial \Omega=\{(x,y)\;|\; \sqrt{x^2+y^2} = 
 \mbox{radio del tambor}\}.
 \label{ec3*}
 \eeq
@@ -72,7 +72,7 @@ Por nuestra experiencia física sabemos que este problema se debe
 poder resolver! Más aún, se debe poder resolver el problema donde el
 tambor no es circular pero tiene forma arbitraria, permitiendo que
 $\partial \Omega$ sea un borde arbitrario pero suave y también que
-$\partial \Omega$ no esté en el plano $x=0$ o equivalentemente  que esté
+$\partial \Omega$ no esté en el plano $z=0$, o -equivalentemente-  que esté
 en tal plano pero que $u$ pueda tomar un valor cualquiera --pero suave--
 $\phi$ en $\partial \Omega$. 
  
@@ -120,10 +120,10 @@ una membrana acelerándose--. En tal caso tenemos el {\bf Problema de
 Neumann:}
 \beqarr 
 \Delta u &=& f \;\;\;\;\mbox{en}\;\;\Omega \\
-n^a\nabla u|_{\partial \Omega} &=& \phi_1,\mbox{ en el borde},\\
+n^a\nabla u|_{\partial \Omega} &=& \phi_1,\mbox{ en el borde} \;\; \partial \Omega,\\
 \mbox{con} \dip\int_{\partial \Omega} \phi_1 \;dS 
 &=& \dip\int_{\partial \Omega} n^a\nabla_a u \;dS
-=\dip\int_{\Omega} f \;dV = \dip\int_{\Omega} \Delta u \;dV.
+= \dip\int_{\Omega} \Delta u \;dV = \dip\int_{\Omega} f \;dV .
 \eeqarr
 
 \subsection{Existencia}
@@ -138,16 +138,16 @@ $\Delta u = f $ en $\Omega$ y $u|_{\partial \Omega} = 0$ --lo que implica
 $u \in H^1_0(\Omega)$--. Luego usando el teorema de la divergencia
 obtenemos la {\bf primera identidad de Green}, $\forall v \in C^{\infty}(\Omega). $
 
-\beq \int_{\Omega} v\bar f d^nx = \int_{\Omega} v\Delta \bar ud^nx =
-- \int_{\Omega} e^{ab} \nabla_a v \nabla_b \bar u d^nx +
-\int_{\partial \Omega} v(n^a\nabla_a \bar u) d^{n-1}x, 
+\beq \int_{\Omega} v\bar f \; d^nx = \int_{\Omega} v\Delta \bar{u} \;d^nx =
+- \int_{\Omega} e^{ab} \nabla_a v \nabla_b \bar u \; d^nx +
+\int_{\partial \Omega} v(n^a\nabla_a \bar u) \; d^{n-1}x, 
 \eeq
 %
 Si suponemos que $v \in H^1_0(\Omega)$ la identidad todav\'\i{}a es válida y
 en este caso se reduce a,
 \beq
-\int_{\Omega} e^{ab} \nabla_a v \nabla_b \bar u d^nx =
-- \int_{\Omega} v \bar f d^nx , \;\;\;\;\;\forall \;\;v \in H^1_0(\Omega).
+\int_{\Omega} e^{ab} \nabla_a v \nabla_b \bar u \; d^nx =
+- \int_{\Omega} v \bar f \; d^nx , \;\;\;\;\;\forall \;\;v \in H^1_0(\Omega).
 \label{ec4*}
 \eeq
 Pero note que esta identidad todavía es válida si suponemos simplemente
@@ -162,7 +162,8 @@ satisfaga \ron{ec4*}.
 Si el lado derecho \ron{ec4*} fuese un producto escalar este daría origen
 (por completamiento) a un espacio de Hilbert $H$ y entonces 
  \ron{ec4*} tendría la forma 
-\beq (u,v)_H = \Phi_f(v) \equiv -\int_{\Omega} \bar f v d^nx, \forall v
+\beq
+ \langle u,v \rangle_H = \Phi_f(v) := -\int_{\Omega} \bar f v \; d^nx, \forall v
 \in H^1_0(\Omega).
 \label{ec5*}
 \eeq
@@ -221,8 +222,8 @@ Existe $C>0$ tal que para todo
 $u \in H^1_0(\Omega)$,
 se cumple,
 \beq
-\int_{\Omega} |u|^2 d^nx \leq C \int_{\Omega} e^{ab} \nabla_a \bar u
-\nabla_b u d^nx.
+\int_{\Omega} |u|^2 \; d^nx \leq C \int_{\Omega} e^{ab} \nabla_a \bar u
+\nabla_b u \; d^nx.
 \eeq
 \elem
 
@@ -236,21 +237,21 @@ probar la desigualdad para estas funciones. Sea $\Gamma_d$
 un n-cubo de lado $d$ conteniendo a $\Omega$. Extendiendo las funciones
 en $C^{\infty}_0(\Omega) $ como cero en $\Gamma_d - \Omega$ obtenemos,
 \beq\barr{rcl}
-|u|^2(x) &=& |\int^{x^1}_{-d/2} \partial_1 u(\xi^1,x^2,...,x^n)d\xi^1|^2\\
-         &\leq& (x^1+\frac d2)\int^{x^1}_{-d/2} |\partial_1u|^2 d\xi^1\\
-         &\leq& d\int^{d/2}_{-d/2} |\partial_1 u|^2 d\xi^1.
+|u|^2(x) &=& |\int^{x^1}_{-d/2} \partial_1 u(\xi^1,x^2,...,x^n) \; d\xi^1|^2\\
+         &\leq& (x^1+\frac d2)\int^{x^1}_{-d/2} |\partial_1u|^2 \; d\xi^1\\
+         &\leq& d\int^{d/2}_{-d/2} |\partial_1 u|^2 \; d\xi^1.
 \earr
 \eeq
 Por lo tanto,
 \beq 
 \int^{d/2}_{-d/2}|u(x)|^2 dx^1 
-\leq d^2 \int^{d/2}_{-d/2} |\partial_1 u|^2 d\xi^1,
+\leq d^2 \int^{d/2}_{-d/2} |\partial_1 u|^2 \; d\xi^1,
 \eeq
 y
 \beq
-\int_{\Gamma_d} |u|^2(x) d^nx 
-\leq d^2 \int_{\Gamma_d} |\partial_1 u|^2 d^nx 
-\leq C \int_{\Gamma_d} \nabla_a \bar u \nabla^a u d^nx,
+\int_{\Gamma_d} |u|^2(x) \; d^nx 
+\leq d^2 \int_{\Gamma_d} |\partial_1 u|^2 \; d^nx 
+\leq C \int_{\Gamma_d} \nabla_a \bar u \nabla^a u \; d^nx,
 \eeq
 con $C = d^2$. Esto prueba el lema y concluye la prueba de existencia
 y unicidad $\spadesuit\spadesuit$
@@ -303,7 +304,7 @@ en un abierto de $\Omega$.
 \espa
 \defi: 
 \[
-\Delta^h_i u(x^1,...,x^i,...,x^n) \equiv \dip\frac{u(x^1,...,x^i+h,...x^n) - u(x^1,...,x^i,...,x^n)}{h}.
+\Delta^h_i u(x^1,...,x^i,...,x^n) := \dip\frac{u(x^1,...,x^i+h,...x^n) - u(x^1,...,x^i,...,x^n)}{h}.
 \]
 
 \blem
@@ -325,13 +326,13 @@ Si $h<dist(\partial\Omega,\Omega')$, luego
 por lo tanto, usando la desigualdad de Schwarzt vemos que,
 \beq 
 |\Delta^h_iu(x)|^2
-\leq \frac1h \int_0^h |\partial_i u(x^1,...,x^i+\xi,...,x^n)|^2 d\xi.
+\leq \frac1h \int_0^h |\partial_i u(x^1,...,x^i+\xi,...,x^n)|^2 \; d\xi.
 \eeq
 Integrando sobre $\Omega'$ obtenemos,
 \beq
 \int_{\Omega'} |\Delta^h_i u(x)|^2 d^nx \leq
-\frac1h \int^h_0 \int_{\Omega'} |\partial_i u|^2 d^nx d\xi \leq
-\int_{\Omega} |\partial_i u |^2 d^nx.
+\frac1h \int^h_0 \int_{\Omega'} |\partial_i u|^2 d^nx \; d\xi \leq
+\int_{\Omega} |\partial_i u |^2 \; d^nx.
 \eeq
 $\spadesuit$
 
@@ -358,13 +359,13 @@ $\Delta^{h_m}_i u \sr{d}{\rightarrow} v_i$, es decir
 \eeq
 Por otro lado, si $h_m <dist(sop.\phi ,\partial\Omega)$, luego
 \beq
-\int_{\Omega} \phi \Delta^{h_m}_i u d^nx =
-- \int_{\Omega} u (\Delta^{-h_m}_i \phi ) d^nx \rightarrow
-- \int_{\Omega} u \partial_i \phi d^nx.
+\int_{\Omega} \phi \Delta^{h_m}_i u \; d^nx =
+- \int_{\Omega} u (\Delta^{-h_m}_i \phi ) \; d^nx \rightarrow
+- \int_{\Omega} u \partial_i \phi \; d^nx.
 \eeq
 Concluimos así que, 
 \beq
-\int_{\Omega} \phi v_i d^nx = - \int_{\Omega} u \partial_i \phi d^nx,
+\int_{\Omega} \phi v_i \; d^nx = - \int_{\Omega} u \partial_i \phi \; d^nx,
 \eeq
 o sea que $v_i$ es la derivada débil (distribucional) de $u$ en la dirección
 $x^i$ $\spadesuit$
@@ -378,24 +379,24 @@ todo  $\Omega$ no agrega ningún concepto nuevo.
 Probaremos el enunciado para $k=0$, el resto sigue por inducción en $k$.
 Como $u$ es una solución débil tenemos que 
 \beq 
-\int_{\Omega} \nabla^a \bar u \nabla_a v d^nx = 
-\int_{\Omega} \bar f v d^nx, \forall v \in C^1_0(\Omega).
+\int_{\Omega} \nabla^a \bar u \nabla_a v \; d^nx = 
+\int_{\Omega} \bar f v \; d^nx, \forall v \in C^1_0(\Omega).
 \label{ec6*}
 \eeq 
 Reemplazando $v$ por $-\Delta^{-h}_i v$ con $|2\,h|<dist(sop.v ,\partial\Omega)$,
 tenemos,
 \beq 
-\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \nabla_a v d^nx = 
-- \int_{\Omega} \bar f \Delta^h_i v d^nx, \forall v \in C^1_0(\Omega)
+\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \nabla_a v \; d^nx = 
+- \int_{\Omega} \bar f \Delta^h_i v \; d^nx, \forall v \in C^1_0(\Omega)
 \eeq
 y por lo tanto (Usando el lema~\ron{lem12.2}),
 \beq 
-\|\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \nabla_a v d^nx\| \leq 
+\|\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \nabla_a v \; d^nx\| \leq 
 \|f\|_{H_0} \|\partial_i v\|_{H_0}.
 \eeq
 Tomando ahora $v = \Delta^h_i u $ obtenemos,
 \beq 
-\|\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \Delta^h_i \nabla_a u d^nx\| \leq 
+\|\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \Delta^h_i \nabla_a u \; d^nx\| \leq 
 \|f\|_{H_0} \|\partial_i \Delta^h_i u\|_{H_0},
 \eeq
 o sea,
@@ -553,7 +554,7 @@ Pero tal sucesión es acotada en $H^1_0(\Omega)$ y por lo tanto por el
 lema~\ron{lem10.10} existe una subsucesión $\{\ti u_p\}$ que converge 
 fuertemente en $H^0(\Omega)$
 a una función $u_0$ con $\|u_0\|_{H^0(\Omega)} = 1$. 
-Como $\mbox{\cal Q}(u) \equiv \int_{\Omega} \na^a \bar u \na_a u d^nx$ es una norma 
+Como $\mbox{\cal Q}(u) := \int_{\Omega} \na^a \bar u \na_a u \; d^nx$ es una norma 
 proveniente de un producto
 escalar se cumple la regla del paralelogramo,
 \beq
@@ -581,38 +582,52 @@ H^1_0(\Omega)$ y por lo tanto que $u_0$ es un  autovalor
 en el sentido clásico $(\Delta u_0 + \lam_0 u_0 = 0)$. 
 Probemos ahora la existencia de los otros
 autovalores-autovectores.
-Sea $H(1) = \{ u \in H^1_0(\Omega) | (u,u_0)_{H^0(\Omega)} = 0\}$.
+Sea $H(1) = \{ u \in H^1_0(\Omega) | \langle u , u_0 \rangle_{H^0(\Omega)} = 0\}$.
 Este es un subespacio vectorial y es cerrado, por lo tanto es un
 espacio de Hilbert~\footnote {Note que $H(1) \neq $ espacio perpendicular a 
-$u_0$ en la norma $H^1_0(\Omega)$.}, 
+$u_0$ en la norma $H^1_0(\Omega)$.}.
+Este espacio es invariante con respecto a la acción del Laplaciano. 
+En efecto, si $v \in H(1)$, luego,
+
+\begin{eqnarray*}
+\langle u_0 , \Delta v \rangle &=& \int_{\Omega} \bar{u}_0 \Delta v \;d^n x \\
+                &=& \int_{\Omega} \Delta \bar{u}_0 v \;d^n x + \int_{\partial \Omega} [\bar{u}_0 n^a \nabla_a v + v n^a \nabla_a \bar{u}_0] \; d^{n-1} x \\
+                &=&  \int_{\Omega} \Delta \bar{u}_0 v \;d^n x \\
+                &=& \lambda_0 \int_{\Omega} \bar{u}_0 v \;d^n x \\
+                &=& \lambda_0 \langle u_0, v \rangle, \\
+                &=& 0
+\end{eqnarray*}
+%
+lo que nos dice que $\Delta v \in H(1)$.                
+Repitiendo la demostración anterior concluimos que 
 por lo tanto existirá $\lam_1$, tal que
 \beq 
 \lam_1 = \barr{c} \\ inf \\^{u \in H(1)} \earr
               \cJ (u).       
 \eeq
-
-Repitiendo el argumento anterior vemos que $\lam_1$, será un autovalor, es
+%
+y que $\lam_1$, será un autovalor, es
 decir que existirá una autofunción $u_1$, con autovalor $\lam_1$. 
 
-Definiendo $H(2) = \{u \in H^1_0(\Omega) | (u,u_0)_{H^0(\Omega)}=(u,u_1)_{H^0(\Omega)}=0
+Definiendo $H(2) = \{u \in H^1_0(\Omega) | \langle u , u_0 \rangle_{H^0(\Omega)}= \langle u , u_1 \rangle_{H^0(\Omega)}=0
 \}$, etc. 
-podemos continuar indefinidamente y obtener $\Sigma$ y un conjunto
+podemos continuar indefinidamente y obtener $\Sigma$ y, correspondientemente, un conjunto
 ortonormal \footnote {Luego de normalizarlos convenientemente.}, en
 $H^0(\Omega)$, de autovectores.
 Para completar la prueba veamos que este conjunto expande $H^1_0(\Omega)$.
 Como $u_i$ satisface 
-$\Delta u_i +\lam_i u_i =0 $ y $(u_i,u_j)_{H^0(\Omega)} = 0 $ si $i \neq j$ 
+$\Delta u_i +\lam_i u_i =0 $ y $\langle u_i , u_j \rangle_{H^0(\Omega)} = 0 $ si $i \neq j$ 
 tenemos que
 \beq
-0=(u_j,\Delta u_i + \lam_i u_i)_{H^0(\Omega)} = 
+0= \langle u_j , \Delta u_i + \lam_i u_i \rangle_{H^0(\Omega)} = 
 - \int_{\Omega} \na^a \bar u_j \na_a u_i d^nx
 \eeq
 y por lo tanto también que
 \beq
-(u_j,u_i)_{H^1_0(\Omega)} = 0.
+\langle u_j , u_i \rangle_{H^1_0(\Omega)} = 0.
 \eeq
 Vemos entonces que este conjunto es ortogonal en $H^1_0(\Omega)$ y que por
-construcción su sub\-es\-pa\-cio perpendicular es { 0 } lo que implica que
+construcción su sub\-es\-pa\-cio perpendicular es $\{ 0 \}$ lo que implica que
 este conjunto es una base de $H^1_0(\Omega)$ $\spadesuit$
 
 
@@ -634,13 +649,14 @@ Si
 \beq
 L(u)= a^{ab} \na_a \na_b u + b^a \na_b u + cu,                 \label{ec*}
 \eeq 
-con 
-$a^{ab} l_al_b \geq k g^{ab} l_al_b$, $k>0$, para todo campo vectorial 
-$l_a$ en $\Omega$ (elipticidad) y con $a^{ab}$, $b^a$ y $c$
-campos suaves en $\Omega$, 
+%
+con $a^{ab}$, $b^a$ y $c$ campos suaves (reales) en $\Omega$, y tal que exista $k>0$ tal 
+que
+$a^{ab} l_al_b \geq \;k\; g^{ab} l_al_b$, para todo campo vectorial 
+$l_a$ en $\Omega$ (elipticidad)
 luego existen constantes positivas $c_1$ y $c_2$ tales que 
 \beq
-(u,-L(u))_{H^0(\Omega)} = -\int_{\Omega} \bar u L(u) d^nx 
+\langle u , -L(u) \rangle_{H^0(\Omega)} = -\int_{\Omega} \bar u L(u) d^nx 
                      \leq c_1 \int_{\Omega} g^{ab}\na_a\bar u \na_b u d^nx
                      -c_2 \int_{\Omega} |u|^2 d^nx.
 \eeq                 
@@ -650,18 +666,20 @@ luego existen constantes positivas $c_1$ y $c_2$ tales que
 \noi
 Por lo tanto en este caso también tenemos que 
 \beq
-\cJ (u) \equiv \frac{(u,-L(u))_{H^0(\Omega)}}{(u,u)_{H^0(\Omega)}},
+\cJ (u) := \frac{\langle u , -L(u) \rangle_{H^0(\Omega)}}{\langle u , u \rangle_{H^0(\Omega)}},
 \eeq
 es acotada por debajo.
-La condición de que $\mbox{\cal Q}(u)\equiv (u,-L(u))_{H^0(\Omega)}$ 
-satisfaga la \textsl{regla del paralelogramo}. Aunque
-no sea positiva definida es mucho más restrictiva, y es equivalente a
+La condición de que $\mbox{\cal Q}(u) := \langle u , -L(u) \rangle_{H^0(\Omega)}$ 
+satisfaga la \textsl{regla del paralelogramo}, aunque
+no sea positiva definida, es mucho más restrictiva, y es equivalente a
 pedir que $L$ satisfaga
 \beq
-(v,L(u))_{H^0(\Omega)} = (L(v),u)_{H^0(\Omega)}\;\;\;\forall\;u,v \in H^1_0(\Omega).
+\langle v , L(u) \rangle_{H^0(\Omega)} = \langle L(v) , u \rangle_{H^0(\Omega)}\;\;\;\forall\;u,v \in H^1_0(\Omega).
 \eeq
 Los operadores que satisfacen esta relación se denominan {\bf
 auto-adjuntos} o {\bf hermitianos}.
+Note que dicha condición también nos asegura que el operador $L$ deja invariante los respectivos subespacios $H(i)$ que es necesario 
+considerar en la demostración anterior.
 
 \ejer: 
 Muestre que
@@ -671,7 +689,7 @@ L(u)= \na_a(a^{ab} \na_b u + b^a  u) - b^a \na_a u + cu,
 con $a^{ab}$, $b^a$ y $c$ campos tensoriales reales es auto-adjunto.
 
 \ejer:
-Muestre que si $L$ es autoadjunto luego los autovectores
+Muestre que si $L$ es auto-adjunto luego los autovectores
 son reales.
 
 \ejer: 
@@ -709,7 +727,7 @@ tiene una única solución.
 
 \noi 
 b) Si algún $\lam_i = 0$ entonces el problema anterior tiene solución 
-sii $(u_i,f)_{H^0(\Omega)} = 0$ 
+sii $\langle u_i , f \rangle_{H^0(\Omega)} = 0$ 
 para toda autofunción con autovalor cero.
 
 

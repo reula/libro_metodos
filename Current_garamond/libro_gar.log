@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013.11.15)  19 MAY 2014 19:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013.11.15)  10 JUN 2014 12:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -680,8 +680,13 @@ File: Figure/m8_5.pstex Graphic file (type eps)
 
 ]
 \hfil Cap\'{\i }tulo 10.
-[175] [176] [177] [178] [179] [180]
-Overfull \hbox (4.9774pt too wide) in paragraph at lines 443--448
+[175]
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
+
+ []
+
+[176] [177] [178] [179] [180]
+Overfull \hbox (4.9774pt too wide) in paragraph at lines 453--458
 []\T1/mdugm/m/n/10 Otra pro-pie-dad in-tere-san-te de la con-vo-lu-ción se ob-t
 ie-ne al no-tar que co-mo $[]\OT1/mdugm/m/n/10 ([][])$
  []
@@ -706,11 +711,7 @@ File: Figure/m11_3.pstex Graphic file (type eps)
 <Figure/m11_3.pstex>) [194] [195] [196] (./Figure/m11_4.pstex_t
 File: Figure/m11_4.pstex Graphic file (type eps)
 
-<Figure/m11_4.pstex>) [197] [198]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [199])
-[200]
+<Figure/m11_4.pstex>) [197] [198] [199]) [200]
 \openout2 = `Chapters/chap12.aux'.
 
  (./Chapters/chap12.tex
@@ -846,11 +847,7 @@ LaTeX Info: Redefining \% on input line 8.
 (./Chapters/chap6.aux) (./Chapters/chap7.aux) (./Chapters/chap8.aux)
 (./Chapters/chap9.aux) (./Chapters/chap10.aux) (./Chapters/chap11.aux)
 (./Chapters/chap12.aux) (./Chapters/chap13.aux) (./Chapters/chap14.aux)
-(./Chapters/chap15.aux) (./Chapters/preguntas.aux) (./Chapters/bib.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- )
+(./Chapters/chap15.aux) (./Chapters/preguntas.aux) (./Chapters/bib.aux)) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1687 ({)
@@ -864,4 +861,4 @@ Here is how much of TeX's memory you used:
  957 hyphenation exceptions out of 8191
  31i,15n,31p,860b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on libro_gar.dvi (253 pages, 1075364 bytes).
+Output written on libro_gar.dvi (253 pages, 1078136 bytes).

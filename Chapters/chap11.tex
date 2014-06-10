@@ -473,7 +473,8 @@ generalidad desde el punto de vista de la física:
 Históricamente la clasificación que daremos a continuación nace
 del intento de encuadrar todas las ecuaciones en el Problema de
 Cauchy, es decir, tomar una hiper-superficie $\Sigma$ de $M$, dar
-allí como dato $u$ y su derivada en la dirección normal y
+allí como dato $u$ y obtener por medio de las ecuaciones su derivada 
+en la dirección transversal y a partir de estos datos 
 tratar de construir soluciones en un entorno de $\Sigma $ en $M$
 (soluciones locales).  Este intento no fue en general exitoso, ya
 que en general esta no es la manera correcta de dar datos, pero
@@ -537,12 +538,13 @@ Estamos pidiendo la posibilidad mínima de tener soluciones únicas, en efecto,
 la maximalidad del rango de $M(\Phi^C,q)^n_{A'B}$ es equivalente a que su núcleo
 es de dimensión nula y por ende, si una solución existe ésta será única.
 
-Si esto no sucede, es decir si el núcleo no se anula, no podremos despejar 
+Si esto no sucede, es decir si el núcleo no es trivial, no podremos despejar 
 las derivadas normales de la solución en término de los datos iniciales y por 
-ende o habrá solución única. Note que todavía puede suceder que al tener que 
+ende no habrá una solución única. Note que todavía puede suceder que al tener que 
 satisfacer más ecuaciones que las incógnitas presentes puede que las ecuaciones 
-sean inconsistentes y no haya ninguna solución. En algunos casos los datos a dar
-libremente serán un número menor al de la dimensión del
+sean inconsistentes y no haya ninguna solución. 
+En algunos casos en que esto sucede la resolución de este problema consiste en darse 
+cuenta que los datos a dar libremente serán un número menor al de la dimensión del
 espacio de partida, solo se podrán dar algunas componentes de $u^A$ como dato inicial.
 
 ¿Qué es geométricamente la condición de maximalidad del rango de
@@ -550,24 +552,30 @@ $M^a_{A'B}$ en lo que hace a las coordenadas elegidas?
 
 Si la superficie $x^n = 0$ es una superficie suave entonces podemos
 suponer que $\nabla_a x^n$ existe y es distinta de cero, en este caso
-la condición anterior es simplemente la condición que 
+la condición anterior es simplemente la condición de que la matriz
 $ M^a_{A'B}\nabla_ax^n$ tiene rango máximo,
-pero esta es independiente del sistema coordenado y solo depende de $\Sigma$,
+pero esta condición es independiente del sistema coordenado y solo depende de $\Sigma$,
 ya que aquí $x^n$ es simplemente una función en $M$ que es
-constante en $\Sigma$ y cuyo gradiente no se anula. Las superficies
-en donde la condición anterior se viola en todos sus puntos se llaman
+constante en $\Sigma$ y cuyo gradiente no se anula. 
+Si tomamos otra función con las mismas características, digamos $\tilde{x}^n$, luego tendremos que 
+sus gradientes son proporcionales, es decir que existirá $\alpha$ tal que $\nabla_a \tilde{x}^n = \alpha \nabla_a x^n$.
+Las matrices serán entonces proporcionales y las condiciones sobre los núcleos idénticas. 
+
+Las superficies en donde la condición anterior se viola en todos sus puntos se llaman
 {\bf superficies características}.
 Clasificaremos a las ecuaciones de acuerdo al número de superficies 
-características que se intersecten en un dado punto.  Note que
-la clasificación solo depende del tensor $M^a_{A'B}$ y no de los términos
-de menor orden. $M^a_{A'B}\nabla_a u^B$ es llamada la 
-{\bf parte principal} de la ecuación. Note también que como $M^a_{A'B}$
+características que se intersecten en un dado punto.  
+Note que la clasificación solo depende del tensor $M^a_{A'B}$ y no de los términos
+de menor orden. 
+$M^a_{A'B}\nabla_a u^B$ es llamada la  {\bf parte principal} de la ecuación. 
+Note también que como $M^a_{A'B}$
 es un campo tensorial no necesariamente constante, la condición
 definiendo las superficies características  puede ser muy distinta
 de punto a punto, por lo tanto la clasificación que introduciremos
 vale en general solo para el punto en cuestión. Por fortuna en las 
 aplicaciones muy pocas veces aparecen ecuaciones donde su tipo cambia
-de región en región. Note también que para sistemas no--lineales
+de región en región. 
+Note también que para sistemas no--lineales
 la condición depende también de la solución que uno esté considerando!
 Como nuestra clasificación solo se basa en la parte principal de la
 ecuación ésta debe tener toda la información sobre la ecuación,
@@ -580,7 +588,7 @@ Diremos que una ecuación es {\bf elíptica en $p \in M$} si $p$ no es
 intersectado por ninguna superficie característica. Es decir si
 Rango $M^a_{A'B}k_a$ no es maximal entonces $k_a = 0$ 
 [como estamos en un punto la condición de que $k_a $ sea un gradiente es 
-vacía].
+irrelevante].
 \espa
 
 \ejer: El ejemplo canónico de ecuación elíptica es el Laplaciano 
@@ -630,7 +638,7 @@ b) Encuentre las características de la ecuación.
 
 \noi
 c) Haga lo mismo en $\re \times S^1$ 
-(un cilindro espacio temporal) con $ds^2 = -(dt)^2 +(d\theta)^2$ y con
+(un cilindro espacio temporal) con las siguientes dos métricas, $ds^2 = -(dt)^2 +(d\theta)^2$ y 
 $ds^2 = -(dt)^2 + t^2(d \theta)^2$.
 
 \recubib{Lectura recomendada para éste y los capítulos que siguen: \cite{Treves}, \cite{John},
