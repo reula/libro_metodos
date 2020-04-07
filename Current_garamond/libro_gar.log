@@ -1,85 +1,90 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=latex 2013.11.15)  19 JUN 2014 12:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=latex 2018.6.7)  7 APR 2020 11:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **libro_gar.tex
 (./libro_gar.tex
-LaTeX2e <2011/06/27>
-Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (./book.cls
 Document Class: book 2005/09/16 v1.4f Standard LaTeX document class
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/bk10.clo
-File: bk10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: dvips.def on input line 130.
+Package color Info: Driver file: dvips.def on input line 147.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/dvips.def
+File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2013/05/16 v3.9f The Babel package
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2018/02/14 3.18 The Babel package
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel-spanish/spanish.ldf
-Language: spanish.ldf 2010/05/23 v5.0j Spanish support from the babel system
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2018/02/14 3.18 Babel switching mechanism
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2013/05/16 v3.9f Babel common definitions
-\babel@savecnt=\count88
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2018/02/14 3.18 Babel common definitions
+\babel@savecnt=\count89
 \U@D=\dimen103
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count90
 )
-\es@datefmt=\count89
 \es@quottoks=\toks14
-\es@quotdepth=\count90
-Package babel Info: Making " an active character on input line 495.
-Package babel Info: Making . an active character on input line 588.
-Package babel Info: Making < an active character on input line 633.
-Package babel Info: Making > an active character on input line 633.
+\es@quotdepth=\count91
+Package babel Info: Making " an active character on input line 561.
+Package babel Info: Making . an active character on input line 662.
+Package babel Info: Making < an active character on input line 707.
+Package babel Info: Making > an active character on input line 707.
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/latexsym.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
-(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2008/03/30 v1.1d Input encoding file
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2018/04/06 v1.3b Input encoding file
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/lmodern.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -114,88 +119,80 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 91.
+Package graphics Info: Driver file: dvips.def on input line 99.
 )
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mathdesign.sty
-Package: mathdesign 2006/01/29 v1.55 Math Design Project
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mathdesign.sty
+Package: mathdesign 2013/08/29 v2.31 Math Design Project
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdugm/mdugm.cfg)
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdugm/mdugm.sty
-Package: mdugm 2006/01/29 v1.55 urw garamond + mdugm (Math Design Project)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdugm/mdugm.cfg)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdugm/mdugm.sty
+Package: mdugm 2013/08/29 v2.31 urw garamondno8 + mdugm (Math Design Project)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdfont.def
-File: mdfont.def 2006/01/29 v1.55 (Math Design Project)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdfont.def
+File: mdfont.def 2013/08/29 v2.31 (Math Design Project)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdsffont.def
-File: mdsffont.def 2006/01/29 v1.55 (Math Design Project)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdsffont.def
+File: mdsffont.def 2013/08/29 v2.31 (Math Design Project)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdttfont.def
-File: mdttfont.def 2006/01/29 v1.55 (Math Design Project)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdttfont.def
+File: mdttfont.def 2013/08/29 v2.31 (Math Design Project)
 )
 \symmdcal=\mathgroup5
 LaTeX Font Info:    Overwriting symbol font `mdcal' in version `bold'
-(Font)                  OMS/mdugm/m/n --> OMS/mdugm/b/n on input line 89.
+(Font)                  OMS/mdugm/m/n --> OMS/mdugm/b/n on input line 97.
 \symmdscr=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `mdscr' in version `bold'
-(Font)                  OMS/mdugm/m/n --> OMS/mdugm/b/n on input line 95.
+(Font)                  OMS/mdugm/m/n --> OMS/mdugm/b/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/xmdeuf/m/n --> U/xmdeuf/b/n on input line 102.
-LaTeX Font Info:    Try loading font information for T1+mdugm on input line 111
-.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdugm/t1mdugm.fd
-File: t1mdugm.fd 2006/01/29 Fontinst v1.928 font definitions for T1/mdugm.
-)
+(Font)                  U/xmdeuf/m/n --> U/xmdeuf/b/n on input line 110.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/mdugm/m/n on input line 114.
+(Font)                  OT1/lmr/m/n --> OT1/mdugm/m/n on input line 121.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/lmm/m/it --> OML/mdugm/m/it on input line 115.
+(Font)                  OML/lmm/m/it --> OML/mdugm/m/it on input line 122.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> OMS/mdugm/m/n on input line 116.
+(Font)                  OMS/lmsy/m/n --> OMS/mdugm/m/n on input line 123.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> OMX/mdugm/m/n on input line 117.
+(Font)                  OMX/lmex/m/n --> OMX/mdugm/m/n on input line 124.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/mdugm/b/n on input line 119.
+(Font)                  OT1/lmr/bx/n --> OT1/mdugm/b/n on input line 126.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/lmm/b/it --> OML/mdugm/b/it on input line 120.
+(Font)                  OML/lmm/b/it --> OML/mdugm/b/it on input line 127.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> OMS/mdugm/b/n on input line 121.
+(Font)                  OMS/lmsy/b/n --> OMS/mdugm/b/n on input line 128.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> OMX/mdugm/b/n on input line 122.
+(Font)                  OMX/lmex/m/n --> OMX/mdugm/b/n on input line 129.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/mdugm/m/n --> T1/mdugm/m/n on input line 124.
+(Font)                  OT1/mdugm/m/n --> T1/mdugm/m/n on input line 131.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/mdugm/b/n on input line 125.
+(Font)                  OT1/lmr/bx/n --> T1/mdugm/b/n on input line 132.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/mdugm/m/it on input line 126.
+(Font)                  OT1/lmr/m/it --> T1/mdugm/m/it on input line 133.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 127.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 134.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 128.
-LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
-(Font)                  OMS/mdugm/m/n --> OMS/mdugm/m/n on input line 132.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 135.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
 (Font)                  OT1/mdugm/b/n --> T1/mdugm/b/n on input line 137.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
@@ -206,47 +203,71 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/lmss/bx/n --> T1/lmss/b/n on input line 140.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/lmtt/m/n --> T1/lmtt/b/n on input line 141.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 153.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 154.
 \symlettersupright=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `lettersupright' in version `bold'
-(Font)                  OML/mdugm/m/n --> OML/mdugm/b/n on input line 190.
-LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 193.
+(Font)                  OML/mdugm/m/n --> OML/mdugm/b/n on input line 144.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 145.
+LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
+(Font)                  OMS/mdugm/m/n --> OMS/mdugm/m/n on input line 167.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks18
+\XKV@tempa@toks=\toks19
+)
+\XKV@depth=\count92
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+LaTeX Font Info:    Try loading font information for T1+mdugm on input line 186
+.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdugm/t1mdugm.fd
+File: t1mdugm.fd 2013/08/29 Fontinst v1.933 font definitions for T1/mdugm.
+)
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 449.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 450.
+Now handling font encoding MDA ...
+... no UTF-8 mapping file for font encoding MDA
 \symmathdesignA=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `mathdesignA' in version `bold'
-(Font)                  MDA/mdugm/m/n --> MDA/mdugm/b/n on input line 382.
-\@emptytoks=\toks18
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 421.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 422.
+(Font)                  MDA/mdugm/m/n --> MDA/mdugm/b/n on input line 491.
+Now handling font encoding MDB ...
+... no UTF-8 mapping file for font encoding MDB
 \symmathdesignB=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `mathdesignB' in version `bold'
-(Font)                  MDB/mdugm/m/n --> MDB/mdugm/b/n on input line 685.
+(Font)                  MDB/mdugm/m/n --> MDB/mdugm/b/n on input line 498.
+\@emptytoks=\toks20
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 532.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 533.
+\rulethickness=\skip43
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 )))
 (./format_libro.tex
-(/usr/local/texlive/2013/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2010/09/12 v5.6 Page Geometry
+(/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/03/24 v5.7 Page Geometry
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is not detected.
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count91
-\Gm@cntv=\count92
-\c@Gm@tempcnt=\count93
+\Gm@cnth=\count93
+\Gm@cntv=\count94
+\c@Gm@tempcnt=\count95
 \Gm@bindingoffset=\dimen106
 \Gm@wd@mp=\dimen107
 \Gm@odd@mp=\dimen108
@@ -255,19 +276,9 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutheight=\dimen111
 \Gm@layouthoffset=\dimen112
 \Gm@layoutvoffset=\dimen113
-\Gm@dimlist=\toks19
+\Gm@dimlist=\toks21
 ))
-(./libro_gar.aux (./extdef_libro.aux) (./Chapters/title_KINDLE.aux)
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
-
-(./Chapters/chap0.aux) (./Chapters/chap01.aux) (./Chapters/chap1.aux)
-(./Chapters/chap2.aux) (./Chapters/chap3.aux) (./Chapters/chap4.aux)
-(./Chapters/chap5.aux) (./Chapters/chap6.aux) (./Chapters/chap7.aux)
-(./Chapters/chap8.aux) (./Chapters/chap9.aux) (./Chapters/chap10.aux)
-(./Chapters/chap11.aux) (./Chapters/chap12.aux) (./Chapters/chap13.aux)
-(./Chapters/chap14.aux) (./Chapters/chap15.aux) (./Chapters/preguntas.aux)
-(./Chapters/bib.aux))
+(./libro_gar.aux)
 \openout1 = `libro_gar.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
@@ -285,14 +296,14 @@ LaTeX Font Info:    ... okay on input line 51.
 LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 51.
 LaTeX Font Info:    Try loading font information for MDA+cmr on input line 51.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdacmr.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdacmr.fd
 File: mdacmr.fd 
 )
 LaTeX Font Info:    ... okay on input line 51.
 LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 51.
 LaTeX Font Info:    Try loading font information for MDB+cmr on input line 51.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdbcmr.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdbcmr.fd
 File: mdbcmr.fd 
 )
 LaTeX Font Info:    ... okay on input line 51.
@@ -336,21 +347,14 @@ LaTeX Info: Redefining \% on input line 51.
 \openout2 = `extdef_libro.aux'.
 
 (./extdef_libro.tex
-\c@teo=\count94
-\c@cor=\count95
-\c@lem=\count96
-\c@pro=\count97
+\c@teo=\count96
+\c@cor=\count97
+\c@lem=\count98
+\c@pro=\count99
 )
 \openout2 = `Chapters/title_KINDLE.aux'.
 
- (./Chapters/title_KINDLE.tex
-LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <10> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 4.
-LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 4.
-LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 6.
-) [1
+ (./Chapters/title_KINDLE.tex) [1
 
 
 
@@ -364,415 +368,1452 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <14.4> not available
 
 
 ]
-LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <12> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 6.
-LaTeX Font Info:    Try loading font information for OT1+mdugm on input line 10
-.
- (/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdugm/ot1mdugm.fd
-File: ot1mdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OT1/mdugm.
-)
-LaTeX Font Info:    Try loading font information for OML+mdugm on input line 10
-.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdugm/omlmdugm.fd
-File: omlmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OML/mdugm.
-)
-LaTeX Font Info:    Try loading font information for OMS+mdugm on input line 10
-.
+LaTeX Font Info:    Try loading font information for OT1+mdugm on input line 9.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdugm/omsmdugm.fd
-File: omsmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OMS/mdugm.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdugm/ot1mdugm.fd
+File: ot1mdugm.fd 2013/08/29 Fontinst v1.933 font definitions for OT1/mdugm.
 )
-LaTeX Font Info:    Try loading font information for OMX+mdugm on input line 10
-.
+LaTeX Font Info:    Try loading font information for OML+mdugm on input line 9.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdugm/omxmdugm.fd
-File: omxmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OMX/mdugm.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdugm/omlmdugm.fd
+File: omlmdugm.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdugm.
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 10.
+LaTeX Font Info:    Try loading font information for OMS+mdugm on input line 9.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ulasy.fd
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdugm/omsmdugm.fd
+File: omsmdugm.fd 2013/08/29 Fontinst v1.933 font definitions for OMS/mdugm.
+)
+LaTeX Font Info:    Try loading font information for OMX+mdugm on input line 9.
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdugm/omxmdugm.fd
+File: omxmdugm.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdugm.
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 9.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for MDA+mdugm on input line 10
-.
+LaTeX Font Info:    Try loading font information for MDA+mdugm on input line 9.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdugm/mdamdugm.fd
-File: mdamdugm.fd 2006/01/29 Fontinst v1.928 font definitions for MDA/mdugm.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdugm/mdamdugm.fd
+File: mdamdugm.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdugm.
 )
-LaTeX Font Info:    Try loading font information for MDB+mdugm on input line 10
-.
+LaTeX Font Info:    Try loading font information for MDB+mdugm on input line 9.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/mathdesign/mdugm/mdbmdugm.fd
-File: mdbmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for MDB/mdugm.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathdesign/mdugm/mdbmdugm.fd
+File: mdbmdugm.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdugm.
 ))
 [3] [4
 
 
-] (./libro_gar.toc
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [5] [6])
+] (./libro_gar.toc)
 \tf@toc=\write3
 \openout3 = `libro_gar.toc'.
 
- [7] [8
+ [5] [6
 
-] (./libro_gar.lof
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [9])
+] (./libro_gar.lof)
 \tf@lof=\write4
 \openout4 = `libro_gar.lof'.
 
- [10]
+ [7]
 \openout2 = `Chapters/chap01.aux'.
 
+ (./Chapters/chap01.tex
+[8
 
-(./Chapters/chap01.tex [11
 
-
-]) [12]
+] [9]) [10]
 \openout2 = `Chapters/chap1.aux'.
 
  (./Chapters/chap1.tex
 \hfil Cap\'{\i }tulo 1.
-LaTeX Font Info:    Font shape `T1/mdugm/bx/fsc' in size <12> not available
-(Font)              Font shape `T1/mdugm/b/fsc' tried instead on input line 5.
-[13
+[11
 
 
 
-] [14] [15]
-LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 206.
- [16]
+] [12] [13] [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
-[18] [19] [20]
+ [15]
+[16] [17] [18]
+
+LaTeX Warning: Citation `Geroch' on page 19 undefined on input line 491.
+
+
+LaTeX Warning: Citation `Kelley' on page 19 undefined on input line 491.
+
+
+LaTeX Warning: Citation `Wald' on page 19 undefined on input line 491.
+
+
+LaTeX Warning: Citation `Isham' on page 19 undefined on input line 491.
+
+
+LaTeX Warning: Citation `Geroch' on page 19 undefined on input line 491.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21])
-[22]
+ [19])
+[20]
 \openout2 = `Chapters/chap2.aux'.
 
  (./Chapters/chap2.tex
 \hfil Cap\'{\i }tulo 2.
+LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <10> not available
+(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OT1/mdugm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <7> not available
+(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OT1/mdugm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <5> not available
+(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OT1/mdugm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OML/mdugm/b/it' in size <10> not available
+(Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 17
+.
+LaTeX Font Info:    Font shape `OML/mdugm/bx/it' in size <10> not available
+(Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 17
+.
+LaTeX Font Info:    Font shape `OML/mdugm/b/it' in size <7> not available
+(Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 17
+.
+LaTeX Font Info:    Font shape `OML/mdugm/bx/it' in size <7> not available
+(Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 17
+.
+LaTeX Font Info:    Font shape `OML/mdugm/b/it' in size <5> not available
+(Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 17
+.
+LaTeX Font Info:    Font shape `OML/mdugm/bx/it' in size <5> not available
+(Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 17
+.
+LaTeX Font Info:    Font shape `OMS/mdugm/b/n' in size <10> not available
+(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OMS/mdugm/bx/n' in size <10> not available
+(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OMS/mdugm/b/n' in size <7> not available
+(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OMS/mdugm/bx/n' in size <7> not available
+(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OMS/mdugm/b/n' in size <5> not available
+(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OMS/mdugm/bx/n' in size <5> not available
+(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OMX/mdugm/b/n' in size <10> not available
+(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OMX/mdugm/bx/n' in size <10> not available
+(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OMX/mdugm/b/n' in size <7> not available
+(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OMX/mdugm/bx/n' in size <7> not available
+(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OMX/mdugm/b/n' in size <5> not available
+(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OMX/mdugm/bx/n' in size <5> not available
+(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 17.
+
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 17.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 17.
-[23
+LaTeX Font Info:    Font shape `OML/mdugm/b/n' in size <10> not available
+(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OML/mdugm/bx/n' in size <10> not available
+(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OML/mdugm/b/n' in size <7> not available
+(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OML/mdugm/bx/n' in size <7> not available
+(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OML/mdugm/b/n' in size <5> not available
+(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `OML/mdugm/bx/n' in size <5> not available
+(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDA/mdugm/b/n' in size <10> not available
+(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDA/mdugm/bx/n' in size <10> not available
+(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDA/mdugm/b/n' in size <7> not available
+(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDA/mdugm/bx/n' in size <7> not available
+(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDA/mdugm/b/n' in size <5> not available
+(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDA/mdugm/bx/n' in size <5> not available
+(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <10> not available
+(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <10> not available
+(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <7> not available
+(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <7> not available
+(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <5> not available
+(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 17.
+
+LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <5> not available
+(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 17.
+
+[21
 
 
 
-] [24] [25]
+] [22] [23]
+LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <8> not available
+(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OT1/mdugm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <6> not available
+(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OT1/mdugm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OML/mdugm/b/it' in size <8> not available
+(Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 23
+4.
+LaTeX Font Info:    Font shape `OML/mdugm/bx/it' in size <8> not available
+(Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 23
+4.
+LaTeX Font Info:    Font shape `OML/mdugm/b/it' in size <6> not available
+(Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 23
+4.
+LaTeX Font Info:    Font shape `OML/mdugm/bx/it' in size <6> not available
+(Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 23
+4.
+LaTeX Font Info:    Font shape `OMS/mdugm/b/n' in size <8> not available
+(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OMS/mdugm/bx/n' in size <8> not available
+(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OMS/mdugm/b/n' in size <6> not available
+(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OMS/mdugm/bx/n' in size <6> not available
+(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OMX/mdugm/b/n' in size <8> not available
+(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OMX/mdugm/bx/n' in size <8> not available
+(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OMX/mdugm/b/n' in size <6> not available
+(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OMX/mdugm/bx/n' in size <6> not available
+(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 234
+.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 234.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 234.
- [26] [27] [28] [29] (./Figure/m2_1.pstex_t
+LaTeX Font Info:    Font shape `OML/mdugm/b/n' in size <8> not available
+(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OML/mdugm/bx/n' in size <8> not available
+(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OML/mdugm/b/n' in size <6> not available
+(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `OML/mdugm/bx/n' in size <6> not available
+(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `MDA/mdugm/b/n' in size <8> not available
+(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `MDA/mdugm/bx/n' in size <8> not available
+(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `MDA/mdugm/b/n' in size <6> not available
+(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `MDA/mdugm/bx/n' in size <6> not available
+(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <8> not available
+(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <8> not available
+(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <6> not available
+(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 234
+.
+LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <6> not available
+(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 234
+.
+
+Overfull \hbox (44.51915pt too wide) in paragraph at lines 253--258
+[]\T1/mdugm/m/n/10 Sin em-bar-go na-da nos im-pi-de con-si-de-rar tam-bién \T1/
+mdugm/mb/n/10 ma-pas mul-ti-li-nea-les [] \T1/mdugm/m/n/10 de $[]$
+ []
+
+[24] [25] [26] [27] (./Figure/m2_1.pstex_t
 File: Figure/m2_1.pstex Graphic file (type eps)
- <Figure/m2_1.pstex>)
-[30]
-Overfull \hbox (6.8691pt too wide) in paragraph at lines 541--546
+ <Figure/m2_1.pstex>
+LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <12> not available
+(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 14.
+
+LaTeX Font Info:    Font shape `OT1/mdugm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 14.
+
+LaTeX Font Info:    Font shape `OML/mdugm/b/it' in size <12> not available
+(Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 14
+.
+LaTeX Font Info:    Font shape `OML/mdugm/bx/it' in size <12> not available
+(Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 14
+.
+LaTeX Font Info:    Font shape `OMS/mdugm/b/n' in size <12> not available
+(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 14.
+
+LaTeX Font Info:    Font shape `OMS/mdugm/bx/n' in size <12> not available
+(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 14.
+
+LaTeX Font Info:    Font shape `OMX/mdugm/b/n' in size <12> not available
+(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 14.
+
+LaTeX Font Info:    Font shape `OMX/mdugm/bx/n' in size <12> not available
+(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 14.
+
+LaTeX Font Info:    Font shape `OML/mdugm/b/n' in size <12> not available
+(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 14.
+
+LaTeX Font Info:    Font shape `OML/mdugm/bx/n' in size <12> not available
+(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 14.
+
+LaTeX Font Info:    Font shape `MDA/mdugm/b/n' in size <12> not available
+(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 14.
+
+LaTeX Font Info:    Font shape `MDA/mdugm/bx/n' in size <12> not available
+(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 14.
+
+LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <12> not available
+(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 14.
+
+LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <12> not available
+(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 14.
+
+) [28]
+Overfull \hbox (5.18904pt too wide) in paragraph at lines 541--546
 $[]$\T1/mdugm/m/n/10 : Prue-be que $\OMS/mdugm/m/n/10 j[]\OT1/mdugm/m/n/10 ([]\
 OML/mdugm/m/it/10 ; []\OT1/mdugm/m/n/10 )\OMS/mdugm/m/n/10 j[] ^^T jj[]jj[]jj[]
 jj[]$\T1/mdugm/m/n/10 . Ayu-da: Con-si-de-re el po-li-no-mio: $\OML/mdugm/m/it/
 10 P\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 ^^U\OT1/mdugm/m/n/10 ) :=
  []
 
-[31]
-Overfull \hbox (0.62445pt too wide) in paragraph at lines 584--589
-$[]$\T1/mdugm/m/n/10 : Prue-be que es-ta es una nor-ma. Ayu-da, da-do dos vec-t
-o-res cual-quie-ra $[]\OML/mdugm/m/it/10 ;   []  \OMS/mdugm/m/n/10 2
- []
-
-[32] [33] [34]
+[29] [30] [31]
+LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <9> not available
+(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 826
+.
+LaTeX Font Info:    Font shape `OT1/mdugm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 826
+.
+LaTeX Font Info:    Font shape `OML/mdugm/b/it' in size <9> not available
+(Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 82
+6.
+LaTeX Font Info:    Font shape `OML/mdugm/bx/it' in size <9> not available
+(Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 82
+6.
+LaTeX Font Info:    Font shape `OMS/mdugm/b/n' in size <9> not available
+(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 826
+.
+LaTeX Font Info:    Font shape `OMS/mdugm/bx/n' in size <9> not available
+(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 826
+.
+LaTeX Font Info:    Font shape `OMX/mdugm/b/n' in size <9> not available
+(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 826
+.
+LaTeX Font Info:    Font shape `OMX/mdugm/bx/n' in size <9> not available
+(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 826
+.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 826.
- [35] [36] [37] [38] [39] [40] [41] [42] [43]
-Underfull \vbox (badness 1270) has occurred while \output is active []
+LaTeX Font Info:    Font shape `OML/mdugm/b/n' in size <9> not available
+(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 826
+.
+LaTeX Font Info:    Font shape `OML/mdugm/bx/n' in size <9> not available
+(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 826
+.
+LaTeX Font Info:    Font shape `MDA/mdugm/b/n' in size <9> not available
+(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 826
+.
+LaTeX Font Info:    Font shape `MDA/mdugm/bx/n' in size <9> not available
+(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 826
+.
+LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <9> not available
+(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 826
+.
+LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <9> not available
+(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 826
+.
+ [32] [33]
 
- [44]
-[45]
-Overfull \hbox (0.68692pt too wide) in paragraph at lines 1630--1641
-[]\T1/mdugm/m/n/10 Agregando en-ton-ces al con-jun-to an-te-rior un con-jun-to 
-$\OMS/mdugm/m/n/10 f[][]g$ \T1/mdugm/m/n/10 de $[]\OT1/mdugm/m/n/9 ([] [] \OMS/
-mdugm/m/n/9 \ \OML/mdugm/m/it/9 W[]\OT1/mdugm/m/n/9 ) \OMS/mdugm/m/n/9 ^^@
- []
+LaTeX Warning: Reference `eqn:2_traza' on page 34 undefined on input line 917.
 
-[46] [47] [48]
-Overfull \hbox (22.19641pt too wide) in paragraph at lines 1854--1858
+[34]
+
+LaTeX Warning: Reference `eqn:2_av_av' on page 35 undefined on input line 992.
+
+[35]
+
+LaTeX Warning: Reference `Sistemas_Lineales' on page 36 undefined on input line
+ 1021.
+
+[36] [37]
+
+LaTeX Warning: Reference `2_***' on page 38 undefined on input line 1157.
+
+[38] [39]
+
+LaTeX Warning: Reference `Sistemas_Lineales' on page 40 undefined on input line
+ 1285.
+
+
+LaTeX Warning: Reference `Sistemas_Lineales' on page 40 undefined on input line
+ 1303.
+
+
+LaTeX Warning: Reference `5_teo_2' on page 40 undefined on input line 1303.
+
+[40] [41] [42] [43] [44] [45]
+
+LaTeX Warning: Reference `2.J1' on page 46 undefined on input line 1759.
+
+[46]
+Overfull \hbox (19.88634pt too wide) in paragraph at lines 1854--1858
 \T1/mdugm/m/n/10 tie-nen un sig-ni-fi-ca-do fí-si-co cla-ro, son los lla-ma-dos
  mo-dos nor-ma-les --caso unidimensional--
  []
 
-[49] [50]
-Underfull \vbox (badness 1102) has occurred while \output is active []
+[47]
+Underfull \vbox (badness 5519) has occurred while \output is active []
 
- [51]
+ [48]
 (./Figure/m2_2.pstex_t
 File: Figure/m2_2.pstex Graphic file (type eps)
- <Figure/m2_2.pstex>) [52] [53] (./Figure/m2_3.pstex_t
+ <Figure/m2_2.pstex>) [49] [50] (./Figure/m2_3.pstex_t
 File: Figure/m2_3.pstex Graphic file (type eps)
 
 <Figure/m2_3.pstex>)
-Overfull \hbox (10.99156pt too wide) in paragraph at lines 2162--2167
+Overfull \hbox (8.05147pt too wide) in paragraph at lines 2162--2167
 \T1/mdugm/m/n/10 donde $\OML/mdugm/m/it/10 t[]$ \T1/mdugm/m/n/10 es la re-pre-s
 en-ta-ción del pro-duc-to es-ca-lar y $\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t[
 ]\OT1/mdugm/m/n/10 )[][]$ \T1/mdugm/m/n/10 el de su in-ver-sa ($\OML/mdugm/m/it
 /10 t[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t[]\OT1/mdugm/m/n/10 )[] =
  []
 
-[54] [55] (./Figure/m2_4.pstex_t
+[51]
+
+LaTeX Warning: Reference `ecuaciones_elipticas' on page 52 undefined on input l
+ine 2217.
+
+[52] (./Figure/m2_4.pstex_t
 File: Figure/m2_4.pstex Graphic file (type eps)
- <Figure/m2_4.pstex>) [56] [57] [58] [59])
-[60]
+ <Figure/m2_4.pstex>) [53] [54] [55]
+
+LaTeX Warning: Citation `Geroch' on page 56 undefined on input line 2598.
+
+
+LaTeX Warning: Citation `Arnold' on page 56 undefined on input line 2598.
+
+
+LaTeX Warning: Citation `Lefschetz' on page 56 undefined on input line 2598.
+
+
+LaTeX Warning: Citation `TaylorI' on page 56 undefined on input line 2598.
+
+
+LaTeX Warning: Citation `Lang_LA' on page 56 undefined on input line 2598.
+
+
+LaTeX Warning: Citation `Lax' on page 56 undefined on input line 2598.
+
+[56]) [57]
 \openout2 = `Chapters/chap3.aux'.
 
- (./Chapters/chap3.tex
+ (./Chapters/chap3.tex [58
+
+
+
+]
 \hfil Cap\'{\i }tulo 3.
 (./Figure/m3_1_b.pstex_t
 File: Figure/m3_1_b.pstex Graphic file (type eps)
- <Figure/m3_1_b.pstex>) [61
-
-
-
-] [62]
+ <Figure/m3_1_b.pstex>) [59] [60]
 (./Figure/m3_2.pstex_t
 File: Figure/m3_2.pstex Graphic file (type eps)
- <Figure/m3_2.pstex>) (./Figure/m3_3.pstex_t
+ <Figure/m3_2.pstex>)
+
+LaTeX Warning: Reference `it1' on page 61 undefined on input line 128.
+
+(./Figure/m3_3.pstex_t
 File: Figure/m3_3.pstex Graphic file (type eps)
+ <Figure/m3_3.pstex>)
 
-<Figure/m3_3.pstex>) [63] [64] (./Figure/m3_4.pstex_t
+LaTeX Warning: Reference `it2' on page 61 undefined on input line 148.
+
+[61]
+
+LaTeX Warning: Reference `it3' on page 62 undefined on input line 153.
+
+
+LaTeX Warning: Reference `it3' on page 62 undefined on input line 161.
+
+[62] (./Figure/m3_4.pstex_t
 File: Figure/m3_4.pstex Graphic file (type eps)
- <Figure/m3_4.pstex>)
-[65] (./Figure/m3_5.pstex_t
+ <Figure/m3_4.pstex>) [63] (./Figure/m3_5.pstex_t
 File: Figure/m3_5.pstex Graphic file (type eps)
- <Figure/m3_5.pstex>) (./Figure/m3_6.pstex_t
-File: Figure/m3_6.pstex Graphic file (type eps)
 
-<Figure/m3_6.pstex>) [66] (./Figure/m3_7.pstex_t
+<Figure/m3_5.pstex>) (./Figure/m3_6.pstex_t
+File: Figure/m3_6.pstex Graphic file (type eps)
+ <Figure/m3_6.pstex>) [64]
+(./Figure/m3_7.pstex_t
 File: Figure/m3_7.pstex Graphic file (type eps)
- <Figure/m3_7.pstex>) [67]
-[68] [69] (./Figure/m3_8.pstex_t
+ <Figure/m3_7.pstex>) [65] [66]
+
+LaTeX Warning: Reference `eq34' on page 67 undefined on input line 459.
+
+[67] (./Figure/m3_8.pstex_t
 File: Figure/m3_8.pstex Graphic file (type eps)
- <Figure/m3_8.pstex>) [70] [71] [72] [73]
-[74] [75] [76] [77] [78] [79] [80] [81]) [82]
+ <Figure/m3_8.pstex>) [68] [69] [70] [71]
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <10> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 835.
+
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <10> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 835.
+
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <7> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 835.
+
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <7> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 835.
+
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <5> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 835.
+
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <5> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 835.
+
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <8> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 845.
+
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <8> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 845.
+
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <6> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 845.
+
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <6> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 845.
+
+ [72]
+[73] [74] [75] [76] [77]
+
+LaTeX Warning: Reference `eq:christ' on page 78 undefined on input line 1223.
+
+[78]
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <9> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 1276
+.
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <9> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 1276
+.
+
+
+LaTeX Warning: Citation `Wald' on page 79 undefined on input line 1279.
+
+
+LaTeX Warning: Citation `Isham' on page 79 undefined on input line 1279.
+
+) [79]
 \openout2 = `Chapters/chap4.aux'.
 
- (./Chapters/chap4.tex
+ (./Chapters/chap4.tex [80
+
+
+
+]
 \hfil Cap\'{\i }tulo 4.
-[83
+[81]
+
+LaTeX Warning: Reference `eq:4.5' on page 82 undefined on input line 84.
 
 
+LaTeX Warning: Reference `fig:4_1' on page 82 undefined on input line 89.
 
-] (./Figure/m4_1.pstex_t
+(./Figure/m4_1.pstex_t
 File: Figure/m4_1.pstex Graphic file (type eps)
- <Figure/m4_1.pstex>) [84] [85] [86]
-(./Figure/m4_2_b.pstex_t
-File: Figure/m4_2_b.pstex Graphic file (type eps)
- <Figure/m4_2_b.pstex>) (./Figure/m4_2.pstex_t
-File: Figure/m4_2.pstex Graphic file (type eps)
+ <Figure/m4_1.pstex>)
 
-<Figure/m4_2.pstex>) [87] [88] (./Figure/m4_3.pstex_t
+LaTeX Warning: Reference `fig:4_1' on page 82 undefined on input line 110.
+
+[82]
+
+LaTeX Warning: Reference `eq:4.5' on page 83 undefined on input line 174.
+
+
+LaTeX Warning: Reference `eq:4.5' on page 83 undefined on input line 178.
+
+
+LaTeX Warning: Reference `eq:4.5' on page 83 undefined on input line 183.
+
+[83]
+
+LaTeX Warning: Reference `eq:4.3' on page 84 undefined on input line 209.
+
+
+LaTeX Warning: Reference `eq:4.5' on page 84 undefined on input line 239.
+
+[84] (./Figure/m4_2_b.pstex_t
+File: Figure/m4_2_b.pstex Graphic file (type eps)
+ <Figure/m4_2_b.pstex>
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <12> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 14.
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <12> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 14.
+)
+
+LaTeX Warning: Reference `lem' on page 85 undefined on input line 278.
+
+(./Figure/m4_2.pstex_t
+File: Figure/m4_2.pstex Graphic file (type eps)
+ <Figure/m4_2.pstex>)
+
+LaTeX Warning: Reference `eq:4.5' on page 85 undefined on input line 314.
+
+[85]
+
+LaTeX Warning: Reference `teo:2' on page 86 undefined on input line 339.
+
+
+LaTeX Warning: Reference `teo:2' on page 86 undefined on input line 347.
+
+
+LaTeX Warning: Reference `eq:4.4' on page 86 undefined on input line 348.
+
+
+LaTeX Warning: Reference `teo:2' on page 86 undefined on input line 366.
+
+
+LaTeX Warning: Reference `eq:4.8' on page 86 undefined on input line 369.
+
+[86]
+
+LaTeX Warning: Reference `eq:4.8' on page 87 undefined on input line 392.
+
+
+LaTeX Warning: Reference `eq:4.9' on page 87 undefined on input line 412.
+
+
+LaTeX Warning: Reference `eq:4.8' on page 87 undefined on input line 413.
+
+(./Figure/m4_3.pstex_t
 File: Figure/m4_3.pstex Graphic file (type eps)
  <Figure/m4_3.pstex>)
-[89] [90] (./Figure/m4_4.pstex_t
+
+LaTeX Warning: Reference `eq:4.8' on page 87 undefined on input line 439.
+
+
+LaTeX Warning: Reference `eq:4.9' on page 87 undefined on input line 439.
+
+
+LaTeX Warning: Reference `eq:4.8' on page 87 undefined on input line 452.
+
+
+LaTeX Warning: Reference `eq:4.9' on page 87 undefined on input line 452.
+
+
+LaTeX Warning: Reference `eq:4.9' on page 87 undefined on input line 456.
+
+[87]
+
+LaTeX Warning: Reference `eq:4.9' on page 88 undefined on input line 472.
+
+
+LaTeX Warning: Reference `teo:2' on page 88 undefined on input line 484.
+
+
+LaTeX Warning: Reference `eq:4.5' on page 88 undefined on input line 489.
+
+[88]
+
+LaTeX Warning: Reference `teo:2' on page 89 undefined on input line 507.
+
+(./Figure/m4_4.pstex_t
 File: Figure/m4_4.pstex Graphic file (type eps)
  <Figure/m4_4.pstex>
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 14.
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <14> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 14.
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <14> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 14.
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <9.79996> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 14.
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <9.79996> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 14.
 ) (./Figure/m4_5.pstex_t
 File: Figure/m4_5.pstex Graphic file (type eps)
 
-<Figure/m4_5.pstex>) [91] [92] [93] [94] [95] (./Figure/m4_6.pstex_t
-File: Figure/m4_6.pstex Graphic file (type eps)
+<Figure/m4_5.pstex>)
 
-<Figure/m4_6.pstex>) [96] (./Figure/m4_7.pstex_t
+LaTeX Warning: Reference `cor1' on page 89 undefined on input line 548.
+
+[89]
+
+LaTeX Warning: Reference `eq:4.5' on page 90 undefined on input line 580.
+
+[90]
+
+LaTeX Warning: Reference `teo:2' on page 91 undefined on input line 611.
+
+
+LaTeX Warning: Reference `teo:2' on page 91 undefined on input line 615.
+
+
+LaTeX Warning: Reference `eq:4.1' on page 91 undefined on input line 635.
+
+
+LaTeX Warning: Reference `eq:4.1' on page 91 undefined on input line 642.
+
+
+LaTeX Warning: Reference `eq:4.1' on page 91 undefined on input line 643.
+
+
+LaTeX Warning: Reference `eq:4.2' on page 91 undefined on input line 661.
+
+
+LaTeX Warning: Reference `eq:4.2' on page 91 undefined on input line 667.
+
+
+LaTeX Warning: Reference `eq:4.2' on page 91 undefined on input line 676.
+
+[91]
+
+LaTeX Warning: Reference `eq:4.2' on page 92 undefined on input line 682.
+
+
+LaTeX Warning: Reference `eq:4.2' on page 92 undefined on input line 694.
+
+
+LaTeX Warning: Reference `eq:4.3' on page 92 undefined on input line 708.
+
+
+LaTeX Warning: Reference `eq:4.2' on page 92 undefined on input line 733.
+
+
+LaTeX Warning: Reference `eq:4.2' on page 92 undefined on input line 738.
+
+
+LaTeX Warning: Reference `eq:4.4' on page 92 undefined on input line 739.
+
+
+LaTeX Warning: Reference `eq:4.2' on page 92 undefined on input line 744.
+
+
+LaTeX Warning: Reference `eq:4.4' on page 92 undefined on input line 747.
+
+[92]
+
+LaTeX Warning: Reference `eq:4.4' on page 93 undefined on input line 752.
+
+
+LaTeX Warning: Reference `eq:4.2' on page 93 undefined on input line 753.
+
+
+LaTeX Warning: Reference `eq:4.4' on page 93 undefined on input line 761.
+
+
+LaTeX Warning: Reference `eq:4.4' on page 93 undefined on input line 780.
+
+
+LaTeX Warning: Reference `eq:4.4' on page 93 undefined on input line 791.
+
+[93] (./Figure/m4_6.pstex_t
+File: Figure/m4_6.pstex Graphic file (type eps)
+ <Figure/m4_6.pstex>) (./Figure/m4_7.pstex_t
 File: Figure/m4_7.pstex Graphic file (type eps)
- <Figure/m4_7.pstex>) [97]
-[98] [99] [100] [101] [102] [103]) [104]
+
+<Figure/m4_7.pstex>)
+
+LaTeX Warning: Reference `fig:4_7' on page 94 undefined on input line 869.
+
+[94] [95]
+
+LaTeX Warning: Reference `cor:4_2' on page 96 undefined on input line 880.
+
+[96]
+Overfull \hbox (0.96628pt too wide) in paragraph at lines 984--986
+[]\T1/mdugm/m/n/10 Probaremos es-te teo-re-ma más ade-lan-te, lue-go de in-tro-
+du-cir las he-rra-mien-tas mate-
+ []
+
+[97]
+
+LaTeX Warning: Reference `eq*' on page 98 undefined on input line 1050.
+
+[98] [99] [100] [101]
+
+LaTeX Warning: Citation `Arnold' on page 102 undefined on input line 1377.
+
+
+LaTeX Warning: Citation `Braum' on page 102 undefined on input line 1377.
+
+
+LaTeX Warning: Citation `Roxin' on page 102 undefined on input line 1377.
+
+) [102]
 \openout2 = `Chapters/chap5.aux'.
 
  (./Chapters/chap5.tex
 \hfil Cap\'{\i }tulo 5.
-[105
+
+LaTeX Warning: Reference `eqn:5.1' on page 103 undefined on input line 45.
+
+
+LaTeX Warning: Reference `eqn:5.1' on page 103 undefined on input line 49.
+
+
+LaTeX Warning: Reference `eqn:5.1' on page 103 undefined on input line 52.
+
+[103
 
 
 
-] [106] [107] [108] [109] [110] [111] [112] [113] [114] [115]) [116]
+]
+
+LaTeX Warning: Reference `eqn:5.1' on page 104 undefined on input line 63.
+
+
+LaTeX Warning: Reference `eqn:5.1' on page 104 undefined on input line 74.
+
+
+LaTeX Warning: Reference `eqn:5.1' on page 104 undefined on input line 93.
+
+
+LaTeX Warning: Reference `eqn:5.1' on page 104 undefined on input line 98.
+
+[104]
+
+LaTeX Warning: Reference `5.2' on page 105 undefined on input line 178.
+
+
+Overfull \hbox (9.86539pt too wide) in paragraph at lines 198--201
+\T1/mdugm/m/n/10 donde $[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t\OT1/mdugm/m/n
+/10 ) : \OML/mdugm/m/it/10 I \OMS/mdugm/m/n/10 ! []$ \T1/mdugm/m/n/10 es in-te-
+gra-ble. Ve-re-mos que si co-no-ce-mos el ope-ra-dor $[][]$ correspon-
+ []
+
+
+LaTeX Warning: Reference `5.3' on page 105 undefined on input line 205.
+
+
+LaTeX Warning: Reference `5.3' on page 105 undefined on input line 210.
+
+[105]
+
+LaTeX Warning: Reference `5.4' on page 106 undefined on input line 217.
+
+
+LaTeX Warning: Reference `5.3' on page 106 undefined on input line 218.
+
+
+LaTeX Warning: Reference `5.3' on page 106 undefined on input line 254.
+
+
+LaTeX Warning: Reference `5.6' on page 106 undefined on input line 255.
+
+
+LaTeX Warning: Reference `5.3' on page 106 undefined on input line 255.
+
+
+LaTeX Warning: Reference `5.7' on page 106 undefined on input line 272.
+
+
+LaTeX Warning: Reference `5.7' on page 106 undefined on input line 277.
+
+
+LaTeX Warning: Reference `5.7' on page 106 undefined on input line 280.
+
+
+LaTeX Warning: Reference `5.7' on page 106 undefined on input line 281.
+
+
+LaTeX Warning: Reference `5.7' on page 106 undefined on input line 284.
+
+
+LaTeX Warning: Reference `Sistema_lineal_homogeneo' on page 106 undefined on in
+put line 288.
+
+[106]
+
+LaTeX Warning: Reference `2_lem_Schur' on page 107 undefined on input line 306.
+
+
+
+LaTeX Warning: Reference `5.6' on page 107 undefined on input line 331.
+
+
+LaTeX Warning: Reference `5.6' on page 107 undefined on input line 348.
+
+
+Overfull \hbox (3.75313pt too wide) in paragraph at lines 341--357
+\T1/mdugm/m/n/10 y ve-mos que si $\OML/mdugm/m/it/10 ^^U[] \OMS/mdugm/m/n/10 ^^
+@ \OML/mdugm/m/it/10 ^^U[] \OMS/mdugm/m/n/10 6\OT1/mdugm/m/n/10 = 0$ \T1/mdugm/
+m/n/10 lue-go la so-lu-ción es una su-ma de ex-po-nen-cia-les, $\OML/mdugm/m/it
+/10 x[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t\OT1/mdugm/m/n/10 ) =
+ []
+
+[107] [108]
+
+LaTeX Warning: Reference `5.7' on page 109 undefined on input line 437.
+
+
+LaTeX Warning: Reference `eq:5_sol_gen' on page 109 undefined on input line 456
+.
+
+
+LaTeX Warning: Reference `5.7' on page 109 undefined on input line 460.
+
+
+LaTeX Warning: Reference `5.7' on page 109 undefined on input line 462.
+
+
+LaTeX Warning: Reference `5.7' on page 109 undefined on input line 482.
+
+
+LaTeX Warning: Reference `eq:5_sol_gen' on page 109 undefined on input line 483
+.
+
+
+LaTeX Warning: Reference `5.7' on page 109 undefined on input line 489.
+
+[109]
+
+LaTeX Warning: Reference `5.7' on page 110 undefined on input line 534.
+
+[110]
+
+LaTeX Warning: Reference `5.7' on page 111 undefined on input line 601.
+
+
+LaTeX Warning: Reference `5.8' on page 111 undefined on input line 618.
+
+[111] [112] [113]) [114]
 \openout2 = `Chapters/chap6.aux'.
 
-
-(./Chapters/chap6.tex
+ (./Chapters/chap6.tex
 \hfil Cap\'{\i }tulo 6.
+
+LaTeX Warning: Reference `fig:6_1' on page 115 undefined on input line 39.
+
 (./Figure/m6_1.pstex_t
 File: Figure/m6_1.pstex Graphic file (type eps)
- <Figure/m6_1.pstex>) [117
+ <Figure/m6_1.pstex>) [115
 
 
 
-] [118] (./Figure/m6_2.pstex_t
+]
+Overfull \hbox (0.21632pt too wide) in paragraph at lines 99--101
+[]\T1/mdugm/m/n/10 El si-guien-te teo-re-ma nos brin-da una he-rra-mien-ta muy 
+prác-ti-ca pa-ra co-no-cer cuan-
+ []
+
+[116] (./Figure/m6_2.pstex_t
 File: Figure/m6_2.pstex Graphic file (type eps)
-
-<Figure/m6_2.pstex>) [119] (./Figure/m6_3.pstex_t
+ <Figure/m6_2.pstex>) [117] (./Figure/m6_3.pstex_t
 File: Figure/m6_3.pstex Graphic file (type eps)
- <Figure/m6_3.pstex>) [120]
-[121] [122] [123] [124] [125]) [126]
+
+<Figure/m6_3.pstex>) [118] [119] [120] [121] [122]
+
+LaTeX Warning: Reference `Ecuaciones_Diferenciales_Ordinarias' on page 123 unde
+fined on input line 556.
+
+[123]) [124]
 \openout2 = `Chapters/chap7.aux'.
 
  (./Chapters/chap7.tex
 \hfil Cap\'{\i }tulo 7.
-[127
+[125
 
 
 
-] [128] [129] [130] (./Figure/m7_1.pstex_t
+] [126] [127] [128] (./Figure/m7_1.pstex_t
 File: Figure/m7_1.pstex Graphic file (type eps)
- <Figure/m7_1.pstex>) [131])
-[132]
+ <Figure/m7_1.pstex>) [129]
+
+LaTeX Warning: Reference `Teorema_del_mapa_contractivo' on page 130 undefined o
+n input line 330.
+
+
+LaTeX Warning: Reference `7**' on page 130 undefined on input line 341.
+
+
+LaTeX Warning: Reference `7**' on page 130 undefined on input line 342.
+
+
+LaTeX Warning: Reference `7*' on page 130 undefined on input line 343.
+
+) [130]
 \openout2 = `Chapters/chap8.aux'.
 
  (./Chapters/chap8.tex
 \hfil Cap\'{\i }tulo 8.
-[133
+
+LaTeX Warning: Citation `Yosida' on page 131 undefined on input line 60.
+
+[131
 
 
 
-] [134] (./Figure/m8_1.pstex_t
+] [132] (./Figure/m8_1.pstex_t
 File: Figure/m8_1.pstex Graphic file (type eps)
  <Figure/m8_1.pstex>) (./Figure/m8_2.pstex_t
 File: Figure/m8_2.pstex Graphic file (type eps)
 
-<Figure/m8_2.pstex>) [135] [136] (./Figure/m8_3.pstex_t
+<Figure/m8_2.pstex>) [133] [134] (./Figure/m8_3.pstex_t
 File: Figure/m8_3.pstex Graphic file (type eps)
  <Figure/m8_3.pstex>)
-[137] [138] [139] [140] [141] [142] [143]
-Overfull \hbox (1.44281pt too wide) in paragraph at lines 669--676
-\T1/mdugm/m/n/10 de-na-das en []. De-fi-ni-re-mos el es-pa-cio de So-bo-lev de 
-or-den $\OML/mdugm/m/it/10 m$ \T1/mdugm/m/n/10 co-mo, $[][]\OT1/mdugm/m/n/10 (
-) =
- []
-
-[144] (./Figure/m8_4.pstex_t
+[135] [136] [137] [138] [139] [140] [141] [142] (./Figure/m8_4.pstex_t
 File: Figure/m8_4.pstex Graphic file (type eps)
- <Figure/m8_4.pstex>) (./Figure/m8_5.pstex_t
-File: Figure/m8_5.pstex Graphic file (type eps)
 
-<Figure/m8_5.pstex>) [145] [146] [147] [148] [149] [150] [151] [152] [153]
-[154] [155] [156] [157] [158] [159] [160] [161]) [162]
+<Figure/m8_4.pstex>)
+Underfull \vbox (badness 1354) has occurred while \output is active []
+
+ [143]
+(./Figure/m8_5.pstex_t
+File: Figure/m8_5.pstex Graphic file (type eps)
+ <Figure/m8_5.pstex>) [144] [145] [146] [147]
+
+LaTeX Warning: Reference `teo7.2' on page 148 undefined on input line 1107.
+
+
+LaTeX Warning: Reference `lem7.5' on page 148 undefined on input line 1109.
+
+
+LaTeX Warning: Reference `lem7.5' on page 148 undefined on input line 1123.
+
+[148] [149]
+
+LaTeX Warning: Reference `lem7.5' on page 150 undefined on input line 1188.
+
+[150] [151] [152] [153]
+
+LaTeX Warning: Reference `eqn:nucleo=1' on page 154 undefined on input line 140
+4.
+
+[154] [155] [156]
+
+LaTeX Warning: Reference `representacion_del-dual' on page 157 undefined on inp
+ut line 1677.
+
+[157] [158]
+
+LaTeX Warning: Citation `Reed' on page 159 undefined on input line 1811.
+
+
+LaTeX Warning: Citation `Lang' on page 159 undefined on input line 1811.
+
+
+LaTeX Warning: Citation `Yosida' on page 159 undefined on input line 1811.
+
+
+LaTeX Warning: Citation `Geroch' on page 159 undefined on input line 1811.
+
+
+LaTeX Warning: Citation `Kolmogorov' on page 159 undefined on input line 1811.
+
+
+LaTeX Warning: Citation `Reed' on page 159 undefined on input line 1811.
+
+
+LaTeX Warning: Citation `Geroch' on page 159 undefined on input line 1811.
+
+) [159]
 \openout2 = `Chapters/chap9.aux'.
 
- (./Chapters/chap9.tex
+ (./Chapters/chap9.tex [160
+
+
+
+]
 \hfil Cap\'{\i }tulo 9.
-[163
+[161] [162] [163] [164] [165]
+
+LaTeX Warning: Reference `9.13' on page 166 undefined on input line 392.
 
 
+LaTeX Warning: Reference `9.13' on page 166 undefined on input line 393.
 
-] [164] [165] [166] [167] [168] [169] [170] [171] [172]) [173]
+[166]
+
+LaTeX Warning: Reference `eqn:primitiva' on page 167 undefined on input line 45
+3.
+
+
+Overfull \hbox (0.26454pt too wide) in paragraph at lines 451--455
+\T1/mdugm/m/n/10 Veamos la uni-ci-dad, sea $[]$ otra dis-tri-bu-ción sa-tis-fa-
+cien-do [], lue-go la di-fe-ren-cia, $\OML/mdugm/m/it/10 ^^NT \OT1/mdugm/m/n/10
+ =
+ []
+
+[167]
+
+LaTeX Warning: Reference `9.13' on page 168 undefined on input line 473.
+
+[168] [169] [170]
+
+LaTeX Warning: Citation `Lang' on page 171 undefined on input line 654.
+
+
+LaTeX Warning: Citation `Geroch' on page 171 undefined on input line 654.
+
+
+LaTeX Warning: Citation `Reed' on page 171 undefined on input line 654.
+
+) [171]
 \openout2 = `Chapters/chap10.aux'.
 
-
-(./Chapters/chap10.tex [174
+ (./Chapters/chap10.tex [172
 
 
 
 ]
 \hfil Cap\'{\i }tulo 10.
-[175]
+
+LaTeX Warning: Reference `10.1*' on page 173 undefined on input line 37.
+
+
+LaTeX Warning: Reference `10.1*' on page 173 undefined on input line 43.
+
+
+LaTeX Warning: Reference `10.2*' on page 173 undefined on input line 47.
+
+
+LaTeX Warning: Reference `10.1*' on page 173 undefined on input line 56.
+
+[173]
 Underfull \hbox (badness 10000) in paragraph at lines 89--92
 
  []
 
-[176] [177] [178] [179] [180]
-Overfull \hbox (4.9774pt too wide) in paragraph at lines 453--458
+[174]
+
+LaTeX Warning: Reference `10.f2' on page 175 undefined on input line 168.
+
+
+LaTeX Warning: Reference `10.f1' on page 175 undefined on input line 189.
+
+[175] [176]
+
+LaTeX Warning: Reference `lem10.2' on page 177 undefined on input line 297.
+
+
+LaTeX Warning: Reference `lem10.3' on page 177 undefined on input line 306.
+
+[177] [178]
+Overfull \hbox (2.45732pt too wide) in paragraph at lines 453--458
 []\T1/mdugm/m/n/10 Otra pro-pie-dad in-tere-san-te de la con-vo-lu-ción se ob-t
 ie-ne al no-tar que co-mo $[]\OT1/mdugm/m/n/10 ([][])$
  []
 
-[181] [182] [183] [184] [185] [186] [187]) [188]
+[179]
+
+LaTeX Warning: Reference `10.t**' on page 180 undefined on input line 481.
+
+
+LaTeX Warning: Reference `eqn:dist-conv-reg' on page 180 undefined on input lin
+e 513.
+
+[180] [181] [182] [183] [184] [185]
+
+LaTeX Warning: Reference `lem10.9' on page 186 undefined on input line 848.
+
+
+LaTeX Warning: Citation `Treves' on page 186 undefined on input line 864.
+
+
+LaTeX Warning: Citation `Reed' on page 186 undefined on input line 864.
+
+) [186]
 \openout2 = `Chapters/chap11.aux'.
 
  (./Chapters/chap11.tex
 \hfil Cap\'{\i }tulo 11.
-[189
+[187
 
 
 
-] [190] [191] (./Figure/m11_1.pstex_t
+] [188]
+
+LaTeX Warning: Reference `ot*' on page 189 undefined on input line 177.
+
+
+LaTeX Warning: Reference `ot*' on page 189 undefined on input line 180.
+
+
+LaTeX Warning: Reference `ot*' on page 189 undefined on input line 182.
+
+
+LaTeX Warning: Reference `ot*' on page 189 undefined on input line 190.
+
+
+LaTeX Warning: Reference `ot*' on page 189 undefined on input line 205.
+
+[189] (./Figure/m11_1.pstex_t
 File: Figure/m11_1.pstex Graphic file (type eps)
- <Figure/m11_1.pstex>) [192]
-(./Figure/m11_2.pstex_t
+ <Figure/m11_1.pstex>)
+
+LaTeX Warning: Reference `ot*' on page 190 undefined on input line 222.
+
+[190] (./Figure/m11_2.pstex_t
 File: Figure/m11_2.pstex Graphic file (type eps)
- <Figure/m11_2.pstex>) [193] (./Figure/m11_3.pstex_t
+ <Figure/m11_2.pstex>)
+
+LaTeX Warning: Reference `ot*' on page 191 undefined on input line 269.
+
+[191] (./Figure/m11_3.pstex_t
 File: Figure/m11_3.pstex Graphic file (type eps)
+ <Figure/m11_3.pstex>)
 
-<Figure/m11_3.pstex>) [194] [195] [196] (./Figure/m11_4.pstex_t
+LaTeX Warning: Reference `ot*' on page 192 undefined on input line 316.
+
+
+LaTeX Warning: Reference `ot**' on page 192 undefined on input line 316.
+
+[192]
+
+LaTeX Warning: Reference `ot**' on page 193 undefined on input line 348.
+
+[193]
+
+LaTeX Warning: Reference `lap2d' on page 194 undefined on input line 441.
+
+[194] (./Figure/m11_4.pstex_t
 File: Figure/m11_4.pstex Graphic file (type eps)
+ <Figure/m11_4.pstex>) [195] [196]
 
-<Figure/m11_4.pstex>) [197] [198] [199]) [200]
+LaTeX Warning: Citation `Treves' on page 197 undefined on input line 646.
+
+
+LaTeX Warning: Citation `John' on page 197 undefined on input line 646.
+
+
+LaTeX Warning: Citation `Folland' on page 197 undefined on input line 646.
+
+
+LaTeX Warning: Citation `Godunov' on page 197 undefined on input line 646.
+
+
+Underfull \vbox (badness 3601) has occurred while \output is active []
+
+ [197])
+[198]
 \openout2 = `Chapters/chap12.aux'.
 
  (./Chapters/chap12.tex
 \hfil Cap\'{\i }tulo 12.
+
+LaTeX Warning: Reference `ec*' on page 199 undefined on input line 16.
+
 (./Figure/m12_1.pstex_t
 File: Figure/m12_1.pstex Graphic file (type eps)
- <Figure/m12_1.pstex>) [201
+ <Figure/m12_1.pstex>) [199
 
 
 
-] (./Figure/m12_2.pstex_t
+]
+
+LaTeX Warning: Reference `ec2*' on page 200 undefined on input line 58.
+
+
+LaTeX Warning: Reference `ec2*' on page 200 undefined on input line 70.
+
+
+LaTeX Warning: Reference `ec3*' on page 200 undefined on input line 70.
+
+(./Figure/m12_2.pstex_t
 File: Figure/m12_2.pstex Graphic file (type eps)
+ <Figure/m12_2.pstex>) [200]
 
-<Figure/m12_2.pstex>) [202] [203] [204] [205] [206] [207] [208] [209] [210]
-[211]) [212]
+LaTeX Warning: Reference `ec4*' on page 201 undefined on input line 160.
+
+
+LaTeX Warning: Reference `ec4*' on page 201 undefined on input line 162.
+
+
+LaTeX Warning: Reference `ec4*' on page 201 undefined on input line 164.
+
+[201]
+
+LaTeX Warning: Reference `ec4*' on page 202 undefined on input line 173.
+
+
+LaTeX Warning: Reference `ec5*' on page 202 undefined on input line 173.
+
+
+LaTeX Warning: Reference `ec4*' on page 202 undefined on input line 175.
+
+[202] [203] [204]
+
+LaTeX Warning: Reference `lem12.2' on page 205 undefined on input line 392.
+
+
+LaTeX Warning: Reference `lem12.3' on page 205 undefined on input line 411.
+
+[205] [206]
+
+LaTeX Warning: Reference `des' on page 207 undefined on input line 547.
+
+
+LaTeX Warning: Reference `lem10.10' on page 207 undefined on input line 554.
+
+[207] [208] [209]) [210]
 \openout2 = `Chapters/chap13.aux'.
 
  (./Chapters/chap13.tex
 \hfil Cap\'{\i }tulo 13.
-[213
+[211
 
 
 
 ] (./Figure/m13_1.pstex_t
 File: Figure/m13_1.pstex Graphic file (type eps)
- <Figure/m13_1.pstex>) [214]
+ <Figure/m13_1.pstex>) [212]
 (./Figure/m13_2.pstex_t
 File: Figure/m13_2.pstex Graphic file (type eps)
- <Figure/m13_2.pstex>) [215]
-Overfull \hbox (1.17966pt too wide) in paragraph at lines 204--206
-\T1/mdugm/m/n/10 cio-nes ho-mo-gé-neas de la ecua-ción de on-da en dos di-men-s
-io-nes cum-plen que $\OML/mdugm/m/it/10 u\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 
-t; x\OT1/mdugm/m/n/10 ) =
- []
+ <Figure/m13_2.pstex>)
+
+LaTeX Warning: Reference `2)' on page 213 undefined on input line 172.
+
+[213]
+
+LaTeX Warning: Reference `2)' on page 214 undefined on input line 187.
+
+
+LaTeX Warning: Reference `4)' on page 214 undefined on input line 200.
+
+
+LaTeX Warning: Reference `1)' on page 214 undefined on input line 200.
+
+
+LaTeX Warning: Reference `4)' on page 214 undefined on input line 208.
 
 (./Figure/m13_3.pstex_t
 File: Figure/m13_3.pstex Graphic file (type eps)
- <Figure/m13_3.pstex>) [216] (./Figure/m13_4.pstex_t
+ <Figure/m13_3.pstex>) [214] (./Figure/m13_4.pstex_t
 File: Figure/m13_4.pstex Graphic file (type eps)
 
-<Figure/m13_4.pstex>) [217] [218] [219] (./Figure/m13_5b.pstex_t
-File: Figure/m13_5b.pstex Graphic file (type eps)
+<Figure/m13_4.pstex>)
 
-<Figure/m13_5b.pstex>) (./Figure/m13_5.pstex_t
+LaTeX Warning: Reference `1)' on page 215 undefined on input line 255.
+
+[215] [216]
+
+LaTeX Warning: Reference `1)' on page 217 undefined on input line 322.
+
+
+LaTeX Warning: Reference `en1' on page 217 undefined on input line 375.
+
+[217] (./Figure/m13_5b.pstex_t
+File: Figure/m13_5b.pstex Graphic file (type eps)
+ <Figure/m13_5b.pstex>) (./Figure/m13_5.pstex_t
 File: Figure/m13_5.pstex Graphic file (type eps)
- <Figure/m13_5.pstex>) [220]
-[221] [222] (./Figure/m13_6c.pstex_t
+
+<Figure/m13_5.pstex>) [218]
+
+LaTeX Warning: Reference `en1' on page 219 undefined on input line 423.
+
+[219] [220]
+
+LaTeX Warning: Reference `fig:13_6c' on page 221 undefined on input line 547.
+
+(./Figure/m13_6c.pstex_t
 File: Figure/m13_6c.pstex Graphic file (type eps)
- <Figure/m13_6c.pstex>) [223]
+ <Figure/m13_6c.pstex>) [221]
+
+LaTeX Warning: Reference `fig:13_6b' on page 222 undefined on input line 606.
+
 (./Figure/m13_6b.pstex_t
 File: Figure/m13_6b.pstex Graphic file (type eps)
- <Figure/m13_6b.pstex>) [224] [225] [226]
+ <Figure/m13_6b.pstex>) [222]
+
+LaTeX Warning: Reference `eiko' on page 223 undefined on input line 701.
+
+[223]
+
+LaTeX Warning: Reference `hamil' on page 224 undefined on input line 727.
+
+
+LaTeX Warning: Reference `deri' on page 224 undefined on input line 728.
+
+
+LaTeX Warning: Reference `hamil' on page 224 undefined on input line 750.
+
+
+LaTeX Warning: Reference `condii' on page 224 undefined on input line 751.
+
+
+LaTeX Warning: Reference `fig:13_7b' on page 224 undefined on input line 760.
+
 (./Figure/m13_7b.pstex_t
 File: Figure/m13_7b.pstex Graphic file (type eps)
- <Figure/m13_7b.pstex>) [227] (./Figure/m13_8b.pstex_t
+ <Figure/m13_7b.pstex>) [224] [225]
+(./Figure/m13_8b.pstex_t
 File: Figure/m13_8b.pstex Graphic file (type eps)
+ <Figure/m13_8b.pstex>)
 
-<Figure/m13_8b.pstex>) [228]) [229]
+LaTeX Warning: Reference `onda2d' on page 226 undefined on input line 933.
+
+[226]) [227]
 \openout2 = `Chapters/chap14.aux'.
 
- (./Chapters/chap14.tex [230
+ (./Chapters/chap14.tex [228
 
 
 
@@ -780,8 +1821,18 @@ File: Figure/m13_8b.pstex Graphic file (type eps)
 \hfil Cap\'{\i }tulo 14.
 (./Figure/m14_1.pstex_t
 File: Figure/m14_1.pstex Graphic file (type eps)
- <Figure/m14_1.pstex>) [231]
-Overfull \hbox (4.51013pt too wide) in paragraph at lines 96--100
+ <Figure/m14_1.pstex>)
+
+LaTeX Warning: Reference `sec:Teorema-Espectral' on page 229 undefined on input
+ line 45.
+
+[229]
+
+LaTeX Warning: Reference `sec:Teorema-Espectral' on page 230 undefined on input
+ line 93.
+
+
+Overfull \hbox (2.62007pt too wide) in paragraph at lines 96--100
 \T1/mdugm/m/n/10 donde vi-mos que las au-to-fun-cio-nes $\OML/mdugm/m/it/10 v[]
 \OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 x\OT1/mdugm/m/n/10 )$ \T1/mdugm/m/n/10 co
 n $\OML/mdugm/m/it/10 v[]\OT1/mdugm/m/n/10 (0) = \OML/mdugm/m/it/10 v[]\OT1/mdu
@@ -790,75 +1841,84 @@ gm/m/n/10 (1) = 0$ \T1/mdugm/m/n/10 son $\OML/mdugm/m/it/10 v[]\OT1/mdugm/m/n/1
 ugm/m/n/10 )$
  []
 
-[232] [233] (./Figure/m14_2.pstex_t
+[230] [231] (./Figure/m14_2.pstex_t
 File: Figure/m14_2.pstex Graphic file (type eps)
  <Figure/m14_2.pstex>)
-Overfull \hbox (10.73665pt too wide) in paragraph at lines 269--289
+Overfull \hbox (8.42657pt too wide) in paragraph at lines 269--289
 $[]$\T1/mdugm/m/n/10 : Vea-mos pri-me-ro el ca-so $\OML/mdugm/m/it/10 u[] \OMS/
-mdugm/m/n/10 ^^@ \OT1/mdugm/m/n/10 ^^A\OML/mdugm/m/it/10 u < \OT1/mdugm/m/n/10 
-0$ \T1/mdugm/m/n/10 en $\OT1/mdugm/m/n/10 
+mdugm/m/n/10 ^^@ \OML/mdugm/m/n/10 ^^A\OML/mdugm/m/it/10 u < \OT1/mdugm/m/n/10 
+0$ \T1/mdugm/m/n/10 en $\OML/mdugm/m/n/10 
 $\T1/mdugm/m/n/10 . Sea $\OT1/mdugm/m/n/10 0 \OML/mdugm/m/it/10 < [] < T$ \T1/m
-dugm/m/n/10 y $\OT1/mdugm/m/n/10 
-[] = \OMS/mdugm/m/n/10 f[[]\OML/mdugm/m/it/10 S[]\OMS/mdugm/m/n/10 g$\T1/mdugm/
-m/n/10 .
+dugm/m/n/10 y $\OML/mdugm/m/n/10 
+[] \OT1/mdugm/m/n/10 = \OMS/mdugm/m/n/10 f[[]\OML/mdugm/m/it/10 S[]\OMS/mdugm/m
+/n/10 g$\T1/mdugm/m/n/10 .
  []
 
-[234]) [235]
+[232]) [233]
 \openout2 = `Chapters/chap15.aux'.
 
- (./Chapters/chap15.tex [236
+ (./Chapters/chap15.tex [234
 
 
 
 ]
 \hfil Cap\'{\i }tulo 15.
-[237] [238] [239] [240] [241] [242] [243] [244]) [245]
+[235] [236] [237] [238]
+Overfull \hbox (17.16827pt too wide) in paragraph at lines 184--188
+\T1/mdugm/m/n/10 tie-ne de-ter-mi-nan-te uni-dad. Es-tas re-ci-ben el nom-bre, 
+\T1/mdugm/m/sl/10 gru-po li-neal es-pe-cial\T1/mdugm/m/n/10 , $\OML/mdugm/m/it/
+10 SL\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 n; []=C[][]\OT1/mdugm/m/n/10 )$\T1/m
+dugm/m/n/10 . 
+ []
+
+[239] [240]
+Underfull \vbox (badness 1917) has occurred while \output is active []
+
+ [241]
+[242]) [243]
 \openout2 = `Chapters/preguntas.aux'.
 
-
-(./Chapters/preguntas.tex [246
+ (./Chapters/preguntas.tex [244
 
 
 
 ]
 \hfil Cap\'{\i }tulo 16.
-[247] [248]
-Overfull \hbox (1.35669pt too wide) in paragraph at lines 205--207
-[]\T1/mdugm/m/it/10 Enuncie y en-tien-da las ge-ne-ra-li-za-cio-nes del teo-re-
-ma es-pec-tral. Dé ejem-
- []
-
-) [249]
+[245] [246]) [247]
 \openout2 = `Chapters/bib.aux'.
 
- (./Chapters/bib.tex [250
+ (./Chapters/bib.tex [248
 
 
 
-] [251]) [252] [253
+] [249]) [250] [251
 
-] (./libro_gar.aux
-(./extdef_libro.aux) (./Chapters/title_KINDLE.aux)
+]
+(./libro_gar.aux (./extdef_libro.aux) (./Chapters/title_KINDLE.aux)
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
- (./Chapters/chap0.aux)
-(./Chapters/chap01.aux) (./Chapters/chap1.aux) (./Chapters/chap2.aux)
-(./Chapters/chap3.aux) (./Chapters/chap4.aux) (./Chapters/chap5.aux)
-(./Chapters/chap6.aux) (./Chapters/chap7.aux) (./Chapters/chap8.aux)
-(./Chapters/chap9.aux) (./Chapters/chap10.aux) (./Chapters/chap11.aux)
-(./Chapters/chap12.aux) (./Chapters/chap13.aux) (./Chapters/chap14.aux)
-(./Chapters/chap15.aux) (./Chapters/preguntas.aux) (./Chapters/bib.aux)) )
-(\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 1687 ({)
-### bottom level 
+(./Chapters/chap0.aux) (./Chapters/chap01.aux) (./Chapters/chap1.aux)
+(./Chapters/chap2.aux) (./Chapters/chap3.aux) (./Chapters/chap4.aux)
+(./Chapters/chap5.aux) (./Chapters/chap6.aux) (./Chapters/chap7.aux)
+(./Chapters/chap8.aux) (./Chapters/chap9.aux) (./Chapters/chap10.aux)
+(./Chapters/chap11.aux) (./Chapters/chap12.aux) (./Chapters/chap13.aux)
+(./Chapters/chap14.aux) (./Chapters/chap15.aux) (./Chapters/preguntas.aux)
+(./Chapters/bib.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4285 strings out of 493316
- 58310 string characters out of 6137929
- 116233 words of memory out of 5000000
- 7367 multiletter control sequences out of 15000+600000
- 217426 words of font info for 164 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 31i,15n,31p,860b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 4828 strings out of 492650
+ 66779 string characters out of 6129649
+ 127791 words of memory out of 5000000
+ 8364 multiletter control sequences out of 15000+600000
+ 211207 words of font info for 164 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 39i,15n,67p,860b,538s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on libro_gar.dvi (253 pages, 1078140 bytes).
+Output written on libro_gar.dvi (251 pages, 1027896 bytes).

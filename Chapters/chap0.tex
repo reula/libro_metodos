@@ -1,74 +1,72 @@
-%%ultima modificaciÛn 13-08-92
+%%ultima modificaci√≥n 13-08-92
 
 %\input format
 
 
 \chapter*{Agradecimientos}
 
-En primer lugar quiero agradecer a Gloria Puente, por haberme apoyado durante todo el tiempo en que escribÌ estas notas,
-las cuales tomaron bastante tiempo de nuestras horas compartidas, en general largas noches.
-En segundo lugar a Bernardo Gonz·lez Kriegel quien volcara a $\LaTeX$ las primeras versiones de estas notas, haciendo
-un gran trabajo con mucho entusiasmo. TambiÈn a Bob Geroch, con quien discutÌ varios temas de las notas y de quien 
-tambiÈn me inspirÈ a travÈs de sus escritos y libros, no solo en contenido sino tambiÈn en estilo.
-Finalmente a varias camadas de estudiantes que asimilaron estoicamente una gran cantidad del material de estos cursos
-en un tiempo demasiado corto.
+En primer lugar quiero agradecer a Gloria Puente, por haberme apoyado durante todo el tiempo en que escrib√≠ estas notas, las cuales tomaron bastante tiempo de nuestras horas compartidas, en general largas noches.
+En segundo lugar a Bernardo Gonz√°lez Kriegel quien volcara a \LaTeX  las primeras versiones de estas notas, haciendo un gran trabajo con mucho entusiasmo. 
+Tambi√©n a Bob Geroch, con quien discut√≠ varios temas de las notas y de quien 
+tambi√©n me inspir√© a trav√©s de sus escritos y libros, no solo en contenido sino tambi√©n en estilo.
+Finalmente a varias camadas de estudiantes que asimilaron estoicamente una gran cantidad del material de estos cursos en un tiempo demasiado corto.
 % 
 % 
 % \chapter*{Prefacio:}
 % 
 % Estas notas, ahora devenidas en libro, se originaron como un intento de condensar en un
-% solo lugar un gran conjunto de ideas, conceptos y herramientas matem·ticas que considero b·sicas
-% para la comprensiÛn y el trabajo diario de un fÌsico en nuestros dÌas.
+% solo lugar un gran conjunto de ideas, conceptos y herramientas matem√°ticas que considero b√°sicas
+% para la comprensi√≥n y el trabajo diario de un f√≠sico en nuestros d√≠as.
 % 
-% Usualmente sucede que si un problema es formulado desde una necesidad de origen fÌsico, como por ejemplo la descripciÛn de alg˙n 
-% fenÛmeno  natural, entonces Èste esta bien formulado, en el sentido de que una soluciÛn razonable al mismo existe.
-% Esta regla ha sido en general muy fructÌfera y en particular les ha servido como guÌa a muchos matem·ticos
-% para abrirse camino en ·reas desconocidas. Pero tambiÈn ha servido, en particular a muchos fÌsicos, para 
-% trabajar sin preocuparse demasiado por aspectos formales, ya sean analÌticos, algebraicos o geomÈtricos 
-% y poder asÌ concentrarse en aspectos fÌsicos y/o computacionales. 
-% Si bien esto permite un r·pido desarrollo de algunas investigaciones, a la larga se llega a un estancamiento
-% pues al proceder de este modo se evita enfrentar problemas que son muy ricos en cuanto a la conceptualizaciÛn
-% del fenÛmeno a describir. Es importante constatar que el problema formulado tiene una soluciÛn matem·tica y fÌsicamente
+% Usualmente sucede que si un problema es formulado desde una necesidad de origen f√≠sico, como por ejemplo la descripci√≥n de alg√∫n 
+% fen√≥meno  natural, entonces √©ste esta bien formulado, en el sentido de que una soluci√≥n razonable al mismo existe.
+% Esta regla ha sido en general muy fruct√≠fera y en particular les ha servido como gu√≠a a muchos matem√°ticos
+% para abrirse camino en √°reas desconocidas. Pero tambi√©n ha servido, en particular a muchos f√≠sicos, para 
+% trabajar sin preocuparse demasiado por aspectos formales, ya sean anal√≠ticos, algebraicos o geom√©tricos 
+% y poder as√≠ concentrarse en aspectos f√≠sicos y/o computacionales. 
+% Si bien esto permite un r√°pido desarrollo de algunas investigaciones, a la larga se llega a un estancamiento
+% pues al proceder de este modo se evita enfrentar problemas que son muy ricos en cuanto a la conceptualizaci√≥n
+% del fen√≥meno a describir. Es importante constatar que el problema formulado tiene una soluci√≥n matem√°tica y f√≠sicamente
 % correcta.
 % 
-% Un ejemplo de esto ha sido el desarrollo, a mediados del siglo pasado, de la teorÌa
+% Un ejemplo de esto ha sido el desarrollo, a mediados del siglo pasado, de la teor√≠a
 % moderna de las ecuaciones en derivadas parciales. Muchas de estas ecuaciones surgieron debido a que describen 
-% fenÛmenos de fÌsicos: transmisiÛn del calor, propagaciÛn de ondas electromagnÈticas, ondas cu·nticas, gravitaciÛn, etc.
-% Una de las primeras respuestas matem·ticas al desarrollo de estas ·reas fue el teorema de Cauchy-Kowalevski que nos dice que dada una ecuaciÛn 
+% fen√≥menos de f√≠sicos: transmisi√≥n del calor, propagaci√≥n de ondas electromagn√©ticas, ondas cu√°nticas, gravitaci√≥n, etc.
+% Una de las primeras respuestas matem√°ticas al desarrollo de estas √°reas fue el teorema de Cauchy-Kowalevski que nos dice que dada una ecuaci√≥n 
 % en derivadas parciales, (bajo ciertas circunstancias bastante generales)
-% si una funciÛn analÌtica es dada como dato en una hipersuperficie (con ciertas caracterÌsticas), luego existe una soluciÛn 
-% ˙nica en un entorno suficientemente pequeÒo de dicha hipersuperficie. TomÛ mucho tiempo darse cuenta que este teorema realmente
-% no era relevante desde el punto de vista de las aplicaciones fÌsicas: existÌan ecuaciones admitidas por el teorema tales que si
-% el dato no era analÌtico °no habÌa soluciÛn! Y en muchos casos, si Èstas existÌan, no dependÌan continuamente del dato dado,
-% una pequeÒa variaciÛn del dato producÌa una soluciÛn totalmente distinta. ReciÈn a mediados del siglo pasado se logrÛ un
-% avance sustancial al problema, encontrando que habÌan distinto tipo de ecuaciones, hiperbÛlicas, elÌpticas, parabÛlicas, etc.
-% que se comportaban de manera distinta y esto reflejaba los distintos procesos fÌsicos que las mismas simulaban.
+% si una funci√≥n anal√≠tica es dada como dato en una hipersuperficie (con ciertas caracter√≠sticas), luego existe una soluci√≥n 
+% √∫nica en un entorno suficientemente peque√±o de dicha hipersuperficie. Tom√≥ mucho tiempo darse cuenta que este teorema realmente
+% no era relevante desde el punto de vista de las aplicaciones f√≠sicas: exist√≠an ecuaciones admitidas por el teorema tales que si
+% el dato no era anal√≠tico ¬°no hab√≠a soluci√≥n! Y en muchos casos, si √©stas exist√≠an, no depend√≠an continuamente del dato dado,
+% una peque√±a variaci√≥n del dato produc√≠a una soluci√≥n totalmente distinta. Reci√©n a mediados del siglo pasado se logr√≥ un
+% avance sustancial al problema, encontrando que hab√≠an distinto tipo de ecuaciones, hiperb√≥licas, el√≠pticas, parab√≥licas, etc.
+% que se comportaban de manera distinta y esto reflejaba los distintos procesos f√≠sicos que las mismas simulaban.
 % Debido a su relativa actualidad, este conjunto tan importante de conceptos no forman parte del conjunto de herramientas con que
-% cuentan muchos de los fÌsicos en actividad ni tampoco se encuentran en los libros de texto usualmente utilizados en las carreras de grado.
+% cuentan muchos de los f√≠sicos en actividad ni tampoco se encuentran en los libros de texto usualmente utilizados en las carreras de grado.
 % 
-% Como el anterior hay muchos ejemplos, en particular la teorÌa de ecuaciones diferenciales ordinarias y la geometrÌa, sin la cual es imposible
-% comprender muchas de las teorÌas modernas, tales como la relatividad, las teorÌas de partÌculas elementales y muchos fenÛmenos
-% de la fÌsica del estado sÛlido.
-% A medida que avanza nuestra comprensiÛn de los fenÛmenos b·sicos de la naturaleza m·s nos damos cuenta que la herramienta m·s importante
-% para su descripciÛn es la geometrÌa. Esta, entre otras cosas, nos permite manejar una amplia gama de procesos y teorÌas sin mucho en com˙n entre sÌ con un conjunto muy reducido de conceptos, logr·ndose asÌ una sÌntesis. …stas sÌntesis son las que nos permiten adquirir nuevos conocimientos,
-% ya que mediante su adopciÛn dejamos espacio en nuestras mentes para aprender nuevos conceptos, los cuales son a su vez ordenados de manera m·s eficiente
-% dentro de nuestra construcciÛn mental del ·rea.
+% Como el anterior hay muchos ejemplos, en particular la teor√≠a de ecuaciones diferenciales ordinarias y la geometr√≠a, sin la cual es imposible
+% comprender muchas de las teor√≠as modernas, tales como la relatividad, las teor√≠as de part√≠culas elementales y muchos fen√≥menos
+% de la f√≠sica del estado s√≥lido.
+% A medida que avanza nuestra comprensi√≥n de los fen√≥menos b√°sicos de la naturaleza m√°s nos damos cuenta que la herramienta m√°s importante
+% para su descripci√≥n es la geometr√≠a. Esta, entre otras cosas, nos permite manejar una amplia gama de procesos y teor√≠as sin mucho en com√∫n entre s√≠ con un conjunto muy reducido de conceptos, logr√°ndose as√≠ una s√≠ntesis. √âstas s√≠ntesis son las que nos permiten adquirir nuevos conocimientos,
+% ya que mediante su adopci√≥n dejamos espacio en nuestras mentes para aprender nuevos conceptos, los cuales son a su vez ordenados de manera m√°s eficiente
+% dentro de nuestra construcci√≥n mental del √°rea.
 % 
-% Estas notas fueron originalmente pensadas para un curso de cuatro meses de duraciÛn. Pero en realidad se adaptaban m·s para un curso anual o dos
-% semestrales. Luego, a medida que se fueron incorporando m·s temas a las mismas, resultÛ m·s y m·s claro que deben darse en dos cursos semestrales o
+% Estas notas fueron originalmente pensadas para un curso de cuatro meses de duraci√≥n. Pero en realidad se adaptaban m√°s para un curso anual o dos
+% semestrales. Luego, a medida que se fueron incorporando m√°s temas a las mismas, result√≥ m√°s y m√°s claro que deben darse en dos cursos semestrales o
 % uno anual. 
-% B·sicamente un curso deberÌa contener los primeros capÌtulos que incluyen nociones de topologÌa, espacios vectoriales, ·lgebra lineal,
-% finalizando con la teorÌa de las ecuaciones en derivadas ordinarias. La tarea se simplifica considerablemente si los estudiantes han tenido previamente un buen curso de ·lgebra lineal. La correlaciÛn con las materias de fÌsica deberÌa ser tal que el curso sea previo o concurrente con una mec·nica avanzada.
-% Haciendo hincapiÈ en la misma sobre el hecho de que en definitiva uno est· resolviendo ecuaciones diferenciales ordinarias con cierta estructura especial.
-% Utilizando los conceptos del ·lgebra lineal para encontrar modos propios y la estabilidad de puntos de equilibrio. Y finalmente utilizando la geometrÌa para
-% describir aunque m·s no sea someramente la estructura simplÈctica subyacente.
+% B√°sicamente un curso deber√≠a contener los primeros cap√≠tulos que incluyen nociones de topolog√≠a, espacios vectoriales, √°lgebra lineal,
+% finalizando con la teor√≠a de las ecuaciones en derivadas ordinarias. La tarea se simplifica considerablemente si los estudiantes han tenido previamente un buen curso de √°lgebra lineal. La correlaci√≥n con las materias de f√≠sica deber√≠a ser tal que el curso sea previo o concurrente con una mec√°nica avanzada.
+% Haciendo hincapi√© en la misma sobre el hecho de que en definitiva uno est√° resolviendo ecuaciones diferenciales ordinarias con cierta estructura especial.
+% Utilizando los conceptos del √°lgebra lineal para encontrar modos propios y la estabilidad de puntos de equilibrio. Y finalmente utilizando la geometr√≠a para
+% describir aunque m√°s no sea someramente la estructura simpl√©ctica subyacente.
 % 
-% El segundo curso consiste en desarrollar las herramientas para poder discutir aspectos de la teorÌa de ecuaciones en derivadas parciales.
-% DeberÌa darse antes o concurrentemente con un curso avanzado de electromagnetismo, donde se deberÌa hacer hincapiÈ en el tipo de ecuaciones
-% que se resuelven (elÌpticas, hiperbÛlicas), y el sentido de sus condiciones iniciales o de contorno, seg˙n corresponda. Usando adem·s en forma
-% coherente el concepto de distribuciÛn, que lejos de ser un concepto matem·tico abstracto es en realidad un concepto que aparece naturalmente en la fÌsica.
+% El segundo curso consiste en desarrollar las herramientas para poder discutir aspectos de la teor√≠a de ecuaciones en derivadas parciales.
+% Deber√≠a darse antes o concurrentemente con un curso avanzado de electromagnetismo, donde se deber√≠a hacer hincapi√© en el tipo de ecuaciones
+% que se resuelven (el√≠pticas, hiperb√≥licas), y el sentido de sus condiciones iniciales o de contorno, seg√∫n corresponda. Usando adem√°s en forma
+% coherente el concepto de distribuci√≥n, que lejos de ser un concepto matem√°tico abstracto es en realidad un concepto que aparece naturalmente en la f√≠sica.
 %  
-% Nada del contenido de estas notas es material original, sÌ algunas formas de presentarlo, por ejemplo algunas pruebas m·s simples que las usuales, o la forma de integrar cada contenido con los anteriores. Mucho del material deberÌa ser pensado como una primera lectura o una iniciaciÛn al tema y el lector interesado en profundizar deberÌa leer los libros citados, de los cuales he extraÌdo mucho material, siendo Èstos excelentes y difÌciles de superar.
+% Nada del contenido de estas notas es material original, s√≠ algunas formas de presentarlo, por ejemplo algunas pruebas m√°s simples que las usuales, o la forma de integrar cada contenido con los anteriores. Mucho del material deber√≠a ser pensado como una primera lectura o una iniciaci√≥n al tema y el lector interesado en profundizar deber√≠a leer los libros citados, de los cuales he extra√≠do mucho material, siendo √©stos excelentes y dif√≠ciles de superar.
 % 
 % 
 % 
