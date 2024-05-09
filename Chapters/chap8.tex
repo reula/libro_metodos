@@ -523,9 +523,9 @@ número real y , junto con $ iii)$, que es no-negativo.
 \espa
 
 \ejer:
-Pruebe que dando un tensor de tipo $(2,0)$, $\ve{t}\langle\cdot,\cdot\rangle $,
+Pruebe que dando un tensor de tipo $(2,0)$, $\ve{t}(\cdot,\cdot) $,
 simétrico, real y positivo definido, entonces 
-$\langle \ve{x},\ve{y}\rangle  := \ve{t}\langle\bar{\ve{x}},\ve{y}\rangle $ es un producto
+$\langle \ve{x},\ve{y}\rangle  := \ve{t}(\bar{\ve{x}},\ve{y}) $ es un producto
 escalar.
 \espa
 
@@ -540,7 +540,7 @@ Que esta es en realidad una norma sigue de los siguientes lemas:
 
 
 \blem[Desigualdad de Schwarz]:
-$|\langle x,y)|\leq\|x\|\,\|y\|$. 
+$|\langle x,y\rangle| \leq \|x\|\,\|y\|$. 
 \elem
 
 \pru: Para cualquier $x,y \in V$, $\lambda \in \re{}$ tenemos por
@@ -1227,7 +1227,7 @@ pero
 \end{eqnarray}
 %
 y por lo tanto eligiendo $N$ tal que 
-$|f_{\eps}(x) - S_N(f_{\eps})(x)| < \frac{\eps}{6\pi}$,
+$|f_{\eps}(x) - S_N(f_{\eps})(x)| < \frac{\eps}{3}$,
 lo que sigue de nuestra suposición anterior (todavía no probada),
 tenemos que 
 $\|f_{\eps} - S_N(f_{\eps})\|_{L^2} < \frac{\eps}{3}$
