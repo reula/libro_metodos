@@ -1,4 +1,4 @@
-% !TEX encoding = IsoLatin9 %%last modification 13-08-92
+% !TEX encoding = IsoLatin9
 
 %\input format
 
@@ -22,11 +22,15 @@ The elements of \cT, subsets of $X$, are called the {\bf open subsets} of $X$, t
 
 \ejem: b) Let \cT = \cP($X$), the collection of all subsets of $X$, clearly this collection also satisfies the conditions mentioned above and therefore it is also a topology of $X$, the so-called {\bf discrete}. We can say that in this one all the points are arbitrarily separated from each other since, for example, given any point of $X$ there is an open set that separates it from all the others, which consists of only the point in question.
 
-\ejem: c) Let $X$ be the set of real numbers, from now on, \re, and let $\cT = {O |; if ;r \in O, \exists \eps >0 ; such ; that ;if ; |r - r'| < \eps, r' \in O}$, that is, the collection of open sets in the usual sense. Let's see that this collection satisfies the conditions to be a topology. Clearly $\emptyset \in \cT$, (since it has no $r$), as well as \re, (since it contains all $r'$), and thus condition 1) is satisfied. Let's see the second, let $r \in \bigcup_I O_{\lambda}$ then $r \in O_{\lambda}$ for some $\lambda$ and therefore there will exist $\eps >0 $ such that all $r'$ with $|r-r'| < \eps $ is also in $O_{\lambda}$, and therefore in $\bigcup_I O_{\lambda}$. Finally, let's see the third, let $r \in O \cap O'$ then $r is in O and therefore there will exist $\eps > 0$ such that all $r'$ with $|r-r'| < \eps $ will be in $O$, as $r$ is also in $O'$ there will exist $\eps'> 0$ such that all $r'$ with $|r-r'| < \eps'$ will be in $O'$. Let $\eps'' = min{\eps, \eps' }$ then all $r'$ with $|r-r'| < \eps'' will be in $O$ and in $O'$ and therefore in $O \cap O'$, so we conclude that this last set is also in \cT. $\re$ with this topology is called the {\bf real line}.
+\ejem: c) Let $X$ be the set of real numbers, from now on, \re, and let \\
+$\cT = {O |\; if \;r \in O, \exists \eps >0 \; such \; that \;if \; |r - r'| < \eps, \; r' \in O}$, that is, the collection of open sets in the usual sense. Let's see that this collection satisfies the conditions to be a topology. Clearly $\emptyset \in \cT$, (since it has no $r$), as well as \re, (since it contains all $r'$), and thus condition 1) is satisfied. Let's see the second, let $r \in \bigcup_I O_{\lambda}$ then $r \in O_{\lambda}$ for some $\lambda$ and therefore there will exist $\eps >0 $ such that all $r'$ with $|r-r'| < \eps $ is also in $O_{\lambda}$, and therefore in $\bigcup_I O_{\lambda}$. 
+Finally, let's see the third, let $r \in O \cap O'$ then $r$ is in $O$ and therefore there will exist $\eps > 0$ such that all $r'$ with $|r-r'| < \eps $ will be in $O$, as $r$ is also in $O'$ there will exist $\eps'> 0$ such that all $r'$ with $|r-r'| < \eps'$ will be in $O'$. 
+Let $\eps'' = min\{\eps, \eps' \}$ then all $r'$ with $|r-r'| < \eps''$ will be in $O$ and in $O'$ and therefore in $O \cap O'$, so we conclude that this last set is also in \cT. $\re$ with this topology is called the {\bf real line}.
 
 \ejer: Find using the previous example an infinite intersection of open sets that is not open.
 
-\ejem: d) Let $X = \re \times \re \equiv \re^2$, that is, the Cartesian product of \re with itself --the set of all pairs $(x,y)$, with $x,y \in \re$-- and let $\cT = {O |; if ; (x,y) \in O, \exists \eps >0 ; such ; that ;if ; |x - x'|+|y-y'| < \eps, (x',y') \in O}$. From the previous example, it can be seen that this is also a topological space and that this is the topology we usually use in $\re^2$
+\ejem: d) Let $X = \re \times \re \equiv \re^2$, that is, the Cartesian product of \re with itself --the set of all pairs $(x,y)$, with $x,y \in \re$-- and let \\
+$\cT = {O |\; if \; (x,y) \in O, \exists \eps >0 \; such \; that \; if \; |x - x'|+|y-y'| < \eps, \; (x',y') \in O}$. From the previous example, it can be seen that this is also a topological space and that this is the topology we usually use in $\re^2$
 
 \defi: A {\bf metric space}, $(X,d)$ is a pair consisting of a set $X$ and a map $d: X \times X \longrightarrow \re$, usually called distance, satisfying the following conditions:
 
@@ -169,7 +173,7 @@ topological spaces is continuous implies that this map is special,
 in the sense that {\it it carries or conveys information about the respective
 topologies and preserves the topological properties of the sets
 it associates}. This is seen in the following property, which --as derived
-from the following example-- ��is very important.
+from the following example-- is very important.
 
 \bteo
 Let $X$ and $Y$ be two topological spaces and $\phi$ a continuous
@@ -224,7 +228,7 @@ Let $A$ be compact. Then every sequence in $A$ has an accumulation point.
 \espa
 
 \pru:
-Suppose—contrary to the theorem's assertion—that
+Suppose, --contrary to the theorem's assertion-- that
 there exists a sequence $\{x_n\}$ without any accumulation point.
 That is, given any point $x$ of $A$ there exists a neighborhood $O_x$
 containing it and a number $N_x$ such that if $n > N_x$ then $x_n \notin
@@ -248,9 +252,9 @@ compact. However, all the topologies we will see are {\bf second countable} [See
 the answer is affirmative.
 
 In the real line, it is true that if $x \in \re $ is an accumulation point of a sequence $\{x_n\}$ then there exists a {\bf
-subsequence}, $\{\tilde{x}_n\}$, —that is, a restriction of the
+subsequence}, $\{\tilde{x}_n\}$, that is, a restriction of the
 map defining the sequence to an infinite number of natural
-numbers—, that will have $x$ as a limit point. This is also not
+numbers, that will have $x$ as a limit point. This is also not
 true in the generality of topological spaces, but it is if we consider only those that are {\bf first countable} [See box]. All the spaces we will see in this
 course are.
 
@@ -282,15 +286,15 @@ as a union of sets from this collection.
 first case, use the open sets $O_n = (p - \frac{1}{n}, p + \frac{1}{n})$ and for the second 
 $O_{pqn} = (\frac{p}{q} - \frac{1}{n}, \frac{p}{q} + \frac{1}{n})$
 
-}  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \espa
 
 \recu{
 {\bf *\yaya{Separability of topological spaces.}}
 \espa
 
-\defi: A topological space $X$ is Hausdorff if given any pair of points of $X$, $x$ and $y$,  there exist
-neighborhoods $O_x$ and $O_y$ such that $O_x \cap $O_y = \emptyset$.
+\defi: A topological space $X$ is Hausdorff if given any pair of points of $X$, $x$ and $y$,  there exist neighborhoods $O_x$ and $O_y$ such that $O_x \; \cap O_y = \emptyset$.
 
 \ejem:
 
@@ -302,8 +306,7 @@ neighborhoods $O_x$ and $O_y$ such that $O_x \cap $O_y = \emptyset$.
 
 \ejer: Prove that if a space is Hausdorff then if a sequence has a limit point, this is unique.
 
-\ejer: Let $X$ be compact, $Y$ Hausdorff, and $\phi: X \to Y$ continuous. Prove that the images of closed sets are closed. Find a counterexample if $Y$ is not Hausdorff. 
-
+\ejer: Let $X$ be compact, $Y$ Hausdorff, and $\phi :  X \to Y$ continuous. Prove that the images of closed sets are closed. Find a counterexample if $Y$ is not Hausdorff. 
 }
 
 \recubib{

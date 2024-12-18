@@ -1,5 +1,5 @@
-% !TeX spellcheck = english
 % !TEX encoding = IsoLatin9
+% !TeX spellcheck = english
 \documentclass[english,UNC]{book}
 %\documentclass[spanish,KINDLE]{book}
 %\documentclass[spanish,12pt,openany]{book} % genera .pdf para kindle.
@@ -15,6 +15,7 @@
 %\usepackage{garamond}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{amsmath} % for \text
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% PDFLaTeX  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! **********************
 % From the PDFTeX FAQ:
@@ -52,7 +53,7 @@
 
 \begin{document}%\dag
 %\input{extdef}
-\include{extdef_libro}
+\include{extdef_libro-en}
 
 %\garamond
 
@@ -60,17 +61,18 @@
 %\include{Chapters/title_KINDLE}
 %\part{}
 
-\include{Chapters/chap0}
+\include{Chapters/chap0_en}
 
 \tableofcontents
 \listoffigures
 
 %\garamond
 
-\include{Chapters/chap01}
+\include{Chapters/chap01_en}
 \include{Chapters/chap1_en}
-\include{Chapters/chap2}
-\include{Chapters/chap3}
+\include{Chapters/chap2_en}
+\include{Chapters/chap3_en}
+\end{document}
 \include{Chapters/chap4}
 \include{Chapters/chap5}
 \include{Chapters/chap6}

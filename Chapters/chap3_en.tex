@@ -1,0 +1,1316 @@
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%% last modification 28/04/2013
+
+\chapter{Geometry}
+
+
+
+
+
+\section{Manifolds}
+
+There are several reasons that justify the study of the concept of a manifold, or more generally of differential geometry, by physicists.
+One is that manifolds naturally appear in physics and therefore we cannot avoid them.
+Only in elementary courses can they be circumvented through vector calculus in $\re^n$. 
+Thus, for example, to study the movement of a particle restricted to move on a sphere, we imagine the latter embedded in $\re^3$ and use the natural coordinates of $\re^3$ to describe its movements.
+
+The second reason is that the concept of a manifold is of great conceptual utility, since, for example, in the case of a particle moving in $\re^3$, it allows us to clearly distinguish between the position of a particle and its velocity vector as mathematical entities of different nature.
+This fact is masked in $\re^3$ since this special type of manifold has the structure of a vector space.
+
+Since the time of Galileo, we know that the language of physics is mathematics.
+Like any language, its utility goes beyond its daily use to understand each other and work on our ideas. Language allows for a synthesis of concepts and knowledge that encapsulates an entire area of knowledge into a smaller number of concepts.
+This allows future generations to understand an immense amount of knowledge that for previous generations were disparate aspects of reality as particular aspects of the same trunk of knowledge.
+The clearest example of this is the theories of the standard model of particles, which unify under the same phenomenon what we previously understood as distinct properties of matter.
+In particular, these theories naturally and deterministically incorporate elements of geometry, such as fiber bundles and connections, symmetries, etc.
+
+A manifold is a generalization of Euclidean spaces $\re^n$ in which one preserves the concept of continuity, that is, its topology in the local sense but discards its character as a vector space. A manifold of dimension $n$ is, in imprecise terms, a set of points that locally is like $\re^n$, but not necessarily in its global form.
+
+An example of a two-dimensional manifold is the sphere, $S^2$.
+If we look at a sufficiently small neighborhood, $U_p$, of any point of $S^2$, we see that it is similar to a neighborhood of the plane, $\re^2$, in the sense that we can define a continuous and invertible map between both neighborhoods. Globally, the plane and the sphere are topologically distinct, as there is no continuous and invertible map between them.
+[See figure 3.1.]
+%\fig{6cm}{An atlas of the sphere.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_1_b}}
+    \caption{An atlas of the sphere.}
+    \label{fig:3_1}
+  \end{center}
+\end{figure}
+
+As we said before, one might object to the need, in the previous example, to introduce the concept of a manifold, since one could consider $S^2$ as the subset of $\re^3$ such that $x_1^2+x_2^2+x_3^2=1$. The answer to this objection is that in physics one must follow the rule of economy of concepts and objects and discard everything that is not fundamental to the description of a phenomenon: if we want to describe things happening on the sphere, why do we need a space of more dimensions?
+This rule of economy forces us to refine concepts and discard everything superfluous.
+It is in this way that we advance in our maturation as physicists. It is the way we truly penetrate the mysteries of nature.
+
+Note that the first way of working with the sphere is what we normally do when we seek to locate points and paths on the globe.
+In fact, we use flat maps, formerly called charts, to describe what happens in our cities and countries.
+When we want to have a collection of maps that cover the entire globe, we acquire an atlas, that is, a set of maps that cover the entire globe and have sectors in common between one and another. Some of these sectors are internal, for example when they describe a city within a country (on the map that covers that country), or on the edges when we go from one sheet to another.
+Only when we want to see the global structure of the globe, for example if we want to take a plane trip covering a large part of the globe, do we use a small version of the planet as implanted in $\re^3$.
+
+\noi We now give a series of definitions to finally arrive at the definition of an $n$-dimensional manifold.
+
+\defi: Let $M$ be a set. A {\bf chart of $M$} is a pair $(U,\fip)$ where $U$ is a subset of $M$ and $\fip$ an injective map between $U$ and $\re^n$, such that its image, $\fip[U]$ is open in $\re^n$.
+
+\defi: An {\bf atlas of $M$} is a collection of charts $\{(U_i,\fip_i)\}$ satisfying the following conditions: 
+ [See figure 3.2.]
+
+\espa 
+%\fig{9cm}{Relationship between charts}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_2}}
+    \caption{Relationship between charts.}
+    \label{fig:3_2}
+  \end{center}
+\end{figure}
+
+\begin{enumerate}
+ \item The $U_i$ cover $M$, $\displaystyle(M=\bigcup_i\;U_i)$.
+ \label{it1}
+ \item If two charts overlap then $\fip_i(U_i\cap U_j)$ is also an open set in $\re^n$.\label{it2}
+ \item The map $\fip_j \circ \fip_i^{-1}:\fip_i[U_i\cap U_j] \to \fip_j[U_i\cap U_j] $ is continuous, injective, and surjective.
+\label{it3}
+\end{enumerate}
+
+Condition~\ref{it1} gives us a notion of {\it closeness} in $M$ induced from the analogous notion in $\re^n$. Indeed, we can say that a sequence of points $\{p_k\}$ in $M$ converges to $p$ in $U_i$ if there exists $k_0$ such that $\forall\;\;k> k_0$, $p_k\in U_i$ and the sequence $\{\fip_i(p_k)\}$ converges to $\fip_i(p)\}$. 
+Another way to see this is that if after this construction of a manifold we impose that the maps $\fip_i$ are continuous, then we induce a unique topology on $M$.
+[See figure 3.3.] 
+
+\espa 
+%\fig{7cm}{Sequences in $M$.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_3}}
+    \caption{Sequences in $M$.}
+    \label{fig:3_3}
+  \end{center}
+\end{figure}
+
+Condition~\ref{it2} simply ensures that this notion is consistent. If $p\in U_i\cap U_j$ then the fact that the sequence converges is independent of whether we use the chart $(U_i,\fip_i)$ or $(U_j,\fip_j)$.
+
+Condition~\ref{it3} allows us to encode in the maps $\fip_j\circ\fip_i^{-1}$ from $\re^n$ to $\re^n$ the global topological information necessary to distinguish, for example, whether $M$ is a sphere, a plane, or a torus. 
+Therein lies, for example, the information that there is no continuous and invertible map between $S^2$ and $\re^2$.
+But also, if we require these maps to be differentiable, it is what will allow us to formulate differential calculus on $M$.
+Indeed, note that in condition~\ref{it3} we speak of the continuity of the map $\fip_j\circ \fip_i^{-1}$, which is well-defined because it is a map between $\re^n$ and $\re^n$. Similarly, we can speak of the differentiability of these maps.
+
+We will say that {\bf an atlas $\{(U_i,\;\fip_i)\}$ is $C^p$} if the maps $\fip_j\circ\fip_i^{-1}$ are $p$-times differentiable and their $p$-th derivative is continuous.
+
+One might be tempted to define the manifold $M$ as the pair consisting of the set $M$ and an atlas $\{(U_i,\fip_i)\}$, but this would lead us to consider as different manifolds, for example, the plane with an atlas given by the chart ($\re^2,(x,y)\to (x,y))$ and the plane with an atlas given by the chart ($\re^2,(x,y)\to (x,-y))$.
+
+To remedy this inconvenience, we introduce the concept of equivalence between atlases.
+
+\defi: We will say that {\bf two atlases are equivalent} if their union is also an atlas.
+
+\ejer: Prove that this is indeed an equivalence relation $\approx$, that is, it satisfies:
+
+$i$) $A\,\approx\,A$
+
+$ii$) $A\,\approx \,B\;\Longrightarrow\;B\,\approx\,A$
+
+$iii$) $A\,\approx\,B\, , \, B\,\approx\,C\;\Longrightarrow\;A\,\approx\,C$.
+
+With this equivalence relation, we can divide the set of atlases of $M$ into different {\bf equivalent classes}. [Remember that each equivalent class is a set where all its elements are equivalent to each other and such that there is no element equivalent to these that is not in it.]
+
+\defi: We will call {\bf manifold $M$ of dimension $n$ and differentiability $p$} the pair consisting of the set $M$ and an equivalent class of atlases, $\{\fip_i\,:\,U_i\,\to\,\re^n\}\;,$ in $C^p$.
+
+It can be shown that to uniquely characterize the manifold $M$ it is sufficient to give the set $M$ and an atlas. If we have two atlases of $M$, then either they are equivalent and thus represent the same manifold, or they are not and then represent different manifolds.
+
+The definition of a manifold that we have introduced is still too general for usual physical applications, in the sense that the allowed topologies can still be pathological from the point of view of physics. Therefore, in this course, we will impose an extra condition on manifolds.
+We will assume that they are {\bf separable or Hausdorff}. That is, if $p$ and $q\,\in\;M$, distinct, then: either they belong to the domain of the same chart $U_i$ (in which case there exist neighborhoods $W_p$ of $\fip_i(p)$ and $W_q$ of $\fip_i(q)$ such that $\fip_i^{-1}(W_p)\,\cap\,\fip_i^{-1}(W_q)=\;\emptyset$, that is, the points have disjoint neighborhoods) or there exist $U_i$ and $U_j$ with $p\,\in\,U_i$, $q\,\in\,U_j$ and $U_i\,\cap\,U_j\,=\,\emptyset$, which also implies that they have disjoint neighborhoods.
+This is a property in the topology of $M$ that essentially says we can separate points of $M$. An example of a non-Hausdorff manifold is the following.
+
+\ejem: $M$, as a set, consists of three intervals of the line $I_1\,=(-\infty,0]$, $I_2\,=(-\infty,0]$ and $I_3\,=(0,+\infty)$. \\
+An atlas of $M$ is $\{ ( U_1\,=\,I_1\,\cup\,I_3\,,\,\fip_1\,=\,id)\;,\,(U_2\,=\,I_2\,\cup\, I_3\;,\,\fip_2\,=\,id\,)\}$. 
+[See figure 3.4.] 
+
+\espa 
+%\fig{3cm}{Example of a non-Hausdorff manifold.}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_4}}
+    \caption{Example of a non-Hausdorff manifold.}
+    \label{fig:3_4}
+  \end{center}
+\end{figure}
+
+\ejer: Prove that it is an atlas.
+
+\noi Note that given any neighborhood $W_1$ of $\fip_1(0)$ in $\re$ and any neighborhood $W_2$ of $\fip_2(0)$ we necessarily have \hfill \\
+$\fip_1^{-1}(W_1)\,\cap\,\fip_2^{-1}(W_2)\,\neq \,\emptyset$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section {Differentiable Functions on $M$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+From now on we will assume that $M$ is a $C^\infty$ manifold, that is, all its maps $\fip_i\circ\fip_j^{-1}$ are infinitely differentiable. Although mathematically this is a restriction, it is not in physical applications. In these, $M$ is generally the space of possible states of the system and therefore its points cannot be determined with absolute certainty, as every measurement involves some error.
+This indicates that through measurements we could never know the degree of differentiability of $M$. For convenience, we will assume it is $C^\infty$.
+
+A function on $M$ is a map $f:M\to\,\re$, that is, a map that assigns a real number to each point of $M$. The information encoded in the atlas on $M$ allows us to say how smooth $f$ is.
+
+\defi: We will say that $f$ is {\bf $p$-times continuously differentiable} at the point $q\,\in\;M\;,\,f\,\in\,C_q^p $ if given $(U_i,\fip_i)$ with $q\,\in\,U_i\;,\,f\circ\fip_i^{-1}\,:\fip_i(U_i)\subset \,\re^n\,\to\re$ is $p$-times continuously differentiable at $\fip_i(q)$.
+
+\noi Note that this property is independent of the chart used [as long as we consider only charts from the compatible class of atlases].
+We will say that $f\,\in\,C^p(M)$ if $f\,\in\,C_q^p\;\;\forall\,q\,\in\,M$.
+[See figure 3.5.]
+
+\espa 
+%\fig{6cm}{Composition of the map of a chart with a function}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_5}}
+    \caption{Composition of the map of a chart with a function.}
+    \label{fig:3_5}
+  \end{center}
+\end{figure}
+
+In practice, one defines a particular function $f\,\in\,C^p(M)$ by introducing functions $f_i\,:\,\fip_i(U_i)\,\subset\,\re^n\;\to\re$ (that is, $f_i(x^j)$ where $x^j$ are the Cartesian coordinates in $\fip_i(U_i)\subset\re^n $) that are $C^p$ in $\fip_i(U_i)$ and such that $f_i=f_j\circ\fip_j\circ\fip_i^{-1}$ in $\fip_i(U_i\cap U_j)$.
+This guarantees that the set of $f_i$ determines a unique function $f\,\in\,C^p(M)$. The set of $f_i\,(=f\circ \fip_i^{-1})$ forms a {\bf representation of $f$} in the atlas $\{(U_i,\fip_i)\}$.
+[See figure 3.6.] 
+
+\espa 
+%\fig{8cm}{The relationship between the $f_i$.}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_6}}
+    \caption{The relationship between the $f_i$.}
+    \label{fig:3_6}
+  \end{center}
+\end{figure}
+
+\ejer: The circle, $S^1$, can be thought of as the interval [0,1] with its ends identified. 
+What are the functions in $C^2(S^1)$?
+
+\espa
+Using the previous construction, one can also define maps from $M$ to $\re^m$ that are $p$-times differentiable. Now we perform the inverse construction, that is, we will define the differentiability of a map from $\re^m$ to $M$. We will do the case $\re\,\to\,M$, in which case the map thus obtained is called a curve. The general case is obvious.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section {Curves in $M$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\defi: {\bf A curve in $M$} is a map between an interval
+$I\,\subset\,\re$ and $M$, $\gamma\,:\,I\,\to\,M$. 
+
+Note that the curve
+is the map and not its graph in $M$, that is, the set $\gamma[I]$. 
+Thus, it is possible to have
+two different curves with the same graph. This is not a mathematical whim
+but a physical necessity: it is not the same for a car to travel the road Córdoba--Carlos Paz at 10 km/h as at 100 km/h,
+or to travel it in the opposite direction.
+
+\defi: We will say that $\gamma\,\in\,C_{t_0}^p$ if given a chart $(U_i,\fip_i)$
+such that $\gamma(t_0)\,\in\,U_i$ the map
+$\fip_i\circ\gamma(t)\,:\,I_{t_0}\su I\to\re^n$ is $p$-times
+continuously differentiable at $t_0$.
+[See figure 3.7.] 
+
+
+\espa 
+%\fig{8cm}{Differentiability of curves in $M$.}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_7}}
+    \caption{Differentiability of curves in $M$.}
+    \label{fig:3_7}
+  \end{center}
+\end{figure}
+
+\espa
+\ejer: Prove that the previous definition
+does not depend on the chart used.
+
+\espa
+This time we have used the concept of differentiability between maps from
+$\re$ to $\re^n$.
+ 
+\defi: A curve {$\gamma(t)\in C^p(I)$} if 
+$\gamma(t)\in C_t^p\;\forall\,t\,\in\,I$.
+\par
+
+\ejer: How would you define the concept of
+differentiability of maps between two manifolds?
+\espa
+Of particular importance among these are the maps from $M$ to itself
+$g\,:\,M\;\to\,M$ that are continuously differentiable and
+invertible. They are called {\bf Diffeomorphisms}.
+From now on we will assume that all manifolds, curves, diffeomorphisms, and
+functions are smooth, that is, they are $C^\infty$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section {Vectors}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+To define vectors at points of $M$ we will use the concept of
+directional derivative at points of $\re^n$, that is, we will exploit the
+fact that in $\re^n$ there is a one-to-one correspondence between
+vectors $\left. (v^1,\ldots, v^n)\right|_{x_0}$ and directional
+derivatives  $\left.\ve{v}(f)\right|_{x_0} = v^i\left.
+\frac{\partial}{\partial x^i}\,f\right|_{x_0}$.
+
+As we have defined differentiable functions on $M$ we can define
+derivations, or directional derivatives, at its points and
+identify with them the tangent vectors.
+
+\defi: A {\bf tangent vector ${\ve{ v}}$ at $p\,\in\,M$} is a map \hfill
+\[
+{\ve{ v}}\,:\,C^\infty(M) \,\to\,\re
+\] 
+%
+satisfying: 
+$\forall\,f,g\,\in C^\infty (M) \,,\;a,b\,\in\,\re$
+
+$i$) Linearity; ${\ve{ v}}(af+bg)|_p=a\,{\ve{ v}}(f)|_p+b\,{\ve{ v}}(g)|_p$.
+
+$ii$) Leibniz; ${\ve{ v}}(fg)|_p=f(p)\,{\ve{ v}}(g)|_p+g(p)\,{\ve{ v}}(f)|_p$.
+
+\espa
+Note that if $h\,\in\,C^\infty(M)$ is the constant function,
+$h(q)=c\;\;\forall\,q\in M$, then ${\ve{ v}}(h)=0$. [ $i$) $\Longrightarrow
+\,{\ve{ v}}(h^2)={\ve{ v}}(ch)=c\,{\ve{ v}}(h) $ while $ii$) $\Longrightarrow \,
+{\ve{ v}}(h^2)=2\,h(p)\,{\ve{ v}}(h) =2\,c\,{\ve{ v}}(h)\,$]. These properties also show
+ that ${\ve{ v}}(f)$ depends only on the behavior of $f$ at $p$.
+ 
+\ejer: Prove this last statement.
+
+\espa
+Let $T_p$ be the set of all vectors at $p$. This set
+has the structure of a vector space and is called the 
+\textbf{tangent space at the point}~\index{tangent space} $p$. 
+Indeed, we can define the sum of two
+vectors ${\ve{ v}}_1\,,\,{\ve{ v}}_2$ as the vector, that is the
+map, satisfying $i$) and $ii$), $({\ve{ v}}_1\,+\,{\ve{v}}_2)(f)
+=\,{\ve{ v}}_1(f)\,+\,{\ve{ v}}_2(f)$ 
+and the product of the
+vector ${\ve{ v}}$ by the number $a$ as the map $(a{\ve{
+v}})(f)=a\,{\ve{ v}}(f)$.
+
+As in $\re^n$, the dimension of the vector space $T_p$,
+(that is, the maximum number of
+linearly independent vectors), is $n$.
+
+\bteo
+dim $T_p\,=\,dim M$.
+\eteo
+
+\pru: This will consist of finding a basis
+for $T_p$. Let $dim\;M=n$ and $(U,\fip)$ such that $p\,\in\,U$ and
+$f\,\in\,C^{\infty}(M)$  any. For $i=1,\ldots,n$ we define
+the vectors $\ve{ x}_i:C^{\infty}(M)\,\to\,\re$ given by,
+
+\beq
+\ve{ x}_i(f):=\left.\frac{\partial}{\partial x^i}(f\circ
+\fip^{-1})\right|_{\fip(p)} . 
+\label{eq34}
+\eeq
+
+Note that these maps satisfy $i$) and $ii$) and therefore the
+$\ve{ x}_i$ are
+really vectors. Note also that the right-hand side of~\ref{eq34}
+is well defined since we have the usual partial derivatives
+of maps between $\re^n$ and $\re$. These $\ve{ x}_i$ depend on the chart
+$(U,\fip)$ but this does not matter in the proof since $T_p$ does not depend
+on any chart. These vectors are linearly independent, that is if $x=\sum_{i=1}^n c^i\,\ve{ x}_i=0$ then $c^i=0\;\;\forall\,i=1,\ldots,n$. This
+is easily seen by considering the functions (strictly defined
+only in $U$), $f^j :=x^j\circ\fip$, since
+$\ve{ x}_i(f^j)=\delta_i^{\,j}$ and therefore $0=\ve{x}(f^j)=c^j$. 
+It only remains to show that any vector ${\ve{ v}}$ can be expressed as
+a linear combination of the $\ve{ x}_i$. For this we will use the following
+result whose proof we leave as an exercise. 
+
+\blem
+Let $F:\re^n\to\re, \; F\in\,C^{\infty}(\re^n)$ then for
+each $x_0\in\re^n$ there exist functions
+$H_i:\re^n\to\re\;\in C^{\infty}(\re^n) $ such that
+$\forall\;x\in\re^n$ it holds 
+\beq
+F(x)=F(x_0)\,+\,\sum_{i=1}^n (x^i-x_0^i)\,H_i(x)\;\;\mbox{and}    \label{eq11}
+\eeq
+\par
+\noi also,
+
+\vskip -1cm
+
+\beq
+\left.\frac{\partial F}{\partial x^i}\right|_{x=x_0}\,=\,H_i(x_0).
+\eeq
+\elem
+
+\espa
+
+We now continue the proof of the previous Theorem.
+Let $F=f\circ \fip^{-1}$ and $x_0=\fip(p)$, then $\forall\;q\in U$
+we have 
+\beq
+f(q)=f(p)\,+\, \sum_{i=1}^n (x^i\circ \fip(q)\,-\,x^i\circ\fip(p))\,H_i\circ\fip(q)
+\eeq
+\noi Using $i$) and $ii$) we obtain,
+\beq
+\barr{ll}
+  {\ve{ v}}(f) &\left. ={\ve{ v}}(f(p))\,+
+  \,\sum_{i=1}^n (x^i\circ\fip(q)\,-\,x^i\circ\fip(p)) 
+                    \right|_{q=p}\;{\ve{ v}}(H_i\circ\fip)\\
+      &\;\;\;+\,\left. \sum_{i=1}^n (H_i\circ\fip)\right|_p\,{\ve{ v}}(x^i\circ
+                                      \fip\,-\,x^i\circ\fip(p))\\
+ &=\,\left. \sum_{i=1}^n (H_i\circ\fip)\right|_p\,{\ve{ v}}(x^i\circ\fip)\\
+ &=\,\sum_{i=1}^n v^i \;\ve{ x}_i(f)
+\earr
+\eeq
+\noi where $v^i\equiv \,{\ve{ v}}(x^i\circ\fip)$, and therefore we have
+expressed ${\ve{ v}}$ as a linear combination of the $\ve{ x}_i$,
+thus concluding 
+the proof \epru
+
+The basis $\{\ve{ x}_i\}$ is called a {\bf coordinate basis} and the $\{v^i\}$, the
+{\bf components of ${\ve{ v}}$} in that basis.
+
+\ejer:  If $(\tilde U,\tilde{\fip})$ is another
+chart such that $p\in \tilde U$, then it will define another coordinate basis
+$\{\ve{\tilde x}_i\}$. Show that
+$$
+\ve{x_j}= \sum_{i=1}^n \frac{\partial {\tilde x}^i}{\partial x^j}\,\ve{\tilde x}_i
+$$
+\noi where ${\tilde x}^i$ is the $i$-th component of the map 
+$\tilde{\fip}\circ {\fip}^{-1} $. 
+Also show that the relationship between the components is  $\tilde
+v^i=\displaystyle\sum_{i=1}^n\frac{\partial\tilde x^i}{\partial x^j} \,v^j$.
+
+\ejem: Let $\gamma:I\to M$ be a curve in $M$. At each point $\gamma(t_0)$,
+$t_0\in I$, of $M$ we can define a vector as follows,
+[See figure 3.8.] 
+
+
+\espa 
+%\fig{5cm}{Definition of vector.}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m3_8}}
+    \caption{Definition of vector.}
+    \label{fig:3_8}
+  \end{center}
+\end{figure}
+
+\beq
+\ve{ t}(f)=\frac{d\,}{dt}\left.(f\circ\gamma)\right|_{t=t_0}.
+\eeq
+
+
+
+Its components in a coordinate basis are obtained through the functions
+\beq
+x^i(t)= x^i \circ \fip\circ\gamma(t)
+\eeq
+
+\begin{eqnarray}
+\frac d{dt}(f\circ\gamma) &=& 
+\frac d{dt}(f\circ\fip^{-1}\circ \fip \circ \gamma) \nonumber \\
+ &=& \frac d{dt}(f\circ\fip^{-1}(x^i(t))) \nonumber \\
+ &=& \sum_{i=1}^n (\frac{\partial}{\partial x^i}(f\circ\fip^{-1}))\frac{dx^i}{ dt} \nonumber \\
+ &=& \sum_{i=1}^n \frac{dx^i}{dt}\,{\ve{ x}}_i(f)
+\end{eqnarray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Vector and Tensor Fields}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+If to each point $q$ of $M$ we assign a vector ${\ve{ v}}|_q \in T_q$
+we will have a {\bf vector field}. This will be in $C^{\infty}(M)$ if
+given any $f\in C^{\infty}(M)$ the function ${\ve{ v}}(f)$, which at each
+point $p$ of $M$ assigns the value ${\ve{ v}}\mid_p(f)$, is also in
+$C^{\infty}(M)$. We will denote the set of $C^{\infty}$ vector fields by $TM$ and it is obviously a vector space of
+infinite dimension.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The Lie Bracket}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Now consider the operation in the set $TM$ of
+vector fields, $[\cdot,\cdot]$ : $TM\times TM\to TM$. This operation is
+called the {\bf Lie bracket} and given two vector fields
+$(C^{\infty})$ it gives us a third:
+\beq
+[\ve{ x},\ve{ y}]\,(f) := \ve{ x}\,(\ve{ y}(f))-\ve{ y}\,(\ve{ x}(f)).
+\eeq
+
+\ejer: 
+
+1) Show that $[\ve{ x},\ve{ y}]$ is indeed a
+vector field.
+
+
+2) See that the {\bf Jacobi identity} is satisfied:
+\beq
+\left[[\ve{ x},\ve{ y}]\,,\,\ve{ z}\right]+\left[[\ve{ z},\ve{ x}]\,,
+\,\ve{ y}\right]+\left[[\ve{ y},\ve{ z}\,,\,\ve{ x}\right]=0
+\eeq
+
+3) Let $\ve x^i $ and $\ve x^j$ be two vector fields coming from
+a coordinate system, that is $\ve x^i(f) = \derp{f}{x^i}$, etc.
+Show that $\lc \ve x^i, \ve x^j \rc = 0$.
+
+4) Given the components of $\ve{ x}$ and $\ve{ y}$ in a coordinate
+basis, what are those of $[\ve{ x},\ve{ y}]$? 
+
+With this operation $TM$ acquires the character of an algebra, called
+{\bf Lie Algebra.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Diffeomorphisms and the Theory of Ordinary Differential Equations}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\defi: A {\bf one-parameter group of diffeomorphisms} $g^t$ is a map
+$\re\times M\to M$ such that:
+
+1) For each fixed $t$ it is a diffeomorphism~\footnote{That is, a smooth map with a smooth inverse.} $M\to M$ 
+
+2) For any pair of real numbers, $t,s\in \re$ we have $g^t\circ g^s=g^{t+s}$
+(in particular
+$g^0=id$).
+
+\espa
+We can associate with $g^t$ a vector field in the
+following way: For a fixed $p$, $g^t(p):\re\to M$ is a curve
+that at $t=0$ passes through $p$ and therefore defines a tangent vector at
+$p$, ${\ve{ v}}\mid_p$. Repeating the process for every point in $M$ we have
+a vector field in $M$. Note that due to the group property
+satisfied by $g^t$, the tangent vector to the curve $g^t(p)$ is also
+tangent to the curve $g^s(g^t(p))$ at $s=0$.
+
+We can ask the inverse question: Given a smooth vector field
+$\ve v$
+in $M$, does there exist a one-parameter group of diffeomorphisms that defines it? The answer to this question, which consists of finding all
+the integrable curves $g^t(p)$ that pass through each $p\in M$, is
+the theory of ordinary differential equations,
+--which will be the subject of our study in the following chapters--
+since it consists of solving the
+equations $\frac {dx^i}{dt}=v^i(x^j)$ with initial conditions
+$x^i(0)=\fip^i(p) \;\;\forall\;p\in M$. As we will see, the answer is
+affirmative but only locally, that is, we can only find
+$g^t$ defined in $I(\su \re)\times U(\su M)\to M$.
+
+\espa
+\ejem: In $\re^1$ let the vector have the coordinate component
+$x^2$, that is $\ve{v}(x)=x^2\frac{\partial}{\partial x}$. The ordinary
+differential equation associated with this vector is $\frac{dx}{dt}=x^2$, 
+whose solution is 
+\beq 
+t-t_0=\frac {-1}x +\frac 1{x_0}
+\;\mbox{\o}\;\;x(t)=\frac{-1}{t-\displaystyle\frac 1{x_0}}
+\eeq
+\noi
+where we have taken $t_0=0$. That is, $g^t(x_0)=\displaystyle\frac{-1}{t-\frac
+1{x_0}}$. Note that for any $t$ this map is not defined for
+all $\re$ and therefore is not a diffeomorphism. Also note that for any interval we
+take for its definition, the time interval of the solution's existence will be finite, either towards the
+future or the past.
+
+\ejem: Let $g^t$ be a linear diffeomorphism in
+$\re$, that is $ g^t(x+\alpha y)=g^t(x)\,+\,\alpha\,g^t(y)$. Then it has the
+form $g^t(x)=f(t)\,x$. The group property implies $f(t)\cdot f(s)
+=f(t+s)$ or $f(t)=c\,\mbox{e}^{kt}=\mbox{e}^{kt}$, since $g^0=id$.
+Therefore $g^t(x)=\mbox{e}^{kt}\,x$. 
+The associated differential equation
+is: $x(t)=\mbox{e}^{kt}\,x_0\;\;\Longrightarrow\;\;\dot
+x=k\,\mbox{e}^{kt}\,x_0=$ \fbox{$k\,x=\dot x.$}
+
+\ejer: Plot in a neighborhood of the origin in $\re^2$ the integral curves and
+therefore $g^t$ of the following linear systems.
+\beq \left(\barr{c}
+        \dot x \\ \dot y
+        \earr \right)=\left(\barr{cc}
+                        1 & 0\\
+                        0 & k
+                        \earr\right)\left(\barr{c}
+                                   x \\ y
+                                   \earr\right)
+\eeq 
+  
+  a) $k>1$  \ \ \,b) $k=1$\ \ \     c) $ 0<k<1$,   \ \ \   d) $k=0$, \ \ \   e) $k<0$
+
+\vskip \baselineskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Covector and Tensor Fields}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Just as we introduced the notion of a vector field, we can
+also introduce the notion of a covector field, that is, a smooth map
+from $M$ to $T_p^*$. This will act on vector fields giving
+as a result functions on $M$. In the following example, we see how
+the field {\bf differential of $f$} is defined.
+
+\ejem: Let $f\in C^{\infty}_p$. A vector at
+$p\in M$ is a derivation on functions in $C_p^{\infty}$,
+$\ve{v}(f)\in \re$. 
+But given $\ve{v}_1$ and $\ve{v}_2 \;\in T_p$, $a \in \re$ and $f\in C_p^{\infty}$,
+$(\ve{v}_1+a\ve{v}_2)(f)= \ve{v}_1(f)+ a\ve{v}_2(f)$ and therefore each given $f$
+defines a linear functional 
+$\ve{df}\mid_p:T_p\to \re$, called the differential of $f$, that is
+an element of $T_p^*$,
+
+\[
+\ve{df}(\ve{v}) := \ve{v}(f), \;\;\;\;\; \forall \ve{v} \in T_{p}.
+\]
+%
+In this way, the differential of a
+function, $\ve{df}$, is a covector that when acting on a vector $\ve{v}$ gives us
+the number {\it the derivative of $f$ at the point $p$ in the direction of $\ve{v}$}.
+
+
+
+Let $f$ be a smooth function on $M$, $a\in\re$ and consider the subset 
+$S_{a}$ of $M$ such that $f(S_{a})=a$.
+It can be seen that if $df\neq0$ this will be a submanifold of $M$, 
+that is, a surface embedded in $M$, of dimension $n-1$.
+The condition $df|_p(\ve{ v})=0$ on vectors of $T_p$ with $p\in S_{a}$
+means that these are actually tangent vectors to $S_{a}$, that is,
+elements of $T_p(S_{a})$. On the contrary, if $df(\ve{v})|_p \neq
+0$ then at that point $\ve{v}$ {\it pierces} $S_{a}$. 
+
+\ejem: The function $f(x,y,z)=x^2+y^2+z^2$ in $\re^3$. \par
+$S_{a}=\{(x,y,z)\in \re^3 | f(x,y,z) = a^2,\;\; a>0\}$ is the sphere of radius
+$a$, and as we have already seen, a manifold. Let $(v^{x},v^{y},v^{z})$ be a vector at the point
+$(x,y,z)\in\re^{3}$, then the condition $\ve{df}(\ve{v})=2(xv^{x}+yv^{y}+zv^{z})=0$
+implies that $\ve{v}$ is tangent to $S$. Indeed, we see that this is the condition that tells us that 
+$\ve{v}$ is \textsl{perpendicular} to $(x,y,z)$ when we are in the conventional Euclidean structure.
+
+\espa
+
+Given a coordinate system (chart) that covers a point $p \in M$, we have seen that we have a canonical basis of $T_{p}$ associated with it given by the vectors,
+
+\[
+\ve{x}_{i} (f) := \frac{\partial f\circ \phi^{-1}}{\partial x^{i}}|_{\phi(p)}.
+\]
+%
+What will be the associated cobasis? 
+Note that the coordinate system also gives us a set of $n$ privileged functions, that is, the components of the map $\phi$ that defines the chart, 
+$\{x^{j}\}$, $j=1..n$, 
+$x^{i}(p):=$\textsl{value of the $i$-th coordinate assigned by $\phi$ to the point $p$}. 
+Note that $x^{i}\circ\fip^{-1}$ is then the identity map for the $i$-th coordinate.
+If we apply the basis vectors to these functions, we obtain,
+
+\[
+ \ve{x}_{i} (x^{j}) := \frac{\partial x^{j}\circ\fip^{-1}}{\partial x^{i}}|_{\phi(p)} = \delta^{j}_{i},
+ \]
+ %
+ but then, since $\ve{dx}^{j}(\ve{x}_{i})=\ve{x}_{i} (x^{j}) = \delta^{j}_{i}$, we see that the differentials
+ $ \ve{dx}^{j}$ are the cobasis of the coordinate basis. 
+ In particular, we have that the coordinate components of a vector $\ve{v}$ are given by:
+ 
+ \[
+ v^{j} = \ve{dx}^{j}(v),
+ \]
+%
+and the components of a covector $\ve{\omega} \in T_{p}^{*}$ by,
+
+\[
+\omega_{i} = \ve{\omega}(\ve{x}_{i}).
+\]
+ 
+Similarly, we define {\bf tensor fields} as the multilinear maps
+that when acting on vector and covector fields give functions
+from the manifold to the reals and that at each point of the manifold only 
+depend on the vectors and covectors defined at that point. 
+This last clarification is
+necessary because otherwise, we would include among the tensors, for
+example, line integrals over vector fields.
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The Metric}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let $M$ be an n-dimensional manifold. We have previously defined on $M$
+the notions of curves, vector fields, and covector fields, etc., but
+not a notion of distance between its points, that is, a function 
+$d: M \times M \rightarrow \re$ that takes any two points, p and q of
+$M$ and gives us a number $d(p,q)$ satisfying,
+\begin{enumerate}
+\item $d(p,q) \geq 0$.
+\item $d(p,q) = 0 $ \sii $p=q$.
+\item $d(p,q) = d(q,p)$.
+\item $d(p,q) \leq d(p,r) + d(r,q)$.
+\end{enumerate}
+ 
+This, and in some cases a notion of pseudo-distance [where 1) and
+2) are not satisfied], is fundamental if we want to have a mathematical structure 
+that is useful for the description of physical phenomena. 
+For example,
+Hooke's law, which tells us that the force applied to
+a spring is proportional to its elongation (a distance),
+clearly needs this entity.
+Next, we will introduce a notion of infinitesimal distance,
+that is, between two infinitesimally separated points, which corresponds
+to the Euclidean notion of distance and allows us to develop a notion of
+global distance, that is, between any two points of $M$.
+
+The idea is then to have a concept of distance (or pseudo-distance)
+between two {\sl infinitesimally close} points, that is, two
+points connected by an {\sl infinitesimal displacement}, that is,
+connected by a vector. The notion we need is then that of
+the norm of a vector. Since a manifold is locally like $\re^n$, in
+the sense that the space of tangent vectors at a point $p$,
+$T_pM$ is $\re^n$, it is reasonable to consider there the notion of Euclidean distance,
+that is, the distance between two points $x_0$ and $x_1\in \re^n$
+is the square root of the sum of the squares of the
+components (in some coordinate system) of the vector connecting
+these two points. The problem with this is that
+such a notion depends on the coordinate system being used and
+therefore there will be as many distances as coordinate systems covering
+the point $p$.
+This is just an indication that the structure we have so far does not contain a privileged or
+natural notion of distance. This must be introduced as an additional structure.
+One way to obtain infinitesimal distances independent of the coordinate system (that is, geometric)
+is by introducing at each point $p \in M$ a tensor of type ${0\choose 2}$, symmetric
+$[\mathbf{g(u,v) = g(v,u) \;\; \forall \; u,\;v} \; \in T_pM]$ and non-degenerate 
+$[\mathbf{g(u,v) = 0\;\; \forall v} \; \in T_pM \;\;\Ra \mathbf{u=0}]$.
+If we also require that this tensor be
+positive definite 
+$[\mathbf{g(u,u) \geq 0 \;\; (=\;\;\Sii\;\; u=0)}] $
+it can be easily seen that this
+defines an inner product in $T_pM$ (or pseudo-inner product
+if $\mathbf{g(u,u) =0}$ for some $u \neq 0 \in T_pM$).
+\footnote{Later we will see that an inner product gives rise
+to a distance, correspondingly a pseudo-inner product gives
+rise to a pseudo-distance.} 
+If we make a smooth choice for this tensor at each point of $M$ we will obtain a smooth tensor field called the
+{\bf metric} of $M$. This extra structure, a tensor field with
+certain properties, is what allows us to build the mathematical foundations
+to then construct much of physics on it.
+
+Let $\ve{g}$ be a metric on $M$, given any point $p$ of $M$
+there exists a coordinate system in which its components are
+$$g_{ij} = \delta_{ij} $$ 
+and therefore gives rise to the Euclidean inner product, however, in general, this result cannot be extended to 
+a neighborhood of the point and in general, its components will depend there on 
+the coordinates. Note that this is what we wanted to do initially,
+but now by defining this norm via a vector we have given it an invariant character.
+
+Restricting ourselves now to positive definite metrics,
+we define {\bf the norm} of a vector $v \in T_p$ as
+$|v| = \sqrt{|g(v,v)|} $, that is, as the infinitesimal distance divided
+by $\epsilon$ between $p$ and the point $\gamma (\epsilon)$ where
+$\gamma(t)$ is a curve such that $\gamma (0) = p$, 
+$\frac{d\gamma(t)}{dt}|_{t=0} = v$.
+Similarly, we can define the length of a smooth curve
+$\gamma(t):[0,1] \rightarrow M$ by the formula,
+\beq
+L(\lap)=\int_0^1\sqrt{\mathbf{g(v,v)}}\;dt,
+\eeq
+where $\mathbf{v}(t)=\frac{d\gamma(t)}{dt} $. We see then that we define the
+length of a curve by measuring the infinitesimal lengths between nearby points on it and then integrating with respect to t.
+
+\espa
+\ejer: Prove that the length $L(\gamma) $ is independent of the chosen parameter.
+
+We define the distance
+between two points $p,q \in M$ as,
+\beq
+d_g(p,q)=\barr{c}\\inf\\^{\{\gamma(t)\;:\;\gamma(0)=p,\gamma(1)=q\}}\earr
+|L(\gamma)|
+\eeq
+That is, as the infimum of the length of all curves connecting
+$p$ with $q$.
+\espa
+\ejer: Find an example of a manifold with two points such that
+the infimum in the previous definition is not a minimum. That is,
+where there is no curve connecting the two points with the
+minimum distance between them.
+\espa
+
+\ejer: a) The Euclidean metric in $\re^2$ is $(dx)^2+(dy)^2$, where $\{dx,dy\}$ 
+is the cobasis associated
+with $\{\pa x,\pa y\}$. What is the distance between two points in this case?
+
+\ejer: b) What is the form of the Euclidean metric in $\re^3$ 
+in spherical coordinates? And in cylindrical coordinates?
+
+\ejer: c) The metric of the sphere is
+$(d\tita)^2+\sin^2\tita\,(d\fip)^2$. 
+What is the distance in this case? For which points $p,q$ are there
+multiple curves $\gap_i$ with $L(\gap_i)=d(p,q)$?
+
+
+\ejer: d) The metric $(dx)^2+(dy)^2+(dz)^2-(dt)^2$ in $\re^4$ is the Minkowski metric of
+special relativity. What is the {\it distance} between the point with
+coordinates $(0,0,0,0)$ and $(1,0,0,1)$?
+
+A metric gives us a privileged map between the space of
+tangent vectors at $p$, $T_p$, and its dual $T_p^*$ for each $p$ in $M$, 
+that is, the map
+that assigns to each vector $\ve{v}\in T_p$ the covector $\ve{g}(\ve{v},\;)\in T_p$. 
+Since this is valid for each $p$, we thus obtain a map between vector
+and covector fields.%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Diffeomorphisms and the Theory of Ordinary Differential Equations}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\defi: A {\bf one-parameter group of diffeomorphisms} $g^t$ is a map
+$\re\times M\to M$ such that:
+
+1) For each fixed $t$ it is a diffeomorphism~\footnote{That is, a smooth map with a smooth inverse.} $M\to M$ 
+
+2) For any pair of real numbers, $t,s\in \re$ we have $g^t\circ g^s=g^{t+s}$
+(in particular
+$g^0=id$).
+
+\espa
+We can associate with $g^t$ a vector field in the
+following way: For a fixed $p$, $g^t(p):\re\to M$ is a curve
+that at $t=0$ passes through $p$ and therefore defines a tangent vector at
+$p$, ${\ve{ v}}\mid_p$. Repeating the process for every point in $M$ we have
+a vector field in $M$. Note that due to the group property
+satisfied by $g^t$, the tangent vector to the curve $g^t(p)$ is also
+tangent to the curve $g^s(g^t(p))$ at $s=0$.
+
+We can ask the inverse question: Given a smooth vector field
+$\ve v$
+in $M$, does there exist a one-parameter group of diffeomorphisms that defines it? The answer to this question, which consists of finding all
+the integrable curves $g^t(p)$ that pass through each $p\in M$, is
+the theory of ordinary differential equations,
+--which will be the subject of our study in the following chapters--
+since it consists of solving the
+equations $\frac {dx^i}{dt}=v^i(x^j)$ with initial conditions
+$x^i(0)=\fip^i(p) \;\;\forall\;p\in M$. As we will see, the answer is
+affirmative but only locally, that is, we can only find
+$g^t$ defined in $I(\su \re)\times U(\su M)\to M$.
+
+\espa
+\ejem: In $\re^1$ let the vector have the coordinate component
+$x^2$, that is $\ve{v}(x)=x^2\frac{\partial}{\partial x}$. The ordinary
+differential equation associated with this vector is $\frac{dx}{dt}=x^2$, 
+whose solution is 
+\beq 
+t-t_0=\frac {-1}x +\frac 1{x_0}
+\;\mbox{\o}\;\;x(t)=\frac{-1}{t-\displaystyle\frac 1{x_0}}
+\eeq
+\noi
+where we have taken $t_0=0$. That is, $g^t(x_0)=\displaystyle\frac{-1}{t-\frac
+1{x_0}}$. Note that for any $t$ this map is not defined for
+all $\re$ and therefore is not a diffeomorphism. Also note that for any interval we
+take for its definition, the time interval of the solution's existence will be finite, either towards the
+future or the past.
+
+\ejem: Let $g^t$ be a linear diffeomorphism in
+$\re$, that is $ g^t(x+\alpha y)=g^t(x)\,+\,\alpha\,g^t(y)$. Then it has the
+form $g^t(x)=f(t)\,x$. The group property implies $f(t)\cdot f(s)
+=f(t+s)$ or $f(t)=c\,\mbox{e}^{kt}=\mbox{e}^{kt}$, since $g^0=id$.
+Therefore $g^t(x)=\mbox{e}^{kt}\,x$. 
+The associated differential equation
+is: $x(t)=\mbox{e}^{kt}\,x_0\;\;\Longrightarrow\;\;\dot
+x=k\,\mbox{e}^{kt}\,x_0=$ \fbox{$k\,x=\dot x.$}
+
+\ejer: Plot in a neighborhood of the origin in $\re^2$ the integral curves and
+therefore $g^t$ of the following linear systems.
+\beq \left(\barr{c}
+        \dot x \\ \dot y
+        \earr \right)=\left(\barr{cc}
+                        1 & 0\\
+                        0 & k
+                        \earr\right)\left(\barr{c}
+                                   x \\ y
+                                   \earr\right)
+\eeq 
+  
+  a) $k>1$  \ \ \,b) $k=1$\ \ \     c) $ 0<k<1$,   \ \ \   d) $k=0$, \ \ \   e) $k<0$
+
+\vskip \baselineskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Covector and Tensor Fields}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Just as we introduced the notion of a vector field, we can
+also introduce the notion of a covector field, that is, a smooth map
+from $M$ to $T_p^*$. This will act on vector fields giving
+as a result functions on $M$. In the following example, we see how
+the field {\bf differential of $f$} is defined.
+
+\ejem: Let $f\in C^{\infty}_p$. A vector at
+$p\in M$ is a derivation on functions in $C_p^{\infty}$,
+$\ve{v}(f)\in \re$. 
+But given $\ve{v}_1$ and $\ve{v}_2 \;\in T_p$, $a \in \re$ and $f\in C_p^{\infty}$,
+$(\ve{v}_1+a\ve{v}_2)(f)= \ve{v}_1(f)+ a\ve{v}_2(f)$ and therefore each given $f$
+defines a linear functional 
+$\ve{df}\mid_p:T_p\to \re$, called the differential of $f$, that is
+an element of $T_p^*$,
+
+\[
+\ve{df}(\ve{v}) := \ve{v}(f), \;\;\;\;\; \forall \ve{v} \in T_{p}.
+\]
+%
+In this way, the differential of a
+function, $\ve{df}$, is a covector that when acting on a vector $\ve{v}$ gives us
+the number {\it the derivative of $f$ at the point $p$ in the direction of $\ve{v}$}.
+
+
+
+Let $f$ be a smooth function on $M$, $a\in\re$ and consider the subset 
+$S_{a}$ of $M$ such that $f(S_{a})=a$.
+It can be seen that if $df\neq0$ this will be a submanifold of $M$, 
+that is, a surface embedded in $M$, of dimension $n-1$.
+The condition $df|_p(\ve{ v})=0$ on vectors of $T_p$ with $p\in S_{a}$
+means that these are actually tangent vectors to $S_{a}$, that is,
+elements of $T_p(S_{a})$. On the contrary, if $df(\ve{v})|_p \neq
+0$ then at that point $\ve{v}$ {\it pierces} $S_{a}$. 
+
+\ejem: The function $f(x,y,z)=x^2+y^2+z^2$ in $\re^3$. \par
+$S_{a}=\{(x,y,z)\in \re^3 | f(x,y,z) = a^2,\;\; a>0\}$ is the sphere of radius
+$a$, and as we have already seen, a manifold. Let $(v^{x},v^{y},v^{z})$ be a vector at the point
+$(x,y,z)\in\re^{3}$, then the condition $\ve{df}(\ve{v})=2(xv^{x}+yv^{y}+zv^{z})=0$
+implies that $\ve{v}$ is tangent to $S$. Indeed, we see that this is the condition that tells us that 
+$\ve{v}$ is \textsl{perpendicular} to $(x,y,z)$ when we are in the conventional Euclidean structure.
+
+\espa
+
+Given a coordinate system (chart) that covers a point $p \in M$, we have seen that we have a canonical basis of $T_{p}$ associated with it given by the vectors,
+
+\[
+\ve{x}_{i} (f) := \frac{\partial f\circ \phi^{-1}}{\partial x^{i}}|_{\phi(p)}.
+\]
+%
+What will be the associated cobasis? 
+Note that the coordinate system also gives us a set of $n$ privileged functions, that is, the components of the map $\phi$ that defines the chart, 
+$\{x^{j}\}$, $j=1..n$, 
+$x^{i}(p):=$\textsl{value of the $i$-th coordinate assigned by $\phi$ to the point $p$}. 
+Note that $x^{i}\circ\fip^{-1}$ is then the identity map for the $i$-th coordinate.
+If we apply the basis vectors to these functions, we obtain,
+
+\[
+ \ve{x}_{i} (x^{j}) := \frac{\partial x^{j}\circ\fip^{-1}}{\partial x^{i}}|_{\phi(p)} = \delta^{j}_{i},
+ \]
+ %
+ but then, since $\ve{dx}^{j}(\ve{x}_{i})=\ve{x}_{i} (x^{j}) = \delta^{j}_{i}$, we see that the differentials
+ $ \ve{dx}^{j}$ are the cobasis of the coordinate basis. 
+ In particular, we have that the coordinate components of a vector $\ve{v}$ are given by:
+ 
+ \[
+ v^{j} = \ve{dx}^{j}(v),
+ \]
+%
+and the components of a covector $\ve{\omega} \in T_{p}^{*}$ by,
+
+\[
+\omega_{i} = \ve{\omega}(\ve{x}_{i}).
+\]
+ 
+Similarly, we define {\bf tensor fields} as the multilinear maps
+that when acting on vector and covector fields give functions
+from the manifold to the reals and that at each point of the manifold only 
+depend on the vectors and covectors defined at that point. 
+This last clarification is
+necessary because otherwise, we would include among the tensors, for
+example, line integrals over vector fields.
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The Metric}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let $M$ be an n-dimensional manifold. We have previously defined on $M$
+the notions of curves, vector fields, and covector fields, etc., but
+not a notion of distance between its points, that is, a function 
+$d: M \times M \rightarrow \re$ that takes any two points, p and q of
+$M$ and gives us a number $d(p,q)$ satisfying,
+\begin{enumerate}
+\item $d(p,q) \geq 0$.
+\item $d(p,q) = 0 $ \sii $p=q$.
+\item $d(p,q) = d(q,p)$.
+\item $d(p,q) \leq d(p,r) + d(r,q)$.
+\end{enumerate}
+ 
+This, and in some cases a notion of pseudo-distance [where 1) and
+2) are not satisfied], is fundamental if we want to have a mathematical structure 
+that is useful for the description of physical phenomena. 
+For example,
+Hooke's law, which tells us that the force applied to
+a spring is proportional to its elongation (a distance),
+clearly needs this entity.
+Next, we will introduce a notion of infinitesimal distance,
+that is, between two infinitesimally separated points, which corresponds
+to the Euclidean notion of distance and allows us to develop a notion of
+global distance, that is, between any two points of $M$.
+
+The idea is then to have a concept of distance (or pseudo-distance)
+between two {\sl infinitesimally close} points, that is, two
+points connected by an {\sl infinitesimal displacement}, that is,
+connected by a vector. The notion we need is then that of
+the norm of a vector. Since a manifold is locally like $\re^n$, in
+the sense that the space of tangent vectors at a point $p$,
+$T_pM$ is $\re^n$, it is reasonable to consider there the notion of Euclidean distance,
+that is, the distance between two points $x_0$ and $x_1\in \re^n$
+is the square root of the sum of the squares of the
+components (in some coordinate system) of the vector connecting
+these two points. The problem with this is that
+such a notion depends on the coordinate system being used and
+therefore there will be as many distances as coordinate systems covering
+the point $p$.
+This is just an indication that the structure we have so far does not contain a privileged or
+natural notion of distance. This must be introduced as an additional structure.
+One way to obtain infinitesimal distances independent of the coordinate system (that is, geometric)
+is by introducing at each point $p \in M$ a tensor of type ${0\choose 2}$, symmetric
+$[\mathbf{g(u,v) = g(v,u) \;\; \forall \; u,\;v} \; \in T_pM]$ and non-degenerate 
+$[\mathbf{g(u,v) = 0\;\; \forall v} \; \in T_pM \;\;\Ra \mathbf{u=0}]$.
+If we also require that this tensor be
+positive definite 
+$[\mathbf{g(u,u) \geq 0 \;\; (=\;\;\Sii\;\; u=0)}] $
+it can be easily seen that this
+defines an inner product in $T_pM$ (or pseudo-inner product
+if $\mathbf{g(u,u) =0}$ for some $u \neq 0 \in T_pM$).
+\footnote{Later we will see that an inner product gives rise
+to a distance, correspondingly a pseudo-inner product gives
+rise to a pseudo-distance.} 
+If we make a smooth choice for this tensor at each point of $M$ we will obtain a smooth tensor field called the
+{\bf metric} of $M$. This extra structure, a tensor field with
+certain properties, is what allows us to build the mathematical foundations
+to then construct much of physics on it.
+
+Let $\ve{g}$ be a metric on $M$, given any point $p$ of $M$
+there exists a coordinate system in which its components are
+$$g_{ij} = \delta_{ij} $$ 
+and therefore gives rise to the Euclidean inner product, however, in general, this result cannot be extended to 
+a neighborhood of the point and in general, its components will depend there on 
+the coordinates. Note that this is what we wanted to do initially,
+but now by defining this norm via a vector we have given it an invariant character.
+
+Restricting ourselves now to positive definite metrics,
+we define {\bf the norm} of a vector $v \in T_p$ as
+$|v| = \sqrt{|g(v,v)|} $, that is, as the infinitesimal distance divided
+by $\epsilon$ between $p$ and the point $\gamma (\epsilon)$ where
+$\gamma(t)$ is a curve such that $\gamma (0) = p$, 
+$\frac{d\gamma(t)}{dt}|_{t=0} = v$.
+Similarly, we can define the length of a smooth curve
+$\gamma(t):[0,1] \rightarrow M$ by the formula,
+\beq
+L(\lap)=\int_0^1\sqrt{\mathbf{g(v,v)}}\;dt,
+\eeq
+where $\mathbf{v}(t)=\frac{d\gamma(t)}{dt} $. We see then that we define the
+length of a curve by measuring the infinitesimal lengths between nearby points on it and then integrating with respect to t.
+
+\espa
+\ejer: Prove that the length $L(\gamma) $ is independent of the chosen parameter.
+
+We define the distance
+between two points $p,q \in M$ as,
+\beq
+d_g(p,q)=\barr{c}\\inf\\^{\{\gamma(t)\;:\;\gamma(0)=p,\gamma(1)=q\}}\earr
+|L(\gamma)|
+\eeq
+That is, as the infimum of the length of all curves connecting
+$p$ with $q$.
+\espa
+\ejer: Find an example of a manifold with two points such that
+the infimum in the previous definition is not a minimum. That is,
+where there is no curve connecting the two points with the
+minimum distance between them.
+\espa
+
+\ejer: a) The Euclidean metric in $\re^2$ is $(dx)^2+(dy)^2$, where $\{dx,dy\}$ 
+is the cobasis associated
+with $\{\pa x,\pa y\}$. What is the distance between two points in this case?
+
+\ejer: b) What is the form of the Euclidean metric in $\re^3$ 
+in spherical coordinates? And in cylindrical coordinates?
+
+\ejer: c) The metric of the sphere is
+$(d\tita)^2+\sin^2\tita\,(d\fip)^2$. 
+What is the distance in this case? For which points $p,q$ are there
+multiple curves $\gap_i$ with $L(\gap_i)=d(p,q)$?
+
+
+\ejer: d) The metric $(dx)^2+(dy)^2+(dz)^2-(dt)^2$ in $\re^4$ is the Minkowski metric of
+special relativity. What is the {\it distance} between the point with
+coordinates $(0,0,0,0)$ and $(1,0,0,1)$?
+
+A metric gives us a privileged map between the space of
+tangent vectors at $p$, $T_p$, and its dual $T_p^*$ for each $p$ in $M$, 
+that is, the map
+that assigns to each vector $\ve{v}\in T_p$ the covector $\ve{g}(\ve{v},\;)\in T_p$. 
+Since this is valid for each $p$, we thus obtain a map between vector
+and covector fields.
+
+Since $\ve{g}$ is non-degenerate, this map is invertible, that is, there exists a symmetric tensor of type ${2\choose 0}$, $\ve{g^{-1}}$, such that 
+\beq
+\ve{g}(\ve{g^{-1}}(\tita,\;),\;)=\tita
+\eeq
+for any co-vector field $\tita$. This indicates that when we have a manifold with a metric, it becomes irrelevant to distinguish between vectors and co-vectors or, for example, between tensors of type ${0 \choose 2}$, ${2 \choose 0}$, or ${1\choose1}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%################################
+
+\subsection{Abstract Index Notation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+When working with tensorial objects, the notation used so far is not the most convenient because it is difficult to remember the type of each tensor, in which slot it "eats" other objects, etc. One solution is to introduce a coordinate system and work with the components of the tensors, where having indices makes it easy to know what objects they are or to introduce general bases. In this way, for example, we represent the vector $\ve{l}=l^i\dip\derp{}{x^i}$ by its components $\{l^i\}$. A convenience of this notation is that "eating" becomes "contracting," since, for example, we represent the vector $\ve{l}$ "eating" a function $f$ by the contraction of the coordinate components of the vector and the differential of $f$:
+\[
+\ve{l}(f) = \sum_{i=1}^n l^i \frac{\partial f}{\partial x^i}.
+\]
+But a serious drawback of this representation is that it initially depends on the coordinate system and therefore all the expressions we construct with it have the potential danger of depending on such a system.
+
+We will remedy this by introducing {\bf abstract indices} (which will be Latin letters) that indicate where the coordinate indices would go but nothing more, that is, they do not depend on the coordinate system and do not even take numerical values, that is, $l^a$ does not mean the n-tuple $(l^1,l^2,\ldots,l^n)$ as if they were indices. In this way, $l^a$ will denote the vector $l$, $\tita_a$ the co-vector $\tita$, and $g_{ab}$ the metric $g$. A contraction such as $g(v,\;)$ will be denoted $g_{ab}v^a$ and we will denote this co-vector by $v_b$, that is, the action of $g_{ab}$ is to lower the index of $v^a$ and give the co-vector $v_b \equiv v^ag_{ab}$. Similarly, we will denote $\ve{g}^{-1}$ (the inverse of $\ve{g}$) as $g^{ab}$, that is, $\ve{g}$ with the indices raised.
+
+The symmetry of $\ve{g}$ is then equivalent to $g_{ab}=g_{ba}$.
+
+\espa
+\ejer: How would you denote an antisymmetric tensor of type ${0\choose 2}$?
+
+\espa
+Using repeated indices for contraction, we see that $l(f)$ can be denoted by $l^a\na_a f$ where $\na_a f$ denotes the differential co-vector of $f$, while the vector $\na^af := g^{ab} \na_b f$ is called the {\bf gradient} of $f$ and we see that it depends not only on $f$ but also on $\ve{g}$.
+
+\section{Covariant Derivative}
+
+We have seen that in $M$ there is the notion of the derivative of a scalar field $f$, which is the differential co-vector of $f$ that we denote $\na_a f$. Is there the notion of the derivative of a tensor field? For example, is there an extension of the operator $\na_a$ to vectors such that if $l^a$ is a differentiable vector then $\na_a l^b$ is a tensor of type ${1\choose1}$? To fix ideas, let us define this extension of the differential $\na_a$, called the covariant derivative, by requiring it to satisfy the following properties:
+\footnote {Note that they are an extension of those required to define derivations.}
+
+\noi
+$i)$ Linearity: If $A^{a_1\cdots a_k}_{b_1\ldots b_l},B^{a_1\cdots a_k}_{b_1\ldots b_l}$ are tensors of type ${k \choose l}$ and $\alpha\in \re$ then
+\beq
+\na_c \lp \alf A^{a_1\cdots a_k}_{b_1\ldots b_l}+B^{a_1\cdots a_k}_{b_1\ldots b_l}\rp
+= \alf \na_c A^{a_1\cdots a_k}_{b_1\ldots b_l} + \na_c B^{a_1\cdots a_k}_{b_1\ldots b_l} 
+\eeq
+
+\noi $ii)$ Leibnitz:
+\beq
+\na_e \lp A^{a_1\cdots a_k}_{b_1\ldots b_l}\,B^{c_1\ldots c_m}_{d_1\ldots d_n}\rp
+=A^{a_1\cdots a_k}_{b_1\ldots b_l} \lp \na_e B^{c_1\ldots c_m}_{d_1\ldots d_n}\rp  +  
+\lp \na_e  A^{a_1\cdots a_k}_{b_1\ldots b_l}\rp 
+B^{c_1\ldots c_m}_{d_1\ldots d_n}
+\eeq
+
+\noi $iii)$ Commutativity with contractions:
+\beq
+\na_e \lp \delta^c{}_d  A^{a_1\ldots,d,\ldots,a_k}_{b_1\ldots,c,\ldots,b_k}\rp 
+= \delta^c{}_d \na_e A^{a_1\ldots,d,\ldots,a_k}_{b_1\ldots,c,\ldots,b_k},
+\eeq
+%
+where $\delta^c{}_d$ is the identity tensor. That is, if we first contract some indices of a tensor and then take its derivative, we obtain the same tensor as if we first take the derivative and then contract.
+
+\noi$iv$) Consistency with the differential: If $l^a$ is a vector field and $f$ a scalar field, then 
+\beq
+l^a\na_a f = \ve{l}(f)
+\eeq
+
+\noi $v$) Zero torsion: If $f$ is a scalar field then
+\beq
+\na_a\na_b f=\na_b\na_a f
+\eeq
+
+\espa
+\ejem: Let $\{x^i\}$ be a global coordinate system in $\ren$ and let $\na_c$ be the operator that, when acting on $A^{a_1\cdots a_k}_{b_1\ldots b_l}$, generates the tensor field that in these coordinates has components
+\beq
+\pa_j \,A^{i_1\ldots i_k}_{j_1\ldots j_l}
+\eeq
+By definition, it is a tensor and clearly satisfies all the conditions of the definition, since it satisfies them in this coordinate system, so it is a covariant derivative. If we take another coordinate system, we will obtain another covariant derivative, generally different from the previous one. For example, let us act $\na_c$ on the vector $l^a$, then
+\beq
+\lp\na_c l^a\rp_j^i=\pa_j l^i.
+\eeq
+In another coordinate system $\{\bar x^i\}$ this tensor has components
+\beq
+\lp\na_c l^a\rp_k^l=\sum_{i,j=1}^n\derp{\bar x^l}{x^i}\derp{x^j}{\bar x^k}\derp{l^i}{x^j}
+\eeq
+which are not, in general, the components of the covariant derivative $\bar\na_c$ that these new coordinates define, indeed
+
+\beq\barr{rcl}
+\lp\bar\na_c l^a\rp^l_k &\equiv& \derp{\bar l^l}{\bar x^k}=
+\sum_{j=1}^n\lp\derp{x^j}{\bar x^k}\rp\derp{}{x^j}\sum_{i=1}^n\lp\derp{\bar x^l}{x^i}l^i\rp=\\ \\
+&=& \sum_{i,j=1}^n\lp\derp{\bar x^l}{x^i}\rp\lp\derp{x^j}{\bar x^k}\rp\derp{l^i}{x^j}+ \sum_{i,j=1}^n\derp{x^j}{\bar x^k}\lp\frac{\pa^2\bar x^l}{\pa x^j\pa x^i}\rp l^i \\ \\
+&=&\lp\na_c l^a\rp^i_j+ \sum_{i,j=1}^n \derp{x^j}{\bar x^k}\lp\frac{\pa^2\bar x^l}{\pa x^j\pa x^i}\rp l^i,
+\earr
+\eeq
+which clearly shows that they are two different tensors and that their difference is a {\bf tensor} that depends linearly and {\bf not differentially} on $l^a$. Is this true in general? That is, given two connections, $\na_c$ and $\bar \na_c$, is their difference a tensor (and not a differential operator)? We will see that this is true.
+
+\bteo
+The difference between two connections is a tensor.
+\eteo
+
+\espa
+\pru:
+Note that by properties $iii)$ and $iv)$ of the definition, if we know how $\na_c$ acts on co-vectors, we know how it acts on vectors and thus by $i)$ and $ii)$ on any tensor. Indeed, if we know $\na_c w_a$ for any $w_a$, then $\na_c l^a$ is the tensor of type ${1\choose 1}$ such that when contracted with an arbitrary $w_a$ gives us the co-vector
+\beq
+\lp\na_c l^a\rp w_a= \na_c\lp w_a l^a \rp-l^a\lp \na_c w_a\rp,
+\eeq 
+which we know since by $iv$) we also know how $\na_c$ acts on scalars. Therefore, it is sufficient to see that
+\beq
+\lp\bar\na_c-\na_c\rp w_a = C^b{}_{ca} w_b
+\eeq
+for some tensor $C^b{}_{ca}$. First, let us prove that given any $p\in M$, \\ 
+$\dip\lp\bar\na_c-\na_c\rp w_a |_p$  
+depends only on $w_a|_p$ and not on its derivative. Let $w'_a$ be any other co-vector such that at $p$ they coincide, that is, $(w_a-w'_a)|_p=0$. Then given a smooth co-basis $\{\mu_a^{i}\}$ in a neighborhood of $p$, we will have that $w_a-w'_a=\sum_{i} f_{i}\mu^{i}_a$ with $f_{i}$ smooth functions that vanish at $p$. At $p$ we then have
+\beq \barr{rcl}
+\bar\na_c\lp w_a-w'_a\rp-\na_c\lp w_a-w'_a\rp 
+&=&\sum_{i}\bar\na_c \lp f_{i}\mu^{i}_a\rp-\sum_{i} \na_c\lp f_{i}\mu^{i}_a\rp \\
+&=& \sum_i \mu^{i}_a\lp\bar\na_c f_{i}-\na_c f_{i}\rp=0
+\earr
+\eeq
+since by {\it iv)} $\bar \na_c $ and $\na_c$ must act in the same way on scalars --and in particular on the $f_{i}$--. This shows that
+\beq
+\lp\bar\na_c-\na_c\rp w'_a = \lp\bar\na_c-\na_c\rp w_a 
+\eeq
+and therefore that $\lp\bar\na_c-\na_c\rp w_a$ depends only on $w_a|_p$ and obviously in a linear way. But then $\lp\bar\na_c-\na_c\rp $ must be a tensor of type ${1\choose2}$ that is waiting to "eat" a co-vector to give us the tensor of type ${0 \choose 2}$, $\lp\bar\na_c -\na_c\rp w_a.$ That is, $\lp\bar\na_c-\na_c\rp w_a = C^b{}_{ca} w_b$, which proves the theorem.
+
+Note that condition {\it v}) tells us that $\na_a \na_b f = \na_b \na_a f$, 
+taking $w_a = \na_a f$ we get
+\beq \barr{lcl}
+\bar \na_a \bar \na_b f &=& \bar \na_a \na_b f \\
+                        &=& \bar \na_a w_b\\
+                        &=& \na_a w_b + C^c_{ab} \na_c f \\
+                        &=& \na_a \na_b f + C^c_{ab}\na_c f.
+\earr\eeq
+Since $\na_c f|_p$ can be any co-vector, we see that 
+the condition of no torsion implies that $C^c{}_{ab}$
+is symmetric in the lower indices, $C^c{}_{ab} = C^c{}_{ba}$.
+
+\ejer: How does $\lp\bar\na_c-\na_c\rp$ act on vectors?
+
+\ejer: Express the Lie bracket in terms of any connection
+and then explicitly prove that it does not depend on the connection used.
+
+\ejer: Let $A_{b,\ldots,z}$ be a totally antisymmetric tensor. Show that
+$\na_{[a} A_{b,\ldots,z]}$, that is, the total antisymmetrization of 
+$\na_{a} A_{b,\ldots,z}$, does not depend on the covariant derivative used.
+
+\espa
+The difference between any connection $\na_c$ and one coming from
+a coordinate system $\{x^i\}$ is a tensor called the {\bf Christoffel symbol}
+of $\na_c$ with respect to the coordinates 
+$\{x^i\}$, $\Gamma^b_{ca}$,
+\beq
+\na_c w_a = \pa_c w_a + \Gamma^b_{ca} w_b.
+\eeq
+The knowledge of this tensor is very useful in practice, 
+as it allows us to express $\na_c$
+in terms of the corresponding coordinate connection, $\pa_c$.
+
+As we have seen, in a manifold $M$ there are infinite ways to
+{\sl take the derivative of a tensor}. 
+Is there any natural or privileged one?
+The answer is no, unless we add more structure to $M$.
+Intuitively, the reason for this is that in $M$ we do not know how to compare
+$l^a|_p$ with $l^a|_q$ if $p$ and $q$ are two different points.
+\footnote {Note that one way to compare infinitesimally close vectors, given a vector field $m^a$, is with the
+Lie bracket of $m^a$ with $l^a$, $[m,l]^a$.
+This is not appropriate since $[m,l]^a|_p$ depends on the derivative of $m^a$ at
+$p$.} 
+
+Is the presence of a metric in $M$ sufficient to make this comparison? The answer is yes!
+
+\bteo
+Let $g_{ab}$ be a (smooth) metric on $M$, then there exists a unique
+covariant derivative $\na_c$ such that $\na_c g_{ab}=0$.
+\eteo
+
+\pru:
+Let $\bar \na_c$ be any connection and let $\na_c$ be such that
+$\na_cg_{ab} =0$, it is
+sufficient to show that this condition uniquely determines the
+difference tensor, $C^d{}_{ca}$. But,
+\beq
+0=\na_ag_{bc} = \bar \na_a g_{bc} - C^d{}_{ab} g_{dc} - C^d{}_{ac} g_{bd}
+\eeq
+that is 
+\beq 
+C_{cab} + C_{bac} = \bar \na_a g_{bc} 
+\eeq
+but also
+\beq \barr{lrcl}
+a \leftrightarrow b \;\;\;& C_{cba} + C_{abc} &=& \bar \na_b g_{ac} \\
+c \leftrightarrow b       & C_{bca} + C_{acb} &=& \bar \na_c g_{ab} .
+\earr \eeq
+Adding the last two, subtracting the first and using the
+symmetry of the last two indices we get
+\beq
+2C_{abc} = \bar \na_b g_{ac} + \bar \na_c g_{ab} - \bar \na_a g_{bc}
+\eeq
+or 
+\beq
+\label{eq:christ}
+C^a{}_{bc} = \frac 12 g^{ad}\{\bar \na_b g_{dc} + \bar \na_c g_{db} - \bar \na_d g_{bc}\}
+\eeq
+
+Note that the existence of a metric is not equivalent to the existence of
+a connection. There are connections $\na_c$ for which there is no
+metric $g_{ab}$ such that $\na_a g_{bc}=0$, that is, there are tensors 
+$C^a{}_{bc}$ for which there is no $g_{ab}$ that satisfies (\ref{eq:christ}).
+
+\espa
+
+\ejer: If $\bar \na_c$ is a derivative corresponding to a coordinate system 
+$\bar \na_c = \pa_c$
+the corresponding Christoffel symbol is
+\beq
+\Gamma^a{}_{bc} = \frac 12 g^{ad}\{\pa_b g_{dc} + \pa_c g_{db} - \pa_d g_{bc}\}.
+\eeq
+Show that its components in that coordinate system are given by,
+\beq
+\Gamma^i{}_{jk} = \frac 12 g^{il}\{\pa_j g_{lk} + \pa_k g_{lj} - \pa_l g_{jk}\},
+\eeq
+where $g_{ij}$ are the components of the metric in the same coordinate system.
+\espa
+
+\ejer:
+The Euclidean metric of $\re^3$ in spherical coordinates 
+is 
+\[
+ds^2 = (dr)^2 + r^2((d\theta)^2 + \sin^2 \theta (d\phi)^2).
+\]
+Calculate the Laplacian $\Delta = g^{ab} \na_a \na_b$ in these coordinates.
+
+\espa
+
+\recu{{\bf *The Riemann Tensor}
+
+\noi Given a covariant derivative on a manifold, is it possible to define 
+tensor fields that depend only on it and therefore give us
+information about it?
+
+The answer is yes! The following tensor is called the {\bf Riemann
+or Curvature Tensor} and depends only on the connection:
+\[
+2 \na_{[a} \na_{b]} l^c := \lp \na_a \na_b - \na_b \na_a \rp l^c :=
+R^c{}_{dab} l^d \;\;\;\; \forall l^c \in TM.
+\]
+\espa
+
+\ejer: Show that the definition above makes sense, that is,
+that the left-hand side, evaluated at any point $p$ in $M$, depends only on $l^c|_p$ and therefore we can write the right-hand side
+for some tensor $R^c{}_{dab}$.
+
+\ejer: Let $\bar \na_a $ be another covariant derivative. Calculate the difference
+between the respective Riemann tensors in terms of the tensor that
+appears as the difference of the two connections. 
+
+
+}
+
+
+\recubib{I recommend the book by Wald \cite{Wald}, especially for its modern notation, see also \cite{Isham}. The language of intuition is geometry, it is the tool that allows us to visualize problems, touch them, turn them around to our liking and then reduce them to algebra. Understanding geometry is the most efficient way to understand physics since it is only fully understood when translated into a geometric language. Do not abuse it, it is a very vast area and it is easy to get lost, learn the basics well and then only what is relevant to you.}
