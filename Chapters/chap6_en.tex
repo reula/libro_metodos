@@ -1,0 +1,471 @@
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%%last modification 28/05/2013
+
+\chapter{Stability}
+
+Stationary or equilibrium solutions are very important in physics because many systems (especially those with dissipation) behave in such a way that the solution approaches these solutions in their evolution.
+
+Another particularity that makes them important is the fact that they are simply given by the points where the vector field vanishes, and therefore at most one must solve an algebraic equation to find them, in contrast to the general case where we must solve a differential equation. In some cases, it is even possible to infer that the vector field must vanish, such as if the manifold is a two-dimensional sphere, since any continuous vector field defined on it is such that there are at least two points where it vanishes, and therefore in this case there will always be stationary solutions.
+
+\espa
+\ejer: Convince yourself that this is so.
+\espa
+
+From the above, it follows that it is important to study the behavior of solutions that originate from initial data close to a stationary solution. For this, we define the following concepts of stability.
+
+\defi: 
+Let $\ve{v}$ be a vector field in $M$ and let $p \in M$ such that $\ve{v}(p) = 0$. We will say that the stationary solution $\gamma (t)\equiv p$ is {\bf stable} if given a neighborhood $U_p$ of $p$ there exists another neighborhood $V_p$ of $p$ such that any solution $\sigma(t)$ with $\sigma(0) \in V_p$ satisfies $\sigma(t) \in U_p \;\;\;\forall\;\; t \geq 0$. [See figure \ref{fig:6_1}.]
+
+\defi: 
+We will say that the previous solution is {\bf asymptotically stable} if it is stable and also if $\sigma (0) \in V_p$ then $\dip\lim_{t\to+\ifi} \sigma(t)=p$. 
+
+\espa 
+%\fig{6cm}{Stability.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{5cm}{!}{\myinput{Figure/m6_1}}
+    \caption{Stability.}
+    \label{fig:6_1}
+  \end{center}
+\end{figure}
+
+If a stationary solution is not stable, then it has little physical interest since the slightest perturbation will {\sl move it far} from it.
+
+\espa
+\noi\yaya{Examples}:
+
+\noi
+a) The bacterial growth equation $\dot x = ax -bx^2$ has stationary solutions $x(t) \equiv 0$ and $x(t) \equiv \frac ab$. Since the general solution is, 
+\beq
+x(t) = \frac{x(0) e^{at}}{1 + \frac{bx(0)}{a}(e^{at}-1)}, x(0) \geq 0
+\eeq
+it is clear that $x(t)=0$ is not a stable solution (we will call these unstable) and that $x(t) \equiv \frac ab$ is asymptotically stable. If we contaminate a culture container with a single bacterium, this is enough for it to reproduce~\footnote{Note that in the real process we do not have a continuous variable and therefore in it the perturbations are at least one bacterium, which makes it possible to have sterile containers and therefore the mathematical instability does not manifest in reality.} until it reaches (asymptotically) the concentration $\frac ab$. If we now remove or add some bacteria to change their concentration, the bacteria will reproduce or annihilate until they reach again {\sl the stable concentration} $\frac ab$.
+\espa
+\noi
+b) The equation $\dot x = A x$ has among its stationary solutions the one given by $x(t) \equiv 0$. What are the others? These will be stable when the eigenvalues of $A$, $\lambda_i$, satisfy $\Re(\lambda_i) \leq 0$, $\lambda_i \neq \lambda_j$ or $\Re(\lambda_i) <0$ if $\lambda_i=\lambda_j$, where $\Re$ indicates the real part. This is clear since the general solution is $x(t) = e^{At}x(0)$ and the mentioned condition implies that $\|e^{At}\|_{\cal L} < C$, $C >0$ $\forall t\geq 0$. In this case, we can take as $U_{p=0} = \{x \in \re^n |\;|x| < \epsilon\}$ and as $V_{p=0} = \{x \in \re^n |\;|x| < \frac{\epsilon}{C}\}$. If it is also fulfilled that $\Re(\lambda_i) < 0 \;\forall i=1,...,n$ then $x(t) \equiv 0$ is asymptotically stable.
+
+The following theorem provides a very practical tool to know when a stationary solution is stable or not.
+
+\bteo[Stability] 
+Let $\gamma(t) \equiv p$ be a stationary solution of $\ve{v} \in TM$, that is $\ve{v}(p) = 0$, and let $A:T_pM\rightarrow T_pM $ be defined by,
+\beq
+Ax \equiv \frac d{ds}\ve{v}(\sigma_x(s))|_{s=0},
+\eeq
+where $\sigma_x(s)$ is a curve in $M$ satisfying: $\sigma_x(0)=p$ and $\frac d{ds}\sigma_x|_{s=0} = \ve{x} \in T_pM$, that is, it is any smooth curve that passes through $p$ when $s=0$ and at that point has as tangent to $\ve{x} \in T_pM$. If $\Re (\lambda_i) < 0$, where $\lambda_i$ are the eigenvalues of $A$, then $\gamma(t) \equiv p$ is asymptotically stable. If any $\lambda_i$ has a positive real part then $\gamma(t)=p$ is unstable.
+\eteo
+
+\espa
+\noi
+\yaya{Exercises}:
+
+\noi
+a) Show that $A$ is really a linear operator.
+
+\espa
+\noi
+b) Show that $A\ve{x} = [\ve{v},\ti{\ve{x}}]|_p$, where $\ti{\ve{x}}$ is any vector field such that $\ti{\ve{x}}|_p = \ve{x}$. Hint: do not forget that $\ve{v}|_p = 0$.
+
+\espa
+\noi\yaya{Examples}:
+
+\noi a) Consider the bacterial growth equation at $x=0$ and $x = \frac ab$. For the first case, we take $\sigma_{\delta x}(s) = \delta x s$ and obtain,
+\beq 
+A\delta x =\frac d{ds} (a\delta x s - b\,(\delta x)^2 s^2)|_{s=0} = a\delta x,
+\eeq
+which shows that $x=0$ is an unstable solution since $a>0$. For the second case, we take $\sigma_{\delta x} = \frac ab + \delta x s$ then
+\beq 
+A\delta x = \frac d{ds} (\frac {a^2}b  + a\delta x s - b(\frac ab + \delta x s)^2)|_{s=0} 
+= a\delta x - 2a\delta x = -a\delta x,
+\eeq
+which shows that it is asymptotically stable.
+\espa
+\noi
+b) Physical pendulum with friction: $\ddot \theta = - \sin \theta - k \dot \theta$, $k>0$. The vector field in this case is given by,
+\beq \barr{rcl}
+\dot \theta &=& z \\
+     \dot z &=& -\sin \theta - k z,
+\earr
+\eeq
+that is, the vector with components $(z, -\sin \theta - kz)$ in the phase space which in this case is a cylinder, $z \in [-\infty,+\infty]$, $\theta \in [0,2\pi]$.      
+
+\espa 
+%\fig{6cm}{Physical pendulum with friction.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m6_2}}
+    \caption{Physical pendulum with friction.}
+    \label{fig:6_2}
+  \end{center}
+\end{figure}
+
+This vector vanishes only at $p_1 = (\theta =0, z=0)$ and $p_2 = (\theta = \pi, z=0)$. For the first stationary solution, using $\sigma(s)$ such that,
+\beq 
+ \phi \circ \sigma (s) = 
+\left( \barr{c}\delta \theta \;s \\ 
+             \delta z \;s 
+             \earr \right),
+\eeq
+we obtain,
+\beq
+ A\left( \barr{c} \delta \theta \\ 
+                 \delta z 
+           \earr \right) = \left( \barr{cc} 0 & 1 \\ 
+                                          -1 & -k 
+                           \earr \right)  
+                           \left( \barr{c} \delta \theta \\ \delta z 
+                           \earr \right). 
+\eeq
+In this case, the eigenvalue equation is $\lambda^2 + k \lambda +1 =0$ from which we obtain,
+$\lambda_{\pm} = \dip\frac{-k \pm \sqrt{k^2 - 4}}{2}$, which implies $\Re (\lambda_{\pm}) <0$ and thus stability.
+
+For the second stationary solution, we take $\sigma(s)$ such that,
+\beq 
+ \phi \circ \sigma(s) = \left( \barr{c} \delta \theta s + \pi \\ \delta z 
+\earr \right)
+\eeq 
+and obtain
+\beq
+ A\left( \barr{c} \delta \theta \\ 
+                 \delta z 
+           \earr \right) = \left( \barr{cc} 0 & 1 \\ 
+                                          1 & -k 
+                           \earr \right)  
+                           \left( \barr{c} \delta \theta \\ \delta z 
+                           \earr \right). 
+\eeq
+with eigenvalues $\lambda_{\pm} = \dip\frac{-k \pm \sqrt{k^2 + 4}}{2}$, which implies $\Re (\lambda_{\pm}) > 0$ and thus instability.
+
+From the examples, it is seen that this theorem has broad application. Since stability is a local notion, to facilitate the demonstration we will take $M = \re^n$ and a Cartesian coordinate system with origin at the stable solution to be considered. We will use several previous results that we prove below.
+
+\bteo[Lyapunov] 
+Let $A:\re^n \rightarrow \re^n$ be a linear operator whose eigenvalues have a negative real part. Then there exists a tensor of type $(2,0)$, $\ve{\ro}(\cdot,\cdot)$, symmetric and positive definite [$\ve{\ve{\ro}}(\ve{w},\ve{v}) = \ve{\ve{\ro}} (\ve{v},\ve{w})$ and $\ve{\ve{\ro}}(\ve{w},\ve{w}) \geq 0$ $(=\;\; iff\;\; \ve{w}=0)$] such that,
+$$
+A\ve{x}(\ve{\ve{\ro}}(\ve{x},\ve{x})) < 0 \;\;\;\forall \;\;\ve{x} \neq 0,
+$$
+that is, the derivative of $\ve{\ve{\ro}}(\ve{x},\ve{x}) $ in the direction $A\ve{x}$ is negative.
+\eteo
+
+The geometric interpretation of this condition is that $\ve{\ve{\ro}}(\ve{x},\ve{x})$ defines a norm whose level surfaces are such that on each of these the vector $A\ve{x}$ at $p=\ve{x}$ points inward. See figure.
+
+\espa 
+%\fig{6cm}{The norm $\rho(x,x)$.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{5cm}{!}{\myinput{Figure/m6_3}}
+    \caption{The norm $\rho(x,x)$.}
+    \label{fig:6_3}
+  \end{center}
+\end{figure}
+
+\noi
+\pru: If all the eigenvalues of $A$ are distinct, then there exists a Jordan basis $\{\ve{u}_i\}, \;i=1,...,n$ and the corresponding co-basis $\{\ve{\theta}^i\}, \;i=1,...,n$ (with $\ve{\theta}^i(\ve{u}_j) = \delta^i_j$) such that $A= \sum_{i=1}^{n} \lambda_i \ve{u}_i \ve{\theta}^i$. In this case, let $\ve{\ro} = \sum_{i=1}^{n} \ve{\theta}^i \bar{\ve{\theta}}^i$. If $z = \sum_{i=1}^n z^i\ve{u}_i$ and $y= \sum_{i=1}^n y^i\ve{u}_i \in C^n$, then $\ve{\ro}(z,y) = \sum_{i=1}^{n'} z^i y^i + \sum_{n'+1}^{(n-n')/2}(z^i \bar{y}^i + \bar{z}^i y^i)$ where we have separated the sum into that of the real eigenvectors and that of the complex conjugates. It is easy to see that the $\ve{\ro}(\:,\:)$ obtained by restricting $z$ and $y$ to $\re^n$ is the usual Cartesian norm in the corresponding real basis. Now let's calculate $A\ve{x}(\ve{\ro}(\ve{x},\ve{x}))$.
+\beq \barr{rcl}
+\dip A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) &=& \lim_{\eps \rightarrow 0} 
+\dip               \frac{\ve{\ro}(\ve{x}+\varepsilon A\ve{x},\ve{x}+\varepsilon A\ve{x}) - \ve{\ro}(\ve{x},\ve{x})}
+{\varepsilon}\\ [3mm]
+\dip             &=& \ve{\ro}(A\ve{x},\ve{x}) + \ve{\ro}(\ve{x},A\ve{x}) \\ [3mm]
+\dip         &=& 2\sum_{i=1}^n (\Re\lambda_i){x}^i{x}^i < 0.
+\earr \eeq
+Thus, we have proved the theorem for the diagonalizable case. The case where $A$ is not is more complicated, and for this, we will use the following lemmas.
+
+\blem Given $\epsilon > 0$ there exists a basis $\{\ve{u}_i\}$ such that in that basis
+\[
+A = diag.(\lambda_1,...,\lambda_n) + \epsilon \Delta, 
+\]
+with $\Delta$ a matrix with non-zero components (and equal to one) at most on the lower diagonal, that is,
+\beq
+A = \lp \barr{ccccccc} \lam_1 &0&0&.&.&.&0\\
+                       \eps &\lam_2& 0&.&.&.& 0\\
+                       .&.&.&.&.&.&.\\
+                       0&.&.&.&.&.&0 \\
+                       0&.&.&.&.&\eps &\lam_r
+\earr \rp .                    
+\eeq
+\elem
+
+\espa
+\pru: It is a simple rescaling of the Jordan basis of $A$. For example, in $C^3$ if $\{\ti{\ve{u}}_i\}$ is such that in it,
+\beq
+A = \lp \barr{ccc} \lam &0   &  0  \\
+                   1    &\lam & 0  \\
+                   0    & 1   &\lam \\
+\earr \rp .
+\eeq
+defining $\dip\ve{u}_1 = \frac{\ti{\ve{u}}_1}{\epsilon^2}$, $\dip \ve{u}_2 = \frac{\ti{\ve{u}}_2}{\epsilon}$, and $\ve{u}_3 = \ti{\ve{u}}_3$, we see that in this new basis,
+\beq
+A = \lp \barr{ccc} \lam & 0    &  0  \\
+                   \eps &\lam  &  0  \\
+                   0    & \eps &\lam \\
+\earr \rp .
+\eeq
+[$\dip A\ve{u}_1=A\frac{\ti{\ve{u}}_1}{\epsilon^2} =\frac{\lambda \ti{\ve{u}}_1}{\epsilon^2} =\lambda \ve{u}_1$, $\dip A\ve{u}_2=A\frac{\ti{\ve{u}}_2}{\epsilon} =\frac{\ti{\ve{u}}_1 + \lambda \ti{\ve{u}}_2}{\epsilon} =\epsilon \ve{u}_1 + \lambda \ve{u}_2$, etc.].
+
+\blem The set of positive symmetric tensors is open in the set of symmetric forms, that is, if $\ve{\ro}_0$ is symmetric and positive and $\ve{\ro}_1 $ is symmetric, then there exists $\epsilon > 0$ such that $\ve{\ro}_0 + \epsilon \ve{\ro}_1 $ is also positive.
+\elem
+
+\espa
+\noi
+\pru:
+Let $B_1$ be the unit sphere with respect to some norm in $\ren$ and
+consider $\ve{\ro}_0(\ve{x},\ve{x}):B_1 \rightarrow \re^+$. 
+Since $B_1$ is compact, $\ve{\ro}_0$ reaches its minimum there,
+$\alpha_{min}$. Similarly, $\ve{\ro}_1$ reaches its maximum there, which
+we will call $\beta_{max}$.
+Taking $\eps < \dip\frac{\alpha_{min}}{\beta_{max}}$ satisfies the requirement.
+
+\espa
+\ejem: In $\re^2$ let $\ve{\ro}_0((x_1,y_1),(x_2,y_2)) = 
+x_1x_2 + y_1y_2$ and $\ve{\ro}_1((x_1,y_1),(x_2,y_2)) = x_1y_2 + x_2y_1$,
+then $\ve{\ro}_0 + \eps \ve{\ro}_1$ is positive if $|\eps| < 2$.
+
+\espa
+
+To complete the proof of Lyapunov's theorem
+we will take 
+\[
+\ve{\ro} = \sum_i\ve{\theta}^i\otimes \bar{\ve{\theta}}^i,
+\]
+%
+where $\{\ve{\theta}^i\}$
+is the co-basis found in lemma 6.1 with $\eps > 0$ to
+be determined. 
+Then,
+\beq \barr{rcl}
+-A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) &=& - \ve{\ro}(A\ve{x},\ve{x}) - \ve{\ro}(\ve{x},A\ve{x})\\
+              &=& -2 \sum_{i=1}^n\Re(\lambda_i)x^ix^i - 2\eps\sum_{i=1}^{n-1}
+f_ix^ix^{i+1},
+\earr \eeq
+with $f_i = 1$ or $0$ depending on whether there is $\eps$ or not in that place of the immediate upper diagonal. 
+The first term is a positive definite form $\ve{\ro}_0$
+evaluated in $\ve{x}$ in both entries. 
+The second is a symmetric form
+$\eps \ve{\ro}_1$ evaluated in $\ve{x}$ in both entries. 
+The second lemma tells us that
+taking $\eps$ small $\ve{\ro}_0 + \eps \ve{\ro}_1$ 
+is also positive definite.
+This concludes the proof of the theorem. 
+
+\noi
+Note now that not only the $\ve{\ro}$ we have found is symmetric and
+positive definite and therefore a norm in $\ren$, but also 
+$-A\ve{x}(\ve{\ro}(\ve{x},\ve{x}))$ is positive definite and defines a norm 
+[since 
+$-A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) = -\ve{\ro}(A\ve{x},\ve{x}) - \ve{\ro}(\ve{x},A\ve{x})$]. 
+But we have already seen
+that in $\ren$ all norms are equivalent and therefore there will exist
+$\gamma>0$ such that
+\beq
+-\frac{1}{2\gamma} \ve{\ro}(\ve{x},\ve{x}) 
+\leq A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) 
+\leq - 2\gamma \ve{\ro}(\ve{x},\ve{x}).
+\eeq
+This is the result we will use for the proof of the stability theorem given below.
+
+\espa
+\noi
+\yaya{Proof of the Stability Theorem:}
+We have seen that if $\Re(\lambda_i) <0$ then there exists a constant $\gamma >0$ 
+and a symmetric positive definite form
+$\ve{\ro}(\;,\;)$ such that
+\beq
+A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) \leq - 2\gamma \ve{\ro}(\ve{x},\ve{x}).
+\eeq
+Applying the vector field that defines the equation, $\ve{v}(\ve{x})$ to 
+$\ve{\ro}(\ve{x},\ve{x})$ we get,
+\beq
+v(\ve{x})(\ve{\ro}(\ve{x},\ve{x})) = A\ve{x}(\ve{\ro}(\ve{x},\ve{x})) + O(\ve{\ro}(\ve{x},\ve{x})^{3/2}),
+\eeq
+where we have assumed $\ve{v}$ is differentiable and therefore 
+$\ve{v}(\ve{x}) = A\ve{x} + O(|\ve{x}|^2)$.
+
+\espa
+\ejem:
+$v(x)=(ax+bx^2)\frac{\pa}{\pa x}$ and $\ve{\ro}(x,x) = \alpha x^2$ then,
+\beq \barr{rcl}
+\dip v(x)(\ve{\ro}(x,x)) &=& ax\frac{\pa}{\pa x} \ve{\ro}(x,x) + 2b\alpha x^3
+\\  [3mm]
+\dip               &=& ax\frac{\pa}{\pa x} \ve{\ro}(x,x) 
+               + \frac{2b}{\alpha^{1/2}}\ve{\ro}(x,x)^{3/2}
+\earr \eeq
+
+If $\ve{x}$ is sufficiently small, [$|\ve{x}| < C$ for some $C>0$] 
+it holds that 
+$O(\ve{\ro}(\ve{x},\ve{x})^{3/2}) < \gamma (\ve{\ro}(\ve{x},\ve{x}))$ and therefore we have that
+\beq
+v(\ve{x})(\ve{\ro}(\ve{x},\ve{x})) \leq -2\gamma \ve{\ro}(\ve{x},\ve{x}) + \gamma\ve{\ro}(\ve{x},\ve{x})
+               \leq -\gamma \ve{\ro}(\ve{x},\ve{x}).
+\eeq
+
+
+Let $\fit$ be a solution with initial data sufficiently close to $\ve{x}=0$,
+that is $\dot\varphi(t) = v(\fit)$, $|\varphi(0)|<C$.
+Defining \footnote{By uniqueness of the solution $\fit \neq 0$ and therefore 
+$\ve{\ro}(\fit,\fit) > 0$
+and the logarithm is well defined.}
+\beq
+r(t) = \ln \ve{\ro}(\fit,\fit)
+\eeq
+and differentiating with respect to $t$ we get,
+\beq \barr{rcl}
+\dot{r}(t) &=& \frac{2\;\dot{\ve{\ro}(\fit,\fit)}}{\ve{\ro}(\fit,\fit)}=
+       \frac{\ve{v}(\fit )(\ve{\ro}(\fit,\fit))}{\ve{\ro} (\fit,\fit)} \\ [3mm]
+     &\leq& - \gamma.
+\earr \eeq       
+Therefore $r(t) \leq r(0) - \gamma t$, and integrating we conclude that
+\beq
+\ve{\ro}(\fit,\fit) \leq \ve{\ro}(\fip(0),\fip(0))e^{-\gamma t},
+\eeq
+which implies that $\barr{c} \\ \fit \rightarrow 0 \\^{t \rightarrow
+\infty} \earr$ 
+and concludes the proof of the theorem.
+\footnote{In reality, we must also prove that if $|\fip(0)| <C$ then 
+$\fit$ exists for all $t$. 
+But the last inequality proved tells us that $\fit$ cannot
+leave the compact region 
+$\{\ve{x}|\ve{\ro}(\ve{x},\ve{x}) \leq \ve{\ro}(\fip(0),\fip(0))\}$ and therefore the extension theorem assures us that $\fit$ exists for all $t \in [0,+\infty)$.}
+
+It is instructive to observe that the proof is based on the construction of
+a norm, $\ve{\ro}(\ve{x},\ve{x})$, especially adapted to the problem in the sense that
+it assures us that on its level surfaces the vector $\ve{v}(\ve{x})$ (if $\ve{x}$ is
+sufficiently small) points inward.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newpage
+\section{Problems}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% 1
+\bpro[The Volterra-Lotka Equation]
+
+Consider the system:
+
+\begin{eqnarray}
+  \label{eq:Volterra_Lotka}
+  \dot{x}_1 &=& (a-bx_2)x_1 \nn
+  \dot{x}_2 &=& -(c-f x_1)x_2,
+\end{eqnarray}
+$a, b, c, f \geq 0$.
+
+a) Perform a coordinate and time transformation to bring it to the form,
+\begin{eqnarray}
+  \label{eq:Volterra_Lotka_adim}
+  \dot{x}_1 &=& (1 - x_2)x_1 \nn
+  \dot{x}_2 &=& -(e - x_1)x_2
+\end{eqnarray}
+%
+
+b) Plot the vector field and see that there are no non-trivial first integrals in the quadrants where at least one of the coordinates is negative.
+
+c) Find the equilibrium solutions and determine which are stable and which are not.
+
+d) Examine the positive quadrant using the transformation:
+$x_1 = e^{q_1}$, $x_2 = e^{q_2}$ and see that the quantity
+$f(q_1,q_2) := e q_1 + q_2 -(e^{q_1} + e^{q_2})$ is an integral
+of motion. Use this information to infer that in this
+quadrant the trajectories remain in bounded regions.
+
+e) Examine the linearized equations around the equilibrium solution in the positive quadrant and determine the frequency of oscillations of the variations near equilibrium that the system would have.
+
+Note, this equation describes the population of two competing species.
+What we have just seen is that the species do not grow indefinitely nor
+disappear. This last point tells us that the approximation is not
+very good...
+Note that $x_2$ represents a predator that depends exclusively on
+the prey $x_1$ for its subsistence, since if the prey becomes extinct, the predator follows.
+\epro
+
+%2
+\bpro
+If in the previous system the species have other alternative means of
+subsistence then the resulting equations are:
+\begin{eqnarray}
+  \label{eq:Volterra_Lotka_adim_alt}
+  \dot{x}_1 &=& (1 -x_1 - ax_2)x_1 \nn
+  \dot{x}_2 &=& (1 -x_2 + bx_1)x_2
+\end{eqnarray}
+%
+where another parameterization has been used.
+
+a) Find the equilibrium solutions for the cases i) $0< a <1$, 
+and ii) $1 < a$.
+
+b) It is observed that $b \approx 3a$ ($a$ indicates how aggressive the
+predator is). What is the value of $a$ if its instinct leads it to maximize the
+population of its species while maintaining a stable equilibrium?
+
+c) Look at the system near its equilibrium solution and determine the
+frequency of the oscillations in the number of species that you would expect
+in that environment.
+\epro
+
+%3
+\bpro[Limit Cycle]
+Consider the system:
+\begin{eqnarray}
+  \label{eq:Ciclo_Limite_Prob}
+  \dot{x}_1 &=& x_2 + x_1(1-(x_1^2+x_2^2)) \nn
+  \dot{x}_2 &=& -x_1 + x_2(1-(x_1^2+x_2^2)).
+\end{eqnarray}
+%
+
+a) Transform this system into a pair of decoupled equations,
+\begin{eqnarray}
+  \label{eq:Ciclo_Limite_Prob_des}
+  \dot{r} &=&  f(r) \nn
+  \dot{\theta} &=& -1.
+\end{eqnarray}
+%
+
+b) Study the equilibrium points of the first equation and their stability.
+What is the solution of the original system corresponding to this equilibrium point?
+
+c) Plot solutions near these points, in the $(r,\theta)$ plane and in the
+$(x_1,x_2)$ plane.
+
+d) Use the method described at the end of chapter 
+\ref{Ordinary_Differential_Equations} to corroborate the stability 
+found in point b).
+\epro
+
+%4
+\bpro[Verhulst]
+Find the equilibrium solutions (and analyze their stability) of the system:
+\begin{eqnarray}
+  \dot{x} &=& y \nn
+  \dot{y} &=& x-2x^3 
+\end{eqnarray}
+Plot some solutions.
+\epro
+
+%5
+\bpro[Verhulst]
+Find the equilibrium solutions (and analyze their stability) of the system:
+\begin{eqnarray}
+  \dot{x} &=& x^2 - y^3 \nn
+  \dot{y} &=& 2x(x^2-y) 
+\end{eqnarray}
+Plot some solutions.
+\epro
+
+%6
+\bpro[Verhulst]
+Find the equilibrium solutions (and analyze their stability) of the system:
+\begin{eqnarray}
+  \dot{x} &=& -x \nn
+  \dot{y} &=& 1 - (x^2+y^2) 
+\end{eqnarray}
+Plot some solutions.
+\epro
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End:
+

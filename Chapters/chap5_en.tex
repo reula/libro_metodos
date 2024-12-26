@@ -1,0 +1,893 @@
+\chapter{Linear Systems}
+\label{Linear_Systems}
+\section{Homogeneous Linear System}
+\label{Homogeneous_Linear_System}
+
+\bteo
+Let $A(t)$ be continuous on $I \subset \mathbb{R}$, closed. Then there exists a unique solution $\ve{x}(t): I \to V$ of the equation,
+\beq
+\derc{\ve{x}(t)}{t} = A(t)\,\ve{x}(t), 
+\label{eqn:5.1}
+\eeq
+\noi with initial condition $\ve{x}(t_0)=\ve{x}_0 \in V, \; t_0 \in I$.
+\eteo
+
+\espa
+\pru: 
+Let $\ve{x}, \ve{y} \in \ve{V}$, then
+\beq
+\| \ve{A}(t)\ve{x}-\ve{A}(t)\ve{y}\|_V \leq \|\ve{A}(t)\|_{\cal L} \|\ve{x}-\ve{y}\|_V
+\eeq
+\noi 
+and therefore $\ve{A}(t)\ve{x}$ is Lipschitz~\index{Lipschitz} in $\ve{V}$. 
+The fundamental theorem guarantees local existence and uniqueness. 
+The theorem will be proven if we show that $\ve{x}(t)$ cannot become infinite in finite time. For this, we use,
+\beq\barr{rcl}
+\dip\der{t}\|\ve{x}\|_V &=& \dip\lim_{t_1\to t}\dip\frac{\|\ve{x}(t_1)\|_V-\|\ve{x}(t)\|_V}{t_1-t}
+ \leq \dip\lim_{t_1\to t}\dip\frac{\|\ve{x}(t_1)-\ve{x}(t)\|}{t_1-t} \\
+        &=& \left\|\derc{\ve{x}}{t}\right\|_V = \|\ve{A}\,\ve{x}\|_V \leq \|\ve{A}\|_{\cal L} \|\ve{x}\|_V.
+\earr
+\eeq
+\noi Integrating this inequality between $t_0$ and $t \in I$ we obtain,
+
+\begin{equation}
+\|\ve{x}(t)\|_V \leq \|\ve{x}(t_0)\|_V e^{\int_{t_0}^{t} {\|\ve{A}(\tilde t)\|_{\cal L}} d\tilde t},
+\end{equation}
+
+\noi which shows that $\ve{x}(t)$ cannot escape to infinity in finite time and therefore completes the proof.
+
+\espa
+Consider the set of solutions of \r{eqn:5.1} defined on a single closed interval $I \subset \mathbb{R}$, $ Sol(\ve{A},I)$. 
+This set has the structure of a vector space. 
+Indeed, if $\ve{x}(t)$ and $\ve{y}(t)$ are two solutions of \r{eqn:5.1}, then $\ve{x}(t)+\alpha \ve{y}(t), \; \alpha \in \mathbb{R}$, is also a solution. What is its dimension? The following theorem answers this question and shows that any solution of \r{eqn:5.1} can be expressed as a linear combination of a finite number $(n)=\dim \ve{V}$ of solutions.
+
+\espa
+\bteo 
+$\dim Sol(\ve{A},I) = \dim \ve{V}.$
+\eteo
+\espa
+\pru: 
+Let $\{\ve{u}^0_i\}, \; i=1,\ldots,n$ be a basis of $\ve{V}$,
+$t_0 \in I$ and $\{\ve{u}_i(t)\}, \; i=1,\ldots,n \; t \in I$ the set of solutions of \r{eqn:5.1} with initial condition $\ve{u}_i(t_0)=\ve{u}_i^0.$
+We will show that $\{\ve{u}_i(t)\}$ form a basis of $Sol(\ve{A},I)$, and therefore 
+$\dim Sol(\ve{A},I) = \dim \ve{V}$. 
+First, let's see that the solutions $\{\ve{u}_i(t)\}$ are linearly independent.
+
+Suppose there are constants $c^i$ such that 
+$\ve{x}(t) = \sum_{i=0}^{n}c^i \ve{u}_i(t)$ 
+is zero for some $\tilde t$ in $I$. 
+Since $\ve{x}(t)$ is a solution of \r{eqn:5.1} and these are unique when an initial condition is specified, taking in this case $\ve{x}(\tilde t)=0$, we see that $\ve{x}(t)=0 \; \forall \; t \in I$. 
+In particular, we have that $\ve{x}(t_0) = \sum_{i=0}^{n}c^i \ve{u}_i^0=0$ and the independence of the set $\{\ve{u}_i^0(t)\}$ implies that $c^i=0 \; \forall \; i=1,\ldots,n$, proving linear independence. 
+Note that we have not only proven that $\{\ve{u}_i(t)\}$ are linearly independent as elements of $Sol(\ve{A},I)$ -- for which we would only have had to prove that if $\sum_{i=0}^{n} c^i \ve{u}_i(t)=0 \; \forall \; t \in I$ then $c^i=0 \; \forall \; i=1,\ldots,n$ which is trivial since $t_0 \in I$ -- but also that for each $t \in I$ the $\{\ve{u}_i(t)\}$ are linearly independent as elements of $\ve{V}$, this result will be used later.
+
+To complete the theorem, let's now see that any solution of \r{eqn:5.1} $\ve{x}(t): I \to \ve{V}$, that is, any element of $Sol(\ve{A},I)$ can be written as a linear combination of $\{\ve{u}_i(t)\}$. Let $\ve{x}(t) \in Sol(\ve{A},I)$, since $\{\ve{u}^0_i\}$ form a basis of $\ve{V}$ there will be constants $c^i, \; i=1,\ldots,n$ such that $\ve{x}(t_0)=c^i \ve{u}^0_i$. Consider then the solution of \r{eqn:5.1} given by $\fit=c^i \ve{u}_i(t)$. Since $\fito=\ve{x}(t_0)$ and the solutions are unique, we have,
+\beq
+\ve{x}(t)=\fit=c^i \ve{u}_i(t) \; \forall \; t \in I
+\eeq
+\espa
+
+The previous theorem tells us that if we know $n$ linearly independent solutions of $\ve{A}$, $\{\ve{u}_i(t)\}$, we know all its solutions, since these will be linear combinations of $\{\ve{u}_i(t)\}$. The dependence on the initial data is also linear, that is, if $\ve{x}(t)$, $\ve{y}(t) \in Sol(\ve{A},I)$ and $\ve{x}(t_0)=\ve{x}_0$ and $\ve{y}(t_0)=\ve{y}_0$ then $\ve{x}(t)+\alpha \ve{y}(t), \; \alpha \in \mathbb{R}$, is the solution with initial data $\ve{x}_0+\alpha \ve{y}_0$ and therefore the map $g^t_{t_0}$ -- which in this case we will call $\ve{X}_{t_0}^t$ -- that takes initial data given at $t=t_0$ to solutions with those data, at time $t$ is a linear operator from $\ve{V}$ to $\ve{V}$. 
+Indeed, if $\{\ve{\theta}_0^i\}$ is the co-basis of the basis $\{\ve{u}_i\}$, i.e. $\ve{\theta}_0^j(\ve{u}_i^0)=\delta^j_i$. 
+Then $\ve{X}_{t_0}^t = \sum_{i=1}^n \ve{u}_i(t) \ve{\theta}^i_0$. 
+Due to the linear independence of $\{\ve{u}_i(t)\}$ as elements of $\ve{V}$, it can be seen that the map $\ve{X}_{t_0}^t: \ve{V} \to \ve{V}$ is injective and therefore invertible, for each $t \in I$. Its inverse, which we will denote $(\ve{X}_{t_0}^t)^{-1}$, takes the solution at $t$ to its initial data at $t=t_0$, that is, $(\ve{X}_{t_0}^t)^{-1}=\ve{X}_t^{t_0}$.
+
+\espa
+\ejer:
+Prove that $(\ve{X}_{t_0}^t)^{-1}=\ve{X}_t^{t_0}$.
+
+\ejer:
+Prove that $\ve{X}_{t_0}^t$ does not depend on the basis used.
+\espa
+
+The map $\ve{X}_{t_0}^t$ is actually the one-parameter family of diffeomorphisms from $\ve{V}$ to $\ve{V}$ generated by the vector field $\ve{A}\ve{x}$. 
+In this case, these are linear. 
+Indeed, $\ve{X}_{t_0}^t \ve{x}_0$ is the curve that passes through the point $\ve{x}_0 \in \ve{V}$ at $t=t_0$ and whose tangent vector is $\ve{A} \ve{X}_{t_0}^t \ve{x}_0$.
+
+We have seen then that if we know a set of $n$ linearly independent solutions $\{\ve{u}_i(t)\}$ we can construct any solution using the operator $\ve{X}_{t_0}^t$ applied to the initial data of our choice.
+
+How do we know in practice that a set of $n$ solutions $\{\ve{u}_i(t)\}$ is linearly independent? As we have seen, it is sufficient to see that these are linearly independent, as elements of $\ve{V}$, at any time $t$. That is, the scalar
+\beq
+w(t)=\varepsilon(\ve{u}_1(t),\ve{u}_2(t),\ldots,\ve{u}_n(t))
+\eeq
+\noi is different from zero. This function is called the {\bf Wronskian}~\index{Wronskian} of the system and satisfies a particularly simple equation whose solution, called the {\bf Liouville formula},~\index{Liouville formula} is 
+\beq
+w(t)=w(t_0) e^{\dip\int_{t_0}^t tr(\ve{A}(\tilde t)) d\tilde t}
+\label{5.2}
+\eeq
+\espa
+
+\pru:
+\beq
+\barr{rcl}
+\!\!\!\!\! \dot w(t) & = & \varepsilon(\dot{\ve{u}}_1,\ve{u}_2,\ldots,\ve{u}_n) 
+            +  \varepsilon(\ve{u}_1,\dot{\ve{u}}_2,\ldots,\ve{u}_n)    
+           +\cdots + 
+          \varepsilon(\ve{u}_1,\ve{u}_2,\ldots,\dot{\ve{u}}_n) \\
+ & = & \varepsilon(\ve{A}\ve{u}_1,\ve{u}_2,\ldots,\ve{u}_n)  +  \varepsilon(\ve{u}_1,\ve{A}\ve{u}_2,\ldots,\ve{u}_n) + \cdots + \varepsilon(\ve{u}_1,\ve{u}_2,\ldots,\ve{A}\ve{u}_n) \\
+& = & tr(\ve{A}) w(t), 
+\earr
+\eeq                                            
+
+\noi whose solution is \r{5.2}.
+
+\espa
+
+The Liouville formula is an independent demonstration of the result that $\{\ve{u}_i(t)\}$ form a basis of $\ve{V}$ for each $t \in I$. Note that if $tr(\ve{A}) \equiv 0$ the Wronskian is constant and can be useful to determine a solution in terms of others already known.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Inhomogeneous Linear System -- Variation of Constants}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Here we will deal with the system,
+\beq
+\derc{\ve{x}}{t}= \ve{A}(t)\,\ve{x}+\ve{b}(t),
+\label{5.3}
+\eeq
+\noi where $\ve{b}(t):I\to \ve{V}$ is integrable. We will see that if we know the
+operator $\ve{X}_{t_0}^t$ corresponding to the homogeneous system
+\beq
+\derc{\ve{x}}{t}= \ve{A}(t)\,\ve{x},
+\label{5.4}
+\eeq
+\noi Then we know all the solutions of system \r{5.3}. The
+method we will use is called 
+{\bf variation of constants}~\index{variation of constants} and
+it is also useful for obtaining approximate solutions to
+non-linear systems. The method consists of assuming that the
+solution of \r{5.3} will be of the form,
+\beq
+\fip(t)=\xto\,\ve{c}(t)
+\eeq
+\noi for some map $\ve{c}(t):I\to \ve{V}$, differentiable. 
+Note that if
+$\ve{c}(t)=c\in \ve{V}$, that is, a constant map, 
+then $\fip(t)$ satisfies \r{5.4}.
+Substituting $\fip(t)$ in \r{5.3} we get,
+\beq
+\barr{rclcl}
+ \der{t}\dot{\fip}(t) & = & \left(\der{t}\xto\right)\,\ve{c}(t) +
+                                           \xto\der{t}\ve{c}(t) & & \\
+      & = & \ve{A}(t)\xto\,\ve{c}(t) + \xto\der{t}\ve{c}(t) &= & \ve{A}(t)\xto\,\ve{c}(t)
+                                                       +\ve{b}(t). 
+\earr
+\eeq
+\noi From which we see that for $\fit$ to be a solution, $\ve{c}(t)$
+must satisfy the equation $\xto\der{t}\ve{c}(t)=\ve{b}(t).$
+
+But since $\xto$ is invertible and its inverse is $\xot$ we get
+\beq
+\der{t} \ve{c}(t) =\xot\,\ve{b}(t).
+\eeq
+
+\noi Integrating we get
+\beq
+\ve{c}(t)=\int_{t_0}^t \xoti \ve{b}(\tilde t) \;d\tilde t + c(t_0)
+\eeq
+\noi or
+\beq
+\fit=\xto\left[\int_{t_0}^t\;\xoti\,\ve{b}(\tilde t)\;d\tilde t\right] +
+\xto\,\fito ,
+\label{5.6}
+\eeq
+\noi where $\fito$ is any initial condition.
+
+\espa
+
+%***************************************************************************
+Due to the existence theorem of solutions of the homogeneous system
+we know that $\xot$ exists and is differentiable $\forall\;t\in I$ and therefore
+$\fit$ also exists and is differentiable $\forall\; t\in I$,
+since $\ve{b}(\tilde t)$ is integrable. Since the initial data for $\fit$
+can be given arbitrarily, and the solutions of \r{5.3} are
+unique, we conclude that \r{5.6} is the general solution of system \r{5.3}.
+
+
+
+
+\section{Homogeneous Linear Systems: Constant Coefficients}
+\label{Homogeneous_Linear_Systems:_Constant_Coefficients}
+
+The equation we will deal with here is 
+\beq
+\derc{\ve{x}}{t}=\ve{A}\,\ve{x},      \label{5.7}
+\eeq
+
+\noi where $\ve{x} :I\su \re\to \ve{V}$ is a curve in $\ve{V}$ and $\ve{A}$ is a
+linear operator of $\ve{V}$, $\ve{A}:\ve{V}\to \ve{V}$.
+
+We already saw in an exercise that $\ve{x}(t)=e^{\ve{A}t}\,\ve{x}_0$, $\ve{x}_0\in \ve{V}$
+is a solution of~\ref{5.7} with initial condition
+$\ve{x}(0)=\ve{x}_0$. Note that since $e^{\ve{A}t}$ is defined for all
+$t\in\re$, the solutions we have found are also
+defined in all $\re$.
+
+Let $\tilde{\ve{x}}(t)$ be any solution of \r{5.7} defined in an
+interval $\ti I\su\re$ and let $t_1\in\ti I$. Then the curve
+$\ve{x}_0(t)=e^{\ve{A}(t_1-t)}\,\ti{\ve{x}} (t_1)$ is also a solution
+of \r{5.7} and $\ve{x}(t_1)=\ti{\ve{x}}(t_1)$, but by the uniqueness of the solutions
+of \r{5.7}, $\ve{x}(t)$ and $\ti{\ve{x}}(t)$ must coincide in all $\ti I$ and
+$\ve{x}(t)$ is the maximum extension of $\ti{\ve{x}}(t)$. Thus we see that
+through the exponential $e^{\ve{A}t}$ we obtain all the solutions
+of \r{5.7}. In fact, we have shown that the one-parameter family
+of linear diffeomorphisms $g^t=e^{\ve{A}t}$ is globally defined
+[$\forall t\in\re,\forall \ve{x}_0\in \ve{V}$] and is the generator of the vector
+field $v(\ve{x})=\ve{A} \ve{x}$. 
+[With the definition given in \ref{Homogeneous_Linear_System} in this case
+$\xto=g^{t-t_0}=e^{\ve{A}(t-t_0)}$.]
+\espa
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noi What is the general form of this family? Or in other words,
+what is the functional form of the exponential map?
+For this it is convenient to take a fixed basis $\{\ve{u}_i\}$
+(independent of $t$) in $V$ 
+and express the equation in terms of the n-tuple of components $\{x^i\}$
+of $\ve{x}$.
+In this way we obtain,
+\beq
+\derc{x^i}{t}= \sum_{j=1}^n A^i{}_j \, x^j,      \label{eqn:5.7_b}
+\eeq
+that is, an equation for the n-tuple $\{x^i\}$.
+The advantage of this change is that we can take a convenient basis,
+in particular the orthogonal basis of Lemma \ref{2_lem_Schur} (of Schur)
+in which the matrix $A^i{}_j$ is upper triangular.
+The price paid for the simplification is that, since the Schur basis is generally complex, both the n-tuple $\{x^i\}$ and the
+components of $\ve{A}$, $A^i{}_j$, are complex and therefore
+we have moved to a problem in $\Complex^n$, or abstractly
+in the complexification of $V$.
+
+For that basis we have that the nth component satisfies a
+particularly simple equation!,
+\beq
+\derc{x^n}{t}=  A^n{}_n \, x^n    
+\label{eqn:5.7_b_n}
+\eeq
+and therefore, $x^n(t) =  e^{\lambda_n t}x^n_0$ (remember that the 
+diagonal of an upper triangular matrix is composed of its eigenvalues),
+where $x^n_0$ is the nth component of the initial condition at $t=0$.
+The equation for the (n-1)th component is,
+
+
+\begin{eqnarray}
+\derc{x^{n-1}}{t} &=&  A^{n-1}{}_{n-1} \, x^{n-1} + A^{n-1}{}_n \, x^n \\
+                  &=& \lambda_{n-1} \, x^{n-1} + A^{n-1}{}_n \,e^{\lambda_n t}x^n_0 .
+\label{eqn:5.7_b_n-1}
+\end{eqnarray}
+Using the formula (\ref{5.6}) for the one-dimensional case, (and $\ve{A}$
+constant) we get,
+
+\begin{eqnarray}
+  x^{n-1}(t) &=& e^{\lambda_{n-1}t} x^{n-1}_0  
+               + e^{\lambda_{n-1}t} 
+               \int_0^t e^{-\lambda_{n-1}s}(A^{n-1}{}_n \,e^{\lambda_n s} x^n_0 )\; ds \\
+               &=& e^{\lambda_{n-1}t} x^{n-1}_0  
+               + e^{\lambda_{n-1}t} 
+               \int_0^t e^{(\lambda_n -\lambda_{n-1})s}\; ds \;\;A^{n-1}{}_n \, x^n_0,
+\end{eqnarray}
+and we see that if $\lambda_n -\lambda_{n-1} \neq 0$ then the solution
+is a sum of exponentials, 
+$x^{n-1}(t) = e^{\lambda_{n-1}t} x^{n-1}_0 + \frac{A^{n-1}{}_n \, x^n_0}{\lambda_n -\lambda_{n-1}}(e^{\lambda_{n}t}-e^{\lambda_{n-1}t})$.
+If the eigenvalues coincide ($\lambda_n -\lambda_{n-1} = 0$)
+then a linear term in $t$ appears, 
+$x^{n-1}(t) = e^{\lambda_{n-1}t}(x^{n-1}_0 + t A^{n-1}{}_n \, x^n_0)$.
+Knowing $x^{n-1}(t)$ we can now calculate, using again (\ref{5.6}),
+$x^{n-2}(t)$ and so on for all the components of $\ve{x}(t)$ in
+this basis. 
+The final result will be that the components are all sums
+of exponentials by polynomials. Indeed note that the integral of
+a polynomial of degree $m$ by an exponential is also 
+a polynomial of the same degree by the same exponential plus an integration constant
+(unless the exponential is zero, in which
+case the result is a polynomial of degree $m+1$).
+\espa
+
+\ejer: Prove this last statement by induction on the degree
+of the polynomial and the use of integration by parts, that is, use
+that 
+$e^{at}P_m(t) = \frac{d}{dt}(\frac{e^{at}}{a}P_m(t)) - \frac{e^{at}}{a}\frac{d}{dt}{P_m(t)}$
+and that  $\frac{d}{dt}{P_m(t)}$ is a polynomial of order $m-1$.
+
+\espa
+
+\noi Rearranging terms we see that the general solution will be 
+of the form:
+
+\begin{equation}
+  \label{eq:5_sol_gen}
+  \ve{x}(t) = \sum_{i=1}^{m} e^{\lambda_i t} \ve{v}_i(t)
+\end{equation}
+%
+where the sum is over the different eigenvalues and where the 
+vectors $\ve{v}_i(t)$ are polynomials in $t$.
+
+An important property of the algebraic structure of this solution
+is manifested with the following lemma.
+
+\blem
+The vector spaces 
+\[
+E_{\lambda} := \{f(t): \re \mapsto V^{\Complex} | f(t) = e^{\lambda t}P_m(t), 
+\;\;\;\mbox{with }\; P_m(t)\;\mbox{a polynomial}\}
+\] 
+are linearly independent.
+\elem
+
+\pru:
+We must then prove that if we have a finite sum of elements of
+the $E_{\lambda_i}$, $\{\ve{u}_i\}$ and this sum is zero, then each of
+these vectors must be identically zero. 
+That is
+\begin{equation}
+  \label{eq:indep_lineal_E_lambda}
+  \sum_{i=1}^{m} \ve{u}_i = 0, \;\;\; \ve{u}_i \in E_{\lambda_i}\;\;\; 
+  \lambda_i \neq \lambda_j \;\;\; \Rightarrow \ve{u}_i = 0.
+\end{equation}
+
+We will prove it by induction on the number of elements in the sum.
+The case $m=1$ is trivial. We will then assume that the statement is
+true for $m-1$ and we will prove it for $m$.
+We will also assume by contradiction that there is a sum of $m$
+non-zero elements that is zero, that is:
+
+\begin{equation}
+  \label{eq:indep_lineal_E_lambda_2}
+  \sum_{i=1}^{m} \ve{u}_i = 0, \;\;\; \ve{u}_i \in E_{\lambda_i},\;\;\; 
+  \lambda_i \neq \lambda_j, \;\;\;\ve{u}_i \neq 0.
+\end{equation}
+%
+dividing by $e^{\lambda_1 t}$ we get
+
+\begin{equation}
+  \label{eq:indep_lineal_E_lambda_3}
+ 0 = S(t) := e^{-\lambda_1 t}\sum_{i=1}^{m} \ve{u}_i 
+           = P_{m_1}(t) + \sum_{i=2}^{m} e^{(\lambda_i-\lambda_1) t} P_{m_i}(t).
+\end{equation}
+%
+Taking $m_1+1$ derivatives of $S(t)$, where $m_1$ is the order of the polynomial
+of the first term we get:
+
+\begin{equation}
+  \label{eq:indep_lineal_E_lambda_4}
+ 0 = \frac{d^{m_1+1}}{dt^{m_1+1}} S(t) 
+   =  \sum_{i=2}^{m} e^{(\lambda_i-\lambda_1) t} \tilde{P}_{m_i}(t).
+\end{equation}
+%
+where it is easy to see that the polynomials $\tilde{P}_{m_i}(t)$ are of the same
+degree as the originals. We are thus under the inductive hypothesis 
+and therefore since these polynomials are non-zero we have a contradiction
+\epru
+\espa
+
+Let us now see that in fact each of the terms in this sum
+is a solution of equation \ref{5.7}. 
+Given any $\lambda \in \Complex$ consider the vector space
+of functions from $\re \to V^{\Complex}$ of the form $e^{\lambda t} \ve{w}(t)$,
+where $\ve{w}(t)$ is a polynomial~\footnote{That is, a linear combination
+of vectors in $V^{\Complex}$ with polynomial coefficients in $t$.} in $t$. 
+This space is invariant
+under the action of $\frac{d}{dt}$, since taking its derivative we get
+a similar expression, that is, the product of the same exponential by another
+polynomial. 
+%
+On the other hand it is invariant under the action of
+$\ve{A}$, since as $\ve{A}$ does not depend on $t$ its action on any
+$e^{\lambda t} \ve{w}(t)$ gives us another similar expression.
+%
+Therefore, the action of $\frac{d}{dt} -\ve{A}$ will also keep us
+in the same space.  
+%
+Thus we see that if we have a sum of terms with this structure
+and with different values of $\lambda$, as is the case in the previous equation
+\ref{eq:5_sol_gen}, then if the application of 
+$\frac{d}{dt} -\ve{A}$ gives us zero this means that the application of 
+$\frac{d}{dt} -\ve{A}$ to each term of
+the sum must give zero. That is, each term is a solution of
+equation \ref{5.7}!
+Thus we conclude that each term in the
+ sum \ref{5.7} is of the form $e^{\ve{A}t} \ve{v}_0$ for some
+$\ve{v}_0 \in V^{\Complex}$.
+%
+Let us now consider the subset $W_{\lambda}$ of $V^{\Complex}$, such that
+if $\ve{v}_0 \in W_{\lambda}$ then 
+$e^{\ve{A}t} \ve{v}_0 = e^{\lambda t} \ve{v}(t)$.
+It is clear that the only non-trivial subspaces will be those
+with $\lambda = \lambda_i$, where $\{\lambda_i\},\;i=1..d$ are the eigenvalues
+of $\ve{A}$. Therefore we must consider only these subsets.
+% 
+Since this relationship is linear, $W_{\lambda}$ is a subspace of $V^{\Complex}$. 
+Since 
+$e^{\ve{A}t} \ve{A} \ve{v}_0 = \ve{A} e^{\ve{A}t} \ve{v}_0 
+= e^{\lambda t} \ve{A} \ve{v}(t) = e^{\lambda t} \ve{v}'(t)$
+and $\ve{v}'(t)$ is also polynomial in $t$, we see
+that $W_{\lambda}$ is an invariant subspace of $\ve{A}$.
+While using a basis of $W_{\lambda}$ in which the 
+restriction to that space of $\ve{A}$ is upper triangular,
+we see that $\lambda$ is the only eigenvalue that such a restriction
+can have. Finally, since every solution of \ref{5.7} has
+the form \ref{eq:5_sol_gen}, the existence theorem of solutions assures us
+that any initial data,
+that is, any element of $V^{\Complex}$, can be expressed
+as a linear combination of elements in $W_{\lambda_i}$. 
+Indeed, let $\ve{v}_0$ be any element of $V^{\Complex}$,
+from the existence theorem of solutions, we then have 
+a unique solution of \ref{5.7} $\ve{x}(t)$ with $\ve{x}(0) = \ve{v}_0$.
+But then 
+\begin{eqnarray}
+  \ve{x}(t) &=& \sum_{i=1}^{m} e^{\lambda_i t} \ve{v}_i(t) \nn
+            &=& \sum_{i=1}^{m} e^{A t} \ve{v}_{0i}, 
+\end{eqnarray}
+for some set of vectors $\{\ve{v}_{0i}\} \in W_{\lambda_i}$.
+Evaluating this expression at $t=0$, we obtain
+$\ve{v}_0 = \sum_{i=1}^{m} \ve{v}_{0i}$ and we see that the $W_{\lambda_i}$
+generate $V^{\Complex}$.
+On the other hand, the uniqueness of the solutions implies that no 
+element of a given $W_{\lambda_i}$ can be written as
+a linear combination of elements of the other $W_{\lambda}$
+[otherwise the same initial data would give rise to two
+different solutions (since their functional dependence would be
+different)]. Indeed, let $0 = \ve{v}_{01}+ \dots + \ve{v}_{0s}$
+be any linear combination of elements of $W_{\lambda_i}$, $i=1..s$,
+we see that each of them must be zero. By the uniqueness of the solutions
+to the ordinary equations, we then have 
+$0 = \sum_{i=1}^{m} e^{A t} \ve{v}_{0i} =  \sum_{i=1}^{m} e^{\lambda_i t} \ve{v}_i(t)$
+as seen earlier, each element in the last sum must be zero
+and therefore, evaluating these at $t=0$, we obtain $\ve{v}_{0i}=0\;\; \forall \; i=1..s$.
+Summarizing the above, we have,
+
+\bteo
+\label{5_teo_2}
+Given an operator $\ve{A}:V^{\Complex} \to V^{\Complex}$, there exists
+a set of invariant subspaces of $\ve{A}$, $\{W_{\lambda_i}\}$,
+where $ \lambda_i$ are the eigenvalues of $\ve{A}$ such that:
+\begin{itemize}
+\item[a)] 
+$V^{\Complex} = W_{\lambda_1} \oplus W_{\lambda_2}\oplus \cdots W_{\lambda_d}$
+
+\item[b)] 
+The only eigenvalue of the restriction of $\ve{A}$ in $\{W_{\lambda_i}\}$
+is $ \lambda_i$.
+\end{itemize}
+\eteo
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We conclude the study of the solutions of equation \ref{5.7},
+that is, of the function $e^{\ve{A}t}$ with a detailed description
+of their form obtained using the matrix representation 
+of $\ve{A}$ in the basis
+where it acquires the Jordan canonical form.
+That is, for every invariant subspace $W_{\lambda_i}$ 
+the restriction 
+of $\ve{A}$ in this subspace has the form,
+\beq
+\ve{A}= \lap_i + \Delta_i,
+\eeq
+\noi where the numbers $\lap_i$ are the eigenvalues
+corresponding to $\ve{A}$ --generally complex, and therefore we are
+now considering $\ve{A}$ as an operator from $C^n$ to $C^n$-- and
+$\Delta_i$ is a matrix whose only non-zero components are ones and
+can only be in the immediate upper diagonal. The
+matrix $\Delta_i$ has the important property of being nilpotent, that is,
+there exists an integer $m_i$ less than or equal to the multiplicity of $\lambda_i$, 
+such that $\Delta_i^{m_{i}}=0$.
+
+Since $\lap_i I $ and $\Delta_i$ commute, we have that
+\beq
+e^{t\lambda_iI + t \Delta_i} = e^{t\lambda_i I}e^{t\Delta_i}, 
+\eeq
+ but $\dip{e^{t\lambda_i I}= e^{t \lambda_i}I}$
+ and $ e^{t\Delta_i}=\dip\sum_{j=0}^{m_i-1}\;\frac{(t\Delta_i)^j}{j!}$,
+that is, a finite sum. 
+\espa
+Since the exponential of $\ve{A}$ is a sum of powers of $\ve{A}$, it follows that the
+invariant spaces of this are the same as those of $\ve{A}$ and therefore, 
+$e^{t\ve{A}}|_{B_i} = e^{t\ve{A}_i}$. 
+From this, we conclude that the matrix $e^{t\ve{A}}$ is of the form
+\beq
+e^{t\ve{A}}=\left(\barr{cccc}
+             k_0 & & &  \\
+              & k_1 & &  \\
+              & & \ddots &  \\
+              & & & k_p 
+              \earr\right)
+\eeq
+\noi with each $k_i$ a square sub-matrix, the $k_0=diag(e^{t \lap_1},
+\ldots,e^{ t\lap_n})$ and if $i\neq 0$
+\beq
+k_i=e^{t\lap}\left[\barr{cccccc}
+ 1 & t & t^2/2 & \cdots & \cdots & t^{n-1}/(n-1)! \\
+   & 1 & t & \cdots & \cdots & \vdots  \\
+   &   & 1 & \cdots & \cdots & \vdots  \\
+   &  &   & \ddots  & \cdots &t^2/2  \\
+   &  0 & &  & \ddots & t  \\
+   & & & & & 1  \\
+\earr\right],
+\eeq
+
+\noi where the number of rows or columns is the same as those of the
+$J_i$ corresponding to $\ve{A}$ in the Jordan composition, this is
+less than or equal to the multiplicity of $\lap_i$ as a root of the characteristic polynomial.
+
+The basis in which $\ve{A}$ has the Jordan canonical form is generally
+complex, it is actually a basis in $C^n$. If we wish to use a real basis,
+which is possible since we start with $\ve{A}$ as an operator
+from $\re^n$ to $\re^n$, and we make the corresponding transformation,
+the matrix $e^{\ve{A}t}$ will undergo the corresponding similarity transformation.
+Since this transformation is independent of
+time, although the components of $e^{\ve{A}t}$ will not have the previous form,
+they will be sums of exponential terms by
+polynomials in $t$. Therefore, each component of the general solution
+of \ref{5.7} will be of the form,
+\beq
+x^i(t) = \sum_{p=1}^{q} \left\{(e^{t \lambda_p}+e^{t \bar{\lambda}_p}) \,P^i_p(t) +
+i(e^{t \lambda_p}-e^{t\bar{\lambda}_p})\,Q^i_p(t)\right\}
+\label{5.8}
+\eeq
+
+\noi
+where $q$ is the number of distinct eigenvalues --counting complex pairs as one-- and $P^i_p\,,\;Q^i_p$ are polynomials in
+$t$ whose degree is less than or equal to the multiplicity with which the
+eigenvalue $\lap_p$ appears as a root of the characteristic polynomial. This
+information is useful in two ways. Practically, because
+although the method of constructing the solution using a basis in
+which $\ve{A}$ has the Jordan canonical form is straightforward, for
+large dimension systems it becomes cumbersome. In some cases, it is
+convenient to calculate the eigenvalues and their multiplicity and then
+assume a solution of the form \ref{5.8} and calculate the polynomials 
+$P^i_p\,,\;Q^i_p$.
+
+This method is also useful in the sense that it allows us to know the
+global behavior of the solutions. For example, we see that if the
+real part of the eigenvalues is not positive and those whose real
+part is zero do not appear repeated, then all solutions are
+bounded [There exists $C>0$ such that $\|\ve{x}(t)\|<C$.] If in addition, all have
+negative real part, then all solutions tend
+asymptotically to the trivial solution [$\dip\lim_{t\to\infty}
+\ve{x}(t) = 0$ ].
+
+
+%************************************************************************
+We will now analyze in detail the case where all eigenvalues are distinct. Note that although this is the generic case --in the sense that if a system has coincident eigenvalues, then there are arbitrarily small modifications to it that make the eigenvalues distinct-- systems with coincident eigenvalues do appear in physics. This case also contemplates the situation of a general system where the initial data belongs to one of the one-dimensional subspaces $B_i$.
+
+Since the operator $\ve{A}$ is real, its eigenvalues will be real or complex conjugates [if $det(\ve{A}-\lap I)=0$ then $det\overline{(\ve{A}-\lap I)}=det(\ve{A}-\bar{\lap} I)=0$]. If $\lap_i$ is real, then its eigenvector can be chosen to be real. 
+Indeed, if $(\ve{A}-\lap I)\ve{u}_i=0$, then also 
+$(\ve{A}-\lap I)\bar{\ve{u}}_i=0$, 
+but the roots are simple and therefore each $\lap_i$ has only one eigenvector --modulo a complex scalar--, that is 
+$\bar{\ve{u}}_i=\alpha\,\ve{u}_i$ $\alpha\in C$. 
+Choosing 
+$\ve{v}_i=\ve{u}_i+\bar{\ve{u}}_i=(1+\alpha)\,\ve{u}_i$ we obtain a real eigenvector.
+
+In this case, the component $x^i_0$ of $\ve{x}_0$ in the eigenbasis in the direction $\ve{v}_i$ evolves as
+\beq
+x^i(t)=x^i_0\,e^{\lap_it},
+\eeq
+
+\noi
+that is, it grows or decays exponentially with time according to the sign of $\lap_i$.
+
+If the eigenvalue $\lap_i$ is complex, then we can choose its eigenvector $\ve{u}_i$ such that it is the complex conjugate of the chosen one corresponding to $\bar{\lap}_i$. This pair of eigenvectors generates a 2-dimensional complex subspace. If $\ve{x}_0$ belongs to this subspace and is real, then it will have the form 
+$\ve{x}_0=a(\ve{u}_i+\bar{\ve{u}}_i)-ib(\ve{u}_i-\bar{\ve{u}}_i)$ 
+with $a$ and $b$ real, that is 
+$\ve{x}_1=\ve{u}_i+\bar{\ve{u}}_i$ and $\ve{x}_2=i(\ve{u}_i-\bar{\ve{u}}_i)$ 
+form a real basis.
+
+How do these vectors change if we apply the operator
+$e^{\ve{A}t}$ to them? That is, what are the solutions of the equation 
+$\dot{\ve{x}}=\ve{A}\,\ve{x}$ 
+with initial conditions $\ve{x}_1$ and $\ve{x}_2$? 
+Calling these
+$\ve{x}_1(t)$ and $\ve{x}_2(t)$ respectively and using that
+$e^{\ve{A}t}\,\ve{u}_i=e^{\lap_it}\,\ve{u}_i$ we obtain,
+\beq \barr{rcl}
+\ve{x}_1(t) &=  &e^{\alpha_i t}(\ve{x}_1\cos w_it -\ve{x}_2\sin w_it) \\
+\ve{x}_2(t) &=  &e^{\alpha_it}(\ve{x}_2\cos w_it + \ve{x}_1 \sin w_it),
+\earr
+\eeq
+\noi with $\lap_i=\alpha_i+i\,w_i$.
+
+We see that the action of the operator $e^{\ve{A}t}$ in this case is to dilate the vectors by a factor of $e^{\alpha_it}$ and to rotate them by an angle $w_i t$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newpage
+\section{Problems}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\bpro
+Given a set of functions $\{f_i(t)\}, \;i=1,..,n$, vectors are defined as
+$\ve{u}_i(t) := (f_i(t), f^{(1)}_i(t),\dots f^{(n-1)})$ and the
+Wronskian of the system as 
+$W(\{f_i\})(t) := \eps(\ve{u}_1(t),\ve{u}_2(t),\dots, \ve{u}_n(t))$.
+If the Wronskian of a set of functions does not vanish, then the
+functions are linearly independent, that is, no non-trivial linear combination of them (with constant coefficients) vanishes.
+The converse is not true.
+Calculate the Wronskian of the following sets:
+
+a) $\{4,t\}$
+
+b) $\{t,3t,t^2\}$
+
+c) $\{e^t, te^t, t^2e^t\}$
+
+d) $\{ \sin(t), \cos(t), \cos(2t) \}$
+
+e) $\{1, \sin(t), \sin(2t)\}$
+\epro
+
+\bpro
+Decide if the following set of functions is linearly dependent or not. Then calculate the Wronskian.
+
+\begin{equation}
+  f_1(t) = \left\{
+    \begin{array}{ll}
+      0, & 0 \leq x \leq 1/2 \\
+      (x-1/2)^2, & 1/2 \leq x \leq 1
+    \end{array}
+    \right.
+\end{equation}
+
+\begin{equation}
+  f_2(t) = \left\{
+    \begin{array}{ll}
+      (x-1/2)^2, & 0 \leq x \leq 1/2 \\
+      0, & 1/2 \leq x \leq 1
+    \end{array}
+    \right.
+\end{equation}
+\epro
+%%%%%%%%%%%%%%%%%%%%%
+
+\bpro
+Use the theory of ordinary differential equations to prove the following identities:
+
+a)
+\begin{equation}
+  e^{s\ve{A}} e^{t\ve{A}} = e^{(s+t)\ve{A}},
+\end{equation}
+ 
+b)
+\begin{equation}
+  e^{\ve{A}} e^{\ve{B}} = e^{\ve{A}+\ve{B}},\;\;\; 
+  \mbox{if and only if} \;\;[\ve{A},\ve{B}] := \ve{A}\ve{B} - \ve{B}\ve{A}= 0.
+\end{equation}
+\epro
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\bpro
+Graph the vector fields corresponding to the following systems and some typical sets of solutions.
+
+a) 
+\begin{equation}
+  \label{eq:prob5_2a}
+  \frac{d}{dt}\left(
+    \begin{array}{c}
+      x_1 \\ x_2
+    \end{array}
+  \right) = 
+    \left(
+      \begin{array}{cc}
+        1 & 0 \\ 0 & \frac{1}{2}
+      \end{array}
+    \right) \left(
+      \begin{array}{c}
+        x_1 \\ x_2
+      \end{array}
+      \right)
+\end{equation}
+
+b) 
+\begin{equation}
+  \label{eq:prob5_2b}
+  \frac{d}{dt}\left(
+    \begin{array}{c}
+      x_1 \\ x_2
+    \end{array}
+  \right) = 
+    \left(
+      \begin{array}{cc}
+        1 & 0 \\ 0 & -1
+      \end{array}
+    \right) \left(
+      \begin{array}{c}
+        x_1 \\ x_2
+      \end{array}
+      \right)
+\end{equation}
+
+c) 
+\begin{equation}
+  \label{eq:prob5_2c}
+  \frac{d}{dt}\left(
+    \begin{array}{c}
+      x_1 \\ x_2
+    \end{array}
+  \right) = 
+    \left(
+      \begin{array}{cc}
+        1 & 1 \\ 0 & 1
+      \end{array}
+    \right) \left(
+      \begin{array}{c}
+        x_1 \\ x_2
+      \end{array}
+      \right)
+\end{equation}
+
+d) 
+\begin{equation}
+  \label{eq:prob5_2d}
+  \frac{d}{dt}\left(
+    \begin{array}{c}
+      x_1 \\ x_2
+    \end{array}
+  \right) = 
+    \left(
+      \begin{array}{cc}
+        -1 & 0 \\ 1 & -1
+      \end{array}
+    \right) \left(
+      \begin{array}{c}
+        x_1 \\ x_2
+      \end{array}
+      \right)
+\end{equation}
+
+e) 
+\begin{equation}
+  \label{eq:prob5_2e}
+  \frac{d}{dt}\left(
+    \begin{array}{c}
+      x_1 \\ x_2
+    \end{array}
+  \right) = 
+    \left(
+      \begin{array}{cc}
+        0 & 1 \\ 1 & 0
+      \end{array}
+    \right) \left(
+      \begin{array}{c}
+        x_1 \\ x_2
+      \end{array}
+      \right)
+\end{equation}
+
+f) (compare the solutions with those of point b)
+\begin{equation}
+  \label{eq:prob5_2f}
+  \frac{d}{dt}\left(
+    \begin{array}{c}
+      x_1 \\ x_2
+    \end{array}
+  \right) = 
+    \left(
+      \begin{array}{cc}
+        0 & -1 \\ 1 & 0
+      \end{array}
+    \right) \left(
+      \begin{array}{c}
+        x_1 \\ x_2
+      \end{array}
+      \right)
+\end{equation}
+
+g) 
+\begin{equation}
+  \label{eq:prob5_2g}
+  \frac{d}{dt}\left(
+    \begin{array}{c}
+      x_1 \\ x_2
+    \end{array}
+  \right) = 
+    \left(
+      \begin{array}{cc}
+        i & 0 \\ 0 & i
+      \end{array}
+    \right) \left(
+      \begin{array}{c}
+        x_1 \\ x_2
+      \end{array}
+      \right)
+\end{equation}
+
+h) 
+\begin{equation}
+  \label{eq:prob5_2h}
+  \frac{d}{dt}\left(
+    \begin{array}{c}
+      x_1 \\ x_2
+    \end{array}
+  \right) = 
+    \left(
+      \begin{array}{cc}
+        1+i & 0 \\ 0 & 1-i
+      \end{array}
+    \right) \left(
+      \begin{array}{c}
+        x_1 \\ x_2
+      \end{array}
+      \right)
+\end{equation}
+
+i) 
+\begin{equation}
+  \label{eq:prob5_2i}
+  \frac{d}{dt}\left(
+    \begin{array}{c}
+      x_1 \\ x_2
+    \end{array}
+  \right) = 
+    \left(
+      \begin{array}{cc}
+        1+i & 0 \\ 1 & 1-i
+      \end{array}
+    \right) \left(
+      \begin{array}{c}
+        x_1 \\ x_2
+      \end{array}
+      \right)
+\end{equation}
+
+
+\epro
+
+\bpro
+Reduce these equations to first-order systems and find the general solution of the equations:
+
+a) $\frac{d^3 x}{dt^3} - 2\frac{d^2 x}{dt^2} - 3\frac{d x}{dt} =0$
+
+b) $\frac{d^3 x}{dt^3} + 2\frac{d^2 x}{dt^2} + \frac{d x}{dt} =0$
+
+c) $\frac{d^3 x}{dt^3} + 4\frac{d^2 x}{dt^2} + 13 \frac{d x}{dt} =0$
+
+d) $\frac{d^4 x}{dt^4} + 4\frac{d^3 x}{dt^3} + 8\frac{d^2 x}{dt^2} + 8 \frac{d x}{dt} + 4 = 0$
+\epro
+
+\bpro[Newton's Law]
+Consider the equation $\frac{d^2 x}{dt^2} + f(x) = 0$.
+
+a) Prove that $\frac{1}{2} \dot{x}^2 + \int_{x_0}^x f(s)ds$ is a first integral.
+
+b) Find the first integral of $\frac{d^2 x}{dt^2} - x + x^2/2=0$.
+
+c) Graph the corresponding vector field and some of its solutions.
+Find its stationary solutions (or equilibrium points) and study their
+neighborhoods by linearizing the equation at these points.
+\epro
+
+\bpro
+Study the following system
+\begin{eqnarray}
+  \dot{x}_1 &=& x_1 - x_1x_2 - x_2^3 + x_3(x_1^2 + x_2^2 -1 - x_1 +x_1x_2+ x_2^3) \nn
+  \dot{x}_2 &=& x_1 - x_3(x_1 - x_2 + x_1 x_2) \nn
+  \dot{x}_3 &=& (x_3 -1)(x_3+2x_3x_2^2 + x_3^3)
+\end{eqnarray}
+
+a) Find the equilibrium points.
+
+b) Show that the planes $x_3=0$ and $x_3 = 1$ are invariant sets,
+(that is, solutions that start in them never leave them).
+
+c) Consider the invariant set $x_3 = 1$ and see if it has periodic solutions.
+\epro
+
+
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot"
+%%% End:

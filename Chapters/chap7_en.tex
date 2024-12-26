@@ -1,0 +1,652 @@
+\chapter{Proof of the Fundamental Theorem}
+
+We will only prove points $i)$ and $ii)$, for which we will use the
+method of successive approximations by Picard, which is important in applications. The proof of point $iii)$ is of a technical nature and does not provide any additional significant insight. Point $iv)$ follows from points $i)$ and $ii)$, and its proof is identical to that of Corollary 1.2 of the analogous Theorem for the case of an ODE.
+
+To prove these points, we will need to develop some ideas and results from the mathematical theory of infinite-dimensional vector spaces. We will restrict ourselves to the minimum required by the theorem since these topics will be developed more extensively in the second part of this course.
+
+\espa
+\defi: 
+We will say that a vector space, $V$, is of
+{\bf infinite dimension}~\index{dimension!infinite} if it has an infinite number 
+of linearly independent vectors.
+
+\noi 
+\yaya{Examples}:
+
+\noi
+a) Let $V$ be the set of all sequences
+$\{x_i\},\;i=1,\ldots,\infty$ of real numbers. This is a vector
+space if we define the {\bf sum} and the {\bf product} of sequences by 
+the following formula,
+\beq
+\{x_i\}+\alpha\{y_i\}=\{x_i+\alpha\:y_i\}.
+\eeq
+These vectors can also be written as
+$\{x_i\}=(x_1,x_2,x_3,\ldots )$, which shows that it is the
+extension of \ren with $n\to\infty$.
+Clearly, the vectors $\ve{u}_1=(1,0,0,\ldots) $; $\ve{u}_2=(0,1,0,\ldots) $;
+$\ve{u}_3=(0,0,1,\ldots) $; are linearly independent and infinite in number.
+
+\espa
+
+\noi 
+b) Let $V$ be the set of continuous functions on the interval
+$[0,1]$. This is a vector space since if $f$ and $g$ are
+continuous on $[0,1]$, then $h=f+\alpha g$, $\alpha \in \re$, 
+is also continuous on $[0,1]$.
+
+The set of vectors $u_n=x^n\,,\;n\in{\ve N}$, is linearly
+independent and infinite
+$(\sum^M_{n=0}c^n\,u_n=\sum_{n=0}^Mc^n\,x^n=0\Longrightarrow
+c^n=0\;\;\forall \;n\leq  M)$ since a polynomial of degree
+$M$ has at most $M$ roots.
+
+Infinite-dimensional spaces can also be assigned
+norms, but in this case, these norms are not equivalent, and therefore
+one must be careful not to confuse the resulting structures.
+To avoid confusion, we will assign different names to spaces with different norms.
+
+\noi\yaya{Examples}:
+\noi 
+a) The normed vector space $l^2$ is the space of
+infinite sequences with the norm
+$\|\{x_i\}\|_2=\sqrt{\sum_{i=1}^{\infty} x_i^2} < \infty $.
+
+\noi 
+b) The normed vector space $l^{\infty}$ is the space of
+infinite sequences with the norm
+$\|\{x_i\}\|_{\infty}=sup_{i}\{|x_i|\}$. That is, the space of all
+bounded sequences.
+
+\noi c) The normed vector space $C[a,b]$ is the space of
+continuous functions with the norm $\|f\|_c=sup_{x\in [a,b]}\{|f(x)|\}$.
+That is, the space of bounded continuous functions on $[a,b]$.
+
+\espa
+\noi\yaya{Exercises}:
+
+\noi
+1) Show that the norms defined in the previous example are indeed norms.
+
+\noi
+2) Show that there are sequences in $l^{\infty}$ that do not belong to
+$l^2$. Hint: Find one of them.
+
+\noi
+3) Show that $\|\{x_i\}\|_n := \sqrt[n]{\sum_{i=1}^{\infty} |x_i|^n}_{\stackrel{
+\textstyle \longrightarrow}{\scriptstyle n \to \infty}} sup_i \{|x_i|\}$.
+\espa
+
+Unlike the finite-dimensional case, an infinite-dimensional normed space is not necessarily complete. To illustrate this, consider the normed vector space $l_0^{\infty}$, which is a subspace of $l^{\infty}$ consisting of all bounded sequences with only a finite number of non-zero terms. Each sequence $\{x_i\}_n= (1,1/2,1/3,\ldots,1/n,0,0,\ldots) $ is in
+$l_0^{\infty}$, the sequence of sequences $\{\{x_i\}_n\}$ is Cauchy 
+$$\lp \|\{x_i\}_{m}-\{x_i\}_n\|_{\infty}=\frac{1}{n+1}_{\stackrel{\textstyle\longrightarrow}
+{\scriptstyle n\to\infty}} 0 \rp$$ 
+and converges to the sequence $\{x_i\}_{\infty}=( 1,1/2,
+1/3 ,\ldots)\in l^{\infty}$ {\it which does not belong to} $l_0^{\infty}$. Therefore,
+$l_0^{\infty}$ is not complete.
+
+\espa
+\defi: 
+We will say that a normed vector space
+$(V,\|\cdot\|)$ is a {\bf Banach space}~\index{Banach!space} if it is complete.
+
+\noi
+\yaya{Examples}: 
+\ren with any of its norms, $l^2$ and
+$l^{\infty}$ are Banach spaces.
+\espa
+
+An important result, crucial in the proof of the Fundamental Theorem,
+is the following theorem.
+\bteo
+The vector space of bounded continuous functions, $C[a,b]$, is complete.
+\eteo
+
+\pru: Let $\{f_n(x)\}$ be a Cauchy sequence in $C[a,b]$,
+that is, each $f_n(x)$ is a continuous and bounded function on
+$[a,b]$ and it holds that given $\eps>0$ there exists $N>0$ such that
+$\forall\;m,n>N\;\;\; \|f_n-f_m\|_c=sup_{x\in[a,b]}|f_n(x)-f_m(x)|<\eps$.
+But then for each $x\in[a,b]$ the sequence of real numbers
+$\{f_n(x)\}$ is Cauchy. But the real numbers are complete and
+therefore for each $x\in[a,b]\;\;\{f_n(x)\}$ converges to a
+number that we will call $f(x)$. But then given $\eps>0$ for
+all $N$ such that $m,n\geq N$ implies $\|f_n-f_m\|_c<\eps$, we have
+that 
+
+\beq
+    \barr{rcl}\dip
+            sup_{x\in[a,b]}|f(x)-f_N(x)| & = & sup_{x\in[a,b]}\dip\lim_{n\to\infty} |f_n(x)-f_N(x)| \\
+                    & \leq & sup_{n\geq N} sup_{x\in[a,b]}  |f_n(x)-f_N(x)| \\             
+                    & = & sup_{n\geq N} \|f_n-f_N\|_c<\eps .
+          \earr
+\eeq
+
+Therefore, if we could prove that $f\in C[a,b]$, then
+we would have that $\|f-f_n\|_c\to 0,\;\;n\to\infty$ and therefore that
+$\{f_n\}\to f$ in $C[a,b]$ and the theorem would be proven.
+
+Let $x\in[a,b]$ be any point, we will prove that $f$ is continuous at
+$x$ and thus on all $[a,b]$. Let $\eps>0$, we want to find
+a $\del $ such that  $|x-y|<\del$ implies $|f(x)-f(y)|<\eps$.
+Take $N$ such that $\|f-f_N\|_c<\eps/3$  and $\del$ such that
+$|x-y|<\del$ implies $|f_N(x)-f_N(y)|<\eps/3$ [This is possible since
+the $f_N(x)$ are continuous on $[a,b]$]. Then $|x-y|<\del$ implies
+{\small
+\beq\barr{rcl}
+|f(x)-f(y)|&\leq&|f(x)-f_N(x)|+|f_N(x)-f_N(y)|+|f_N(y)-f(y)| \\
+           &<   & \frac13\eps + \frac13\eps +\frac13 \eps=\eps .
+\earr
+\eeq
+}
+%
+and therefore the continuity of $f(x)$. Since $[a,b]$ is a compact set
+(closed and bounded), $f$ is bounded on $[a,b]$ and therefore belongs
+to $C[a,b]$ 
+\epru
+\espa
+
+\defi: 
+Let $T:V\to V$ be a map from a Banach space $V$ to itself. We will say that $T$ is a {\bf
+contraction}~\index{contraction} if there exists $\lambda<1$ such that:
+\beq 
+\|T(\ve{x})- T(\ve{y})\|_V\leq\lambda\,\|\ve{x}-\ve{y}\|_V.
+\eeq
+
+\noi\yaya{Examples}:
+
+a) The linear map in $l^2$; $\ve{A}\{\ve{x}_i\}=\lb \frac{\ve{x}_i}{i+1}\rb$.
+
+b) The map from $\re^2$ to $\re^2$ that sends the point $(x,y)$ to the
+point $(x_0+x/2,y/2)$.
+
+c) Any Lipschitz function from $\re$ to $\re$ with a modulus of
+continuity ($k$) less than one.
+\espa
+
+The important property of these maps is the following theorem
+
+\bteo 
+\label{Teorema_del_mapa_contractivo}
+Let $T:V\to V$ be a contraction. Then there exists a unique
+$\ve{v}\in V$ such that $T(\ve{v})=\ve{v}$, and the sequence $T^n(\ve{u})$
+converges to $\ve{v}$ for any $\ve{u}$.
+\eteo
+
+\pru:
+Let $\|T(\ve{u})-\ve{u}\|=d$, then 
+$\|T^{n+1}(\ve{u})- T^n(\ve{u})\|\leq\lambda^n\,d$ and if $m>n$
+
+{%\small
+\[
+\barr{rcl}
+\|&&\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!T^m (\ve{u}) - T^n(\ve{u})\| \\
+&=& \|T^m(\ve{u})-T^{m-1}(\ve{u})+T^{m-1}(\ve{u})-T^{m-2}(\ve{u})+\cdots T^n(\ve{u})\| \\
+ & \leq &  \|T^m(\ve{u})-T^{m-1}(\ve{u})\|+\|T^{m-1}(\ve{u})-T^{m-2}(\ve{u})\|
++\cdots  \\
+ & \leq &  d\;\sum^m_n \lambda^m. 
+ \earr 
+\]
+}
+%
+Since $\sum_{n=0}^{\infty}\lambda^n$ converges, $\{T^n(\ve{u})\}$ is a Cauchy sequence.
+But $V$ is complete and therefore there exists $\ve{v}\in V$ such
+that $\lim_{n\to\infty}T^n\,\ve{u}=\ve{v}$.
+
+Since every contraction is continuous, we have that $$T(\ve{v}) = T (
+\lim_{n\to\infty} T^n(\ve{u}))=\lim_{n\to\infty}T^{n+1}(\ve{u})=\ve{v}.$$
+
+It only remains to prove that $\ve{v}$ is unique. Suppose by contradiction
+that there exists $\ve{w}\in V$ different from $\ve{v}$ and such that $T\,\ve{w}=\ve{w}$. 
+But
+then 
+$\|\ve{w}-\ve{v}\|_V=\|T(\ve{w})-T(\ve{v})\|_V\leq\lambda\,\|\ve{w}-\ve{v}\|_V$ 
+which is a contradiction since $\lambda\neq 1$ 
+\epru
+
+\ejer: 
+Let $T: B_{R,x_0} \to B_{R,x_0}$, $B_{R,x_0} \in V$ be a closed ball
+of radius $R$ around $x_0$, a contraction~\footnote{Also adjust the definition of a contraction for this case.}. 
+Prove for
+this case the same statements as in the previous theorem.
+\espa
+
+
+\paragraph{Proof of points $i$) and $ii)$ of the fundamental theorem.}
+
+Since we only want to see local existence and uniqueness, that is, only in
+a neighborhood of a point $p$ of $M$, it is sufficient to consider the system
+in $\re^n$. This will allow us to use the Euclidean norm present there.
+To see this, take a chart $(U,\varphi)$ with $p\in U$ and for
+simplicity $\varphi(p)=0\,\in\re^n$. Using this map, we can
+translate the vector field $\ve{v}$ in $M$ to a vector field $\ti
+v$ defined in a neighborhood of zero in \ren.  There we will treat the
+problem of finding its integral curves $g(t,x)$ that pass through the
+point $x\in\varphi(U)$ at time $t=0$. Then, through the map
+$\varphi^{-1}$, we will obtain in $M$ the one-parameter families of
+diffeomorphisms  $g^t(q)$ , $q\in U$, which will be tangent at every
+point to the vector field $\ve{v}$.
+
+With this in mind, it only remains to see that for $R>0$ and $\eps>0$
+sufficiently small 
+there exist integral curves, 
+$g(t,x):[0,\eps] \times B_R=\{x\in \ren
+\;|\;\|x\|_V < R  \} \to \ren$,  
+of the vector $\ti v$, that is, maps satisfying
+\beq  
+\derc{g(t,x)}{t}=\ti v(g(t,x))\;\;\;,\;\;\;\;\;g(0,x)=x,
+\label{7*}\eeq
+with $g(t,x)$ continuous with respect to the second argument, that is, with
+respect to the initial condition. By the assumption that $v$
+is Lipschitz~\footnote{To prove the local existence and uniqueness of solutions, it is only 
+necessary to assume that $\ve{v}$ is Lipschitz.}, 
+we have that there exists $k>0$ such that $\forall\;x,y\in B_R$
+\beq
+\|\ti v(x)-\ti v(y)\|_V<k\,\|x-y\|_V\;.\eeq
+
+Now consider the Banach space $C([0,\eps]\times B_R)$, which consists
+of all continuous maps (in $t$ and $x$) from $[0,\eps]\times B_R$
+to \ren{} with the norm 
+\beq\barr{rccl}
+     \|h\|_C & = & sup & \|h(t,x)\|_V\;\;, \\
+             &   & x\in B_R & \\
+             &   & t\in[0,\eps].
+             \earr
+\eeq
+
+Let the map of the ball of radius $R$ in $C([0,\eps ]\times B_R)$ into itself be given by,
+\beq
+T(h)=\int_0^t \ti v(x+h(\tau,x))\,d\tau\;\;.
+\eeq
+For this map to be well-defined, we will assume $R$ is
+sufficiently small so that $\ti v$ is defined and
+satisfies the Lipschitz condition in $B_{2R}$ and $\eps$ is less than
+$R/C$, where \hfill 
+$C=\max_{x\in B_{2R}} |\ti v(x)|$, so that 
+if $\|h\|_C < R$ then $\|x+h(\tau,x)\|_V < 2R \;\;\forall \tau\in[0,\eps]$
+and therefore
+$\|T(h)\|_C < R$ in all $C([0,\eps ]\times B_R)$. [See figure 7.1.] 
+
+\espa 
+%\fig{6cm}{Entornos usados en la prueba del Teorema Fundamental.}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m7_1}}
+    \caption{Neighborhoods used in the proof of the Fundamental Theorem.}
+    \label{fig:7_1}
+   \end{center}
+\end{figure}
+
+We will only prove points $i)$ and $ii)$, for which we will use the
+method of successive approximations by Picard, which is important in applications. The proof of point $iii)$ is of a technical nature and does not provide any additional significant insight. Point $iv)$ follows from points $i)$ and $ii)$, and its proof is identical to that of Corollary 1.2 of the analogous Theorem for the case of an ODE.
+
+To prove these points, we will need to develop some ideas and results from the mathematical theory of infinite-dimensional vector spaces. We will restrict ourselves to the minimum required by the theorem since these topics will be developed more extensively in the second part of this course.
+
+\espa
+\defi: 
+We will say that a vector space, $V$, is of
+{\bf infinite dimension}~\index{dimension!infinite} if it has an infinite number 
+of linearly independent vectors.
+
+\noi 
+\yaya{Examples}:
+
+\noi
+a) Let $V$ be the set of all sequences
+$\{x_i\},\;i=1,\ldots,\infty$ of real numbers. This is a vector
+space if we define the {\bf sum} and the {\bf product} of sequences by 
+the following formula,
+\beq
+\{x_i\}+\alpha\{y_i\}=\{x_i+\alpha\:y_i\}.
+\eeq
+These vectors can also be written as
+$\{x_i\}=(x_1,x_2,x_3,\ldots )$, which shows that it is the
+extension of \ren with $n\to\infty$.
+Clearly, the vectors $\ve{u}_1=(1,0,0,\ldots) $; $\ve{u}_2=(0,1,0,\ldots) $;
+$\ve{u}_3=(0,0,1,\ldots) $; are linearly independent and infinite in number.
+
+\espa
+
+\noi 
+b) Let $V$ be the set of continuous functions on the interval
+$[0,1]$. This is a vector space since if $f$ and $g$ are
+continuous on $[0,1]$, then $h=f+\alpha g$, $\alpha \in \re$, 
+is also continuous on $[0,1]$.
+
+The set of vectors $u_n=x^n\,,\;n\in{\ve N}$, is linearly
+independent and infinite
+$(\sum^M_{n=0}c^n\,u_n=\sum_{n=0}^Mc^n\,x^n=0\Longrightarrow
+c^n=0\;\;\forall \;n\leq  M)$ since a polynomial of degree
+$M$ has at most $M$ roots.
+
+Infinite-dimensional spaces can also be assigned
+norms, but in this case, these norms are not equivalent, and therefore
+one must be careful not to confuse the resulting structures.
+To avoid confusion, we will assign different names to spaces with different norms.
+
+\noi\yaya{Examples}:
+\noi 
+a) The normed vector space $l^2$ is the space of
+infinite sequences with the norm
+$\|\{x_i\}\|_2=\sqrt{\sum_{i=1}^{\infty} x_i^2} < \infty $.
+
+\noi 
+b) The normed vector space $l^{\infty}$ is the space of
+infinite sequences with the norm
+$\|\{x_i\}\|_{\infty}=sup_{i}\{|x_i|\}$. That is, the space of all
+bounded sequences.
+
+\noi c) The normed vector space $C[a,b]$ is the space of
+continuous functions with the norm $\|f\|_c=sup_{x\in [a,b]}\{|f(x)|\}$.
+That is, the space of bounded continuous functions on $[a,b]$.
+
+\espa
+\noi\yaya{Exercises}:
+
+\noi
+1) Show that the norms defined in the previous example are indeed norms.
+
+\noi
+2) Show that there are sequences in $l^{\infty}$ that do not belong to
+$l^2$. Hint: Find one of them.
+
+\noi
+3) Show that $\|\{x_i\}\|_n := \sqrt[n]{\sum_{i=1}^{\infty} |x_i|^n}_{\stackrel{
+\textstyle \longrightarrow}{\scriptstyle n \to \infty}} sup_i \{|x_i|\}$.
+\espa
+
+Unlike the finite-dimensional case, an infinite-dimensional normed space is not necessarily complete. To illustrate this, consider the normed vector space $l_0^{\infty}$, which is a subspace of $l^{\infty}$ consisting of all bounded sequences with only a finite number of non-zero terms. Each sequence $\{x_i\}_n= (1,1/2,1/3,\ldots,1/n,0,0,\ldots) $ is in
+$l_0^{\infty}$, the sequence of sequences $\{\{x_i\}_n\}$ is Cauchy 
+$$\lp \|\{x_i\}_{m}-\{x_i\}_n\|_{\infty}=\frac{1}{n+1}_{\stackrel{\textstyle\longrightarrow}
+{\scriptstyle n\to\infty}} 0 \rp$$ 
+and converges to the sequence $\{x_i\}_{\infty}=( 1,1/2,
+1/3 ,\ldots)\in l^{\infty}$ {\it which does not belong to} $l_0^{\infty}$. Therefore,
+$l_0^{\infty}$ is not complete.
+
+\espa
+\defi: 
+We will say that a normed vector space
+$(V,\|\cdot\|)$ is a {\bf Banach space}~\index{Banach!space} if it is complete.
+
+\noi
+\yaya{Examples}: 
+\ren with any of its norms, $l^2$ and
+$l^{\infty}$ are Banach spaces.
+\espa
+
+An important result, crucial in the proof of the Fundamental Theorem,
+is the following theorem.
+\bteo
+The vector space of bounded continuous functions, $C[a,b]$, is complete.
+\eteo
+
+\pru: Let $\{f_n(x)\}$ be a Cauchy sequence in $C[a,b]$,
+that is, each $f_n(x)$ is a continuous and bounded function on
+$[a,b]$ and it holds that given $\eps>0$ there exists $N>0$ such that
+$\forall\;m,n>N\;\;\; \|f_n-f_m\|_c=sup_{x\in[a,b]}|f_n(x)-f_m(x)|<\eps$.
+But then for each $x\in[a,b]$ the sequence of real numbers
+$\{f_n(x)\}$ is Cauchy. But the real numbers are complete and
+therefore for each $x\in[a,b]\;\;\{f_n(x)\}$ converges to a
+number that we will call $f(x)$. But then given $\eps>0$ for
+all $N$ such that $m,n\geq N$ implies $\|f_n-f_m\|_c<\eps$, we have
+that 
+
+\beq
+    \barr{rcl}\dip
+            sup_{x\in[a,b]}|f(x)-f_N(x)| & = & sup_{x\in[a,b]}\dip\lim_{n\to\infty} |f_n(x)-f_N(x)| \\
+                    & \leq & sup_{n\geq N} sup_{x\in[a,b]}  |f_n(x)-f_N(x)| \\             
+                    & = & sup_{n\geq N} \|f_n-f_N\|_c<\eps .
+          \earr
+\eeq
+
+Therefore, if we could prove that $f\in C[a,b]$, then
+we would have that $\|f-f_n\|_c\to 0,\;\;n\to\infty$ and therefore that
+$\{f_n\}\to f$ in $C[a,b]$ and the theorem would be proven.
+
+Let $x\in[a,b]$ be any point, we will prove that $f$ is continuous at
+$x$ and thus on all $[a,b]$. Let $\eps>0$, we want to find
+a $\del $ such that  $|x-y|<\del$ implies $|f(x)-f(y)|<\eps$.
+Take $N$ such that $\|f-f_N\|_c<\eps/3$  and $\del$ such that
+$|x-y|<\del$ implies $|f_N(x)-f_N(y)|<\eps/3$ [This is possible since
+the $f_N(x)$ are continuous on $[a,b]$]. Then $|x-y|<\del$ implies
+{\small
+\beq\barr{rcl}
+|f(x)-f(y)|&\leq&|f(x)-f_N(x)|+|f_N(x)-f_N(y)|+|f_N(y)-f(y)| \\
+           &<   & \frac13\eps + \frac13\eps +\frac13 \eps=\eps .
+\earr
+\eeq
+}
+%
+and therefore the continuity of $f(x)$. Since $[a,b]$ is a compact set
+(closed and bounded), $f$ is bounded on $[a,b]$ and therefore belongs
+to $C[a,b]$ 
+\epru
+\espa
+
+\defi: 
+Let $T:V\to V$ be a map from a Banach space $V$ to itself. We will say that $T$ is a {\bf
+contraction}~\index{contraction} if there exists $\lambda<1$ such that:
+\beq 
+\|T(\ve{x})- T(\ve{y})\|_V\leq\lambda\,\|\ve{x}-\ve{y}\|_V.
+\eeq
+
+\noi\yaya{Examples}:
+
+a) The linear map in $l^2$; $\ve{A}\{\ve{x}_i\}=\lb \frac{\ve{x}_i}{i+1}\rb$.
+
+b) The map from $\re^2$ to $\re^2$ that sends the point $(x,y)$ to the
+point $(x_0+x/2,y/2)$.
+
+c) Any Lipschitz function from $\re$ to $\re$ with a modulus of
+continuity ($k$) less than one.
+\espa
+
+The important property of these maps is the following theorem
+
+\bteo 
+\label{Teorema_del_mapa_contractivo}
+Let $T:V\to V$ be a contraction. Then there exists a unique
+$\ve{v}\in V$ such that $T(\ve{v})=\ve{v}$, and the sequence $T^n(\ve{u})$
+converges to $\ve{v}$ for any $\ve{u}$.
+\eteo
+
+\pru:
+Let $\|T(\ve{u})-\ve{u}\|=d$, then 
+$\|T^{n+1}(\ve{u})- T^n(\ve{u})\|\leq\lambda^n\,d$ and if $m>n$
+
+{%\small
+\[
+\barr{rcl}
+\|&&\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!T^m (\ve{u}) - T^n(\ve{u})\| \\
+&=& \|T^m(\ve{u})-T^{m-1}(\ve{u})+T^{m-1}(\ve{u})-T^{m-2}(\ve{u})+\cdots T^n(\ve{u})\| \\
+ & \leq &  \|T^m(\ve{u})-T^{m-1}(\ve{u})\|+\|T^{m-1}(\ve{u})-T^{m-2}(\ve{u})\|
++\cdots  \\
+ & \leq &  d\;\sum^m_n \lambda^m. 
+ \earr 
+\]
+}
+%
+Since $\sum_{n=0}^{\infty}\lambda^n$ converges, $\{T^n(\ve{u})\}$ is a Cauchy sequence.
+But $V$ is complete and therefore there exists $\ve{v}\in V$ such
+that $\lim_{n\to\infty}T^n\,\ve{u}=\ve{v}$.
+
+Since every contraction is continuous, we have that $$T(\ve{v}) = T (
+\lim_{n\to\infty} T^n(\ve{u}))=\lim_{n\to\infty}T^{n+1}(\ve{u})=\ve{v}.$$
+
+It only remains to prove that $\ve{v}$ is unique. Suppose by contradiction
+that there exists $\ve{w}\in V$ different from $\ve{v}$ and such that $T\,\ve{w}=\ve{w}$. 
+But
+then 
+$\|\ve{w}-\ve{v}\|_V=\|T(\ve{w})-T(\ve{v})\|_V\leq\lambda\,\|\ve{w}-\ve{v}\|_V$ 
+which is a contradiction since $\lambda\neq 1$ 
+\epru
+
+\ejer: 
+Let $T: B_{R,x_0} \to B_{R,x_0}$, $B_{R,x_0} \in V$ be a closed ball
+of radius $R$ around $x_0$, a contraction~\footnote{Also adjust the definition of a contraction for this case.}. 
+Prove for
+this case the same statements as in the previous theorem.
+\espa
+
+
+\paragraph{Proof of points $i$) and $ii)$ of the fundamental theorem.}
+
+Since we only want to see local existence and uniqueness, that is, only in
+a neighborhood of a point $p$ of $M$, it is sufficient to consider the system
+in $\re^n$. This will allow us to use the Euclidean norm present there.
+To see this, take a chart $(U,\varphi)$ with $p\in U$ and for
+simplicity $\varphi(p)=0\,\in\re^n$. Using this map, we can
+translate the vector field $\ve{v}$ in $M$ to a vector field $\ti
+v$ defined in a neighborhood of zero in \ren.  There we will treat the
+problem of finding its integral curves $g(t,x)$ that pass through the
+point $x\in\varphi(U)$ at time $t=0$. Then, through the map
+$\varphi^{-1}$, we will obtain in $M$ the one-parameter families of
+diffeomorphisms  $g^t(q)$ , $q\in U$, which will be tangent at every
+point to the vector field $\ve{v}$.
+
+With this in mind, it only remains to see that for $R>0$ and $\eps>0$
+sufficiently small 
+there exist integral curves, 
+$g(t,x):[0,\eps] \times B_R=\{x\in \ren
+\;|\;\|x\|_V < R  \} \to \ren$,  
+of the vector $\ti v$, that is, maps satisfying
+\beq  
+\derc{g(t,x)}{t}=\ti v(g(t,x))\;\;\;,\;\;\;\;\;g(0,x)=x,
+\label{7*}\eeq
+with $g(t,x)$ continuous with respect to the second argument, that is, with
+respect to the initial condition. By the assumption that $v$
+is Lipschitz~\footnote{To prove the local existence and uniqueness of solutions, it is only 
+necessary to assume that $\ve{v}$ is Lipschitz.}, 
+we have that there exists $k>0$ such that $\forall\;x,y\in B_R$
+\beq
+\|\ti v(x)-\ti v(y)\|_V<k\,\|x-y\|_V\;.\eeq
+
+Now consider the Banach space $C([0,\eps]\times B_R)$, which consists
+of all continuous maps (in $t$ and $x$) from $[0,\eps]\times B_R$
+to \ren{} with the norm 
+\beq\barr{rccl}
+     \|h\|_C & = & sup & \|h(t,x)\|_V\;\;, \\
+             &   & x\in B_R & \\
+             &   & t\in[0,\eps].
+             \earr
+\eeq
+
+Let the map of the ball of radius $R$ in $C([0,\eps ]\times B_R)$ into itself be given by,
+\beq
+T(h)=\int_0^t \ti v(x+h(\tau,x))\,d\tau\;\;.
+\eeq
+For this map to be well-defined, we will assume $R$ is
+sufficiently small so that $\ti v$ is defined and
+satisfies the Lipschitz condition in $B_{2R}$ and $\eps$ is less than
+$R/C$, where \hfill 
+$C=\max_{x\in B_{2R}} |\ti v(x)|$, so that 
+if $\|h\|_C < R$ then $\|x+h(\tau,x)\|_V < 2R \;\;\forall \tau\in[0,\eps]$
+and therefore
+$\|T(h)\|_C < R$ in all $C([0,\eps ]\times B_R)$. [See figure 7.1.] 
+
+\espa 
+%\fig{6cm}{Entornos usados en la prueba del Teorema Fundamental.}
+\espa 
+%\fig{6cm}{Environments used in the proof of the Fundamental Theorem.}
+
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m7_1}}
+    \caption{Environments used in the proof of the Fundamental Theorem.}
+    \label{fig:7_1}
+  \end{center}
+\end{figure}
+
+
+\blem
+If \eps{} is sufficiently small then $T$ is a contraction.
+\elem
+
+\espa
+\pru:
+\begin{eqnarray*}
+\|T(h_1)-T(h_2)\|_V  \!\! &=& \!\!
+           \int_0^t\|\ti v(x+h_1(\tau,x))-\ti v(x+h_2(\tau,x))\|_V\;d\tau \\
+\!\! &\leq& \!\!\int_0^t k\,\|h_1(\tau,x)-h_2(\tau,x)\|_V \,d\tau\\
+\!\! &\leq& \!\! k\,\eps\,\|h_1-h_2\|_C
+\end{eqnarray*}
+%                                         
+and therefore
+\[
+\|T(h_1)-T(h_2)\|_C\leq k\,\eps\,\|h_1-h_2\|_C\;\;\;\;\;\;\;\forall
+\;h_1,h_2\in C([0,\eps]\times B_R).
+\]
+%
+Taking $\eps<1/k $ we complete the proof of the Lemma.
+
+This Lemma and Theorem \ref{Teorema_del_mapa_contractivo} ensure 
+that there exists a unique map $h(t,x)$ --the fixed point of $T$-- satisfying
+\beq
+h(t,x)=T(h(t,x))=\int_0^t\ti v(x+h(\tau,x))\,d\tau .
+\label{7**}
+\eeq
+
+\espa
+Let $g(t,x)\equiv x+h(t,x)$, this function is continuous in both
+arguments --since $h(t,x)\in C([0,\eps]\times B_R)$-- and by
+construction continuously
+differentiable in $t$ --since it satisfies \ron{7**}--.
+Differentiating \ron{7**} with respect to $t$ we see that $g(t,x)$
+satisfies the equation \ron{7*} and its initial condition, which
+completes the proof of points $i)$ and $ii)$ of the Fundamental Theorem.
+\epru
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newpage
+\section{Problems}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% 1
+\bpro
+See that $l^2$ the unit ball is not compact. 
+Hint: find an infinite sequence in the unit ball that has no accumulation point.
+\epro
+
+%2
+\bpro
+Prove that the condition 
+\begin{equation}
+  \|A(\ve{x}) - A(\ve{y})\| < \|\ve{x} - \ve{y}\|
+\end{equation}
+is not sufficient to guarantee the existence of a fixed point.
+Hint: construct a counterexample. 
+There are some very simple ones using functions from the line to itself.
+\epro
+
+%3
+\bpro 
+Let $f:[a,b] \to [a,b]$ be a Lipschitz function with a constant less
+than one throughout the interval $[a,b]$. Prove using the fixed point theorem
+for contractions that the equation $f(x) = x$ always has a
+solution. Plot in a diagram $(y=f(x), x)$ the sequence given by
+$x_i = f(x_{i-1})$ for the case of $f$ with positive slope and less than
+one at every point. What happens when the slope becomes greater than one
+in some interval?
+\epro
+
+%4
+\bpro
+Let $g:[a,b] \to \re$ be a continuously differentiable function such that
+$g(a) < 0$, $g(b) > 0$ and $0 < c_1 < g'(x)$. Use the fixed point theorem 
+for contractions to prove that there is a unique root $g(x) = 0$ in 
+the interval. Hint: define the function $f(x)= x - \lambda g(x)$ for a 
+conveniently chosen constant $\lambda$ and find a fixed point: 
+$f(x)=x$. Note that the approximating sequence is that of the Newton method
+for finding roots.
+\epro
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot.tex~/Metodos/"
+%%% End: 
