@@ -8,39 +8,39 @@
 
 \section{Introduction}
 
-The notion of a set, while telling us that certain objects --the elements that make it up-- have something in common with each other, does not give us any idea of the {\it closeness} between these elements, whereas on the other hand, if we consider for example the real numbers, this notion is present. We know, for example, that the number 2 is much closer to 1 than 423 is. The concept of a topology in a set that we will define below tries to capture precisely this notion of closeness which, as we will see, admits many gradations.
+The notion of a set, while telling us that certain objects ---the elements that comprise it--- have something in common with each other, does not give us any idea of the {\it closeness} between these elements. On the other hand, if we consider for example the real numbers, this notion is present. We know, for example, that the number 2 is much closer to 1 than 423 is. The concept of a topology in a set that we will define below tries to capture precisely this notion of closeness which, as we will see, admits many gradations.
 
 \defi: A {\bf topological space} consists of a pair $(X, \cT)$, where $X$ is a set and $\cT$ is a collection of subsets of $X$ satisfying the following conditions:
 
-\begin{enumerate} \item The subsets $\emptyset$ and $X$ of $X$ are in \cT. \item Let $O_{\lambda}$, $\lambda \in I$, be a one-parameter family of subsets of $X$ in \cT, then $\bigcup_I O_{\lambda}$ is also in \cT. \item If $O$ and $O'$ are in \cT, then $O \cap O'$ is also in \cT.
+\begin{enumerate} \item The subsets $\emptyset$ and $X$ of $X$ are in \cT. \item If $O_{\lambda}$, $\lambda \in I$, is a one-parameter family of subsets of $X$ in \cT, then $\bigcup_I O_{\lambda}$ is also in \cT. \item If $O$ and $O'$ are in \cT, then $O \cap O'$ is also in \cT.
 
 \end{enumerate}
 
-The elements of \cT, subsets of $X$, are called the {\bf open subsets} of $X$, the set \cT itself is called a {\bf topology} of $X$. Condition 2) tells us that infinite unions of elements of \cT are also in \cT, while condition 3) tells us that in general only finite intersections remain in \cT. The following examples illustrate why this asymmetry exists, they also illustrate how giving a topology is essentially giving a notion of closeness between the points of the set in question.
+The elements of \cT, subsets of $X$, are called the {\bf open subsets} of $X$. The set \cT itself is called a {\bf topology} on $X$. Condition 2) tells us that infinite unions of elements of \cT are also in \cT, while condition 3) tells us that in general only finite intersections remain in \cT. The following examples illustrate why this asymmetry exists, they also illustrate how giving a topology is essentially giving a notion of closeness between the points of the set in question.
 
-\ejem: a) Let $\cT = {\emptyset, X}$, that is, the only open subsets of $X$ are the empty subset and the subset $X$. It is clear that this collection of subsets is a topology, as it satisfies the three required conditions, this topology is called {\bf indiscrete}. We can say that in this topology the points of $X$ are arbitrarily close to each other, since if an open set contains one of them it contains all of them.
+\ejem: a) Let $\cT = \{\emptyset, X\}$, that is, the only open subsets of $X$ are the empty subset and the subset $X$. It is clear that this collection of subsets is a topology, as it satisfies the three required conditions. This topology is called the {\bf indiscrete topology} on $X$. We can say that, with this topology, the points of $X$ are arbitrarily close to each other, since if an open set contains one of them it contains all of them.
 
-\ejem: b) Let \cT = \cP($X$), the collection of all subsets of $X$, clearly this collection also satisfies the conditions mentioned above and therefore it is also a topology of $X$, the so-called {\bf discrete}. We can say that in this one all the points are arbitrarily separated from each other since, for example, given any point of $X$ there is an open set that separates it from all the others, which consists of only the point in question.
+\ejem: b) Let \cT = \cP($X$), the collection of all subsets of $X$. Clearly, this collection also satisfies the conditions mentioned above and therefore it is also a topology on $X$, the so-called {\bf discrete topology on} $X$. We can say that in this one all the points are arbitrarily separated from each other since, for example, given any point of $X$ there is an open set that separates it from all the others, which consists of only the point in question.
 
-\ejem: c) Let $X$ be the set of real numbers, from now on, \re, and let \\
-$\cT = {O |\; if \;r \in O, \exists \eps >0 \; such \; that \;if \; |r - r'| < \eps, \; r' \in O}$, that is, the collection of open sets in the usual sense. Let's see that this collection satisfies the conditions to be a topology. Clearly $\emptyset \in \cT$, (since it has no $r$), as well as \re, (since it contains all $r'$), and thus condition 1) is satisfied. Let's see the second, let $r \in \bigcup_I O_{\lambda}$ then $r \in O_{\lambda}$ for some $\lambda$ and therefore there will exist $\eps >0 $ such that all $r'$ with $|r-r'| < \eps $ is also in $O_{\lambda}$, and therefore in $\bigcup_I O_{\lambda}$. 
-Finally, let's see the third, let $r \in O \cap O'$ then $r$ is in $O$ and therefore there will exist $\eps > 0$ such that all $r'$ with $|r-r'| < \eps $ will be in $O$, as $r$ is also in $O'$ there will exist $\eps'> 0$ such that all $r'$ with $|r-r'| < \eps'$ will be in $O'$. 
-Let $\eps'' = min\{\eps, \eps' \}$ then all $r'$ with $|r-r'| < \eps''$ will be in $O$ and in $O'$ and therefore in $O \cap O'$, so we conclude that this last set is also in \cT. $\re$ with this topology is called the {\bf real line}.
+\ejem: c) Let $X$ be the set of real numbers, \re, and let \\
+$\cT = \{O \subseteq \re |\; \mathrm{if} \;r \in O, \, \exists \eps >0 \; \mathrm{such that if} \; |r - r'| < \eps, \; r' \in O}$, that is, the collection of open sets in the usual sense of the real numbers. Let's see that this collection satisfies the conditions to be a topology. Clearly, $\emptyset \in \cT$ (since it has no $r$), as well as \re$ \in \cT$ (since it contains all $r'$), and thus condition 1) is satisfied. Let us examine the second condition: let $r \in \bigcup_I O_{\lambda}$ then $r \in O_{\lambda}$ for some $\lambda$ and therefore there will exist $\eps >0 $ such that all $r'$ with $|r-r'| < \eps $ are also in $O_{\lambda}$, and therefore in $\bigcup_I O_{\lambda}$. 
+Finally, the third condition: let $r \in O \cap O'$ then $r$ is in $O$ and therefore there will exist $\eps > 0$ such that all $r'$ with $|r-r'| < \eps $ will be in $O$; as $r$ is also in $O'$, there will exist $\eps'> 0$ such that all $r'$ with $|r-r'| < \eps'$ will be in $O'$. 
+Let $\eps'' = \mathrm{min}\{\eps, \eps' \}$, then all $r'$ with $|r-r'| < \eps''$ will be in $O$ and in $O'$ and therefore in $O \cap O'$, so we conclude that this last set is also in \cT. $\re$ with this topology is called the {\bf real line}.
 
-\ejer: Find using the previous example an infinite intersection of open sets that is not open.
+\ejer: In the real line, as defined in the previous example, find an infinite intersection of open sets that is not open.
 
-\ejem: d) Let $X = \re \times \re \equiv \re^2$, that is, the Cartesian product of \re with itself --the set of all pairs $(x,y)$, with $x,y \in \re$-- and let \\
-$\cT = {O |\; if \; (x,y) \in O, \exists \eps >0 \; such \; that \; if \; |x - x'|+|y-y'| < \eps, \; (x',y') \in O}$. From the previous example, it can be seen that this is also a topological space and that this is the topology we usually use in $\re^2$
+\ejem: d) Let $X = \re \times \re \equiv \re^2$, that is, the Cartesian product of \re  with itself ---the set of all pairs $(x,y)$, with $x,y \in \re$--- and let \\
+$\cT = \{O \in \reˆ2 |\; \mathrm{if} (x,y) \in O, \, \exists \eps >0 \mathrm{such that if} |x - x'|+|y-y'| < \eps, \; (x',y') \in O \}$. Following the previous example, it can be seen that this is also a topological space and that this is the topology we usually use in $\re^2$
 
-\defi: A {\bf metric space}, $(X,d)$ is a pair consisting of a set $X$ and a map $d: X \times X \longrightarrow \re$, usually called distance, satisfying the following conditions:
+\defi: A {\bf metric space} is a pair $(X,d)$ consisting of a set $X$ and a map $d: X \times X \to \re$, usually called \textbf{distance}, satisfying the following conditions for all $x, x', x'' \in X$:
 
-\begin{enumerate} \item $d(x,x') \geq 0$, $= 0 \Rightarrow x = x'$. \item $d(x,x')=d(x',x)$. \item $d(x,x') +d(x',x'') \geq d(x,x'')$. \end{enumerate}
+\begin{enumerate} \item Non-negativity: $d(x,x') \geq 0$, with equality only when $x = x'$. \item Symmetry: $d(x,x')=d(x',x)$. \item Triangle inequality: $d(x,x') +d(x',x'') \geq d(x,x'')$. \end{enumerate}
 
-\ejer: Prove that this space has a topology {\it induced} by its metric in a similar way to $\re$ in the previous example.
+\ejer: Prove that any metric space has a topology {\it induced} by its metric in a similar way to $\re$ in the previous example.
 
-\ejer: See that $d(x,y)=1$ if $x\neq y$, is a distance. What topology does this distance introduce?
+\ejer: Prove that, for any set, $d(x,y)=1$ if $x\neq y$ and $d(x,x)=0$ defines a distance. What topology does this distance induce on the set?
 
-Clearly a metric gives us a notion of closeness between points, as it gives us a numerical value of the distance between them. A topology, by not generally giving us any number, gives us a much vaguer notion of closeness, but still generally interesting.
+Clearly, a distance gives us a notion of closeness between points, in the precise form of a numerical value. A topology, by not generally giving us any number, gives us a much vaguer notion of closeness, but still generally interesting.
 
 \subsection{Terminology}
 
