@@ -134,7 +134,7 @@ a collection of subsets of $X$ parameterized by a continuous
 or discrete variable $\lambda$. We say that this collection {\bf covers}
 $A$ if $A \subset \cup_{\lambda}A_{\lambda}$. In such a case, we also say that $C$ is a {\bf cover} of $A$. When $A$ is a topological space and the sets $\{ A_\lambda \}$ are open, we say that $C$ is an {\bf open cover} of $A$. Finally, a subcollection of $C$ that also covers $A$ is called a {\bf subcover}. 
 
-\defi: We say that a topological space $A$ is {\bf compact} if given any collection
+\defi: We say that a set $A$ of a topological space is {\bf compact} if given any collection
 $\{A_{\lambda}\}$ of {\it open sets} that covers $A$, there exists a {\it finite}
 subcollection of these $A_{\lambda}$ that also covers $A$.
 
@@ -161,9 +161,10 @@ because, for example, the following is an open cover of $A$ that has no finite s
 
 \bpru
 
-Let $\{A_{\lambda}\}$ be an open cover of $[0,1]$. In particular, it covers any subinterval $[0,x]$ with $x \in [0,1]$. Consider the set $S$ of all $x$ such that $[0,x]$ is covered by \textit{finitely} many $A_\lambda$, and let $a \in [0,1]$ be the least upper bound 
-of this set. Because $0$ is covered by some single $A_\lambda_0$, then $0 \in S$. Besides, by definition, $S$ is bounded above by $1$. Therefore, $S$ is a non-empty upper-bounded real set, so by the least-upper-bound property of $\re$ it has a least upper bound. Let $a$ be that number and $A_{\lambda_0}$ be an element of the cover
-such that $a \in A_{\lambda_0}$. Because $a$ is the \textit{least} upper bound of $S$, there must be some $a'<a$ in $A_{\lambda_0}$ such that $a \in S$. Therefore, $[0,a']$ has a finite subcover, and the union of this finite subcover with $\{A_\lambda_0\}$ provides a finite subcover of $[0,a]$. Now we want to show that $a=1$. So let us assume $a<1$ and take $b \in A_\lambda_0$ such that $a < b < 1$. Then $[0,b]$ is covered by the same finite subcover constructed for $[0,a]$, implying $b \in S$. But this contradicts the fact that $a$ is an upper bound of $S$, so we conclude that $a=1$. 
+Let $\{A_{\lambda}\}$ be an open cover of $[0,1]$. 
+Consider the set $S$ of all $x$ such that $[0,x]$ is covered by \textit{finitely} many $A_\lambda$. This set is not empty since $0$ is in some open set of the covering, and therefore there exists $x > 0$ such that $[0,x]$ is inside this open set. Furthermore it is bounded above by $1$.
+Therefore, $S$ is a non-empty upper-bounded real set, so by the least-upper-bound property of $\re$ it has a least upper bound. Let $a$ be that number and $A_{\lambda_0}$ be an element of the cover such that $a \in A_{\lambda_0}$. Adding this set to the finite subcovering we still get a finite subcover containing $a$, and therefore also some element $b>a$. Contradicting the fact that $a$ was a least upper bound unless $a=1$.
+
 \epru
 
 Now let's see the relation between the two derived concepts of
