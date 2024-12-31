@@ -8,39 +8,41 @@
 
 \section{Introduction}
 
-The notion of a set, while telling us that certain objects --the elements that make it up-- have something in common with each other, does not give us any idea of the {\it closeness} between these elements, whereas on the other hand, if we consider for example the real numbers, this notion is present. We know, for example, that the number 2 is much closer to 1 than 423 is. The concept of a topology in a set that we will define below tries to capture precisely this notion of closeness which, as we will see, admits many gradations.
+The notion of a set, while telling us that certain objects ---the elements that comprise it--- have something in common with each other, does not give us any idea of the {\it closeness} between these elements. On the other hand, if we consider for example the real numbers, this notion is present. We know, for example, that the number 2 is much closer to 1 than 423 is. The concept of a topology in a set that we will define below tries to capture precisely this notion of closeness which, as we will see, admits many gradations.
 
 \defi: A {\bf topological space} consists of a pair $(X, \cT)$, where $X$ is a set and $\cT$ is a collection of subsets of $X$ satisfying the following conditions:
 
-\begin{enumerate} \item The subsets $\emptyset$ and $X$ of $X$ are in \cT. \item Let $O_{\lambda}$, $\lambda \in I$, be a one-parameter family of subsets of $X$ in \cT, then $\bigcup_I O_{\lambda}$ is also in \cT. \item If $O$ and $O'$ are in \cT, then $O \cap O'$ is also in \cT.
+\begin{enumerate} \item The subsets $\emptyset$ and $X$ of $X$ are in \cT. \item If $O_{\lambda}$, $\lambda \in I$, is a one-parameter family of subsets of $X$ in \cT, then $\bigcup_I O_{\lambda}$ is also in \cT. \item If $O$ and $O'$ are in \cT, then $O \cap O'$ is also in \cT.
 
 \end{enumerate}
 
-The elements of \cT, subsets of $X$, are called the {\bf open subsets} of $X$, the set \cT itself is called a {\bf topology} of $X$. Condition 2) tells us that infinite unions of elements of \cT are also in \cT, while condition 3) tells us that in general only finite intersections remain in \cT. The following examples illustrate why this asymmetry exists, they also illustrate how giving a topology is essentially giving a notion of closeness between the points of the set in question.
+For simplicity, we will often denote the topological space $(X, \cT)$ simply by $X$ when the topology is understood from context, as is common practice. 
 
-\ejem: a) Let $\cT = {\emptyset, X}$, that is, the only open subsets of $X$ are the empty subset and the subset $X$. It is clear that this collection of subsets is a topology, as it satisfies the three required conditions, this topology is called {\bf indiscrete}. We can say that in this topology the points of $X$ are arbitrarily close to each other, since if an open set contains one of them it contains all of them.
+The elements of \cT, subsets of $X$, are called the {\bf open subsets} of $X$. The set \cT itself is called a {\bf topology} on $X$. Condition 2) tells us that infinite unions of elements of \cT are also in \cT, while condition 3) tells us that in general only finite intersections remain in \cT. The following examples illustrate why this asymmetry exists, they also illustrate how giving a topology is essentially giving a notion of closeness between the points of the set in question.
 
-\ejem: b) Let \cT = \cP($X$), the collection of all subsets of $X$, clearly this collection also satisfies the conditions mentioned above and therefore it is also a topology of $X$, the so-called {\bf discrete}. We can say that in this one all the points are arbitrarily separated from each other since, for example, given any point of $X$ there is an open set that separates it from all the others, which consists of only the point in question.
+\ejem: a) Let $\cT = \{\emptyset, X\}$, that is, the only open subsets of $X$ are the empty subset and the subset $X$. It is clear that this collection of subsets is a topology, as it satisfies the three required conditions. This topology is called the {\bf indiscrete topology} on $X$. We can say that, with this topology, the points of $X$ are arbitrarily close to each other, since if an open set contains one of them it contains all of them.
 
-\ejem: c) Let $X$ be the set of real numbers, from now on, \re, and let \\
-$\cT = {O |\; if \;r \in O, \exists \eps >0 \; such \; that \;if \; |r - r'| < \eps, \; r' \in O}$, that is, the collection of open sets in the usual sense. Let's see that this collection satisfies the conditions to be a topology. Clearly $\emptyset \in \cT$, (since it has no $r$), as well as \re, (since it contains all $r'$), and thus condition 1) is satisfied. Let's see the second, let $r \in \bigcup_I O_{\lambda}$ then $r \in O_{\lambda}$ for some $\lambda$ and therefore there will exist $\eps >0 $ such that all $r'$ with $|r-r'| < \eps $ is also in $O_{\lambda}$, and therefore in $\bigcup_I O_{\lambda}$. 
-Finally, let's see the third, let $r \in O \cap O'$ then $r$ is in $O$ and therefore there will exist $\eps > 0$ such that all $r'$ with $|r-r'| < \eps $ will be in $O$, as $r$ is also in $O'$ there will exist $\eps'> 0$ such that all $r'$ with $|r-r'| < \eps'$ will be in $O'$. 
-Let $\eps'' = min\{\eps, \eps' \}$ then all $r'$ with $|r-r'| < \eps''$ will be in $O$ and in $O'$ and therefore in $O \cap O'$, so we conclude that this last set is also in \cT. $\re$ with this topology is called the {\bf real line}.
+\ejem: b) Let \cT = \cP($X$), the collection of all subsets of $X$. Clearly, this collection also satisfies the conditions mentioned above and therefore it is also a topology on $X$, the so-called {\bf discrete topology on} $X$. We can say that in this one all the points are arbitrarily separated from each other since, for example, given any point of $X$ there is an open set that separates it from all the others, which consists of only the point in question.
 
-\ejer: Find using the previous example an infinite intersection of open sets that is not open.
+\ejem: c) Let $X$ be the set of real numbers, \re, and let \\
+$\cT = \{O \subseteq \re |\; \mathrm{if} \;r \in O, \, \exists \eps >0 \; \mathrm{such that if} \; |r - r'| < \eps, \; r' \in O}$, that is, the collection of open sets in the usual sense of the real numbers. Let's see that this collection satisfies the conditions to be a topology. Clearly, $\emptyset \in \cT$ (since it has no $r$), as well as \re$ \in \cT$ (since it contains all $r'$), and thus condition 1) is satisfied. Let us examine the second condition: let $r \in \bigcup_I O_{\lambda}$ then $r \in O_{\lambda}$ for some $\lambda$ and therefore there will exist $\eps >0 $ such that all $r'$ with $|r-r'| < \eps $ are also in $O_{\lambda}$, and therefore in $\bigcup_I O_{\lambda}$. 
+Finally, the third condition: let $r \in O \cap O'$ then $r$ is in $O$ and therefore there will exist $\eps > 0$ such that all $r'$ with $|r-r'| < \eps $ will be in $O$; as $r$ is also in $O'$, there will exist $\eps'> 0$ such that all $r'$ with $|r-r'| < \eps'$ will be in $O'$. 
+Let $\eps'' = \mathrm{min}\{\eps, \eps' \}$, then all $r'$ with $|r-r'| < \eps''$ will be in $O$ and in $O'$ and therefore in $O \cap O'$, so we conclude that this last set is also in \cT. $\re$ with this topology is called the {\bf real line}.
 
-\ejem: d) Let $X = \re \times \re \equiv \re^2$, that is, the Cartesian product of \re with itself --the set of all pairs $(x,y)$, with $x,y \in \re$-- and let \\
-$\cT = {O |\; if \; (x,y) \in O, \exists \eps >0 \; such \; that \; if \; |x - x'|+|y-y'| < \eps, \; (x',y') \in O}$. From the previous example, it can be seen that this is also a topological space and that this is the topology we usually use in $\re^2$
+\ejer: In the real line, as defined in the previous example, find an infinite intersection of open sets that is not open.
 
-\defi: A {\bf metric space}, $(X,d)$ is a pair consisting of a set $X$ and a map $d: X \times X \longrightarrow \re$, usually called distance, satisfying the following conditions:
+\ejem: d) Let $X = \re \times \re \equiv \re^2$, that is, the Cartesian product of \re  with itself ---the set of all pairs $(x,y)$, with $x,y \in \re$--- and let \\
+$\cT = \{O \in \reˆ2 |\; \mathrm{if} (x,y) \in O, \, \exists \eps >0 \mathrm{such that if} |x - x'|+|y-y'| < \eps, \; (x',y') \in O \}$. Following the previous example, it can be seen that this is also a topological space and that this is the topology we usually use in $\re^2$
 
-\begin{enumerate} \item $d(x,x') \geq 0$, $= 0 \Rightarrow x = x'$. \item $d(x,x')=d(x',x)$. \item $d(x,x') +d(x',x'') \geq d(x,x'')$. \end{enumerate}
+\defi: A {\bf metric space} is a pair $(X,d)$ consisting of a set $X$ and a map $d: X \times X \to \re$, usually called \textbf{distance}, satisfying the following conditions for all $x, x', x'' \in X$:
 
-\ejer: Prove that this space has a topology {\it induced} by its metric in a similar way to $\re$ in the previous example.
+\begin{enumerate} \item Non-negativity: $d(x,x') \geq 0$, with equality only when $x = x'$. \item Symmetry: $d(x,x')=d(x',x)$. \item Triangle inequality: $d(x,x') +d(x',x'') \geq d(x,x'')$. \end{enumerate}
 
-\ejer: See that $d(x,y)=1$ if $x\neq y$, is a distance. What topology does this distance introduce?
+\ejer: Prove that any metric space has a topology {\it induced} by its metric in a similar way to $\re$ in the previous example.
 
-Clearly a metric gives us a notion of closeness between points, as it gives us a numerical value of the distance between them. A topology, by not generally giving us any number, gives us a much vaguer notion of closeness, but still generally interesting.
+\ejer: Prove that, for any set, $d(x,y)=1$ if $x\neq y$ and $d(x,x)=0$ defines a distance. What topology does this distance induce on the set?
+
+Clearly, a distance gives us a notion of closeness between points, in the precise form of a numerical value. A topology, by not generally giving us any number, gives us a much vaguer notion of closeness, but still generally interesting.
 
 \subsection{Terminology}
 
@@ -58,7 +60,7 @@ We now give a summary of the usual terminology in this area, which is a direct g
 
 \defi: We will call the {\bf boundary} of $A \in X$ the subset $\partial A$ of $X$ formed by $Cl(A) - Int(A) \equiv Int(A)^c \cap Cl(A)$.
 
-\ejer: Let $(X,d)$ be a metric vector space, prove that: \ a) $C^1_x = {x'| d(x,x') \leq 1 }$ is closed and is a neighborhood of $x$. \ b) $N^{\eps}_x ={x' | d(x,x') < \eps }$, $\eps >0$ is also a neighborhood of $x$. \ c) $Int(N^{\eps}_x) = N^{\eps}_x$ \ d) $Cl(N^{\eps}_x) = {x' | d(x,x') \leq \eps} $\ e) $\partial N^{\eps}_x = {x' | d(x,x') = \eps }$.
+\ejer: Let $(X,d)$ be a metric vector space, prove that: \ a) $C^1_x = \{x'| d(x,x') \leq 1 \}$ is closed and is a neighborhood of $x$. \ b) $N^{\eps}_x = \{x' | d(x,x') < \eps \}$, $\eps >0$ is also a neighborhood of $x$. \ c) $Int(N^{\eps}_x) = N^{\eps}_x$ \ d) $Cl(N^{\eps}_x) = \{x' | d(x,x') \leq \eps \} $\ e) $\partial N^{\eps}_x = \{x' | d(x,x') = \eps \}$.
 
 \ejer: Let $(X,\cT)$ be a topological space and $A$ a subset of $X$. Prove that: \ a) $A$ is open if and only if each $x \in A$ has a neighborhood contained in $A$. \ b) $A$ is closed if and only if each $x$ in $A^c$ (that is, not belonging to $A$) has a neighborhood that does not intersect $A$.
 
@@ -66,55 +68,58 @@ We now give a summary of the usual terminology in this area, which is a direct g
 
 \section{Derived Concepts}
 
-In the previous sections, we have seen that the concept of a topology leads us to a generalization of a series of ideas and derived concepts that we handled in $\re^n$, which did not depend on the usual metric used in these spaces (the so-called Euclidean Metric). It is then worth asking if there are still other possible generalizations. In this and the next subsection, we will study two more of them, these in turn open up a vast area of mathematics, which we will not cover in this course but which is very important in what concerns modern physics.
+In the previous sections, we have seen that the concept of a topology leads us to a generalization of a series of ideas and derived concepts that we knew how to handle in $\re^n$, revealing that they did not depend on the usual distance used in these spaces (the so-called Euclidean distance). It is then worth asking if there are still other possible generalizations. In this and the next subsection, we will study two more of them. These in turn open up a vast area of mathematics, which we will not cover in this course but is very important in what concerns modern physics.
 
-The first of these is continuity.
+The first of these notions is \textit{continuity}.
 
 \subsection{Continuous Maps}
 
-\defi: Let $\fip :X \rightarrow Y$ be a map between two topological spaces. (See box.) We will say that the map $\fip$ is {\bf continuous} if given any open set $O$ of $Y$, $\fip^{-1}(O)$ is an open set of $X$.
+\defi: Let $\fip :X \rightarrow Y$ be a map between two topological spaces (see the box below). We will say that the map $\fip$ is {\bf continuous} if given any open set $O$ of $Y$, $\fip^{-1}(O)$ is an open set of $X$.
 
 \espa %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \recu{\defi: A {\bf map} $\phi:X \to Y$ between a set $X$ and another $Y$ is an assignment to {\it each} element of $X$ of an element of $Y$.
 
-This generalizes the usual concept of a function, note that the map is defined for every element of $X$, while in general its {\bf image}, that is, the set $\phi(X) \equiv {y \in Y ;| ; \exists x \in X; y; \phi(x) = y}$, is not all of $Y$. In the case that it is, that is, $\phi(X) = Y$, we will say that the map is {\bf surjective}. On the other hand, if it is fulfilled that $\phi(x) = \phi(\ti x) \Longrightarrow x=\ti x$ we will say that the map is {\bf injective}. In such a case, there exists the inverse map to $\phi$ between the set $\phi(X) \subset Y$ and $X$. If the map is also surjective then its inverse is defined on all of $Y$ and in this case, it is denoted by $\phi^{-1}:Y \to X$. It is also useful to consider the sets $\phi^{-1}(O) = { x \in X ;|; \phi(x) \in O}$
+This generalizes the usual concept of a function. Note that the map is defined for every element of $X$ while, in general, its {\bf image}, that is, the set $\phi(X) \equiv \{y \in Y \; | \; \exists x \in X \text{such that} \phi(x) = y \}$, is not all of $Y$. In the case that it is, i.e. $\phi(X) = Y$, we will say that the map is {\bf surjective}. On the other hand, if it is fulfilled that $\phi(x) = \phi(\ti x) \Longrightarrow x=\ti x$, we will say that the map is {\bf injective}. In such a case, there exists the inverse map to $\phi$ between the set $\phi(X) \subset Y$ and $X$. If the map is also surjective then its inverse is defined on all of $Y$ and in this case, it is denoted by $\phi^{-1}:Y \to X$. It is also useful to consider the sets $\phi^{-1}(O) = \{ x \in X \; | \; \phi(x) \in O\}$, sometimes called the {\bf pre-image} of the set $O$ under $\phi$.
 
 } %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \espa
 
-Clearly, the previous definition only uses topological concepts. Does it have anything to do with the usual {\sl epsilon-delta} used in $\re^n$? The answer is affirmative, as we will see below in our first theorem, but first, let's see some examples.
+Clearly, the previous definition only uses topological concepts. Does it have anything to do with the usual {\sl epsilon-delta} definition used in $\re^n$? The answer is affirmative, as we will see below in our first theorem. But first, let's see some examples.
 
-\ejem: a) Let $X$ and $Y$ be any sets and let the topology of $X$ be the discrete one. Then any map between $X$ and $Y$ is continuous. Indeed, for any open set $O$ in $Y$, $\fip^{-1}(O)$ is some subset in $X$, but in the discrete topology, every subset of $X$ is an open set.
+\ejem: a) Let $X$ and $Y$ be any topological spaces and let the topology on $X$ be the discrete one. Then any map between $X$ and $Y$ is continuous. Indeed, for any open set $O$ in $Y$, $\fip^{-1}(O)$ is some subset in $X$, but in the discrete topology, every subset of $X$ is an open set.
 
-\ejem: b) Let $X$ and $Y$ be any sets and let the topology of $Y$ be the indiscrete one. Then any map between $X$ and $Y$ is also continuous. Indeed, the only open sets in $Y$ are $\emptyset$ and $Y$, but $\fip^{-1}(\emptyset) = \emptyset$, while $\fip^{-1}(Y)=X$, but whatever the topology of $X$, $\emptyset$ and $X$ are open sets.
+\ejem: b) Let $X$ and $Y$ be any topological spaces and let the topology on $Y$ be the indiscrete one. Then any map between $X$ and $Y$ is also continuous. Indeed, the only open sets in $Y$ are $\emptyset$ and $Y$, but $\fip^{-1}(\emptyset) = \emptyset$, while $\fip^{-1}(Y)=X$, but whatever the topology of $X$, $\emptyset$ and $X$ are open sets.
 
-From the previous examples, it might seem that our definition of continuity is not very interesting, that is because we have taken cases with the {\sl extreme} topologies, in the intermediate topologies is where the definition becomes more useful.
+From the previous examples, it might seem that our definition of continuity is not very interesting. But that is because we have taken cases with the {\sl extreme} topologies. It is in the intermediate topologies where the definition becomes more useful.
 
-\ejem: c) Let $X$ and $Y$ be real lines, and let $\fip(x) = 1$ if $x \geq 0$, $\fip(x) = -1$ if $x < 0$. This map is not continuous because, for example, $\fip^{-1}((1/2,3/2)) = {x | x \geq 0}$.
+\ejem: c) Let $X$ and $Y$ be real lines, and let $\fip : X \to Y$ be a map such that $\fip(x) = 1$ if $x \geq 0$, $\fip(x) = -1$ if $x < 0$. This map is not continuous because, for example, while the interval $I = (1/2, 3/2) \subseteq Y$ is open, its pre-image $\fip^{-1}(I) = \{x \, | \, x \geq 0 \}$ is not open.
 
-\bteo The map $\fip:X \to Y$ is continuous if and only if it is fulfilled that: given any point $x \in X$ and any neighborhood $M$ of $\fip(x)$, there exists a neighborhood $N$ of $x$ such that $\fip(N) \subset M$. \eteo
+\bteo The map $\fip:X \to Y$ is continuous if and only if given any point $x \in X$ and any neighborhood $M \subseteq Y$ of $\fip(x)$, there exists a neighborhood $N \subseteq X$ of $x$ such that $\fip(N) \subset M$. \eteo
 
-This second definition is much closer to the intuitive concept of continuity.
+This theorem provides an equivalent definition of continuity that is much closer to the intuitive concept of continuity.
 
-\pru: Suppose $\fip$ is continuous. Let $x$ be a point of $X$, and $M$ a neighborhood of $\phi(x)$. Then there exists an open set $O$ in $Y$ contained in $M$ and containing $\phi(x)$. By continuity $N = \fip^{-1}(O)$ is an open set of $X$, and as it contains $x$, a neighborhood of $x$. It is then fulfilled that $\fip(N) \su O \su M$. Now suppose that given any point $x \in X$ and any neighborhood $M$ of $\fip(x)$, there exists a neighborhood $N$ of $x$ such that $\fip(N) \subset M$. Then let $O$ be any open set of $Y$, we must now show that $\fip^{-1}(O)$ is an open set of $X$. Let $x$ be any point of $\fip^{-1}(O)$, then $\fii (x) \in O$ and therefore $O$ is a neighborhood of $\fii (x)$, therefore there exists a neighborhood $N$ of $x$ such that $\fip(N) \su O$ and therefore $N \su \fip^{-1}(O)$. But then $\fip^{-1}(O)$ contains a neighborhood of each of its points and therefore it is open.
+\bpru
 
-\ejer: Let $\phi : X \to Y$ and $\psi : Y \to Z$ be continuous maps, prove that $\psi \circ \phi : X \to Z$ is also continuous. (Composition of maps preserves continuity.)
+Suppose $\fip$ is continuous. Le    t $x$ be a point of $X$, and $M \subseteq Y$ a neighborhood of $\phi(x)$. By definition of neighborhood, there exists an open set $O \subset M$ in $Y$ and containing $\phi(x)$. By continuity, $N = \fip^{-1}(O)$ is an open set of $X$, and as it contains $x$, it is a neighborhood of $x$. It is then fulfilled that $\fip(N) \su O \su M$. Now to prove the reciprocal, suppose that given any point $x \in X$ and any neighborhood $M$ of $\fip(x)$, there exists a neighborhood $N$ of $x$ such that $\fip(N) \subset M$. Then let $O$ be any open set of $Y$, we must now show that $\fip^{-1}(O)$ is an open set of $X$. Let $x$ be any point of $\fip^{-1}(O)$, then $\fii (x) \in O$ and therefore $O$ is a neighborhood of $\fii (x)$, therefore there exists a neighborhood $N$ of $x$ such that $\fip(N) \su O$ and therefore $N \su \fip^{-1}(O)$. But then $\fip^{-1}(O)$ contains a neighborhood of each of its points and therefore it is open.
+\epru
+
+\ejer: Let $\phi : X \to Y$ and $\psi : Y \to Z$ be continuous maps, prove that the composite map $\psi \circ \phi : X \to Z$ is also continuous. (Composition of maps preserves continuity.)
 
 \espa %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \recu{{\bf \yaya{Induced Topology}:} \espa
 
-Let $\phi$ be a map between a set $X$ and a topological space ${Y,\cT}$. This map naturally provides, that is, without the help of any other structure, a topology on $X$, denoted by $\cT_{\phi}$ and called the {\bf topology induced} by $\phi$ on $X$. The set of its open sets is given by: $\cT_{\phi} = {O \subset X ;|; O = \phi^{-1}(Q), ; Q \in \cT}$, that is, $O$ is an open set of $X$ if there exists an open set $Q$ of $Y$ such that $O = \phi^{-1}(Q)$.
+Let $\phi$ be a map between a set $X$ and a topological space $\{Y,\cT \}$. This map naturally provides, that is, without the help of any other structure, a topology on $X$, denoted by $\cT_{\phi}$ and called the {\bf topology induced} by $\phi$ on $X$. It is given by $\cT_{\phi} = \{O \subset X \;| \; O = \phi^{-1}(Q), ; Q \in \cT \}$, that is, $O$ is an open set of $X$ if there exists an open set $Q$ of $Y$ such that $O = \phi^{-1}(Q)$. In other words, the open sets in $X$ are the pre-images of all the open sets in $Y$. Note that under this topology on $X$, the map $\phi$ is automatically continuous. In fact, it is by construction the ``minimal'' topology on $X$ that renders $\phi$ continuous. \espa
 
 \ejer: Prove that this construction really defines a topology.
 
-Not all topologies thus induced are of interest and in general, they depend strongly on the map, as shown by the following example:
+Not all topologies thus induced are of interest and, in general, they depend strongly on the map, as shown by the following example:
 
 \ejem:
 
-\noi a) Let $X=Y=\re$ with the usual topology and let $\phi: \re \to \re$ be the function $\phi(x) = 17$ $\forall ; x \in \re$. This function is clearly continuous with respect to the topologies of $X$ and $Y$, those of the real line. However, $\cT_{\phi}$, the topology induced on $X$ by this map is the indiscrete one!
+\noi a) Let $X=Y=\re$ with the usual topology and let $\phi: \re \to \re$ be the function $\phi(x) = 17$ $\forall x \in \re$. This function is clearly continuous with respect to the topologies of $X$ and $Y$, those of the real line. However, the topology induced on $X$ by this map is the indiscrete one!: $\cT_{\phi} = \{\emptyset, X\}$. Interestingly, this ``loss'' of topological information can be intuitively associated to the information lost by $\phi$ in mapping the whole $\re$ to a single point, $17$. In fact, $\phi$ would be continuous with respect to \textit{any} topology on $X$, so its continuity is not very interesting, as it does not tell us anything about the underlying topology.
 
 \noi b) Let $X$ and $Y$ be as in a) and let $\phi(x)$ be an invertible map, then $\cT_{\phi}$ coincides with the topology of the real line.
 
@@ -122,78 +127,72 @@ Not all topologies thus induced are of interest and in general, they depend stro
 
 \subsection{Compactness}
 
-The other generalization corresponds to the concept of {\bf Compactness}.
+The second generalization that we are interested in corresponds to the concept of {\it compactness}.
 For this, we introduce the following definition:
-Let $X$ be a set, $A$ a subset of it, and $\{ A_{\lambda} \}$
+let $X$ be a set, $A$ a subset of $X$, and $ C = \{ A_{\lambda} \}$
 a collection of subsets of $X$ parameterized by a continuous
 or discrete variable $\lambda$. We say that this collection {\bf covers}
-$A$ if $A \subset \cup_{\lambda}A_{\lambda}$.
+$A$ if $A \subset \cup_{\lambda}A_{\lambda}$. In such a case, we also say that $C$ is a {\bf cover} of $A$. When $A$ is a topological space and the sets $\{ A_\lambda \}$ are open, we say that $C$ is an {\bf open cover} of $A$. Finally, a subcollection of $C$ that also covers $A$ is called a {\bf subcover}. 
 
-\defi: We say that $A$ is {\bf compact} if given any collection
-$\{A_{\lambda}\}$ of {\it open sets} that cover it, there exists a {\it finite}
-number of these $A_{\lambda}$ that also cover it.
+\defi: We say that a topological space $A$ is {\bf compact} if given any collection
+$\{A_{\lambda}\}$ of {\it open sets} that covers $A$, there exists a {\it finite}
+subcollection of these $A_{\lambda}$ that also covers $A$.
 
 \ejem: a) Let $X$ be an infinite set of points with the discrete topology.
-Then a covering of $X$ consists, for example, of all the
-points of it, each considered as a subset of it. But the topology of $X$ is
-discrete, so this is a covering of open sets and no finite number of them
-will cover it, therefore $X$ is not compact in this case.
+Then a cover of $X$ consists, for example, of all subsets of the form $\{x\}$, with $x \in X$. Since the topology of $X$ is
+discrete, any cover is an open cover. But no finite number of the sets $\{x\}$
+cover all of $X$, therefore $X$ is not compact in this case.
 Clearly, if $X$ had only a finite number of elements
 it would always be compact, regardless of its topology.
 
 \ejem: b) Let $X$ be any set with the indiscrete topology.
 Then $X$ is compact. The only open sets of this set are
-$\emptyset$ and $X$, so any covering has $X$ as
+$\emptyset$ and $X$, so any open cover has $X$ as
 one of its members and this alone is enough to cover $X$.
 
 Thus, we see that this property strongly depends on the topology
-of the set. The relationship with the intuitive concept of compactness
+of the set. The relation with the intuitive concept of compactness
 is clear from the following example and exercise.
 
 \ejem: c) Let $X$ be the real line and $A = (0,1)$. This subset is not compact
-because, for example, the following is a covering of open sets of $A$ such that
-any finite subset of it is not. $A_n = (\frac{1}{n}, \frac{n-1}{n})$
+because, for example, the following is an open cover of $A$ that has no finite subcover: $\{ A_n = (\frac{1}{n}, \frac{n-1}{n}) \colon n \in \mathbb{N}\}$
 
 \ejer: Let $X$ be the real line and $A = [0,1]$. Prove that $A$ is compact.
 
 \bpru
 
-Let $\{A_{\lambda}\}$ be a covering of $[0,1]$ and $a \in [0,1]$ the least upper bound 
-of the $x \in (0,1]$ such that $[0,x]$ is covered by a finite subcovering. 
-$a$ exists because $0$ has an $A$ that covers it. Let $A_{\lambda_0}$ be an element of the covering
-such that $a \in A_{\lambda_0}$. Then there exists $b > a$ such that $b \in A_{\lambda_0}$ and $b$ is already 
-covered by a finite subcovering. Thus, $a$ is in a finite subcovering and therefore,
-if $a \neq 1$ also some elements greater than it. This would constitute a contradiction. 
+Let $\{A_{\lambda}\}$ be an open cover of $[0,1]$. In particular, it covers any subinterval $[0,x]$ with $x \in [0,1]$. Consider the set $S$ of all $x$ such that $[0,x]$ is covered by \textit{finitely} many $A_\lambda$, and let $a \in [0,1]$ be the least upper bound 
+of this set. Because $0$ is covered by some single $A_\lambda_0$, then $0 \in S$. Besides, by definition, $S$ is bounded above by $1$. Therefore, $S$ is a non-empty upper-bounded real set, so by the least-upper-bound property of $\re$ it has a least upper bound. Let $a$ be that number and $A_{\lambda_0}$ be an element of the cover
+such that $a \in A_{\lambda_0}$. Because $a$ is the \textit{least} upper bound of $S$, there must be some $a'<a$ in $A_{\lambda_0}$ such that $a \in S$. Therefore, $[0,a']$ has a finite subcover, and the union of this finite subcover with $\{A_\lambda_0\}$ provides a finite subcover of $[0,a]$. Now we want to show that $a=1$. So let us assume $a<1$ and take $b \in A_\lambda_0$ such that $a < b < 1$. Then $[0,b]$ is covered by the same finite subcover constructed for $[0,a]$, implying $b \in S$. But this contradicts the fact that $a$ is an upper bound of $S$, so we conclude that $a=1$. 
 \epru
 
-Now let's see the relationship between the two derived concepts of
+Now let's see the relation between the two derived concepts of
 Topology, namely the continuity of maps between topological
 spaces and compactness. The fact that a map between
 topological spaces is continuous implies that this map is special,
 in the sense that {\it it carries or conveys information about the respective
 topologies and preserves the topological properties of the sets
-it associates}. This is seen in the following property, which --as derived
-from the following example-- is very important.
+it associates}. This is seen in the following property, which ---as shown by
+the following example--- is very important.
 
 \bteo
-Let $X$ and $Y$ be two topological spaces and $\phi$ a continuous
+Let $X$ and $Y$ be two topological spaces and $\phi: X \to Y$ a continuous
 map between them. Then if $A$ is a compact subset of $X$, 
 $\phi(A)$ is a compact subset of $Y$.
 \eteo
 
 \pru:
-Let $O_{\lambda}$ be a collection of open sets in $Y$ that cover $\phi(A)$.
-Then the collection $\phi^{-1}(O_{\lambda})$ covers $A$, but $A$ is
+Let $\{O_{\lambda}\}$ be a collection of open sets in $Y$ that cover $\phi(A)$.
+Then the collection $\{\phi^{-1}(O_{\lambda})\}$ covers $A$, but $A$ is
 compact and therefore there will be a finite subcollection 
-$\phi^{-1}(O_{\tilde{\lambda}})$
+$\{\phi^{-1}(O_{\tilde{\lambda}}\})$
 of the former that also covers it. Therefore, the finite subcollection
 $O_{\tilde{\lambda}}$ will also cover $\phi(A)$. Since this is
-true for any collection of open sets covering $\phi(A)$
-we conclude that it is compact.
+true for any open cover of $\phi(A)$
+we conclude that $\phi(A)$ is compact.
 
-\ejem: Let $A$ be compact and let $\phi:A \to \re$ be continuous, that is, a map 
-continuous between $A$ and the real line. $\phi(A)$ is then a compact set
-in the real line and therefore a closed and bounded set, but
+\ejem: Let $A$ be a compact topological space and let $\phi:A \to \re$ be a continuous map between $A$ and the real line. $\phi(A)$ is then a compact real set
+and therefore a closed and bounded set, but
 then this set will have a maximum and a minimum, that is, the
 map $\phi$ reaches its maximum and minimum in $A$.
 
@@ -202,15 +201,15 @@ Finally, another theorem of fundamental importance about compact sets,
 which shows that they have another property that makes them
 very interesting. For this, we introduce the following definitions,
 which also only use topological concepts.
-A {\bf sequence} in a set $X$ 
+A {\bf sequence} in a set $X$, 
 $\{x_n\} = \{x_1, x_2, ...\}$, with $x_n \in X$, is a map
-from the integers to this set.
+from $\mathbb{N}$ to this set.
 Given a sequence $\{x_n\}$ in a topological space $X$, we say that 
 $x \in X$ is a {\bf limit point} of this sequence if given
-any open set $O$ of $X$ containing $x$ there exists a number $N$
-such that for all $n > N$ $x_n \in O$. We say that 
+any open set $O \subseteq X$ containing $x$ there exists a number $N$
+such that for all $n > N$, $x_n \in O$. We say that 
 $x \in X$ is an {\bf accumulation point} of this sequence if given 
-any open set $O$ of $X$ containing $x$, infinitely many elements of the
+any open set $O \subseteq X$ containing $x$, infinitely many elements of the
 sequence also belong to $O$. 
 
 \espa
@@ -227,36 +226,37 @@ Let $A$ be compact. Then every sequence in $A$ has an accumulation point.
 
 \espa
 
-\pru:
-Suppose, --contrary to the theorem's assertion-- that
-there exists a sequence $\{x_n\}$ without any accumulation point.
-That is, given any point $x$ of $A$ there exists a neighborhood $O_x$
+\bpru
+Suppose ---contrary to the theorem's assertion--- that
+there exists a sequence $\{x_n\}$ in $A$ without any accumulation points.
+That is, given any point $x \in A$ there exist a neighborhood $O_x$
 containing it and a number $N_x$ such that if $n > N_x$ then $x_n \notin
 O_x$. Since this is valid for any $x$ in $A$, the collection of
-sets $\{ O_x | x \in A \}$ covers $A$, but $A$ is compact and therefore
-there will exist a finite subcollection of these that also covers it.
-Let $N$ be the maximum among the $N_x$ of this finite subcollection. But then
+sets $\{ O_x | x \in A \}$ is an open cover of $A$, but $A$ is compact and therefore
+it has a finite subcover.
+Let $N$ be the maximum among the $N_x$ of this finite subcover. But then
 $x_n \notin A$ for all $n > N$ which is absurd.  
+\epru
 
 \ejer: Prove that compact sets in the real line are the
 closed and bounded ones.
 
-We can now ask the inverse question: If $A \subset X$ is
+
+We can now ask the inverse question: if $A \subset X$ is
 such that every sequence has accumulation points, is it true
 then that $A$ is compact? An affirmative answer would give us
 an alternative characterization of compactness, and this is
-affirmative for the case of the real line. In general, the answer is
+affirmative for the case of the real line. In general, however, the answer is
 negative: there are topologies in which every sequence in a
 set has accumulation points in it, but this set is not
 compact. However, all the topologies we will see are {\bf second countable} [See box] and in these
 the answer is affirmative.
 
 In the real line, it is true that if $x \in \re $ is an accumulation point of a sequence $\{x_n\}$ then there exists a {\bf
-subsequence}, $\{\tilde{x}_n\}$, that is, a restriction of the
-map defining the sequence to an infinite number of natural
-numbers, that will have $x$ as a limit point. This is also not
+subsequence}, $\{\tilde{x}_n\}$ (that is, a restriction of the
+map defining the sequence to an infinite subset of $\mathbb{N}$) having $x$ as a limit point. This is also not
 true in the generality of topological spaces, but it is if we consider only those that are {\bf first countable} [See box]. All the spaces we will see in this
-course are.
+course are first countable.
 
 \espa 
 \vfill   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -266,7 +266,7 @@ course are.
 \espa
 
 \defi: We say that a topological space $\{X,\cT\}$ is {first countable}
-if for each $p \in X$ there exists a countable collection of open sets $\{O_n\}$ such that every open set containing $p$ also contains at least one of these $O_n$.
+if for each $p \in X$ there exists a countable collection of open sets $\{O_n\}$ such that for every neighborhood $N$ of $p$ there exists $i$ such that $O_i \subset N$.
 
 \espa
 
@@ -304,14 +304,14 @@ $O_{pqn} = (\frac{p}{q} - \frac{1}{n}, \frac{p}{q} + \frac{1}{n})$
 
 \ejer: Find a topology such that the integers are Hausdorff and compact.
 
-\ejer: Prove that if a space is Hausdorff then if a sequence has a limit point, this is unique.
+\ejer: Prove that if a space is Hausdorff then if a sequence has a limit point, it is unique.
 
 \ejer: Let $X$ be compact, $Y$ Hausdorff, and $\phi :  X \to Y$ continuous. Prove that the images of closed sets are closed. Find a counterexample if $Y$ is not Hausdorff. 
 }
 
 \recubib{
-This chapter is essentially a condensed version of chapters \textbf{26, 27, 28, 29,} and \textbf{30} of \cite{Geroch}, see also \cite{Kelley}, \cite{Wald}, and \cite{Isham}.
-Topology is one of the most fascinating branches of mathematics, if you delve deeper you will be captivated! Of particular interest in physics is the notion of Homotopy, a good place to understand these ideas is chapter \textbf{34} of \cite{Geroch}.       }
+This chapter is essentially a condensed version of Chapters \textbf{26, 27, 28, 29,} and \textbf{30} of \cite{Geroch}, see also \cite{Kelley}, \cite{Wald}, and \cite{Isham}.
+Topology is one of the most fascinating branches of mathematics, if you delve deeper you will be captivated! Of particular interest in physics is the notion of \textit{Homotopy}, a good place to understand these ideas is Chapter \textbf{34} of \cite{Geroch}.       }
 
 \vfill
 %\end{document}
