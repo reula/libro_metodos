@@ -1,0 +1,1402 @@
+\chapter{Basic Elements of Functional Analysis}
+\label{elementos_basicos_de_analisis_funcional}
+
+\section{Introduction}
+This area of mathematics studies functional spaces, that is, spaces whose elements are certain functions. Usually, these are of infinite dimension. Thus, its main results form two classes. Some are general results, valid for more general vector spaces than those whose elements are functions. These have a geometric or topological character that we will try to rescue at all times. Others are particular results that relate different functional spaces to each other. These are closer to the results of usual analysis. We will present here results of both types since from their conjunction we will obtain some aspects of the theory of PDEs. For reasons of brevity, we will only consider the points that will be useful to us or those for which a minimum of extra effort is required to obtain them and their cultural importance justifies it.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Completing a Normed Space}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the previous chapter, we introduced Banach spaces, that is, vector spaces with a norm defined on them and that were complete with respect to it. There we also proved that the set of continuous functions on an interval $[a,b] \in \re$ with the norm
+\beq
+\|f\|_1 = \sup_{x \in [a,b]} \{ | f(x) | \}
+\eeq
+was complete and therefore Banach.
+
+One may ask if, given a normed vector space $W$, it is possible to "fatten it up," that is, add vectors to it, and thus make it complete. Note that this is what is done with the rationals $\ve Q$ (which is a vector space if we only allow the multiplication of its elements by rational numbers!). The fattened space is in this case that of the real numbers. The answer is affirmative and is given by the following theorem.
+
+\bteo
+Let $W$ be a normed vector space. Then there exists a Banach space $V$ and a continuous linear map $\fip :W \to V$ such that $\|\fip(w)\|_V=\|w\|_W$ and $\fip [W]$ is a dense subspace of $V$, that is, the closure of $\fip [W]$ is $V$.
+\eteo
+\espa
+
+\pru:
+The details of this can be found in, for example, \cite{Yosida}, page 56. Here we will only give the ideas. If $W$ is complete then we take $V=W$ and $\fip = id$. Therefore we will assume that $W$ is not complete. Then there will be Cauchy sequences $\{w_n\}$ in $W$ that do not converge to any point of $W$. The idea is to take these sequences as new points with which to fatten up $W$. As many different sequences could tend to the same point, in order not to fatten up $W$ too much, all of them should be considered as a single element. This is achieved by taking equivalence classes of sequences as elements of $V$. We will say that two sequences, $\{w_n\}$, $\{w'_n\}$, are equivalent if their difference tends to the zero element,
+\beq
+\lim_{n \to \infty} \|w_n - w'_n\|_W = 0.
+\eeq
+As the set of Cauchy sequences of elements of $W$ forms a vector space, the set of equivalence classes of sequences is also a vector space, this will be $V$. This space inherits a norm naturally from $W$, given by,
+\beq
+\|\{w_n\}\|_V=\lim_{n\to \infty} \|w_n\|_W,
+\eeq
+which is clearly independent of the particular sequence that one chooses, to calculate it, within the equivalence class. It can be easily proved that with this norm $V$ is complete and therefore Banach.
+\espa
+
+\ejer: Prove that the Cauchy sequence of Cauchy sequences, $\{\{w_n\}_N\}$ converges in this norm to the sequence $\{\bar{w}_n\} := \{\{w_n\}_n\}$.
+\espa
+
+What is the map $\fip$? This takes an element $w \in W$ and gives us an element in $V$, that is, an equivalence class of sequences. This is the equivalence class that converges to $w$ and a representative is, for example,
+
+\beq
+\{w_n\}=(w,w,w,\ldots).
+\eeq
+
+The previous theorem tells us that we can always complete a normed vector space and this in an essentially unique way. In this way then we can talk about completing a normed space $W$ in one $V$. As $W$ is dense in $V$ and the map $\fip$ is continuous all the properties that are continuous in $W$ automatically hold in $V$. The previous theorem also tells us that the elements of the completed space can have a very different character from the elements of the original space. Due to this, in practice one must be very careful when attributing properties to the elements of a given Banach space. As an example of the above we will see the Lebesgue integral.
+
+\section{*Lebesgue Integral}
+
+The Lebesgue integral is an extension of the Riemann integral to a more general class of functions than that where the Riemann integral is defined. We have two ways to define it, one as the norm of a completed Banach space, whose elements are then the functions integrable in the sense of Lebesgue. The other way is using a limit process similar to that used to define the Riemann integral. We will see both.
+
+Let $W$ be the space of continuous functions on the interval $[a,b]$ and let
+\beq
+\|f\|_w=\int_a^b |f(x)|\;dx
+\eeq
+be its norm, where the integral is in the sense of Riemann. This definition makes sense since the elements of $W$ are continuous functions and therefore the integral is well defined. Note also that this is a norm since as $f$ is continuous if the integral of its modulus is zero, its modulus, and thus $f$, is also zero. Let $L^1([a,b])$ be the completed space of $W$. This is the space of Lebesgue integrable functions. What functions are there?\footnote{In reality the functions are not properly elements of $L^1$ but rather these are the image by the map $\fip$ (defined in the previous section) of these.}
+Let $\{f_n\}$ be the sequence given by the graph of fig. 8.1.
+
+\espa
+%\fig{6cm}{A Cauchy sequence.}
+\begin{figure}[htbp]
+\begin{center}
+\resizebox{7cm}{!}{\myinput{Figure/m8_1}}
+\caption{A Cauchy sequence.}
+\label{fig:8_1}
+\end{center}
+\end{figure}
+
+This sequence is Cauchy in $L^1([0,1])$ and therefore converges to an element of $L^1([0,1])$, the function,
+\beq
+f(x)=\left\{\barr{cl}
+0 & \;\;\;\;\;0\leq x\leq1/4\,,\;3/4\leq x\leq 1 \\
+1 & \;\;\;\;\;1/4< x < 3/4.
+\earr\right.
+\eeq
+
+This is not surprising since although this function is not continuous it is integrable even in the sense of Riemann.
+Let now the sequence $\{f_n\}$ be given by the graph of fig. 8.2,
+
+\espa
+%\fig{6cm}{Another Cauchy sequence.}
+\begin{figure}[htbp]
+\begin{center}
+\resizebox{7cm}{!}{\myinput{Figure/m8_2}}
+\caption{Another Cauchy sequence.}
+\label{fig:8_2}
+\end{center}
+\end{figure}
+
+this is also Cauchy and tends to the function,
+\beq
+f(x)=\left\{\barr{cl}
+0 & \;\;\;\;\;0\leq x<1/2 < x \leq 1 \\
+1 & \;\;\;\;\;x = 1/2,
+\earr\right.
+\eeq
+which is very strange. Whatever the meaning of the Lebesgue integral the integral of this function is expected to be zero, and in fact it is since
+\beq
+\lim_{n\to\infty} \int_0^1 |f_n(x)|\;dx =0.
+\eeq
+
+But then the norm of $f$ is zero and therefore it would seem we have a contradiction, unless $f$ is zero. The resolution of this problem consists in noting that when we complete the space $W$ we take as its elements certain equivalence classes. The function described above is in the equivalence class corresponding to the zero element. As we will see later, the elements of $L^1$ are functions, but only defined at {\bf almost all points}.
+
+The second method consists in defining the Lebesgue integral in a manner similar to how the Riemann integral is defined. For this, we must define what is called a {\bf measure} on certain subsets of $\re$, that is, a function from these subsets to the positive reals, which generalizes the concept of length (or measure) of an open interval $(a,b)$, $\mu ((a,b)) = b-a$.
+
+Once this concept of measure is introduced, the Lebesgue integral of a positive function $f:\re \to \re^+$ is defined as,
+\[
+\int f(x)\;dx =\lim_{n\to\infty}\sum_n\:(f)
+=\lim_{n\to\infty}\sum_{m=0}^{\infty} \frac mn \mu \left(f^{-1} \left[
+[\frac mn, \frac {m+1}n)\right]\right),
+\]
+where we have used the same symbol to denote the Lebesgue integral as that normally used for the Riemann integral, which is natural since as we saw in the first definition if a function is integrable in the sense of Riemann it is also integrable in the sense of Lebesgue and the value of the integrals coincides.
+
+The interpretation of this definition is as follows: the image of $f$ is divided into regular intervals of length $\frac 1n$, the image by $f^{-1}$ of these intervals is considered, they are {\it measured} with $\mu$ and these measures are summed conveniently. See figure. Finally, the limit is taken as $n$ goes to infinity, that is, the intervals go to zero. Note that $\sum_{2n} (f) \geq\sum_n (f)$ and therefore $\lim_{n\to\infty}\sum_n(f)=\sup_n \left\{\sum_n (f)\right\}$ exists (it could be infinite).
+
+\espa
+%\fig{6cm}{Lebesgue Integral.}
+\begin{figure}[htbp]
+\begin{center}
+\resizebox{7cm}{!}{\myinput{Figure/m8_3}}
+\caption{Lebesgue Integral.}
+\label{fig:8_3}
+\end{center}
+\end{figure}
+
+For which functions is this operation defined? The condition that $f$ be positive is not really a restriction since whatever it is, it can always be written as $f = f_+ - f_-$ with $f_+$ and $f_-$ both positive and the integral is a linear operation [which is not obvious from the definition given above]. The condition that is restrictive is that $f^{-1} (A)$, with $A$ open, be a measurable subset, since as we will see if we ask the measure function to satisfy certain natural properties then not every subset of $\re$ can be in the domain of this function. To study this restriction we must be clear about what properties we want the measure to satisfy, find the collection of subsets of $\re$ that are measurable and finally define the measure. These properties will define the notion of measure, or more specifically of measurable space, since the properties we assign depend both on the measure and its domain of definition.
+\espa
+
+\defi: A {\bf measurable space} consists of a triple $(X,M,\mu)$ where $X$ is a set (the domain of the functions to be integrated), $M$ a collection of subsets of $X$ called the {\bf measurable subsets} of $X$ and $\mu$ is a function (called the {\bf measure}) from $M$ to $\re{}^*=\re{}^+ \cup \{\infty\}$ satisfying the following conditions:
+\begin{itemize}
+\item[$i)$] $\emptyset \in M$ and $\mu(\emptyset ) = 0$.
+\item[$ii)$] If $A \in M$ then $A^c$ (the complement of $A$ in $X$) is also in $M$.
+\item[$iii)$] If $A_i \in M, i=1,2,\ldots,\;$ then $\dip\bigcup_i A_i \in M$.
+\item[$iv)$] If $A_i \in M, i=1,2,...$ and $A_i \cap A_j = \emptyset$ if $i \neq j$ then $\mu \left( \dip\bigcup_i A_i \right)=\sum _i \mu\;(A_i)$.
+\end{itemize}
+
+Intuitively, measurable sets are sets that admit a notion of {\sl length} or {\sl area} and their measure is the value of this {\sl length} or {\sl area}.
+
+\ejer: Show that:
+
+\begin{enumerate}
+\item $X \in M$
+\item If $A_i \in M$, $i=1,2,...$ then $\dip\bigcap_i A_i \in M$. This is the reason why {\it ii)} is required, since we would expect that $\mu \left( \dip\bigcap_i A_i \right) \leq \sum _i \mu\;(A_i)$.
+\item If $A \subset B$ then $\mu (A) \leq \mu (B).$
+\end{enumerate}
+
+
+\noi\yaya{Examples}:
+
+\begin{enumerate}
+\item 
+Let $X$ be any set and let $M$ be the collection of all
+subsets of $X$. Let $\mu$ be such that $\mu(\emptyset) = 0$ and 
+$\mu(A) = \infty$ for all non-empty $A \in M$.
+\item 
+Let $M = \{\emptyset, X\}$ and let $\mu$ be such that $\mu(\emptyset) = 0$ 
+and $\mu(X) = 7$.
+\item 
+Let $X = \mathbb{Z}^+ = \{$positive integers$\}$ and let $\{x_i\},
+x_i \in \mathbb{R}^+$, be a sequence. Let $M$ be the collection of all 
+subsets of $\mathbb{Z}^+$ and $\mu(A) = \sum_{i \in A} (x_i)$.
+
+\noi The following is not a measurable space (why?) but it will be useful
+to construct the one we desire later.
+\item
+Let $X = \mathbb{R}$ and $M = \mathcal{J}$ be the set of all (countable) unions of
+disjoint open intervals, that is, an element $I$ of $\mathcal{J}$ is a
+subset of $\mathbb{R}$ of the form,
+\beq 
+I = \bigcup_i (a_i, b_i), 
+\eeq
+with 
+$a_1 \leq b_1 < a_2 \leq b_2 < a_3 \cdots\; $.
+Let $\mu := m : \mathcal{J} \to \mathbb{R}^*$ be defined as,
+\beq m(I) = \sum_i (b_i - a_i). \eeq
+\end{enumerate}
+ 
+\ejer: Show that the third example is a measurable space.
+
+\espa
+As can be seen from these examples, the notion of a measurable space is broad.
+Different examples of measurable spaces
+appear in various branches of physics. 
+From now on, we will restrict ourselves
+to a measurable space, which is the Lebesgue space, which we will construct
+from the fourth example.
+
+Let $X = \mathbb{R}$, $\bar{M}$ be any subset of $X$, and $\bar{\mu} : \bar{M}
+\rightarrow \mathbb{R}^*$ given by,
+\beq
+\barr{rccl}
+\bar{\mu}(A) & = & \inf & (m(I)) \\
+           &   & I \in \mathcal{I} &  \\
+           &   & A \subseteq I & .
+           \earr
+\eeq
+That is, given a subset of $\mathbb{R}$, $A$, we consider all
+elements of $\mathcal{J}$ such that $A$ is contained in them, calculate their
+measure, and take the infimum over all elements of $\mathcal{J}$.
+
+\noi\yaya{Examples}:
+\begin{enumerate}
+
+\item Let $A = (0,1)$, then a candidate is $I_1 = (-1,1) \cup (3,5)$,
+$m(I_1) = 2 + 2 = 4$, but we also have $I_2 = (0,1)$ with 
+$m(I_2) = 1$ and clearly $\bar{\mu}(A) = 1$.
+
+\item Let $B = 1 \cup 2 \cup 3 \cup \ldots$ then 
+$\bar{\mu}(B) = 0$ since we can cover $B$ with 
+$I = (1-\epsilon, 1+\epsilon) \cup (2-\epsilon, 2+\epsilon) \cup \ldots\;$.
+\end{enumerate}
+
+As we see, this triplet $(\mathbb{R}, \bar{M}, \bar{\mu})$ seems to have the
+desired conditions to be the measure we seek, but in reality,
+it is not even a measurable space!
+
+\espa
+\noi\yaya{Counterexample}: 
+Let $(S^1, M, \mu)$, where $S^1$ is the circle, be a
+measurable space with $\mu$ a finite measure invariant under translations,
+that is, $\mu(A) = \mu(A_r)$ where $A_r = \{a + r | a \in A\}$
+-note that our $\bar{\mu}$ is, but this result is much more
+general-. Then $M$ cannot be the collection of all
+subsets of $S^1$. 
+
+The idea is to find a subset $A$ of $S^1$ such that if we assume
+it is measurable, we obtain a contradiction. To do this, we think of
+$S^1$ as $\mathbb{R}$ with its ends identified (0=1). We now introduce
+an equivalence relation: We will say that two points of $S^1$
+are equivalent $a \approx b$ if $a - b$ is a rational number.
+
+\ejer: Show that this is an equivalence relation.
+
+We construct $A$ by taking exactly one element from each equivalence class
+-note that there are infinitely many ways to choose a set $A$-
+Suppose $A$ is measurable with $\mu(A) = \alpha \in \mathbb{R}^+$ and
+let $A_r = \{a | (a + r) \; (mod 1) \in A\}$, with $r$ rational, that is, a
+translation by $-r$ of $A$. Then it is easy to see that if $r \neq r'$
+then $A_r \cap A_{r'} = \emptyset$, that is, the $A_r$ are
+disjoint [If $x \in A_r$ and $x \in A_{r'}$ then $x = a + r = b + r'$, with $a, b
+\in A$, but then $a - b = r - r' \in \mathbb{Q}$ which is a contradiction.]
+and that $S^1 = \bigcup_{r \in \mathbb{Q}} A_r$ [Let $x \in S^1$, then $x$
+belongs to one of the equivalence classes into which we have separated
+$S^1$, but then there exists $a \in A$ and $r \in \mathbb{Q}$ such that $a + r
+= x$, that is, $x \in A_r$.]. 
+Since by hypothesis 
+$\mu(A_r) = \mu(A) = \alpha$ then, 
+
+\beq
+1 = \mu(S^1) = \mu \left(\bigcup_{r \in \mathbb{Q}} A_r \right) = \sum_{r \in \mathbb{Q}} \mu(A_r)
+                      = \sum^{\infty} \alpha,
+\eeq
+which leads to a contradiction since if $\alpha = 0$ then
+the sum is zero and if $\alpha \neq 0$ the sum is infinite.
+
+This counterexample then tells us that we must restrict $M$ to be
+a subset of $\bar{M}$ if we want to have a measure. There are many ways
+to characterize this restriction, one of which is given by the following
+theorem (which we will not prove).
+
+\bteo
+Let $M$ be the subspace of $\bar{M}$ such that if $A \in M$ then
+\beq \bar{\mu}(E) = \bar{\mu}(A \cap E) + \bar{\mu}((X - A) \cap E) 
+\; \forall E \in \bar{M}.
+\eeq
+Let $\mu$ be the restriction of $\bar{\mu}$ to $M$, then
+$(X, M, \mu)$ is the Lebesgue measurable space.
+\eteo
+
+Intuitively, we see that measurable sets are those that 
+{\it when used to separate other sets into two parts give a
+division that is {\bf additive} with respect to $\bar{\mu}$}.
+
+Since in general we only have 
+$\bar{\mu}(E) \leq \bar{\mu}(A \cap E) + \bar{\mu}((X - A) \cap E)$
+we then see that non-measurable sets are those 
+{\it whose points are distributed in $X$ in such a way that when
+one tries to cover $A \cap E$ and $(X - A) \cap E$ with open sets, they
+overlap so much that in reality one can obtain a smaller
+infimum by covering $E$ directly with open sets.}
+
+There are a large number of theorems that give us information about
+which sets are measurable. Suffice it to say that all
+open sets of $\mathbb{R}$ (and many more) are in $M$ and that if 
+$f: \mathbb{R} \rightarrow \mathbb{R}$ is a continuous function then 
+$f^{-1}[M] \in M$.
+
+We now return to the Lebesgue integral. Naturally, we will say 
+that $f$ is {\bf measurable} if $f^{-1}[(a, b)] \in M$ for
+every open interval $(a, b) \in \mathbb{R}$. 
+
+\bteo Measurable functions have
+the following properties:
+
+
+\begin{itemize}
+
+\item[a)] If $f$ and $g$ are measurable and $\lambda \in \mathbb{R}$ then
+$f + \lambda g$ is measurable.
+
+\item[b)] Also measurable are $fg$, $max\{f, g\}$ and $min\{f, g\}$.
+
+
+\item[c)] Let $\{f_n(x)\}$ be a sequence of measurable functions that converge
+pointwise to $f(x)$, that is, $\lim_{n \to \infty} f_n(x) = f(x)$, then $f(x)$ is also
+measurable.
+\end{itemize}
+
+\noi Note that $|f| = max\{f, -f\}$ and $f_{\pm} =^{max}_{min}\{f, 0\}$.
+\eteo
+
+The first part of this theorem tells us that the set of
+measurable functions is a vector space. This remains true 
+if we restrict ourselves to the space of integrable functions in the sense
+of Lebesgue, that is, $f$ measurable and $\int |f| \; dx < \infty$.
+We will denote this space as ${\cal L}_1$ or ${\cal L}_1(\mathbb{R})$. Similarly, we will define
+${\cal L}_1[a, b]$ as the space of integrable functions $f: [a, b] \to \mathbb{R}$
+where in this case the integral is defined as before but extending
+the function $f$ to all $\mathbb{R}$ with zero value outside the interval $[a, b]$.
+
+As we saw before, to make ${\cal L}_1$ a normed space we must
+take as its elements the equivalent classes of functions where 
+we will say that $f, g \in {\cal L}_1$ are {\bf equivalent} if 
+$\int |f - g| dx = 0$. This is equivalent to saying that the subset 
+of $\mathbb{R}$ where $f$ is different from $g$ is of measure zero, or in other
+words that $f$ is equal to $g$ at {\bf almost every point}.
+
+We will denote the space of equivalent classes of
+integrable (Lebesgue) functions with $L_1$ and its elements with tildes.
+Note that an element $\tilde{f}$ of $L_1$ is an equivalent class of
+functions and therefore in general {\it the value of $\tilde{f}$ at $x$,
+$\tilde{f}(x)$}, makes no sense since we can have functions in the
+equivalent class $\tilde{f}$, $f_1$ and $f_2$ with $f_1(x) \neq f_2(x)$
+for some $x \in \mathbb{R}$. Therefore, we must be cautious in this regard.
+
+Is this space $L_1$ the same as the one we obtained previously? 
+The answer is yes and it follows trivially from the following theorems.
+
+\bteo[Riesz-Fischer]: 
+$L_1$ is complete.
+\eteo
+
+\bteo
+$C^1[a, b]$ is dense in $L^1[a, b]$, that is, $L^1[a, b]$
+is the completed space of $C^1[a, b]$.
+\eteo
+
+\section{Hilbert Spaces}
+
+Hilbert spaces are Banach spaces\footnote{
+From now on and essentially for the same reason we gave in the case of the Jordan canonical form theorem, we will consider complex vector spaces.} whose norm comes from an inner product, that is, from a map $\langle \cdot,\cdot \rangle $ from 
+$V \times V \rightarrow \ve C$ 
+satisfying:
+\begin{itemize}
+\item[$i)$]$ \langle x,y+cz \rangle = \langle x,y \rangle +c \langle x,z \rangle, $
+               
+               $ \langle x+cy,z \rangle = \langle x,z \rangle + \bar c \langle y,z\rangle $
+               
+\noi for any $x,y,z$ in $V$ and $c$ in $C$.
+
+\item[$ii)$] $ \overline{\langle x,y \rangle} = \langle y,x \rangle $
+
+\item[$iii)$] $ \langle x,x \rangle \geq 0 \;\; (0\;\mbox{sii}\; x=0). $
+
+\end{itemize}
+
+The first part of condition {\it i)} indicates that the inner product map is linear with respect to its second argument. The second part indicates that it is linear in the first argument, except for the fact that the scalar is taken as the complex conjugate. This map is said to be {\bf anti-linear} with respect to the first argument. Condition {\it ii)} tells us that the map is as symmetric as it can be, given that it is anti-linear in the first argument. This condition guarantees that $ \langle x,x\rangle $ is a real number and, along with $ iii)$, that it is non-negative.
+\espa
+
+\ejer:
+Prove that given a tensor of type $(2,0)$, $\ve{t}(\cdot,\cdot) $,
+symmetric, real, and positive definite, then 
+$\langle \ve{x},\ve{y}\rangle  := \ve{t}(\bar{\ve{x}},\ve{y}) $ is an inner product.
+\espa
+
+The norm induced by this inner product is simply the function,
+$\|\cdot \|_V : \ve V \rightarrow \re{}^+$ given by,
+\beq 
+\|x\|_V = \sqrt{\langle x,x\rangle }.
+\eeq
+That this is indeed a norm follows from the following lemmas:
+
+\blem[Schwarz Inequality]:
+$|\langle x,y\rangle| \leq \|x\|\,\|y\|$. 
+\elem
+
+\pru: For any $x,y \in V$, $\lambda \in \re{}$ we have by
+{\it iii)},
+\beq\barr{rcl}
+0&\leq& \langle y+\lap\langle x,y\rangle\,x,y+\lap \langle x,y\rangle\,x\rangle \\
+&=&\|y\|^2+\lap^2\,|\langle x,y\rangle|^2\,\|x\|^2+ \\
+ & & \;\;\;+\lap\,\overline{\langle x,y\rangle}\langle x,y\rangle +\lap\,\langle x,y\rangle\langle y,x\rangle \\
+ & = &\|y\|^2+2\,\lap\,|\langle x,y\rangle|^2+\lap^2\,|\langle x,y\rangle|^2\,\|x\|^2.
+ \earr
+ \eeq
+
+Since this relation must hold for all $\lambda \in \re{}$, the discriminant of the polynomial in $\lambda$ on the right must be non-positive, that is,
+\beq 
+4\,|\langle x,y\rangle|^4-4\,\|x\|^2\|y\|^2|\langle x,y\rangle|^2\leq0.
+\eeq
+which gives us the desired inequality.
+
+\blem[Triangle Inequality]: 
+$\|x+y\|\leq\|x\|+\|y\|$.
+\elem
+
+\pru:
+$$\barr{rcl}
+\|x+y\|^2 & = & \|x\|^2 + \|y\|^2 +2\,\mbox{Re}\,\langle x,y\rangle \\
+          & \leq & \|x\|^2+\|y\|^2+ 2\,|\langle x,y\rangle| \\
+          &\leq& \|x\|^2+\|y\|^2+2\,\|x\|\,\|y\| \\
+          & \leq & \lp\|x\|+\|y\|\rp^2, 
+          \earr
+$$
+which gives us the desired inequality.
+
+\noi \yaya{Examples}:
+
+\begin{enumerate}
+\item $C^{\,n}$, the vector space of n-tuples of complex numbers.
+
+Let $x = (x_1,x_2,...,x_n)$ and $y = (y_1,y_2,...,y_n)$, then 
+$$\langle x,y\rangle = \sum^n_{j=1} \bar x_j y_j . $$
+
+\item $l^2$, the vector space of sequences of complex numbers
+$\{x_i\}$ such that 
+$$\|\{x_j\}\|_2 := \sqrt{\sum^{\infty}_{j=1} |x_j|^2 } < \infty, $$
+with the inner product,
+$$ \langle\{x_j\},\{y_j\}\rangle = \sum^{\infty}_{j=1} \bar x_j\, y_j .$$
+
+Note that the Schwarz inequality guarantees that the inner product is well-defined for any pair of vectors in $l^2$.
+
+To ensure that $l^2$ is a Hilbert space, we must prove that it is complete, that is, that every Cauchy sequence (with respect to the $l^2$ norm) converges to an element of $l^2$.
+
+\blem 
+$l^2$ is a Hilbert space.
+\elem
+
+\pru:
+Let $\{\{x_i\}_N\}$ be a sequence of sequences. That this is Cauchy means that given $\eps > 0$ there exists $\bar N$ such that
+\[
+\|\{x_i\}_N- \{x_i\}_M\|^2 = \sum_{i=1}^{\ifi}|x_i^N-x_i^M|^2 < \eps^2
+\;\;\; \forall \;\;\; N,M > \bar{N},
+\]
+%
+but this implies that for each $i$
+\beq
+|x_i^N-x_i^M| < \eps
+\eeq
+that is, the sequence of complex numbers (in $N$, fixed $i$) $\{x_i^N\}$ is Cauchy. But the complex plane is complete and therefore for each $i$, $\{x_i^N\} $ converges to a complex number which we will denote $\bar x_i$
+
+Let $\{\bar x_i\}$ be the sequence (in $i$) of these numbers, we will now prove that $\{\bar x_i\} \in l^2$ and that 
+ $\{\{x_i\}_N\}\longrightarrow\{\bar {x_i}\}$ as $N\to\ifi$.
+ 
+Taking the limit $N \to \infty$ we see that if $M > \bar{N}$ then
+
+$$ 
+\sum_{j=1}^k |x^M_j - \bar{x}_j|^2 < \eps^2 
+$$
+%
+But this is an increasing sequence (in $k$) of real numbers that is bounded (by $\eps^2$) and therefore convergent.
+Now taking the limit $k \to \infty$ we see that 
+$\{\{x_i\}_N\} - \{\bar x_i\} \in l^2$ and that if $\{\bar x_i\} \in l^2$ then $\{\{x_i\}_N\} \to \{\bar x_i\}$ in norm.
+%
+But 
+\begin{eqnarray*}
+\|\{\bar x_i\}\|^2 &=& 
+\| \{\{x_i\}_N\} + (\{\bar x_i\} - \{\{x_i\}_N\} )\|^2 \\
+&\leq& \|\{\{x_i\}_N\}\|^2 + \|\{\bar x_i\} - \{\{x_i\}_N\}\|^2,
+\end{eqnarray*}
+and therefore $\{\bar x_i\} \in l^2$ $\spadesuit$
+
+This example and the next one are classic examples to keep in mind, essentially every Hilbert space we will deal with is some variant of these.
+
+\item $L^2$ (or $H^0$), the space of measurable functions with square integrable in \re{} and identified with each other if their difference is in a set of measure zero $(f\sim g \mbox{ if }\int |f-g|^2\,dx=0)$. The inner product is $\langle f,g\rangle=\int \bar f \,g\;dx$ and its norm is obviously $\|f\|_{H^0}=\sqrt{\int |f|^2\;dx}$.
+
+\item (Sobolev Spaces)
+Let the norm be
+\begin{eqnarray*} 
+\|f\|^2_{H^m} &=&  \dip\int_{\Omega}\{|f|^2+\sum^n_{i=1}|\pa_i
+f|^2+\sum^n_{i,j=1}|\pa_i\pa_jf|^2+\cdots \\
+&+&\sum_
+{\underbrace{i,j,\ldots,k=1}_m}^n|\pa_i\pa_j\ldots\pa_k f|^2\}, \nonumber \\
+\;
+\end{eqnarray*}
+%
+where the partial derivatives are with respect to a Cartesian coordinate system in \ren. We define the Sobolev space of order $m$ as,
+$\ve H^m(\Omega)=\{$ Completion of the space of functions differentiable $m$ times in $\Omega\su\ren$ with respect to the norm $\|\;\;\|_{H^m}\}$
+
+It is obvious what the corresponding inner product is, also note that by definition $H^m$ is complete. $H^0$ coincides with the one defined in the previous example, as continuous functions are dense in $L^2$.
+
+\end{enumerate}
+
+As we see from these examples, Hilbert spaces are the immediate generalization of $\ren $ (or $C^n$) to infinite dimensions where we have preserved the notion not only of the magnitude of a vector but also of the angle between two vectors.
+This makes Hilbert spaces have more interesting properties than Banach spaces in general. The most interesting one refers to the subspaces of $H$. Let $M$ be a closed subspace of $H$. This subspace inherits the inner product defined in $H$ (simply by restricting the map $\langle\cdot ,\cdot \rangle$ to act only on elements of $M$) and being closed it is complete, therefore it is also a Hilbert space.
+\espa
+
+\noi \yaya{Examples}:
+\begin{itemize}
+\item[a)] 
+Let $M$ be the subspace generated by the vector $(1, 0, 0)$ in $C^3$, that is, all vectors of the form $(c, 0, 0)$ with $c\in C$.
+
+\item[b)] 
+Let $M$ be the subspace of $H^0$ consisting of all functions that vanish in the interval $(0, 1)$ except on a subset of null measure. $M$ is closed, since if a Cauchy sequence of functions vanishes in (0, 1) then the limit function (which exists since $H$ is complete) also vanishes in that interval and therefore is in $M$.
+
+\item[c)] 
+Let $M=C[a,b]$ be the subspace of continuous functions of $H^0([a,b])$. This is not closed and therefore not a Hilbert space.
+[Show, by finding a Cauchy sequence of continuous functions that does not have a continuous function as its limit, that this subspace is not closed.]
+
+\item[d)] 
+Let $K$ be any subset of $H$ and consider the intersection of all closed subspaces of $H$ that contain $K$. This intersection gives us the smallest subspace that contains $K$ and is called the subspace generated by $K$. 
+In example a) $K=\{(1,0,0)\}$ generates the complex plane containing this vector.
+In example c) $K=C[a,b]$
+generates all of $H^0([a,b])$.
+
+\end{itemize}
+
+The concept defined above does not use the inner product and therefore is also valid for Banach spaces in general (a closed subspace of a Banach space is also a Banach space). 
+
+The inner product allows us to introduce the concept of orthogonality and thus define the orthogonal complement of $M$, that is, the set,
+\beq
+M^{\perp}=\{x\in H\,|\,\langle x,y\rangle=0\;\forall\;y\in M\},
+\eeq
+which has the following property,
+
+\bteo
+ Let $M$ be a closed subspace of a Hilbert space $H$.
+Then $M^{\perp}$ is also a Hilbert space. Moreover, $M$ and $M^{\perp}$ are complementary, that is, every vector in $H$ can be uniquely written as the sum of a vector in $M$ and another in $M^{\perp}$.
+\beq
+H=M\oplus M^{\perp}
+\eeq
+\eteo
+
+\pru:
+
+It is immediate that $M^{\perp}$ is a vector subspace and that it is closed.
+[If $\{x_i\}$ is a sequence in $M^{\perp}$ converging to $x$ in $H$ then
+$|\langle x,y\rangle|=|\langle x-x_i,y\rangle|\leq\|x-x_i\|\,\|y\|\to 0\;\;\forall \; y \in M$
+ and therefore $x\in M^{\perp}$.]
+We only need to prove the complementarity. To do this, given $x\in H$,
+we will look for the element $z$ in $M$ closest to $x$, see figure.
+
+\espa 
+%\fig{5cm}{The perpendicular space.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m8_4}}
+    \caption{The perpendicular space.}
+    \label{fig:8_4}
+  \end{center}
+\end{figure}
+
+Let $d=inf_{w\in M}\|x-w\|_H$ and choose a sequence $\{z_n\}$ in
+$M$ such that $\|x-z_n\|_H\to d$. This is possible by the definition
+of infimum.  
+
+Then
+{%\small
+\[\barr{rcl}
+\|z_n-z_m\|^2_H & = & \|(z_n-x)-(z_m-x)\|^2_H \\
+                & = & 2\|z_n-x\|^2_H +2\|z_m-x\|^2_H \\
+                && -\|(z_n-x)+(z_m-x)\|^2_H \\
+                & = & 2\|z_n-x\|^2_H +
+2\|z_m-x\|^2_H-4\|\frac{z_n+z_m}2 -x\|^2 \\
+                & \leq& 2\|z_n-x\|^2_H +2\|z_m-x\|^2_H-4\,d^2 \\ %\longrightarrow\\
+               &  &
+               \barr{cl}
+                %& \\ & \\ 
+                \longrightarrow & 2\,d^2+2\,d^2-4\,d^2=0 \\
+                ^{m \to \ifi} & \\
+                ^{ n\to\ifi} & 
+                \earr
+                                \earr
+\]                           
+}
+The second equality comes from the so-called parallelogram law, see
+figure. 
+
+\espa 
+%\fig{5cm}{Parallelogram law.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m8_5}}
+    \caption{Parallelogram law.}
+    \label{fig:8_5}
+  \end{center}
+\end{figure}
+
+This tells us that $\{z_n\}$ is Cauchy and therefore converges to
+a unique $z$ in $M$.
+
+Let $y=x-z$, it only remains to see that $y$ is in $M^{\perp}$, that is,
+$\langle y,v\rangle=0\;\;\forall \;v\in M$. Let $v\in M$ and $t\in \re{}$, then
+\beq\barr{rcl}
+d^2 &:= &\|x-z\|^2\leq\|x-\langle z+t\,v\rangle\|^2=\|y-t\,v\|^2 \\
+    & = & d^2-2\,t\,Re\langle y,v\rangle +t^2\,\|v\|^2 
+    \earr
+\eeq
+and therefore $-2t\,Re\langle y,v\rangle+t^2\,\|v\|^2\geq 0\;\;\forall \; t$
+ which implies that $ Re\langle y,v\rangle=0$. Taking $it$ we get that $Im\langle y,v\rangle=0$
+and the proof is complete 
+\epru
+\espa
+
+\bpro 
+In the proof, only the parallelogram law was used,
+\beq
+\label{paralelogramo}
+\|\ve{x} + \ve{y}\|^2 + \|\ve{x} - \ve{y}\|^2  = 
+                     2(\|\ve{x}\|^2 + \|\ve{y}\|^2) 
+\eeq
+%
+Show that a norm satisfies it if and only if it comes from an
+inner product. 
+Hint: Use the so-called polarization identity to define an 
+inner product from the norm,
+\begin{equation}
+  \label{eq:polarizacion}
+  \langle\ve{x}, \ve{y}\rangle = \frac{1}{4}\{
+               [\|\ve{x} + \ve{y}\|^2 - \|\ve{x} - \ve{y}\|^2]
+              -\Im [\|\ve{x} + \Im \ve{y}\|^2 - \|\ve{x} - \Im \ve{y}\|^2]
+\end{equation}
+\epro
+
+This theorem has important corollaries that we will see below.
+
+\bcor 
+$(M^{\perp})^{\perp}=M$
+\ecor
+
+\pru:
+
+We will prove this by showing that $M\su (M^{\perp})^{\perp}$ and that 
+$(M^{\perp})^{\perp}\su M$.
+The first inclusion is obvious since $(M^{\perp})^{\perp}$ 
+is the set of vectors orthogonal
+to $M^{\perp}$ which in turn is the set of vectors orthogonal to $M$.
+The second inclusion follows from decomposing any vector
+$x\in (M^{\perp})^{\perp}$ into its part in $M$ and part in $M^{\perp}$, $
+x=x_1+x_2$, $x_1\in M$, $x_2\in M^{\perp}$,  
+the first inclusion tells us that $x_1\in(M^{\perp})^{\perp}$ but
+$(M^{\perp})^{\perp}$ and $M^{\perp}$ are also
+complementary and therefore $x_2=0$ 
+\epru
+
+This tells us that by taking complements we will only obtain
+one extra Hilbert space.
+
+To formulate the next corollary, it is necessary to introduce a new
+concept, the dual space of a Hilbert space. We could
+define the dual of a Hilbert space in the same way as we
+did for finite-dimensional vector spaces, that is, as
+the set of linear maps from $H$ to $\ve C$. The vector space thus
+obtained does not inherit any interesting property from $H$ because it is too large.
+To achieve a smaller space with attractive properties,
+we will restrict the linear maps to those that are continuous. 
+That is,
+the {\bf dual space} of $H,\;H'$ will be the set of continuous linear maps 
+from $H$ to $\ve C$. 
+Which maps are in $H'$? 
+Note that if $y\in H$ then the map $\fip_y:H\to \ve C$ 
+defined by $\fip_y(x)=\langle y,x\rangle$ is linear and since $|\fip(x)|\leq\|y\|_H\:\|x\|_H$
+it is also continuous. This map gives us an injective 
+(not canonical, since it depends on the inner product) correspondence between the
+elements of $H$ and those of its dual.
+Thus we see that $H$ is naturally contained in $H'$.
+
+\ejer: Reflect on what the natural norm in $H'$ is. 
+Prove that with this norm we have $\|\phi_y\|_{H'} = \|y\|_H$.
+\espa
+
+\bpro
+Let $\phi: H \to \Complex$ be a linear map. Show that the continuity
+of the map at the origin ensures the continuity of the map at every point.
+\epro
+
+If the dimension of $H$ is finite, then we know that
+$H'$ will have the same dimension and we will have a
+(not canonical) one-to-one correspondence between vectors and covectors.
+In principle, this does not have to be the case in the infinite-dimensional case, and indeed if we use an analogous definition and define
+the dual of a Banach space, in general, there will be no
+relationship between it and the original space.
+In the case of Hilbert spaces, everything is simpler, as
+shown by the following corollary.
+
+\bcor[Riesz Representation Theorem]:
+Let $\fip \in H'$, then there exists a unique $y \in H$ such that 
+$\fip(x) = \langle y,x\rangle \forall \; x \in H$,
+that is, $H \approx H'$ in the sense that there exists a natural
+invertible map between $H$ and $H'$.
+\ecor
+
+\pru: Let $M = \{ x \in H \mbox{ such that } \fip(x)=0\}$. Since $\fip$
+is linear, $M$ is a subspace of $H$, and since $\fip$ is continuous, it
+is closed. By the previous theorem, $M^{\perp}$ is a Hilbert space and complements $M$. If $M^{\perp}$ is zero, then $M=H$
+and $\fip$ is the zero map and $y= 0$ will be its representative 
+in $H$.
+Suppose then that $M^{\perp} \neq \{0\}$ and choose $w \in M^{\perp}$
+such that $\fip (w) = 1$\footnote{The reader should convince themselves that if
+$\fip$ is not the zero map, then there always exists $w\in H$ such that 
+$\fip(w)=1$.}. 
+For any $v \in M^{\perp}$,
+$v-\fip(v)w \in M^{\perp}$, but $\fip(v - \fip(v)w) = 0$ and therefore 
+also $v-\fip(v)w \in M$. 
+Thus we conclude that $v-\fip(v)w =0\; \forall\;
+v \in M^{\perp}$, that is, $v=\fip(v)w \;\forall\; v \in M^{\perp}$, meaning that
+$M^{\perp}$ is one-dimensional. Now let's see that 
+$\fip(x) = \langle\dip\frac w{\|w\|^2},x\rangle \; \forall x \in H$.
+Indeed, by the previous theorem, $x = \alpha w + y$ with $\alpha \in C$
+and $y \in M$, and therefore, 
+$\fip(x) = \fip(\alpha w + y) = \alpha \fip(w) + \fip(y) = \alpha$,
+but on the other hand,
+$\langle\dip\frac w{\|w\|^2},x\rangle = \alpha$ 
+\epru
+\espa
+
+\ejer: Conclude the proof by proving uniqueness. 
+\espa
+
+To state the third corollary, we need
+the concept of an orthonormal basis.
+An {\bf orthonormal basis} of $H$ is a subset of vectors
+of $H$ that have norm one, are mutually orthogonal,
+and generate $H$ (that is, given $x \in H$ and $\eps > 0$
+there exists a {\bf finite} linear combination of elements of this basis $y$ such
+that $\|x-y\|_H < \eps $.
+
+\ejem: 
+In $l^2$ let $e_1 = (1,0,0,...)$, $e_2 = (0,1,0,...)$, etc.
+
+\ejer: 
+Show that if $a \in l^2$ then 
+$\|a-\sum_{n=1}^i\langle a,e_n\rangle e_n \|_{l^2_{i\to \ifi}} \longrightarrow 0 $.
+
+\bcor 
+Every Hilbert space has an orthonormal basis.
+\ecor
+
+This result, like the previous one, is very powerful because it tells us that
+we can always approximate different elements of $H$ using a given
+basis. We will not prove this Corollary because it requires tools
+that will not be covered in this course. But we will prove another simpler result,
+for which we introduce the following definition.
+
+\defi: We will say that a Banach space (and in particular a
+Hilbert space) is {\bf separable} if it has a dense subset with a countable
+number of elements.
+
+\noi \yaya{Examples}:
+
+a) The subset $S$ of sequences $l^2$ that have a finite
+number of {\sl rational} elements is dense in $l^2$ [since as we will see
+later, any element of $l^2$ can be expressed as the limit
+of a sequence $S$] and countable [since the rationals are countable].
+
+b) The subset $S(\re{})$ consisting of functions 
+$f_{r,s,t}(x) = re^{-s|x-t|}$ (note that these are smooth), where
+$r,s,t$ are rational numbers and $s>0$, is dense and countable in 
+$L^2(\re{})$.
+
+Most Hilbert spaces that appear in practice
+are separable and therefore have the following property:
+
+\bteo 
+\label{teo7.2}
+A Hilbert space $H$ is separable if and only if it has a countable orthonormal 
+basis $S$. If $S$ has a finite number of elements,
+N, then $H$ is isomorphic to $C^N$ (that is, there exists a map 
+$\fip :H \rightarrow C^N$, in this case linear, with 
+$\|\fip(x)\|_{C^N} = \|x\|_H \forall x \in H$ that is continuous and invertible
+and its inverse is also continuous). 
+If $S$ has an infinite number of elements, then $H$ is isomorphic
+to $l^2$.
+\eteo
+
+This theorem tells us that among separable Hilbert spaces, essentially
+there is no more structure than that already present in $C^N$ or $l^2$.
+\espa
+
+\pru: To obtain the orthonormal (countable) basis, we first
+discard some elements from a dense and countable subset of $H$, $S$, 
+until we obtain a subcollection of vectors (by construction
+countable) that are linearly independent and still span $S$. 
+Then we apply the Gram-Schmidt process to this subcollection
+to obtain the orthonormal basis. To prove the rest of the theorem, 
+we need the following lemmas.
+
+\blem[Pythagoras]:
+\label{lem8.1}
+Let $\{x_n\}_{n=1}^N$ be an orthonormal set in
+$H$, not necessarily a basis. Then,
+\elem
+\beq
+\|x\|_H^2=\sum_{n=1}^N |\langle x_n,x\rangle|^2+\|x-\sum_{n=1}^N\langle x_n,x\rangle x_n\|^2\;\;\;
+\forall\;\;x\in H.
+\eeq
+
+\pru: 
+Let $v = \sum_{n=1}^N \langle x_n,x\rangle x_n$ and $w=\langle x - \sum^N_{n=1}
+\langle x_n,x\rangle x_n\rangle$.
+It is easy to see that $v\in V$, the Hilbert subspace generated by the
+$\{x_n\}^N_{n=1} $ and $w \in V^{\perp}$, but then 
+\begin{eqnarray*}
+\|x\|^2_H &=& \langle x,x\rangle \\
+                 &=& \langle v+w,v+w\rangle \\
+                 &=& \langle v,v\rangle+\langle w,w\rangle \\
+                 &=&\sum_{n=1}^N |\langle x_n,x\rangle|^2+\|w\|^2_H.
+\end{eqnarray*}
+\epru 
+
+
+
+\blem[Bessel's Inequality]:
+\label{lem8.2}
+
+Let $\{x_n\}_{n=1}^N$ be an orthonormal set in
+$H$, not necessarily a basis. Then,
+\beq
+\|x\|_H^2\geq\sum_{n=1}^N|\langle x,x_n\rangle|^2\;\;\;\forall\;x\in H
+\eeq
+\elem
+
+\pru: 
+Obvious conclusion from the previous lemma 
+\epru
+
+\blem 
+\label{lem7.5}
+Let $S = \{x_n\}$ be a countable orthonormal basis\footnote{A similar result
+is valid even if the basis is not countable,
+that is, even if $H$ is not separable.} of $H$.
+Then $\forall \; y \in H$,
+\beq
+y=\sum_n\langle x_n,y\rangle x_n
+\eeq
+and
+\beq
+\|y\|^2=\sum_n|\langle x_n,y\rangle|^2,
+\eeq
+where the first equality means that the sum converges with respect
+to the norm of $H$ to $y \in H$. The last equality is called 
+{\bf Parseval's relation} and the coefficients $\langle x_n,y\rangle$ are the 
+{\bf Fourier coefficients} of $y$. 
+Conversely, if $\{c_n\} \in l^2$ then $\sum_n c_nx_n \in H$.
+\elem
+
+\espa
+\pru:
+From Bessel's inequality, it follows that given any
+finite subset $\{x_n\}^N_{n=1}$,
+\beq
+a_N=\sum_{n=1}^N|\langle x_n,y\rangle|^2\leq\|y\|^2
+\eeq
+which implies that the sequence $\{a_N\}$, which is monotonically
+increasing, is bounded and therefore converges to a finite limit.
+This in turn implies that $\{a_N\}$ is Cauchy.
+Let $y_N = \sum_{n=1}^N \langle x_n,y\rangle x_n$, then for $N> M$
+\[
+\|y_N-y_M\|^2_H=\|\sum_{j=M+1}^N \langle x_j,y\rangle x_j\|^2_H =\sum_{j=M+1}^N
+|\langle x_j,y\rangle|^2=a_N-a_M 
+\]
+
+The convergence of $\{a_N\}$ thus guarantees that $\{y_N\}$ is a
+Cauchy sequence and therefore converges to an element $y'$
+of $H$. Let us then prove that $y' =y $.
+But for any element of $S$, $x_n$
+\beq\barr{rcl}
+\langle y-y',x_n\rangle &=&\dip\lim_{N\to\ifi}\langle y-\sum_{j=1}^N\langle x_j,y\rangle x_j,x_n\rangle \\
+           &=&\langle y,x_n\rangle-\langle y,x_n\rangle =0
+           \earr
+\eeq       
+and therefore $y - y'$ is perpendicular to the space generated
+by $S$, which is all of $H$ and therefore must be the zero element.
+It only remains to see that if $\{c_n\} \in l^2$ then 
+$\sum^{\infty}_{n=1} c_nx_n \in H$.
+An identical calculation to the previous one shows that 
+$\{y_N = \sum^N_{n=1} c_nx_n\}$ is a Cauchy sequence and therefore
+that $\lim_{N\to\ifi} y_N \in H$ 
+\epru
+
+We now continue the proof of Theorem~\ref{teo7.2}
+The last argument of 
+Lemma~\ref{lem7.5}
+shows us that given a countable basis
+$\{x_n\}^\infty_{n=1} $ of $H$, the countable set
+$Span_{\ve{Q}}\{S\} = \{x | x = \sum^{\infty}_{n=1} c_nx_n$ with $\{c_n\}$ a finite
+sequence of rationals $\}$ is dense in $H$ and therefore $H$ is separable.
+This concludes the {\sl iff} part of the proof, it only remains to find
+an isomorphism between $H$ and $C^N$ or $l^2$. Let $\{x_n\}$ be a countable
+basis of $H$ and let $\fip:H \rightarrow C^N$ or $l^2$ be the map 
+\beq
+\fip(y)=\{\langle x_n,y\rangle\}.
+\eeq
+If the basis is finite, with dimension $N$, this is clearly a map
+into $C^N$. If the basis is infinite, the image of $H$ under $\fip$ is 
+included in the space of infinite complex sequences, but using
+Lemma~\ref{lem7.5} we see that,
+\beq
+\|\fip(y)\|^2_{l^2}=\sum_{n=1}^{\ifi}|\langle x_n,y\rangle|^2=\|y\|^2_H
+\eeq
+and therefore that this image is contained in $l^2$. The continuity
+and invertibility of the map are left as an exercise for the reader 
+\epru
+\espa
+
+The previous theorem, among other things, serves to give a
+characterization that differentiates finite-dimensional Hilbert spaces
+from infinite-dimensional ones. (In fact, this
+characterization is valid for Banach spaces in general).
+
+\bteo 
+Let $H$ be a Hilbert space and let 
+\[
+B_1(H) = \{x\in H \dip/\;\;\|x\|_H \leq 1\}
+\]
+%
+the unit ball in $H$.
+Then $B_1(H)$ is compact iff $H$ is finite-dimensional.
+[It can be seen that in this case a subset $B$ of $H$ is compact
+iff every sequence $\{x_n\}$ of elements of $H$ in $B$ has a
+subsequence that converges to an element of $B$.]
+\eteo
+
+\pru: 
+We will only see the case where the space is separable.
+If $H$ is finite-dimensional, it is isomorphic to $C^N$, but $B_1(C^N)$
+is a closed and bounded subset, and therefore compact. 
+If $H$ is infinite-dimensional (and separable), then it is isomorophic to
+$l^2$, but the sequence in $B_1(l^2)$, $\{x_n\}$ with 
+$\{x_n = (0,...,0,\barr{c} \\ 1\\ ^n \earr,0,...)\}$
+clearly has no
+convergent subsequence 
+\epru
+\espa
+
+\ejer: See that no subsequence of the previous sequence is Cauchy.
+\espa
+
+\ejem:
+Let $H= L^2 ([0,2\pi])$ and $S = \{\frac1{\sqrt{2\pi}}e^{inx}$, 
+ $n=0, \pm 1, \pm 2,\ldots\}$. The development of this example will
+be our occupation until the end of this chapter.
+\espa
+
+\ejer: Show that the elements of $L^2(0,2\pi)$ of the form 
+$f_n(x) = \frac1{\sqrt{2\pi}} e^{inx}$, $n=0, \pm 1, \pm2, ...$,
+form an orthonormal set.
+
+% filepath: /Users/reula/Docencia/Metodos_libro/libro_metodos_github/translated_section.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Fourier Series}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bteo $S = \lb\frac{e^{inx}}{\sqrt{2\pi}},;n=0,\pm1,\pm2\ldots\rb$ is a complete set of orthonormal vectors (i.e., an orthonormal basis) of $L^2[0,2\pi]$. \eteo
+
+Note that by Lemma~\ref{lem7.5} this is equivalent to ensuring that if $f \in L^2[0,2\pi]$ then $f_N(x)$ converges (in the norm of $L^2[0,2\pi]$) to $f$ when $N\to\infty$. \espa
+
+\bpru 
+The orthogonality is trivial and part of a previous exercise, so we will only focus on completeness. 
+The space of Lipschitz functions on $[0,2\pi]$, $Lip[0,2\pi]$ is dense [essentially by definition! since it contains all smooth functions] in $L^2[0,2\pi]$, but then its subspace consisting of periodic functions $Lip_p[0,2\pi]$ is also dense [since the elements of $L^2[0,2\pi]$ are equivalence classes of functions and in each class, there is always one that is periodic]. 
+Now suppose that \begin{equation} \label{eq:S_N} S_N(g)(x) := \frac{1}{\sqrt{2\pi}} \sum_{n=-N}^{N} g_n e^{inx} \to g(x) \end{equation} pointwise and uniformly if $g(x) \in Lip_p([0,2\pi])$. Then by density, given any function $f(x) \in L^2([0,2\pi])$ and $\eps > 0$ there will exist $f_{\eps} \in Lip_p([0,2\pi])$ such that $|f-f_{\eps}|_{L^2} < \eps/3$ and therefore we will have,
+
+\begin{eqnarray*} |f-S_N(f)|{L^2} !!!! &=& !!! |f-S_N(f) - f{\eps} + S_N(f_{\eps}) + f_{\eps} - S_N(f_{\eps}) |{L^2} \nn &\leq&!!
+|f-f{\eps}|{L^2} + |f{\eps}-S_N(f_{\eps})|{L^2} + |S_N(f-f{\eps})|{L^2} \end{eqnarray*} % but \begin{eqnarray} |S_N(f-f{\eps})|{L^2} &=& \sum{n=-N}^{N}|(f-f_{\eps})n|^2 \nn &\leq& |f-f{\eps}|^2 \nn &\leq& \eps/3 \end{eqnarray} % and therefore choosing $N$ such that $|f_{\eps}(x) - S_N(f_{\eps})(x)| < \frac{\eps}{3}$, which follows from our previous assumption (still not proven), we have that $|f_{\eps} - S_N(f_{\eps})|{L^2} < \frac{\eps}{3}$ and therefore we conclude that for such $N$, $|f - S_N(f)|{L^2} < \eps$ \epru
+
+Thus we see that it only remains to prove our assumption of uniform convergence of $S_N(f)$ to $f$ for periodic Lipschitz functions. The proof of this statement is very instructive and shows us how the Fourier series works. Preparatory to this result, we prove a series of lemmas:
+
+\blem If $f$ is integrable ($f \in L^1$) then, \begin{equation} \sup_n{|f_n|} \leq \frac{1}{\sqrt{2\pi}} \int_0^{2\pi}|f(x)| dx. \end{equation} \elem
+
+\bpru \begin{eqnarray} |f_n| &=& |\langle \frac{e^{inx}}{\sqrt{2\pi}},f \rangle | \nn &\leq& \frac{1}{\sqrt{2\pi}}\int_0^{2\pi}|e^{-inx}f(x)|dx \nn &\leq& \frac{1}{\sqrt{2\pi}}\int_0^{2\pi}|f(x)|dx \end{eqnarray} \epru
+
+\blem If $f$ has an integrable derivative, then $f_n \to 0$ as $n \to \infty$. \elem
+
+\bpru Integrating by parts we have, \begin{eqnarray*} f_n &=& \langle \frac{e^{inx}}{\sqrt{2\pi}},f \rangle \nn &=& \frac{1}{\sqrt{2\pi}}\int_0^{2\pi} e^{-inx}f(x)dx \nn &=& \frac{1}{in\sqrt{2\pi}}\int_0^{2\pi} e^{-inx}f'(x)dx -\frac{1}{in\sqrt{2\pi}}e^{-inx}f(x)|0^{2\pi} \nn &=& \frac{1}{in\sqrt{2\pi}}\int_0^{2\pi} e^{-inx}f'(x)dx -\frac{1}{in\sqrt{2\pi}}[f(2\pi)-f(0)] \nn \end{eqnarray*} and therefore \begin{equation} |f_n| \leq \frac{1}{n\sqrt{2\pi}}[|f'|{L^1} + |f(2\pi)-f(0)|], \end{equation} with which the lemma is proven \epru
+
+This lemma and its generalization to a greater number of derivatives indicate that the more differentiable a function is, the faster its Fourier coefficients decay (asymptotically).
+
+\ejer: Prove a similar lemma that gives a better bound for $f_n$ if the function is periodic and $m$ times differentiable.
+
+\blem[Riemann-Lebesgue] If $f \in L^1([0,2\pi])$, i.e., an integrable function. Then,
+
+\begin{equation} \label{eq:R_L} \lim_{n \to \infty} f_n = 0 \end{equation} \elem
+
+\bpru If $f\in L^1([0,2\pi])$, then it is approximable by smooth functions, in particular, given any $\eps >0$ there exists $f_{\eps}:[0,2\pi]$, smooth, such that $|f-f_{\eps}|{L^1} < \frac{\eps}{2\sqrt{2\pi}}$. But since, \begin{eqnarray} |f_n - f_{\eps n}| &=& |\langle \frac{e^{inx}}{\sqrt{2\pi}},f - f_{\eps} \rangle | \nn &\leq& \frac{1}{\sqrt{2\pi}} \int_0^{2\pi}|f(x) - f_{\eps}(x)|dx \nn &\leq& \frac{1}{\sqrt{2\pi}}|f-f_{\eps}|_{L^1} \nn &\leq& \eps/2 \end{eqnarray} % we have that \begin{equation} |f_n| \leq |f_n - f_{\eps n}| + |f_{\eps n}| \leq \eps/2 + |f_{\eps n}|. \end{equation} Applying the previous lemma and noting that $f_{\eps}$ is differentiable, we see that $f_{\eps n} \to 0$ and therefore, given $\eps >0$ I can choose $N$ such that for all $n>N$ $|f{\eps n}| < \eps/2$ with which $|f_n| < \eps$ for all $n>N$ and therefore we conclude that $f_n \to 0$ as $n \to \infty$ \epru
+
+We are now in a position to prove the theorem on pointwise convergence of Lipschitz functions.
+
+\bteo Let $f:[0,2\pi] \to \Complex$ be periodic and Lipschitz. Then
+
+\begin{equation} S_N(f)(x) := \frac{1}{\sqrt{2\pi}}\sum_{n=-N}^{N} f_n e^{inx}
+\end{equation} converges pointwise and uniformly to $f(x)$. \eteo
+
+\bpru We will only prove pointwise convergence, uniform convergence follows easily and its proof adds nothing new. We begin with the following calculation, \begin{eqnarray} S_N(f)(\theta) &:=& \frac{1}{\sqrt{2\pi}}\sum_{n=-N}^{N} f_n e^{in\theta} \nn &=& \frac{1}{{2\pi}}\sum_{n=-N}^{N} \int_0^{2\pi}e^{in\theta'}f(\theta') e^{in\theta}d\theta' \nn &=& \frac{1}{{2\pi}}\int_0^{2\pi}f(\theta') (\sum_{n=-N}^{N}e^{in(\theta-\theta')})d\theta' \nn &=& \int_0^{2\pi}f(\theta')D_N(\theta-\theta')d\theta'
+\end{eqnarray} where we have defined the \textbf{Dirichlet kernel}~\index{Dirichlet!kernel} \begin{equation} D_N(\theta-\theta'):= \frac{1}{{2\pi}}\sum_{n=-N}^{N}e^{in(\theta-\theta')}. \end{equation} We now study some properties of the Dirichlet kernel. First, note that, \begin{eqnarray} \label{eqn:nucleo=1} \int_0^{2\pi}D_N(\theta-\theta')d\theta' &=& \frac{1}{{2\pi}}\sum_{n=-N}^{N} \int_0^{2\pi}e^{in(\theta-\theta')}d\theta' \nn &=& \frac{1}{{2\pi}}[ \sum_{n=-N,;n\neq0}^{N}\frac{-i}{n} [e^{in(\theta-2\pi)}-e^{in\theta}] + 2\pi] \nn &=& 1. \end{eqnarray} % On the other hand, we have that \begin{eqnarray} 2\pi D_N(\theta) &=& \sum_{n=-N}^{N}e^{in\theta} \nn &=& \sum_{n=-N}^{N}(e^{i\theta})^n \end{eqnarray} and calling $q := e^{i\theta}$ to simplify the notation, we have, {\small \begin{eqnarray} && 2\pi D_N(\theta) \nn &=& \sum_{n=0}^{N}q^n + \sum_{n=0}^{N}q^{-n} -1 \nn &=& \frac{q^{N+1}-1}{q-1} + \frac{q^{-(N+1)}-1}{q^{-1}-1} -1 \nn &=& \frac{(q^{N+1}-1)(q^{-1}-1)+(q^{-(N+1)}-1)(q-1)-(q-1)(q^{-1}-1)}{(q-1)(q^{-1}-1)} \nn &=& \left[(q^{N+1/2}-q^{-1/2})(q^{-1/2}-q^{1/2})+(q^{-(N+1/2)}-q^{1/2})(q^{1/2}-q^{-1/2}) \right. \nn &-& \left.(q^{1/2}-q^{-1/2})(q^{-1/2}-q^{1/2}) \right] /(q^{1/2}-q^{-1/2})(q^{-1/2}-q^{1/2}) \nn &=& \frac{q^{N+1/2}-q^{-N-1/2}}{q^{1/2}-q^{-1/2}} \nn &=& \frac{e^{i\theta(N+1/2)}-e^{-i\theta(N+1/2)}}{e^{i\theta/2}-e^{-i\theta/2}} \nn &=& \frac{\sin((N+1/2)\theta)}{\sin(\theta/2)}. \end{eqnarray} } % Therefore \begin{equation} D_N(\theta) = \frac{1}{{2\pi}} \frac{\sin((N+1/2)\theta)}{\sin(\theta/2)}. \end{equation} % We have therefore, {\small \begin{eqnarray*} ! S_N(f)(\theta) !!! &=& !!! \int_0^{2\pi}f(\theta')D_N(\theta-\theta')d\theta' \nn &=& !!! \int_0^{2\pi}f(\theta-\theta')D_N(\theta)d\theta' \nn &=& !!! \frac{1}{{2\pi}}\int_0^{2\pi}[f(\theta-\theta')-f(\theta)] \frac{\sin((N+1/2)\theta')}{\sin(\theta'/2)}d\theta' + f(\theta) \end{eqnarray*} } % where in the second equality we have used that the integral of a periodic function over its period is independent of the point where the integration interval begins, and in the last we have subtracted and added $f(\theta)$ and used that the integral of the Dirichlet kernel is one (\ref{eqn:nucleo=1}).
+
+If $f(\theta)$ is Lipschitz, $|f(\theta-\theta') -f(\theta)| \leq k|\theta'|$ and therefore 
+\begin{equation} 
+    g_{\theta}(\theta') := \frac{|f(\theta-\theta') -f(\theta)|}{\sin(\theta'/2)} 
+\end{equation} % 
+is continuous in $(0,2\pi)$ and bounded at the ends, therefore integrable. 
+Applying now the Riemann-Lebesgue Lemma we conclude then that the integral tends to zero with $N$ and therefore that $\lim_{N\to \infty} S_N(f)(\theta) = f(\theta)$ at every point where $f(\theta)$ is Lipschitz. 
+\epru
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To prove that $S$ is complete, we only need to see that if 
+$(e^{inx},g)=0\; \forall\; n $ then $g =0$.
+Let $f \in C^1_p[0,2\pi]$ and $c_n$ be its Fourier coefficients with respect to
+$S$, then
+\beq
+(f,g)=\lim_{M\to \ifi}\lp\sum_{-M}^Mc_n\frac{e^{inx}}{\sqrt{2\pi}},g\rp=0
+\eeq
+We then conclude that $g$ is orthogonal to all $f \in
+C^1_p[0,2\pi]$, but as we saw this space is dense in
+$L^2[0,2\pi]$ and therefore by continuity we must have
+that $(f,g) = 0\; \forall\; f \in H$, that is $g=0$ 
+\epru
+\espa
+
+\ejem $\;$ [\textbf{Application of the Fourier series}]
+Let $S$ be a metal ring of circumference $2\pi$ and let $T_0(\theta)$ be a temperature distribution that we assume to be square integrable ($\in L^2(S)$).
+The temporal evolution of $T(\theta,t)$, 
+(neglecting losses to the surrounding medium by conduction or radiation) is given by,
+
+\begin{equation}
+  \label{eq:calor}
+  \frac{\partial T}{\partial t} = k \frac{\partial^2 T}{\partial \theta^2}
+\end{equation}
+%
+with $k$ a positive constant. We assume $T(\theta,0)=T_0(\theta)$.
+Assuming also that $T(\theta,t)$ admits
+a Fourier series decomposition,
+\begin{equation}
+  \label{eq:T_fourier}
+  T(\theta,t) = \sum^{\infty}_{n=-\infty} T_n(t) \frac{e^{in\theta}}{\sqrt{2\pi}}
+\end{equation}
+%
+and that the derivatives can be passed
+inside the infinite summation we obtain,
+\begin{eqnarray}
+  0&=&\frac{\partial T}{\partial t} - k \frac{\partial^2 T}{\partial \theta^2}\nn
+   &=& \sum^{\infty}_{n=-\infty}(\frac{dT_n(t)}{dt} + k n^2 T_n(t)) \frac{e^{in\theta}}{\sqrt{2\pi}}
+\end{eqnarray}
+%
+from the linear independence of the basis elements, or simply by taking the inner product with $\frac{e^{in\theta}}{\sqrt{2\pi}}$ we see that
+it must be satisfied,
+\begin{equation}
+  \frac{dT_n(t)}{dt} = - k n^2 T_n(t) \;\;\;\; \forall \; n
+\end{equation}
+%
+that is,
+\begin{equation}
+  T_n(t) = T_n(0) e^{-kn^2t}.
+\end{equation}
+
+If the initial temperature was 
+\begin{equation}
+  T_0(\theta) = \sum^{\infty}_{n=-\infty} T_n^0 \frac{e^{in\theta}}{\sqrt{2\pi}}
+\end{equation}
+%
+we then see that $T_n(t) = T_n^0 e^{-kn^2t}$ and
+\begin{equation}
+  \label{eq:T_fourier_solucion}
+  T(\theta,t) = \sum^{\infty}_{n=-\infty} T_n^0 e^{-kn^2t} \frac{e^{in\theta}}{\sqrt{2\pi}}
+\end{equation}
+%
+gives us the solution to the problem.
+
+Note that: 
+a) The temperature distribution in the bar only depends on
+the initial distribution. 
+%
+b) The fact that we were able to reduce a partial differential problem to an ordinary differential problem is due to the fact that we chose to represent the functions in a basis of eigenvectors of the derivative operator. Indeed, what
+we have fundamentally used is that 
+$\frac{\partial}{\partial \theta} e^{in\theta} = in e^{in\theta}$.
+%
+c) No matter how bad (non-differentiable) the 
+initial distribution $T_0(\theta)$ is, as long as it is in $L^2(S)$, the solution smooths out for positive times. Indeed, if for example the initial distribution is only Lipschitz, then for all $t > 0$ the solution 
+is infinitely differentiable, both in $t$ and in $\theta$. 
+To see this, for example, take,
+\begin{equation}
+   \frac{\partial^pT(\theta,t)}{\partial t^p}  
+   = \sum^{\infty}_{n=-\infty} T_n^0 (-kn^2)^p e^{-kn^2t} \frac{e^{in\theta}}{\sqrt{2\pi}},
+\end{equation}
+%
+but since for $t>0$, $n^{2p} e^{-kn^2t} \to 0$ quickly as $n \to \infty$ the series converges absolutely. On the contrary, for a generic initial data, even infinitely differentiable, the solution does not exist for negative times, since in that case the series coefficients grow rapidly
+with n. 
+
+
+\ejer: Prove that an orthogonal set $\{\ve{x}_n\}$ is complete 
+if and only if
+$(\ve{x}_n,\ve{g}) =  0 \;\;\; \forall n \Rightarrow \ve{g}=0$.
+\espa
+
+\bpro:
+Use Gram-Schmidt to obtain an orthonormal basis from
+the monomials 
+\beq
+1,\;x,\;x^2,\;\ldots,x^n,\ldots,
+\eeq
+with respect to the Hilbert spaces obtained from the following
+inner products:
+\begin{enumerate}
+\item $(f,g) = \int^1_{-1} \bar fg \;dx$ (In this case you will obtain the
+Legendre polynomials.)
+
+\item $(f,g) = \int^{\infty}_{-\infty} \bar f g e^{-x^2} \;dx$
+(In this case you will obtain the Hermite polynomials.)
+
+\item $(f,g) = \int^{\infty}_0 \bar f g e^{-x}\; dx$
+(In this case you will obtain the Laguerre polynomials.)
+
+\end{enumerate}
+
+These polynomial bases are generically called systems of 
+Chebyshev polynomials. 
+\epro
+\espa
+
+The fact that the Legendre polynomials are a
+basis follows from the Weierstrass Approximation Theorem and the fact that
+continuous functions are dense in $L^2$.
+\espa
+
+
+\recu{
+{\bf *\yaya{Gram -- Schmidt Method.}}
+
+Given a countable set of linearly independent elements of
+$H$, $\{\ve{x}_i\}$ we recursively generate the following sets:
+$$
+\ve{y}_i = \ve{x}_i - \sum_{l=1}^{i-1} (\ve{u}_l,\ve{x}_i)\ve{u}_l, \;\;\; \ve{u}_i = \frac{\ve{y}_i}{\|\ve{y}_i\|}.
+$$
+Note that the second operation is well defined since $\ve{y}_i \neq 0$.
+This assertion follows from the fact that the right-hand side in the
+definition of $\ve{y}_i$ is a linear combination of the $\ve{x}_j$,
+$j=1,...,i$ and we have assumed that these are linearly independent.
+
+Now let's see that $(\ve{u}_i,\ve{u}_j) = \delta_{ij}$.
+To do this, we will prove by induction that given $i$, $(\ve{u}_i,\ve{u}_j) = 0
+\;\forall\; j < i$ positive.
+This is true for $i=1$ [since there is no $j$]. Suppose then that it is
+true for $i-1$ and let's see that it is also true for $i$.
+But, given $j < i$ we have,
+$$
+(\ve{u}_j,\ve{y}_i) = [(\ve{u}_j,\ve{x}_i) - \sum_{l=1}^{j-1} (\ve{u}_l,\ve{x}_i)(\ve{u}_j,\ve{u}_l)] =
+[(\ve{u}_j,\ve{x}_i) - (\ve{u}_j,\ve{x}_i)] =0.
+$$
+
+If the starting set is a complete set, that is, a set
+that is not a subset of a larger set of linearly independent vectors, then the resulting set is an orthogonal basis. In particular, if
+$(\ve{x},\ve{u}_i)=0 \;\; \forall i$, then $\ve{x}=0$. 
+Otherwise, we take $\ve{u}=\frac{\ve{x}}{\|\ve{x}\|}$ and we would have another element
+of the basis, which would be a contradiction with respect to the 
+completeness of the $\{\ve{u}_i\}$.
+%
+}
+
+%\newpage
+\section{Problems}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% 1
+\bpro
+Let $\phi:H \to \Complex$ be a linear map. Show that $\phi$ is continuous
+if and only if it is bounded.
+\epro
+
+%2
+\bpro
+Show that the map $I:C[a,b] \to \Re$ given by 
+\begin{equation}
+  \label{eq:mapa_integral}
+  I(f) := \int_a^b f(x)dx,
+\end{equation}
+is a linear and continuous map.
+\epro
+
+%3
+\bpro
+Let $V$ be a finite-dimensional space and let $\{\ve{u}_i\},\;\;i=1..n$
+be a basis and $\{\ve{\theta}^i\},\;\;i=1..n$ the corresponding dual basis.
+Let $\ve{x} = \sum_{i=1}^n x^i \ve{u}_i$ be any vector in $V$ and
+$\ve{\omega} = \sum_{i=1}^n \omega_i \ve{\theta}^i$ 
+be any linear functional,
+i.e., an element of $V'$. 
+Consider the norm in $V$
+\begin{equation}
+  \label{eq:norma_p}
+  \|\ve{x}\|_p := (\sum_{i=1}^n |x^i|^p)^{\frac{1}{p}}.
+\end{equation}
+See that this is a norm and prove that
+the norm induced in $V'$ by this is given by,
+\begin{equation}
+  \label{eq:norma_q}
+  \|\ve{\omega}\|_q := (\sum_{i=1}^n |\omega_i|^q)^{\frac{1}{q}},
+\end{equation}
+%
+where 
+\begin{equation}
+  \label{eq:relacion_p_q}
+  \frac{1}{p} + \frac{1}{q} = 1\;\;\;\;\;\;\; (p,q \geq 1);
+\end{equation}
+%
+Hint: Express $\ve{\omega}(\ve{x})$ in components with respect to the 
+given basis/dual basis and then use (prove) the inequality:
+\begin{equation}
+  \label{eq:holder}
+  |\sum_{i=1}^{n} x^i \omega_i | \leq 
+        (\sum_{i=1}^n |x^i|^p)^{\frac{1}{p}} 
+        (\sum_{i=1}^n |\omega_i|^q)^{\frac{1}{q}}.
+\end{equation}
+
+\epro
+
+
+%4
+\bpro
+Let $c_0$ be the space of sequences 
+$\{x\} = (x_1,x_2, \dots)$
+converging to zero with the norm
+\begin{equation}
+  \label{eq:norma_c_0}
+  \|\{x\}\|_{c_0} := \sup_{i} \{|x_i|\}.
+\end{equation}
+%
+Prove that the dual of the space $c_0$ is the space $l_1$ of absolutely summable sequences
+$\{\omega\}= (\omega_1,\omega_2, \dots)$ with the norm
+\begin{equation}
+  \label{eq:norma_l_1}
+  \|\{\omega\}\|_{l_1} := \sum_{i=1}^{\infty} |\omega_i|.
+\end{equation}
+%
+Hints: 
+Note that given an element of $l_1$, $\{\omega\}=(\omega_1,\omega_2,\dots)$,
+we have a linear functional given by,
+\begin{equation}
+  \label{representacion_del-dual}
+  \ve{\omega}(\{x\}) := \sum_{i=1}^{\infty} x_i \omega_i.
+\end{equation}
+Prove that this satisfies 
+\begin{equation}
+  \|\ve{\omega}\| \leq \|\{\omega\}\|_{l_1}.
+\end{equation}
+Then find an element of norm equal to or less than one in $c_0$ 
+and with its help see that 
+\begin{equation}
+  \|\ve{\omega}\| \geq \|\{\omega\}\|_{l_1}.
+\end{equation}
+from which it is concluded that the norms are the same.
+It only remains to see that for each element of the dual of $c_0$, $\ve{\omega}$,
+there exists an element of $l_1$, $\{\omega\}=(\omega_1,\omega_2,\dots)$ such that 
+equation \ref{representacion_del-dual} holds. 
+To do this, construct a basis of $c_0$ and the respective basis of its dual.
+Note: at some point, you will have to use that the considered linear functionals
+are continuous.
+\epro
+
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Fourier Series Problems}
+
+%1
+\bpro
+Let $f$ be an integrable function of period $T$. Show that
+\begin{equation}
+  \int_0^T f(x)dx = \int_a^{T+a} f(x)dx, \;\;\;\; \forall a \in \re
+\end{equation}
+\epro
+
+
+%2
+\bpro
+\espa
+a.- Find the Fourier series of the function $f(x) := x$ in the
+interval $[-\pi,\pi]$.
+
+b.- Use Parseval's relation to prove that 
+\begin{equation}
+  \sum_{n=1}^{\infty} \frac{1}{n^2} = \pi^2/6
+\end{equation}
+
+\epro
+
+%3
+\bpro
+\espa
+a.- Find the Fourier series of the function $f(x):= e^{sx}$ in the
+interval $[-\pi, \pi]$.
+
+b.- Use Parseval's relation to prove that 
+\begin{equation}
+  \pi coth(\pi s)/s = \sum_{n=-\infty}^{\infty} \frac{1}{s^2+n^2}
+\end{equation}
+\epro
+
+%4
+\bpro
+Let $S_n: L^2 \to L^2$ be the map that sends $f \in L^2$ to the partial
+Fourier series,
+\begin{equation}
+  S_n(f) := \sum_{m=-n}^{n} c_m e^{imx}, \;\;\;\;\;\;\; 
+                 c_m:= \frac{1}{2\pi}(e^{imx},f(x)).
+\end{equation}
+%
+Show that the $S_n$ are orthogonal projections and that 
+$S_n S_m = S_m S_n = S_m$ if $m \leq n$.
+\epro
+
+\bpro
+In this problem, we attempt to prove that the Fourier series of
+a continuous function is Cesàro summable at every point.
+Let $f(\theta)$ be a periodic function in $L^2$, 
+$f(\theta) \in L^2[0,2\pi]$,
+$c_m:= \frac{1}{2\pi}(e^{im\theta},f(\theta))$
+and \\
+$ S_n(f) := \sum_{m=-n}^{n} c_m e^{imx}$
+
+a.- Prove that 
+\begin{equation}
+  S_n(f)(\theta) = \frac{1}{2\pi} \int_0^{2\pi} f(\theta + x) 
+                      \frac{\sin((n+1/2)x)}{\sin(x/2)} dx
+\end{equation}
+
+b.- Let $SS_n(f)(\theta) = \frac{1}{n+1} \sum_0^n S_m(f)(\theta)$ (Cesàro sum), prove that:
+
+\begin{equation}
+  SS_n(f)(\theta) = \frac{1}{2\pi (n+1)} \int_0^{2\pi} f(\theta + x)
+                           \frac{\sin^2((n+1)x/2)}{\sin^2(x/2)} dx
+\end{equation}
+%
+
+c.- Let $K_n(x) = \frac{\sin^2((n+1)x/2)}{2\pi (n+1) \sin^2(x/2)}$ prove that for all $\delta > 0$, \hfill \\$K_n(x) \to 0$ uniformly on $[\delta, 2\pi-\delta]$.
+
+d.- Prove that $SS_n(f)(\theta_0) \to f(\theta_0)$ if $f$ is bounded and continuous at $\theta_0$.
+
+e.- Prove that if $f$ is continuous and periodic, then 
+$SSL_n(f)(\theta) \to f(\theta)$ uniformly in $\theta$.
+Hint: remember that if $f$ is continuous on $[0.2\pi]$ then $f$ is 
+uniformly continuous.
+
+f.- Show that $\| f-S_n(f)\| \leq \|f - SSL_n(f)\|$ and conclude that 
+$S_n(f) \to f$ in $L^2$ if $f$ is continuous.
+
+\epro
+
+\bpro
+Suppose that $f \in C_p^1([0,2\pi])$ and let $c_n = (e^{in\theta},f)$ and
+$b_n = (e^{in\theta},f')$.
+
+a.- See that $\sum_{-\infty}^{\infty} |b_n|^2 < \infty$ and conclude that 
+    $\sum_{-\infty}^{\infty} n^2 |c_n|^2 < \infty$.
+
+b.- Prove that $\sum_{-\infty}^{\infty} |c_n| < \infty$.
+
+c.- Prove that $\sum_{m=-n}^{n} c_m e^{mi\theta}$ is uniformly convergent
+for $n \to \infty$.
+
+d.- Use item f.- of the previous problem to conclude that \hfill \\
+     $\sum_{m=-n}^{n} c_m e^{mi\theta} \to 2\pi f(\theta)$
+    uniformly.
+\epro
+
+\bpro
+Consider the Fourier series expansion for the following function:
+
+
+\begin{equation}
+  f(x) := \left\{ \begin{array}{cc}
+                      -1 & \;\;\; 0 < x < \pi \\
+                      +1 & \;\;\; \pi < x 2\pi
+                    \end{array}
+                    \right.
+\end{equation}
+%
+$f(\theta + 2\pi) = f(\theta)$.
+The sum of the first $n$ terms produces a function that has an
+absolute maximum near $0$ of height $1+ \delta_n$.
+Show that $\lim_{n \to \infty} \delta_n \approx 0.18$. This is known as
+the Gibbs phenomenon.
+\epro
+
+
+\recubib{These notes are based on the following books: \cite{Reed}, \cite{Lang}, \cite{Yosida}, \cite{Geroch} and \cite{Kolmogorov}.
+This is one of the most beautiful and useful areas of mathematics, fundamental for almost everything, particularly quantum mechanics.
+Do not fail to delve a little deeper into it, especially I recommend the books \cite{Reed} and \cite{Geroch} for pleasant reading.}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot.tex~/Metodos/"
+%%% End: 
+

@@ -60,3 +60,11 @@
 \contentsline {paragraph}{Proof of points $i$) and $ii)$ of the fundamental theorem.}{142}{}%
 \contentsline {paragraph}{Proof of points $i$) and $ii)$ of the fundamental theorem.}{146}{}%
 \contentsline {section}{\numberline {7.1}Problems}{148}{}%
+\contentsline {chapter}{\numberline {8}Basic Elements of Functional Analysis}{149}{}%
+\contentsline {section}{\numberline {8.1}Introduction}{149}{}%
+\contentsline {section}{\numberline {8.2}Completing a Normed Space}{149}{}%
+\contentsline {section}{\numberline {8.3}*Lebesgue Integral}{150}{}%
+\contentsline {section}{\numberline {8.4}Hilbert Spaces}{157}{}%
+\contentsline {section}{\numberline {8.5}Fourier Series}{167}{}%
+\contentsline {section}{\numberline {8.6}Problems}{172}{}%
+\contentsline {section}{\numberline {8.7}Fourier Series Problems}{174}{}%

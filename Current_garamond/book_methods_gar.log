@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=latex 2024.12.17)  1 JAN 2025 12:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=latex 2024.12.17)  1 JAN 2025 13:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -470,7 +470,7 @@ LaTeX Warning: Label `7*' multiply defined.
 
 LaTeX Warning: Label `fig:7_1' multiply defined.
 
-) (./Chapters/bib.aux))
+) (./Chapters/chap8_en.aux) (./Chapters/bib.aux))
 \openout1 = `book_methods_gar.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
@@ -621,19 +621,19 @@ File: mdbmdugm.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdugm.
  [11
 
 ]
+[12]
 \openout2 = `Chapters/chap01_en.aux'.
 
-
-(./Chapters/chap01_en.tex [12
-
-
-]
+ (./Chapters/chap01_en.tex
 Overfull \hbox (3.59421pt too wide) in paragraph at lines 7--8
 \T1/mdugm/m/n/10 sponses to the de-vel-op-ment of these ar-eas was the Cauchy-K
 owalevski the-o-rem, which
  []
 
-[13]) [14]
+[13
+
+
+]) [14]
 \openout2 = `Chapters/chap1_en.aux'.
 
  (./Chapters/chap1_en.tex
@@ -1235,19 +1235,66 @@ n-early in-de-pen-dent and in-fi-nite $\OT1/mdugm/m/n/10 ([][] \OML/mdugm/m/it/
 [144] [145] [146] (./Figure/m7_1.pstex_t
 File: Figure/m7_1.pstex Graphic file (type eps)
  <Figure/m7_1.pstex>) [147]) [148]
+\openout2 = `Chapters/chap8_en.aux'.
+
+
+(./Chapters/chap8_en.tex
+\hfil Chapter 8.
+[149
+
+
+
+
+] [150] (./Figure/m8_1.pstex_t
+File: Figure/m8_1.pstex Graphic file (type eps)
+ <Figure/m8_1.pstex>) (./Figure/m8_2.pstex_t
+File: Figure/m8_2.pstex Graphic file (type eps)
+
+<Figure/m8_2.pstex>) [151] [152] (./Figure/m8_3.pstex_t
+File: Figure/m8_3.pstex Graphic file (type eps)
+ <Figure/m8_3.pstex>)
+[153] [154] [155] [156] [157] [158] [159] [160] (./Figure/m8_4.pstex_t
+File: Figure/m8_4.pstex Graphic file (type eps)
+
+<Figure/m8_4.pstex>) (./Figure/m8_5.pstex_t
+File: Figure/m8_5.pstex Graphic file (type eps)
+ <Figure/m8_5.pstex>) [161] [162]
+[163] [164] [165] [166]
+Overfull \hbox (5.65796pt too wide) in paragraph at lines 925--935
+$[]$\T1/mdugm/m/n/10 : We will only see the case where the space is sep-a-ra-bl
+e. If $\OML/mdugm/m/it/10 H$ \T1/mdugm/m/n/10 is finite-dimensional,
+ []
+
+[167] [168]
+Overfull \hbox (5.67075pt too wide) in paragraph at lines 983--984
+[]\T1/mdugm/m/it/10 If $\OML/mdugm/m/it/10 f \OMS/mdugm/m/n/10 2 \OML/mdugm/m/i
+t/10 L[]\OT1/mdugm/m/n/10 ([0\OML/mdugm/m/it/10 ; \OT1/mdugm/m/n/10 2\OML/mdugm
+/m/it/10 ^^Y\OT1/mdugm/m/n/10 ])$\T1/mdugm/m/it/10 , i.e., an in-te-grable func
+-tion. Then, 
+ []
+
+[169] [170] [171] [172] [173]
+Overfull \hbox (3.648pt too wide) in paragraph at lines 1284--1286
+[]\T1/mdugm/m/it/10 a.- Find the Fourier se-ries of the func-tion $\OML/mdugm/m
+/it/10 f\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 x\OT1/mdugm/m/n/10 ) := \OML/mdug
+m/m/it/10 x$ \T1/mdugm/m/it/10 in the in-ter-val $\OT1/mdugm/m/n/10 [\OMS/mdugm
+/m/n/10 ^^@\OML/mdugm/m/it/10 ^^Y; ^^Y\OT1/mdugm/m/n/10 ]$\T1/mdugm/m/it/10 . 
+ []
+
+[174]) [175]
 \openout2 = `Chapters/bib.aux'.
 
-
-(./Chapters/bib.tex [149
-
+ (./Chapters/bib.tex [176
 
 
 
-]) [150] (./book_methods_gar.aux (./extdef_libro-en.aux) (./Chapters/title_UNC.
-aux) (./Chapters/chap0_en.aux)
+
+] [177]) [178] (./book_methods_gar.aux
+(./extdef_libro-en.aux) (./Chapters/title_UNC.aux) (./Chapters/chap0_en.aux)
 (./Chapters/chap01_en.aux) (./Chapters/chap1_en.aux) (./Chapters/chap2_en.aux)
 (./Chapters/chap3_en.aux) (./Chapters/chap4_en.aux) (./Chapters/chap5_en.aux)
-(./Chapters/chap6_en.aux) (./Chapters/chap7_en.aux) (./Chapters/bib.aux))
+(./Chapters/chap6_en.aux) (./Chapters/chap7_en.aux) (./Chapters/chap8_en.aux)
+(./Chapters/bib.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1265,12 +1312,12 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1536 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6957 strings out of 474117
- 116304 string characters out of 5743707
+ 7123 strings out of 474117
+ 120387 string characters out of 5743707
  1957184 words of memory out of 5000000
- 29038 multiletter control sequences out of 15000+600000
+ 29182 multiletter control sequences out of 15000+600000
  770780 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,15n,79p,1624b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 58i,15n,79p,2309b,669s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on book_methods_gar.dvi (150 pages, 675512 bytes).
+Output written on book_methods_gar.dvi (178 pages, 799988 bytes).
