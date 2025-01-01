@@ -68,3 +68,13 @@
 \contentsline {section}{\numberline {8.5}Fourier Series}{167}{}%
 \contentsline {section}{\numberline {8.6}Problems}{172}{}%
 \contentsline {section}{\numberline {8.7}Fourier Series Problems}{174}{}%
+\contentsline {chapter}{\numberline {9}Distributions}{177}{}%
+\contentsline {section}{\numberline {9.1}Introduction}{177}{}%
+\contentsline {section}{\numberline {9.2}The derivative of a distribution}{181}{}%
+\contentsline {section}{\numberline {9.3}Note on the completeness of $\mbox {$\cal D$}$ and its dual $\mbox {$\cal D$}{}'$}{184}{}%
+\contentsline {section}{\numberline {9.4}Weak Convergence and Compactness}{185}{}%
+\contentsline {chapter}{\numberline {10}The Fourier Transform}{189}{}%
+\contentsline {section}{\numberline {10.1}Introduction}{189}{}%
+\contentsline {section}{\numberline {10.2}Exercises and Definitions}{193}{}%
+\contentsline {section}{\numberline {10.3}*Basic properties of Sobolev Spaces}{196}{}%
+\contentsline {section}{\numberline {10.4}Weak Compactness and Compact Embeddings}{200}{}%

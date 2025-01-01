@@ -1,0 +1,547 @@
+% filepath: /Users/reula/Docencia/Metodos_libro/libro_metodos_github/translate.tex
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%%last modification 10/06/2013
+
+\chapter{Distributions}
+
+\section{Introduction}
+
+To make the space of square-integrable functions ${L}^2(\re{})$ a normed space, it was necessary to generalize the concept of a function (as a map from $\re{}$ to $\re{}$) in the sense that the elements of $L^2$ are only functions defined almost everywhere, that is, equivalent classes of square-integrable functions under the equivalence relation $f\approx g$ if $\int|f-g|^2\,dx=0$.
+
+Although this generalization is useful since, among other things, it allows us to group functions into Hilbert spaces and thus use the powerful geometric structure they have, it is convenient to consider an even greater generalization which, as we will see later, will provide us with an important tool in formal calculus in mathematical physics.
+
+The generalized functions that we will define below, called distributions, have many interesting properties, among them that the differentiation operation is closed in this space, that is, the derivative of a distribution is another distribution. This is particularly surprising considering that among the distributions there are functions that are not even continuous!
+
+What is the idea behind this generalization? 
+The Riesz representation theorem showed us that the dual of $L^2(\re{})$ is that same space. Now, if instead of the dual of $L^2(\re{})$ we consider the dual of a subspace of $L^2(\re{})$, we will obtain a space larger than $L^2(\re{})$ and that contains it in a natural way. This linear space, which contains the usual functions, is a space of generalized functions.
+
+It is clear that there are many spaces of generalized functions since we can not only consider different subspaces of $L^2(\re{})$, but we can also consider different notions of continuity weaker than the continuity coming from the norm of $L^2(\re{})$ to define the dual spaces.
+
+Which one to study? The answer is: The one that is most convenient for the treatment of the problem for which they are to be used. 
+Here we will deal with those obtained from a fairly small subspace, which results in a sufficiently broad generalization to cover most of the problems in Physics. It is necessary to emphasize that the concept of distribution that we will introduce is not a physical necessity, in the sense that physical theories can be stated using simply infinitely differentiable functions\footnote{
+Here we refer to fundamental theories. There are approximations, such as fluid theory, where distributions appear naturally.}
+, but it is a very useful tool that allows a more "condensed" formulation of some of these laws.
+%
+The subspace of $L^2(\re{})$ that we will use is that of infinitely differentiable functions with compact support $C_0^{\ifi}(\re{})$. [Recall that the support of a classical function $f(x)$ is given by the subset of $\re{}$, 
+\[
+Cl\{f^{-1}\;[\re{}-\{0\}]\},
+\]
+%
+where $Cl$ means taking the closure. Since the support of a function is automatically closed, being compact (as a subset of $\re{}$ or $\ren$) merely means that it is bounded.]
+
+
+\espa
+
+\ejer: Show that $C^{\infty}_0(\re{})$ is indeed a vector space.
+
+\espa
+\ejer: 
+Show that it is also an algebra with respect to the usual product. What is the support of $f\cdot g$?
+\espa
+
+What notion of continuity will we introduce in the functionals of $C^{\ifi}_0(\re{})$ to define the dual? Unfortunately, there is no {\sl natural} norm in this space, in particular, there is none in which it is complete~\footnote{Even in the case that, for example, we used as a norm 
+$$
+\|f\|=\sum_{n=0}^{\ifi}\frac 1{n!} \sup_{x\in\re{}}\{|f^{(n)}(x)|\}
+$$
+we would not obtain a complete space since in this space there are Cauchy sequences that tend to infinitely differentiable functions but whose support is not compact.}.
+
+There is, however, a convenient topology in this space.
+The corresponding notion of continuity of this topology is obtained from the following convergence criterion:
+
+\espa
+
+\defi:
+We will say that a sequence
+$\{\fip_n\},\;\fip_n\in\cif $ 
+{\bf converges} to $\fip 
+\in C_0^{\ifi}(\re{})$ if:
+\begin{enumerate}
+\item There exists a compact $K \su \re{}$ such that $support(\fip_n) \su K
+\;\;\;\forall n$.
+\item The sequences $\{\fip^{(p)}_n\}$ of their derivatives of order $p$ 
+converge uniformly in $K$ to $\fip^{(p)}$ for all 
+$p=0,1,2,\ldots,$, that is, given $p$ and $\eps > 0$ there exists $N$ such that
+for all $n>N$ it holds that 
+\beq
+\sup_{x\in K}|\fip^{(p)}_n (x)-\fip^{(p)}(x)|<\eps.
+\eeq
+\end{enumerate}
+
+\noi
+{\bf Note} that the first condition restricts us to consider as convergent sequences those that can only converge to a function with compact support. This is fundamental for the completeness of the space and for the uniform convergence in the second condition to make sense using the supremum.
+With this convergence criterion, we associate the following notion of continuity on the functionals of $C^{\infty}_0(\re{})$ in $\re{}$.
+
+\defi: 
+We will say that the functional
+$F:\cif\to\re{}\;(\mbox{or}\;\ve C)$ is {\bf continuous} 
+at $\fip \in \cif$ if given
+any convergent sequence $\{\fip_n\}$ in $\cif$ to $\fip$, it holds that
+\beq
+F(\fip_n)\longrightarrow F(\fip).
+\eeq
+This notion comes from the aforementioned topology.
+\espa
+
+\ejer: 
+Let $B$ be a Banach space with the notion of
+convergence given by its norm. Show that in that case the notion
+of continuity defined above coincides with the usual $(\eps,\del)$.
+
+\espa
+
+With this notion of continuity, the space $\cif$ is called the {\bf
+space of test functions} of $ \re{}$ and denoted by ${\cal D}(\re{})$.
+
+\espa
+\noi
+\defi: The dual space to the space of test functions, $\cal D'$, that is, the space of continuous linear functionals $T:\cif\to\re{}$ is called the space of {\bf distributions}.
+
+\espa
+\noi \yaya{Examples}: 
+
+\noi 
+a) Let $f$ be continuous and let the linear functional
+\beq
+T_f(\fip)=\int_{\re{}} f\,\fip\;dx.
+\eeq
+Since 
+\beq
+|T_f(\fip)| \leq\lp\int_K|f|\;dx\rp\;sup_{x\in K}|\fip|
+\eeq
+where $K$ is any compact containing the support of $\fip$, we see that
+$T_f$ is continuous and therefore a distribution. Thus, we see that
+continuous functions give rise to distributions, that is, they are naturally included
+in the space of distributions.
+
+\ejer: Show that if $f\neq g$ then $T_f\neq T_g$.
+
+
+\espa
+\noi b) 
+Let $f$ be integrable (in the sense of Lebesgue), that is, an
+element of ${\cL}^1(\re{})$ and let 
+\beq
+T_f(\fip)=\int_{\re{}}f\,\fip\;dx\;\;\;\;\;\forall\;\;\fip\in\cif.
+\eeq
+But $|T_f(\fip)|\leq \sup_{x \in K}{|\fip|}\;\;\int_{\re{}}|f|\;dx$
+ and therefore if $\{\fin\}\to 0$ then $T_f(\fin)\to 0$ which ensures us 
+ (by linearity) that
+$T_f$ is continuous and thus a distribution. Note that if $f=g$ almost
+everywhere ($f\sim g$) then $T_f=T_g$ so we conclude that it is actually
+the elements of $L^1$ that define these distributions. The
+distributions obtained in this way are called {\bf regular}.
+\espa
+
+\noi
+c) Let $T_a:\cif\to\re{}$, $a\in\re{}$, be given by
+$T_a(\fip)=\fip(a)$, this map is clearly linear,
+$$
+\;T_a(\fip+\alf\psi)=\fip(a)+\alf\,\psi(a)=T_a(\fip)+\alf\,T_a(\psi),
+$$
+ and continuous 
+$$
+ \; |T_a(\fip)|=|\fip(a)|\leq \sup_{x\in\re{}}|\fip(x)|
+$$
+  and therefore
+a distribution. This is called the Dirac delta at the point $a$.
+Is there any continuous function, $f$, such that $T_a=T_f$? Suppose
+so, and that $f(r)\neq 0$ with $r\neq a$.
+Choosing $\fip$ non-zero only in a sufficiently small neighborhood
+of $r$ that does not contain $a$ and with the same sign as $f(r)$, we obtain $\fip(a)=0$ and
+ $T_f(\fip)\neq 0$ which implies that $f(r)=0 \;\;\forall r\neq a$
+ but by continuity we then conclude that $f\equiv 0$ and therefore that
+ $T_f(\fip)=0\;\forall\;\fip\in\cif$. 
+We see then that this distribution does not come from any
+continuous function and it can be seen that it actually does not come from
+any element of $L^1(\re{})$, thus it is an {\bf
+irregular distribution}.  
+These are the {\bf extra} elements that the defined generalization gives us.
+Usually, in formal manipulations, it is pretended that this
+distribution comes from a function, called the Dirac delta and
+denoted by $\del(x-a)$. With it, things like
+\beq
+\int_{\re{}}\del(x-a)\,\fip(x)\;dx=\fip(a).
+\eeq
+are written.
+As we have seen, there is actually no function for which 
+this expression makes sense, so it is only {\bf formal} and should be considered with caution, that is, always as a linear and continuous map of the space of test functions.
+
+What structure does ${\cD}'(\re{})$ have? Being a dual space,
+it is a vector space with the sum of its elements and the product of these by
+real numbers defined in the obvious way, that is, if $T,\ti
+T\in \cal D$, $\alf\in\re{}$, then
+$\lp T+\alf\ti T\rp(\fip)=T(\fip)+\alf\,\lp\ti T(\fip)\rp$. 
+These 
+operations generalize the operations defined on
+integrable functions since $T_f+\alf \,T_g=T_{f + \alpha g}$.
+
+% filepath: /Users/reula/Docencia/Metodos_libro/libro_metodos_github/translated_text.tex
+Is the product of distributions defined? 
+%
+The answer is that in general it is not -- just as it is not defined between integrable functions. It is defined if one of them comes from a test function, that is
+\beq
+T_{\fip}\,\ti T(\psi) := \ti T(\fip\psi)  \;\;\forall \psi \in {\cal D},
+\eeq
+where we have used that the elements of $\cal D$ form an algebra. Note that this generalizes the operation defined on integrable functions:
+\beq
+T_{\fip}\,T_f(\psi) = \int_{\re{}}f\,\fip\psi\; = T_f(\fip\psi)=T_{\fip f}(\psi)
+\eeq
+since if $f\in L^1$ then $f\,\fip\in L^1$ if $\fip\in \cal D$.
+
+
+\section{The derivative of a distribution}
+
+If $f$ is continuously differentiable then its derivative also gives rise to a distribution $T_{f'}$. 
+What is the relationship between $T_f$ and $T_{f'}$? 
+Note that
+\beq
+T_{f'}(\fip)=\int_{\re{}}f'\,\fip\;dx=-\int_{\re{}} f\,\fip'\;dx=-T_f(\fip')
+ \;\;\;\forall\;\;\fip\in\cal D
+ \eeq
+where by integrating by parts we used that the $\fip$ in $\cal D$ have compact support. This suggests the possibility of extending the notion of derivative to any distribution by means of the formula
+\beq
+T'(\fip):=-T(\fip'),\;\;\;\forall\;\fip\in\cal D,
+\eeq
+where the right-hand side is well defined since if $\fip\in\cal D$ then $\fip'\in\cal D$.
+Note that this operation satisfies the conditions one would expect since they are the same as those satisfied by the usual derivative, considering that we are now in this broader space where the product of functions is not generally defined. Indeed, this operation is linear.
+\beq
+\barr{rcl}
+\lp T+\alf\ti T\rp'(\fip)&=&-\lp T+\alf\ti T\rp(\fip')=-\lp T(\fip')
+                          + \alf \ti T(\fip')\rp \\
+                       & =&T'(\fip)+\alf\ti T'(\fip)
+\earr
+\eeq
+and satisfies the Leibniz rule {\bf as much as possible} since, as we saw, the product of distributions is not generally defined. When it is, that is when one of them is an element of $\cal D$, we have that
+\beq\barr{rcl}
+\lp T_{\fip}\,\ti T\rp'(\psi) &=& -\lp T_{\fip}\,\ti T \rp (\psi')=-\ti T(\fip\,\psi') \\
+                     &=&-\ti T((\fip\,\psi)'-\fip'\psi) \\
+                     &=&-\ti T((\fip\,\psi)')+\ti T(\fip'\psi) \\
+                     &=&\ti T'(\fip\,\psi)+ T_{\fip'}\ti T(\psi) \\
+                     &=& T_{\fip} \,\ti T'(\psi)+ T_{\fip'}\,\ti
+                              T(\psi) \\
+                     &=& \lp T_{\fip}\,\ti T'+ T_{\fip'}\,\ti T\rp(\psi).
+\earr
+\eeq
+But these are the conditions that define a derivation.
+We see therefore that this is an extension of the derivative of a function in $\cal D$. Note that by generalizing the notion of function to that of distribution, we have broadened it so much that now objects like the derivative of discontinuous functions (even at all their points!) are included among these and are even infinitely differentiable themselves [$(T)^{(n)}(\psi)\equiv(-1)^n\,T(\psi^{(n)})$].
+
+
+
+\espa
+\ejem: 
+$T'_a$, the derivative of the Dirac function at $a$, is the distribution such that $T'_a(\fip)=-\fip'(a)\;\;\forall \; \fip \in
+{\cal D}$.
+
+\espa
+We start with the space of infinitely differentiable functions with compact support and also end with an infinitely differentiable space [with a different notion of derivative], it is worth asking if there is a notion of support of a distribution. Obviously, we cannot use the same notion as for continuous functions and we will have to proceed in an indirect way.
+
+Let $O$ be a bounded open set in \re{} and $\cD (O)$ the space of test functions with support in the closure of $O$, $\bar O$. 
+We will say that a distribution $T$ {\bf vanishes in} $O$ if $T[\cD(O)]= 0$, 
+that is, if it vanishes for every test function with support in $O$. We will call the {\bf support of} $T$ the complement of the union of all open sets where $T$ vanishes.
+Since it is the complement of an open set, this set is closed.
+
+\espa
+\ejem: 
+The support of $T_o$ is $\{0\}$. Let $O_n=(1/n,n)\cup
+(-n,-1/n)$, then $\re{}-\bigcup_n O_n=\{o\}$.
+
+\espa
+\ejer: 
+Let $f$ be continuous. Prove that 
+ $support\{f\}=support\{T_f\}$
+
+\ejer: 
+How would you extend the notions of even functions 
+($f(x)=f(-x)$) and
+odd functions ($f(x)=-f(-x)$)? What properties does this extension preserve?
+
+\ejer: 
+Let 
+$$g(x)=\lb\barr{lr} x, & x\geq0 \\ 0, & x\leq0 \earr\rdot$$
+ $x\in\re{}$.
+Clearly $g(x)$ is continuous but not differentiable 
+(in the classical sense).
+Find the first 3 derivatives of $g$ in the sense of distributions.
+
+\ejer: 
+The principal part, in the sense of Cauchy, of a
+function,
+$$ 
+\cP(1/x)(f)=\lim_{\eps\to0}\int_{|x|\geq\eps}\frac 1x\,f(x)\;dx
+$$ 
+ is a distribution.
+How should the formula be interpreted?
+$$
+\lim_{\eps\to0}\frac 1{x-x_0+i\eps}=\cP\lp\frac 1{x-x_0}\rp-i\,\pi\,\del(x-x_0)
+$$
+
+
+
+\espa
+\espa
+
+We have seen that a distribution is differentiable, that is, given
+$T\in\cal D'$
+there exists $S\in\cD'$ such that $T'=S$. It is worth asking the opposite, that is, if given
+$S\in\cD'$ there exists $T$ such that the above formula holds, that is
+\beq
+-T(\fip')=S(\fip)\;\;\;\;\;\forall\;\fip\in\cD.
+\label{9.13}
+\eeq
+%
+This is a generalization to distributions of the simplest of the
+ordinary differential equations already studied and the answer to
+the posed problem is affirmative.
+Note that given $T$ the equation \ron{9.13} defines $S$, that is, its derivative,
+but if we give $S$ then \ron{9.13} does not completely define $T$ since
+this formula only tells us how $T$ acts on test functions ($\fip'$) whose
+integral ($\fip$) is also a test function. This is to be
+expected since in the case of functions the primitive of a function
+is only determined up to a constant.
+This indeterminacy is remedied by giving {\bf generalized initial values}
+which is achieved by requiring that $T(\tita)$ has a given value,
+ $T_{\tita}$, for some $\tita\in\cD$ that is not the primitive of another 
+ function in \cD,
+that is, $\fip(x)=\dip\int_{-\ifi}^x\tita(\ti x)\;d\ti x$ does not have 
+compact support (or $\dip\int_{\re{}}\tita(\ti x)\;d\ti x\neq 0)$.
+
+\espa
+
+\bteo Given $S\in \cD'$, $\tita\in\cD$ such that $\int_{\re{}}\tita\,dx\neq0$ 
+ and $T_{\tita}\in\re{}$, there exists a unique $T$ satisfying
+\beq
+\label{eqn:primitive}
+\barr{rcl}
+-T(\fip')&=&S(\fip)\;\;\;\;\;\;\forall\;\fip\in\cD \\
+T(\tita)&=&T_{\tita}
+\earr
+\eeq
+\eteo
+
+\pru: We only need to know the action of $T$ on an
+arbitrary $\psi\in\cD$. Without loss of generality, take 
+$\tita$ such that $\int_{\re{}}\tita=1$.
+We see that given $\psi\in\cD$ there exists a unique $\lam_{\psi} \in\re{}$ and a unique $\fip_{\psi} \in \cD$ 
+such that, $\psi-\lam_{\psi}\tita=\fip'_{\psi}$, that is,
+it is a test function with a primitive. Indeed, let
+$$
+\fip_{\psi}(x)=\int_{-\ifi}^x(\psi-\lam_{\psi}\tita)\;d\ti x
+$$
+then the condition for $\fip_{\psi}$ to have compact support (and therefore be a test function) is that
+\beq
+0=\int_{-\ifi}^{\ifi}(\psi-\lam_{\psi}\tita)\;d\ti x=\int_{-\ifi}^{\ifi}\psi\; dx-\lam_{\psi}=0
+\eeq
+that is
+\beq
+\lam_{\psi}=\int_{-\ifi}^{\ifi}\psi\;dx.
+\eeq
+Then let
+\beq
+T(\psi)=\lam_{\psi}\,T_{\tita}-S(\fip_{\psi}),
+\eeq
+this distribution satisfies the equations in the theorem's statement.
+Note that $\lam_{\psi}\,T_{\tita}$ is a distribution,
+ 
+\[
+\lam_{\psi}\,T_{\tita}=T_{\tita}\int_{\re{}}\psi\;dx,
+\]
+% 
+and that, 
+
+\[
+T(\theta) = \lam_{\theta}\,T_{\theta} - S(\fip_{\theta}) = T_{\theta} - S(0) = T_{\theta}.
+\]
+%
+Let's see the uniqueness, let $\tilde{T}$ be another distribution satisfying \ref{eqn:primitive}, then the difference,
+$\delta T = T - \tilde{T}$ will satisfy,
+
+\beq
+\barr{rcl}
+-\delta T(\fip')&=&0\;\;\;\;\;\;\forall\;\fip\in\cD \\
+\delta T(\tita)&=&0.
+\earr
+\eeq
+%
+As we have seen that any test function $\psi$ can be written as,
+$\psi = \lambda_{\psi}\theta + \fip'_{\psi}$ we have, 
+
+\[
+\delta T(\psi) = \lambda_{\psi}\delta T(\theta) + \delta T(\fip'_{\psi}) = 0.
+\]
+%
+This concludes the proof of uniqueness.
+%
+From this we conclude that, as in the case of functions, any two
+solutions of \ron{9.13} differ by a constant $\spadesuit$
+
+\section{Note on the completeness of $\cD$ and its dual $\cD {}'$}
+
+Using the notion of convergence introduced in $\cD$, we can define
+an analogous concept to that of a Cauchy sequence:
+\espa
+
+\defi:
+We will say that a sequence of test functions $\{\fip_n\},\;\fip_n\in\cD$
+is {\bf convergent} if:
+
+\noi 1) There exists a compact $K\in\re{}$ such that
+$sop(\fip_n)\su K\;\;\forall\;n$.
+
+\noi 2) Given $p$ and $\eps>0$, there exists $N$ such that for all $n,m>N$ it holds that
+$$
+sup_{x\in K}\lpi f_n^{(p)}(x)-f_m^{(p)}(x)\rpi<\eps
+$$
+
+With this notion of convergence, the space $\cD$ is complete, that is, every convergent sequence converges to an element of \cD.
+To discuss the completeness of $\cD'$, we must introduce similar notions
+in this space. The appropriate notion of convergence is the following.
+
+\espa
+\defi:
+We will say that the sequence $\{T_n\}$, $T_n\in\cD'$
+{\bf converges} to $T\in\cD'$ if $T_n(\fip)\to T(\fip)$ for all $\fip\in\cD$
+\footnote{Again, we are introducing a topology indirectly, this time in $\cD'$.}.
+
+\noi\yaya{Examples}: 
+
+\noi 
+a) Let $T_n$ be the distribution associated with the function 
+$e^{-|x-n|^2}$.
+Then $T_n$ converges to the zero distribution.
+This shows how weak this type of convergence is.
+
+\noi 
+b) Let $T_n$ be the distribution associated with some function $f_n$ 
+satisfying
+\begin{enumerate}
+\item $f_n(t)\geq0$ if $|t|<1/n$ and zero if $|t|\geq1/n$.
+\item $\int_a^b f_n(t)\;dt=1$,
+\end{enumerate}
+Then $T_n\to T_0$, the Dirac function with support at zero.
+
+\espa
+Similarly, we can define the notion of convergence of
+distributions. 
+\espa
+\defi:
+$\{T_n\}$, $T_n\in\cD'$ is {\bf convergent} if for each 
+$\fip\in\cD$ and $\eps>0$ there exists $N$ such that if $n,m>N$ then
+$$ |T_n(\fip)-T_m(\fip)|<\eps$$
+
+\noi With this notion of convergence, the space $\cD'$ is complete.
+ 
+\section{Weak Convergence and Compactness}
+
+In a normed space, $H$, we have the notion of convergence with respect
+to the norm, which we will call strong convergence
+\[
+\{x_n\} \sr{f}{\rightarrow} x \;\; \mbox{ if } \;\;\lim_{n \to \infty} \|x_n - x\|_H = 0.
+\]
+% 
+In these spaces, there is another notion of convergence, called weak convergence,
+which uses the existence of the dual space of $H$, $H'$.
+
+\espa
+\noi
+ \defi: 
+We will say that $\{x_n\}$ {\bf converges weakly} to $x$,
+
+\[
+\{x_n\} \sr{d}{\rightarrow} x, \;\; \mbox{ if } \;\; \sigma(x_n) \rightarrow \sigma(x) \;\;\; \forall \;\; \sigma \in H'.
+\]
+%
+If $H$ is a Hilbert space (which we will assume from now on),
+the Riesz Representation Theorem tells us that $\{x_n\}\sr{d}{\rightarrow}
+x$ if and only if $(x_n,y) \rightarrow (x,y)$  $ \forall \;y \in H$.
+
+\espa
+Clearly, this notion of convergence is the weakest such that the 
+elements
+of $H'$ are continuous functionals [In the sense that $f$ is
+continuous at $x$ if {\bf given any sequence $\{x_n\}$
+converging to $x$} then $\dip\lim_{n\to\ifi}f(x_n)=f(x)$.], where we say 
+that a notion of
+convergence is weaker than another if every sequence that
+converges with respect to
+the second also converges with respect to the first, and there are sequences
+that converge with respect to the first but not with respect to the second.
+Let's see, as an example, that norm convergence, or strong convergence, is in
+fact stronger than the so-called weak convergence.
+Suppose then that $\{x_n\} \sr{f}{\rightarrow} x$, that is,
+$\lim_{n \to \infty} \|x-x_n\|_H =0$, then since the elements of
+$H'$ are bounded linear functionals ($\Longleftrightarrow$ continuous), it holds that 
+\beq 
+|\sigma(x)-\sigma(x_n)| \leq \|\sigma\|_{H'} \|x-x_n\|\;\;\;\;\;\; \forall \;\;\;\;
+\sigma \in H',
+\eeq
+and therefore, 
+\beq
+\lim_{n\to\ifi} |\sigma(x)-\sigma(x_n)| = 0,
+\eeq 
+that is, $\{x_n\} \sr{d}{\rightarrow} 
+x$.
+The following is an example of a sequence that converges weakly
+and not strongly.
+\espa
+\ejer: 
+Show that the sequence $\{x_n = (0,...,0,
+\barr{c} \\ 1\\ ^n \earr,0,...)\}$ 
+converges
+weakly in $l^2$ but not strongly.
+
+The previous example was also used to show that the unit ball 
+in $l^2$ was not compact with respect to strong convergence.
+Will it be weakly compact? That is, given a sequence 
+$\{x_n\} \in B_1(l^2)$, will there exist a subsequence that converges weakly?
+The answer is affirmative and it is one of the most useful tools
+in functional analysis.
+
+\bteo 
+$B_1$ is weakly compact.
+\eteo
+
+\espa
+\noi
+\yaya{Proof}: We will only prove the case where $H$ is separable. Let $\{x_n\}$
+with $\|x_n\|_H \leq 1 $ and $S=\{e_m\}$ a countable orthonormal basis of $H$.
+We will construct, using induction, a subsequence $\{x_n^{\infty}\}$ such that,
+\beq 
+(x_n^{\infty},e_m) \stackrel{n \to \infty}{\rightarrow} \alpha_m \;\;\forall \;e_m \in S.
+\eeq
+Let $m=1$, then $|(x_n,e_1)| \leq \|x_n\|_H\|e_1\|_H \leq 1$.
+We see then that $\{(x_n,e_1)\}$ is a bounded sequence in $\ve C$.
+But the unit ball in $\ve C$ is compact and therefore there will be some subsequence $(x_n^1,e_1)$ converging to some 
+$\alpha_1$ in $\ve C$. 
+Now suppose we have a subsequence 
+$\{x_n^{m-1}\}$ such that 
+\beq 
+(x_n^{m-1},e_p) \rightarrow \alpha_p \;\;\;\;\forall \;1\leq p \leq m-1.
+\eeq
+In the same way as we did for the case $m=1$, considering
+in this case $\{(x_n^{m-1},e_m)\}$, we obtain a subsequence $\{x_n^m\}$
+of $\{x_n^{m-1}\}$ that satisfies,
+\beq 
+(x_n^m,e_m) \stackrel{n \to \infty}{\rightarrow} \alpha_m, 
+\eeq
+which completes the induction.
+We thus have a map $\sigma:\{e_m\} \rightarrow \ve C$ given by 
+$\sigma(e_m) = \alpha_m$,
+since $\{e_m\}$ is a basis, we can extend this map linearly to
+all of $H$. 
+Since $\{x_n^{\infty}\}$ is bounded,
+\beq
+|\sigma(y)| = \lim |(x_n^{\infty},y)| \leq \|y\|_H 
+\eeq
+and $\sigma$ is also bounded, therefore continuous. 
+Using the Riesz Representation Theorem, we know then that there exists $x \in H$ such that
+\beq
+(x,y) = \sigma(y) = \lim(x_n^{\infty},y) \;\;\;\;\;\forall \;y \in H.
+\eeq
+We thus conclude that $\{x_n^{\infty}\}\sr{d}{\rightarrow} x$
+$\spadesuit$ 
+
+In the next chapter, we will use this property to prove an important result in Sobolev spaces.
+
+\recubib{I recommend reading: \cite{Lang}, \cite{Geroch} \cite{Reed}. Although it was a physicist, Dirac, who introduced the concept of distribution, many physicists dismiss them as something {\sl mathematical} and use them as a useful abbreviation for calculations. Usually, the person manipulating them knows what they are doing and does not make mistakes, but it is quite easy to make them if the rules are not carefully followed and the nature of what they are is lost. This, for example, leads to errors such as assigning meaning to the product of two arbitrary distributions. It is not difficult to understand the basic concept of distribution nor that one should not deviate from the operational rules, follow them always and you will not go wrong.}
