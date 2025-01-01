@@ -4,59 +4,59 @@
 \contentsline {subsection}{\numberline {1.1.1}Terminology}{17}{}%
 \contentsline {section}{\numberline {1.2}Derived Concepts}{17}{}%
 \contentsline {subsection}{\numberline {1.2.1}Continuous Maps}{18}{}%
-\contentsline {subsection}{\numberline {1.2.2}Compactness}{19}{}%
-\contentsline {chapter}{\numberline {2}Linear Algebra}{23}{}%
-\contentsline {section}{\numberline {2.1}Vector Spaces}{23}{}%
-\contentsline {subsection}{\numberline {2.1.1}Covectors and Tensors}{25}{}%
-\contentsline {subsection}{\numberline {2.1.2}Complexification}{28}{}%
-\contentsline {subsection}{\numberline {2.1.3}Quotient Spaces}{29}{}%
-\contentsline {section}{\numberline {2.2}Norms}{30}{}%
-\contentsline {subsection}{\numberline {2.2.1}Induced Norms in $V^{\star }$}{32}{}%
-\contentsline {section}{\numberline {2.3}Linear Operator Theory}{33}{}%
-\contentsline {subsection}{\numberline {2.3.1}Matrix Representation}{35}{}%
-\contentsline {subsection}{\numberline {2.3.2}Invariant Subspaces}{35}{}%
-\contentsline {subsubsection}{Application: Schur's Triangulation Lemma}{37}{}%
-\contentsline {subsection}{\numberline {2.3.3}Jordan Canonical Form}{49}{}%
-\contentsline {subsection}{\numberline {2.3.4}Similarity Relation}{52}{}%
-\contentsline {section}{\numberline {2.4}Adjoint Operators}{53}{}%
-\contentsline {section}{\numberline {2.5}Adjoint Operators}{57}{}%
-\contentsline {section}{\numberline {2.6}Unitary Operators}{62}{}%
-\contentsline {section}{\numberline {2.7}Problems}{65}{}%
-\contentsline {chapter}{\numberline {3}Geometry}{67}{}%
-\contentsline {section}{\numberline {3.1}Manifolds}{67}{}%
-\contentsline {section}{\numberline {3.2}Differentiable Functions on $M$}{71}{}%
-\contentsline {section}{\numberline {3.3}Curves in $M$}{73}{}%
-\contentsline {section}{\numberline {3.4}Vectors}{74}{}%
-\contentsline {section}{\numberline {3.5}Vector and Tensor Fields}{76}{}%
-\contentsline {subsection}{\numberline {3.5.1}The Lie Bracket}{77}{}%
-\contentsline {subsection}{\numberline {3.5.2}Diffeomorphisms and the Theory of Ordinary Differential Equations}{77}{}%
-\contentsline {subsection}{\numberline {3.5.3}Covector and Tensor Fields}{78}{}%
-\contentsline {subsection}{\numberline {3.5.4}The Metric}{79}{}%
-\contentsline {subsection}{\numberline {3.5.5}Diffeomorphisms and the Theory of Ordinary Differential Equations}{82}{}%
-\contentsline {subsection}{\numberline {3.5.6}Covector and Tensor Fields}{83}{}%
-\contentsline {subsection}{\numberline {3.5.7}The Metric}{84}{}%
-\contentsline {subsection}{\numberline {3.5.8}Abstract Index Notation}{86}{}%
-\contentsline {section}{\numberline {3.6}Covariant Derivative}{87}{}%
-\contentsline {chapter}{\numberline {4}Ordinary Differential Equations}{93}{}%
-\contentsline {section}{\numberline {4.1}Introduction}{93}{}%
-\contentsline {section}{\numberline {4.2}The Case of a Single First-Order Ordinary Equation}{94}{}%
-\contentsline {subsection}{\numberline {4.2.1}First-Order Autonomous Equation}{94}{}%
-\contentsline {subsection}{\numberline {4.2.2}Extending the Local Solution}{100}{}%
-\contentsline {subsection}{\numberline {4.2.3}The Non-autonomous Case}{102}{}%
-\contentsline {section}{\numberline {4.3}Reduction to First-Order Systems}{103}{}%
-\contentsline {section}{\numberline {4.4}ODE Systems}{105}{}%
-\contentsline {subsection}{\numberline {4.4.1}First Integrals}{106}{}%
-\contentsline {subsection}{\numberline {4.4.2}Fundamental Theorem of ODE Systems}{108}{}%
-\contentsline {subsection}{\numberline {4.4.3}Parameter Dependence, Variation Equation}{109}{}%
-\contentsline {section}{\numberline {4.5}Problems}{112}{}%
-\contentsline {chapter}{\numberline {5}Linear Systems}{115}{}%
-\contentsline {section}{\numberline {5.1}Homogeneous Linear System}{115}{}%
-\contentsline {section}{\numberline {5.2}Inhomogeneous Linear System -- Variation of Constants}{117}{}%
-\contentsline {section}{\numberline {5.3}Homogeneous Linear Systems: Constant Coefficients}{118}{}%
-\contentsline {section}{\numberline {5.4}Problems}{124}{}%
-\contentsline {chapter}{\numberline {6}Stability}{127}{}%
-\contentsline {section}{\numberline {6.1}Problems}{134}{}%
-\contentsline {chapter}{\numberline {7}Proof of the Fundamental Theorem}{137}{}%
-\contentsline {paragraph}{Proof of points $i$) and $ii)$ of the fundamental theorem.}{140}{}%
-\contentsline {paragraph}{Proof of points $i$) and $ii)$ of the fundamental theorem.}{144}{}%
-\contentsline {section}{\numberline {7.1}Problems}{146}{}%
+\contentsline {subsection}{\numberline {1.2.2}Compactness}{20}{}%
+\contentsline {chapter}{\numberline {2}Linear Algebra}{25}{}%
+\contentsline {section}{\numberline {2.1}Vector Spaces}{25}{}%
+\contentsline {subsection}{\numberline {2.1.1}Covectors and Tensors}{27}{}%
+\contentsline {subsection}{\numberline {2.1.2}Complexification}{30}{}%
+\contentsline {subsection}{\numberline {2.1.3}Quotient Spaces}{31}{}%
+\contentsline {section}{\numberline {2.2}Norms}{32}{}%
+\contentsline {subsection}{\numberline {2.2.1}Induced Norms in $V^{\star }$}{34}{}%
+\contentsline {section}{\numberline {2.3}Linear Operator Theory}{35}{}%
+\contentsline {subsection}{\numberline {2.3.1}Matrix Representation}{37}{}%
+\contentsline {subsection}{\numberline {2.3.2}Invariant Subspaces}{37}{}%
+\contentsline {subsubsection}{Application: Schur's Triangulation Lemma}{39}{}%
+\contentsline {subsection}{\numberline {2.3.3}Jordan Canonical Form}{51}{}%
+\contentsline {subsection}{\numberline {2.3.4}Similarity Relation}{54}{}%
+\contentsline {section}{\numberline {2.4}Adjoint Operators}{55}{}%
+\contentsline {section}{\numberline {2.5}Adjoint Operators}{59}{}%
+\contentsline {section}{\numberline {2.6}Unitary Operators}{64}{}%
+\contentsline {section}{\numberline {2.7}Problems}{67}{}%
+\contentsline {chapter}{\numberline {3}Geometry}{69}{}%
+\contentsline {section}{\numberline {3.1}Manifolds}{69}{}%
+\contentsline {section}{\numberline {3.2}Differentiable Functions on $M$}{73}{}%
+\contentsline {section}{\numberline {3.3}Curves in $M$}{75}{}%
+\contentsline {section}{\numberline {3.4}Vectors}{76}{}%
+\contentsline {section}{\numberline {3.5}Vector and Tensor Fields}{78}{}%
+\contentsline {subsection}{\numberline {3.5.1}The Lie Bracket}{79}{}%
+\contentsline {subsection}{\numberline {3.5.2}Diffeomorphisms and the Theory of Ordinary Differential Equations}{79}{}%
+\contentsline {subsection}{\numberline {3.5.3}Covector and Tensor Fields}{80}{}%
+\contentsline {subsection}{\numberline {3.5.4}The Metric}{81}{}%
+\contentsline {subsection}{\numberline {3.5.5}Diffeomorphisms and the Theory of Ordinary Differential Equations}{84}{}%
+\contentsline {subsection}{\numberline {3.5.6}Covector and Tensor Fields}{85}{}%
+\contentsline {subsection}{\numberline {3.5.7}The Metric}{86}{}%
+\contentsline {subsection}{\numberline {3.5.8}Abstract Index Notation}{88}{}%
+\contentsline {section}{\numberline {3.6}Covariant Derivative}{89}{}%
+\contentsline {chapter}{\numberline {4}Ordinary Differential Equations}{95}{}%
+\contentsline {section}{\numberline {4.1}Introduction}{95}{}%
+\contentsline {section}{\numberline {4.2}The Case of a Single First-Order Ordinary Equation}{96}{}%
+\contentsline {subsection}{\numberline {4.2.1}First-Order Autonomous Equation}{96}{}%
+\contentsline {subsection}{\numberline {4.2.2}Extending the Local Solution}{102}{}%
+\contentsline {subsection}{\numberline {4.2.3}The Non-autonomous Case}{104}{}%
+\contentsline {section}{\numberline {4.3}Reduction to First-Order Systems}{105}{}%
+\contentsline {section}{\numberline {4.4}ODE Systems}{107}{}%
+\contentsline {subsection}{\numberline {4.4.1}First Integrals}{108}{}%
+\contentsline {subsection}{\numberline {4.4.2}Fundamental Theorem of ODE Systems}{110}{}%
+\contentsline {subsection}{\numberline {4.4.3}Parameter Dependence, Variation Equation}{111}{}%
+\contentsline {section}{\numberline {4.5}Problems}{114}{}%
+\contentsline {chapter}{\numberline {5}Linear Systems}{117}{}%
+\contentsline {section}{\numberline {5.1}Homogeneous Linear System}{117}{}%
+\contentsline {section}{\numberline {5.2}Inhomogeneous Linear System -- Variation of Constants}{119}{}%
+\contentsline {section}{\numberline {5.3}Homogeneous Linear Systems: Constant Coefficients}{120}{}%
+\contentsline {section}{\numberline {5.4}Problems}{126}{}%
+\contentsline {chapter}{\numberline {6}Stability}{129}{}%
+\contentsline {section}{\numberline {6.1}Problems}{136}{}%
+\contentsline {chapter}{\numberline {7}Proof of the Fundamental Theorem}{139}{}%
+\contentsline {paragraph}{Proof of points $i$) and $ii)$ of the fundamental theorem.}{142}{}%
+\contentsline {paragraph}{Proof of points $i$) and $ii)$ of the fundamental theorem.}{146}{}%
+\contentsline {section}{\numberline {7.1}Problems}{148}{}%

@@ -25,14 +25,14 @@ The elements of \cT, subsets of $X$, are called the {\bf open subsets} of $X$. T
 \ejem: b) Let \cT = \cP($X$), the collection of all subsets of $X$. Clearly, this collection also satisfies the conditions mentioned above and therefore it is also a topology on $X$, the so-called {\bf discrete topology on} $X$. We can say that in this one all the points are arbitrarily separated from each other since, for example, given any point of $X$ there is an open set that separates it from all the others, which consists of only the point in question.
 
 \ejem: c) Let $X$ be the set of real numbers, \re, and let \\
-$\cT = \{O \subseteq \re |\; \mathrm{if} \;r \in O, \, \exists \eps >0 \; \mathrm{such that if} \; |r - r'| < \eps, \; r' \in O}$, that is, the collection of open sets in the usual sense of the real numbers. Let's see that this collection satisfies the conditions to be a topology. Clearly, $\emptyset \in \cT$ (since it has no $r$), as well as \re$ \in \cT$ (since it contains all $r'$), and thus condition 1) is satisfied. Let us examine the second condition: let $r \in \bigcup_I O_{\lambda}$ then $r \in O_{\lambda}$ for some $\lambda$ and therefore there will exist $\eps >0 $ such that all $r'$ with $|r-r'| < \eps $ are also in $O_{\lambda}$, and therefore in $\bigcup_I O_{\lambda}$. 
+$\cT = \{O \subseteq \re |\; \mathrm{if} \;r \in O, \, \exists \eps >0 \; \mathrm{such that if} \; |r - r'| < \eps, \; r' \in O\}$, that is, the collection of open sets in the usual sense of the real numbers. Let's see that this collection satisfies the conditions to be a topology. Clearly, $\emptyset \in \cT$ (since it has no $r$), as well as \re$ \in \cT$ (since it contains all $r'$), and thus condition 1) is satisfied. Let us examine the second condition: let $r \in \bigcup_I O_{\lambda}$ then $r \in O_{\lambda}$ for some $\lambda$ and therefore there will exist $\eps >0 $ such that all $r'$ with $|r-r'| < \eps $ are also in $O_{\lambda}$, and therefore in $\bigcup_I O_{\lambda}$. 
 Finally, the third condition: let $r \in O \cap O'$ then $r$ is in $O$ and therefore there will exist $\eps > 0$ such that all $r'$ with $|r-r'| < \eps $ will be in $O$; as $r$ is also in $O'$, there will exist $\eps'> 0$ such that all $r'$ with $|r-r'| < \eps'$ will be in $O'$. 
 Let $\eps'' = \mathrm{min}\{\eps, \eps' \}$, then all $r'$ with $|r-r'| < \eps''$ will be in $O$ and in $O'$ and therefore in $O \cap O'$, so we conclude that this last set is also in \cT. $\re$ with this topology is called the {\bf real line}.
 
 \ejer: In the real line, as defined in the previous example, find an infinite intersection of open sets that is not open.
 
 \ejem: d) Let $X = \re \times \re \equiv \re^2$, that is, the Cartesian product of \re  with itself ---the set of all pairs $(x,y)$, with $x,y \in \re$--- and let \\
-$\cT = \{O \in \reˆ2 |\; \mathrm{if} (x,y) \in O, \, \exists \eps >0 \mathrm{such that if} |x - x'|+|y-y'| < \eps, \; (x',y') \in O \}$. Following the previous example, it can be seen that this is also a topological space and that this is the topology we usually use in $\re^2$
+$\cT = \{O \in \re^2 |\; \mathrm{if} (x,y) \in O, \, \exists \eps >0 \mathrm{such that if} |x - x'|+|y-y'| < \eps, \; (x',y') \in O \}$. Following the previous example, it can be seen that this is also a topological space and that this is the topology we usually use in $\re^2$
 
 \defi: A {\bf metric space} is a pair $(X,d)$ consisting of a set $X$ and a map $d: X \times X \to \re$, usually called \textbf{distance}, satisfying the following conditions for all $x, x', x'' \in X$:
 
@@ -134,7 +134,7 @@ a collection of subsets of $X$ parameterized by a continuous
 or discrete variable $\lambda$. We say that this collection {\bf covers}
 $A$ if $A \subset \cup_{\lambda}A_{\lambda}$. In such a case, we also say that $C$ is a {\bf cover} of $A$. When $A$ is a topological space and the sets $\{ A_\lambda \}$ are open, we say that $C$ is an {\bf open cover} of $A$. Finally, a subcollection of $C$ that also covers $A$ is called a {\bf subcover}. 
 
-\defi: We say that a set $A$ of a topological space is {\bf compact} if given any collection
+\defi: We say that a subset $A$ of a topological space is {\bf compact} if given any collection
 $\{A_{\lambda}\}$ of {\it open sets} that covers $A$, there exists a {\it finite}
 subcollection of these $A_{\lambda}$ that also covers $A$.
 
@@ -162,8 +162,11 @@ because, for example, the following is an open cover of $A$ that has no finite s
 \bpru
 
 Let $\{A_{\lambda}\}$ be an open cover of $[0,1]$. 
-Consider the set $S$ of all $x$ such that $[0,x]$ is covered by \textit{finitely} many $A_\lambda$. This set is not empty since $0$ is in some open set of the covering, and therefore there exists $x > 0$ such that $[0,x]$ is inside this open set. Furthermore it is bounded above by $1$.
-Therefore, $S$ is a non-empty upper-bounded real set, so by the least-upper-bound property of $\re$ it has a least upper bound. Let $a$ be that number and $A_{\lambda_0}$ be an element of the cover such that $a \in A_{\lambda_0}$. Adding this set to the finite subcovering we still get a finite subcover containing $a$, and therefore also some element $b>a$. Contradicting the fact that $a$ was a least upper bound unless $a=1$.
+Consider the set $S$ of all $x \in [0,1]$ such that $[0,x]$ is covered by \textit{finitely} many $A_\lambda$. We shall see that $S=[0,1]$.
+This set is not empty since $0$ is in some open set of the covering, and therefore there exists $x > 0$ such that $[0,x]$ is inside this open set. Furthermore it is bounded above by $1$.
+Therefore, $S$ is a non-empty upper-bounded real set, so by the least-upper-bound property of $\re$ it has a least upper bound. Let $a$ be that number and $A_{\lambda_0}$ be an element of the cover such that $a \in A_{\lambda_0}$. We assume $a < 1$ otherwise we would be done.
+Adding this set to the finite subcovering we still get a finite subcover containing $a$, and therefore also some other element $1> b>a$. 
+Contradicting the fact that $a$ was a least upper bound.
 
 \epru
 
