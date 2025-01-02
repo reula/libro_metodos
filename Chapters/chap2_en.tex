@@ -577,14 +577,9 @@ e^{\ve{A}} = \dip \lim_{m\to\infty} \left(\ve{I} + \frac{\ve{A}}m\right)^m.
 To describe certain aspects of linear operators, it is convenient 
 to introduce the following matrix representation. \index{matrices!representación matricial}
 
-Let $\{\ve{u}_i\}$, $i=1,\ldots,n$ be a basis of $V$, that is, a
-set of linearly independent vectors of $V$ 
-[$ \sum_{i=1}^n c^i\,\ve{u}_i=0 \Longrightarrow c^i=0$] 
-that span it 
-[if $\ve{v} \in V$, there exist numbers 
-$\{v^i\}$, $i=1,\ldots,n$ such that $\ve{v}= \sum_{i=1}^n v^i\,\ve{u}_i)$]. 
+Let $\{\ve{u}_i\}$, $i=1,\ldots,n$, be a basis of $V$. 
 Applying the
-operator $\ve{A}$ to a member of the basis $\ve{u}_i$ we obtain a vector
+operator $\ve{A}$ to a member of the basis $\ve{u}_i$, we obtain a vector
 $\ve{A}(\ve{u}_i)$ which in turn can be expanded in the basis,
 $\ve{A}(\ve{u}_i)= \sum_{j=1}^n A^j{}_i\,\ve{u}_j$. 
 The matrix thus constructed, $A^j{}_i$, is a
@@ -592,11 +587,10 @@ representation of the operator $\ve{A}$ in that basis.
 In this language,
 we see that the matrix $A^j{}_i$ transforms the vector of components
 $\{v^i\}$ into the vector of components $\{A^j{}_iv^i\}$.
-Given a basis, $\{\ve{u}_i\}$, and a matrix $A^j{}_i$, we can construct a
-linear operator as follows: Given the basis, we define its
-co-basis, that is, a basis in $V^*$ as $\{\ve{\theta}^i\}$,
-$i=1,\ldots,n$, such that $\ve{\theta}^i(\ve{u}_j)=\delta^i_j$, then $\ve{A} =
-\sum_{i,j=1}^n A^j{}_i\, \ve{u}_j\ve{\theta}^i$.
+Conversely, given a basis, $\{\ve{u}_i\}$, and a matrix $A^j{}_i$, we can construct a
+linear operator as follows: let $\{\ve{\theta}^i\}$ be the associated co-basis,
+such that $\ve{\theta}^i(\ve{u}_j)=\delta^i_j$. Then $\ve{A} =
+\sum_{i,j=1}^n A^j{}_i\, \ve{u}_j \otimes \ve{\theta}^i$ defines a linear operator whose matrix coefficients in the basis are precisely $A^j_{}i$.
 
 If we change the basis, the matrices representing the operators
 will change. Indeed, if we take another basis $\{\hat{\ve{u}}_i\}$ and
@@ -604,14 +598,14 @@ write its components with respect to the previous basis as
 $\hat{\ve{u}}_i= P^{k}{}_i\ve{u}_k$, and therefore, $\hat{\theta}^{j} = (P^{-1})^{j}{}_{l}\theta^{l}$, 
 then the relation between the components of the operator $\ve{A}$ in both bases is given by
 \beq
-\hat A^j{}_i= A(\hat{\theta}^{j},\hat{\ve{u}}_i) = (P^{-1})^{j}{}_{l} \,A^l{}_k\,P^k{}_i\;\;\;\;\mbox{o}\;\;\;\;\hat A=
+\hat A^j{}_i= A(\hat{\theta}^{j},\hat{\ve{u}}_i) = (P^{-1})^{j}{}_{l} \,A^l{}_k\,P^k{}_i\;\;\;\;\mbox{or}\;\;\;\;\hat A=
 P^{-1}\,A\,P
 \eeq
 \noi that is, $\hat A$ and $A$ are \textbf{similar matrices}.
 \espa
 
-\ejer: See, from its definition (equation (\ref{eqn:2_traza})), that in a basis we have,
-$tr{A}= \sum_{i=1}^n A^i{}_i$.
+\ejer: From the definition of the trace (equation (\ref{eqn:2_traza})), prove that in terms of a basis we have
+$\text{tr}{A}= \sum_{i=1}^n A^i{}_i$.
 
 \ejer: See with an example in two dimensions that the definition of determinant conforms with the usual one when we use a basis.
 
@@ -627,7 +621,7 @@ of $\ve{A}$ if $\ve{A}W \subseteq W$.
 The invariant subspaces of an operator are important because they allow us to understand its action.
 Note that given any operator $\ve{A}$, there are always at least two invariant spaces, $V$ and $\{\ve{0}\}$, and in reality, many more. For example, as we will see later, given any number between $1$ and $n$ (=$\dim V$), there exists an invariant subspace with that number as its dimension. The ones that truly encode the action of the operator are its 
 \textbf{irreducible}~\index{subespacio invariante!irreducible} 
-invariant subspaces, that is, those that cannot be further decomposed into invariant subspaces such that their direct sum is the whole $V$~\footnote{A vector space is said to be the direct sum of two of its subspaces, $W_1$ and $W_2$, and is denoted by $V=W_1 \oplus W_2$ if each element of $V$ can be uniquely written as the sum of two elements, one from each of these subspaces.}
+invariant subspaces, that is, those that cannot be further decomposed into invariant subspaces such that their direct sum is the whole $V$\footnote{A vector space is said to be the direct sum of two of its subspaces, $W_1$ and $W_2$, and is denoted by $V=W_1 \oplus W_2$ if each element of $V$ can be uniquely written as the sum of two elements, one from each of these subspaces.}.
 \espa
 
 \ejem: Let $V$ with $\dim(V)=2$ and $\ve{A}: V \to V$ given by, $\ve{A}(\ve{u_1}) = \lambda_1 \ve{u}_1$,
@@ -642,14 +636,14 @@ $V= Span\{\ve{u}_1\} \oplus Span\{\ve{u}_2\}$. Since each of these invariant sub
 $\ve{A}(\ve{u}_1) = \ve{u}_1$,  $\ve{A}(\ve{u}_2) = a \ve{u}_2 + \ve{u}_1$. What happens when $a=1$?
 
 We will study in detail the one-dimensional invariant subspaces, note that they are irreducible. 
-To study the invariant spaces, it is convenient to study the invariant subspaces of the operator when its action is extended to $V^{\Complex}$, that is, the 
+To study the invariant spaces, it is convenient to consider the extended action of the linear operator to $V^{\Complex}$, that is, the 
 \textbf{complexification}~\index{complexificación} of $V$.
 
-Let's see that an operator always has at least one one-dimensional invariant subspace (and therefore always has a non-trivial irreducible invariant subspace).
+Let's see that an operator always has at least a one-dimensional invariant subspace (and therefore always has a non-trivial irreducible invariant subspace).
 
 \begin{lem}
-Given $\ve{A}: V^{\Complex} \to V^{\Complex}$, where $V^{\Complex}$ is finite-dimensional, there always exists a $\ve{u} \in V^{\Complex}$
-and a $\lambda \in \Complex$ such that,
+Given $\ve{A}: V^{\Complex} \to V^{\Complex}$, where $V^{\Complex}$ is finite-dimensional, there always exists $\ve{u} \in V^{\Complex}$
+and $\lambda \in \Complex$ such that
 \beq
 (\ve{A}-\lambda \ve{I})\ve{u}=0   
 \label{eqn:2_av_av}
@@ -658,8 +652,8 @@ and a $\lambda \in \Complex$ such that,
 
 \pru:
 
-A solution to this equation consists of a scalar $\lambda$, called the {\bf eigenvalue}~\index{autovalor} of
-the operator $\ve{A}$, and a vector $\ve{u}$, called the {\bf eigenvector}~\index{autovector}
+A solution to this equation consists of a scalar $\lambda$, called an {\bf eigenvalue}~\index{autovalor} of
+the operator $\ve{A}$, and a vector $\ve{u}$, called an {\bf eigenvector}~\index{autovector}
 of the operator $\ve{A}$. The subspace of $V^{\Complex}$ given by 
 $\{\alpha \ve{u}\;|\; \alpha \in \Complex\}$ is the invariant subspace sought.
 
@@ -735,7 +729,7 @@ and the operator from $V_{n-1} \to V_{n-1}$ given by $\ve{A}_1 :=(\ve{I} - \ve{u
 Note that as we form an orthonormal basis, we already know the first member of the co-basis, $\ve{\theta}^1 = (\ve{u}_1,\cdot)$.
 %
 The operator $P_1:=\ve{I} - \ve{u}_1 \ve{\theta}^1$ satisfies $P_1(\ve{u}_1)=0$, 
-$(P_1(\ve{v}),\ve{u}_1)=0$ and $P_1\cdot P_1 = P_1$, that is, it is a projection operator in the subspace $V_{n-1}$.
+$(P_1(\ve{v}),\ve{u}_1)=0$ and $P_1\cdot P_1 = P_1$, that is, it is a projection operator to the subspace $V_{n-1}$.
 
 We then have that $\ve{A}_1 : V_{n-1} \to V_{n-1}$. Therefore, in this space, we can also pose the eigenvalue-eigenvector equation, 
 
@@ -794,7 +788,7 @@ What does it mean, in terms of the space $V$ and the operator $\ve{A}$, that $\v
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Continuing now with the study of invariant subspaces.
+We continue now with the study of invariant subspaces.
 If $\det(\ve{A}-\lambda\ve{I})$ has $1\leq m \leq n$ distinct roots, 
 $\{\lambda_i\}, \; i=1,\ldots,m$, then there will be at least one complex eigenvector 
 $\ve{u}_i$ associated with each of them. 
@@ -810,7 +804,7 @@ these eigenvectors are linearly independent.
 
 \pru:
 Suppose by contradiction that they are not, and therefore there exist constants 
-$c^i\in\ve{C}$, $i=1,\ldots,m-1\,$, such that
+$c^i\in\mathbb{C}$, $i=1,\ldots,m-1\,$, such that
 \beq
 \ve{u}_m=\sum_{i=1}^{m-1}\; c^i\,\ve{u}_i   \label{2_***}
 \eeq
@@ -826,7 +820,7 @@ or,
 We conclude that $\{\ve{u}_i\}\;\;i=1,\ldots,m-1$
 are linearly dependent. Due to~\ref{2_***} and the hypothesis that the
 eigenvalues are distinct, at least one of the coefficients must be non-zero,
-and therefore we can solve for one of the remaining eigenvectors in terms of the others $m-2$. Repeating this procedure
+and therefore we can solve for one of the remaining eigenvectors in terms of the other $m-2$. Repeating this procedure
 $(m-1)$ times, we arrive at the conclusion that $\ve{u}_1=0$, which is a
 contradiction since, as we have seen, the eigenvector equation always has
 a non-trivial solution for each distinct eigenvalue\epru
@@ -842,9 +836,9 @@ In that basis, the matrix representation of $\ve{A}$ is diagonal, that is, $A^j{
 Each of its eigenvectors generates an irreducible invariant subspace,
 and together they generate $V^{\Complex}$. In each of them, the operator $\ve{A}$
 acts merely by multiplication by $\lambda_i$. Note that the $\lambda_i$ are
-generally complex, and therefore such multiplication is actually a rotation
-plus a dilation. Note that, unlike the basis of Schur's triangulation lemma,
-this is not generally orthogonal with respect to any given inner product.~\footnote{Note, however, that it can be \textsl{declared} orthogonal by defining
+generally complex, and therefore such multiplication is actually a rotation and a dilation. 
+Note that, unlike the basis of Schur's triangulation lemma,
+this is not generally orthogonal with respect to a given inner product.\footnote{Note, however, that it can be \textsl{declared} orthogonal by defining
 the inner product as 
 $(\ve{u},\ve{v}) = \sum_{i=1}^{n} \ve{\theta}^i(\bar{\ve{u}})\ve{\theta}^i(\ve{v})$}
 \espa
@@ -875,8 +869,8 @@ the form $z\ve{u}_1 + \bar{z}\ve{u}_2$, and the action of $\ve{A}$ is simply
 multiplication by $\imath$ of $z$.
 \espa
 
-If the multiplicity of any of the roots $\det(\ve{A}-\lambda\ve{I})=0$ is 
-greater than one, there will be fewer eigenvalues than the dimension of the space, and therefore we will not be guaranteed to have enough eigenvectors to form a basis, as we can only guarantee the existence of one for each eigenvalue.
+If the multiplicity of any of the roots of $\det(\ve{A}-\lambda\ve{I})=0$ is 
+greater than one, there will be fewer eigenvalues than the dimension of the space, and therefore we will not be guaranteed to have enough eigenvectors to form a basis, as we can only guarantee the existence of one independent eigenvector for each eigenvalue.
 
 \ejem: Let $V$ be the set of 2-tuples of real numbers with a generic element
 $(a,b)$ and let $\ve{A}$ be given by $\ve{A}(a,b) = (\lambda a+\epsilon b,\lambda b)$. Taking a basis, 
@@ -889,7 +883,7 @@ $\ve{e}_2=(0,1)$, we see that its matrix representation is:
      \earr\right)
 \eeq
 %
-We see that this operator has only one eigenvalue with multiplicity 2. But it has only one eigenvector, proportional to $\ve{e}_1=(1,0)$. For future use, note that if we define 
+We see that this operator has only one eigenvalue with multiplicity 2. But it has only one independent eigenvector, proportional to $\ve{e}_1=(1,0)$. For future use, note that if we define 
 $\ve{\Delta} = \ve{A}-\lambda \ve{I}$, then $\ve{e}_{1} = \frac{1}{\epsilon}\ve{\Delta}\ve{e}_2$,
 and therefore, in the basis $\{\ve{\tilde{e}}_{1} = \ve{e}_{1}, \ve{\tilde{e}}_{2} = \frac{1}{\epsilon}\ve{e}_{2}\}$,
 the operator is represented by the matrix,
@@ -959,7 +953,7 @@ $(\ve{A} - \lambda_2 \ve{I})^{p_2}\dots (\ve{A} - \lambda_s \ve{I})^{p_s}\ve{v}_
 but since $\lambda_i$, $i \neq 1$, is not an eigenvalue of $\ve{A}$ in $W_{\lambda_1}$,
 the operator 
 $(\ve{A} - \lambda_2 \ve{I})^{p_2}\dots (\ve{A} - \lambda_s \ve{I})^{p_s}$ is 
-invertible~\footnote{
+invertible\footnote{
 Note that $(\ve{A} - \lambda_i \ve{I})^{s}|_{W_{\lambda_j}}$ 
 is invertible if its determinant is non-zero. 
 But 
@@ -1057,7 +1051,7 @@ these eigenvectors are linearly independent.
 
 \pru:
 Suppose by contradiction that they are not, and therefore there exist constants 
-$c^i\in\ve{C}$, $i=1,\ldots,m-1\,$, such that
+$c^i\in\mathbb{C}$, $i=1,\ldots,m-1\,$, such that
 \beq
 \ve{u}_m=\sum_{i=1}^{m-1}\; c^i\,\ve{u}_i   \label{2_***}
 \eeq
@@ -1091,7 +1085,7 @@ and together they generate $V^{\Complex}$. In each of them, the operator $\ve{A}
 acts merely by multiplication by $\lambda_i$. Note that the $\lambda_i$ are
 generally complex, and therefore such multiplication is actually a rotation
 plus a dilation. Note that, unlike the basis of Schur's triangulation lemma,
-this is not generally orthogonal with respect to any given inner product.~\footnote{Note, however, that it can be \textsl{declared} orthogonal by defining
+this is not generally orthogonal with respect to any given inner product.\footnote{Note, however, that it can be \textsl{declared} orthogonal by defining
 the inner product as 
 $(\ve{u},\ve{v}) = \sum_{i=1}^{n} \ve{\theta}^i(\bar{\ve{u}})\ve{\theta}^i(\ve{v})$}
 \espa
@@ -1206,7 +1200,7 @@ $(\ve{A} - \lambda_2 \ve{I})^{p_2}\dots (\ve{A} - \lambda_s \ve{I})^{p_s}\ve{v}_
 but since $\lambda_i$, $i \neq 1$, is not an eigenvalue of $\ve{A}$ in $W_{\lambda_1}$,
 the operator 
 $(\ve{A} - \lambda_2 \ve{I})^{p_2}\dots (\ve{A} - \lambda_s \ve{I})^{p_s}$ is 
-invertible~\footnote{
+invertible\footnote{
 Note that $(\ve{A} - \lambda_i \ve{I})^{s}|_{W_{\lambda_j}}$ 
 is invertible if its determinant is non-zero. 
 But 
@@ -1530,7 +1524,7 @@ cycle and the upper index indexes the different cycles within each $W_{\lambda_i
 \defi: {\sl Let $\ve{A}:V\to V$ be a linear operator.
 We will say that $\ve{A}$ is of Jordan type
 \index{Jordan!de tipo} with eigenvalue $\lambda$ if
-there exists a basis $\{\ve{u}_i\}$ of $V$ such that~\footnote{
+there exists a basis $\{\ve{u}_i\}$ of $V$ such that\footnote{
 In the sense that $\ve{A}(\ve{v}) =\lambda \sum_{i=1}^n \; \ve{u}_i \ve{\theta}^i(\ve{v})
  + \sum_{i=2}^{n}\; \ve{u}_{i} \ve{\theta}^{i-1}(\ve{v}) \;\; \forall \ve{v} \in V$}
 
@@ -1567,9 +1561,9 @@ Therefore, we can summarize the results found earlier in the
 following theorem about the matrix representations of any operator
 acting in a finite-dimensional space.
 
-\bteo{de Jordan} Let $\ve{A}:V\to V$ be a linear operator
+\bteo{Jordan's} Let $\ve{A}:V\to V$ be a linear operator
 acting in a complex vector space $V$. Then, there exists a 
-unique decomposition into a direct sum~\footnote{Recall that a vector space 
+unique decomposition into a direct sum\footnote{Recall that a vector space 
 $V$ is said to be the direct sum of two vector spaces $W$ and $Z$,
 and we denote it as $V = W \oplus Z$ if each vector in $V$ can be obtained in
 a unique way as the sum of an element in $W$ and another in $Z$.} 
@@ -1588,7 +1582,7 @@ $C^k_{\lambda_i}$ an operator $\ve{A}_i:C^k_{\lambda_i}\to C^k_{\lambda_i}$,
 which is of Jordan type
 with $\lambda_i$ being one of the roots of the polynomial of degree $n_i$,
 \beq
-det(\ve{A_i}-\lambda_i \ve{I}) = 0.
+\det(\ve{A_i}-\lambda_i \ve{I}) = 0.
 \eeq
 \eteo
 
@@ -1604,10 +1598,10 @@ Show that the roots, $\lambda_i$, that appear
 in the operators $\ve{A}_i$ are invariant under similarity transformations, that is, $\lambda_i(\ve{A})=\lambda_i(\ve{P}\ve{A}\ve{P}^{-1})$.
 \espa
 \ejem: 
-Let $\ve{A}:\ve{C}^3\to \ve{C}^3$, then $det(\ve{A}-\lambda\ve{I})$
+Let $\ve{A}:\mathbb{C}^3\to \mathbb{C}^3$, then $\det(\ve{A}-\lambda\ve{I})$
 is a polynomial of degree 3, and therefore has three roots. If these are distinct, there will be at least three
-invariant and irreducible subspaces of $\ve{C}^3$, but
-$dim\ve{C}^3=3$ and therefore each of them has $n_i=1$. The
+invariant and irreducible subspaces of $\mathbb{C}^3$, but
+$\dim \mathbb{C}^3=3$ and therefore each of them has $n_i=1$. The
 Jordan canonical form is then,
 
 \noi If two of them coincide, we have two possibilities: either we have
@@ -1636,7 +1630,7 @@ If all three roots coincide, then there will be three possibilities,
                         \lap & 0  &  0  \\
                          0 &  \lap  &  1  \\
                          0  &  0  &  \lap
-                            \earr\right)\;and\;\;  & \left(\barr{ccc}
+                            \earr\right)\;\text{and}\;\;  & \left(\barr{ccc}
                                                     \lap & 1  &  0  \\
                                                        0 &  \lap  &  1  \\
                                                          0  &  0  &  \lap
@@ -1651,18 +1645,18 @@ dimensions. This case is not generic, in the sense that any
 perturbation in the system ---that is, any minimal change in
 the equations--- separates the roots, making them distinct. 
 
-Let $\ve{A}:\ve{C}^2\to\ve{C}^2$. In this case, the characteristic polynomial
-$det(\ve{A}-\lambda\ve{I})$ has only two roots, which we will assume are coincident, $\lambda_1=\lambda_2=\lambda$. We
+Let $\ve{A}:\mathbb{C}^2\to\mathbb{C}^2$. In this case, the characteristic polynomial
+$\det(\ve{A}-\lambda\ve{I})$ has only two roots, which we will assume are coincident, $\lambda_1=\lambda_2=\lambda$. We
 find ourselves with two possibilities: either there are two linearly independent eigenvectors
 $\ve{u}_1$ and $\ve{u}_2$, in which case $V=B_1\oplus
 B_2$ and $\ve{A}$ is diagonalizable
-($A=diag(\lambda,\lambda)=\ve{I}\lambda)$, 
+($A=\text{diag} (\lambda,\lambda)=\ve{I}\lambda)$, 
 or there is only one eigenvector
 $\tilde{\ve{u}}_1$. In this case, let $\tilde{\ve{u}}_2$ be any vector
 linearly independent of $\tilde{\ve{u}}_1$, then
 $\ve{A}\tilde{\ve{u}}_2=c^1\tilde{\ve{u}}_1+c^2\tilde{\ve{u}}_2 $
 for some scalars
-$c^1$ and $c^2$ in $\ve{C}$. Calculating the determinant of
+$c^1$ and $c^2$ in $\mathbb{C}$. Calculating the determinant of
 $\ve{A}-\tilde{\lambda}\ve{I}$ in this basis, we get
 $(\lambda-\tilde{\lambda})(c^2-\tilde{\lambda})$, but $\lambda$ is a
 double root and therefore $c^2=\lambda$.
@@ -1677,8 +1671,8 @@ $\ve{u}_1=\tilde{\ve{u}}_1 \;,\;\; \ve{u}_2=c^1\tilde{\ve{u}}_2$, we obtain
 \eeq
 and therefore 
 \beq
-\ve{A}=\lambda (\ve{u}_1\oplus\ve{\theta}^1+\ve{u}_2\oplus\ve{\theta}^2)
-+\ve{u}_1\oplus\ve{\theta}^2,
+\ve{A}=\lambda (\ve{u}_1\otimes\ve{\theta}^1+\ve{u}_2\otimes\ve{\theta}^2)
++\ve{u}_1\otimes\ve{\theta}^2,
 \eeq
 \noi where $\{\ve{\theta}^i\}$ is the co-basis of the basis $\{\ve{u}_i\}$.
 
@@ -1688,8 +1682,8 @@ $(\ve{A}-\lambda\ve{I})\ve{u}_1=0 $, that is, $\Delta^2 = (\ve{A}-\lambda
 
 As we will see later in physical applications, the
 invariant subspaces have a clear physical meaning,
-they are called normal modes ---one-dimensional case--- and 
-cycles ---in other cases.
+they are called \textit{normal modes} in the one-dimensional case and 
+\textis{cycles} in other cases.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1699,8 +1693,8 @@ cycles ---in other cases.
 
 
 In physics applications, the following equivalence relation is common: [See box at the end of the chapter.] 
-We will say that the operator $\ve{A}$ is similar to
-the operator $\ve{B}$ if there exists another operator $\ve{P}$, invertible, such
+We will say that the operator $\ve{A}$ is \textbf{similar} to
+the operator $\ve{B}$ if there exists an invertible operator $\ve{P}$ such
 that 
 \beq
 \ve{A}=\ve{P}\ve{B}\ve{P}^{-1}.
@@ -1715,10 +1709,10 @@ if we first apply $\ve{B}$ and then {\it rotate} with $\ve{P}$.
 \noi a) Prove that similarity is an equivalence relation.
 
 \noi b) Prove that the functions and maps defined above
-are the same in the different equivalence classes, that is,
+are invariant within the equivalence classes, that is,
 \beq\barr{rcl}
-  det(\ve{P}\ve{A}\ve{P}^{-1}) & = & det(\ve{A})\\
-  tr(\ve{P}\ve{A}\ve{P}^{-1})  & = & tr(\ve{A}) \\
+  \det(\ve{P}\ve{A}\ve{P}^{-1}) & = & \det(\ve{A})\\
+  \text{tr}(\ve{P}\ve{A}\ve{P}^{-1})  & = & \text{tr}(\ve{A}) \\
   e^{\ve{P}\ve{A}\ve{P}^{-1}}  & = & \ve{P} e^{\ve{A}}\ve{P}^{-1}.
   \earr
 \eeq
@@ -1925,7 +1919,7 @@ If we choose a basis such that $t_{ik} = \delta_{ik}$, the Kronecker delta, the 
 A particularly interesting subset of operators is those for which 
 $\ve{A} = \ve{A}^{\star}$. These operators are called 
 \textbf{Hermitian}~\index{operadores!Hermitianos} or 
-\textbf{Self-adjoint}~\index{operadores!Autoadjuntos}.~\footnote{
+\textbf{Self-adjoint}~\index{operadores!Autoadjuntos}.\footnote{
 In the case of infinite dimension, these names do not coincide for
 some authors.}
 
@@ -2217,7 +2211,7 @@ If we choose a basis such that $t_{ik} = \delta_{ik}$, the Kronecker delta, the 
 A particularly interesting subset of operators is those for which 
 $\ve{A} = \ve{A}^{\star}$. These operators are called 
 \textbf{Hermitian}~\index{operadores!Hermitianos} or 
-\textbf{Self-adjoint}~\index{operadores!Autoadjuntos}.~\footnote{
+\textbf{Self-adjoint}~\index{operadores!Autoadjuntos}.\footnote{
 In the case of infinite dimension, these names do not coincide for
 some authors.}
 
