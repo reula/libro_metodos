@@ -1,43 +1,62 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Geometric interpretation of the quotient space.}}{32}{}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram of the dual operator.}}{55}{}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagram of the star operator.}}{57}{}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagram of the dual operator.}}{59}{}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Diagram of the star operator.}}{61}{}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Normal and tangent vectors to the sphere.}}{63}{}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Geometric interpretation of the quotient space.}}{34}{}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagram of the dual operator.}}{57}{}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagram of the star operator.}}{59}{}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagram of the dual operator.}}{61}{}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Diagram of the star operator.}}{63}{}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Normal and tangent vectors to the sphere.}}{65}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces An atlas of the sphere.}}{70}{}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Relationship between charts.}}{71}{}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Sequences in $M$.}}{71}{}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Example of a non-Hausdorff manifold.}}{73}{}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Composition of the map of a chart with a function.}}{74}{}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces The relationship between the $f_i$.}}{74}{}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Differentiability of curves in $M$.}}{75}{}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Definition of vector.}}{78}{}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces An atlas of the sphere.}}{72}{}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Relationship between charts.}}{73}{}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Sequences in $M$.}}{73}{}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example of a non-Hausdorff manifold.}}{75}{}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Composition of the map of a chart with a function.}}{76}{}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces The relationship between the $f_i$.}}{76}{}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Differentiability of curves in $M$.}}{77}{}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Definition of vector.}}{80}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Geometric interpretation of the equation $f(x)=x^{1/2}$.}}{96}{}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Proof of Lemma \ref {lem}.}}{99}{}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Proof of the uniqueness of the solution.}}{100}{}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Different solutions of the bacterial growth equation}}{102}{}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Global uniqueness.}}{103}{}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Extending the solution.}}{103}{}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces The Physical Pendulum.}}{108}{}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces The Physical Pendulum Manifold.}}{109}{}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Stability.}}{130}{}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Physical pendulum with friction.}}{132}{}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces The norm $\rho (x,x)$.}}{133}{}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Neighborhoods used in the proof of the Fundamental Theorem.}}{143}{}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Environments used in the proof of the Fundamental Theorem.}}{147}{}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces A Cauchy sequence.}}{151}{}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Another Cauchy sequence.}}{152}{}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Lebesgue Integral.}}{153}{}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces The perpendicular space.}}{161}{}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Parallelogram law.}}{162}{}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Geometric interpretation of the equation $f(x)=x^{1/2}$.}}{98}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Proof of Lemma \ref {lem}.}}{101}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Proof of the uniqueness of the solution.}}{102}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Different solutions of the bacterial growth equation}}{104}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Global uniqueness.}}{105}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Extending the solution.}}{105}{}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces The Physical Pendulum.}}{110}{}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces The Physical Pendulum Manifold.}}{111}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Stability.}}{132}{}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Physical pendulum with friction.}}{134}{}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces The norm $\rho (x,x)$.}}{135}{}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Neighborhoods used in the proof of the Fundamental Theorem.}}{145}{}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Environments used in the proof of the Fundamental Theorem.}}{149}{}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces A Cauchy sequence.}}{153}{}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Another Cauchy sequence.}}{154}{}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Lebesgue Integral.}}{155}{}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces The perpendicular space.}}{163}{}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Parallelogram law.}}{164}{}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Characteristic curves.}}{208}{}%
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Intersection of solutions.}}{209}{}%
+\contentsline {figure}{\numberline {11.3}{\ignorespaces Constructing the solution from the curve $\gamma $.}}{210}{}%
+\contentsline {figure}{\numberline {11.4}{\ignorespaces Constructing the local solution.}}{213}{}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {12.1}{\ignorespaces The drum membrane.}}{217}{}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Mixed problem.}}{219}{}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Null coordinate system.}}{230}{}%
+\contentsline {figure}{\numberline {13.2}{\ignorespaces Wave propagation.}}{231}{}%
+\contentsline {figure}{\numberline {13.3}{\ignorespaces General homogeneous solution in 1+1 dimensions.}}{233}{}%
+\contentsline {figure}{\numberline {13.4}{\ignorespaces General inhomogeneous solution.}}{234}{}%
+\contentsline {figure}{\numberline {13.5}{\ignorespaces Energy inequality}}{236}{}%
+\contentsline {figure}{\numberline {13.6}{\ignorespaces Energy inequality, perspective view.}}{236}{}%
+\contentsline {figure}{\numberline {13.7}{\ignorespaces Bubble-shaped region}}{239}{}%
+\contentsline {figure}{\numberline {13.8}{\ignorespaces Characteristic cone}}{240}{}%
+\contentsline {figure}{\numberline {13.9}{\ignorespaces Construction of $S$ and a singularity in $S$}}{243}{}%
+\contentsline {figure}{\numberline {13.10}{\ignorespaces Domain of dependence of a fluid}}{244}{}%

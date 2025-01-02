@@ -1,0 +1,752 @@
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%%ultima modificación 28/05/2013
+
+
+\chapter{Symmetric--Hyperbolic Equations}
+
+\section{Introduction}
+
+In this chapter we will study systems of hyperbolic equations
+under the following restriction:
+\espa
+
+\defi: We will say that a system is {\bf symmetric--hyperbolic} if:
+
+\begin{itemize}
+\item[a.)] The target space of the linear map $M^a_{A'B}k_a$ is of
+the same dimension as the domain space for all $k_a \neq 0$.
+Therefore, from now on we will use unprimed indices.
+
+\item[b.)] The map $M^a_{AB}k_a$ is symmetric for all $k_a \neq 0$.
+
+\item[c.)] At each point of the manifold there exists a co-vector $t_{a}$ such that the map,
+$H_{AB} := M^a_{AB}t_a$ is positive definite. (That is,
+$H_{AB}u^Au^B \geq 0$ ($= 0\; \mbox{iff} \; u^A = 0$).)~\footnote{Since the set of symmetric and positive maps is open, if $x_{a}$ is any other co-vector, then $H_{AB}(\eps) := M^a_{AB}(t_a+\eps x_{a})$ will also be positive for $\eps$ sufficiently close to zero. Therefore, level surfaces $\tau = const.$ can be locally defined such that $H_{AB} := M^a_{AB}\nabla_{a}\tau$ is positive on the entire local surface.}
+
+%In a neighborhood of each point there exists a function $\tau$
+%such that if we call its differential $t_a$ ($=\na_a \tau$), the
+%map  $H_{AB} := M^a_{AB}t_a$ is positive definite. (That is,
+%$H_{AB}u^Au^B \geq 0$ ($= 0\; \mbox{iff} \; u^A = 0$).)
+
+\end{itemize}
+Note that this last condition implies that $H_{AB}$ is a
+metric in the space of independent variables. This and its inverse,
+which we will denote by $H^{AB}$, will be used to raise and lower indices.
+
+This is also not a significant restriction from the point of view
+of physics, since all physical systems we know of
+are symmetric--hyperbolic.
+
+Also, but only for simplicity in the exposition as
+this will avoid some technical complications, we will only consider
+linear systems.
+
+We will begin this chapter with a simple example that illustrates the
+basic characteristics of this class of equations.
+
+\section{An Example}
+
+Consider an infinite string in the $x,y$ plane and let $y = u(x,t)$ be the position
+of the string at time $t$ in that plane.
+By adjusting the dimensions (of length or time) it can be seen that
+$u(x,t)$ satisfies the equation,
+\beq
+ -\frac{\pa^2u}{\pa t^2} + \frac{\pa^2 u}{\pa x^2} = f(x,t),
+\label{1)}
+\eeq
+where $f(x,t)$ is the force density exerted on the
+string and which
+we assume does not depend on the position of the string with respect to the
+$y$ coordinate.\footnote{Otherwise we would have to consider $f(x,t,u)$ which
+complicates the problem.}
+We thus have the mathematical problem of finding the solutions to the equation,
+\beq 
+\Box u = g^{ab} \na_a \na_b u = f,
+\eeq
+in $M = \re^2$ with pseudo-Euclidean metric $g_{ab} = -(dt)^2 + (dx)^2.$
+To handle this equation it is convenient to introduce a coordinate system
+appropriate to this metric, that is, one that has its characteristic lines as axes,
+\beq\barr{rcl}
+\xi &=& x + t = const.,\\
+\eta& =& x - t = const.
+\earr
+\eeq
+
+\espa 
+%\fig{6cm}{Null Coordinate System}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_1}}
+    \caption{Null coordinate system.}
+    \label{fig:13_1}
+  \end{center}
+\end{figure}
+
+we then have that
+\beq\barr{rcl}
+x &=& \frac{\xi + \eta}2\\
+t &=& \frac{\xi - \eta}2
+\earr
+\eeq
+and
+\beq\barr{rcl}
+g_{ab} = -(dt)^2 + (dx)^2 &=& \frac14[\{-(d\xi)^2 - (d\eta)^2 + d\xi
+\otimes d\eta + d\eta \otimes d\xi \}\\
+& & + \{(d\xi)^2 + (d\eta)^2 +
+d\xi\otimes d\eta + d\eta\otimes d\xi\}]\\
+&=& \frac12[d\xi \otimes d \eta + d \eta \otimes d \xi]
+\earr
+\eeq
+Noting that $g^{ab} = 2[\pa \xi \otimes \pa \eta + 
+\pa \eta \otimes \pa \xi]$
+and that the Christoffel symbols vanish because the metric has
+constant components we have,\footnote{
+Note also that $g(\pa_{\eta},\pa_{\eta}) = g(\pa\xi,\pa \xi) = 0$, that is, these coordinate vectors
+have null norm.}
+\beq \Box u = 4\frac{\pa^2u}{\pa \eta \pa \xi} = f(\eta,\xi).
+\eeq
+This equation can be integrated immediately, obtaining
+\beq\barr{rcl}
+\dip\frac {\pa u}{\pa \eta}(\eta,\xi)&=& \frac{1}{4}\dip\int^{\xi}_{\xi_0} f(\eta,\ti \xi)
+\;d\ti \xi \;+ C(\eta)\\ [3mm]
+u(\eta,\xi) &=& \frac{1}{4}\dip\int^{\eta}_{\eta_0}\dip\int^{\xi}_{\xi_0} f(\ti \eta,\ti \xi)
+d\ti \xi d\ti \eta + u_I(\xi) + u_{II} (\eta),
+\earr
+\eeq
+where $u_I(\xi)$ and $u_{II} (\eta)$ are arbitrary functions.
+Let us first consider the case $f \equiv 0$, that is, the homogeneous equation. 
+Its solutions are then the sum of any function of $\xi$ 
+and any function of $\eta$.
+Returning to the $x,t$ coordinates we obtain
+\beq 
+u(x,t) = u_I(x+t) + u_{II}(x-t). 
+\eeq
+For example,
+\beq
+u_I(x+t) = \lb\barr{cl}e^{\frac1{(x+t)^2 - 1}}& x+t \in [-1,1]\\
+            0               &            x+t \in (-\infty,-1]\cup [1,+\infty)
+\earr\right.
+\eeq          
+is a solution that represents a {\bf wave}
+($\equiv$ solution of the homogeneous equation) moving to the left without changing shape and with
+speed 1.
+
+\espa 
+%\fig{6cm}{Wave Propagation.} 
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_2}}
+    \caption{Wave propagation.}
+    \label{fig:13_2}
+  \end{center}
+\end{figure}
+
+Similarly $u_{II}$ represents a wave moving to the right.
+See figure.
+Let us now see that the Cauchy problem in this case has a solution.
+This is extremely important in physics: it tells us that if we take
+a non-characteristic surface (for example $t=0$) and give there
+as data $u$ and its time derivative we will obtain a unique solution for
+future times. 
+This is what allows us, if we know the present,
+to predict the future, that is, if we prepare an experiment, to predict
+the result. This fact is what distinguishes physics from
+other natural sciences.
+Suppose then that at $t=0$ $(\xi = \eta = x)$ we give $u(x,0) = u_0(x)$ 
+and its derivative
+$\frac{\pa u}{\pa t}(x,0) = u_1(x)$. 
+We then have that
+\beq
+u_0(x) = u(x,0) = u_I(x) + u_{II}(x),
+\label{2)}
+\eeq
+\beq
+ u_1(x) = \frac{\pa u}{\pa t} (x,0) = u'_I (x) - u'_{II}(x).
+\label{3)}
+\eeq
+Differentiating \ron{2)} with respect to $x$ and solving the linear system thus
+obtained we have,
+\beq\barr{rcl}
+u'_I(x) &=& \dip\frac{u'_0(x) + u_1(x)}2\\
+u'_{II} &=& \dip\frac{u'_0(x) - u_1(x)}2,
+\earr
+\eeq
+and integrating,
+\beq\barr{rcl}
+u_I(x) &=& \dip\frac{u_0(x)}2  + \dip\frac12 \dip\int^x_0 u_1(\ti x) d\ti x +
+C_I,\\ [3mm]
+u_{II}(x) &=& \dip\frac{u_0(x)}2  - \dip\frac12 \dip\int^x_0 u_1(\ti x) d\ti x 
++ C_{II}.
+\earr
+\eeq
+For \ron{2)} to be satisfied we must have $C_I=-C_{II}$ and therefore
+\beq
+ u(x,t) = \frac2 (u_0(x+t) + u_0(x-t)) + \frac2 \int^{x+t}_{x-t}
+u_1(\ti x) d\ti x.
+\label{4)}
+\eeq
+We then see that if we give as data $u_0(x) \in C^2(\re)$ and $u_1(x)
+\in C^1(\re)$ we obtain a
+solution $u(x,t) \in C^2(\re \times \re)$.
+By construction this solution is unique.
+
+\espa
+\ejer:
+Explicitly show that \ron{4)} satisfies \ron{1)} 
+with $f \equiv 0$.
+
+\espa
+\ejer: 
+Use the general solution found earlier to see that the homogeneous solutions of the wave equation in two dimensions satisfy $u(t,x) = u(0,x+t) + u(0,x-t) - u(-t,x)$. 
+\espa
+
+Equation \ron{4)} tells us that $u(x,t)$ is contributed \textit{only} 
+by the average of the
+values of $u_0$ at $x-t$ and $x+t$ and the integral of $u_1$, between these
+two values. [See figure 13.3.]
+%
+\espa 
+%\fig{6cm}{General Homogeneous Solution in Two Dimensions.} 
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_3}}
+    \caption{General homogeneous solution in 1+1 dimensions.}
+    \label{fig:13_3}
+  \end{center}
+\end{figure}
+
+%
+What happens if we have a source $f(x,t)$? Since we already have the general solution (for arbitrary Cauchy data) of the homogeneous equation, we only need the solution of the inhomogeneous equation with zero data. 
+This is achieved by integrating $f(\xi, \eta)$ first with respect to $\ti \xi$ 
+between $\ti \eta$ and $\xi$ and
+then $\ti \eta $ between $\xi$ and $\eta$.
+\beq
+v(\eta,\xi) = \frac{1}{4} \int^{\eta}_{\xi}\lp\int^{\xi}_{\ti \eta} f(\ti \xi, \ti
+\eta) d \ti \xi \rp d\ti \eta.
+\eeq
+
+\espa 
+%\fig{6cm}{General Inhomogeneous Solution.} 
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m13_4}}
+    \caption{General inhomogeneous solution.}
+    \label{fig:13_4}
+  \end{center}
+\end{figure}
+
+\espa
+
+\ejer:
+Show that 
+\beq
+v(x,t) = \int^t_0\lp\int^{x+(t-\ti t)}_{x-(t-\ti t)} f(\ti x, \ti
+t) d \ti x \rp d\ti t,
+\eeq
+that
+\beq v(x,t)|_{t=0} = \frac{\pa v}{\pa t} (x,t)|_{t=0} = 0,\eeq
+and that $v(x,t)$ satisfies \ron{1)}.
+\espa
+
+\noi We then see that the solution sought is,
+{\small
+\beq
+u(x,t) = \frac2 (u_0(x+t) + u_0(x-t)) + \frac2 \int^{x+t}_{x-t}
+u_1(\ti x) d\ti x +
+\int^t_0\lp\int^{x+(t-\ti t)}_{x-(t-\ti t)} f(\ti x, \ti
+t) d \ti x \rp d\ti t,
+\eeq
+}
+
+\noi which by construction is unique and that $u(x_0,t_0)$ depends on the initial values and on $f$ in the conical region with vertex $(x_0,t_0)$ given by,
+
+\beq
+\lb\barr{l}
+t \leq t_0\\
+|x-x_0| \leq t_0 -t.
+\earr\right.
+\eeq
+This region is called the {\bf domain of dependence} of the point $(x_0,t_0)$, 
+only what happens in this
+region can affect the value of $u$ at that point.
+Similarly, the {\bf domain of influence} of a point $(x_0,t_0)$ is defined
+as the set of
+points where the value of $u$ can be changed if the
+value of $u$, its derivative, or $f$ is changed at $(x_0,t_0)$.
+In this case, this is given by: $\{(x,t) | t \geq t_0, |x-x_0| \leq
+t - t_0 \}$.
+
+The behavior of the solutions of hyperbolic equations
+is generally the same as that of this simple example: Given generic Cauchy data there will be a unique solution (both to the
+future and to the past). In the case of linear equations
+this solution can be extended indefinitely in both
+temporal directions, in the nonlinear case the solutions are only valid in a finite temporal interval and it is an interesting
+physical problem to see if the physical nonlinear equations
+can or cannot be extended indefinitely and what it means
+physically the appearance of singularities in the
+solutions.~\footnote{A singularity is a point where $u$ ceases to be
+sufficiently differentiable for the equation to make
+sense or worse where $u$ ceases to make sense even as
+a distribution.} 
+A quantity of great physical and mathematical importance related
+to the wave equation is the energy of the solutions. In two
+dimensions this is given by,
+\beq
+E(u,t_0) = \frac2 \int_{t=t_0} [(\frac{\pa u}{\pa t})^2 + (\frac{\pa
+u}{\pa x})^2 ] dx.
+\eeq
+Observe that the energy is positive and its rate of change is
+given by,
+\beq\barr{rcl}
+\dip \frac{dE}{dt}(u,t_0) &=&
+\dip\int_{t=t_0} (\frac{\pa u}{\pa t} \frac{\pa^2 u}{\pa t^2} +
+\dip\frac{\pa^2 u}{\pa t \pa x} \frac{\pa u}{\pa x}) dx\\ [3mm]
+&=&
+\dip\int_{t=t_0} [\frac{\pa u}{\pa t} (\frac{\pa^2 u}{\pa t^2} -
+\dip\frac{\pa^2 u}{\pa x^2}) +
+\dip\frac{\pa }{\pa x}(\frac{\pa u}{\pa t} \frac{\pa u}{\pa x})] dx\\ [3mm]
+&=& 
+\dip\int_{t=t_0} [\frac{\pa u}{\pa t} f ] dx,
+\earr
+\eeq
+where in the last equality we have used \ron{1)} and assumed that 
+$\dip\lim_{x \to \infty} \dip\frac{\pa u}{\pa t} \frac{\pa u}{\pa x} = 0$.
+If $f=0$ then the energy is conserved and this gives us an alternative proof
+of the uniqueness of the solutions.
+
+\bteo[Uniqueness] At most, there exists a unique solution $u(x,t)$ to the wave equation among the functions in $u(x,t) \in H^1(\re)$, $\frac{\pa u}{\pa t} (x,t) \in H^0(\re)$ (where $\re$ is the surface $t = const$) for a given Cauchy data. \eteo
+
+\espa
+
+\pru: Suppose there are two solutions $u_1$ and $u_2$ with the same Cauchy data at, say $t = 0$. Then $\delta u = u_1 - u_2$ satisfies the homogeneous equation and has zero Cauchy data. Therefore $E(\delta u,t=0) = 0$, but the energy of $\delta u$ is conserved and thus $E(\delta u,t-t_0) = 0 ;;; \forall t_0$. This implies that $|\frac{\pa \delta u}{\pa t} (x,t)|{t=t_0} |{H^0(R)} = 0$ and therefore $\frac{\pa \delta u}{\pa t} (x,t) |{t=t_0} = 0$ at almost every point. Similarly, we have that $|\frac{\pa \delta u}{\pa x} (x,t)|{t=t_0} |{H^0(R)} = 0$ and therefore $\frac{\pa \delta u}{\pa x} (x,t) |{t=t_0} = 0$ or $\delta u = const$. But constants are not square integrable in \re{} and therefore $\delta u(x,t) = u_1(x,t) - u_2(x,t) = 0$ as an element of $H^1(\re)$ $\spadesuit$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \section{Energy inequality for symmetric-hyperbolic systems}
+
+In this section, we will consider a general linear symmetric-hyperbolic system. That is, a system of the form: \beq M^a_{AB} \na_a u^B = I_A, \label{en1} \eeq with $M^a_{AB}$ and $I_A$ generally dependent on position, with $M^a_{AB}$ symmetric in the uppercase indices and such that there exists a function $\tau$ with gradient $t_a$ such that $H_{AB}$ is positive definite and therefore invertible.
+
+Let $\Sigma_t$ be the family of surfaces given by the level surfaces $\tau = t$. Let $\Gamma$ be any region of $\Sigma_0$ and let $\Omega$ be a region such that $\Omega \cap \Sigma_0= \Gamma$ and also $\Gamma(t) = \Omega \cap \Sigma_t$.
+
+Let $u^A$ be a solution of \ref{en1} and let,
+
+\beq E(u^A,t) = \int_{\Gamma(t)} n_aM^a_{AB}u^Au^B, \eeq that is, the integral of $H_{AB}u^Au^B$ over a region of the hypersurface $\tau=t=const.$, where we have defined $H_{AB}$ using $n_a = t_a/|t_a|$, that is, we have normalized $t_a$.
+
+Let us see the difference of this quantity between two surfaces as shown in the figure.
+
+\espa % %\fig{6cm}{Energy inequality} % 
+\begin{figure}[htbp] 
+    \begin{center} 
+    \resizebox{7cm}{!}{\myinput{Figure/m13_5b}} 
+        \caption{Energy inequality} 
+        \label{fig:13_5b} 
+    \end{center}
+\end{figure}
+\espa
+
+\begin{figure}[htbp] 
+    \begin{center} \resizebox{7cm}{!}{\myinput{Figure/m13_5}} 
+    \caption{Energy inequality, perspective view.} 
+    \label{fig:13_5} 
+    \end{center}
+\end{figure}
+
+To do this, we will use the divergence theorem, which tells us that, 
+\beq 
+E(u^A,t) - E(u^A,0) + E(u^A,s) = \int_{\Omega(0,t)} \na_a( M^a_{AB} u^Au^B), 
+\eeq 
+where the negative sign of the second term on the left is due to the fact that in the definition of $E(u^A,0)$ 
+we take the inward normal to the region $\Omega(0,t)$. 
+The last term represents the integral of the energy over a surface $S$ which we will assume is given by the 
+equation $\sigma = s$ where $\sigma$ is a smooth function and $s \in \re$. 
+This term represents the energy that escapes from the region through the surface $S$.
+
+Using equation \ref{en1} on the right-hand side we get, 
+
+\begin{eqnarray}
+    \!\!\!\!\!\!E(u^A,t) - E(u^A,0) + E(u^A,s) &=& 
+    \int_{\Omega(0,t)} [(\na_a M^a_{AB}) u^Au^B + 2I_Au^A] \\ 
+    %
+    &\leq& \int^t_0 \int_{\Sigma_{\tilde{t}}} \{|(\na_a M^a_{AB}) u^Au^B| 
+           + 2|I_Au^A|\} d \tilde{t} \nonumber \\
+    %
+    &\leq& \int^t_0 \int_{\Sigma_{\tilde{t}}} \{|C H_{AB} u^Au^B| \nonumber \\
+          & + & 2\sqrt{|I_AI_B H^{AB}|}\sqrt{|H_{AB}u^Au^B|}\} d \tilde{t} \nonumber \\
+    %
+    &\leq& \int^t_0 [(C+1)E(u^A,\tilde{t}) + D(\tilde{t})] d \tilde{t}, \nonumber
+\end{eqnarray}
+%
+where in the first member of the second inequality we have used the Schwartz inequality (see exercise) and have defined, 
+
+\beq 
+    C^2 := \sup_{\Omega} {(\na_aM^a_{AB})(\na_bM^b_{CD})H^{AC}H^{BD} }. 
+\eeq 
+In the third inequality we have used that $2ab \leq a^2 + b^2$ and have defined, 
+\beq 
+    D(t) := \int_{\Sigma_t} H^{AB}I_AI_B. 
+\eeq 
+
+\espa
+
+\ejer: Let $H_{AB}$ be symmetric and positive definite, with inverse $H^{AB}$. Prove:
+
+\noi a.) $S^{AB}S^{CD}H_{AC}H_{BD} \geq 0$, $(=0;iff;S^{AB}=0)$.
+
+\noi b.) $|S_{AB}u^Au^B| \leq \sqrt{H^{AC}H^{BD}S_{AB}S_{CD}}; H_{AB}u^A u^B $. 
+
+\espa
+
+We will now make an important assumption that we will discuss in detail later: 
+\espa
+
+\noi{\bf we will assume from now on that $E(u^A,s) \geq 0 ;\forall; u^A$}. 
+\espa
+
+With this assumption, we can ignore this term in the previous inequality and obtain, \beq E(u^A,t) - E(u^A,0)
+\leq \int^t_0 [(C+1)E(u^A,\tilde{t}) + D(\tilde{t})] d \tilde{t}. \eeq
+
+Differentiating this integral inequality, we will obtain a maximum bound for the energy. 
+Indeed, differentiating this expression and noting that the sign of the inequality is maintained, 
+we obtain the following differential inequality, 
+\beq 
+\frac{d}{dt} E(u^A,t) \leq (1+C) E(u^A,t) + D(t), 
+\eeq 
+The differential equality has as a solution (using the method of variation of constants, section $5.2$), 
+\beq 
+Y(t) = e^{(1+C)t)};[Y(0) + \int_0^t e^{-(1+C)\tilde{t}}D(\tilde{t}) d \tilde{t}]. 
+\eeq 
+Using now lemma \ref{lem4_1} we see that 
+$E(u^A,t) \leq Y(t);\forall;t\geq 0$ if $E(u^A,0) = Y(0)$, 
+and therefore we have that, 
+\beq 
+E(u^A,t) \leq e^{(1+C)t)};[E(u^A,0) + \int_0^t e^{-(1+C)\tilde{t}}D(\tilde{t}) d \tilde{t}]. 
+\eeq
+
+This inequality is extremely important, not only does it allow us to infer the uniqueness of solutions 
+(as we will see below) but it also plays a fundamental role in proving the existence of solutions and 
+achieving convergent and reliable numerical algorithms.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Uniqueness of solutions}
+
+Using the inequality obtained earlier, we will prove the following theorem:
+
+\bteo Let there be a symmetric-hyperbolic equation on a manifold $M$. 
+Let $\Sigma_0$ be a surface given by the equation $\tau = 0$ such that $M^a_{AB}\na_a\tau$ is positive definite. 
+Let $\Gamma$ be any region of $\Sigma_0$ and let $\Omega $ be a region such that 
+$\Omega \cap \Sigma_0= \Gamma$ and such that $E(u^A,s) \geq 0 ;\forall u^A$. [See previous figure.] 
+Then if $u^C$ and $\tilde{u}^C$ are two solutions that coincide in $\Gamma$, they coincide in all of $\Omega$. 
+\eteo
+
+\pru: Let $\delta^A := u^A - \tilde{u}^A$. Then $\delta^A$ satisfies, 
+\beq 
+M^a_{AB}\na_a \delta^A = 0. 
+\eeq 
+Therefore, we have an energy inequality for $\delta^C$ with $D(t) \equiv 0$ and also with $E(\delta^C,0)=0$ since the two solutions coincide in $\Gamma$. 
+But then the inequality tells us that $E(\delta^C,t)=0$ for all $t$ and therefore $\delta^C=0$ in all of $\Omega$ thus proving the theorem $\spadesuit$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Domain of dependence}
+
+The previous uniqueness theorem was based on the assumption that \beq E(u^C,s) = \int_S n_aM^a_{AB}u^Au^B \geq 0 \eeq and therefore it is important to determine what are the possible regions where this happens. In particular, given a region $\Gamma$, the largest region $\Omega$ where we have uniqueness of solutions with identical initial data in $\Gamma$ is called the {\bf domain of dependence of $\Gamma$}, it is the region that depends completely on the initial data given in $\Gamma$, that is, giving initial data in $\Gamma$ we can completely control the value of the solution at any point in its domain of dependence.
+
+First, let's see that this domain of dependence is not empty. To do this, take $\Gamma$ compact in $\Sigma_0$ and consider $H_{AB} = t_aM^a_{AB}$. Now let $\sigma = \tau - \delta \xi$ with $\xi$ a smooth function in a neighborhood of $\Gamma$ positive inside this set and negative in $\Sigma_0 - \Gamma$ (that is, it vanishes on its boundary) and $\delta$ a real number that we will assume small. 
+[See figure \ref{fig:13_6c}.]
+
+\espa 
+\begin{figure}[htbp] 
+    \begin{center} \resizebox{7cm}{!}{\myinput{Figure/m13_6c}} 
+        \caption{Bubble-shaped region} 
+        \label{fig:13_6c} 
+    \end{center}
+\end{figure}
+
+At each point $p \in \Gamma$ $H_{AB}$ is a positive definite metric and therefore, as the set of positive definite metrics is open in the space of all symmetric tensors, 
+given any other covector $w_a$ there will exist $\eps > 0$ small enough such that $(t_a + \eps w_a)M^a_{AB} = H_{AB} + \eps w_aM^a{AB}$ is also positive definite. 
+Since $\Gamma$ is compact given a $w_a$ in it there will be a minimum and positive $\eps$ such that the tensor defined above will be positive~\footnote{To see this consider the map between 
+$(B_1 \times \Gamma) \times (B_1 \times \Gamma) \times \Gamma \to \re$ given by, $w_a(p)M^a_{AB}(p)u^A(p)u^B(p) $ where $B_1(p) = {u^A(p)|H_{AB}(p)u^Au^B = 1}$. 
+This is a continuous map and its domain is compact therefore it has a maximum, $m < \infty$. We can then take $0 < \eps < 1/m$.} 
+By the same continuity argument, there will be a compact region around $\Gamma$ and a $\eps > 0$, a little smaller than the previous one such that there $\na_a\sigma M^a_{AB}$ will be positive definite. We have thus managed to have a region $\Omega$ between the level surfaces $\tau = 0$ and $\sigma = 0$, that is, a small {\sl bubble} where the integral of the outgoing energy through $S = {p\in M|\sigma(p) = 0}$ is positive for any solution $u^A$.
+
+How large can we make this bubble, that is, how much more can we tilt the surface $S$ and still maintain positivity? 
+This question has a lot to do with the following: how much can we tilt $t_a$ at each point and still have positivity of 
+$t_aM^a_{AB}$ at that point?
+
+First, note that if $t_aM^a_{AB}$ is positive then $\alpha t_aM^a_{AB}, \alpha >0 $, is also positive, so the set of covectors for which we have positivity forms a cone. This also ensures that not all covectors are in this cone, since if $t_a$ is in it, $(-t_a)$ is not.
+
+Second, note that if $t_a$ and $\tilde{t}_a$ are in the cone, [that is, each of them gives a positive definite metric] then all covectors of the form, $\alpha t_a + (1-\alpha)\tilde{t}a, ;\alpha \in [0,1]$ are also in it, since $(\alpha t_aM^a{AB} + (1-\alpha)\tilde{t}aM^a{AB})u^A u^B$ is positive if the coefficients of $\alpha$ and $(1-\alpha)$ are. That is, the set of covectors that give positive definite metrics form a convex cone in $T_p^*$, at each point $p \in M$. This cone is called the {\bf characteristic cone}. 
+[See figure \ref{fig:13_6b}.]
+
+\espa % %\fig{5cm}{Characteristic cone} % 
+\begin{figure}[htbp] 
+    \begin{center} 
+        \resizebox{7cm}{!}{\myinput{Figure/m13_6b}} 
+        \caption{Characteristic cone} 
+        \label{fig:13_6b} 
+    \end{center}
+\end{figure}
+
+What happens to the covectors on the boundary of this cone? There the condition of positive definiteness must fail, that is, given a covector $t_a$ on this boundary there will be some $u^A$ such that $t_aM^a_{AB}u^Au^B = 0$. This implies that there the rank of $t_aM^a_{AB}$ ceases to be maximum.
+
+\subsection{Construction of a characteristic surface}
+
+Now we will construct the boundary surface of the maximum domain of dependence. 
+From a region $\Gamma$ given by ${ q \in \Sigma_0 ;|;\sigma_0(p) = 0}$ we will construct a surface $S$ 
+such that its normal at each of its points belongs to the boundary of the characteristic cone. 
+This surface will be given by a function $\sigma = 0$ such that $\sigma|{\Sigma_0} = \sigma_0$. 
+To find the equation that this function must satisfy, it is convenient to introduce an appropriate coordinate system, 
+the same one we used in our classification of partial differential equations. 
+One of these coordinates will be $t = \tau$ and we will call the others $x^i$, also for convenience we will define 
+$\sigma_t=\derp{\sigma}{t}$ and $\sigma_i=\derp{\sigma}{x^i}$. With these coordinates we obtain that, 
+\begin{eqnarray} 
+    \na_a\sigma M^a{AB} &=& \sigma_t M^t_{AB} + \sum_i \sigma_i M^i_{AB} \nonumber \\ 
+    &=& \sigma_t H_{AB} + \sum_i \sigma_i M^i_{AB}. 
+\end{eqnarray} 
+Multiplying by the inverse of $H_{AB}$, $H^{AB}$, we obtain 
+
+\beq 
+H^{CA}\na_a\sigma M^a_{AB} = \sigma_t \delta^C{}_B
+\sum_i \sigma_i H^{CA}M^i_{AB}, 
+\eeq 
+which is an operator, that is, a linear map from a vector space to itself, and therefore we can take its determinant, obtaining, 
+\beq 
+det\left(\sigma_t \delta^C{}_B
+\sum_i \sigma_i H^{CA}M^i_{AB}\right) = 0, 
+\eeq since the determinant of $H^{CA}\na_a\sigma M^a_{AB}$ vanishes because we have assumed that the rank of 
+$\na_a\sigma M^a_{AB}$ ceased to be maximum. 
+For each fixed value of the spatial derivatives $\sigma_i$ this equation will generally have $n$ real solutions (roots), 
+$\sigma_t$, (the eigenvalues of the operator $\sum_i \sigma_i H^{CA}M^i_{AB}$), of all of them we will take the one that gives us the boundary of the smallest cone containing $t_a$, that is, the largest root. We will thus have for this root an equation of the form: 
+
+\beq 
+\sigma_t + H(\sigma_i,x^i,t) = 0. \label{eiko} 
+\eeq 
+
+The function $H$ has a very important property, note that if $(\sigma_t,\sigma_i)$ is a solution so is $(\alpha \sigma_t,\alpha \sigma_i)$ and therefore $H$ must be 
+{\bf homogeneous of first degree}, that is $ H(\alpha \sigma_i,x^i,t) = \alpha H(\sigma_i,x^i,t)$. 
+These equations, with $H$ homogeneous of first degree are called {\bf eikonal equations} and are particular cases of the Hamilton--Jacobi equation studied in mechanics.
+This type of equations can be solved by transforming them into an equivalent problem in ordinary derivatives derived from a Hamiltonian. 
+Indeed, consider the system of ordinary Hamiltonian equations: 
+
+\begin{eqnarray} 
+    \derc{x^i}{t} &=& \derp{H}{p_i} \nonumber \\ 
+    \derc{p_i}{t} &=& -\derp{H}{x^i}, \label{hamil} 
+\end{eqnarray} 
+where $H(p_i,x^i,t) := H(\sigma_i,x^i,t)|{\sigma_i=p_i}$. 
+Integrating this system with initial conditions: 
+\begin{eqnarray} 
+    x^i(0) &=& x^i_0 \nonumber \\ 
+    p_i(0) &=& \sigma{0i}, \label{condii} 
+\end{eqnarray} 
+and then restricting the integral curves obtained in the phase space $(x^i,p_j)$ to the configuration space $x^i$, we obtain a series of curves in our manifold 
+emanating from the surface $\Gamma$. We will call these curves, {\bf characteristic curves} since they have the important property that along them the function 
+$\sigma$ we are looking for is constant! To prove this first note that with the chosen initial conditions 
+$p_i(t) = \sigma_i(x^j(t),t);\forall;t$. 
+But taking the derivative with respect to $x^i$ of equation \ref{eiko} we obtain: 
+
+\begin{eqnarray} 
+    \frac{\partial\sigma_i}{\partial t} &=& \derssp{\sigma}{t}{x^i} \nonumber \\ 
+    &=& \derssp{\sigma}{x^i}{t} \nonumber \\ 
+    &=& -\sum_{j}\derp{H}{\sigma_j} (\sigma_k,x^k,t) \derp{\sigma_i}{x^j} - \derp{H}{x^i}(\sigma_k,x^k,t), 
+    \label{deri} 
+\end{eqnarray} 
+%
+and therefore 
+\begin{eqnarray} 
+    \derc{(p_i - \sigma_i)}{t} &=& - \derp{H}{x^i}(p_k,x^k,t)
+    \sum_{j}\derp{\sigma_i}{x^j} \derc{x^j}{t} - \derp{\sigma_i}{t} \nonumber \\ 
+    &=& - \derp{H}{x^i}(p_k,x^k,t) \sum_{j}\derp{\sigma_i}{x^j} \derp{H}{p_j}(p_k,x^k,t) \nonumber \\ 
+    &+& \sum_{j}\derp{H}{\sigma_j} (\sigma_k,x^k,t) \derp{\sigma_i}{x^j} + \derp{H}{x^i}(\sigma_k,x^k,t) \nonumber \\
+    &=& - \derp{H}{x^i}(p_k,x^k,t) + \derp{H}{x^i}(\sigma_k,x^k,t) \nonumber \\ 
+    &-& \sum_{j}\derp{\sigma_i}{x^j} \left( \derp{H}{p_j}(p_k,x^k,t)
+    \derp{H}{\sigma_j}(\sigma_k,x^k,t) \right), 
+\end{eqnarray}
+%
+where in the second equality we have used equations \ref{hamil} and \ref{deri}. 
+This last equation, with the chosen initial conditions has a trivial solution, but the uniqueness theorem of solutions of ordinary equations guarantees that this is the only one and therefore the sought equality. 
+Therefore from now on we should not distinguish in the argument of $H$ whether it is evaluated in $\sigma_i$ or in $p_i$.
+But then note that the derivative along a characteristic curve of $\sigma$ is, 
+
+\begin{eqnarray} 
+    \derc{\sigma}{t} &=& \sum_i \sigma_i\derc{x^i}{t} + \sigma_t \nonumber \\ 
+    &=& \sum_i \derp{H}{\sigma_i} \sigma_i - H(\sigma_k,x^k,t) \nonumber \\ 
+    &=& 0, 
+\end{eqnarray} 
+%
+where in the last equality we have used that since $H$ is homogeneous of first degree 
+in $\sigma_i$ the equality $ H(\sigma_k,x^k,t) = \sum_i \derp{H}{\sigma_i} \sigma_i$ holds.
+
+We have thus demonstrated that $\sigma$ will be constant along the integral lines of equation \ref{hamil} with initial conditions given by \ref{condii}. 
+Therefore we know $S$, this will be the surface ruled by the characteristic curves emanating from $\partial \Gamma$~\footnote{In general the characteristic curves intersect 
+each other and therefore even giving a region $\Gamma$ with smooth boundary after a certain time the ruled surface will develop singularities and $\sigma$ will be multivalued. 
+However these singularities are perfectly well known and it is known how to discard regions until obtaining domains of dependence with continuous boundaries.}. 
+[See figure \ref{fig:13_7b}.]
+
+\espa % %\fig{5cm}{Construction of $S$ and a singularity in $S$} % 
+\begin{figure}[htbp] 
+    \begin{center} \resizebox{9cm}{!}{\myinput{Figure/m13_7b}} 
+        \caption{Construction of $S$ and a singularity in $S$} 
+        \label{fig:13_7b} 
+    \end{center}
+\end{figure}
+
+\subsection{Domain of dependence, examples}
+
+Next we give a couple of examples of the construction of characteristic curves and determination of the domains of dependence. \espa
+
+\ejem: {\bf Fluids in one dimension}
+
+Consider a fluid with average density $\rho_0$, moving with average velocity $v_0$ and with an equation of state for the pressure as a function of density $p=p(\rho)$.
+We are interested in small fluctuations of these quantities around the equilibrium state $(\rho_0,v_0)$, that is, in the theory of sound in this fluid. 
+In this case $u^A = (\rho,v)$ will be these fluctuations and the fluid equations are 
+
+\begin{eqnarray} 
+    \derp{\rho}{t} - v_0 \derp{\rho}{x} - \rho_0 \derp{v}{x} &=& 0 \nonumber \\ 
+    \derp{v}{t} - v_0 \derp{v}{x} - \frac{1}{\rho_0}\derp{p}{x} &=& 0. 
+\end{eqnarray} If $c^2 := \derc{p}{\rho}|{\rho_0} > 0$, 
+%
+($c$ is the speed of sound in the medium) then the system is symmetric--hyperbolic with $M^a{AB}$ obtained by rewriting the equations as: 
+\beq 
+    \left( \begin{array}{cc} c^2 & 0 \\ 0 & \rho^2_0 
+            \end{array} 
+            \right) 
+            \left( \begin{array}{c} \rho \\ v \end{array} \right)_t + \left( \begin{array}{cc} -c^2 v_0 & -c^2 \rho_0 \\ 
+                - c^2 \rho_0 & -\rho^2_0 v_0 \end{array} \right) \left( \begin{array}{c} \rho \\ 
+                    v \end{array} \right)_x = 0, 
+\eeq 
+%
+where we have used that $\derp{p}{x} = \derp{p}{\rho} \derp{\rho}{x}$.
+
+The determinant we must study is then: 
+\beq 
+det \left( \begin{array}{cc} \sigma_t c^2 - \sigma_x c^2 v_0
+& -\sigma_x c^2 \rho_0 \\ & \\ - \sigma_x c^2 \rho_0
+& \sigma_t \rho^2_0 - \sigma_x \rho v \end{array} \right), 
+\eeq which has as roots, \beq \sigma_t = (v_0 \pm c) \sigma_x. 
+\eeq 
+Suppose $c > v_0$ (normal fluid, subsonic), and that $\Gamma = [0,1]$ with $\sigma_0 = x(x-1)$. At $x=0$ $\sigma_{0x} $ is negative and then the largest root is $v_0-c$ and the solution is $\sigma_- = t(c-v_0) - x$. At $x=1$ $\sigma_{0x} $ is positive and then the largest root is $v_0+c$ and the solution is $\sigma_- = t(v_0+c) - (x-1)$. [See figure.]
+
+\espa % %\fig{5cm}{Domain of dependence of a fluid} % 
+\begin{figure}[htbp] 
+    \begin{center} 
+        \resizebox{7cm}{!}{\myinput{Figure/m13_8b}} 
+        \caption{Domain of dependence of a fluid} 
+        \label{fig:13_8b} 
+    \end{center}
+\end{figure}
+
+\espa
+
+\ejem: {\bf Wave equation in $2+1$ dimensions.}
+
+The equation is: 
+
+\beq 
+-\derssp{\phi}{t}{t} + \derssp{\phi}{x}{x} + \derssp{\phi}{y}{y} = \rho, \label{onda2d} 
+\eeq 
+and using 
+$u^A = (\phi,\derp{\phi}{t},\derp{\phi}{x},\derp{\phi}{y})$ 
+the system can be written as, 
+{\small
+\arraycolsep=2pt
+%\begin{equation}
+$$
+\left(
+      \begin{array}{cccc}
+      1&0&0&0 \\
+      0&1&0&0 \\
+      0&0&1&0 \\
+      0&0&0&1
+      \end{array}
+\right)      
+\left(
+      \begin{array}{c}
+      u^1\\u^2\\u^3\\u^4
+      \end{array}
+\right)_t
+-
+\left(
+      \begin{array}{cccc}
+      0&0&0&0 \\
+      0&0&1&0 \\
+      0&1&0&0 \\
+      0&0&0&0
+      \end{array}
+\right)      
+\left(
+      \begin{array}{c}
+      u^1\\u^2\\u^3\\u^4
+      \end{array}
+\right)_x
+-
+\left(
+      \begin{array}{cccc}
+      0&0&0&0 \\
+      0&0&0&1 \\
+      0&0&0&0 \\
+      0&1&0&0
+      \end{array}
+\right)      
+\left(
+      \begin{array}{c}
+      u^1\\u^2\\u^3\\u^4
+      \end{array}
+\right)_y
+= 
+\left(
+      \begin{array}{c}
+     - u^2\\-\rho\\0\\0
+      \end{array}
+\right) 
+\nonumber
+%\end{equation}
+$$
+}
+\arraycolsep=5pt
+\espa
+
+\ejer: Prove that if the initial data is such that $u^2=\derp{u^1}{x}$ and $u^3=\derp{u^1}{y}$, then $u^1$ satisfies \ref{onda2d}. \espa
+
+The equations for $\sigma$ are: 
+\beq 
+det \left( \begin{array}{cccc} \sigma_t&0&0&0 \\ 0&\sigma_t&\sigma_x&\sigma_y\\ 0&\sigma_x&\sigma_t&0 \\ 0&\sigma_y&0&\sigma_t 
+\end{array} \right) = (\sigma_t)^2[(\sigma_t)^2 - (\sigma_x)^2 -(\sigma_y)^2], 
+\eeq 
+that is 
+\beq 
+\sigma_t = \sqrt{(\sigma_x)^2 + (\sigma_y)^2} := - H(\sigma_x,\sigma_y). 
+\eeq 
+
+The Hamilton equations for this system are: 
+\begin{eqnarray}
+    \derc{x}{t} &=& \derp{H}{\sigma_x}
+                 = \frac{-\sigma_x}{\sqrt{(\sigma_x)^2 
+                    + (\sigma_y)^2}}  \nonumber \\
+                & & \nonumber \\
+    \derc{y}{t} &=& \derp{H}{\sigma_y} 
+                 = \frac{-\sigma_y}{\sqrt{(\sigma_x)^2 
+                    + (\sigma_y)^2}} \nonumber \\             
+                & & \nonumber \\    
+    \derc{\sigma_x}{t} &=& - \derp{H}{x} 
+                 = 0  \nonumber \\
+                & & \nonumber \\
+    \derc{\sigma_y}{t} &=& - \derp{H}{y} 
+                 = 0,
+    \end{eqnarray}
+    %
+and their solutions are: 
+\begin{eqnarray}
+    x(t) &=&  \frac{-\sigma_{0x}}{\sqrt{(\sigma_{0x})^2 
+                    + (\sigma_{0y})^2}} t + x_0    \nonumber \\
+    y(t) &=& \frac{-\sigma_{0y}}{\sqrt{(\sigma_0x)^2 
+                    + (\sigma_{0y})^2}} t + y_0.      
+\end{eqnarray}      
+
+
+%\end{document}
+
+%%% Local Variables: 
+%%% mode: latex 
+%%% TeX-master: t 
+%%% End:

@@ -1,0 +1,483 @@
+% filepath: /Users/reula/Docencia/Metodos_libro/libro_metodos_github/translated_text.tex
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%%last modification 28/05/2013
+
+\chapter{Theory of Partial Differential Equations}
+\label{theory_of_partial_differential_equations}
+
+\section{Introduction}
+
+\noi
+\defi: 
+A {\bf partial differential equation of order $m$} in $M$ is an equation of the form
+\beq
+F\lp p,u,\na_au,\na_a\na_bu,\ldots,\overbrace{\na_a\cdots\na_c}^{m\mbox{
+times}}u\rp=0,
+\eeq
+where $\na_a$ is some connection in $M$.
+More generally, $u$ can be a tuple of tensor fields and $F$ can have range in some other tuple of tensor fields.
+
+\espa
+\noi
+\yaya{Examples}:
+\espa
+
+\noi
+a) The Laplace equation in $\re^3$ with respect to a metric $g_{ab}$,
+\beq
+\Del u\equiv g^{ab}\na_a\na_b u=0
+\eeq
+If $g_{ab}$ is the Euclidean metric, then in Cartesian coordinates
+\beq
+\Del u=\lapl{u}.
+\eeq
+\espa
+
+\noi
+b) The Poisson equation,
+\beq
+\Del u-\ro=0,
+\eeq
+where $\ro$ is a given function.
+\espa
+
+\noi
+c) The wave equation in $\re^{n+1}$. This has the form of the Laplace equation but for a metric of the form $-(dx_0)^2+\dip
+\sum_{i=1}^n(dx^i)^2$. For example in $\re^2$, $g_{ab}=-(dt)^2_{ab}
++(dx)^2_{ab}$,
+\beq
+g^{ab}\na_a\na_b u=-\dersp{u}{t}+\dersp{u}{x}.
+\eeq
+\espa
+
+\noi
+d) Maxwell's equations,
+\beq\barr{rcl}
+\na_aF^{ab}&=&j^b\\
+\na_{[a}F_{bc]}&=&0
+\earr
+\eeq
+where $M$ is $\re^4$, the metric (used both to raise the indices of
+$F_{ab}$ and to define $\na_c$) is the Minkowski metric, $g_{ab}=-(dx^0)^2
++dx^1)^2+(dx^2)^2+(dx^3)^2$, $F_{ab}$ is an antisymmetric tensor field in $M$, and $y^b$ is a vector field (the
+four-current) in $M$.
+\espa
+
+\noi
+e) The elasticity equations in $\re^3$(Euclidean)$\times\re$
+\beq
+\ro\dersp{u^a}{t}=\muu\,\Del u^a +(\lam+\muu)\,\na^a(\na_cu^c),
+\eeq
+where $u^a$ is the displacement vector (in $\re^3$), $\ro$ the density of the elastic medium and $\lam$ and $\muu$ the Lamé constants of the medium.
+
+\espa
+\noi
+f) The heat conduction equation in $\re^3$(Euclidean)$\times\re$
+\beq
+\derp{u}{t}=k\,\Del u,\;\;\;\;\;\;\;\;\;k>0
+\eeq
+
+\espa
+\noi
+g) The Schrödinger equation in $\re^3$(Euclidean)$\times\re$,
+\beq
+i\hbar\derp{\psii}{t}=-\frac{\hbar^2}{2m}\Del\psii+V\,\psii,
+\eeq
+where $\psii$ is a complex function and $V$ a potential.
+
+\espa
+\noi
+h) The Navier-Stokes equation for a viscous and incompressible fluid (e.g., water) in $\re^3$(Euclidean)$\times\re$
+\beq
+\derp{u^a}{t}+u^b\na_bu^a+\frac1{\ro}\na^a p -\gamma\Del u^a=0
+\eeq
+\beq
+\na_au^a=0,
+\eeq
+where $u^a$ is the velocity vector of the fluid, $p$ its pressure, $\ro$ its density (constant) and $\gamma$ the kinematic viscosity.
+
+\espa
+
+From the cited examples, of which only the last one is not linear, we see the tremendous physical importance of having a general theory of these equations, and thus this is one of the most active branches of mathematics. Due to its complexity, in the large number of different cases it presents, the general theory is far from complete, however, there are cases or classes of equations where this has been achieved.
+One of these is the case of a single first-order equation, where as we will see the problem reduces to that of ordinary differential equations.
+
+Another of these cases is that of linear equations with constant coefficients (that is, for which there exists a coordinate system in which all the coefficients are constant - for example, the Laplacian for a Euclidean metric).
+This is mainly due to the use of transforms such as the Fourier transform. However, I note that there are recent works showing new results, even in the case of the Laplacian! If we allow the coefficients to vary, the problem becomes more complicated, however, certain subclasses of these have been completely studied. If we add non-linearity in a not too drastic form -- what is known as quasi-linear equations -- the knowledge is drastically reduced, although some subclasses have been overcome and some particular equations completely studied. The case where the non-linearity is drastic has not yet been successfully tackled - of any kind. Fortunately, the physical problems that we have been able to model or describe by partial differential equations so far have equations at most of the quasi-linear type. In this course, we will see in detail only the theory of some of the simplest equations [essentially the equations in examples a), b), c) and f)], always trying to use methods that can be applied to similar but more complex equations. This is not only due to the simplicity of these equations, which allows their complete and detailed knowledge but also because on the one hand, they represent the \textit{``canonical examples"} of different classes of equations. The solutions of the equations in each of these classes behave very similarly while they do so in a radically different way from the solutions to equations in the other classes. On the other hand, these are the most used equations in physics and appear in a multitude of different problems, even as particular cases of the equations in examples d), e), f) and g)!
+
+\section{The First Order Equation}
+
+\noi
+This is an equation of the form
+\beq
+F\lp p,u,\na_au\rp=0.
+\eeq
+
+\noi
+where $u$ is a function in some manifold $M$.
+This equation can be tackled very successfully and results in ordinary equations, whose theory we already know.
+For simplicity, we will consider here only the quasi-linear case and in $\re^2$, that is, an equation of the form,
+\beq
+a(x,y,u)\,u_x+b(x,y,u)\,u_y=c(x,y,u),
+\label{ot*}
+\eeq
+where $u_x = \derp{u}{x}$ and $u_y=\derp{u}{y}.$
+
+For geometric reasons, it is useful to represent the solutions of this equation in $\re^3$ or more precisely in a region $\Omega$ of $\re^3$ where a, b, and c are defined,
+that is to associate a solution $u(x,y)$ of \ron{ot*} with the hypersurface of $\re^3$ given by $\tauu=z-u(x,y)=cte.$ 
+These hypersurfaces are called integral surfaces of the equation \ron{ot*}. The gradient of $\tauu$ in these coordinates is
+$(\na_a\tauu) = (-u_x,-u_y,1)$, so we see that the equation \ron{ot*} is simply the condition
+that $\tauu$ is constant along the vector field 
+$(l^a)=(a(x,y,z),\;b(x,y,z),\;c(x,y,z))$, 
+that is $l^a\na_a\tauu=0$,
+which is equivalent to saying that $l^a$ is {\bf tangent} to the integral surfaces. Note that if $l^a\na_a\tauu=0$ then $(fl^a)\na_a\tauu=0$ 
+so what determines the equation
+\ron{ot*} is not $l^a$ but its direction. 
+This field of directions is called
+{\bf characteristic directions}, and their integral curves {\bf characteristic curves}.~\footnote{Recall that an integral curve is the 
+``image'' of a curve $\gamma(t)$ (in this case $=(x(t),y(t),z(t))$ solution of an ODE, 
+in this case 
+\beq
+\derc{\gamma(t)}{t}=\der{t}\lp\barr{c} x\\ y\\ z\earr\rp=\lp\barr{c}a(x,y,z)\\
+b(x,y,z)\\c(x,y,z)\earr\rp.
+\eeq}
+The theory of ODEs then tells us that through each point of $\Omega$ passes a unique characteristic curve. The knowledge of these curves is
+fundamental since if we form a surface $S$ by taking the union of
+certain characteristic curves then clearly $S$ will be an
+integral surface of \ron{ot*}, but on the other hand, given an integral surface $S$ and any $p\in S$ the characteristic curve that passes through $p$
+will be tangent to $S$ at every point and therefore will be a
+submanifold of $S$ so that $S$ will be formed by the
+union of characteristic curves.
+
+\espa 
+%\fig{6cm}{Characteristic Curves.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m11_1}}
+    \caption{Characteristic curves.}
+    \label{fig:11_1}
+  \end{center}
+\end{figure}
+
+In particular, note that if two integral surfaces $S$, $S'$, that is two
+solutions of \ron{ot*}, $u$ and $u'$, have a point $p$ in common then they must
+have an entire characteristic curve in common, since through $p$ only
+one of such curves passes and it cannot leave either of the
+two surfaces.
+On the other hand, if $S$ and $S'$ intersect in a curve $\gamma$ this must be
+integral. To see this, take a point $p$ of $\gamma$ and consider
+$T_pS$ and $T_pS'$; since the surfaces intersect in a curve these two
+subspaces of $T_p\re^3$ intersect in a line, as both must
+contain the direction given by $l^a$ this will be the line. But this is
+true for every point of $\gamma$ and therefore the tangent vector to $\gamma$
+is proportional to $l^a$ and $\gamma$ is characteristic.
+
+\espa 
+%\fig{9cm}{Intersection of Solutions.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{5cm}{!}{\myinput{Figure/m11_2}}
+    \caption{Intersection of solutions.}
+    \label{fig:11_2}
+  \end{center}
+\end{figure}
+
+\subsection{The Cauchy Problem}
+
+The {\bf Cauchy problem} of an equation is the problem of finding
+certain data such that giving these there exists a unique solution of
+this equation. That is, finding a certain set 
+whose elements are called data and a map between this space and the set of 
+solutions of the equation. 
+For example, in the case of ODEs, the problem
+consists of given a smooth vector field $v^a$ in $M$ finding some
+set such that each element of this corresponds to an integral curve
+of $v^a$.
+Clearly, we could take as this set the points of $M$
+where $v^a\neq0$ since through each of these points passes a unique
+integral curve. Clearly, we could also take as a set of 
+data -- at least locally --
+a hypersurface $s$ of $M$ such that at none of its points
+$v^a$ is tangent to it. 
+In such a case, we also have the very desirable
+property that each point of $S$ determines (locally) a unique solution, that is, we do not count each solution more than once.
+
+What will these data be in the case of the equation \ron{ot*}?
+
+\noi Let $\gamma(s)=(x_0(s),y_0(s),z_0(s))$, $s \in [0,1]$, be a curve in $\re^3$.
+We will look for a solution such that its integral surface contains
+$\gamma$, that is, a $u(x,y)$ such that it satisfies,\footnote{Only the 
+image of the curve matters and not its parameterization, so we will take one 
+in which the range of $S$ is the interval $[0,1]$.}
+\beq
+z_0(s)=u(x_0(s),y_0(s))\;\;\;\;\;\;\;\forall\;s\in[0,1].
+\label{ot**}
+\eeq
+
+We will first consider the case where $\gamma(s)$ is not a characteristic curve.
+Taking each point $\gamma(s)$ as the initial point for the ordinary differential equation that determines $l^a$ and solving this
+we obtain for each $s$ the characteristic curve that passes through $\gamma(s)$. (See figure.)
+
+\espa 
+%\fig{6cm}{Constructing the solution from the curve $\gamma$.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{5cm}{!}{\myinput{Figure/m11_3}}
+    \caption{Constructing the solution from the curve $\gamma$.}
+    \label{fig:11_3}
+  \end{center}
+\end{figure}
+
+We thus obtain a map $\gamma(s,t):I_s\times I_t\to\re^3$
+given by,
+\beq
+\gamma(s,t)=(x(s,t),y(s,t),z(s,t))
+\eeq
+with $x(s,0)=x_0(s)$, $y(s,0)=y_0(s)$ and $z(s,0)=z_0(s)$ and where at fixed $s$
+\beq
+\derc{\gamma(s,t)}{t}=l^a(\gamma(s,t)).
+\eeq
+
+If we could invert the functions $x(s,t)$ and $y(s,t)$ and thus obtain
+$s$ and $t$ as functions of $x$ and $y$ then
+\beq u(x,y) \equiv z(s(x,y),t(x,y))\eeq
+would be the sought solution, since such $u$ satisfies by construction
+\ron{ot*} and \ron{ot**}.
+
+It is not always possible to make such an inversion. The reason is that in
+general, there will be values of $s$ and $t$ such that the tangent plane to 
+$\gamma(s,t)$ at that point
+contains the $z$ axis. Let's see if there are conditions that ensure that such
+an inversion is possible at least locally, that is, in a neighborhood of some
+point $(x(s_0,0),y(s_0,0))$ on $\gamma(s)$.
+
+The implicit function theorem tells us that this will be possible if the 
+differential of the transformation at that point $(s_0,0)$ is
+invertible, that is, if its determinant (the Jacobian of the transformation)
+is not zero. At this point we have,
+\beq
+J=\left|\barr{cc}
+\left.\frac{\pa x}{\pa s}\right|_{(s_0,0)}&\left.\frac{\pa y}{\pa s}\right|_{(s_0,0)}\\
+\left.\frac{\pa x}{\pa t}\right|_{(s_0,0)}&\left.\frac{\pa y}{\pa t}\right|_{(s_0,0)}
+\earr\right| 
+= \frac{\pa x}{\pa s}(s_0)\,b_0 - \frac{\pa y}{\pa s}(s_0)a_0 \neq 0,
+\eeq
+where $a_0=a(x(s_0),y(s_0),z(s_0))$ and $b_0=b(x(s_0),y(s_0),z(s_0))$.
+This is then the condition for the local existence
+of solutions and tells us that $\gamma(s)$ must be chosen such that
+its projection in the $(x,y)$ plane has a tangent vector that is not
+proportional to the projection in that plane of the vector $(a,b,c)$.
+
+\espa
+\ejem: In some applications, the coordinate $y$ is time. In
+such a case, it is natural to specify $u$ at an instant of time, say
+$y=0$, that is, to give its {\bf initial value}. Thus, the {\bf initial value problem} simply consists of choosing $\gamma(s)=(s,0,h(s))$.
+The
+equation \ron{ot**} then results in $h(s)=u(s,0)$ or $h(x)=u(x,0)$, 
+that is, $h(s)$ will be the initial value
+that the solution will have at $y=0$. In this case, there will be
+a local solution as long as $b$, the coefficient of $\dip\derp{u}{y}$, 
+does not vanish
+at $(x,0,h(x))$. 
+If $\gamma$ were a characteristic curve, then there would be infinite (local) solutions since given a point $\gamma(s)$ of $\gamma$ and a non-characteristic curve $\gamma^{\star}(r)$ passing through this point, we could construct, using the previous procedure, but now with $\gamma^{\star}(r)$, a solution (a surface) $\gamma^{\star}(r,t)$ that would necessarily contain $\gamma$.
+
+\espa
+\noi
+\ejer: Solve the equations using the described method:
+\espa
+
+\noi
+a) $$\frac{\partial u}{\partial y} + c\frac{\partial u}{\partial x} =0$$
+   $$ u(x,0) = h(x).$$
+
+\noi
+b) $$\frac{\partial u}{\partial y} + u\frac{\partial u}{\partial x} =0$$
+   $$ u(x,0) = -x.$$   
+
+\noi
+c) For how long $(y=t)$ can the solutions of b) be extended?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+
+\section{Classification of Partial Differential Equations}
+
+To facilitate the classification, we will proceed similarly to how we did when we studied ordinary differential equations, that is, we will reduce the systems of equations to first-order systems. To do this, we will take as independent variables all the derivatives of lower order than the highest order in which each of the variables appears.
+
+\ejem: Let $\phi :\re^2 \to \re$ satisfy
+\beq
+\dersp{\phi}{x} + \dersp{\phi}{y} = \rho,
+\eeq
+that is, the Laplacian in a two-dimensional flat manifold.
+Define $u^1 := \phi$, $u^2 :=\derp{\phi}{x}$ and $u^3 := \derp{\phi}{y}$,
+then this equation is equivalent to the following system
+\beq
+\left(
+\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & -1
+\end{array}
+\right)
+\pa_x
+\left(
+\begin{array}{c}
+u^1 \\ u^2 \\ u^3
+\end{array}
+\right)
++
+\left(
+\begin{array}{ccc}
+0 & 0 & 1 \\
+0 & 0 & 0 \\
+1 & 0 & 0 \\
+0 & 1 & 0
+\end{array}
+\right)
+\pa_y
+\left(
+\begin{array}{c}
+u^1 \\ u^2 \\ u^3
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+\rho \\ u^2 \\ u^3 \\ 0
+\end{array}
+\right)
+\label{lap2d}
+\eeq
+
+
+The reason why we added the fourth equation will be seen later, but we anticipate that it allows us to deduce, without resorting to the equations of the second and third rows, that the components $u^2$ and $u^3$ are the components of the differential of some function. If we know a solution of \ref{lap2d}, $(u^1,u^2,u^3)$ we can prove that $u^1$ also satisfies the Laplacian. Indeed, taking a derivative with respect to $x$ of the second row and a derivative with respect to $y$ of the third, summing them and then using the first row we obtain the desired result. Of all the first-order systems (and basically for the same reason we gave when we considered systems of ordinary equations) we will only consider those of the form,
+\beq
+M^a_{A'B}\na_a u^B = I_{A'},
+\eeq
+with $M^a_{A'B}$ and $I_{A'}$ smooth functions of the point in the manifold (fields) and of $u^A$.
+
+The indices we are using are abstract indices and can denote not only a set of scalars, but also a large vector made up of various vector fields. We will see this in examples. Coordinate systems and bases can also be taken and then the problem can be posed in components, as we did in the previous example, in which case we can think of $u^A$ as a large vector array of scalar fields. We have used primed and unprimed indices to make it clear that the (co-vectorial) space of the primed indices does not have the same dimension as the vector space of the unprimed indices.
+
+The type of system we have just defined is called quasi-linear, since the derivatives appear linearly. This is not a loss of generality from the point of view of physics:
+\espa
+\noi 
+{!`\sl All known physical systems are of this form!}
+\espa
+
+
+Historically, the classification we will give below arises from the attempt to frame all equations in the Cauchy Problem, that is, to take a hypersurface $\Sigma$ of $M$, give $u$ as data there and obtain through the equations its derivative in the transverse direction and from these data try to construct solutions in a neighborhood of $\Sigma$ in $M$ (local solutions). This attempt was not generally successful, since in general this is not the correct way to give data, but the classification of these equations thus obtained was successful, since the properties of the solutions to the equations in each of these classes in which we will classify them are very similar and in each of these classes the data are also prescribed in a similar way.
+
+To fix ideas, let $M$ be of dimension $n$ and let $p \in M$.
+We want to find the solutions in a neighborhood of $p$ giving $u^A$ as data on some hypersurface $\Sigma$ of $M$ that contains $p$. For simplicity, we will do the necessary calculations in a coordinate system adapted to the problem in the sense that we will choose the coordinate $x^n$ in such a way that the submanifold $x^n =0$ is the surface $\Sigma$ and $p$ is the origin of coordinates. The data will then be $\Phi^A(x^1,...,x^{n-1})$, which will correspond to the solution $u^A$ restricted to $\Sigma$, that is $\Phi^A = u^A|_{\Sigma}$.
+
+Since we know what $u^A$ will be on $\Sigma$, we know what all its derivatives (of any order) will be with respect to the coordinates $x^i,\; i=1,...,n-1$. 
+The idea is now to use the equation to find $\partial_n u^A |_{\Sigma}$ and thus successively find all the derivatives of $u$ at $p$ (or any other point of $\Sigma$). If we could achieve this, we could, at least formally and in a neighborhood of $p$, construct $u^A$ as its Taylor series around $p$. Therefore, if we could solve for the normal derivatives to $\Sigma$, if in addition the $\Phi^A$ were analytical data, and if the coefficients of the equation were also analytical, then we could prove (Cauchy-Kowalevski Theorem) that the solution $u^A$ formally constructed above actually exists and is analytical in a neighborhood of $p$ in $M$.
+
+\espa 
+%\fig{6cm}{Constructing the Local Solution.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m11_4}}
+    \caption{Constructing the local solution.}
+    \label{fig:11_4}
+  \end{center}
+\end{figure}
+
+What requirements must the equation satisfy for this to be possible?
+Using the mentioned coordinate system it can be seen that
+\beq M(\Phi^C,q)^n_{A'B}\partial_n u^B |_{\Sigma} = \mbox{Terms in }(\Phi^A,
+\partial_i \Phi^C,q)_{A'},
+\eeq
+It is clear then that we can solve for $\partial_n u^A$ only if $M(\Phi^C,q)^n_{A'B}$ is invertible. In general (as in the example we gave) the target space of the map $M^n_{A'B}$ does not have the same dimension as the source space and therefore the map is not generally invertible, so we will only ask that {\bf the rank of this map has the maximum dimension} (that is, the dimension of the source space --that of the vectors $u^A$--). In particular, this implies that we are assuming that the dimension of the target space is greater than or equal to that of the source space. We are asking for the minimum possibility of having unique solutions, indeed, the maximality of the rank of $M(\Phi^C,q)^n_{A'B}$ is equivalent to its kernel being of zero dimension and therefore, if a solution exists it will be unique.
+
+If this does not happen, that is, if the kernel is not trivial, we will not be able to solve for the normal derivatives of the solution in terms of the initial data and therefore there will not be a unique solution. Note that it may still happen that having to satisfy more equations than the unknowns present may make the equations inconsistent and there may be no solution. In some cases where this happens, the resolution of this problem consists in realizing that the data to be freely given will be a number less than the dimension of the source space, only some components of $u^A$ can be given as initial data.
+
+What is geometrically the condition of maximality of the rank of $M^a_{A'B}$ in terms of the chosen coordinates?
+
+If the surface $x^n = 0$ is a smooth surface then we can assume that $\nabla_a x^n$ exists and is non-zero, in this case the previous condition is simply the condition that the matrix $ M^a_{A'B}\nabla_ax^n$ has maximum rank, but this condition is independent of the coordinate system and only depends on $\Sigma$, since here $x^n$ is simply a function in $M$ that is constant on $\Sigma$ and whose gradient does not vanish. 
+If we take another function with the same characteristics, say $\tilde{x}^n$, then we will have that their gradients are proportional, that is, there will exist $\alpha$ such that $\nabla_a \tilde{x}^n = \alpha \nabla_a x^n$. The matrices will then be proportional and the conditions on the kernels identical.
+
+% filepath: /Users/reula/Docencia/Metodos_libro/libro_metodos_github/translated_text.tex
+The surfaces where the previous condition is violated at all points are called
+{\bf characteristic surfaces}.
+We will classify the equations according to the number of characteristic surfaces
+that intersect at a given point.
+Note that the classification only depends on the tensor $M^a_{A'B}$ and not on the lower-order terms.
+$M^a_{A'B}\nabla_a u^B$ is called the {\bf principal part} of the equation.
+Also note that since $M^a_{A'B}$
+is a tensor field not necessarily constant, the condition
+defining the characteristic surfaces can be very different
+from point to point, therefore the classification we will introduce
+is generally valid only for the point in question. Fortunately, in applications, equations where their type changes
+from region to region rarely appear.
+Also note that for non-linear systems
+the condition also depends on the solution one is considering!
+Since our classification is based only on the principal part of the
+equation, it must contain all the information about the equation,
+which is why in the previous example we added the last row in
+the system of equations; without it and considering the principal system,
+we would not know that the last two components of $u^A$ had to
+be the components of the differential of a function.
+
+We will say that an equation is {\bf elliptic at $p \in M$} if $p$ is not
+intersected by any characteristic surface. That is, if
+Rank $M^a_{A'B}k_a$ is not maximal then $k_a = 0$
+[since we are at a point, the condition that $k_a$ is a gradient is
+irrelevant].
+\espa
+
+\ejer: The canonical example of an elliptic equation is the Laplacian
+in $M$, $\Delta u := g^{ab}\na_a\na_b \phi = \rho$ where $g^{ab}$ is a Riemannian metric.
+Show that the given example is an elliptic system.
+\espa
+
+We will say that an equation is {\bf parabolic at $p \in M$} if $p$ is
+intersected by a unique characteristic surface. That is, there exists
+a unique $k_a \neq 0$ --up to a multiplicative factor-- such that
+Rank $M^a_{A'B}k_a$ is not maximal.
+
+The canonical example of a parabolic (or diffusion) equation is the
+heat equation in $\re \times \re^{n-1}$,
+\beq 
+\partial_t u = \Delta u.
+\eeq
+
+\espa
+\noi
+\ejer: Consider the previous equation in $\re \times \re$,
+$\pa_t u = \dersp{u}{x}$.
+Reduce this system to first order and find the characteristic
+surfaces of this equation.
+\espa
+
+We will say that an equation is {\bf hyperbolic at $p \in M$} if it is
+intersected by more than one characteristic surface.
+
+The canonical example in this case is the wave equation in $M$
+\beq \Del u = g^{ab}\nabla_a \nabla_b u ,\eeq
+where $g^{ab}$ is a metric such that given any point $p \in M$
+there exists a coordinate system in which $g_{ab}$ takes the form,
+\beq g_{\mu \nu}|_p = \{-(dt)^2 + \sum_i (dx^i)^2\}|_p.
+\eeq
+
+\espa
+\ejer: Consider in $\re^2$ the metric $ds^2 = -(dt)^2 + (dx)^2$
+(at every point) and the equation $g^{ab}\na_a\na_b u = \rho$. 
+
+\noi
+a) Reduce the equation to first order.
+
+\noi
+b) Find the characteristics of the equation.
+
+\noi
+c) Do the same in $\re \times S^1$ 
+(a spacetime cylinder) with the following two metrics, $ds^2 = -(dt)^2 +(d\theta)^2$ and 
+$ds^2 = -(dt)^2 + t^2(d \theta)^2$.
+
+\recubib{Recommended reading for this and the following chapters: \cite{Treves}, \cite{John},
+\cite{Folland} and \cite{Godunov}. What is presented in these chapters is the minimum and essential to have an understanding of this area.
+Much more is known and at the same time, as always, there is much more that we do not know, weak solutions, global existence, shock waves, boundary conditions, stability, etc., etc. This is probably the most active area, with the most people working and with the largest number of applications in all of mathematics. Most of these applications have traditionally been in the area of engineering and particularly in fluids, which has meant that only certain specific types of equations, quite difficult by the way, were treated, and not the most used in other areas of physics. This has evolved in recent years and now there is a considerable shift of attention towards many of the problems of modern physics. }

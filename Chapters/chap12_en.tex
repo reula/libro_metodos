@@ -1,0 +1,655 @@
+% filepath: /Users/reula/Docencia/Metodos_libro/libro_metodos_github/translate.tex
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%% last modification 28/05/2013
+
+\chapter{Elliptic Equations}
+\label{elliptic_equations}
+
+\section{The Laplace Equation}
+
+We will take the Laplace equation in $\re^n$ with Euclidean metric $ds^2 = \sum^n_{i=1} (dx^i)^2$,
+or an open region $\Omega$ of $\re^n$ with the same metric, as a model of an elliptic equation.
+The results we obtain that do not depend on special functions can be generalized to elliptic equations of the form \ron{ec*} if it is assumed that $c \leq 0$.
+
+As we mentioned before, the Cauchy program, that is, formulating the problem of obtaining solutions by giving $u^A$ on a hypersurface $\Sigma$, does not generally work, it only works for hyperbolic equations.
+If we consider non-analytic data, and physical data are generally non-analytic, there are generally not even local solutions.
+What is the appropriate way then to give data for the Laplace equation? We will obtain the answer to this by considering a physical phenomenon described by this equation.
+
+Consider a drum and apply a (small) force on its membrane (or patch) perpendicular to it.
+
+\espa 
+%\fig{6cm}{The Drum Membrane.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m12_1}}
+    \caption{The drum membrane.}
+    \label{fig:12_1}
+  \end{center}
+\end{figure}
+
+The membrane will move from its flat (rest) position and acquire a new equilibrium position generating an elastic force that exactly cancels the applied one.
+What will this new shape of the membrane be?
+If we denote by $u(x,y)$ the displacement of it in the direction of the vertical axis ($z$) and $f$ the force per unit area applied (in the vertical direction), it can be seen that $u$ must satisfy the equation,
+\beq 
+\Delta u = f, \mbox{in } \Omega=\{(x,y)| \sqrt{x^2+y^2} < \mbox{drum radius}\}.
+\label{ec2*}
+\eeq
+
+\ejer:
+Convince yourself that~\ron{ec2*} is the equilibrium equation for the case where the applied force is small enough to produce a small deformation of the membrane.
+Hint: First do the one-dimensional case.
+
+Since the edge of the drum holds the membrane there, we will have the following {\bf boundary condition},
+\beq 
+u|_{\partial \Omega} =0, \;\; \partial \Omega=\{(x,y)\;|\; \sqrt{x^2+y^2} = 
+\mbox{drum radius}\}.
+\label{ec3*}
+\eeq
+Thus we have the following problem: Given $f$ in $\Omega$, find $u$ satisfying
+\ron{ec2*} and \ron{ec3*}.
+From our physical experience, we know that this problem should be solvable! Moreover, the problem should be solvable where the drum is not circular but has an arbitrary shape, allowing $\partial \Omega$ to be an arbitrary but smooth edge and also allowing $\partial \Omega$ not to be in the plane $z=0$, or -equivalently- to be in such a plane but allowing $u$ to take any --but smooth-- value $\phi$ on $\partial \Omega$.
+
+We thus arrive at the following {\bf Dirichlet Problem:} 
+Given $\Omega$ with smooth $\partial \Omega$, $f :\Omega \rightarrow \re$ smooth and
+$\phi_0: \partial \Omega \rightarrow \re$, also smooth, find 
+$u:\Omega \rightarrow \re$ satisfying,
+\begin{enumerate}
+\item $ \Delta u = f \;\;\;\;\mbox{in}\;\;\Omega$,
+\item $u|_{\partial \Omega} = \phi_0.$
+\end{enumerate}
+Later we will reaffirm our intuition by seeing that this problem can always be solved.
+
+Now suppose we allow the edges of the membrane to slide vertically but place vertical springs on the edge with a Hooke constant that depends on the position, $k:\partial \Omega \rightarrow \re$, and arranged in such a way that the equilibrium position before applying $f$ is $u=0$. When we apply $f$, the membrane will move until again in the interior we have,
+\beq \Delta u = f \;\;\;\;\mbox{in}\;\;\Omega \eeq
+and on the edge
+\beq
+(ku + n^a\nabla_a u)|_{\partial \Omega} = 0,
+\eeq
+where $n^a$ is the normal to $\partial \Omega$. 
+This {\bf Mixed Problem} can also be solved. 
+%\fig{6cm}{Mixed Problem.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m12_2}}
+    \caption{Mixed problem.}
+    \label{fig:12_2}
+  \end{center}
+\end{figure}
+
+A particular case of this is when instead of using springs to apply the edge force, we simply use a given force $\phi_1 :\partial \Omega \rightarrow \re$, but taking care that its total contribution, $\int_{\partial \Omega} \phi_1 dS $, exactly cancels the total contribution of $f$ --otherwise we would have an accelerating membrane--. In such a case we have the {\bf Neumann Problem:}
+\beqarr 
+\Delta u &=& f \;\;\;\;\mbox{in}\;\;\Omega \\
+n^a\nabla u|_{\partial \Omega} &=& \phi_1,\mbox{ on the edge} \;\; \partial \Omega,\\
+\mbox{with} \dip\int_{\partial \Omega} \phi_1 \;dS 
+&=& \dip\int_{\partial \Omega} n^a\nabla_a u \;dS
+= \dip\int_{\Omega} \Delta u \;dV = \dip\int_{\Omega} f \;dV .
+\eeqarr
+
+\subsection{Existence}
+
+Next, we will see that the Dirichlet problem always has a unique solution (assuming that $f$, $\phi_0$, and $\partial \Omega$ are sufficiently smooth). The other problems are solved similarly.
+
+Suppose there exists $u \in H^2(\Omega)$ satisfying,
+$\Delta u = f $ in $\Omega$ and $u|_{\partial \Omega} = 0$ --which implies 
+$u \in H^1_0(\Omega)$--. Then using the divergence theorem we obtain the {\bf first Green's identity}, $\forall v \in C^{\infty}(\Omega). $
+
+\beq \int_{\Omega} v\bar f \; d^nx = \int_{\Omega} v\Delta \bar{u} \;d^nx =
+- \int_{\Omega} e^{ab} \nabla_a v \nabla_b \bar u \; d^nx +
+\int_{\partial \Omega} v(n^a\nabla_a \bar u) \; d^{n-1}x, 
+\eeq
+%
+If we assume that $v \in H^1_0(\Omega)$ the identity is still valid and in this case reduces to,
+\beq
+\int_{\Omega} e^{ab} \nabla_a v \nabla_b \bar u \; d^nx =
+- \int_{\Omega} v \bar f \; d^nx , \;\;\;\;\;\forall \;\;v \in H^1_0(\Omega).
+\label{ec4*}
+\eeq
+But note that this identity is still valid if we simply assume that $u \in H^1_0(\Omega)$ --not necessarily in $H^2(\Omega)$-- and that $f \in H^{-1}(\Omega)$. 
+
+Thus we have the {\bf Weak Dirichlet Problem} 
+(with $\phi_0 = 0$):
+Find $u \in H_0^1(\Omega)$ such that given $f \in H^{-1}(\Omega)$, \ron{ec4*} is satisfied.
+
+If the right-hand side of \ron{ec4*} were an inner product, this would give rise (by completion) to a Hilbert space $H$ and then 
+ \ron{ec4*} would take the form 
+\beq
+ \langle u,v \rangle_H = \Phi_f(v) := -\int_{\Omega} \bar f v \; d^nx, \forall v
+\in H^1_0(\Omega).
+\label{ec5*}
+\eeq
+ 
+If $H = H^1_0(\Omega) $ and if $\Phi_f: H \rightarrow \ve C$ were
+continuous, then the Riesz representation theorem would tell us that
+there exists a unique $u$ in $H$ satisfying \ron{ec4*} and therefore \ron{ec5*}.
+As we will see below (Poincaré-Hardy lemma), in this case, the right-hand side of \ron{ec4*} is an inner product equivalent to that of 
+$H^1_0(\Omega)$
+and therefore $H = H^1_0(\Omega) $. But then $\Phi_f$ is clearly
+continuous since $H^{-1}(\Omega)$ is the dual of 
+$H^1(\Omega) \supset H^1_0(\Omega)$
+and $u \in H^1_0(\Omega)$. We have thus proved:
+
+\bteo
+[existence and uniqueness] Given $f \in H^{-1}(\Omega)$ there exists a
+unique $u \in H^1_0(\Omega)$ satisfying the weak Dirichlet problem.  
+\eteo
+\bcor
+  The map $(\Delta,\tau) : H^1(\Omega) \rightarrow H^{-1}(\Omega)
+\times H^{1/2}(\Omega)$ given by,
+\beq \barr{rcl}
+\Delta u &=& f \in H^{-1}(\Omega),\\
+\tau u &=& \phi_0 \in H^{1/2}(\pa \Omega),
+\earr
+\eeq 
+is an isomorphism~\footnote{Always understanding these equations in
+their {\sl weak} or distributional form}.
+\ecor
+
+\pru:
+It is clear that the map is continuous --since it is linear and bounded--. 
+It is also
+injective since if $\phi_0 = 0$ then $u \in H^1_0(\Omega)$ and if $f=0$
+the previous theorem (uniqueness) tells us that $u=0$.
+Let's see that it is surjective. Let $\phi_0 \in H^{1/2}(\Omega)$, then there exists
+$w \in H^1(\Omega) $ such that its restriction to $\pa \Omega$,  
+$\tau w = \phi_0$ and let $f \in H^{-1}(\Omega)$. 
+Since also $\Delta w \in H^{-1}(\Omega)$ the previous theorem
+guarantees that there exists $\bar u \in H^1_0(\Omega)$ such that 
+\beq
+\Delta \bar u = f - \Delta w \mbox{ in } \Omega.
+\eeq
+But then $u = \bar u + w$ satisfies $\Delta u = f$ in $\Omega$ and 
+$\tau u = \phi_0 $ on $\partial \Omega$.
+
+\espa
+
+\noi It only remains to prove then that the previous inner product is indeed an inner product and the norm thus obtained is equivalent to that of $H^{1}_{0}$. This follows from the following result,
+
+\blem[of Poincaré-Hardy] 
+\label{lem12.1}
+There exists $C>0$ such that for all 
+$u \in H^1_0(\Omega)$,
+\beq
+\int_{\Omega} |u|^2 \; d^nx \leq C \int_{\Omega} e^{ab} \nabla_a \bar u
+\nabla_b u \; d^nx.
+\eeq
+\elem
+
+This tells us that the inner product in $H^1_0(\Omega)$ is equivalent
+to the inner product used previously.
+
+\espa
+
+\pru: Since $C^{\infty}_0(\Omega)$ is dense in $H^1_0(\Omega)$ it is sufficient
+to prove the inequality for these functions. Let $\Gamma_d$
+be an n-cube of side $d$ containing $\Omega$. Extending the functions
+in $C^{\infty}_0(\Omega) $ as zero in $\Gamma_d - \Omega$ we obtain,
+\beq\barr{rcl}
+|u|^2(x) &=& |\int^{x^1}_{-d/2} \partial_1 u(\xi^1,x^2,...,x^n) \; d\xi^1|^2\\
+         &\leq& (x^1+\frac d2)\int^{x^1}_{-d/2} |\partial_1u|^2 \; d\xi^1\\
+         &\leq& d\int^{d/2}_{-d/2} |\partial_1 u|^2 \; d\xi^1.
+\earr
+\eeq
+Therefore,
+\beq 
+\int^{d/2}_{-d/2}|u(x)|^2 dx^1 
+\leq d^2 \int^{d/2}_{-d/2} |\partial_1 u|^2 \; d\xi^1,
+\eeq
+and
+\beq
+\int_{\Gamma_d} |u|^2(x) \; d^nx 
+\leq d^2 \int_{\Gamma_d} |\partial_1 u|^2 \; d^nx 
+\leq C \int_{\Gamma_d} \nabla_a \bar u \nabla^a u \; d^nx,
+\eeq
+with $C = d^2$. This proves the lemma and concludes the proof of existence
+and uniqueness $\spadesuit\spadesuit$
+
+Both the existence and uniqueness theorem and the regularity theorem
+(which we give below)
+can be generalized to elliptic equations with non-constant coefficients as long as they are smooth, it is satisfied that $c \leq 0$ and that
+$a^{ab}l_al_b > k g^{ab}l_al_b$, where $k$ is a constant and
+$g^{ab}$ is a positive definite metric such that the volume of
+$\Omega$ with respect to this metric is finite. The proof we gave is
+valid only if $Vol_g(\Omega) < \infty$, since we used the Poincaré-Hardy lemma.
+If $\Omega = \re^n$ then the proof is still valid if we substitute
+the space $H^1_0$ by the space $H^1_1$, that is, the space of functions that decay to infinity, with norm
+$$
+||f||^2_{H^1_1(R^n)} = \int_{R^n} \frac{|f|^2}{r^2} + e^{ab}\na_a
+\bar{f} \na_b f.
+$$
+
+In this case, it can be proven that
+the solution to the problem will not only be smooth but also decay asymptotically like $1/r$.
+
+\subsection{*Regularity of Solutions}
+
+The solution we have found is only in the weak sense. If we now assume that $f$ and $\phi_0$ have some regularity, we can also conclude that,
+
+\bteo
+[Regularity] Let $u \in H^1(\Omega)$ be a weak solution of the equation $\Delta u = f$ in $\Omega$ with boundary condition $u|_{\partial \Omega} = \phi_0$ and let $f \in H^k(\Omega)$, $\phi_0 \in H^{k+\frac32}(\partial \Omega)$, $k \geq -1$ then $u \in H^{k+2}(\Omega)$. In particular, if $f \in C^{\infty}(\Omega)$ and $\phi_0 \in C^{\infty}(\partial \Omega)$, then $u \in C^{\infty}(\Omega)$.
+\eteo
+
+Before proceeding with the proof, we will define the finite difference operator and see its properties. Let $\{x^i\}$ be a coordinate system in an open subset of $\Omega$.
+
+\espa
+\defi: 
+\[
+\Delta^h_i u(x^1,...,x^i,...,x^n) := \dip\frac{u(x^1,...,x^i+h,...x^n) - u(x^1,...,x^i,...,x^n)}{h}.
+\]
+
+\blem
+\label{lem12.2}
+ If $u \in H^1(\Omega)$ and $\Omega' \subset \subset \Omega$ (strictly contained, $\partial\Omega \cap \Omega' = \emptyset$) then,
+\beq \|\Delta^h_i u \|_{H^0(\partial\Omega)} \leq \|\partial_i u \|_{H^0(\Omega)}.
+\eeq
+\elem
+
+\espa
+
+\pru: It is sufficient to consider the case $u \in C^1(\Omega)$. If $h<dist(\partial\Omega,\Omega')$, then 
+\beq
+\Delta^h_iu(x) = \frac1h \int_0^h \partial_i u(x^1,...,x^i+\xi,...,x^n) d\xi
+\;\;\forall x \in \Omega',
+\eeq
+therefore, using the Schwarz inequality, we see that,
+\beq 
+|\Delta^h_iu(x)|^2
+\leq \frac1h \int_0^h |\partial_i u(x^1,...,x^i+\xi,...,x^n)|^2 \; d\xi.
+\eeq
+Integrating over $\Omega'$ we obtain,
+\beq
+\int_{\Omega'} |\Delta^h_i u(x)|^2 d^nx \leq
+\frac1h \int^h_0 \int_{\Omega'} |\partial_i u|^2 d^nx \; d\xi \leq
+\int_{\Omega} |\partial_i u |^2 \; d^nx.
+\eeq
+$\spadesuit$
+
+\blem
+\label{lem12.3}
+Let $u \in H_0(\Omega)$ 
+(and therefore $\Delta^h_i u \in H_0(\Omega')$)
+and suppose there exists $k<0$ such that 
+$\|\Delta^h_i u \|_{H_0(\Omega')} \leq k \;\;\forall \;h>0$ and $\Omega'\subset
+\subset \Omega$, with $h<dist(\partial\Omega,\Omega')$. 
+Then the weak derivative $\partial_i u$ exists and satisfies,
+$\|\partial_i u \|_{H_0(\Omega)} \leq k$.
+\elem
+
+\espa
+
+\pru: By the weak compactness of closed and bounded sets in $H_0(\Omega')$, there will exist a sequence $\{h_m\}\rightarrow 0$ and $v_i \in H_0(\Omega)$ with $\|v_i\|_{H_0(\Omega')} \leq k$ such that 
+$\Delta^{h_m}_i u \sr{d}{\rightarrow} v_i$, that is
+\beq 
+\int_{\Omega} \phi \Delta^{h_m}_i u \;d^nx \rightarrow 
+\int_{\Omega} \phi v_i \;d^nx, \;\;\;\forall \;\phi \in C^1_0(\Omega).
+\eeq
+On the other hand, if $h_m <dist(sop.\phi ,\partial\Omega)$, then
+\beq
+\int_{\Omega} \phi \Delta^{h_m}_i u \; d^nx =
+- \int_{\Omega} u (\Delta^{-h_m}_i \phi ) \; d^nx \rightarrow
+- \int_{\Omega} u \partial_i \phi \; d^nx.
+\eeq
+We thus conclude that, 
+\beq
+\int_{\Omega} \phi v_i \; d^nx = - \int_{\Omega} u \partial_i \phi \; d^nx,
+\eeq
+meaning that $v_i$ is the weak (distributional) derivative of $u$ in the direction
+$x^i$ $\spadesuit$
+
+\espa
+
+\pru: (Regularity Theorem):
+We will be content to prove that $u$ is regular in any $\Omega'$
+strictly contained in $\Omega$, the extension of the proof to
+the whole $\Omega$ does not add any new concept. 
+We will prove the statement for $k=0$, the rest follows by induction on $k$.
+Since $u$ is a weak solution, we have that 
+\beq 
+\int_{\Omega} \nabla^a \bar u \nabla_a v \; d^nx = 
+\int_{\Omega} \bar f v \; d^nx, \forall v \in C^1_0(\Omega).
+\label{ec6*}
+\eeq 
+Replacing $v$ by $-\Delta^{-h}_i v$ with $|2\,h|<dist(sop.v ,\partial\Omega)$,
+we have,
+\beq 
+\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \nabla_a v \; d^nx = 
+- \int_{\Omega} \bar f \Delta^h_i v \; d^nx, \forall v \in C^1_0(\Omega)
+\eeq
+and therefore (Using Lemma~\ron{lem12.2}),
+\beq 
+\|\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \nabla_a v \; d^nx\| \leq 
+\|f\|_{H_0} \|\partial_i v\|_{H_0}.
+\eeq
+Now taking $v = \Delta^h_i u $ we obtain,
+\beq 
+\|\int_{\Omega} (\Delta^h_i\nabla^a \bar u) \Delta^h_i \nabla_a u \; d^nx\| \leq 
+\|f\|_{H_0} \|\partial_i \Delta^h_i u\|_{H_0},
+\eeq
+that is,
+\beq 
+\|\Delta^h_i\nabla^a u \|^2_{H_0}  \leq 
+\|f\|_{H_0} \|\Delta^h_i \:\na_a u\|_{H_0},
+\eeq
+which finally implies,
+\beq 
+\|\Delta^h_i\nabla^a u \|_{H_0}  \leq \|f\|_{H_0} < k. 
+\eeq
+Lemma~\ron{lem12.3} then tells us that 
+$\partial_i u \in H^1(\partial\Omega)$ and
+completes the first part of the proof.
+
+Now, to complete the proof, let's see that if $f \in C^{\infty}(\Omega)$ then $u \in C^{\infty}(\Omega)$.
+But this is obvious since if $u \in H^p(\Omega)$, $\Omega \subset \re^n$, 
+then by Sobolev's Lemma $u \in C^{p - \frac n2 - \eps} (\Omega)
+\;\;$ $\forall \;\eps > 0$ and in particular if $u \in H^p(\Omega) \;\;\;\;
+\forall \;p$ then
+$u \in C^{\infty}(\Omega)$ $\spadesuit$
+\espa
+
+
+
+
+\section{Spectral Theorem}
+\label{sec:Spectral-Theorem}
+
+Consider a rod made of a material with thermal conductivity $q=1$ and length
+$L=2\pi$ and suppose we want to describe the evolution of its
+temperature distribution $T(t,x)$. To do this, we will assume an
+initial distribution $T_0(x)$ and that the ends of the rod are
+connected to an infinite heat reservoir at zero degrees. We must
+then solve the mathematical problem,
+\beq\barr{rcl}
+\dip\frac d{dt} T &=& - \dip\frac {d^2}{dx^2} T, \;\;\;t\geq 0 \\ [3mm]
+T(t_0,x) &=& T_0(x),\\ [3mm]
+T(t,0) &=& T(t,2\pi) = 0\;\;\;t \geq 0.
+\earr\eeq
+To solve it, we will use a Fourier series expansion, that is,
+we will propose a solution of the form,
+\beq
+T(t,x) = \sum^{\infty}_{n=1} C_n(t) \sin(\frac{nx}2),
+\eeq
+which clearly satisfies the boundary conditions.
+Applying the equation and using the orthogonality of the functions 
+we obtain,
+\beq
+\frac d{dt} C_n(t) = - \frac{n^2}4 C_n(t),
+\eeq
+which has the solution,
+\beq
+C_n(t) = C_n(0)e^{-\frac {n^2}4 t}.
+\eeq 
+Therefore, if we give the initial condition 
+$T_0 \in L^2(0,2\pi)$, it will determine a sequence 
+$\{C^0_n = (T_0,\sin(\frac{nx}2))_{L^2}\}$ in $l^2$ that
+we will use as the initial condition and thus obtain $T(t,x)$.
+Since 
+\beq
+\sum^{\infty}_{n=1} |C_n(t)|^2 = \sum^{\infty}_{n=1}
+|C_n^0|^2e^{-\frac{n^2}2 t} \leq \sum^{\infty}_{n=1} |C_n^0|^2 < \infty
+\eeq
+the formal solution --since we do not know if it is differentiable-- will be
+in $L^2(0,2\pi)$ for all $t \geq 0$. For any $t>0$ and $q \in \mathbb{N}$ 
+we have that $n^{2q}e^{-\frac{n^2}2 t}$ tends
+exponentially to zero as $n$ tends to infinity and therefore
+$T(t,x) \in H^q(0,2\pi)$ which implies $T(t,x) \in C^{\infty}((0,+\infty)\times
+[0,2\pi])$~\footnote{It can also be shown that $T(t,x)$
+is analytic in both variables in $(0,+\infty)\times
+[0,2\pi])$}.
+
+\noi We have thus completely solved this problem.
+
+\espa
+What have we used to construct these solutions?
+We have used that any function that vanishes at the ends can
+be expanded in terms of its Fourier series, that is, in terms of the
+functions $\sin(\frac{nx}2)$ and also that,
+\beq
+\frac{d^2}{dx^2} \sin(\frac{nx}2) = -\frac{n^2}4 \sin(\frac{nx}2)
+\eeq
+In analogy with the theory of operators between finite-dimensional vector spaces,
+we will call the above equation the eigenvector-eigenvalue equation of the linear operator $\frac{d^2}{dx^2}$. 
+Given a
+linear operator $L:D \subset L^2 \rightarrow L^2$ 
+the problem of finding its eigenvalues and
+eigenvectors with given boundary conditions is called the Sturm-Liouville problem. As we will see below, there is a large
+number of operators for which this problem has a solution.
+Is it a coincidence that the set of eigenvalues of the operator in the
+example is a basis of $L^2$?~\footnote {To obtain pointwise convergence
+(and not just in $L^2$) in the case of non-zero boundary conditions, 
+one must add the eigenvectors (with zero eigenvalue) 
+$f_0(x) = 1$ and $f_1(x)=x$.} 
+The following theorem and its corollary tell us that it is not, if the
+operator in question satisfies certain conditions.
+
+\bteo[Spectral for the Laplacian]
+Let $\Omega \subset \mathbb{R}^n$ be bounded. 
+Then the Laplacian has a countable and discrete set of eigenvalues,
+$\Sigma=\{\lam_i\}$,
+whose eigenfunctions (eigenvectors) expand $H^1_0(\Omega)$.
+\eteo
+
+% To prove this theorem we need the following lemmas:
+
+
+\pru: [Spectral Theorem]
+Consider the functional
+${\cJ}:H^1_0(\Omega) \rightarrow \mathbb{R}^+$ given by,
+\beq
+\mbox{\cJ}(u) = \frac{\int_{\Omega} \na_a \bar u \na^a u \;d^nx}
+{\int_{\Omega} \bar u u \:d^nx}.
+\eeq
+Since $\cJ (u)$ is non-negative, there will exist $\lam_0(\Omega) \in \mathbb{R}^+$ such that 
+\beq 
+\lam_0 = \barr{c} \\ inf \cJ (u) \\^{
+       u\in H^1_0(\Omega)} \earr.
+\eeq
+
+\ejer: 
+Relate this $\lam_0$ with the constant in the
+Poincaré-Hardy Lemma. 
+\espa
+
+% filepath: /Users/reula/Docencia/Metodos_libro/libro_metodos_github/translated_text.tex
+As we will see below, this $\lam_0$ is the smallest of the eigenvalues of the Laplacian, and its eigenfunction $u_0$ is the one that minimizes \cJ. 
+Indeed, suppose there exists $u_0$ in $H^1_0(\Omega)$ that minimizes \cJ. 
+Since \cJ is a differentiable functional, we must have
+\beq
+\frac d{ds} \cJ (u_0 + sv)|_{s=0} = 0 \;\;\;\; \forall\;v 
+\in H^1_0(\Omega).
+\label{des}
+\eeq
+But 
+\beqarr
+\frac d{ds} \cJ (u_0 + sv)|_{s=0} 
+&=& \frac{1}{\int_{\Omega} \bar u u \:d^nx} 
+[\int_{\Omega}(\na^a \bar v \na_a u_0 + \na^a \bar u_0 \na_a v) d^nx \nonumber \\
+&-&
+\lambda_0 [\int_{\Omega}(\bar v u_0 + \bar u_0 v) d^nx]]
+\eeqarr
+and therefore \ron{des} is equivalent to $u_0$ satisfying the weak version of the eigenvalue-eigenvector equation. 
+Now let's see that $u_0$ exists. 
+Since $\lam_0$ is the infimum of \cJ, there exists a sequence 
+$\{u_p\} \in H^1_0(\Omega)$
+such that $\|u_p\|_{H^0(\Omega)} = 1$ and $\cJ (u_p) \rightarrow \lam_0$.
+But such a sequence is bounded in $H^1_0(\Omega)$ and therefore by 
+lemma~\ron{lem10.10} there exists a subsequence $\{\ti u_p\}$ that converges 
+strongly in $H^0(\Omega)$
+to a function $u_0$ with $\|u_0\|_{H^0(\Omega)} = 1$. 
+Since $\mbox{\cal Q}(u) := \int_{\Omega} \na^a \bar u \na_a u \; d^nx$ is a norm 
+derived from an inner product,
+the parallelogram law holds,
+\beq
+\mbox{\cal Q}(\frac{\ti u_p - \ti u_q}2) + \mbox{\cal Q}(\frac{\ti u_p + \ti u_q}2) =
+\frac12(\mbox{\cal Q}(\ti u_p) + \mbox{\cal Q}(\ti u_q)),
+\eeq
+which implies 
+\beq
+\mbox{\cal Q}(\frac{\ti u_p - \ti u_q}2) \leq
+\frac 12 (\mbox{\cal Q}(\ti u_p) + \mbox{\cal Q}
+(\ti u_q)) - \lam_0 \|\frac{\ti u_p +\ti u_q}2\|^2_{
+H^0(\Omega)} 
+\barr{c} \\ \rightarrow \lam_0 - \lam_0 = 0.\\^{
+p,q \rightarrow \infty}
+\earr
+\eeq
+Where we have used that since $\{\ti u_{q}\} \to u_{0}$ in $H^{0}(\Omega)$, $\{\frac{\ti u_p +\ti u_q}2\}$ also does,
+and therefore $\{\|\frac{\ti u_p +\ti u_q}2\|_{H^0(\Omega)}\} \to 1$.
+But since the norm $\mbox{\cal Q}(u)$ is equivalent to that of $H^1_0(\Omega)$, 
+we see that $\{\ti u_p\}$ is 
+also Cauchy in $H^1_0(\Omega)$ and therefore $u_0 \in H^1_0(\Omega)$. 
+Using the regularity theorem with $f= \lam_0u_0$, we see that $u_0 \in C^{\infty}(\Omega) \cap 
+H^1_0(\Omega)$ and therefore $u_0$ is an eigenvalue
+in the classical sense $(\Delta u_0 + \lam_0 u_0 = 0)$. 
+Now let's prove the existence of the other
+eigenvalues-eigenvectors.
+Let $H(1) = \{ u \in H^1_0(\Omega) | \langle u , u_0 \rangle_{H^0(\Omega)} = 0\}$.
+This is a vector subspace and is closed, therefore it is a
+Hilbert space~\footnote {Note that $H(1) \neq $ the perpendicular space to 
+$u_0$ in the $H^1_0(\Omega)$ norm.}.
+This space is invariant with respect to the action of the Laplacian. 
+Indeed, if $v \in H(1)$, then,
+
+\begin{eqnarray*}
+\langle u_0 , \Delta v \rangle &=& \int_{\Omega} \bar{u}_0 \Delta v \;d^n x \\
+                &=& \int_{\Omega} \Delta \bar{u}_0 v \;d^n x + \int_{\partial \Omega} [\bar{u}_0 n^a \nabla_a v + v n^a \nabla_a \bar{u}_0] \; d^{n-1} x \\
+                &=&  \int_{\Omega} \Delta \bar{u}_0 v \;d^n x \\
+                &=& \lambda_0 \int_{\Omega} \bar{u}_0 v \;d^n x \\
+                &=& \lambda_0 \langle u_0, v \rangle, \\
+                &=& 0
+\end{eqnarray*}
+%
+which tells us that $\Delta v \in H(1)$.                
+Repeating the previous proof, we conclude that 
+therefore there will exist $\lam_1$, such that
+\beq 
+\lam_1 = \barr{c} \\ inf \\^{u \in H(1)} \earr
+              \cJ (u).       
+\eeq
+%
+and that $\lam_1$, will be an eigenvalue, that is, there will exist an eigenfunction $u_1$, with eigenvalue $\lam_1$. 
+
+Defining $H(2) = \{u \in H^1_0(\Omega) | \langle u , u_0 \rangle_{H^0(\Omega)}= \langle u , u_1 \rangle_{H^0(\Omega)}=0
+\}$, etc. 
+we can continue indefinitely and obtain $\Sigma$ and, correspondingly, an orthonormal set \footnote {After normalizing them appropriately.}, in
+$H^0(\Omega)$, of eigenvectors.
+To complete the proof, let's see that this set expands $H^1_0(\Omega)$.
+Since $u_i$ satisfies 
+$\Delta u_i +\lam_i u_i =0 $ and $\langle u_i , u_j \rangle_{H^0(\Omega)} = 0 $ if $i \neq j$ 
+we have that
+\beq
+0= \langle u_j , \Delta u_i + \lam_i u_i \rangle_{H^0(\Omega)} = 
+- \int_{\Omega} \na^a \bar u_j \na_a u_i d^nx
+\eeq
+and therefore also that
+\beq
+\langle u_j , u_i \rangle_{H^1_0(\Omega)} = 0.
+\eeq
+We then see that this set is orthogonal in $H^1_0(\Omega)$ and that by
+construction its perpendicular subspace is $\{ 0 \}$, which implies that
+this set is a basis of $H^1_0(\Omega)$ $\spadesuit$
+
+
+\espa
+\ejer: 
+Find the eigenvalues and eigenvectors of the Laplacian in
+$H^1_0(\Omega)$ when:
+a) $\Omega \subset \re^2$ is a square with side $L$.
+b) $\Omega \subset \re^3$ is a sphere with radius $R$.
+Construct in both cases using these eigenfunctions the Green's function of
+the problem in question.
+
+For which equations can the previous theorem be generalized? For
+the proof, specific properties of the Laplacian were used only to
+assert that $\cJ$ was bounded below --to conclude that the infimum
+existed-- and that $\mbox{\cal Q}(u)$ was a norm derived from an inner product
+--to conclude that the parallelogram law held--.
+If 
+\beq
+L(u)= a^{ab} \na_a \na_b u + b^a \na_b u + cu,                 \label{ec*}
+\eeq 
+%
+with $a^{ab}$, $b^a$ and $c$ smooth (real) fields in $\Omega$, and such that there exists $k>0$ such 
+that
+$a^{ab} l_al_b \geq \;k\; g^{ab} l_al_b$, for every vector field 
+$l_a$ in $\Omega$ (ellipticity)
+then there exist positive constants $c_1$ and $c_2$ such that 
+\beq
+\langle u , -L(u) \rangle_{H^0(\Omega)} = -\int_{\Omega} \bar u L(u) d^nx 
+                     \leq c_1 \int_{\Omega} g^{ab}\na_a\bar u \na_b u d^nx
+                     -c_2 \int_{\Omega} |u|^2 d^nx.
+\eeq                 
+\ejer: Prove this.
+\espa
+
+\noi
+Therefore in this case we also have that 
+\beq
+\cJ (u) := \frac{\langle u , -L(u) \rangle_{H^0(\Omega)}}{\langle u , u \rangle_{H^0(\Omega)}},
+\eeq
+is bounded below.
+The condition that $\mbox{\cal Q}(u) := \langle u , -L(u) \rangle_{H^0(\Omega)}$ 
+satisfies the \textsl{parallelogram law}, even if
+it is not positive definite, is much more restrictive, and is equivalent to
+requiring that $L$ satisfies
+\beq
+\langle v , L(u) \rangle_{H^0(\Omega)} = \langle L(v) , u \rangle_{H^0(\Omega)}\;\;\;\forall\;u,v \in H^1_0(\Omega).
+\eeq
+Operators that satisfy this relation are called {\bf
+self-adjoint} or {\bf Hermitian}.
+Note that this condition also ensures that the operator $L$ leaves invariant the respective subspaces $H(i)$ that need to be 
+considered in the previous proof.
+
+\ejer: 
+Show that
+\beq
+L(u)= \na_a(a^{ab} \na_b u + b^a  u) - b^a \na_a u + cu,
+\eeq 
+with $a^{ab}$, $b^a$ and $c$ real tensor fields is self-adjoint.
+
+\ejer:
+Show that if $L$ is self-adjoint then the eigenvectors
+are real.
+
+\ejer: 
+Find the eigenvalues and eigenvectors in $H^1_0(\Omega)$ 
+of 
+\beq
+L(u) = \frac{d^2}{dx^2}u + c x^2 u.
+\eeq
+
+\noi
+We thus arrive at the following generalization:
+
+\bteo[Spectral] 
+Let $\Omega$ be bounded and $L$ an elliptic
+self-adjoint operator with coefficients $a^{ab}$, $b^a$ and $c$ in $C^{\infty}(\Omega)$
+[A condition that can be considerably weakened]. 
+Then the eigenvalue problem 
+$L(u_i) = \lam_i u_i$, $u_i \in H^1_0(\Omega)$,
+has a countable and discrete set of real eigenvalues, whose
+eigenfunctions $u_i \in C^{\infty}(\Omega)$ expand $H^1_0(\Omega)$.
+\eteo
+
+\ejer:
+
+\noi 
+a) Prove the following {\bf corollary:}
+
+If $L$ is elliptic and self-adjoint such that its eigenvalues are
+different from zero, then the Dirichlet problem
+\beq
+L(u) = f,
+\eeq
+$f\in H^0(\Omega)$, $u \in H^1(\Omega)$,
+has a unique solution.
+
+\noi 
+b) If some $\lam_i = 0$ then the previous problem has a solution 
+iff $\langle u_i , f \rangle_{H^0(\Omega)} = 0$ 
+for every eigenfunction with zero eigenvalue.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "apu_tot.tex~/Metodos/"
+%%% End: 
