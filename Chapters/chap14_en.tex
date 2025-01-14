@@ -1,0 +1,248 @@
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%%last modification 28/05/2013
+
+\chapter{Parabolic Equations}
+
+\section{Introduction}
+
+Here we will deal with the archetype of parabolic equation, the heat equation,
+\beq
+{\dip
+\barr{rcl}
+\frac{\partial u}{\partial t} - \Delta u &=& f \mbox{ in }
+\Omega,\\ 
+u|_{t=0} &=& u^0,\\
+u|_L &=& 0, 
+\earr
+}
+\eeq 
+where $\Omega $ is a cylindrical region of the form $[0,T] \times S$ and $L = [0,T] \times \partial S$.  
+See figure.
+
+\espa 
+%\fig{5cm}{Boundary Conditions for the Heat Equation.}
+\begin{figure}[htbp]
+  \begin{center}
+    \resizebox{7cm}{!}{\myinput{Figure/m14_1}}
+    \caption{Boundary conditions for the heat equation.}
+    \label{fig:14_1}
+  \end{center}
+\end{figure}
+
+We can also consider the problem where $n^a\nabla_a u |_L =0$, 
+or mixed problems, here we will only deal with the first one, as the treatment of the others does not involve major changes. 
+Non-homogeneous boundary conditions are treated similarly to the case of elliptic equations.
+
+Using the Spectral Theorem, \ref{sec:Spectral-Theorem}, we decompose $u$, $f$ and $u^0$ into eigenfunctions of the Laplacian in $S$ in $H^1_0(S)$ and obtain,
+\begin{eqnarray*}
+u(t,x^j) &=& \sum^{\infty}_{n=0} u_n(t) v_n(x^j), \nn
+f(t,x^j)  &=& \sum^{\infty}_{n=0} f_n(t) v_n(x^j), \nn
+u^0(x^j) &=& \sum^{\infty}_{n=0} u^0_n v_n(x^j), 
+\end{eqnarray*}
+%
+where the functions $v_n(x^j)$ satisfy,
+\begin{eqnarray*}
+\Delta v_n(x^j) &=& \lambda_{n} v_n(x^j) \\
+v_n(x^j)|_{L} &=& 0.
+\end{eqnarray*}
+
+We thus obtain the following infinite system of ordinary equations,
+\beq\barr{lcr}
+\dot u_n + \lambda_n u_n &=& f_n \\
+u_n|_{t=0} &=& u^0_n.  
+\earr \eeq 
+The solution of the homogeneous equation is
+$u^H_n = u^0_n e^{-\lambda_nt}$ and using the method of variation of constants we obtain,
+\beq
+u^I_n = e^{-\lambda_nt} \int^t_0 f_n(\ti t)
+e^{\lambda_n\ti t} d\ti t.
+\eeq  
+The complete solution (respecting the initial condition) is 
+\beq
+u_n(t) = e^{-\lambda_nt}[u^0_n + \int^t_0 f_n(\ti t)
+e^{\lambda_n\ti t} d\ti t].
+\eeq
+
+Similarly to how we proved that the formal solution for the hyperbolic case was a smooth solution, it can be shown here that for $t>0$ the solution is, in the spatial variables, twice more differentiable than $f$ and in the temporal variable, once more.
+
+A very important property of this equation is that in general it only admits one solution for $t>0$, this implies that unlike the equations of mechanics or electromagnetism, this equation privileges a particular temporal direction. Among other things, this indicates that this equation represents or describes phenomena that cannot be derived solely from mechanics and that there must be some kind of thermodynamic information in them.
+
+To see this, let's revisit the example given in the introduction to the Spectral Theorem, \ref{sec:Spectral-Theorem}
+\beq
+\dot u - \frac{d^2u}{dx^2} = 0 \;\; \mbox{in } [0,1], 
+\eeq 
+where we saw that the eigenfunctions $v_n(x)$ with $v_n(0) = v_n(1) = 0$ are $v_n(x) =\sin(\pi n x)$ with eigenvalue $\lambda_n =\pi^2 n^2$.  
+
+Taking as initial data 
+$u^0(x) = \sum^{\infty}_{n=1} \frac{(-1)^{\frac{n-1}2}}{n^2}\sin(\pi nx)$, which is bounded in $[0,1]$ 
+since
+$\sum^{\infty}_{n=1} \frac1{n^2} < \infty$, we obtain, 
+\[
+u(t,x) =
+\sum^{\infty}_{n=1} \frac{(-1)^{\frac{n-1}2}e^{-\pi^2n^2t}}{n^2}
+\sin(\pi nx).
+\]
+%  
+But 
+$u(t,1/2) = \sum^{\infty}_{n=1}\frac{e^{-\pi^2(2n-1)^2t}}{(2n-1)^2}$ 
+which is finite $\forall \;\;\;t
+\geq 0$ and infinite for any $t < 0$ since the nth term tends to infinity with $n$.  On the other hand, given any 
+$u^0(x) = \sum^{\infty}_{n=0} u^0_n \sin(\pi n x)$, 
+continuous we obtain
+\beq
+u(t,x) = \sum^{\infty}_{n=0} u^0_n e^{-\pi^2n^2t}\sin(\pi n x)
+\eeq
+which is infinitely differentiable for all $t > 0$ since given any polynomial $P(n)$ of $n$, $P(n)e^{-\pi^2n^2t} \rightarrow 0$
+when $n \rightarrow \infty$ if $t>0$.
+
+\section{Uniqueness and the Maximum Theorem}
+
+We now see that the solution obtained in the general case is unique. To do this, we will assume that it is $C^1$ with respect to time and $C^2$ with respect to spatial coordinates.  To reach this conclusion, we will use the maximum principle.  We develop this first for the Dirichlet problem.
+
+\bteo[of the Maximum] 
+Let $ u \in C^2(S)$ and $\Delta u \geq 0$ in $S$, then
+%\beq
+%\barr{c}\\ max \\^{\bar S} \earr u = \barr{c}\\ max \\^{\pa S} \earr u .
+%\eeq
+
+\[
+\max_{\bar S} u = \max_{\pa S} u
+\]
+\eteo
+
+\pru:
+If $\Delta u >0$ this simply follows from the fact that if the 
+maximum were at $p \in S$ then $\frac{\pa^2u}{\pa(x^k)^2}|_p
+\leq 0\;\;\;\;
+\forall\;\; k=1,...,n$  and therefore, by continuity of the second derivatives, $\Delta u \leq 0$, in an entire region within $S$, which is a contradiction.  For the case $\Delta u \geq 0 $
+we use the function $v=|x|^2$.  Since $\Delta v > 0$ in $S$ then
+\beq
+\Delta(u + \eps v) >0 \;\;\;\mbox{ in } S \;\;\forall \eps >0
+\eeq
+and thus
+%\beq
+%\barr{c}\\ max \\^{\bar S}\earr (u +\eps v) = 
+%\barr{c}\\ max \\^{\pa S}\earr (u+\eps v)
+%\eeq
+\[
+\max_{\bar S}(u+\eps v) = \max_{\pa S} (u+\eps v)
+\]
+and therefore
+%\beq
+%\barr{c}\\ max \\^{\bar S}\earr u + \eps \barr{c}\\ min \\^{\bar S}
+%\earr v 
+%\leq 
+%\barr{c}\\ max \\^{\pa S}\earr u + \eps \barr{c}\\ max \\^{\pa S}
+%\earr v
+%\eeq 
+\[
+\max_{\bar S} u + \eps \min_{\bar S} v \leq \max_{\pa S} u + \eps \max_{\pa S} v
+\]
+and taking $\eps \rightarrow 0$ we obtain the desired equality.  In the
+case where $\Delta u = 0$ then it also holds that
+%\beq
+%\barr{c}\\ min \\^{\bar S} \earr u = \barr{c}\\ min \\^{\pa S} \earr u 
+%\eeq
+%
+\[
+\min_{\bar S} u = \min_{\pa S} u
+\]
+%
+(Simply using that $\min(u) = -\max(-u)$).
+
+This result gives us another proof of the uniqueness of solutions to the Dirichlet problem for the Laplacian.
+
+\bteo[Uniqueness of the Dirichlet Problem] 
+The problem 
+
+\beq
+\barr{lcr} 
+\Delta u &=& f \;\;\;\mbox{ in } S\\
+u|_{\pa S} &=& u_0, 
+\earr
+\eeq
+
+has at most a unique solution in $C^2(S)$. 
+\eteo
+
+\pru: 
+Let $u$ and $\ti u$ in $C^2(S)$ be solutions, then $\delta = u - \ti u$ satisfies $\Delta \delta = 0$ and $\delta|{\pa S}= 0$ but then 
+\[ \max{\bar C} \delta = \max_{\pa S} \delta = 0 
+\] 
+and 
+\[ \min_{\bar S} \delta = \min_{\pa S} \delta = 0 
+\]
+%
+therefore we conclude that $\delta = 0$.
+
+\ejer: For which other elliptic equations does this uniqueness proof hold? \espa
+
+\noi Can we obtain a similar result for the heat equation?
+
+\bteo[Uniqueness for the Heat Equation] There exists at most a unique solution
+$u \in C^1[0,T] \times C^2(S)$ to the problem,
+
+\beq
+\barr{rcl} 
+\dot u-\Delta u &=& f \;\;\;\mbox{ in } S\\ 
+u|_{t=0} &=& u^0,\\ 
+u|_L &=& u^1, 
+\earr 
+\eeq 
+% 
+$u^0$ and $u^1$ continuous.
+
+\eteo 
+The proof of this theorem is a trivial application of the following lemma.
+
+\blem 
+\label{14.x} Let $u \in C^1[0,T] \times C^2(S)$ be continuous in $\bar \Omega$ and satisfying $u_t - \Delta u \leq 0$.
+Then 
+\[ 
+\max_{\bar \Omega} u = \max_{\pa' \Omega} u 
+\] %
+where $\pa'\Omega = S_0 \cup L$. 
+\elem
+
+\espa 
+
+\begin{figure}[htbp] 
+    \begin{center} 
+        \resizebox{7cm}{!}{\myinput{Figure/m14_2}} 
+        \caption{Proof of Lemma 14.1} 
+        \label{fig:14_2} 
+    \end{center}
+\end{figure}
+
+\pru: First, consider the case $u_t - \Delta u <0$ in $\Omega$. Let $0< \eps < T$ and $\Omega_{\eps} = {\cup_{\ti t\in(0,T-\varepsilon)} S_{\ti t}}$.
+Since $u$ is continuous in $\bar \Omega_{\eps}$ there will exist $p \in \bar \Omega_{\eps}$ such that $u(p) = \max_{\bar \Omega_{\eps}}u$.
+If $p \in \Omega_{\eps}$ then there $u_t = 0$ and $\Delta u \leq 0$ which gives us a contradiction.
+If $p \in \ti \pa \Omega_{\eps} = S_{T-\eps}$ we would have $u_t \geq 0$ and $\Delta u \leq 0$, which also gives us a contradiction.
+It follows then that $p \in \pa'\Omega_{\eps}$ and 
+\[ 
+\max_{\bar \Omega_{\eps}} u = \max_{\pa'\Omega_{\eps}} u \leq \max_{\pa'\Omega} u 
+\] 
+letting $\eps \rightarrow 0$ we obtain the desired result.
+
+To handle the case $u_t - \Delta u \leq 0$ in $\Omega$, consider $v = u - kt$, $k>0$. 
+Then $v_t - \Delta v = u_t - \Delta u - k < 0$ and therefore 
+
+\beq 
+\max_{\bar \Omega} u = \max_{\bar \Omega} (v+kt) \leq \max_{\bar \Omega}(v + kT)\; \leq \; 
+\max_{\pa' \Omega} v ;+ ;kT ; \leq ; \max_{\pa' \Omega} u + kT, 
+\eeq % 
+where in the last inequality we have used that $\max v \leq \max u$ if $k\geq 0$, $t\geq 0$. 
+Taking the limit, $k \rightarrow 0$ we obtain the desired result.
+
+\ejer: Prove that if $\frac{\partial u}{\partial t} - \Delta u \geq 0$ then $\min_{\bar{\Omega}}u = \min_{\partial' \Omega} u$.
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex\pagestyle
+%%% TeX-master: t
+%%% End: 
