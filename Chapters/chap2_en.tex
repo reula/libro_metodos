@@ -292,7 +292,7 @@ Therefore, given a basis, a single number, $\varepsilon_{123\ldots n}$, is enoug
 This implies that $\ve{A}(\ve{u},\cdot)$ is also a vector ---identifying $V$ with $V^{**}$), the one that takes a covector $\ve{\omega} \in V^*$ and gives the number $\ve{A}(\ve{u},\ve{\omega})$---. 
 Thus, $\ve{A}$ determines a \textbf{linear map} $V \to V$, that is, a linear operator on $V$.
 
-\ejer: Continuing the example before, let ${\ve{u}_i}$ be a basis of $V$ and let $\ve{ a}_i = \ve{A}(\ve{u_i},\cdot)$. Then $$ \ve{\varepsilon}(\ve{a_1},\ldots,\ve{a_n})=\ve{\varepsilon}(\ve{A}(\ve{u_1}, \cdot),\ldots ,\ve{A}(\ve{u_n},\cdot)) $$ is totally antisymmetric in the ${u_i}$ and therefore proportional to itself;
+\ejer: Continuing the example before, let ${\ve{u}_i}$ be a basis of $V$ and let $\ve{ a}_i = \ve{A}(\ve{u_i},\cdot)$. Then \[ \ve{\varepsilon}(\ve{a_1},\ldots,\ve{a_n})=\ve{\varepsilon}(\ve{A}(\ve{u_1}, \cdot),\ldots ,\ve{A}(\ve{u_n},\cdot)) \] is totally antisymmetric in the ${u_i}$ and therefore proportional to itself;
 
 \[ 
 \ve{\varepsilon}(\ve{A}(\ve{u_1},\;\;),\ldots ,\ve{A}(\ve{u_n},\;\;)) \propto \ve{\varepsilon}(\ve{u_1}. \ldots, \ve{u_n}). 
@@ -1926,7 +1926,7 @@ Self-adjoint operators have important properties:
 
 \blem
 Let $M = Span\{\ve{u}_{1},\ve{u}_2,\dots,\ve{u}_m\}$, where $\{\ve{u}_i\}$
-are a set of eigenvalues of $\ve{A}$, a self-adjoint operator.
+are a set of eigenvectors of $\ve{A}$, a self-adjoint operator.
 Then $M$ and $M^{\perp}$ are invariant spaces of $\ve{A}$.
 \elem
 
@@ -2011,7 +2011,7 @@ from which we conclude that
 %
 that is, the transpose matrix is the complex conjugate of the original.
 In the case of real matrices, we see that the condition is that in this basis
-the matrix is equal%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+the matrix is equal to its transpose, i.e. symmetric.
 
 \section{Adjoint Operators}
 
@@ -2493,12 +2493,11 @@ then $x \approx x''$.
 \end{enumerate}
 
 Note that the first property ensures that each element of $X$
-satisfies an equivalence relation with some element of $X$, in
+is related to some element of $X$, in
 this case with itself. Equivalence relations often appear in physics,
-essentially when we use a mathematical entity to describe a physical
-process that has superfluous parts with respect to this process and
+essentially when we describe a physical process using a mathematical entity that has superfluous parts with respect to the process and
 therefore we would like to ignore them.
-This is achieved by declaring two entities that describe the same phenomenon
+This is achieved by declaring two mathematical entities that represent the same physical situation
 as equivalent entities.
 
 \ejem: Let $X$ be the set of real numbers and let $x \approx y$
