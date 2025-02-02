@@ -1,0 +1,344 @@
+% !TEX encoding = IsoLatin
+% !TEX root =  ../Current_garamond/libro_gar.tex
+
+%%ultima modificación 28/05/2013
+
+\chapter{Groups}
+
+\section{Introduction}
+
+Groups play a fundamental role in contemporary physics. This is because symmetries are observed in nature, or their correlate, via Noether's theorem, conserved quantities, that is, quantities that do not vary during the interactions of the various fields over their respective time scales. These symmetries are invariances under transformations, such as spatial or temporal translations, rotations, or transformations between different fields, such as those accounting for the conservation of electric charge, baryon number, etc. All these transformations form groups, and determining their structure is a fundamental ingredient in constructing models that approximate reality.
+
+We begin with the abstract definition of a group:
+
+\defi: A group is a set $G$ and an assignment, $\Psi: G \times G \to G$, called {\sl multiplication}, and usually denoted in the same way, $\Psi(g,g') :=  g g'$,
+satisfying the following conditions:
+
+\begin{itemize}
+
+\item Associativity: $g(g'g'') = (gg')g''$
+
+\item There exists an element in $G$, usually denoted by $e$, such that 
+\[
+ ge = eg = e \;\;\forall \; g \in G 
+\]
+
+\item For each element $g \in G$ there exists another element in $G$, called its inverse, $g^{-1}$,
+such that, 
+\[
+g g^{-1} = g^{-1} g = e
+\]
+
+\end{itemize}
+
+\ejem: 
+Let the set $Z$ be the set of real numbers, including negatives and zero. Let the product be given by addition,
+$\Psi(n,m)=n+m$. This operation is clearly associative, 
+$\Psi(n,\Psi(m,l)) = \Psi(n, m+l) =  n+ m + l = \Psi(n+m,l)=\Psi(\Psi(n,m),l)$. In this case, the identity is the number zero, $\Psi(0,n)=\Psi(n,0)=n$ and the inverse of the element $n$ is the number $-n$.
+
+\ejem:
+Let the set $R-\{0\}$ and the multiplication be the usual one. See that this set with this operation is a group.
+
+\ejem:
+Now let's see the most important example of a group, as we will see later all groups can be obtained by this construction. Let $S$ be any set, let $P(S)$ be the set of injective and surjective maps from $S$ to $S$, $\Psi: S \to S$. 
+Let the product be the composition of maps. Note that the composition of maps is clearly associative,
+
+\[
+\Psi \mapcomp (\Phi \mapcomp \chi)(s) = \Psi \mapcomp \Phi(\chi(s)) 
+= \Psi(\Phi(\chi(s))) = (\Psi \mapcomp \Phi)(\chi(s))  = (\Psi \mapcomp \Phi)\mapcomp\chi(s).
+\]
+%
+On the other hand, the composition of invertible maps gives an invertible map and therefore the multiplication is closed in $P(S)$. Since the considered maps are invertible, their inverses as maps are their inverses as groups and the identity as a map is the identity in the group.
+
+\ejem:
+Let $S=\{1,2\}$ be a set of two elements. $P(S)$ consists of only two elements, the identity, 
+$e(1,2) = (1,2)$ and the permutation $g(1,2):=(2,1)$. 
+Note that $g$ is its own inverse, $g\mapcomp g(12) = g(2,1) = (1,2)$.
+
+Abstractly, we can define this group by its multiplication table,
+
+\begin{table}[htp]
+\caption{Multiplication table of $P(1,2)$}
+\begin{center}
+\begin{tabular}{|c|c|}
+e & g \\
+\hline
+g & e
+\end{tabular}
+\end{center}
+\label{tabla-15-1}
+\end{table}%
+
+\ejem:
+Let's see the following case, let $S=\{1,2,3\}$. In this case, we have the following maps:
+$e(1,2,3)=(1,2,3)$, $f_{1}(1,2,3)=(1,3,2)$, $f_{2}(1,2,3)=(3,2,1)$, $f_{3}(1,2,3)=(2,1,3)$, $g(1,2,3)=(3,1,2)$, $g'(1,2,3)=(2,3,1)$. Their multiplication table is as follows:
+
+\begin{table}[htp]
+\caption{Multiplication table of $P(1,2,3)$}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$e$ & $g$ & $g'$ & $f_{1}$ & $f_{2}$ & $f_{3}$ \\
+\hline
+$g$ & $g'$ & $e$ & $f_{3}$ & $f_{1}$ & $f_{2}$ \\
+\hline
+$g'$ & $e'$ & $g$ & $f_{2}$ &  $f_{3}$ & $f_{1}$ \\
+\hline
+$f_{1}$ & $f_{2}$ & $f_{3}$ & $e$ & $g$ & $g'$  \\
+\hline
+$f_{2}$ & $f_{3}$ & $f_{1}$ & $g'$ & $e$ & $g$ \\
+\hline
+$f_{3}$ & $f_{1}$ & $f_{2}$ & $g$ & $g'$ & $e$ \\
+\hline
+\end{tabular}
+\end{center}
+\label{tabla-15-2}
+\end{table}%
+
+\ejer:
+Consider the group of all linear maps from $\re^{2} \mapsto \re^{2}$ that preserve an equilateral triangle. Construct its multiplication table and compare it with the previous table.
+
+\ejer: Consider the space of all linear maps from $\re^{2} \mapsto \re^{2}$ that preserve a square.
+Compare its table with that of $P(1,2,3,4)$.
+
+\section{Isomorphisms}
+
+As we have seen, the group of linear transformations in $\re^{2}$ that preserve an equilateral triangle and the group $P(1,2,3)$ have the same multiplication table. For all practical purposes, these two groups are identical in an abstract sense, the study of one gives us all the information about the other. This is not an exception, in physics the same groups appear as transformations in very diverse situations and spaces, and it is not so easy to establish the relationship between them. Formally, the relationship between them can be defined as follows:
+
+\defi: Two groups, $G$ and $H$ are {\sl isomorphic} if there exists an invertible map between them, 
+$\Psi: G \mapsto H$ such that,
+
+\[
+\Psi(g) \Psi(g') = \Psi(gg').
+\]
+ %
+ Note that on the left side the product is the product of $H$, while on the right side the product is that of $G$. That is, the map $\Psi$ preserves the product between the spaces. If two groups are isomorphic, then they are identical in terms of their intrinsic properties.
+ 
+ \ejer: Find the map that makes $P(1,2)$ and the group of all linear maps from $\re^{2} \mapsto \re^{2}$ that preserve an equilateral triangle isomorphic.
+ 
+ \section{Subgroups}
+ 
+ \defi: A subset $H$ of $G$ is a subgroup of $G$ if it is a group in itself, with the multiplication operation inherited from $G$. That is, if given two elements, $h, \; h' \; \in H$, $hh' \; \in H$, meaning it is closed under the product, and if $h \;\in \; H$, then $h^{-1} \;\in \; H$. Note that both conditions already ensure that $e \;\in \; H$.
+ 
+ \ejem: In $P(1,2,3)$ the elements $e,g,g'$ form a subgroup of $H$.
+ 
+ \ejer: Find a non-trivial subgroup (the identity element is always a subgroup) of the group given by the set $\re -\{0\}$ with the usual multiplication.
+ 
+ \ejem: If $H_{1}$ and $H_{2}$ are subgroups, then their intersection, $H_{1} \cap H_{2}$, is also a subgroup.
+ Given a subset $S$ of $G$, the intersection of all groups containing it is a subgroup. 
+ It is called the subgroup generated by $S$. 
+ 
+ \ejer: Prove the statements of the previous example.
+ 
+ \ejer: Consider a finite set $S$ and the group of permutations on it, $P(S)$.  Let $S'$ be a subset of $S$ and consider all maps that, when restricted to $S'$, are the identity. 
+ See that this set is a subgroup.
+ 
+ \ejer: Let $A$ be a subset of $G$. See that $A$ is a subgroup if and only if $\forall \; a, \; a'\; \in A$, 
+ $a^{-1}a' \; \in \; A$.
+ 
+ \ejer: Let $P(S)$, with $S$ finite. Let 
+ \[
+ A := \{ \mu \;\in \; P(S) |\; \exists \;s, \; s' \; s''\; \mbox{distinct, such that } \mu(s) = s', \; \mu(s') =s'' \; \mu(s'') = s.\}\]
+ Show that the subgroup generated by $A$ is not the whole $P(S)$.
+ 
+ \section{The Universal Construction}
+ 
+We saw several examples of groups that appear as transformation groups, that is, as invertible maps from a set to itself. In reality, all groups can be obtained in this way.
+We cite the following theorem, which we will not prove, but which is very important as it places groups in their proper dimension:
+
+\bteo
+Given a group $G$, there exists a set $S$ such that $G$ is isomorphic to a subgroup of $P(S)$.
+\eteo
+% 
+Later we will see a way to establish this result.
+
+\ejem: Let the group whose set consists of the integers and the multiplication be addition. See that this group is isomorphic to the group of translations on $Z$: $\Psi_{n}: Z \mapsto Z$, given by 
+$\Psi_{n}(m) = n+m$.
+
+\ejem: 
+Let the group whose set is $R-\{0\}$ with multiplication given by the product. This group can be obtained as the set of invertible maps of the real line onto itself given by, $\Psi_{x}: \re \mapsto \re$ given by $\Psi_{x}(y) := xy$. These maps are called dilations.
+
+\section{Linear Groups}
+
+Linear groups are those groups that appear as subgroups of the group of linear and invertible maps from $\ren \mapsto \ren$ or their complex versions, the maps from $\Complex{}^{n} \mapsto \Complex{}^{n}$.
+
+The largest of them is the complete set, called the {\sl general linear group}, and denoted 
+$GL(n,\ren / \Complex{}^{n})$, that is, the set of invertible $n\times n$ square matrices, with 
+real or complex elements.
+
+A subgroup of it is the set of all matrices with determinant of modulus one. 
+Note that this set is really a subgroup since,
+\[
+\det(A) \det(B) = \det(AB).
+\]
+%
+A smaller subgroup of this is formed by the subset of those with determinant one. 
+These are called the {\sl special linear group}, $SL(n,\ren / \Complex{}^{n})$.
+
+These spaces have more subgroups, but they do not manifest naturally unless we include more structure. For example, if we introduce a preferred basis, then the set of matrices that are upper (lower) triangular with all diagonal elements non-zero (invertible) are subgroups. More relevant are those that appear when we introduce a scalar product.
+In that case, we see that the unitary (orthogonal) matrices form subgroups, 
+in fact, if $U$ and $U'$ are unitary, that is, 
+
+\[
+\langle Ux, Uy \rangle = \langle U'x, U'y \rangle = \langle x, y \rangle,
+\]
+% 
+their product is also unitary, 
+
+\[
+ \langle U U' x, U U'y \rangle =  \langle U (U' x), U (U'y) \rangle = \langle U'x, U'y  \rangle = \langle x, y \rangle.
+\]
+
+These groups are denoted as $U(n)$ when we consider complex (unitary) matrices and $O(n)$ for the real case. Those with determinant one are denoted by $SU(n)$ and $SO(n)$.
+
+The group $SO(3)$ is the group of rotations in space. The $O(n)$ incorporates, in addition to rotations, reflections perpendicular to arbitrary planes. 
+
+\ejer: Find and describe all these previous groups for $n=1$ and $n=2$. 
+
+\ejer: See that $U(1)$ has $P(1,2,3)$ as a subgroup. $U(1)$ appears in physics as a symmetry group associated with the conservation of electric charge. 
+
+\ejer: What other subgroups does $U(1)$ have?
+
+\ejer: See that $U(1)$ is isomorphic to $SO(2)$.
+
+\ejer: See that $SU(2)$ covers $SO(3)$ twice. Hint, use the Pauli matrices. $SU(2)$ appears in physics as one of the main groups of the standard model of particles, as does $SU(3)$.
+
+\ejer: 
+
+\subsection{The group $SO(3)$.}
+
+The group $SO(3)$ consists of the orthonormal $3 \times 3$ matrices with determinant one.
+That is, the rotations in $\re^{3}$. Let's see what properties this set has as a variety.
+One way to describe this set is as follows: To determine a rotation, we need to give
+the invariant axis of it, that is, a direction in $\re^{3}$, which we take as a unit vector in $\re^{3}$, $\hat{n}$ and the angle of it. To the latter 
+we can assign a range given by $[-\pi,\pi]$ taking into account that the rotation in the direction $\hat{n}$ by an angle $\pi$ is equal to the rotation by the angle $-\pi$.
+Each of these rotations can be expressed by the matrix,
+
+\[
+\left( \begin{array}{ccc}
+          1 & 0 & 0 \\
+          0 & \cos \theta & \sin \theta \\
+          0 &-\sin \theta & \cos \theta
+          \end{array}
+          \right)
+\]          
+%
+Where we have chosen the coordinate axes so that the $z$ axis coincides with the direction of the rotation.
+We see thus that the rotation by $\pi$ is the same rotation as by $-\pi$.
+We can join the direction of rotation with the angle of it and form a vector so that its direction coincides with the direction of rotation and its magnitude with the angle of it. We see then that $SO(3)$
+consists of all points in a ball of radius $\pi$, each diameter of it consists of all rotations about a fixed axis. 
+But this set has a peculiarity, we must identify each point of the outer sphere, of diameter $\pi$, with its antipode. Thus we achieve a variety that has no boundary.
+If we draw a curve that intends to leave it, when it reaches the diameter $\pi$ it appears at the opposite point
+of that sphere entering the interior of the ball through that point.
+In particular, if we start such a curve at a point $p$ inside the ball, go towards the diameter $\pi$ and continue it until we reach the starting point $p$ again, we will have a closed curve that cannot be deformed to the identity curve! \footnote{We will say that a closed curve $\gamma(t)$ with $\gamma(0)=\gamma(1)=p$ in a given variety, $M$, can be deformed to the identity curve $i(t)\equiv p$, if there is a map $\phi(t,s)$, $[0,1]\times [0,1] \mapsto M$ such that $\phi(t,0)=\gamma(t)$ and $\phi(t,1)=i(t)=p$.} That is, as a variety, $SO(3)$ is not simply connected. The following example also shows that it is not a torus.
+
+\ejer: Show graphically that a curve that traverses the previous path twice is deformable to the identity.
+
+This property of $SO(3)$ has important consequences in physics. It is what allows the mathematical existence of spinors, that is, the model that describes all fermionic fields, in particular the electron. This is because spinors, when rotated by an angle of $2\pi$, that is, along one of the axes of $SO(3)$, change sign (they know about the non-deformable curves). While if we rotate them by an angle of $4\pi$ they return to their original state.
+
+
+\section{Cosets}
+
+Given a group $G$ and a subgroup $H$ of it, we can construct two quotient spaces.
+One of them is obtained by introducing the following equivalence relation:
+
+We will say that $g_{1} \approx g_{2}$ if there exists $g \; \in \; G$ such that 
+$g_{1}=g h_{1}$ and $g_{2}=g h_{2}$.
+With $h_{1}, \; h_{2}\; \in \; H$.
+
+The first two conditions that define an equivalence relation are trivially satisfied. 
+Let's see the third one:
+
+We need to see that if $g_{1} \approx g_{2}$ and $g_{2} \approx g_{3}$, then $g_{1}\approx g_{3}$. 
+The first two conditions give us, $g_{1}=g h_{1}$ and $g_{2}=g h_{2}$ for some $g \in G$ and 
+$g_{2}=\tilde{g} \tilde{h}_{2}$ and $g_{3}=\tilde{g} \tilde{h}{3}$ for some $\tilde{g} \in G$. 
+Using the two relations for $g_{2}$ we see that $\tilde{g} = g h_{2} \tilde{h}^{-1}_{2}$. 
+Therefore, $g_{3}=\tilde{g} \tilde{h}_{3} = g h_{2} \tilde{h}^{-1}_{2}\tilde{h}_{3}$. 
+This proves the statement since $h_{2} \tilde{h}^{-1}{2}\tilde{h}_{3} \;\in \; H$.
+
+Thus, we define $L=G/H_{L}$, the set of equivalence classes with respect to this equivalence relation. 
+The subscript $L$ refers to making equivalences by multiplying the elements of $H$ on the left. 
+The other quotient space is obtained by multiplication on the right.
+
+How are the elements of $L$ constituted? Let $g\in G$, then we can consider the set,
+
+\[ 
+gH := { gh, \; h \in H}. 
+\] 
+% 
+Note that $g \in H$ since $e \in H$ and that all elements of $gH$ are equivalent to each other and there is no element outside of $gH$ that is equivalent to $g$. 
+Therefore, these are the elements of $L$. 
+Note that since these are equivalence classes, each element of $G$ is in one and only one of these equivalence classes.
+
+\textbf{Exercise:} Verify for the case of $P(1,2,3)$ that the right cosets corresponding to taking $P(1,2,3)$ as its own subgroup are the columns of the multiplication table. What do the rows correspond to? This indicates that each row and column is made up of distinct elements.
+
+Let $A$ and $B$ be two elements of $L$. Taking any two elements of $G$ in each of these equivalence classes, $g_{A}$ and $g_{B}$, we have $A=g_{A}H$ and $B=g_{B}H$. Thus, $B=g_{B}H = g_{B}g^{-1}_{A}A$ and we see that given any two elements of $L$, there exists an invertible map that sends all elements of one to the other. That is, all equivalence classes are isomorphic to each other. Note that this has the following implication. Let $G$ be a group with $p$ elements and $H$ a subgroup of it. The quotient space will have $n$ elements, equivalence classes, each with $q$ elements, the number of elements of $H$. Since the equivalence relations divide the set $G$ into disjoint classes, we must have $p=nq$. That is, the number of elements of a subgroup divides the number of elements of the group! In particular, if the number of elements of a group is prime, we can immediately conclude that it will only have trivial subgroups, the identity and the complete group.
+
+\textbf{Example:} Let $P(1,2,3)={e,g,g',f_{1},f_{2},f_{3}}$, this group has the following subgroups, $H_{0}:={e,g,g'}$ and $H_{i}:={e,f_{i}}$. Since $H_{0}$ has 3 elements, $(P(1,2,3)/H_{0}){L}$ will have two elements, $L{1}=H_{0}$ and $L_{2}={f_{1},f_{2},f{3}}$.
+
+\textbf{Exercise:} See that $f_{i}L_{1}=L_{2}$.
+
+\textbf{Exercise:} How many elements does $(P(1,2,3)/H_{i})_{L}$ have? Find them.
+
+\subsection{Homogeneous Spaces}
+
+The set $L=G/H_{L}$ is not generally a group, but it has interesting properties and these sets often 
+appear in applications, usually under the name of Homogeneous Spaces.
+
+We have already seen that $G$ acts on $L$, given an element of $L$, $A$, the action of $g \in G$ on $A$ 
+is the element of $L$ given by $gA$. We will denote this map as $\Psi_{g}:L \mapsto L$. 
+As we have seen, given two elements of $L$, $;;A$ and $B$, there always exists an element $g \in G$ 
+such that $\Psi_{g}(A)=B$, that is, it acts transitively. The inverse of this map is $\Psi_{g^{-1}}$. 
+This tells us that all points of $L$ have the same structure, the group moves them all around. 
+Hence their name of homogeneous spaces.
+
+Since the previous maps have inverses, they belong to $P(L)$, the space of permutations of $L$. Thus, we have a map from $G$ to $P(L)$, which, given an element $g \in G$, assigns the map $\Psi_{g}$ in $P(L)$. We have that,
+
+\[ 
+\Psi_{g} \mapcomp \Psi_{g'} (A) = \Psi_{g}(g'A) = g(g'A) = (gg') A = \Psi_{gg'} (A), 
+\] 
+% 
+that is, a homomorphism between groups, indicating that $G$ is a subgroup of $P(L)$. 
+If we take $L=G/e=G$, we have the group as a homogeneous space and $G$ as a subgroup of $P(G)$. 
+This gives us a proof of the universal construction theorem mentioned earlier.
+
+\textbf{Example:} Let $G = \re -{0}$ with the usual multiplication operation among rationals. Let $H={-1,1}$. In this case $G/H = \re^{+}$.
+
+\section{Normal Subgroups}
+
+A particular class of subgroups are the so-called normal groups. These are the groups where the right and left cosets coincide, 
+that is, $N\in G$ is a normal subgroup if it is a subgroup and also,
+
+\[ 
+gN = Ng \;\;\;\;\;\;\; \forall g \in G 
+\] 
+% 
+the important property that the cosets generated by normal subgroups have is that they have a closed multiplication operation that turns the set of them into groups. 
+In fact, due to the relation that defines them,
+
+\[ 
+gN \; g'N = g g' N \; N = gg'N 
+\] % 
+the group thus defined is not, in general, a subgroup of $G$.
+
+\textbf{Exercise:} Show that the intersection of normal subgroups is normal.
+
+In the same way that subgroups can be generated from subsets of $G$ by taking the intersection of all subgroups containing the generating subset. Since the intersection of normal subgroups is a normal subgroup, the intersection of all subgroups containing the generating subset will generate a normal subgroup.
+
+A particularly interesting case is when the subset is the set of elements of $G$ of the form,
+
+\[ 
+C:={g\tilde{g} g^{-1}\tilde{g}} 
+\]
+
+The normal subgroup generated from this set is called the commutator of $G$. This contains all the elements that do not commute in the sense that if we take the quotient, $G/N$ we obtain an abelian group.
+
+\textbf{Exercise:} Prove that a group is abelian if and only if its commutator subgroup is the identity.
+
+\textbf{Exercise:} Let $P(S)$ be the group of permutations on $S$. See that the transformations that leave all elements of $S$ invariant, except for a finite number of elements, form a normal subgroup.
+
+\textbf{Exercise:} Show that a subgroup giving rise to only two cosets is necessarily normal.
+
+\textbf{Exercise:} Let $Z$ be the set of elements of $G$ such that if $z \in Z$ then $gz=zg ; \forall g \in G$. Show that $Z$ is a normal subgroup.
+
+\recubib{These notes follow very closely a chapter in \cite{Geroch}}
