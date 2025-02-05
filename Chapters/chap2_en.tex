@@ -5,12 +5,12 @@
 
 \defi:
 A {\bf Real Vector Space} consists of three things:
--- $i$) A set, $V$, whose elements will be called {\bf vectors}.
-$ii$) A rule that assigns to each pair of vectors, $\ve{v}$,
-$\ve{u}$, a third vector that we will denote by $\ve{v+u}$ and that we will call
-their {\bf sum}. $iii$) A rule that assigns to each vector, $\ve{v}$ and
-to each real number $a$, a vector that we will denote by $a\ve{v}$ and
-that we will call the {\bf product} of $\ve{v}$ with $a$. -- subject to
+--- $i$) a set, $V$, whose elements will be called {\bf vectors};
+$ii$) a rule that assigns to each pair of vectors, $\ve{v}$,
+$\ve{u}$, a third vector which we will denote by $\ve{v+u}$ and call
+their {\bf sum}; and $iii$) a rule that assigns to each vector, $\ve{v}$ and
+to each real number $a$, a vector which we will denote by $a\ve{v}$ and
+call the {\bf product} of $\ve{v}$ with $a$, all subject to
 the following conditions:
 
 \begin{itemize}
@@ -63,80 +63,74 @@ a(\ve{v}  + \ve{v}') = a\ve{v} + a\ve{v}'.
 The first conditions involve only the rule of addition; these are actually the rules that 
 define a group, a structure we will revisit in a later chapter, where addition represents the product between elements of the group.
 The next conditions involve only the rule of multiplication, while
-the last two deal with the relationship between these two operations. As we will see with examples later, real numbers can be replaced by any field, such as rationals, $\Rationals$, integers, $\Integers$, complex numbers, $\Complex$, and even finite fields.
+the last two deal with the relation between these two operations. As we will see with examples later, real numbers can be replaced by any field, such as rationals, $\Rationals$, integers, $\Integers$, complex numbers, $\Complex$, and even finite fields.
 
 \espa
 
-\ejem: The set of all n-tuples of real numbers with the
-usual operations of addition and multiplication {\it tuple by tuple}.
+\ejem: The set of all $n$-tuples of real numbers with the
+usual operations of component-wise addition and multiplication.
 This space is denoted by $\re^n$.
 
 \ejem: Let $S$ be any set and let $V$ be the set of all functions
 from $S$ to the reals, $\ve{v}:S \to \re$, with the following
-operations of addition and multiplication: The sum of the function $\ve{v}$ with
+operations of addition and multiplication: the sum of the function $\ve{v}$ with
 the function $\ve{v}'$ is the function (element of $V$) that assigns to the element
-$s$ of $S$ the value $\ve{v}(s) + \ve{v}'(s)$. The product of
+$s \in S$ the value $\ve{v}(s) + \ve{v}'(s)$. The product of
 $a \in \re$ with the function $\ve{v}$ is the function that assigns to $s \in S$
 the value $a\ve{v}(s)$.
 This example will appear very often in the following chapters.
 
-\defi: We will say that a set of vectors $\{\ve{e_i}\}$ $i=1, \ldots ,n$
+\defi: We will say that a set of vectors $\{\ve{e_i}\}$, $i=1, \ldots ,n$,
 are {\bf linearly independent}~\index{linear!independence} 
-if $\sum_i a^i \ve{e_i} = \ve{0}$ $a^i \in \re$, 
-$i= 1, \ldots ,n$ $\Longrightarrow $ $a^i = 0$, $i= 1, \ldots ,n$,
-that is, if any non-trivial linear combination of these vectors gives us a non-trivial vector. 
+if $\sum_{i=1}^{n} a^i \ve{e_i} = \ve{0}$ $a^i \in \re$ $\Longrightarrow $ $a^i = 0$, $i= 1, \ldots ,n$;
+that is, if any non-trivial linear combination of these vectors gives us a non-zero vector. 
 
-\defi: The $Span$ of a set of vectors $\{\ve{u_{i}}\}$ is the set of all possible linear combinations of these elements. They generate a subspace of $V$, which we will denote by $Span\{\ve{u_{i}}\}\subset V$. 
+\defi: The {\bf span} of a set of vectors $\{\ve{u_{i}}\}$ is the set of all possible linear combinations of these elements. They generate a subspace of $V$, which we will denote by $Span\{\ve{u_{i}}\}\subset V$. 
 
 If a finite number of linearly independent vectors, 
-$n$, are sufficient to {\bf span} $V$, [that is, if 
+$n$, are sufficient to span $V$ (that is, if 
 any vector in $V$ can be obtained as a linear combination of 
-these $n$ vectors], then we will say that these form a {\bf basis} of 
-$V$ and that the {\bf dimension}~\index{dimension}  of $V$ is $n$, $\dim V = n$.
+these $n$ vectors) then we will say that these vectors form a {\bf basis} of 
+$V$ and that the {\bf dimension}~\index{dimension} of $V$ is $n$, $\dim V = n$.
 \espa
 
-\ejer: Show that given a vector $\ve{v}$ and a basis, $\{\ve{e_i}\}$ $i=1, \ldots ,n$, there exists a 
-unique linear combination of elements of the basis that determines it. That is, if 
+\ejer: Show that given a vector $\ve{v} \in V$ and a basis of V, $\{\ve{e_i}\}$ $i=1, \ldots ,n$, the linear combination of the basis vectors that equals $\ve{v}$ is unique. That is, if 
 $\ve{v} =  \sum_i v^i \ve{e_i} $ and $\ve{v} = \sum_i \tilde{v}^i \ve{e_i} $, then $v^i=\tilde{v}^i$ for all
 $i=1, \ldots ,n$.
 
-\ejer: If we have two bases, $\{\ve{e_i}\}$ and $\{\ve{\tilde{e}_i}\}$, we can write the elements of one in terms of the other, 
+\ejer: If we have two bases of a real vector space $V$ of dimension $n$, $\{\ve{e_i}\}$ and $\{\ve{\tilde{e}_i}\}$, we can write the elements of one in terms of the other, 
 
 \[
-\ve{\tilde{e}_j} = \sum_i P_{j}{}^i \ve{e_i}, \;\;\;\;\;\; \ve{e_i} = \sum_l R_{i}{}^l \ve{e_l}.
+\ve{\tilde{e}_j} = \sum_i P_{j}{}^i \ve{e_i}, \;\;\;\;\;\; \ve{e_i} = \sum_l R_{i}{}^l \ve{e_l},
 \]
 %
-See that $R_{i}{}^l = P^{-1}_{i}{}^l $.
+where $P_{j}{}^i$ and $R_{i}{}^l$ are the coefficients of two real $n \times n$ matrices. Prove that $R_{i}{}^l = P^{-1}_{i}{}^l $.
 
 \ejer:
-Let $S$ be a finite set, $S = \{s_1,s_2,\dots,s_n\}$, find a basis 
+Let $S = \{s_1,s_2,\dots,s_n\}$ be a finite set. Find a basis 
 of the vector space of all functions from $S$ to $\re$. 
-Find the dimension of this space.
+What is the dimension of this space?
 
-\ejer: Show that the dimension of $V$ is unique, that is, it does not depend on
+\ejer: Show that the dimension of a vector space $V$ is well defined, i.e. it does not depend on
 the basis used to define it. 
 
-Note that if in the previous example $S$ consists of a finite number of elements, 
-then the dimension of $V$ is finite.\footnote{That is, a finite number of linearly independent vectors span $V$.} In the case that $S$
-had an infinite number of elements, we would say that the dimension of $V$
-would be infinite. In what follows in this chapter, we will only
-consider finite-dimensional vector spaces.
+Note that, in the previous example, $V$ has finite dimension\footnote{That is, a finite number of linearly independent vectors span $V$.} because $S$ is finite. If $S$
+had an infinite number of elements, $V$ would have an infinite basis and we would say that the dimension of $V$ would be infinite. In the rest of this Chapter, we will assume the vector spaces are finite-dimensional, unless otherwise stated.
 
-Let $V$ be a vector space of dimension $n$ and a basis of it, $\{\ve{e_i}\}$ $i=1, \ldots ,n$. 
-Given an n-tuple of real numbers, $\{c^{i}\}$ we then have determined an element of $V$, 
+Let $V$ be a real vector space of dimension $n$ and a basis of it, $\{\ve{e_i}\}$ $i=1, \ldots ,n$. 
+Given an $n$-tuple of real numbers, $\{c^{i}\}$, we then have determined an element of $V$, 
 that is, the vector,  $\ve{v}=\sum_{i=1}^{n} c^{i}\ve{e_i}$. 
-On the other hand, we have seen in a previous exercise that given any vector, it determines a unique n-tuple of real numbers, the elements of $\ve{v}$ in that basis. 
-We see that we then have an invertible map between $V$ and the space of n-tuples, $\re^{n}$.
-This map is linear, assigning to the sum of two vectors $\ve{v}$ and $\ve{\tilde{v}}$ the n-tuple sum of the respective n-tuples. This map depends on the basis, but it still tells us that finite-dimensional vector spaces do not hold many surprises; they are always copies of $\re^{n}$.
+On the other hand, we have seen in a previous exercise that, given any vector, it determines a unique $n$-tuple of real numbers, the coefficients of $\ve{v}$ in that basis. 
+We see that we then have an invertible map between $V$ and the space of $n$-tuples, $\re^{n}$.
+This map is linear, assigning to the sum of two vectors $\ve{v}$ and $\ve{\tilde{v}}$ the $n$-tuple sum of the respective $n$-tuples. This map depends on the basis, but it still tells us that finite-dimensional real vector spaces do not hold many surprises: they are always copies of $\re^{n}$.
 
 \subsection{Covectors and Tensors}
 \label{sub:Covectors_and_Tensors}
 
 Let $V$ be a vector space of dimension $n$. 
-Associated with this vector space, consider the set,
-$V^*=\{$ the space of linear maps $\ve{\omega}:V\to \re\}$. 
-This is also
-a vector space, called the {\bf dual space to $V$}~\index{dual space}, 
+Associated with this vector space, consider the set of linear maps from $V$ to $\re$,
+$V^*=\{\ve{\omega}:V\to \re : \ve{\omega} \text{is linear}\}$. 
+This is also a vector space, called the {\bf dual space to $V$}~\index{dual space}, 
 or {\bf space of covectors},~\index{covectors} with addition and multiplication given by: 
 
 \[
@@ -146,42 +140,40 @@ or {\bf space of covectors},~\index{covectors} with addition and multiplication 
 %
 with  $\ve{\omega},\ve{\tau}\,\in V^*\;,\,\alpha \in \re$. 
 
-What is its dimension? 
+What is the dimension of $V^*$? 
 Note that if
-$\{\ve{ e}_i\}$ $i=1,\ldots,n$ is a basis of $V$, that is, a set
-of linearly independent vectors that span $V$, we can define $n$
-elements of $V^*$ (called covectors) by the relation 
+$\{\ve{ e}_i\}$ $i=1,\ldots,n$ is a basis of $V$, we can define $n$
+elements $\ve{ \theta^i}  \in V^*$ by the relation 
 \beq
 \ve{ \theta^i}(\ve{ e}_j)=\delta^i_{\;j}.
 \eeq
-That is, we define the action of $\ve{ \theta^i}$ on the $\{\ve{e_j}\}$
-as in the equation above and then extend its action to any
-element of $V$ by writing this element in the basis $\{\ve{ e}_i\}$
-and using the fact that the action must be linear.
+That is, we define the action of $\ve{ \theta^i}$ on the basis vectors $\ve{e_j}$
+as in the equation above, and then extend its action to any vector in $V$ by writing this element in the basis $\{\ve{ e}_i\}$
+and using the fact that the $\ve{ \theta^i}$ act linearly on vectors.
   
-It can be easily seen that any $\rho \in V^*$ can be obtained
+It can be easily seen that any covector $\rho \in V^*$ can be obtained
 as a linear combination of the covectors $\{\ve{\theta^j}\}$,
 $j=1,\ldots,n$ and that these are linearly independent, therefore
-they form a basis and thus the dimension of $V^*$ is also $n$.
+they form a basis and thus the dimension of $V^*$ is also $n$. We will call this basis the {\bf co-basis} of the basis $\{\ve{e_i}\}$.
 \espa
 
-\ejer: See that $V^*$ is a vector space and that the $\{\ve{ \theta^i}\}$
+\ejer: Prove that $V^*$ is a vector space and that the $\{\ve{ \theta^i}\}$
 really form a basis.
 
-\ejer: See that if $\ve{v} = \sum_{i=1}^{n} v^i \ve{e}_i$ then,
+\ejer: Prove that if $\ve{v} = \sum_{i=1}^{n} v^i \ve{e}_i$ then the coefficients can be obtained by acting on $\ve{v}$ with the covectors $\ve{\theta}^i$, that is,
 
 \[
-v^i = \ve{\theta}(\ve{v}).
+v^i = \ve{\theta}^i(\ve{v}).
 \]
 
 \ejer:
-Let $V$ be the space of functions from a set with a finite number of elements, $n$, to the reals.
-Let a basis be given by:
+Let $V$ be the space of functions $S \to \re$, where $S$ is a finite set with $n$ elements.
+Let a basis of $V$ be given by:
 
 \[
 \ve{e}_i (a) := \left\{
 \begin{array}{cl}
-1 & \text{if} \;\; a \;\; \text{is the i-th element} \\
+1 & \text{if} \;\; a \;\; \text{is the i-th element of} S \\
 0 & \text{otherwise}
 \end{array}
 \right.
@@ -190,41 +182,39 @@ Let a basis be given by:
 Find the corresponding co-basis of its dual space. 
 
 Since $V$ and $V^*$ have the same dimension, they are, as vector
-spaces, the same thing, but since there is no map that identifies them,
-we have to consider them as different. 
+spaces, isomorphic. For any basis of $V$ have an associated co-basis of $V^*$, and we can extend this to associate to any vector in $V$ a covector in $V^*$.
+However, this association is dependent on the choice of basis for $V$: if we choose a different basis, the association would be completely different. 
+Then, this association is not intrinsic to the vector space. Since there is no \textit{natural} map that identifies $V$ with $V^*$, we have to consider them as intrinsically different, although isomorphic. 
 
-What happens if we now take the dual of $V^*$? Will we get more
-copies of $V$? The answer is no, since there is a natural identification
+What happens if we now take the dual of $V^*$? Will we get another intrinsically different vector space? The answer is negative, since \textit{there is} a natural identification
 between $V$ and its double dual $V^{**}$.
 
 Indeed, to each $\ve{v}\in V$ we can associate an element $\ve{
 X}_v$ of
-$V^{**}$, that is, a linear functional from $V^*$ to $\re$, in the
+$V^{**}$ (that is, a linear functional from $V^*$ to $\re$) in the
 following way: $\ve{X}_v(\omega):=\omega(\ve{v}) \;\;\;\forall
-\;\;\omega\in V^{*}$ . That is, the element $\ve{X}_v$ of $V^{**}$
+\;\;\omega\in V^{*}$. $\ve{X}_v(\omega)$ is sometimes called, unsurprisingly, the \textit{evaluation map} on $\ve{v}$. That is, the element $\ve{X}_v$ of $V^{**}$
 associated with $\ve{ v}\in V$ is the one that, when acting on any
 covector $\omega$, gives the number $\omega (\ve{v})$. Note that $\ve{X}_v$ acts
 linearly on the elements of $V^*$ and therefore is an element
 of $V^{**}$. Are there elements of $V^{**}$ that do not come from some
-vector in $V$? 
-The answer is no, since the map  $\ve{X_v}:V\to V^{**}$ is
+vector in $V$? The answer is negative, since the map  $\ve{X_v}:V\to V^{**}$ is
 injective [$\ve{X}_v(\omega)=0\;\;\forall \; \omega\Longrightarrow \ve{v}=0$] and
-therefore~\footnote{Denoting by $\ve{X}_V$ the image by $\ve{X}_{(\cdot)}$ 
+therefore\footnote{Denoting by $\ve{X}_V$ the image by $\ve{X}_{(\cdot)}$ 
 of $V$.} $\dim \ve{X}_V = \dim V$.
 On the other hand $\dim V^{**} = \dim V^*$ since $V^{**}$ is the dual of $V^*$ and thus 
-$\dim V = \dim V^* = \dim V^{**}$ , which indicates that the map in question is also 
+$\dim V = \dim V^* = \dim V^{**}$, which indicates that the map in question is also 
 surjective and therefore invertible.
-This allows us to identify
-$V$ and $V^{**}$ and conclude that by dualizing we will not be able
-to construct more interesting vector spaces. In the case where the dimension of the vector space is not finite, this is no longer true and there are cases -- frequently used -- where $\ve{X}_V \subset V^{**}$ strictly.
+This allows us to \textit{identify}
+$V$ and $V^{**}$ and conclude that by dualizing further we will not be able
+to construct any more interesting vector spaces. In the case where the dimension of the vector space is not finite, this is no longer true and there are cases ---frequently used in physics--- where $\ve{X}_V \subset V^{**}$ strictly.
 \espa
 
-\ejer: Given a basis in $V$, $\{\ve{e_{i}}\}$ and the corresponding co-basis, $\{\ve{\theta^{j}}\}$.
-Define the co-co-basis in $V^{**}$, $\{\ve{E_{i}}\}$. 
-Find the relationship between the components of a vector of the form $X_{v}$ in the basis $\{\ve{E_{i}}\}$ and 
+\ejer: Given a basis of $V$, $\{\ve{e_{i}}\}$, and the corresponding co-basis, $\{\ve{\theta^{j}}\}$, define the co-co-basis of $V^{**}$, $\{\ve{E_{i}}\}$. 
+Find the relation between the components of a vector of the form $X_{v}$ in the basis $\{\ve{E_{i}}\}$ and 
 those of the vector $\ve{v}$ in the basis $\{\ve{e_{i}}\}$.
 
-\ejer: See that indeed $\dim \ve{X}_V = \dim V$.
+\ejer: Prove that indeed $\dim \ve{X}_V = \dim V$.
 
 However, nothing prevents us from also considering \index{multilinear maps}
 {\bf multilinear maps}~\footnote{That is, maps that are separately linear in each 
@@ -237,17 +227,17 @@ or more generally,
 \times\underbrace{ V^*\times \cdots\times V^*}_{l\;\mbox{times}} \to \re.
 \]
 %
-The set of these maps (for each given pair $(k,l)$) is also a vector 
-space, --with the obvious operations-- and its elements are called
+The set of these maps, for each given pair $(k,l)$, is also a vector 
+space ---with the obvious operations--- and its elements are called
 {\bf tensors of type ${l\choose k}$}~\index{tensors!type}.
 
-\ejer: What is the dimension of these spaces as a function of the pair ${l \choose k}$?
+\ejer: What is the dimension of these spaces as a function of their type ${l \choose k}$?
 
 \noi\yaya{Note}:
-In finite dimensions, it can be shown that any tensor of type ${l \choose k}$
+In finite dimension, it can be shown that any tensor of type ${l \choose k}$
 can be written as a linear combination of elements of the Cartesian product of $k$ copies of $V^*$ and $l$ copies of $V$ 
---where we have identified $V$ with $V^{**}$--. 
-For example, if $\ve{t}$ is of type ${0 \choose 2}$, --that is, a map that has as arguments two covectors--, 
+---where we have identified $V$ with $V^{**}$---. 
+For example, if $\ve{t}$ is of type ${0 \choose 2}$, ---that is, a map that has as arguments two covectors---, 
 then given a basis $\{\ve{e_{i}}\}$ of $V$, and the corresponding basis of $V^{**}$, $\{\ve{E}_{i}\}$ there will be $n \times n$ real numbers $t^{ij}$, $i=1, \ldots ,n$ such that 
 \beq
 \ve{t}(\ve{\sigma},\ve{\omega}) = 
@@ -271,38 +261,38 @@ Therefore, tensors can also be considered as elements
 of these outer products.
 
 \ejem: a) Let $\ve{ t}$ be of type ${0 \choose 2}$, that is, $\ve{ t}\in\;V^*\otimes V^*$. 
-This is a bilinear map from $V\otimes V$ to $\re$, $\ve{ t}(\ve{v},\ve{u})\in \re$. Let
+This is a bilinear map from $V\times V$ to $\re$, $\ve{ t}(\ve{v},\ve{u})\in \re$. Let
 $\ve{ t}$ be symmetric $[\ve{ t}(\ve{v},\ve{u})=\ve{ t}(\ve{u},\ve{v})]$ and non-degenerate 
-[$\; \ve{ t}(\ve{v},\;\;)= 0
+[$\; \ve{ t}(\ve{v},\cdot)= 0
 \in V^*\Longrightarrow \ve{v}=0$]. 
 Since $\ve{ t}$ is non-degenerate, it defines an invertible map between $V$ and its dual. 
 Indeed, given $\ve{v} \in V$, $\ve{t}(\ve{v},\cdot)$ is an element of $V^*$. 
-But if $\ve{v}$ and $\ve{\tilde{v}}$ determine the same element of $V^*$, that is, if $\ve{ t}(\ve{v},\ve{u}) = \ve{ t}(\ve{\tilde{v}},\ve{u}) ;; \forall ; \ve{u} \in V$ then $\ve{v}=\ve{\tilde{v}}$, which can be seen by taking $\ve{u} = \ve{v} - \ve{\tilde{v}}$ and using that $\ve{t}$ is non-degenerate. Since the dimensions of $V$ and $V^{*}$ are equal, the map thus defined is invertible.
+But if $\ve{v}$ and $\ve{\tilde{v}}$ determine the same element of $V^*$, that is, if $\ve{ t}(\ve{v},\ve{u}) = \ve{ t}(\ve{\tilde{v}},\ve{u}) \;\; \forall \; \ve{u} \in V$ then $\ve{v}=\ve{\tilde{v}}$, which can be seen by taking $\ve{u} = \ve{v} - \ve{\tilde{v}}$ and using that $\ve{t}$ is non-degenerate. Since the dimensions of $V$ and $V^{*}$ are equal, the map thus defined is invertible.
 
-\ejem: b) Let $\ve{\varepsilon}$ be an element of ${0 \choose n}$ such that \beq \ve{\varepsilon} (\ldots,\underbrace{\ve{v}}_i,\ldots,\underbrace{\ve{u}}_j,\ldots) =-\ve{\varepsilon} (\ldots,\underbrace{\ve{u}}_i,\ldots,\underbrace{\ve{v}}_j,\ldots) \eeq \noi for any box $i$ and $j$, that is, a totally antisymmetric tensor. Let ${\ve{e}i}$ be a basis of $V$ and $\varepsilon{123\ldots n}:= \ve{\varepsilon} (\ve{e}_1,\ve{e}2,\ldots,\ve{e}n)$, then any other component of $\ve{\varepsilon}$ in this basis will be either zero or $\varepsilon{123\ldots n}$ or $-\varepsilon{123\ldots n}$ depending on whether some $\ve{e}_i$ is repeated or is an even permutation of the above or an odd one. Indeed, for example,
+\ejem: b) Let $\ve{\varepsilon}$ be a tensor of type ${0 \choose n}$ such that \beq \ve{\varepsilon} (\ldots,\underbrace{\ve{v}}_i,\ldots,\underbrace{\ve{u}}_j,\ldots) =-\ve{\varepsilon} (\ldots,\underbrace{\ve{u}}_i,\ldots,\underbrace{\ve{v}}_j,\ldots) \eeq \noi for any box $i$ and $j$, that is, a totally antisymmetric tensor. Let ${\ve{e}_i}$ be a basis of $V$ and $\varepsilon_{123\ldots n}:= \ve{\varepsilon} (\ve{e}_1,\ve{e}_2,\ldots,\ve{e}_n)$. Then any other component of $\ve{\varepsilon}$ in this basis will be either zero or $\varepsilon_{123\ldots n}$ or $-\varepsilon_{123\ldots n}$ depending on whether some $\ve{e}_i$ is repeated, or is an even permutation of the above, or an odd one. Indeed, for example,
 
 \begin{eqnarray*} 
-\varepsilon_{3124\ldots n} &:=& \ve{\varepsilon}(\ve{e_3},\ve{e_1}, \ve{e_{2}}, \ve{e_{4}},\ldots,\ve{e}n) \\
-&=& -\ve{\varepsilon}(\ve{e_1},\ve{e_3}, \ve{e{2}}, \ve{e_{4}},\ldots,\ve{e}n) \\ 
-&=& \ve{\varepsilon}(\ve{e_1},\ve{e_2}, \ve{e{3}}, \ve{e_{4}},\ldots,\ve{e}n) \\
-&=&\varepsilon{1234\ldots n}. 
+\varepsilon_{3124\ldots n} &:=& \ve_{\varepsilon}(\ve{e_3},\ve{e_1}, \ve{e_{2}}, \ve{e_{4}},\ldots,\ve{e}_n) \\
+&=& -\ve{\varepsilon}(\ve{e_1},\ve{e_3}, \ve{e_{2}}, \ve{e_{4}},\ldots,\ve{e}_n) \\ 
+&=& \ve{\varepsilon}(\ve{e_1},\ve{e_2}, \ve{e_{3}}, \ve{e_{4}},\ldots,\ve{e}_n) \\
+&=&\varepsilon_{1234\ldots n}. 
 \end{eqnarray*} 
 % 
 Therefore, given a basis, a single number, $\varepsilon_{123\ldots n}$, is enough to determine the tensor $\ve{\varepsilon}$ and given another tensor $\ve{\tilde{\varepsilon} }$ not identically zero with the properties mentioned above, there will exist a number $\alpha$ such that $\ve{\varepsilon} = \alpha\ve{\tilde{\varepsilon}}$. This last equality does not depend on the basis used and tells us that the dimension of the subspace of antisymmetric tensors of type ${0 \choose n}$ is 1. Knowing one element is enough to generate the entire space by multiplying it by any real number.
 
-\ejer: Let $\ve{\varepsilon}$ be not identically zero and ${\ve{u}_i}$ a set of $n=\dim V$ vectors of $V$. Show that these form a basis if and only if 
+\ejer: Let $\ve{\varepsilon}$ be a non identically zero, totally antisymmetric tensor of type ${0 \choose n}$ and ${\ve{u}_i}$ a set of $n=\dim V$ vectors of $V$. Show that these form a basis if and only if 
 \beq 
 \ve{\varepsilon} (\ve{u_1},\ldots, \ve{u_n})\neq 0. 
 \eeq
 
-\ejem: c) Let $\ve{ A}$ be an element of ${1 \choose 1}$, 
-\beq 
-\ve{ u}\in V, ;;\ve{ v}^\in V^* \to \ve{A}(\ve{ u},\ve{v}^*)\in\re. 
+\ejem: c) Let $\ve{ A}$ be a tensor of type ${1 \choose 1}$, mapping
+\beq
+\ve{ u}\in V, \;\; \ve{ v}^* \in V^* \to \ve{A}(\ve{ u},\ve{v}^*)\in\re. 
 \eeq 
-This implies that $\ve{A}(\ve{u},\;\;)$ is also a vector (identifying $V$ with $V^{**}$, the one that takes a form $\ve{\omega} \in V^*$ and gives the number $\ve{A}(\ve{u},\ve{\omega})$). 
-Thus we have a \textbf{linear map} from $V$ to $V$, that is, a linear operator on $V$.
+This implies that $\ve{A}(\ve{u},\cdot)$ is also a vector ---identifying $V$ with $V^{**}$), the one that takes a covector $\ve{\omega} \in V^*$ and gives the number $\ve{A}(\ve{u},\ve{\omega})$---. 
+Thus, $\ve{A}$ determines a \textbf{linear map} $V \to V$, that is, a linear operator on $V$.
 
-\ejer: Let ${\ve{u}_i}$ be a basis of $V$ and let $\ve{ a}_i$ be the vectors $\ve{A}(\ve{u_i},;;)$, then $$ \ve{\varepsilon}(\ve{a_1},\ldots,\ve{a_n})=\ve{\varepsilon}(\ve{A}(\ve{u_1},\;\;),\ldots ,\ve{A}(\ve{u_n},;;)) $$ is totally antisymmetric in the ${u_i}$ and therefore proportional to itself;
+\ejer: Continuing the example before, let ${\ve{u}_i}$ be a basis of $V$ and let $\ve{ a}_i = \ve{A}(\ve{u_i},\cdot)$. Then \[ \ve{\varepsilon}(\ve{a_1},\ldots,\ve{a_n})=\ve{\varepsilon}(\ve{A}(\ve{u_1}, \cdot),\ldots ,\ve{A}(\ve{u_n},\cdot)) \] is totally antisymmetric in the ${u_i}$ and therefore proportional to itself;
 
 \[ 
 \ve{\varepsilon}(\ve{A}(\ve{u_1},\;\;),\ldots ,\ve{A}(\ve{u_n},\;\;)) \propto \ve{\varepsilon}(\ve{u_1}. \ldots, \ve{u_n}). 
@@ -314,9 +304,9 @@ The proportionality constant is called the {\bf determinant} \index{determinant}
 \ve{\varepsilon}(\ve{A}(\ve{u_1},;;),\ldots ,\ve{A}(\ve{u_n},;;)) =: \det(\ve{A}) \ve{\varepsilon}(\ve{u_1}. \ldots, \ve{u_n}).
 \] %
 
-\bpro Show that this definition does not depend on the $\ve{\varepsilon} $ used nor on the basis and therefore is truly a function of the space of operators from $V$ to $\re$. \epro
+\bpro Show that this definition does not depend on the $\ve{\varepsilon} $ used nor the basis and therefore gives truly a function on the space of operators $V \to \re$. \epro
 
-\ejer: If $\ve{A}$ and $\ve{B}$ are two operators on $V$, then $\ve{A}\cdot \ve{B} (\ve{v}):= \ve{A}(\ve{B}(\ve{v}))$. Show that $\det(\ve{A}\ve{B})=\det(\ve{A})\cdot \det(\ve{B})$.
+\ejer: If $\ve{A}$ and $\ve{B}$ are two operators on $V$, then $\ve{A}\cdot \ve{B} (\ve{v}):= \ve{A}(\ve{B}(\ve{v}))$. Show that $\det(\ve{A}\ve{B})=\det(\ve{A}) \det(\ve{B})$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Complexification}
@@ -324,15 +314,15 @@ The proportionality constant is called the {\bf determinant} \index{determinant}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Another way to obtain vector fields from a given one, say $V$, is by extending the field where the multiplication operation is defined, if this is possible. The most common case is the \textbf{complexification} of a real vector space; in this case, the product is simply extended to complex numbers, resulting in a vector field of the same dimension. One way to obtain it, for example, is by taking a set of linearly independent vectors from the initial space, that is, a basis, and considering all linear combinations with arbitrary complex coefficients. The space thus obtained is denoted by $V^{\Complex}$. If the components of the vectors in $V$ in the original basis were n-tuples of real numbers, they are now n-tuples of complex numbers. Since the basis is the same, the dimension is also the same. These extensions of vector spaces often appear, and we will see others later.
+Another way to obtain vector spaces from a given one, say $V$, is by extending the field where the multiplication operation is defined, if this is possible. The most common case is the \textbf{complexification} of a real vector space; in this case, the product is simply extended to complex numbers, resulting in a vector space of the same dimension (over the complex field). One way to obtain it, for example, is by taking a basis of the real vector space $V$, and considering all linear combinations with arbitrary complex coefficients. The space thus obtained is denoted by $V^{\Complex}$. While the components of the vectors in $V$ in the original basis were $n$-tuples of real numbers, they are now $n$-tuples of complex numbers. Since the basis is the same, the dimension is also the same. These extensions of vector spaces often appear, and we will see others later.
 
-Multilinear maps must be extended in the same way, that is, for example, the dual of $V$ will consist of all maps from $V$ to $C$.
+Multilinear maps must be extended in the same way. That is, for example, the dual of $V$ will consist of all (complex-)linear maps from $V$ to $\mathbb{C}$.
 
-We can also take smaller fields, for example, $Q^n$ or $Z^n$.
+We can also take smaller fields, for example, $\mathbb{Q}^n$ or $\mathbb{Z}^n$.
 
-\ejem: Consider the vector space $Q^n$ consisting of all n-tuples of rational numbers. In this space, the field is also the set of rationals. If we extend the field to the reals, we obtain $\ren$.
+\ejem: Consider the vector space $\mathbb{Q}^n$ consisting of all $n$-tuples of rational numbers. In this space, the field is also the set of rationals. If we extend the field to the reals, we obtain $\ren$.
 
-\ejem: Consider a space $V$ and any basis in it, ${\ve{e_{i}}}$. This choice characterizes a subspace of $V$, given by all elements of the form, 
+\ejem: Consider a space $V$ and any basis $\{\ve{e_{i}}\}$ of $V$. This choice characterizes a subspace of $V$, given by all elements of the form, 
 \[ 
 v=\sum_{i}^{n} m^{i}\ve{e_{i}} \;\;\;\;\; m^{i} \in Z. 
 \]
@@ -343,67 +333,68 @@ v=\sum_{i}^{n} m^{i}\ve{e_{i}} \;\;\;\;\; m^{i} \in Z.
 \subsection{Quotient Spaces}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The last way we will see to obtain vector spaces from other vector spaces is by taking \textbf{quotients}. Let $V$ be a vector space and let $W \subset V$ be a subspace of it. We will call the \textbf{quotient space} the set of equivalent classes in $V$, where we will say that two vectors in $V$ are equivalent if their difference is a vector in $W$. This space is denoted as $V/W$.
+The last way we will see to obtain vector spaces from other vector spaces is by taking \textbf{quotients}. Let $V$ be a vector space and let $W \subset V$ be a subspace of it. We will call the \textbf{quotient space} the set of equivalence classes in $V$, where we will say that two vectors in $V$ are equivalent if their difference is a vector in $W$. This space is denoted as $V/W$.
 
-\ejer: Prove that this is an equivalence relation. [At the end of the chapter there is a box with a discussion of the relevant definitions and properties of the central concept of equivalence relations.]
+\ejer: Prove that the relation defined above is indeed an equivalence relation. (At the end of the chapter there is a box with a discussion of the relevant definitions and properties of the central concept of equivalence relations.)
 
-Let's see that this is a vector space. The elements of $V/W$ are equivalent classes; two elements of $V$, $\ve{v}$ and $\ve{v}'$, belong to the same equivalent class if $\ve{v}-\ve{v}' \in W$. Let $\ve{\zeta}$ and $\ve{\zeta}'$ be two elements of $V/W$, that is, two equivalent classes of elements of $V$. We will define the operations proper to vector spaces as follows: $\ve{\zeta} + \alpha \ve{\zeta}'$ will be the equivalent class corresponding to an element $\tilde{\ve{v}}$ obtained by taking an element of $V$ in $\ve{\zeta}$, say $\ve{v}$, another in $\ve{\zeta}'$, say $\ve{v}'$, and defining $\ve{\tilde{v}} := \ve{v} + \alpha \ve{v'}$, we have $\tilde{\ve{\zeta}}= \ve{\zeta} + \alpha \ve{\zeta}'$, where $\tilde{\ve{\zeta}}$ is the equivalent class containing the element $\ve{\tilde{v}} = \ve{v} + \alpha \ve{v'}$. To facilitate notation, the equivalent class containing a given element, say $\ve{v}$, is usually represented as ${\ve{v}}$. In this case, we have,
+Let's see that this is a vector space. The elements of $V/W$ are equivalence classes; two elements of $V$, $\ve{v}$ and $\ve{v}'$, belong to the same equivalence class if $\ve{v}-\ve{v}' \in W$. Let $\ve{\zeta}$ and $\ve{\zeta}'$ be two elements of $V/W$, that is, two equivalence classes of elements of $V$. We will define the sum and the product of equivalence classes as follows: $\ve{\zeta} + \alpha \ve{\zeta}'$ will be the equivalence class corresponding to an element $\tilde{\ve{v}}$ obtained by taking a representative vector from $\ve{\zeta}$, say $\ve{v}$, another from $\ve{\zeta}'$, say $\ve{v}'$, and defining $\ve{\tilde{v}} := \ve{v} + \alpha \ve{v'}$, we have $\tilde{\ve{\zeta}}= \ve{\zeta} + \alpha \ve{\zeta}'$, where $\tilde{\ve{\zeta}}$ is the equivalence class containing the element $\ve{\tilde{v}} = \ve{v} + \alpha \ve{v'}$. To facilitate notation, the equivalence class containing a given element, say $\ve{v}$, is usually represented as $\[ \ve{v} \]$. In this case, we have,
 
 \[ 
-{\ve{v}} + \alpha {\ve{v'}} = {\ve{v} + \alpha \ve{v'}}. 
+\[\ve{v}\] + \alpha \[ \ve{v'} \] = \[\ve{v} + \alpha \ve{v'}\]. 
 \]
 
-\ejer: See that this definition does not depend on the choice of elements in the equivalent class taken to perform the operation. That is, consider two other elements in $\ve{\zeta}$ and $\ve{\zeta}'$, say $\hat{\ve{v}}$ and $\hat{\ve{v}}'$, and see that with them you obtain an element in the same class as $\tilde{\ve{v}} = \ve{v} + \alpha \ve{v}'$.
+\ejer: See that this definition does not depend on the choice of representatives in the equivalence classes taken to perform the operation. That is, consider two other elements in $\ve{\zeta}$ and $\ve{\zeta}'$, say $\hat{\ve{v}}$ and $\hat{\ve{v}}'$, and see that with them you obtain an element in the same class as $\tilde{\ve{v}} = \ve{v} + \alpha \ve{v}'$.
 
 \ejem: Let $V = \re{}^2$, that is, the space of 2-tuples of real numbers. Let $\ve{v}$ be any element. This element generates the one-dimensional space $W_{\ve{v}}$ consisting of all vectors of the form $\alpha \ve{v}$, for $\alpha \in \re$. The quotient space $V/W_{\ve{v}}$ is the space composed of lines parallel to $\ve{v}$. That is, each line is an element of the quotient space, and there is a notion of addition and scalar multiplication among them.
 
 \begin{figure}[htbp] \begin{center} \resizebox{7cm}{!}{\myinput{Figure/m2_1}} \caption{Geometric interpretation of the quotient space.} \label{fig:2_1} \end{center} \end{figure}
 
-\ejer: Let $V$ be the set of continuous functions from $\re$ to $\re$ and let $W$ be the subset of those that vanish in the interval $[0,1]$. See that this is a vector subspace. Consider the space $V/W$. What space can you associate with this?
+\ejer: Let $V$ be the set of continuous functions from $\re$ to $\re$ and let $W$ be the subset of those that vanish on the interval $[0,1]$. See that this is a vector subspace. Consider the space $V/W$. What space can you associate with this?
 
 \section{Norms}
 
 \defi: A {\bf norm} in a vector space $V$ is a map $|\ve x|:V\to \re^+$, satisfying for all $\ve{x},\ve{y} \in V,\;\alpha\in \re,$,
 
-$i$) $|\ve x|\geq 0$ \; \; ($=\sii ;\ve x=0$)
+$i$) Non-negativity: $|\ve x|\geq 0$, with equality only for $\ve x=0$
 
-$ii$) $|\alpha \ve x| =| \alpha|;|\ve x|$
+$ii$) Homogeneity: $|\alpha \ve x| =| \alpha|\;|\ve x|$
 
-$iii$) $|\ve x+\ve y|\leq|\ve x|+|\ve y|$
+$iii$) Triangle inequality: $|\ve x+\ve y|\leq|\ve x|+|\ve y|$
 
 \noi\yaya{Examples}: In $\re^2$ :
 
-\noi a) $|(x,y)|:= max{|x|,|y|}$;
+\noi a) $|(x,y)|:= \text{max}\{|x|,|y|\}$;
 
-\noi b) $|(x,y)|_{2}:=\sqrt{x^2+y^2}$, Euclidean norm;
+\noi b) $|(x,y)|_{2}:=\sqrt{x^2+y^2}$ (Euclidean norm);
 
 \noi c) $|(x,y)|_{1}:=|x| +|y|$;
 
-\noi d) $|(x,y)|_{p}:=(|x|^{p} + |y|^{p})^{\frac{1}{p}} ;;;;; p\geq 1$;
+\noi d) $|(x,y)|_{p}:=(|x|^{p} + |y|^{p})^{\frac{1}{p}} \;\;\;\;\; p\geq 1$;
 
-\noi e) In $V$ let $\ve{t}$ be a positive definite symmetric tensor of type ${0 \choose 2}$, that is $\ve{t}(\ve u,\ve v)=\ve{t}(\ve v,\ve u)$, $\ve{t}(\ve u,\ve u)\geq 0$ $(=\sii;\ve u=0)$. The function $|\ve u|_{\ve{t}} =\sqrt{\ve{t}(\ve u,\ve u)}$ is a norm. Each tensor of this type generates a norm, but there are many norms that do not come from any tensor of this type. Give an example.
+\noi e) Let $\ve{t}$ be a positive-definite symmetric tensor of type ${0 \choose 2}$ on a vector space $V$, that is $\ve{t}(\ve u,\ve v)=\ve{t}(\ve v,\ve u)$, $\ve{t}(\ve u,\ve u)\geq 0$ (with equality only for $\ve u=0$). The function $|\ve u|_{\ve{t}} =\sqrt{\ve{t}(\ve u,\ve u)}$ is a norm on $V$. Each tensor of this type generates a norm, but there are many norms that do not come from any tensor of this type. Give an example.
 
-\ejer: Prove that $|\ve{t}(\ve{u},\ve{v})|^2 \leq ||\ve{u}||{\ve{t}} ||\ve{v}||{\ve{t}}$. Hint: Consider the polynomial: $P(\lambda) := \ve{t}(\ve{u} + \lambda \ve{v},\ve{u} + \lambda \ve{v})$.
+\ejer: Prove that $|\ve{t}(\ve{u},\ve{v})|^2 \leq |\ve{u}|_{\ve{t}} |\ve{v}|_{\ve{t}}$. Hint: Consider the polynomial: $P(\lambda) := \ve{t}(\ve{u} + \lambda \ve{v},\ve{u} + \lambda \ve{v})$.
 
-\ejer: Prove that the given examples are indeed norms. Graph the level curves of the first four norms, that is, the sets $S_a={(x,y)\in \re^2;/;|(x,y)|=,a}$ and the "balls of radius $a$", that is $B_a={(x,y)\in \re^2/|(x,y)|\leq a}$.
+\ejer: Prove that the given examples are indeed norms. Draw the level curves of the first four norms, that is, the sets $S_a=\{(x,y)\in \re^2\;/\; |(x,y)|=a\}$ and the "balls of radius $a$", that is $B_a=\{(x,y)\in \re^2/|(x,y)|\leq a\}$.
 
-\ejer: Prove that the map $d:V\times V \to \re^+$ given by $d(\ve x,\ve y) = |\ve x-\ve y|$ is a metric.
+\ejer: Prove that the map $d:V\times V \to \re^+$ given by $d(\ve x,\ve y) = |\ve x-\ve y|$ for a norm $|\cdot|$ on $V$ defines a distance on $V$.
 
-What is a norm geometrically? Given a vector $\ve{x}\neq 0$ of $V$ and any positive number, $a$, there is a unique number $\alpha > 0$ such that $|\alpha \ve x|=a$. This indicates that the level surfaces of the norm, that is, the hypersurfaces $S_a={\ve x\in V / |\ve x|=a}$, $a>0$ form a smooth family of layers one inside the other, and each of them divides $V$ into three disjoint sets, the {\it interior} of $S_a$ --containing the element $\ve x=0$-- , $S_a$ and the {\it exterior} of $S_a$. The {\it interior} of $S_a$ is a convex set, that is, if $\ve x$ and $\ve y$ belong to the interior of $S_a$, then $\alpha \ve x+(1-\alpha)\ve y,;\alpha\in[0,1]$ also belongs [since $|\alpha \ve x + (1-\alpha )\ve y| \leq \alpha |\ve x| + (1-\alpha )|\ve y| \leq \alpha a + (1-\alpha )a = a$].
-A level curve completely characterizes a norm in the sense that if we give a subset $N$ of $V$, such that $N$: \textbf{a)} has the radial property, that is, given $\ve x\neq 0$ there is a unique $\alpha >0$ such that $\alpha ,\ve x\in N$ and $-\alpha ,\ve x\in N$ and \textbf{b)} is convex, then there is a unique norm such that $N$ is the level surface $S_1$. This norm is defined as follows: given $\ve x$ we know that there will be a unique $\alpha > 0$ such that $\alpha \ve x \in N$ and then the norm of $\ve x$ will be $|\ve x| := \frac1{\alpha}$.
+What is a norm geometrically? Given a vector $\ve{x}\neq 0$ of $V$ and any positive number, $a$, there is a unique number $\alpha > 0$ such that $|\alpha \ve x|=a$. This indicates that the level surfaces of the norm, that is, the hypersurfaces $S_a=\{\ve x\in V / |\ve x|=a\}$, $a>0$ form a smooth family of layers one inside the other, and each of them divides $V$ into three disjoint sets: the {\it interior} of $S_a$ ---containing the element $\ve x=0$---, $S_a$, and the {\it exterior} of $S_a$. The {\it interior} of $S_a$ is a convex set, that is, if $\ve x$ and $\ve y$ belong to the interior of $S_a$, then $\alpha \ve x+(1-\alpha)\ve y,\;\alpha\in[0,1]$ also belongs to it (since $|\alpha \ve x + (1-\alpha )\ve y| \leq \alpha |\ve x| + (1-\alpha )|\ve y| \leq \alpha a + (1-\alpha )a = a$).
 
-\ejer: Prove that this is a norm. Hint, given any two vectors $\ve{x},;; \ve{y} ; \in V$, then $\frac{\ve{x}}{||\ve{x}||}$ and $\frac{\ve{y}}{||\ve{y}||}$ are unitary and therefore are in $N$. But then we have that $||\lambda \frac{\ve{x}}{||\ve{x}||} - (1-\lambda)\frac{\ve{y}}{||\ve{y}||}|| \leq 1;;;\forall ; \lambda \in [0,1]$. Now find a convenient value for $\lambda$.
+A level set completely characterizes a norm in the sense that if we give a subset $N$ of $V$, such that $N$: \textbf{a)} has the radial property, that is, given $\ve x\neq 0$ there is a unique $\alpha >0$ such that $\alpha ,\ve x\in N$ and $-\alpha ,\ve x\in N$ and \textbf{b)} is convex, then there is a unique norm such that $N$ is the level surface $S_1$. This norm is defined as follows: given $\ve x$ we know that there will be a unique $\alpha > 0$ such that $\alpha \ve x \in N$ and then the norm of $\ve x$ will be $|\ve x| := \frac1{\alpha}$.
 
-From this image, we see that given two norms of a finite-dimensional vector space and a level surface of one, there will be level surfaces of the other that will have the first one inside or outside it. In the norms a) and b) of the previous example, we see that given a square containing zero, there will be two circles containing zero, one containing the square and the other contained by it. This leads us to the following theorem.
+\ejer: Prove that this is a norm. Hint, given any two vectors $\ve{x},\;\; \ve{y} ; \in V$, then $\frac{\ve{x}}{||\ve{x}||}$ and $\frac{\ve{y}}{||\ve{y}||}$ are unitary and therefore are in $N$. But then we have that $||\lambda \frac{\ve{x}}{||\ve{x}||} - (1-\lambda)\frac{\ve{y}}{||\ve{y}||}|| \leq 1\;\;\;\forall \; \lambda \in [0,1]$. Now find a convenient value for $\lambda$.
 
-\bteo Let $V$ be a finite-dimensional vector space. Then all its norms are equivalent to each other, in the sense that given $|\cdot|$ and $|\cdot|'$ there are positive constants $M_1$ and $M_2$ such that for all $\ve x\in V$ it holds that $M_1,|\ve x|\leq|\ve x|'\leq M_2|\ve x|$. \eteo
+From this perspective, we see that given two norms on a finite-dimensional vector space and a level surface of one of them, there will be level surfaces of the other norm that will have the former inside or outside of it. In the norms a) and b) of the previous example, we see that given a square containing zero, there will be two circles containing zero, one containing the square and the other contained by it. This leads us to the following theorem.
 
-\pru: We will show that all are equivalent to the norm $|\ve x|1=\sum{i=m}^n |a^i|$, where the $a^i$ are the components of $\ve x$, with respect to a given basis ${\ve{e}_i}$, $ \ve x=a^i,\ve{e}_i$.
+\bteo Let $V$ be a finite-dimensional vector space. Then all its norms are equivalent to each other, in the sense that given $|\cdot|$ and $|\cdot|'$ there are positive constants $M_1$ and $M_2$ such that for all $\ve x\in V$ it holds that $M_1|\ve x|\leq|\ve x|'\leq M_2|\ve x|$. \eteo
 
-Let any other norm, then
+\pru: We will show that all are equivalent to the norm $|\ve x|_1=\sum_{i=1}^n |a^i|$, where the $a^i$ are the components of $\ve x$ with respect to a given basis $\{\ve{e}_i\}$, $ \ve x =a^i \,\ve{e}_i$.
+
+Let $|\cdot|$ be any other norm, then
 
 \beq
-\barr{rcl} \left|,|\ve x|,\right| & \leq & |\ve x|=|\sum_i^n a^i,\ve{e}_i| \leq \sum_i^n | a^i,\ve{e}i| \\ 
+\barr{rcl} \left| \ve x| \right| & \leq & |\ve x|=|\sum_i^n a^i,\ve{e}_i| \leq \sum_i^n | a^i,\ve{e}i| \\ 
 & \leq & \sum_i^n |a^i|,|\ve{e}i|\leq(max{j=1,n}|\ve{e}j|)\sum{i=1}^n|a^i| \\ 
 & =&(max{j=1,n}|\ve{e}_j|);|\ve x|_1. 
 \earr 
@@ -421,13 +412,13 @@ This shows that the norm $|\cdot|$ is a continuous function with respect to the 
 
 \noi $i$) In this proof, it is crucial that $S_1$ is compact. If $V$ is infinite-dimensional, this is not the case, and there are many non-equivalent norms.
 
-\noi $ii$) For our purposes, any norm is sufficient --since if, for example, $f:V\to \re$ is continuous with respect to one norm, it is also continuous with respect to any other equivalent to it-- and for simplicity, from now on, we will use the Euclidean norm.
+\noi $ii$) For our purposes, any norm is sufficient ---since if, for example, $f:V\to \re$ is continuous with respect to one norm, it is also continuous with respect to any other equivalent to it--- and for simplicity, from now on, we will use the Euclidean norm.
 
-\noi $iii$) In this sense, the norms of finite-dimensional vector spaces are equivalent to the one generated by any positive-symmetric element of the exterior product of its dual with itself.
+\noi $iii$) In this sense, the norms of finite-dimensional vector spaces are equivalent to the one generated by any positive-symmetric element of the outer product of its dual with itself.
 
 \noi $iv$) Since equivalent norms generate the same topology, we see that in finite-dimensional vector spaces, there is a unique topology associated with all its possible norms. This is usually called the {\bf strong topology}.
 
-\ejer: Prove that the above is indeed an equivalence relation.
+\ejer: Prove that the above is indeed an equivalence relation among norms on a vector space.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -435,11 +426,14 @@ This shows that the norm $|\cdot|$ is a continuous function with respect to the 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The norms defined in $V$ naturally induce norms in its dual, $V^{\star}$. This is given by: \begin{equation} \label{eq:norma_inducida_en_dual} |\ve{\omega}| := max_{|\ve{v}|=1}{|\ve{\omega}(\ve{v})|}. \end{equation} \espa
+The norms defined in $V$ naturally induce norms in its dual, $V^{\star}$. This is given by: \begin{equation} \label{eq:norma_inducida_en_dual} |\ve{\omega}| := \max_{|\ve{v}|=1}{|\ve{\omega}(\ve{v})|}. \end{equation} 
+
+In other words, the norm of a covector is the maximum value it takes on a unit vector.
+\espa
 
 \ejer: Show that this is a norm and that $|\ve{\omega}(\ve{v})| \leq |\ve{\omega}||\ve{v}|$.
 
-\ejer: Consider $V=\re^2$ with the norm: $|(x,y)|:= max{|x|,|y|}$. What is the induced norm in $V^{\star}$?
+\ejer: Consider $V=\re^2$ with the norm $|(x,y)|:= \max\{|x|,|y|\}$. What is the induced norm in $V^{\star}$?
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -450,25 +444,25 @@ The norms defined in $V$ naturally induce norms in its dual, $V^{\star}$. This i
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 A {\bf linear operator} \index{operador!lineal} 
-\ve{A} on a vector space $V$ is a continuous map \footnote{With respect to the topology induced by any of the equivalent norms of $V$.}
+\ve{A} on a vector space $V$ is a continuous map\footnote{With respect to the topology induced by any of the equivalent norms of $V$.}
 from $V$ to $V$ such that $\forall \; \ve x,\ve y \in V,\; \alpha \in \re$, 
-$\ve{A}(\alpha \ve x+ \ve y)=\alpha\,\ve{A}(\ve x) + \ve{A}(\ve y)\;$,
-that is, a tensor of type ${1 \choose 1}$.
+$\ve{A}(\alpha \ve x+ \ve y)=\alpha\,\ve{A}(\ve x) + \ve{A}(\ve y)\;$. As we saw earlier, this is equivalent to saying that $\ve{A}$ is a tensor of type ${1 \choose 1}$.
 
 The set of linear operators
-$\cL$ is an algebra, that is, a vector space with a product.
+$\cL$ is an algebra, that is, a vector space with a bilinear product among vectors.
 Indeed, if $\ve{A}\,,\;\ve{B}\in \cL\,,\;\alpha\in \re$, 
 then $\ve{A}+\alpha\ve{B}\in\cL$ and also 
 $\ve{A}\cdot\ve{B}$ (the operator that sends $\ve x\in V$ 
 to $A(B(\ve x)) \in V$) also belongs to $\cL$.
-Due to this property, we can also define non-linear functions from $\cL$ to $\re$ and maps from $\cL$ to $\cL$. To study the continuity and differentiability of these maps, we introduce a norm in $\cL$, the most convenient being the following norm induced by the one used in $V$,
+Due to this product among vectors, we can also define non-linear functions from $\cL$ to $\re$ and maps from $\cL$ to $\cL$. To study the continuity and differentiability of these maps, we introduce a norm in $\cL$, the most convenient being the following norm induced by the one used in $V$,
 \beq
 \|A\|_{\cL}=\mbox{max}_{\|\ve x\|_V=1}\|A(\ve x)\|_V.
 \eeq
+Similarly as defined for covectors, the norm of a linear operator is the maximum norm attained by applying it to a unit vector.
+
 If $V$ is finite-dimensional (which we will assume from now on), 
-the vector space $\cL$ is also finite-dimensional and therefore all its norms are equivalent. The fact that the norm of $A$ is finite again uses that 
-$A:V\to V$ is continuous and that $\{\ve x\in V/\|\ve x\|_V=1\}$ is compact,
-in the infinite-dimensional case, neither of these things is necessarily true, and within $\cL$ we only have a subspace of linear operators with finite (bounded) norms.
+the vector space $\cL$ is also finite-dimensional and therefore all its norms are equivalent. In this case, the norm of $A$ is finite because 
+$A:V\to V$ is continuous and $\{\ve x\in V/\|\ve x\|_V=1\}$ is compact. However, in the infinite-dimensional case, neither of these statements is necessarily true, and within $\cL$ we only have a subspace of linear operators with finite (bounded) norms.
 \espa
 
 \ejer: Show that 
@@ -491,19 +485,19 @@ Next, we study various functions in the space of operators.
 \espa
 
 The determinant of an operator, introduced in the previous section, is a polynomial of degree $n$ = $\dim V$ in $\ve{A}$ and therefore differentiable. Using the chain rule, we see that
-$det(I+\eps A)$ is differentiable in $\eps$, and indeed a polynomial
-of degree $n$ in $\eps$. Each of the coefficients of this
+$\det (I+\lambda A)$ is differentiable in $\lambda$, and indeed a polynomial
+of degree $n$ in $\lambda$. Each of the coefficients of this
 polynomial is a function of $\ve{A}$. Of importance in what
 follows is the linear coefficient in $\ve{A}$, which is obtained using the
 formula
 \beq
-\der{\eps} det(\ve{I} + \left.\eps \ve{A})\right|_{\eps=0} =
+\der{\lambda} \det(\ve{I} + \left.\lambda \ve{A})\right|_{\lambda=0} =
 \dip\frac{\eps (\ve{A}(u_1),u_2,\ldots,u_n)\,+\cdots
 +\,\eps(u_1,\ldots, \ve{A}(u_n))}{\eps(u_1,\ldots,u_n)}
 \label{eqn:2_traza}
 \eeq
-\noi this function is called the {\bf trace} \index{traza} of 
-$\ve{A}$ and is denoted $tr(\ve{A})$. 
+\noi This function is called the {\bf trace} \index{traza} of 
+$\ve{A}$ and is denoted $\text{tr} (\ve{A})$. 
 
 Among the maps from $\cL$ to $\cL$, consider the exponential map,
 defined as,
@@ -548,7 +542,7 @@ Where
 $e^{\|\ve{A}\|_{\cL}}_n  \equiv \dip \sum_{i=0}^n \frac{\|\ve{A}\|^i_{\cL}}{i!}$ 
 and the last implication follows from the fact that the numerical series
 $e^{\|\ve{A}\|_{\cL}}$ converges. 
-But by completeness \footnote{Every finite-dimensional real vector space is complete.} of $\cL$, every Cauchy sequence 
+But by completeness\footnote{Every finite-dimensional real vector space is complete.} of $\cL$, every Cauchy sequence 
 converges to some element of $\cL$ that we will call $e^{\ve{A}}$. 
 The differentiability of $e^{t\ve{A}}$ follows from the fact that if a series
 $\sum_{i=0}^{\infty}\;f_i(t)$ is convergent and
@@ -566,13 +560,13 @@ Show that
 \noi b) If $\ve{A} $ and $\ve{B}$ commute, that is if $\ve{A}\ve{B} = \ve{B}\ve{A}$, then
 $e^{\ve{A} + \ve{B}} = e^{\ve{A}}\;e^{\ve{B}}.$
 
-\noi c) $det(e^{\ve{A}})=e^{tr(\ve{A})}$
+\noi c) $\det(e^{\ve{A}})=e^{\text{tr}(\ve{A})}$.
 
 \noi d) $\dip\der{t} e^{t\ve{A}}=\ve{A}\,e^{t\ve{A}}.$
 
 \noi Hint: For point c) use that $e^{\ve{A}}$ can also be defined as,
 \[
-e^{\ve{A}} = \dip \lim_{m\to\infty}(\ve{I} + \frac{\ve{A}}m)^m.
+e^{\ve{A}} = \dip \lim_{m\to\infty} \left(\ve{I} + \frac{\ve{A}}m\right)^m.
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -583,14 +577,9 @@ e^{\ve{A}} = \dip \lim_{m\to\infty}(\ve{I} + \frac{\ve{A}}m)^m.
 To describe certain aspects of linear operators, it is convenient 
 to introduce the following matrix representation. \index{matrices!representación matricial}
 
-Let $\{\ve{u}_i\}$, $i=1,\ldots,n$ be a basis of $V$, that is, a
-set of linearly independent vectors of $V$ 
-[$ \sum_{i=1}^n c^i\,\ve{u}_i=0 \Longrightarrow c^i=0$] 
-that span it 
-[if $\ve{v} \in V$, there exist numbers 
-$\{v^i\}$, $i=1,\ldots,n$ such that $\ve{v}= \sum_{i=1}^n v^i\,\ve{u}_i)$]. 
+Let $\{\ve{u}_i\}$, $i=1,\ldots,n$, be a basis of $V$. 
 Applying the
-operator $\ve{A}$ to a member of the basis $\ve{u}_i$ we obtain a vector
+operator $\ve{A}$ to a member of the basis $\ve{u}_i$, we obtain a vector
 $\ve{A}(\ve{u}_i)$ which in turn can be expanded in the basis,
 $\ve{A}(\ve{u}_i)= \sum_{j=1}^n A^j{}_i\,\ve{u}_j$. 
 The matrix thus constructed, $A^j{}_i$, is a
@@ -598,26 +587,25 @@ representation of the operator $\ve{A}$ in that basis.
 In this language,
 we see that the matrix $A^j{}_i$ transforms the vector of components
 $\{v^i\}$ into the vector of components $\{A^j{}_iv^i\}$.
-Given a basis, $\{\ve{u}_i\}$, and a matrix $A^j{}_i$, we can construct a
-linear operator as follows: Given the basis, we define its
-co-basis, that is, a basis in $V^*$ as $\{\ve{\theta}^i\}$,
-$i=1,\ldots,n$, such that $\ve{\theta}^i(\ve{u}_j)=\delta^i_j$, then $\ve{A} =
-\sum_{i,j=1}^n A^j{}_i\, \ve{u}_j\ve{\theta}^i$.
+Conversely, given a basis, $\{\ve{u}_i\}$, and a matrix $A^j{}_i$, we can construct a
+linear operator as follows: let $\{\ve{\theta}^i\}$ be the associated co-basis,
+such that $\ve{\theta}^i(\ve{u}_j)=\delta^i_j$. Then $\ve{A} =
+\sum_{i,j=1}^n A^j{}_i\, \ve{u}_j \otimes \ve{\theta}^i$ defines a linear operator whose matrix coefficients in the basis are precisely $A^j_{}i$.
 
 If we change the basis, the matrices representing the operators
 will change. Indeed, if we take another basis $\{\hat{\ve{u}}_i\}$ and
 write its components with respect to the previous basis as  
 $\hat{\ve{u}}_i= P^{k}{}_i\ve{u}_k$, and therefore, $\hat{\theta}^{j} = (P^{-1})^{j}{}_{l}\theta^{l}$, 
-then the relationship between the components of the operator $\ve{A}$ in both bases is given by
+then the relation between the components of the operator $\ve{A}$ in both bases is given by
 \beq
-\hat A^j{}_i= A(\hat{\theta}^{j},\hat{\ve{u}}_i) = (P^{-1})^{j}{}_{l} \,A^l{}_k\,P^k{}_i\;\;\;\;\mbox{o}\;\;\;\;\hat A=
+\hat A^j{}_i= A(\hat{\theta}^{j},\hat{\ve{u}}_i) = (P^{-1})^{j}{}_{l} \,A^l{}_k\,P^k{}_i\;\;\;\;\mbox{or}\;\;\;\;\hat A=
 P^{-1}\,A\,P
 \eeq
 \noi that is, $\hat A$ and $A$ are \textbf{similar matrices}.
 \espa
 
-\ejer: See, from its definition (equation (\ref{eqn:2_traza})), that in a basis we have,
-$tr{A}= \sum_{i=1}^n A^i{}_i$.
+\ejer: From the definition of the trace (equation (\ref{eqn:2_traza})), prove that in terms of a basis we have
+$\text{tr}{A}= \sum_{i=1}^n A^i{}_i$.
 
 \ejer: See with an example in two dimensions that the definition of determinant conforms with the usual one when we use a basis.
 
@@ -633,7 +621,7 @@ of $\ve{A}$ if $\ve{A}W \subseteq W$.
 The invariant subspaces of an operator are important because they allow us to understand its action.
 Note that given any operator $\ve{A}$, there are always at least two invariant spaces, $V$ and $\{\ve{0}\}$, and in reality, many more. For example, as we will see later, given any number between $1$ and $n$ (=$\dim V$), there exists an invariant subspace with that number as its dimension. The ones that truly encode the action of the operator are its 
 \textbf{irreducible}~\index{subespacio invariante!irreducible} 
-invariant subspaces, that is, those that cannot be further decomposed into invariant subspaces such that their direct sum is the whole $V$~\footnote{A vector space is said to be the direct sum of two of its subspaces, $W_1$ and $W_2$, and is denoted by $V=W_1 \oplus W_2$ if each element of $V$ can be uniquely written as the sum of two elements, one from each of these subspaces.}
+invariant subspaces, that is, those that cannot be further decomposed into invariant subspaces such that their direct sum is the whole $V$\footnote{A vector space is said to be the direct sum of two of its subspaces, $W_1$ and $W_2$, and is denoted by $V=W_1 \oplus W_2$ if each element of $V$ can be uniquely written as the sum of two elements, one from each of these subspaces.}.
 \espa
 
 \ejem: Let $V$ with $\dim(V)=2$ and $\ve{A}: V \to V$ given by, $\ve{A}(\ve{u_1}) = \lambda_1 \ve{u}_1$,
@@ -648,14 +636,14 @@ $V= Span\{\ve{u}_1\} \oplus Span\{\ve{u}_2\}$. Since each of these invariant sub
 $\ve{A}(\ve{u}_1) = \ve{u}_1$,  $\ve{A}(\ve{u}_2) = a \ve{u}_2 + \ve{u}_1$. What happens when $a=1$?
 
 We will study in detail the one-dimensional invariant subspaces, note that they are irreducible. 
-To study the invariant spaces, it is convenient to study the invariant subspaces of the operator when its action is extended to $V^{\Complex}$, that is, the 
+To study the invariant spaces, it is convenient to consider the extended action of the linear operator to $V^{\Complex}$, that is, the 
 \textbf{complexification}~\index{complexificación} of $V$.
 
-Let's see that an operator always has at least one one-dimensional invariant subspace (and therefore always has a non-trivial irreducible invariant subspace).
+Let's see that an operator always has at least a one-dimensional invariant subspace (and therefore always has a non-trivial irreducible invariant subspace).
 
 \begin{lem}
-Given $\ve{A}: V^{\Complex} \to V^{\Complex}$, where $V^{\Complex}$ is finite-dimensional, there always exists a $\ve{u} \in V^{\Complex}$
-and a $\lambda \in \Complex$ such that,
+Given $\ve{A}: V^{\Complex} \to V^{\Complex}$, where $V^{\Complex}$ is finite-dimensional, there always exists $\ve{u} \in V^{\Complex}$
+and $\lambda \in \Complex$ such that
 \beq
 (\ve{A}-\lambda \ve{I})\ve{u}=0   
 \label{eqn:2_av_av}
@@ -664,8 +652,8 @@ and a $\lambda \in \Complex$ such that,
 
 \pru:
 
-A solution to this equation consists of a scalar $\lambda$, called the {\bf eigenvalue}~\index{autovalor} of
-the operator $\ve{A}$, and a vector $\ve{u}$, called the {\bf eigenvector}~\index{autovector}
+A solution to this equation consists of a scalar $\lambda$, called an {\bf eigenvalue}~\index{autovalor} of
+the operator $\ve{A}$, and a vector $\ve{u}$, called an {\bf eigenvector}~\index{autovector}
 of the operator $\ve{A}$. The subspace of $V^{\Complex}$ given by 
 $\{\alpha \ve{u}\;|\; \alpha \in \Complex\}$ is the invariant subspace sought.
 
@@ -741,7 +729,7 @@ and the operator from $V_{n-1} \to V_{n-1}$ given by $\ve{A}_1 :=(\ve{I} - \ve{u
 Note that as we form an orthonormal basis, we already know the first member of the co-basis, $\ve{\theta}^1 = (\ve{u}_1,\cdot)$.
 %
 The operator $P_1:=\ve{I} - \ve{u}_1 \ve{\theta}^1$ satisfies $P_1(\ve{u}_1)=0$, 
-$(P_1(\ve{v}),\ve{u}_1)=0$ and $P_1\cdot P_1 = P_1$, that is, it is a projection operator in the subspace $V_{n-1}$.
+$(P_1(\ve{v}),\ve{u}_1)=0$ and $P_1\cdot P_1 = P_1$, that is, it is a projection operator to the subspace $V_{n-1}$.
 
 We then have that $\ve{A}_1 : V_{n-1} \to V_{n-1}$. Therefore, in this space, we can also pose the eigenvalue-eigenvector equation, 
 
@@ -780,7 +768,7 @@ This proof can be obtained by doing the following exercises:
 
 \ejer: Let $\ve{A}: V \to V$ be a linear operator, let $W\subset V$ be invariant under $\ve{A}$, that is, $\ve{A}[W]\subset W$.
 This operator induces an operator in the quotient space $V/W$ as follows: 
-$\ve{\hat{A}}\zeta = \tilde{\zeta}$ where $\tilde{\zeta}$ is the equivalent class to which $\ve{A}(\ve{u})$ belongs when $\ve{u}$ belongs to $\zeta$. See that this definition is consistent, that is, if we choose another element $\ve{v} \in \zeta$, we obtain that $\ve{A}(\ve{v}) \in \tilde{\zeta}$.
+$\ve{\hat{A}}\zeta = \tilde{\zeta}$ where $\tilde{\zeta}$ is the equivalence class to which $\ve{A}(\ve{u})$ belongs when $\ve{u}$ belongs to $\zeta$. See that this definition is consistent, that is, if we choose another element $\ve{v} \in \zeta$, we obtain that $\ve{A}(\ve{v}) \in \tilde{\zeta}$.
 
 \ejer: The induced operator will have at least one eigenvalue-eigenvector pair in $V/W$, that is, there will be a pair
 $(\hat{\lambda}, \zeta)$ such that $\ve{\hat{A}\zeta} = \hat{\lambda}\zeta$. What does this equation mean in terms of the operator $\ve{A}$ in $V$?
@@ -789,7 +777,7 @@ $(\hat{\lambda}, \zeta)$ such that $\ve{\hat{A}\zeta} = \hat{\lambda}\zeta$. Wha
 $\ve{A}\ve{u}_{1} = \lambda_{1} \ve{u}_{1}$, $W_{1} = Span\{u_{1}\}$. 
 What does it mean, in terms of the space $V$ and the operator $\ve{A}$, that $\ve{\hat{A}}:V/W_{1} \to V/W_{1}$ has an eigenvalue-eigenvector pair?
 
-\ejer: Iterate the previous procedure, taking at each step an element from each equivalent class of generalized eigenvectors to form a basis where the matrix representation of $A$ is upper triangular.
+\ejer: Iterate the previous procedure, taking at each step an element from each equivalence class of generalized eigenvectors to form a basis where the matrix representation of $A$ is upper triangular.
 
 \espa
 
@@ -800,7 +788,7 @@ What does it mean, in terms of the space $V$ and the operator $\ve{A}$, that $\v
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Continuing now with the study of invariant subspaces.
+We continue now with the study of invariant subspaces.
 If $\det(\ve{A}-\lambda\ve{I})$ has $1\leq m \leq n$ distinct roots, 
 $\{\lambda_i\}, \; i=1,\ldots,m$, then there will be at least one complex eigenvector 
 $\ve{u}_i$ associated with each of them. 
@@ -816,7 +804,7 @@ these eigenvectors are linearly independent.
 
 \pru:
 Suppose by contradiction that they are not, and therefore there exist constants 
-$c^i\in\ve{C}$, $i=1,\ldots,m-1\,$, such that
+$c^i\in\mathbb{C}$, $i=1,\ldots,m-1\,$, such that
 \beq
 \ve{u}_m=\sum_{i=1}^{m-1}\; c^i\,\ve{u}_i   \label{2_***}
 \eeq
@@ -832,7 +820,7 @@ or,
 We conclude that $\{\ve{u}_i\}\;\;i=1,\ldots,m-1$
 are linearly dependent. Due to~\ref{2_***} and the hypothesis that the
 eigenvalues are distinct, at least one of the coefficients must be non-zero,
-and therefore we can solve for one of the remaining eigenvectors in terms of the others $m-2$. Repeating this procedure
+and therefore we can solve for one of the remaining eigenvectors in terms of the other $m-2$. Repeating this procedure
 $(m-1)$ times, we arrive at the conclusion that $\ve{u}_1=0$, which is a
 contradiction since, as we have seen, the eigenvector equation always has
 a non-trivial solution for each distinct eigenvalue\epru
@@ -848,9 +836,9 @@ In that basis, the matrix representation of $\ve{A}$ is diagonal, that is, $A^j{
 Each of its eigenvectors generates an irreducible invariant subspace,
 and together they generate $V^{\Complex}$. In each of them, the operator $\ve{A}$
 acts merely by multiplication by $\lambda_i$. Note that the $\lambda_i$ are
-generally complex, and therefore such multiplication is actually a rotation
-plus a dilation. Note that, unlike the basis of Schur's triangulation lemma,
-this is not generally orthogonal with respect to any given inner product.~\footnote{Note, however, that it can be \textsl{declared} orthogonal by defining
+generally complex, and therefore such multiplication is actually a rotation and a dilation. 
+Note that, unlike the basis of Schur's triangulation lemma,
+this is not generally orthogonal with respect to a given inner product.\footnote{Note, however, that it can be \textsl{declared} orthogonal by defining
 the inner product as 
 $(\ve{u},\ve{v}) = \sum_{i=1}^{n} \ve{\theta}^i(\bar{\ve{u}})\ve{\theta}^i(\ve{v})$}
 \espa
@@ -881,8 +869,8 @@ the form $z\ve{u}_1 + \bar{z}\ve{u}_2$, and the action of $\ve{A}$ is simply
 multiplication by $\imath$ of $z$.
 \espa
 
-If the multiplicity of any of the roots $\det(\ve{A}-\lambda\ve{I})=0$ is 
-greater than one, there will be fewer eigenvalues than the dimension of the space, and therefore we will not be guaranteed to have enough eigenvectors to form a basis, as we can only guarantee the existence of one for each eigenvalue.
+If the multiplicity of any of the roots of $\det(\ve{A}-\lambda\ve{I})=0$ is 
+greater than one, there will be fewer eigenvalues than the dimension of the space, and therefore we will not be guaranteed to have enough eigenvectors to form a basis, as we can only guarantee the existence of one independent eigenvector for each eigenvalue.
 
 \ejem: Let $V$ be the set of 2-tuples of real numbers with a generic element
 $(a,b)$ and let $\ve{A}$ be given by $\ve{A}(a,b) = (\lambda a+\epsilon b,\lambda b)$. Taking a basis, 
@@ -895,7 +883,7 @@ $\ve{e}_2=(0,1)$, we see that its matrix representation is:
      \earr\right)
 \eeq
 %
-We see that this operator has only one eigenvalue with multiplicity 2. But it has only one eigenvector, proportional to $\ve{e}_1=(1,0)$. For future use, note that if we define 
+We see that this operator has only one eigenvalue with multiplicity 2. But it has only one independent eigenvector, proportional to $\ve{e}_1=(1,0)$. For future use, note that if we define 
 $\ve{\Delta} = \ve{A}-\lambda \ve{I}$, then $\ve{e}_{1} = \frac{1}{\epsilon}\ve{\Delta}\ve{e}_2$,
 and therefore, in the basis $\{\ve{\tilde{e}}_{1} = \ve{e}_{1}, \ve{\tilde{e}}_{2} = \frac{1}{\epsilon}\ve{e}_{2}\}$,
 the operator is represented by the matrix,
@@ -965,7 +953,7 @@ $(\ve{A} - \lambda_2 \ve{I})^{p_2}\dots (\ve{A} - \lambda_s \ve{I})^{p_s}\ve{v}_
 but since $\lambda_i$, $i \neq 1$, is not an eigenvalue of $\ve{A}$ in $W_{\lambda_1}$,
 the operator 
 $(\ve{A} - \lambda_2 \ve{I})^{p_2}\dots (\ve{A} - \lambda_s \ve{I})^{p_s}$ is 
-invertible~\footnote{
+invertible\footnote{
 Note that $(\ve{A} - \lambda_i \ve{I})^{s}|_{W_{\lambda_j}}$ 
 is invertible if its determinant is non-zero. 
 But 
@@ -980,7 +968,7 @@ is not the case, and consider $V^{\Complex}/W$, where $W$ is the space generated
 the $W_{\lambda_i}$, that is, the space of all linear combinations of 
 elements in the $W_{\lambda_i}$. The operator $\ve{A}$ acts on $V^{\Complex}/W$
 [$\ve{A}\{\ve{u}\} = \{\ve{A}\ve{u}\}$], and therefore it has an eigenvalue-eigenvector pair there. This implies that for some element $\ve{\zeta}$ of $V^{\Complex}$ 
-in some equivalent class of $V^{\Complex}/W$, we have:
+in some equivalence class of $V^{\Complex}/W$, we have:
 \begin{equation}
   \ve{A}\ve{\zeta} = \lambda \ve{\zeta} + \ve{u}_1 + \dots + \ve{u}_s
 \end{equation}
@@ -1063,7 +1051,7 @@ these eigenvectors are linearly independent.
 
 \pru:
 Suppose by contradiction that they are not, and therefore there exist constants 
-$c^i\in\ve{C}$, $i=1,\ldots,m-1\,$, such that
+$c^i\in\mathbb{C}$, $i=1,\ldots,m-1\,$, such that
 \beq
 \ve{u}_m=\sum_{i=1}^{m-1}\; c^i\,\ve{u}_i   \label{2_***}
 \eeq
@@ -1097,7 +1085,7 @@ and together they generate $V^{\Complex}$. In each of them, the operator $\ve{A}
 acts merely by multiplication by $\lambda_i$. Note that the $\lambda_i$ are
 generally complex, and therefore such multiplication is actually a rotation
 plus a dilation. Note that, unlike the basis of Schur's triangulation lemma,
-this is not generally orthogonal with respect to any given inner product.~\footnote{Note, however, that it can be \textsl{declared} orthogonal by defining
+this is not generally orthogonal with respect to any given inner product.\footnote{Note, however, that it can be \textsl{declared} orthogonal by defining
 the inner product as 
 $(\ve{u},\ve{v}) = \sum_{i=1}^{n} \ve{\theta}^i(\bar{\ve{u}})\ve{\theta}^i(\ve{v})$}
 \espa
@@ -1212,7 +1200,7 @@ $(\ve{A} - \lambda_2 \ve{I})^{p_2}\dots (\ve{A} - \lambda_s \ve{I})^{p_s}\ve{v}_
 but since $\lambda_i$, $i \neq 1$, is not an eigenvalue of $\ve{A}$ in $W_{\lambda_1}$,
 the operator 
 $(\ve{A} - \lambda_2 \ve{I})^{p_2}\dots (\ve{A} - \lambda_s \ve{I})^{p_s}$ is 
-invertible~\footnote{
+invertible\footnote{
 Note that $(\ve{A} - \lambda_i \ve{I})^{s}|_{W_{\lambda_j}}$ 
 is invertible if its determinant is non-zero. 
 But 
@@ -1227,7 +1215,7 @@ is not the case, and consider $V^{\Complex}/W$, where $W$ is the space generated
 the $W_{\lambda_i}$, that is, the space of all linear combinations of 
 elements in the $W_{\lambda_i}$. The operator $\ve{A}$ acts on $V^{\Complex}/W$
 [$\ve{A}\{\ve{u}\} = \{\ve{A}\ve{u}\}$], and therefore it has an eigenvalue-eigenvector pair there. This implies that for some element $\ve{\zeta}$ of $V^{\Complex}$ 
-in some equivalent class of $V^{\Complex}/W$, we have:
+in some equivalence class of $V^{\Complex}/W$, we have:
 \begin{equation}
   \ve{A}\ve{\zeta} = \lambda \ve{\zeta} + \ve{u}_1 + \dots + \ve{u}_s
 \end{equation}
@@ -1536,7 +1524,7 @@ cycle and the upper index indexes the different cycles within each $W_{\lambda_i
 \defi: {\sl Let $\ve{A}:V\to V$ be a linear operator.
 We will say that $\ve{A}$ is of Jordan type
 \index{Jordan!de tipo} with eigenvalue $\lambda$ if
-there exists a basis $\{\ve{u}_i\}$ of $V$ such that~\footnote{
+there exists a basis $\{\ve{u}_i\}$ of $V$ such that\footnote{
 In the sense that $\ve{A}(\ve{v}) =\lambda \sum_{i=1}^n \; \ve{u}_i \ve{\theta}^i(\ve{v})
  + \sum_{i=2}^{n}\; \ve{u}_{i} \ve{\theta}^{i-1}(\ve{v}) \;\; \forall \ve{v} \in V$}
 
@@ -1562,7 +1550,7 @@ A=\left(\barr{ccccc}
 \noi Note that the matrix $\Delta $ is n-nilpotent, that is 
 $\Delta^n = 0$.
 
-Not every operator is of Jordan type --find one that is not-- but it is clear that the restriction of any operator
+Not every operator is of Jordan type ---find one that is not--- but it is clear that the restriction of any operator
 to one of its irreducible invariant subspaces (cycles) is.
 This can be seen by conveniently numbering the elements of the basis generated by the cycle.
 \espa
@@ -1573,9 +1561,9 @@ Therefore, we can summarize the results found earlier in the
 following theorem about the matrix representations of any operator
 acting in a finite-dimensional space.
 
-\bteo{de Jordan} Let $\ve{A}:V\to V$ be a linear operator
+\bteo{Jordan's} Let $\ve{A}:V\to V$ be a linear operator
 acting in a complex vector space $V$. Then, there exists a 
-unique decomposition into a direct sum~\footnote{Recall that a vector space 
+unique decomposition into a direct sum\footnote{Recall that a vector space 
 $V$ is said to be the direct sum of two vector spaces $W$ and $Z$,
 and we denote it as $V = W \oplus Z$ if each vector in $V$ can be obtained in
 a unique way as the sum of an element in $W$ and another in $Z$.} 
@@ -1594,7 +1582,7 @@ $C^k_{\lambda_i}$ an operator $\ve{A}_i:C^k_{\lambda_i}\to C^k_{\lambda_i}$,
 which is of Jordan type
 with $\lambda_i$ being one of the roots of the polynomial of degree $n_i$,
 \beq
-det(\ve{A_i}-\lambda_i \ve{I}) = 0.
+\det(\ve{A_i}-\lambda_i \ve{I}) = 0.
 \eeq
 \eteo
 
@@ -1610,10 +1598,10 @@ Show that the roots, $\lambda_i$, that appear
 in the operators $\ve{A}_i$ are invariant under similarity transformations, that is, $\lambda_i(\ve{A})=\lambda_i(\ve{P}\ve{A}\ve{P}^{-1})$.
 \espa
 \ejem: 
-Let $\ve{A}:\ve{C}^3\to \ve{C}^3$, then $det(\ve{A}-\lambda\ve{I})$
+Let $\ve{A}:\mathbb{C}^3\to \mathbb{C}^3$, then $\det(\ve{A}-\lambda\ve{I})$
 is a polynomial of degree 3, and therefore has three roots. If these are distinct, there will be at least three
-invariant and irreducible subspaces of $\ve{C}^3$, but
-$dim\ve{C}^3=3$ and therefore each of them has $n_i=1$. The
+invariant and irreducible subspaces of $\mathbb{C}^3$, but
+$\dim \mathbb{C}^3=3$ and therefore each of them has $n_i=1$. The
 Jordan canonical form is then,
 
 \noi If two of them coincide, we have two possibilities: either we have
@@ -1642,7 +1630,7 @@ If all three roots coincide, then there will be three possibilities,
                         \lap & 0  &  0  \\
                          0 &  \lap  &  1  \\
                          0  &  0  &  \lap
-                            \earr\right)\;and\;\;  & \left(\barr{ccc}
+                            \earr\right)\;\text{and}\;\;  & \left(\barr{ccc}
                                                     \lap & 1  &  0  \\
                                                        0 &  \lap  &  1  \\
                                                          0  &  0  &  \lap
@@ -1654,21 +1642,21 @@ If all three roots coincide, then there will be three possibilities,
 \ejem:
 We will now illustrate the case of coincident eigenvalues in two
 dimensions. This case is not generic, in the sense that any
-perturbation in the system --that is, any minimal change in
-the equations-- separates the roots, making them distinct. 
+perturbation in the system ---that is, any minimal change in
+the equations--- separates the roots, making them distinct. 
 
-Let $\ve{A}:\ve{C}^2\to\ve{C}^2$. In this case, the characteristic polynomial
-$det(\ve{A}-\lambda\ve{I})$ has only two roots, which we will assume are coincident, $\lambda_1=\lambda_2=\lambda$. We
+Let $\ve{A}:\mathbb{C}^2\to\mathbb{C}^2$. In this case, the characteristic polynomial
+$\det(\ve{A}-\lambda\ve{I})$ has only two roots, which we will assume are coincident, $\lambda_1=\lambda_2=\lambda$. We
 find ourselves with two possibilities: either there are two linearly independent eigenvectors
 $\ve{u}_1$ and $\ve{u}_2$, in which case $V=B_1\oplus
 B_2$ and $\ve{A}$ is diagonalizable
-($A=diag(\lambda,\lambda)=\ve{I}\lambda)$, 
+($A=\text{diag} (\lambda,\lambda)=\ve{I}\lambda)$, 
 or there is only one eigenvector
 $\tilde{\ve{u}}_1$. In this case, let $\tilde{\ve{u}}_2$ be any vector
 linearly independent of $\tilde{\ve{u}}_1$, then
 $\ve{A}\tilde{\ve{u}}_2=c^1\tilde{\ve{u}}_1+c^2\tilde{\ve{u}}_2 $
 for some scalars
-$c^1$ and $c^2$ in $\ve{C}$. Calculating the determinant of
+$c^1$ and $c^2$ in $\mathbb{C}$. Calculating the determinant of
 $\ve{A}-\tilde{\lambda}\ve{I}$ in this basis, we get
 $(\lambda-\tilde{\lambda})(c^2-\tilde{\lambda})$, but $\lambda$ is a
 double root and therefore $c^2=\lambda$.
@@ -1683,8 +1671,8 @@ $\ve{u}_1=\tilde{\ve{u}}_1 \;,\;\; \ve{u}_2=c^1\tilde{\ve{u}}_2$, we obtain
 \eeq
 and therefore 
 \beq
-\ve{A}=\lambda (\ve{u}_1\oplus\ve{\theta}^1+\ve{u}_2\oplus\ve{\theta}^2)
-+\ve{u}_1\oplus\ve{\theta}^2,
+\ve{A}=\lambda (\ve{u}_1\otimes\ve{\theta}^1+\ve{u}_2\otimes\ve{\theta}^2)
++\ve{u}_1\otimes\ve{\theta}^2,
 \eeq
 \noi where $\{\ve{\theta}^i\}$ is the co-basis of the basis $\{\ve{u}_i\}$.
 
@@ -1694,8 +1682,8 @@ $(\ve{A}-\lambda\ve{I})\ve{u}_1=0 $, that is, $\Delta^2 = (\ve{A}-\lambda
 
 As we will see later in physical applications, the
 invariant subspaces have a clear physical meaning,
-they are called normal modes --one-dimensional case-- and 
-cycles --in other cases.
+they are called \textit{normal modes} in the one-dimensional case and 
+\textis{cycles} in other cases.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1705,8 +1693,8 @@ cycles --in other cases.
 
 
 In physics applications, the following equivalence relation is common: [See box at the end of the chapter.] 
-We will say that the operator $\ve{A}$ is similar to
-the operator $\ve{B}$ if there exists another operator $\ve{P}$, invertible, such
+We will say that the operator $\ve{A}$ is \textbf{similar} to
+the operator $\ve{B}$ if there exists an invertible operator $\ve{P}$ such
 that 
 \beq
 \ve{A}=\ve{P}\ve{B}\ve{P}^{-1}.
@@ -1721,10 +1709,10 @@ if we first apply $\ve{B}$ and then {\it rotate} with $\ve{P}$.
 \noi a) Prove that similarity is an equivalence relation.
 
 \noi b) Prove that the functions and maps defined above
-are the same in the different equivalent classes, that is,
+are invariant within the equivalence classes, that is,
 \beq\barr{rcl}
-  det(\ve{P}\ve{A}\ve{P}^{-1}) & = & det(\ve{A})\\
-  tr(\ve{P}\ve{A}\ve{P}^{-1})  & = & tr(\ve{A}) \\
+  \det(\ve{P}\ve{A}\ve{P}^{-1}) & = & \det(\ve{A})\\
+  \text{tr}(\ve{P}\ve{A}\ve{P}^{-1})  & = & \text{tr}(\ve{A}) \\
   e^{\ve{P}\ve{A}\ve{P}^{-1}}  & = & \ve{P} e^{\ve{A}}\ve{P}^{-1}.
   \earr
 \eeq
@@ -1823,8 +1811,7 @@ In fact, the equality of the norms can be proven, but this would require introdu
 
 Let's see what the components of the dual of an operator are in terms of
 the components of the original operator. 
-Let $\{\ve{e}_i\}$, $\{\ve{\theta}^i\}$, $i=1,..n$ be a basis and respectively
-a co-basis of $V$, and let $\{\hat{\ve{e}}_i\}$, $\{\hat{\ve{\theta}}^i\}$, 
+Let $\{\ve{e}_i\}$, $\{\ve{\theta}^i\}$, $i=1,..n$ be a basis and a co-basis of $V$, respectively, and let $\{\hat{\ve{e}}_i\}$, $\{\hat{\ve{\theta}}^i\}$, 
 $i=1,..m$
 be a pair of basis and co-basis of $W$.
 We then have that the components of $\ve{A}$ with respect to these bases
@@ -1837,7 +1824,7 @@ $\ve{A}(\ve{v}) =
 Therefore, if $\ve{v}$ has components $(v^1,v^2,\dots,v^n)$ in the 
 basis $\{\ve{e}_i\}$, $\ve{A}(\ve{v})$ has components 
 \[
-(\sum_{i=1}^{n} A^1{}_iv^i, \sum_{i=1}^{n} A^2{}_iv^i,\dots,\sum_{i=1}^{n} A^m{}_iv^i)
+\left(\sum_{i=1}^{n} A^1{}_iv^i, \sum_{i=1}^{n} A^2{}_iv^i,\dots,\sum_{i=1}^{n} A^m{}_iv^i\right)
 \]
 %
  in the basis $\{\hat{\ve{e}}_i\}$
@@ -1854,7 +1841,7 @@ the components $(\omega_1,\omega_2,\dots, \omega_m)$ of an element
 $\ve{\omega}$ of $W'$ in the co-basis $\{\hat{\ve{\theta}}^i\}$.
 The components of $\ve{A}'(\omega)$ in the co-basis $\{\ve{\theta}^i\}$ are,
 \[ 
-(\sum_{i=1}^{m}A^i{}_1\omega_i, \sum_{i=1}^{m}A^i{}_2\omega_i,\dots,\sum_{i=1}^{m}A^i{}_n\omega_i).
+\left(\sum_{i=1}^{m}A^i{}_1\omega_i, \sum_{i=1}^{m}A^i{}_2\omega_i,\dots,\sum_{i=1}^{m}A^i{}_n\omega_i\right).
 \]
 %
 A particularly interesting case of this construction is when
@@ -1931,7 +1918,7 @@ If we choose a basis such that $t_{ik} = \delta_{ik}$, the Kronecker delta, the 
 A particularly interesting subset of operators is those for which 
 $\ve{A} = \ve{A}^{\star}$. These operators are called 
 \textbf{Hermitian}~\index{operadores!Hermitianos} or 
-\textbf{Self-adjoint}~\index{operadores!Autoadjuntos}.~\footnote{
+\textbf{Self-adjoint}~\index{operadores!Autoadjuntos}.\footnote{
 In the case of infinite dimension, these names do not coincide for
 some authors.}
 
@@ -1939,7 +1926,7 @@ Self-adjoint operators have important properties:
 
 \blem
 Let $M = Span\{\ve{u}_{1},\ve{u}_2,\dots,\ve{u}_m\}$, where $\{\ve{u}_i\}$
-are a set of eigenvalues of $\ve{A}$, a self-adjoint operator.
+are a set of eigenvectors of $\ve{A}$, a self-adjoint operator.
 Then $M$ and $M^{\perp}$ are invariant spaces of $\ve{A}$.
 \elem
 
@@ -2024,7 +2011,7 @@ from which we conclude that
 %
 that is, the transpose matrix is the complex conjugate of the original.
 In the case of real matrices, we see that the condition is that in this basis
-the matrix is equal%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+the matrix is equal to its transpose, i.e. symmetric.
 
 \section{Adjoint Operators}
 
@@ -2223,7 +2210,7 @@ If we choose a basis such that $t_{ik} = \delta_{ik}$, the Kronecker delta, the 
 A particularly interesting subset of operators is those for which 
 $\ve{A} = \ve{A}^{\star}$. These operators are called 
 \textbf{Hermitian}~\index{operadores!Hermitianos} or 
-\textbf{Self-adjoint}~\index{operadores!Autoadjuntos}.~\footnote{
+\textbf{Self-adjoint}~\index{operadores!Autoadjuntos}.\footnote{
 In the case of infinite dimension, these names do not coincide for
 some authors.}
 
@@ -2506,12 +2493,11 @@ then $x \approx x''$.
 \end{enumerate}
 
 Note that the first property ensures that each element of $X$
-satisfies an equivalence relation with some element of $X$, in
+is related to some element of $X$, in
 this case with itself. Equivalence relations often appear in physics,
-essentially when we use a mathematical entity to describe a physical
-process that has superfluous parts with respect to this process and
+essentially when we describe a physical process using a mathematical entity that has superfluous parts with respect to the process and
 therefore we would like to ignore them.
-This is achieved by declaring two entities that describe the same phenomenon
+This is achieved by declaring two mathematical entities that represent the same physical situation
 as equivalent entities.
 
 \ejem: Let $X$ be the set of real numbers and let $x \approx y$
