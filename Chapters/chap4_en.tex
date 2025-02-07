@@ -1058,15 +1058,18 @@ only possibilities in two dimensions.
 To study which case it is among these three, we consider the
 variation of energy between two consecutive turns.
 
-Using that,
+Taking a time derivative of the energí expression defined above, and using the evolution equations we obtain:
 \beq 
-\dot E(x_1,x_2)\,=\;\eps\,(x_1\,f_1\;+\;x_2\,f_2)
+\dot E(x_1,x_2)\,=\;\eps\,(x_1\,f_1\;+\;x_2\,f_2).
 \eeq
-\noi we obtain
+
+With this expression we can estimate the change on the energy to first order after a revolution around an unperturbed orbit:
 \beq 
 \barr{rcl}
-\Delta E\; &= &\;\eps\:\oint (-f_1\,dx_2\;+\;f_2\,dx_1)\;+\;O(\eps^2) \\
-           &= & \;\eps\:F(E).
+\Delta E\; &= &\;\eps\:\int_{t_i}^{t_f} (x_1\,f_1\;+\;x_2\,f_2) \; dt \;+\;O(\eps^2) \\
+           &= &\;\eps\:\int_{t_i}^{t_f} (-\frac{dx_2}{dt}\,f_1\;+\;\frac{dx_1}{dt}\,f_2) \; dt \;+\;O(\eps^2) \\
+           &= &\;\eps\:\oint (-f_1\,dx_2\;+\;f_2\,dx_1)\;+\;O(\eps^2) \\
+           &= & \;\eps\:F(E) \;+\;O(\eps^2)
            \earr
 \eeq
 \noi where the integral is along a circle of radius

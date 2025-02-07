@@ -1125,15 +1125,19 @@ estas son las únicas opciones es el resultado de un  teorema clásico de
 Para estudiar cuál es el caso entre estos tres consideramos la
 variación de energía entre dos vueltas consecutivas.
 
-Usando que,
+Tomando una derivada temporal de la energía definida anteriormente y usando 
+las ecuaciones, de evolución obtenemos:
 \beq 
-\dot E(x_1,x_2)\,=\;\eps\,(x_1\,f_1\;+\;x_2\,f_2)
+\dot E(x_1,x_2)\,=\;\eps\,(x_1\,f_1\;+\;x_2\,f_2).
 \eeq
-\noi obtenemos
+
+El cambio a primer orden de la energía durante una vuelta estará dado entonces por:
 \beq 
 \barr{rcl}
-\Delta E\; &= &\;\eps\:\oint (-f_1\,dx_2\;+\;f_2\,dx_1)\;+\;O(\eps^2) \\
-           &= & \;\eps\:F(E).
+\Delta E\; &= &\;\eps\:\int_{t_i}^{t_f} (x_1\,f_1\;+\;x_2\,f_2) \; dt \;+\;O(\eps^2) \\
+           &= &\;\eps\:\int_{t_i}^{t_f} (-\frac{dx_2}{dt}\,f_1\;+\;\frac{dx_1}{dt}\,f_2) \; dt \;+\;O(\eps^2) \\
+           &= &\;\eps\:\oint (-f_1\,dx_2\;+\;f_2\,dx_1)\;+\;O(\eps^2) \\
+           &= & \;\eps\:F(E) \;+\;O(\eps^2)
            \earr
 \eeq
 \noi donde la integral es a lo largo de un  círculo de radio

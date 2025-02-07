@@ -272,7 +272,7 @@ But if $\ve{v}$ and $\ve{\tilde{v}}$ determine the same element of $V^*$, that i
 \ejem: b) Let $\ve{\varepsilon}$ be a tensor of type ${0 \choose n}$ such that \beq \ve{\varepsilon} (\ldots,\underbrace{\ve{v}}_i,\ldots,\underbrace{\ve{u}}_j,\ldots) =-\ve{\varepsilon} (\ldots,\underbrace{\ve{u}}_i,\ldots,\underbrace{\ve{v}}_j,\ldots) \eeq \noi for any box $i$ and $j$, that is, a totally antisymmetric tensor. Let ${\ve{e}_i}$ be a basis of $V$ and $\varepsilon_{123\ldots n}:= \ve{\varepsilon} (\ve{e}_1,\ve{e}_2,\ldots,\ve{e}_n)$. Then any other component of $\ve{\varepsilon}$ in this basis will be either zero or $\varepsilon_{123\ldots n}$ or $-\varepsilon_{123\ldots n}$ depending on whether some $\ve{e}_i$ is repeated, or is an even permutation of the above, or an odd one. Indeed, for example,
 
 \begin{eqnarray*} 
-\varepsilon_{3124\ldots n} &:=& \ve_{\varepsilon}(\ve{e_3},\ve{e_1}, \ve{e_{2}}, \ve{e_{4}},\ldots,\ve{e}_n) \\
+\varepsilon_{3124\ldots n} &:=& \ve{\varepsilon}(\ve{e_3},\ve{e_1}, \ve{e_{2}}, \ve{e_{4}},\ldots,\ve{e}_n) \\
 &=& -\ve{\varepsilon}(\ve{e_1},\ve{e_3}, \ve{e_{2}}, \ve{e_{4}},\ldots,\ve{e}_n) \\ 
 &=& \ve{\varepsilon}(\ve{e_1},\ve{e_2}, \ve{e_{3}}, \ve{e_{4}},\ldots,\ve{e}_n) \\
 &=&\varepsilon_{1234\ldots n}. 
@@ -337,10 +337,19 @@ The last way we will see to obtain vector spaces from other vector spaces is by 
 
 \ejer: Prove that the relation defined above is indeed an equivalence relation. (At the end of the chapter there is a box with a discussion of the relevant definitions and properties of the central concept of equivalence relations.)
 
-Let's see that this is a vector space. The elements of $V/W$ are equivalence classes; two elements of $V$, $\ve{v}$ and $\ve{v}'$, belong to the same equivalence class if $\ve{v}-\ve{v}' \in W$. Let $\ve{\zeta}$ and $\ve{\zeta}'$ be two elements of $V/W$, that is, two equivalence classes of elements of $V$. We will define the sum and the product of equivalence classes as follows: $\ve{\zeta} + \alpha \ve{\zeta}'$ will be the equivalence class corresponding to an element $\tilde{\ve{v}}$ obtained by taking a representative vector from $\ve{\zeta}$, say $\ve{v}$, another from $\ve{\zeta}'$, say $\ve{v}'$, and defining $\ve{\tilde{v}} := \ve{v} + \alpha \ve{v'}$, we have $\tilde{\ve{\zeta}}= \ve{\zeta} + \alpha \ve{\zeta}'$, where $\tilde{\ve{\zeta}}$ is the equivalence class containing the element $\ve{\tilde{v}} = \ve{v} + \alpha \ve{v'}$. To facilitate notation, the equivalence class containing a given element, say $\ve{v}$, is usually represented as $\[ \ve{v} \]$. In this case, we have,
+Let's see that this is a vector space. 
+The elements of $V/W$ are equivalence classes; two elements of $V$, $\ve{v}$ and $\ve{v}'$, belong to the same equivalence class if 
+$\ve{v}-\ve{v}' \in W$. 
+Let $\ve{\zeta}$ and $\ve{\zeta}'$ be two elements of $V/W$, that is, two equivalence classes of elements of $V$. 
+We will define the sum and the product of equivalence classes as follows: $\ve{\zeta} + \alpha \ve{\zeta}'$ will be the equivalence class 
+corresponding to an element $\tilde{\ve{v}}$ obtained by taking a representative vector from $\ve{\zeta}$, say $\ve{v}$, another from 
+$\ve{\zeta}'$, say $\ve{v}'$, and defining $\ve{\tilde{v}} := \ve{v} + \alpha \ve{v'}$, we have 
+$\tilde{\ve{\zeta}}= \ve{\zeta} + \alpha \ve{\zeta}'$, where $\tilde{\ve{\zeta}}$ is the equivalence class containing the element 
+$\ve{\tilde{v}} = \ve{v} + \alpha \ve{v'}$. 
+To facilitate notation, the equivalence class containing a given element, say $\ve{v}$, is usually represented as $[ \ve{v} ]$. In this case, we have,
 
 \[ 
-\[\ve{v}\] + \alpha \[ \ve{v'} \] = \[\ve{v} + \alpha \ve{v'}\]. 
+[\ve{v}] + \alpha [ \ve{v'} ] = [\ve{v} + \alpha \ve{v'}]. 
 \]
 
 \ejer: See that this definition does not depend on the choice of representatives in the equivalence classes taken to perform the operation. That is, consider two other elements in $\ve{\zeta}$ and $\ve{\zeta}'$, say $\hat{\ve{v}}$ and $\hat{\ve{v}}'$, and see that with them you obtain an element in the same class as $\tilde{\ve{v}} = \ve{v} + \alpha \ve{v}'$.
@@ -619,9 +628,14 @@ We will say that $W$ is an \textbf{invariant subspace}~\index{subespacio invaria
 of $\ve{A}$ if $\ve{A}W \subseteq W$.
 
 The invariant subspaces of an operator are important because they allow us to understand its action.
-Note that given any operator $\ve{A}$, there are always at least two invariant spaces, $V$ and $\{\ve{0}\}$, and in reality, many more. For example, as we will see later, given any number between $1$ and $n$ (=$\dim V$), there exists an invariant subspace with that number as its dimension. The ones that truly encode the action of the operator are its 
+Note that given any operator $\ve{A}$, there are always at least two invariant spaces, $V$ and $\{\ve{0}\}$, 
+and in reality, many more. 
+For example, as we will see later, given any number between $1$ and $n$ (=$\dim V$), there exists an 
+invariant subspace with that number as its dimension. 
+The ones that truly encode the action of the operator are its 
 \textbf{irreducible}~\index{subespacio invariante!irreducible} 
-invariant subspaces, that is, those that cannot be further decomposed into invariant subspaces such that their direct sum is the whole $V$\footnote{A vector space is said to be the direct sum of two of its subspaces, $W_1$ and $W_2$, and is denoted by $V=W_1 \oplus W_2$ if each element of $V$ can be uniquely written as the sum of two elements, one from each of these subspaces.}.
+invariant subspaces, that is, those that cannot be further decomposed into invariant subspaces such 
+that their direct sum is the whole $V$~\footnote{A vector space is said to be the direct sum of two of its subspaces, $W_1$ and $W_2$, and is denoted by $V=W_1 \oplus W_2$ if each element of $V$ can be uniquely written as the sum of two elements, one from each of these subspaces.}.
 \espa
 
 \ejem: Let $V$ with $\dim(V)=2$ and $\ve{A}: V \to V$ given by, $\ve{A}(\ve{u_1}) = \lambda_1 \ve{u}_1$,
@@ -934,7 +948,7 @@ Now let's see that these subspaces are linearly independent and generate
 all of $V^{\Complex}$. 
 We will prove this theorem again in Chapter \ref{Sistemas_Lineales}.
 
-\bteo[See Chapter \ref{Sistemas_Lineales}, Theorem \ref{5_teo_2}]
+\bteo[See Chapter \ref{Linear_Systems}, Theorem \ref{5_teo_2}]
 Given an operator $A: V \to V$, with eigenvectors $\{ \lambda_i \}, \; i=1...m$, 
 the space $V^{\Complex}$ admits a direct decomposition into invariant subspaces 
 $W_{\lambda_i}$,
@@ -1683,7 +1697,7 @@ $(\ve{A}-\lambda\ve{I})\ve{u}_1=0 $, that is, $\Delta^2 = (\ve{A}-\lambda
 As we will see later in physical applications, the
 invariant subspaces have a clear physical meaning,
 they are called \textit{normal modes} in the one-dimensional case and 
-\textis{cycles} in other cases.
+\textit{cycles} in other cases.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1722,296 +1736,7 @@ are invariant within the equivalence classes, that is,
 \newpage
 
 
-\section{Adjoint Operators}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Let $\ve{A}$ be a linear operator between two vector spaces, 
-$\ve{A}: V \to W$, that is,
-$\ve{A} \in {\cal{L}}(V,W)$.
-Since $V$ and $W$ have dual spaces, this operator naturally induces a linear operator from $W'$ to $V'$, called its 
-\textbf{dual}~\index{operador!dual},
-\begin{equation}
-  \label{eq:dual}
-  \ve{A}'(\ve{\omega})(\ve{v}) := \ve{\omega}(\ve{A}(\ve{v})) \;\;\; 
-                                   \forall \;\; \ve{\omega} \in W', \;\;\;
-                                   \ve{v} \in V.
-\end{equation}
-%
-That is, the operator that when applied to an element $\ve{\omega} \in W'$
-gives us the element $\ve{A}'(\ve{\omega})$ of $V'$ which, when acting
-on $\ve{v} \in V$, gives the number $\ve{\omega}(\ve{A}(\ve{v}))$.
-See figure.
-
-\espa 
-
-
-\begin{figure}[htbp]
-  \begin{center}
-    \resizebox{5cm}{!}{\myinput{Figure/m2_2}}
-    \caption{Diagram of the dual operator.}
-    \label{fig:2_2}
-  \end{center}
-\end{figure}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Figure
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-Note that this is a linear operator since,
-\begin{eqnarray}
-  \label{eq:dual_linealidad}
-  \ve{A}'(\alpha \ve{\omega} + \ve{\sigma})(\ve{v}) &=& 
-                         (\alpha \ve{\omega} + \ve{\sigma})(\ve{A}(\ve{v})) \nn
-                                                    &=&
-             \alpha \ve{\omega}(\ve{A}(\ve{v})) + \ve{\sigma}(\ve{A}(\ve{v})) \nn
-                                                    &=&
-             \alpha \ve{A}'(\ve{\omega})(\ve{v}) + \ve{A}'(\ve{\sigma})(\ve{v}).
-\end{eqnarray}
-%
-
-In the matrix representation, this operator is represented merely by the same matrix as the original, but now acting on the left, ${A}'({w})_i = {w}_j A^j{}_i$, that is, $A'_i{}^j = A^j{}_i$.
-
-
-If there are norms defined in $V$ and $W$ and we define the norm of 
-$\ve{A}: V \to W$ in the usual way,
-
-\begin{equation}
-  \label{eq:norma_A}
-  \|\ve{A}\| := \sup_{\|\ve{v}\|_V=1}\{\|\ve{A}(\ve{v})\|_W\}
-\end{equation}
-%
-Then we see that 
-
-\begin{eqnarray}
-  \label{eq:norma_A_dual}
-  \|\ve{A}'\| &:=& 
-            \sup_{\|\ve{\omega}\|_{W'}=1}\{\|\ve{A}'(\ve{\omega})\|_{V'}\} \nn
-              &=& 
-            \sup_{\|\ve{\omega}\|_{W'}=1}\{ 
-            \sup_{\|\ve{v}\|_V=1}\{|\ve{A}'(\ve{\omega})(\ve{v})|\}\} \nn
-              &=&
-              \sup_{\|\ve{\omega}\|_{W'}=1}\{ 
-            \sup_{\|\ve{v}\|_V=1}\{|\ve{\omega}(\ve{A}(\ve{v}))|\}\} \nn
-              &\leq&
-              \sup_{\|\ve{\omega}\|_{W'}=1}\{ 
-            \sup_{\|\ve{v}\|_V=1}\{\|\ve{\omega}\|_{W'}
-                           \|(\ve{A}(\ve{v}))\|_{W}\}\} \nn
-              &=&
-           \sup_{\|\ve{v}\|_V=1}\{\|(\ve{A}(\ve{v}))\|_{W}\} \nn
-              &=& \|\ve{A}\|.
-\end{eqnarray}
-%
-Thus we see that if an operator is bounded, then its dual is also bounded.
-In fact, the equality of the norms can be proven, but this would require introducing new tools (in the most general case, the Hahn-Banach theorem) that we do not wish to incorporate in this text.
-
-Let's see what the components of the dual of an operator are in terms of
-the components of the original operator. 
-Let $\{\ve{e}_i\}$, $\{\ve{\theta}^i\}$, $i=1,..n$ be a basis and a co-basis of $V$, respectively, and let $\{\hat{\ve{e}}_i\}$, $\{\hat{\ve{\theta}}^i\}$, 
-$i=1,..m$
-be a pair of basis and co-basis of $W$.
-We then have that the components of $\ve{A}$ with respect to these bases
-are: 
-$A^i{}_j := \hat{\ve{\theta}}^i(\ve{A}(\ve{e}_j))$, 
-that is,
-$\ve{A}(\ve{v}) = 
-\sum_{i=1}^{m} \sum_{j=1}^{n} A^i{}_j \hat{\ve{e}}_i\ve{\theta}^j(\ve{v})$.
-
-Therefore, if $\ve{v}$ has components $(v^1,v^2,\dots,v^n)$ in the 
-basis $\{\ve{e}_i\}$, $\ve{A}(\ve{v})$ has components 
-\[
-\left(\sum_{i=1}^{n} A^1{}_iv^i, \sum_{i=1}^{n} A^2{}_iv^i,\dots,\sum_{i=1}^{n} A^m{}_iv^i\right)
-\]
-%
- in the basis $\{\hat{\ve{e}}_i\}$
-
-Now let's see the components of $\ve{A}'$. 
-By definition we have,
-
-\[
-\ve{A}'{}^i{}_j := \ve{A}'(\hat{\ve{\theta}}^i)(\ve{e}_j) 
-                  =  \hat{\ve{\theta}}^i(\ve{A}(\ve{e}_j)) = A^i{}_j.
-\]
-That is, the same components, but now the matrix acts on the left on
-the components $(\omega_1,\omega_2,\dots, \omega_m)$ of an element 
-$\ve{\omega}$ of $W'$ in the co-basis $\{\hat{\ve{\theta}}^i\}$.
-The components of $\ve{A}'(\omega)$ in the co-basis $\{\ve{\theta}^i\}$ are,
-\[ 
-\left(\sum_{i=1}^{m}A^i{}_1\omega_i, \sum_{i=1}^{m}A^i{}_2\omega_i,\dots,\sum_{i=1}^{m}A^i{}_n\omega_i\right).
-\]
-%
-A particularly interesting case of this construction is when
-$W=V$ and this is a space with an inner product, that is, a 
-Hilbert space. In this case, the inner product gives us a canonical map between
-$V$ and its dual $V'$:
-\begin{equation}
-  \label{eq:mapa_canonico}
-  \phi:V \to V', \;\;\;\; \phi(\ve{v}) := \langle \ve{v},\cdot \rangle.
-\end{equation}
-%
-This map is injective, and since $V$ and $V'$ have the same dimension, it is also surjective, and therefore invertible. 
-That is, given $\omega \in V'$, there exists $\ve{v}=\phi^{-1}(\omega) \in V$ such that $\langle \ve{v},\cdot \rangle = \omega$. 
-Note then that $\phi^{-1}: V' \to V$ satisfies, 
-\[
-\langle \phi^{-1}(\ve{\omega}),\ve{u} \rangle = \langle \ve{v},\ve{u} \rangle = \ve{\omega}(\ve{u}).
-\]
-
-
-If $\ve{A}: V \to V$, then $\ve{A}': V' \to V'$
-can also be considered as an operator between $V$ and $V$
-which we will call $\ve{A}^{\star}$.
-
-
-%\[
-%((\phi^{-1}(\phi(\ve{v})),\ve{u}) = ((\phi^{-1}((\ve{v},\cdot)),\ve{u}) 
-%= (\ve{v},\ve{u}) \;\;\;\; \forall \ve{u}\; \in V.
-%\]
-%
-With the help of this map, we define $\ve{A}^{\star}: V \to V$ given by:
-(See figure)
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Figure
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\espa 
-
-
-\begin{figure}[htbp]
-  \begin{center}
-    \resizebox{5cm}{!}{\myinput{Figure/m2_3}}
-    \caption{Diagram of the star operator.}
-    \label{fig:2_3}
-  \end{center}
-\end{figure}
-
-\begin{equation}
-  \label{eq:A_adjunto}
-  \ve{A}^{\star}(\ve{v}) := \phi^{-1}(\ve{A}'(\phi(\ve{v}))).
-\end{equation}
-%
-In terms of the inner product, this is:
-\begin{equation}
-  \label{eq:A_adjunto_2}
-  \langle \ve{A}^{\star}(\ve{v}),\ve{u} \rangle = \langle \phi^{-1}(\ve{A}'(\phi(\ve{v}))),\ve{u} \rangle
-                                               = \ve{A}'(\phi(\ve{v}))(\ve{u}) 
-                                               = \phi(\ve{v})(\ve{A}(\ve{u}))
-                                               = \langle \ve{v},\ve{A}(\ve{u}) \rangle.
-\end{equation}
-%
-In its matrix representation, this operator is, 
-\begin{eqnarray}
-A^{\star}{}^j{}_i &=& t_{il} A^l{}_k (t^{-1}){}^{kj} , \;\;\;\; \mbox{real inner product} \\
-A^{\star}{}^j{}_i &=& t_{il} \bar{A}^l{}_k (t^{-1}){}^{kj} , \;\;\;\; \mbox{complex inner product} 
-\end{eqnarray}
-%
-where $t_{li}$ is the representation of the inner product and $(t^{-1}){}^{jk}$ that of its inverse 
-($t_{il} (t^{-1})^{lk} = \delta^k{}_i$). 
-If we choose a basis such that $t_{ik} = \delta_{ik}$, the Kronecker delta, the matrix representation of the adjoint is simply the transpose matrix, $A^{\star}{}^j{}_i = A^{\dagger}{}^j{}_i = A^i{}_j$, 
-
-A particularly interesting subset of operators is those for which 
-$\ve{A} = \ve{A}^{\star}$. These operators are called 
-\textbf{Hermitian}~\index{operadores!Hermitianos} or 
-\textbf{Self-adjoint}~\index{operadores!Autoadjuntos}.\footnote{
-In the case of infinite dimension, these names do not coincide for
-some authors.}
-
-Self-adjoint operators have important properties:
-
-\blem
-Let $M = Span\{\ve{u}_{1},\ve{u}_2,\dots,\ve{u}_m\}$, where $\{\ve{u}_i\}$
-are a set of eigenvectors of $\ve{A}$, a self-adjoint operator.
-Then $M$ and $M^{\perp}$ are invariant spaces of $\ve{A}$.
-\elem
-
-\bpru 
-The first statement is clear and general, the second depends on the
-Hermiticity of $\ve{A}$. Let $\ve{v} \in M^{\perp}$ be any vector, let's see
-that $\ve{A}(\ve{v}) \in M^{\perp}$. Let $\ve{u} \in M$ be arbitrary, then
-\begin{equation}
-  \langle \ve{u},\ve{A}(\ve{v}) \rangle = \langle \ve{A}(\ve{u}),\ve{v} \rangle = 0,
-\end{equation}
-%
-since $\ve{A}(\ve{u}) \in M$ if $\ve{u} \in M$
-\epru
-\espa
-This property has the following corollary:
-
-\bcor
-Let $\ve{A}:H \to H$ be self-adjoint. Then the eigenvectors of $\ve{A}$ form an orthonormal basis of $H$.
-\ecor
-
-\bpru
-$\ve{A}: H \to H$ has at least one eigenvector, let's call it $\ve{u}_1$. 
-Now consider its restriction to the space perpendicular to $\ve{u}_1$
-which we also denote by $\ve{A}$ since by the previous lemma this is
-an invariant space, $\ve{A}:\{\ve{u}_1\}^{\perp} \to \{\ve{u}_1\}^{\perp}$.
-This operator also has an eigenvector, say $\ve{u}_2$ and 
-$\ve{u}_1 \perp \ve{u}_2$. Now consider the restriction of $\ve{A}$ to
-$Span\{\ve{u}_1,\ve{u}_2\}^{\perp}$, there we also have 
-$\ve{A}:Span\{\ve{u}_1,\ve{u}_2\}^{\perp} \to Span\{\ve{u}_1,\ve{u}_2\}^{\perp}$
-and therefore an eigenvector of $\ve{A}$, $\ve{u}_3$ with 
-$\ve{u}_3 \perp \ve{u}_1$, $\ve{u}_3 \perp \ve{u}_2$.
-Continuing in this way, we end up with $n = \dim H$ eigenvectors all
-orthogonal to each other
-\epru
-
-This theorem has several extensions to the case where the vector space is
-of infinite dimension. 
-Later in chapter \ref{ecuaciones_elipticas} we will see one of them.
-
-Note that in this basis $\ve{A}$ is diagonal and therefore we have
-\bcor
-Every self-adjoint operator is diagonalizable
-\ecor
-%
-Also note that if $\ve{u}$ is an eigenvector of $\ve{A}$ self-adjoint,
-with eigenvalue $\lambda$, then,
-\begin{equation} 
-  \bar{\lambda} \langle \ve{u},\ve{u} \rangle = \langle \ve{A}(\ve{u}),\ve{u} \rangle
-                               = \langle \ve{u},\ve{A}(\ve{u})\rangle
-                               = \lambda \langle \ve{u},\ve{u} \rangle
-\end{equation}
-and therefore $\bar{\lambda} = \lambda$, that is,
-    
-\blem
-The eigenvalues of a self-adjoint operator are real
-\elem
-
-Let's see what the condition of Hermiticity means in terms
-of the components of the operator in an orthonormal basis.
-Let $\ve{A}$ be a self-adjoint operator and let 
-$\{\ve{e}_i\}$, $i=1,\dots,n$
-be an orthonormal basis of the space where it acts.
-We have that $\langle \ve{A}(\ve{e}_i),\ve{e}_j \rangle = \langle \ve{e}_i,\ve{A}(\ve{e}_j) \rangle$
-and therefore, noting that 
-$\ve{I} = \sum_{i=1}^{n} \ve{e}_i\ve{\theta}^i$,
-we obtain,
-\begin{eqnarray}
-  0 &=& \langle \sum_{k=1}^{n} \ve{e}_k\ve{\theta}^k(\ve{A}(\ve{e}_i)),\ve{e}_j \rangle
-       - \langle \ve{e}_i,\sum_{l=1}^{n} \ve{e}_l\ve{\theta}^l(\ve{A}(\ve{e}_j)) \rangle \nn
-    &=& \sum_{k=1}^{n} \bar{A}^k{}_i \langle \ve{e}_k,\ve{e}_j \rangle
-       -\sum_{l=1}^{n} A^l{}_j \langle \ve{e}_i,\ve{e}_l \rangle \nn
-    &=& \sum_{k=1}^{n} \bar{A}^k{}_i \delta_{kj} 
-       - \sum_{l=1}^{n} A^l{}_j \delta_{li} \nn
-    &=&  \bar{A}^j{}_i - A^i{}_j
-\end{eqnarray}
-%
-from which we conclude that 
-
-\begin{equation}
-  \bar{A}^j{}_i = A^i{}_j
-\end{equation}
-%
-that is, the transpose matrix is the complex conjugate of the original.
-In the case of real matrices, we see that the condition is that in this basis
-the matrix is equal to its transpose, i.e. symmetric.
 
 \section{Adjoint Operators}
 

@@ -1,0 +1,25 @@
+1. seccion 5.3 (sistemas lineales homogeneos: coefficientes constantes)
+ a. Corregir un x_0(t) (no va el _0)
+ b. en la matriz para k_i debe ir \lambda_i (falta el _i)
+
+
+2. Arreglar un poco el teorema de Poincaré-Bendixon
+
+3. En estabilidad, 
+    a. fijarse en la parte real del \lambda_+ del ejemplo b)
+    b. en el Lema 6.1 cambiar las matrices a triangular superior.
+    c. Lema 6.2 simetricO positivO y no A.
+    d. mejorar cerca de 6.19
+    e. arreglar un 2 en ecuación 6.21 (también el . de la derivada)
+
+cap. 8
+
+    a. en figura 8.1 debiera ser 1/4n
+    b. no hereda DE H (falta el DE)
+    c. en la desigualdad del dual the \phi_y falta el _y 
+    d. fijarse justo antes del corolario 8.3 (ejercicio anterior, dar vuelta el corchete)
+    e. fijarse de arreglar los corchetes en serie de Fourier.
+    f. después de 8.45 falta una 'en un theta en la integral.
+    g. arreglar última parte del 8.10
+
+

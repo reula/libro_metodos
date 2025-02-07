@@ -135,7 +135,7 @@ and obtain
                            \left( \barr{c} \delta \theta \\ \delta z 
                            \earr \right). 
 \eeq
-with eigenvalues $\lambda_{\pm} = \dip\frac{-k \pm \sqrt{k^2 + 4}}{2}$, which implies $\Re (\lambda_{\pm}) > 0$ and thus instability.
+with eigenvalues $\lambda_{\pm} = \dip\frac{-k \pm \sqrt{k^2 + 4}}{2}$, which implies $\Re (\lambda_{+}) > 0$ and thus instability.
 
 From the examples, it is seen that this theorem has broad application. Since stability is a local notion, to facilitate the demonstration we will take $M = \re^n$ and a Cartesian coordinate system with origin at the stable solution to be considered. We will use several previous results that we prove below.
 
@@ -174,30 +174,31 @@ Thus, we have proved the theorem for the diagonalizable case. The case where $A$
 \[
 A = diag.(\lambda_1,...,\lambda_n) + \epsilon \Delta, 
 \]
-with $\Delta$ a matrix with non-zero components (and equal to one) at most on the lower diagonal, that is,
+with $\Delta$ a matrix with non-zero components (and equal to one) at most on the upper diagonal, that is,
 \beq
-A = \lp \barr{ccccccc} \lam_1 &0&0&.&.&.&0\\
-                       \eps &\lam_2& 0&.&.&.& 0\\
+A = \lp \barr{ccccccc} \lam_1 &\eps&0&.&.&.&0\\
+                       0 &\lam_2& 0&.&.&.& 0\\
                        .&.&.&.&.&.&.\\
-                       0&.&.&.&.&.&0 \\
-                       0&.&.&.&.&\eps &\lam_r
+                       0&.&.&.&.&.&\eps \\
+                       0&.&.&.&.&0 &\lam_r
 \earr \rp .                    
 \eeq
 \elem
 
 \espa
-\pru: It is a simple rescaling of the Jordan basis of $A$. For example, in $C^3$ if $\{\ti{\ve{u}}_i\}$ is such that in it,
+\pru: It is a simple rescaling of the Jordan basis of $A$. 
+For example, in $C^3$ if $\{\ti{\ve{u}}_i\}$ is such that in it,
 \beq
-A = \lp \barr{ccc} \lam &0   &  0  \\
-                   1    &\lam & 0  \\
-                   0    & 1   &\lam \\
+A = \lp \barr{ccc} \lam &1   &  0  \\
+                   0    &\lam & 1  \\
+                   0    & 0   &\lam \\
 \earr \rp .
 \eeq
 defining $\dip\ve{u}_1 = \frac{\ti{\ve{u}}_1}{\epsilon^2}$, $\dip \ve{u}_2 = \frac{\ti{\ve{u}}_2}{\epsilon}$, and $\ve{u}_3 = \ti{\ve{u}}_3$, we see that in this new basis,
 \beq
-A = \lp \barr{ccc} \lam & 0    &  0  \\
-                   \eps &\lam  &  0  \\
-                   0    & \eps &\lam \\
+A = \lp \barr{ccc} \lam & \eps    &  0  \\
+                   0 &\lam  &  \eps  \\
+                   0    & 0 &\lam \\
 \earr \rp .
 \eeq
 [$\dip A\ve{u}_1=A\frac{\ti{\ve{u}}_1}{\epsilon^2} =\frac{\lambda \ti{\ve{u}}_1}{\epsilon^2} =\lambda \ve{u}_1$, $\dip A\ve{u}_2=A\frac{\ti{\ve{u}}_2}{\epsilon} =\frac{\ti{\ve{u}}_1 + \lambda \ti{\ve{u}}_2}{\epsilon} =\epsilon \ve{u}_1 + \lambda \ve{u}_2$, etc.].
@@ -309,7 +310,7 @@ r(t) = \ln \ve{\ro}(\fit,\fit)
 \eeq
 and differentiating with respect to $t$ we get,
 \beq \barr{rcl}
-\dot{r}(t) &=& \frac{2\;\dot{\ve{\ro}(\fit,\fit)}}{\ve{\ro}(\fit,\fit)}=
+\dot{r}(t) &=& 2\;\frac{\ve{\ro}(\mbox{$\dot\varphi (t)$},\fit)}{\ve{\ro}(\fit,\fit)}=
        \frac{\ve{v}(\fit )(\ve{\ro}(\fit,\fit))}{\ve{\ro} (\fit,\fit)} \\ [3mm]
      &\leq& - \gamma.
 \earr \eeq       
