@@ -99,7 +99,8 @@ $i= 1, \ldots ,n$ $\Longrightarrow $ $a^i = 0$, $i= 1, \ldots ,n$,
 es decir si cualquier combinación lineal no trivial de estos vectores nos
 da un vector no trivial. 
 
-\defi: El $Span$ de un conjunto de vectores $\{\ve{u_{i}}\}$ es el conjunto de todas las combinaciones lineales posibles de estos elementos. Generan en sí un subespacio de $V$, al que denotaremos por $Span\{\ve{u_{i}}\}\subset V$. 
+\defi: El $Span$ de un conjunto de vectores $\{\ve{u_{i}}\}$ es el conjunto de todas las combinaciones lineales posibles de estos elementos. 
+Generan en sí un subespacio de $V$, es decir un subconjunto de $V$ que es en si mismo un espacio vectorial sobre el mismo cuerpo, al que denotaremos por $Span\{\ve{u_{i}}\}\subset V$. 
 
 Si un número finito de vectores linealmente independientes, 
 $n$, son suficientes para {\bf expandir} $V$, [es decir si 
@@ -379,6 +380,7 @@ llama {\bf determinante} \index{determinante} del operador $\ve{A}$,
 \ve{\varepsilon}(\ve{A}(\ve{u_1},\;\;),\ldots ,\ve{A}(\ve{u_n},\;\;))  =: \det(\ve{A}) \ve{\varepsilon}(\ve{u_1}. \ldots, \ve{u_n}).
 \]
 %
+Tome un ejemplo en $dim = 2$ y corrobore que esta definición corresponde con la fórmula usual.
 
 \bpro
 Muestre que esta definición no depende del $\ve{\varepsilon} $ empleado ni
@@ -414,7 +416,7 @@ veremos otras.
 Los mapas multilineales deben ser extendidos de la misma forma, es decir, por ejemplo el dual
 de $V$ estará constituido por todos los mapas de $V$ en $C$.
 
-También podemos tomar cuerpos más pequeños, por ejemplo, $Q^n$ o $Z^n$.
+También podemos tomar cuerpos más pequeños, por ejemplo, $Q^n$.
 
 \ejem: Considere el espacio vectorial $Q^n$ consistente de todas las n-tuplas de
 números racionales. En este espacio el campo es también el conjunto de los
@@ -426,7 +428,8 @@ Dicha elección nos caracteriza un sub-espacio de $V$, el dado por todos los elem
 v=\sum_{i}^{n} m^{i}\ve{e_{i}} \;\;\;\;\; m^{i} \in Z.
 \]
 %
-
+Este no es un espacio vectorial sino un módulo (ya que $Z$ no es un cuerpo sino un anillo) pero aparece en muchas 
+ocasiones en la física. En particular para describir ordenamientos de átomos en un cristal.
 
 \ejer: Considere ahora el conjunto de todos los mapas lineales de este sub-espacio a $Z$.
 ¿Qué forma tienen sus elementos?
@@ -616,18 +619,19 @@ Sea otra norma cualquiera, luego
 
 \beq\barr{rcl}
  \left|\,\|\ve x\|\,\right| & \leq & \|\ve x\|=\|\sum_i^n a^i\,\ve{e}_i\|   \leq \sum_i^n  \| a^i\,\ve{e}_i\| \\
- &  \leq & \sum_i^n |a^i|\,\|\ve{e}_i\|\leq(max_{j=1,n}\|\ve{e}_j\|)\sum_{i=1}^n|a^i|  \\
- & =&(max_{j=1,n}\|\ve{e}_j\|)\;\|\ve x\|_1.
+ &  \leq & \sum_i^n |a^i|\,\|\ve{e}_i\|\leq(\max_{j=1,n}\|\ve{e}_j\|)\sum_{i=1}^n|a^i|  \\
+ & =&(\max_{j=1,n}\|\ve{e}_j\|)\;\|\ve x\|_1.
  \earr
  \eeq
 %
 Y hemos obtenido fácilmente la cota superior. Veamos ahora la inferior.
 Para ello debemos probar que la norma $\| \cdot \|$ es, como función de $V$ en $\re^{+}$
 una función continua. 
-Esto sigue fácilmente de la cota ya encontrada, en efecto, sea otro vector cualquiera, $\ve y=b^i\,\ve{e}_i$, luego
+Esto sigue fácilmente de la cota ya encontrada, en efecto, sea otro vector cualquiera, 
+$\ve y=b^i\,\ve{e}_i$, luego
 \beq\barr{rcl}
  \left|\,\|\ve x\|-\|\ve y\|\,\right| & \leq & \|\ve x-\ve y\| \\
- & =&(max_{j=1,n}\|\ve{e}_j\|)\;\|\ve x-\ve y\|_1
+ & =&(\max_{j=1,n}\|\ve{e}_j\|)\;\|\ve x-\ve y\|_1
  \earr
 \eeq
 
@@ -1231,7 +1235,7 @@ $\ve{e}_2=(0,1)$ vemos que su representación matricial es:
 \beq\left(\barr{cc}
      \lambda & \epsilon    \\
      0 &  \lambda
-     \earr\right)
+     \earr\right).
 \eeq
 %
 Vemos que este operador tiene solo un autovalor con multiplicidad 2. Pero tiene solo un autovector, proporcional a $\ve{e}_1=(1,0)$. Para uso posterior note que si definimos 
@@ -1242,7 +1246,7 @@ el operador queda representado por la matriz,
 \beq\left(\barr{cc}
      \lambda & 1    \\
      0 &  \lambda
-     \earr\right)
+     \earr\right).
 \eeq
 
 

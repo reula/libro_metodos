@@ -85,7 +85,9 @@ are {\bf linearly independent}~\index{linear!independence}
 if $\sum_{i=1}^{n} a^i \ve{e_i} = \ve{0}$ $a^i \in \re$ $\Longrightarrow $ $a^i = 0$, $i= 1, \ldots ,n$;
 that is, if any non-trivial linear combination of these vectors gives us a non-zero vector. 
 
-\defi: The {\bf span} of a set of vectors $\{\ve{u_{i}}\}$ is the set of all possible linear combinations of these elements. They generate a subspace of $V$, which we will denote by $Span\{\ve{u_{i}}\}\subset V$. 
+\defi: The {\bf span} of a set of vectors $\{\ve{u_{i}}\}$ is the set of all possible linear combinations of these elements. 
+They generate a subspace of $V$, namely a subset of $V$ which is in itself a vector space under the same field,
+which we will denote by $Span\{\ve{u_{i}}\}\subset V$. 
 
 If a finite number of linearly independent vectors, 
 $n$, are sufficient to span $V$ (that is, if 
@@ -278,7 +280,8 @@ But if $\ve{v}$ and $\ve{\tilde{v}}$ determine the same element of $V^*$, that i
 &=&\varepsilon_{1234\ldots n}. 
 \end{eqnarray*} 
 % 
-Therefore, given a basis, a single number, $\varepsilon_{123\ldots n}$, is enough to determine the tensor $\ve{\varepsilon}$ and given another tensor $\ve{\tilde{\varepsilon} }$ not identically zero with the properties mentioned above, there will exist a number $\alpha$ such that $\ve{\varepsilon} = \alpha\ve{\tilde{\varepsilon}}$. This last equality does not depend on the basis used and tells us that the dimension of the subspace of antisymmetric tensors of type ${0 \choose n}$ is 1. Knowing one element is enough to generate the entire space by multiplying it by any real number.
+Therefore, given a basis, a single number, $\varepsilon_{123\ldots n}$, is enough to determine the tensor $\ve{\varepsilon}$ and given another tensor $\ve{\tilde{\varepsilon} }$ not identically zero with the properties mentioned above, there will exist a number $\alpha$ such that $\ve{\varepsilon} = \alpha\ve{\tilde{\varepsilon}}$. 
+This last equality does not depend on the basis used and tells us that the dimension of the subspace of antisymmetric tensors of type ${0 \choose n}$ is 1. Knowing one element is enough to generate the entire space by multiplying it by any real number.
 
 \ejer: Let $\ve{\varepsilon}$ be a non identically zero, totally antisymmetric tensor of type ${0 \choose n}$ and ${\ve{u}_i}$ a set of $n=\dim V$ vectors of $V$. Show that these form a basis if and only if 
 \beq 
@@ -302,7 +305,9 @@ The proportionality constant is called the {\bf determinant} \index{determinant}
 
 \[ 
 \ve{\varepsilon}(\ve{A}(\ve{u_1},;;),\ldots ,\ve{A}(\ve{u_n},;;)) =: \det(\ve{A}) \ve{\varepsilon}(\ve{u_1}. \ldots, \ve{u_n}).
-\] %
+\] 
+%
+Take a $dim=2$ example and check that this definition corresponds with the usual one.
 
 \bpro Show that this definition does not depend on the $\ve{\varepsilon} $ used nor the basis and therefore gives truly a function on the space of operators $V \to \re$. \epro
 
@@ -314,18 +319,34 @@ The proportionality constant is called the {\bf determinant} \index{determinant}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Another way to obtain vector spaces from a given one, say $V$, is by extending the field where the multiplication operation is defined, if this is possible. The most common case is the \textbf{complexification} of a real vector space; in this case, the product is simply extended to complex numbers, resulting in a vector space of the same dimension (over the complex field). One way to obtain it, for example, is by taking a basis of the real vector space $V$, and considering all linear combinations with arbitrary complex coefficients. The space thus obtained is denoted by $V^{\Complex}$. While the components of the vectors in $V$ in the original basis were $n$-tuples of real numbers, they are now $n$-tuples of complex numbers. Since the basis is the same, the dimension is also the same. These extensions of vector spaces often appear, and we will see others later.
+Another way to obtain vector spaces from a given one, say $V$, is by extending the field where 
+the multiplication operation is defined, if this is possible. 
+The most common case is the \textbf{complexification} of a real vector space; 
+in this case, the product is simply extended to complex numbers, resulting in a vector space 
+of the same dimension (over the complex field). 
+One way to obtain it, for example, is by taking a basis of the real vector space $V$, and 
+considering all linear combinations with arbitrary complex coefficients. 
+The space thus obtained is denoted by $V^{\Complex}$. 
+While the components of the vectors in $V$ in the original basis were $n$-tuples of real numbers, 
+they are now $n$-tuples of complex numbers. 
+Since the basis is the same, the dimension is also the same. 
+These extensions of vector spaces often appear, and we will see others later.
 
-Multilinear maps must be extended in the same way. That is, for example, the dual of $V$ will consist of all (complex-)linear maps from $V$ to $\mathbb{C}$.
+Multilinear maps must be extended in the same way. 
+That is, for example, the dual of $V$ will consist of all (complex-)linear maps from $V$ to $\mathbb{C}$.
 
-We can also take smaller fields, for example, $\mathbb{Q}^n$ or $\mathbb{Z}^n$.
+We can also take smaller fields, for example, $\mathbb{Q}^n$.
 
-\ejem: Consider the vector space $\mathbb{Q}^n$ consisting of all $n$-tuples of rational numbers. In this space, the field is also the set of rationals. If we extend the field to the reals, we obtain $\ren$.
+\ejem: Consider the vector space $\mathbb{Q}^n$ consisting of all $n$-tuples of rational numbers. 
+In this space, the field is also the set of rationals. 
+If we extend the field to the reals, we obtain $\ren$.
 
 \ejem: Consider a space $V$ and any basis $\{\ve{e_{i}}\}$ of $V$. This choice characterizes a subspace of $V$, given by all elements of the form, 
 \[ 
 v=\sum_{i}^{n} m^{i}\ve{e_{i}} \;\;\;\;\; m^{i} \in Z. 
 \]
+This is not a vector space, for $Z$ is not a field but rather a ring. But we mention it here because it appear 
+in many instances of physical relevance, like to describe atoms in a crystal structure.
 
 \ejer: Now consider the set of all linear maps from this subspace to $Z$. What form do their elements take?
 
@@ -360,72 +381,120 @@ To facilitate notation, the equivalence class containing a given element, say $\
 
 \ejer: Let $V$ be the set of continuous functions from $\re$ to $\re$ and let $W$ be the subset of those that vanish on the interval $[0,1]$. See that this is a vector subspace. Consider the space $V/W$. What space can you associate with this?
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Norms}
 
-\defi: A {\bf norm} in a vector space $V$ is a map $|\ve x|:V\to \re^+$, satisfying for all $\ve{x},\ve{y} \in V,\;\alpha\in \re,$,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$i$) Non-negativity: $|\ve x|\geq 0$, with equality only for $\ve x=0$
+\defi: A {\bf norm} in a vector space $V$ is a map $\|\ve x\|:V\to \re^+$, satisfying for all $\ve{x},\ve{y} \in V,\;\alpha\in \re,$,
 
-$ii$) Homogeneity: $|\alpha \ve x| =| \alpha|\;|\ve x|$
+$i$) Non-negativity: $\|\ve x\|\geq 0$, with equality only for $\ve x=0$
 
-$iii$) Triangle inequality: $|\ve x+\ve y|\leq|\ve x|+|\ve y|$
+$ii$) Homogeneity: $\|\alpha \ve x\| =| \alpha|\;\|\ve x\|$
+
+$iii$) Triangle inequality: $\|\ve x+\ve y\|\leq\|\ve x\|+\|\ve y\|$
 
 \noi\yaya{Examples}: In $\re^2$ :
 
-\noi a) $|(x,y)|:= \text{max}\{|x|,|y|\}$;
+\noi a) $\|(x,y)\|:= \text{max}\{|x|,|y|\}$;
 
-\noi b) $|(x,y)|_{2}:=\sqrt{x^2+y^2}$ (Euclidean norm);
+\noi b) $\|(x,y)\|_{2}:=\sqrt{x^2+y^2}$ (Euclidean norm);
 
-\noi c) $|(x,y)|_{1}:=|x| +|y|$;
+\noi c) $\|(x,y)\|_{1}:=|x| +|y|$;
 
-\noi d) $|(x,y)|_{p}:=(|x|^{p} + |y|^{p})^{\frac{1}{p}} \;\;\;\;\; p\geq 1$;
+\noi d) $\|(x,y)\|_{p}:=(|x|^{p} + |y|^{p})^{\frac{1}{p}} \;\;\;\;\; p\geq 1$;
 
-\noi e) Let $\ve{t}$ be a positive-definite symmetric tensor of type ${0 \choose 2}$ on a vector space $V$, that is $\ve{t}(\ve u,\ve v)=\ve{t}(\ve v,\ve u)$, $\ve{t}(\ve u,\ve u)\geq 0$ (with equality only for $\ve u=0$). The function $|\ve u|_{\ve{t}} =\sqrt{\ve{t}(\ve u,\ve u)}$ is a norm on $V$. Each tensor of this type generates a norm, but there are many norms that do not come from any tensor of this type. Give an example.
+\noi e) Let $\ve{t}$ be a positive-definite symmetric tensor of type ${0 \choose 2}$ on a vector space $V$, that is 
+$\ve{t}(\ve u,\ve v)=\ve{t}(\ve v,\ve u)$, $\ve{t}(\ve u,\ve u)\geq 0$ (with equality only for $\ve u=0$). 
+The function $|\ve u|_{\ve{t}} =\sqrt{\ve{t}(\ve u,\ve u)}$ is a norm on $V$. 
+Each tensor of this type generates a norm, but there are many norms that do not come from any tensor of 
+this type. Give an example.
 
-\ejer: Prove that $|\ve{t}(\ve{u},\ve{v})|^2 \leq |\ve{u}|_{\ve{t}} |\ve{v}|_{\ve{t}}$. Hint: Consider the polynomial: $P(\lambda) := \ve{t}(\ve{u} + \lambda \ve{v},\ve{u} + \lambda \ve{v})$.
+\ejer: Prove that $|\ve{t}(\ve{u},\ve{v})|^2 \leq |\ve{u}|_{\ve{t}} |\ve{v}|_{\ve{t}}$. 
+Hint: Consider the polynomial: $P(\lambda) := \ve{t}(\ve{u} + \lambda \ve{v},\ve{u} + \lambda \ve{v})$.
 
-\ejer: Prove that the given examples are indeed norms. Draw the level curves of the first four norms, that is, the sets $S_a=\{(x,y)\in \re^2\;/\; |(x,y)|=a\}$ and the "balls of radius $a$", that is $B_a=\{(x,y)\in \re^2/|(x,y)|\leq a\}$.
+\ejer: Prove that the given examples are indeed norms. Draw the level curves of the first four norms, that is, 
+the sets $S_a=\{(x,y)\in \re^2\;/\; \|(x,y)\|=a\}$ and the "balls of radius $a$", that is $B_a=\{(x,y)\in \re^2/\|(x,y)\|\leq a\}$.
 
-\ejer: Prove that the map $d:V\times V \to \re^+$ given by $d(\ve x,\ve y) = |\ve x-\ve y|$ for a norm $|\cdot|$ on $V$ defines a distance on $V$.
+\ejer: Prove that the map $d:V\times V \to \re^+$ given by $d(\ve x,\ve y) = \|\ve x-\ve y\|$ for a norm $\|\cdot\|$ on $V$ defines a distance on $V$.
 
-What is a norm geometrically? Given a vector $\ve{x}\neq 0$ of $V$ and any positive number, $a$, there is a unique number $\alpha > 0$ such that $|\alpha \ve x|=a$. This indicates that the level surfaces of the norm, that is, the hypersurfaces $S_a=\{\ve x\in V / |\ve x|=a\}$, $a>0$ form a smooth family of layers one inside the other, and each of them divides $V$ into three disjoint sets: the {\it interior} of $S_a$ ---containing the element $\ve x=0$---, $S_a$, and the {\it exterior} of $S_a$. The {\it interior} of $S_a$ is a convex set, that is, if $\ve x$ and $\ve y$ belong to the interior of $S_a$, then $\alpha \ve x+(1-\alpha)\ve y,\;\alpha\in[0,1]$ also belongs to it (since $|\alpha \ve x + (1-\alpha )\ve y| \leq \alpha |\ve x| + (1-\alpha )|\ve y| \leq \alpha a + (1-\alpha )a = a$).
+What is a norm geometrically? Given a vector $\ve{x}\neq 0$ of $V$ and any positive number, $a$, there is a unique number $\alpha > 0$ such that 
+$\|\alpha \ve x\|=a$. This indicates that the level surfaces of the norm, that is, the hypersurfaces 
+$S_a=\{\ve x\in V / \|\ve x\|=a\}$, $a>0$ form a smooth family of layers one inside the other, and each of them divides $V$ into three disjoint sets: 
+the {\it interior} of $S_a$ ---containing the element $\ve x=0$---, $S_a$, and the {\it exterior} of $S_a$. 
+The {\it interior} of $S_a$ is a convex set, that is, if $\ve x$ and $\ve y$ belong to the interior of $S_a$, 
+then $\alpha \ve x+(1-\alpha)\ve y,\;\alpha\in[0,1]$ also belongs to it (since $\|\alpha \ve x + (1-\alpha )\ve y\| \leq \alpha \|\ve x\| + (1-\alpha )\|\ve y\| \leq \alpha a + (1-\alpha )a = a$).
 
-A level set completely characterizes a norm in the sense that if we give a subset $N$ of $V$, such that $N$: \textbf{a)} has the radial property, that is, given $\ve x\neq 0$ there is a unique $\alpha >0$ such that $\alpha ,\ve x\in N$ and $-\alpha ,\ve x\in N$ and \textbf{b)} is convex, then there is a unique norm such that $N$ is the level surface $S_1$. This norm is defined as follows: given $\ve x$ we know that there will be a unique $\alpha > 0$ such that $\alpha \ve x \in N$ and then the norm of $\ve x$ will be $|\ve x| := \frac1{\alpha}$.
+A level set completely characterizes a norm in the sense that if we give a subset $N$ of $V$, such that $N$: 
+\textbf{a)} has the radial property, that is, given $\ve x\neq 0$ there is a unique $\alpha >0$ such that 
+$\alpha ,\ve x\in N$ and $-\alpha ,\ve x\in N$ and \textbf{b)} is convex, then there is a unique norm such that 
+$N$ is the level surface $S_1$. This norm is defined as follows: given $\ve x$ we know that there will be a unique $\alpha > 0$ 
+such that $\alpha \ve x \in N$ and then the norm of $\ve x$ will be $\|\ve x\| := \frac1{\alpha}$.
 
-\ejer: Prove that this is a norm. Hint, given any two vectors $\ve{x},\;\; \ve{y} ; \in V$, then $\frac{\ve{x}}{||\ve{x}||}$ and $\frac{\ve{y}}{||\ve{y}||}$ are unitary and therefore are in $N$. But then we have that $||\lambda \frac{\ve{x}}{||\ve{x}||} - (1-\lambda)\frac{\ve{y}}{||\ve{y}||}|| \leq 1\;\;\;\forall \; \lambda \in [0,1]$. Now find a convenient value for $\lambda$.
+\ejer: Prove that this is a norm. Hint, given any two vectors $\ve{x},\;\; \ve{y} ; \in V$, then 
+$\frac{\ve{x}}{\|\ve{x}\|}$ and $\frac{\ve{y}}{\|\ve{y}\|}$ are unitary and therefore are in $N$. 
+But then we have that 
+$\|\lambda \frac{\ve{x}}{\|\ve{x}\|} - (1-\lambda)\frac{\ve{y}}{\|\ve{y}\|}\| \leq 1\;\;\;\forall \; \lambda \in [0,1]$. 
+Now find a convenient value for $\lambda$.
 
-From this perspective, we see that given two norms on a finite-dimensional vector space and a level surface of one of them, there will be level surfaces of the other norm that will have the former inside or outside of it. In the norms a) and b) of the previous example, we see that given a square containing zero, there will be two circles containing zero, one containing the square and the other contained by it. This leads us to the following theorem.
+From this perspective, we see that given two norms on a finite-dimensional vector space and a level surface of one of them, 
+there will be level surfaces of the other norm that will have the former inside or outside of it. 
+In the norms a) and b) of the previous example, we see that given a square containing zero, there will be 
+two circles containing zero, one containing the square and the other contained by it. 
+This leads us to the following theorem.
 
-\bteo Let $V$ be a finite-dimensional vector space. Then all its norms are equivalent to each other, in the sense that given $|\cdot|$ and $|\cdot|'$ there are positive constants $M_1$ and $M_2$ such that for all $\ve x\in V$ it holds that $M_1|\ve x|\leq|\ve x|'\leq M_2|\ve x|$. \eteo
+\bteo 
+Let $V$ be a finite-dimensional vector space. 
+Then all its norms are equivalent to each other, in the sense that given $\|\cdot\|$ and $\|\cdot\|'$ 
+there are positive constants $M_1$ and $M_2$ such that for all $\ve x\in V$ it holds that 
+$M_1\|\ve x\|\leq\|\ve x\|'\leq M_2\|\ve x\|$. 
 
-\pru: We will show that all are equivalent to the norm $|\ve x|_1=\sum_{i=1}^n |a^i|$, where the $a^i$ are the components of $\ve x$ with respect to a given basis $\{\ve{e}_i\}$, $ \ve x =a^i \,\ve{e}_i$.
+\eteo
 
-Let $|\cdot|$ be any other norm, then
+\pru: 
+We will show that all are equivalent to the norm $\|\ve x\|_1=\sum_{i=1}^n |a^i|$, 
+where the $a^i$ are the components of $\ve x$ with respect to a given basis $\{\ve{e}_i\}$, 
+$ \ve x =a^i \,\ve{e}_i$.
 
-\beq
-\barr{rcl} \left| \ve x| \right| & \leq & |\ve x|=|\sum_i^n a^i,\ve{e}_i| \leq \sum_i^n | a^i,\ve{e}i| \\ 
-& \leq & \sum_i^n |a^i|,|\ve{e}i|\leq(max{j=1,n}|\ve{e}j|)\sum{i=1}^n|a^i| \\ 
-& =&(max{j=1,n}|\ve{e}_j|);|\ve x|_1. 
-\earr 
-\eeq % 
-And we have easily obtained the upper bound. Now let's see the lower bound. To do this, we must prove that the norm $| \cdot |$ is, as a function from $V$ to $\re^{+}$, a continuous function. This easily follows from the already found bound, indeed, let any other vector, $\ve y=b^i,\ve{e}i$, then 
-\beq
-\barr{rcl} \left|,|\ve x|-\|\ve y|,\right| & \leq & |\ve x-\ve y| \\ 
-& =&(max{j=1,n}|\ve{e}_j|);|\ve x-\ve y|_1 
-\earr 
+Let $\|\cdot\|$ be any other norm, then
+
+\beq\barr{rcl}
+\|\ve x\| & = & \|\sum_i^n a^i\,\ve{e}_i\|   \leq \sum_i^n  \| a^i\,\ve{e}_i\| \\
+ &  \leq & \sum_i^n |a^i|\,\|\ve{e}_i\|\leq(\max_{j=1,n}\|\ve{e}_j\|)\sum_{i=1}^n|a^i|  \\
+ & =&(\max_{j=1,n}\|\ve{e}_j\|)\;\|\ve x\|_1.
+ \earr
+ \eeq
+And we have easily obtained the upper bound. Now let's see the lower bound. 
+To do this, we must prove that the norm $\| \cdot \|$ is, as a function from $V$ to $\re^{+}$, 
+a continuous function. 
+This easily follows from the already found bound, indeed, let any other vector, $\ve y=b^i\,\ve{e}i$, then 
+
+\beq\barr{rcl}
+ \left|\,\|\ve x\|-\|\ve y\|\,\right| & \leq & \|\ve x-\ve y\| \\
+ & =&(\max_{j=1,n}\|\ve{e}_j\|)\;\|\ve x-\ve y\|_1
+ \earr
 \eeq
 
-This shows that the norm $|\cdot|$ is a continuous function with respect to the norm $|\cdot|_1$. Let $S_1$ be the level surface of radius 1 with respect to the metric $|\cdot|_1$. $S_1$ is a closed and bounded set and therefore compact. Therefore, by continuity, $|\cdot|$ has a maximum value, $M_2$, and a minimum, $M_1$, which give the sought inequality. The maximum value we have already found, the minimum is what allows us to bound the norm from below and conclude the theorem.
+This shows that the norm $\|\cdot\|$ is a continuous function with respect to the norm $\|\cdot\|_1$. 
+Let $S_1$ be the level surface of radius 1 with respect to the norm $\|\cdot\|_1$. $S_1$ is a closed and bounded set and therefore compact. 
+Therefore, by continuity, $\|\cdot\|$ has a maximum value, $M_2$, and a minimum, $M_1$, which give the 
+sought inequality. 
+The maximum value we have already found, the minimum is what allows us to bound the norm from below and conclude the theorem.
 
 \noi\yaya{Notes}:
 
 \noi $i$) In this proof, it is crucial that $S_1$ is compact. If $V$ is infinite-dimensional, this is not the case, and there are many non-equivalent norms.
 
-\noi $ii$) For our purposes, any norm is sufficient ---since if, for example, $f:V\to \re$ is continuous with respect to one norm, it is also continuous with respect to any other equivalent to it--- and for simplicity, from now on, we will use the Euclidean norm.
+\noi $ii$) For our purposes, any norm is sufficient ---since if, for example, $f:V\to \re$ is continuous with respect to one norm, it is also continuous with 
+respect to any other equivalent to it--- and for simplicity, from now on, we will use the Euclidean norm.
 
-\noi $iii$) In this sense, the norms of finite-dimensional vector spaces are equivalent to the one generated by any positive-symmetric element of the outer product of its dual with itself.
+\noi $iii$) In this sense, the norms of finite-dimensional vector spaces are equivalent to the one 
+generated by any positive-symmetric element of the outer product of its dual with itself.
 
-\noi $iv$) Since equivalent norms generate the same topology, we see that in finite-dimensional vector spaces, there is a unique topology associated with all its possible norms. This is usually called the {\bf strong topology}.
+\noi $iv$) Since equivalent norms generate the same topology, we see that in finite-dimensional vector spaces,
+ there is a unique topology associated with all its possible norms. 
+ This is usually called the {\bf strong topology}.
 
 \ejer: Prove that the above is indeed an equivalence relation among norms on a vector space.
 
@@ -435,14 +504,20 @@ This shows that the norm $|\cdot|$ is a continuous function with respect to the 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The norms defined in $V$ naturally induce norms in its dual, $V^{\star}$. This is given by: \begin{equation} \label{eq:norma_inducida_en_dual} |\ve{\omega}| := \max_{|\ve{v}|=1}{|\ve{\omega}(\ve{v})|}. \end{equation} 
+The norms defined in $V$ naturally induce norms in its dual, $V^{\star}$. 
+This is given by: 
+
+\begin{equation} 
+  \label{eq:norma_inducida_en_dual} \|\ve{\omega}\| := \max_{\|\ve{v}\|=1}{\|\ve{\omega}(\ve{v})\|}. 
+\end{equation} 
 
 In other words, the norm of a covector is the maximum value it takes on a unit vector.
 \espa
 
-\ejer: Show that this is a norm and that $|\ve{\omega}(\ve{v})| \leq |\ve{\omega}||\ve{v}|$.
+\ejer: Show that this is a norm and that $\|\ve{\omega}(\ve{v})\| \leq \|\ve{\omega}\|\|\ve{v}\|$.
 
-\ejer: Consider $V=\re^2$ with the norm $|(x,y)|:= \max\{|x|,|y|\}$. What is the induced norm in $V^{\star}$?
+\ejer: Consider $V=\re^2$ with the norm $\|(x,y)\|:= \max\{|x|,|y|\}$. 
+What is the induced norm in $V^{\star}$?
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1141,7 +1216,7 @@ $\ve{e}_2=(0,1)$, we see that its matrix representation is:
 \beq\left(\barr{cc}
      \lambda & \epsilon    \\
      0 &  \lambda
-     \earr\right)
+     \earr\right).
 \eeq
 %
 We see that this operator has only one eigenvalue with multiplicity 2. But it has only one eigenvector, proportional to $\ve{e}_1=(1,0)$. For future use, note that if we define 
@@ -1152,7 +1227,7 @@ the operator is represented by the matrix,
 \beq\left(\barr{cc}
      \lambda & 1    \\
      0 &  \lambda
-     \earr\right)
+     \earr\right).
 \eeq
 
 \espa
