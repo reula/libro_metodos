@@ -1,84 +1,87 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=latex 2020.5.10)  29 SEP 2022 15:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=latex 2024.12.17)  7 FEB 2025 13:26
 entering extended mode
  restricted \write18 enabled.
- Source specials enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **libro_gar.tex
 (./libro_gar.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-05-05> (./book.cls
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+(./book.cls
 Document Class: book 2005/09/16 v1.4f Standard LaTeX document class
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/bk10.clo
-File: bk10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count167
-\c@chapter=\count168
-\c@section=\count169
-\c@subsection=\count170
-\c@subsubsection=\count171
-\c@paragraph=\count172
-\c@subparagraph=\count173
-\c@figure=\count174
-\c@table=\count175
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen134
+\c@part=\count188
+\c@chapter=\count189
+\c@section=\count190
+\c@subsection=\count191
+\c@subsubsection=\count192
+\c@paragraph=\count193
+\c@subparagraph=\count194
+\c@figure=\count195
+\c@table=\count196
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: dvips.def on input line 147.
+Package color Info: Driver file: dvips.def on input line 149.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/dvips.def
-File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/dvips.def
+File: dvips.def 2022/09/22 v3.1e Graphics/color driver for dvips
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/dvipsnam.def
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2020/04/28 3.43 The Babel package
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2020/04/28 3.43 Babel common definitions
-\babel@savecnt=\count176
-\U@D=\dimen135
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read2
 )
-\bbl@dirlevel=\count177
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/02/07 v24.2 The Babel package
+\babel@savecnt=\count197
+\U@D=\dimen141
+\l@unhyphenated=\language89
 
-(/usr/local/texlive/2020/texmf-dist/tex/generic/babel-spanish/spanish.ldf
-Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
-\es@quottoks=\toks15
-\es@quotdepth=\count178
-Package babel Info: Making " an active character on input line 561.
-Package babel Info: Making . an active character on input line 662.
-Package babel Info: Making < an active character on input line 707.
-Package babel Info: Making > an active character on input line 707.
+(/usr/local/texlive/2024/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count198
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+\es@quottoks=\toks17
+\es@quotdepth=\count199
+Package babel Info: Making " an active character on input line 570.
+Package babel Info: Making . an active character on input line 675.
+Package babel Info: Making < an active character on input line 722.
+Package babel Info: Making > an active character on input line 722.
 ))
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/latexsym.sty
+(/usr/local/texlive/2024/texmf-dist/tex/generic/babel/locale/es/babel-spanish.t
+ex
+Package babel Info: Importing font and identification data for spanish
+(babel)             from babel-es.ini. Reported on input line 11.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks16
-\inpenc@posthook=\toks17
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/latin9.def
-File: latin9.def 2018/08/11 v1.3c Input encoding file
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/latin9.def
+File: latin9.def 2021/02/14 v1.3d Input encoding file
 ))
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/lmodern.sty
-Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
@@ -112,124 +115,124 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks18
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 105.
+Package graphics Info: Driver file: dvips.def on input line 107.
 )
-\Gin@req@height=\dimen136
-\Gin@req@width=\dimen137
+\Gin@req@height=\dimen142
+\Gin@req@width=\dimen143
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mathdesign.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mathdesign.sty
 Package: mathdesign 2013/08/29 v2.31 Math Design Project
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdugm/mdugm.cfg)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdugm/mdugm.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdugm/mdugm.cfg)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdugm/mdugm.sty
 Package: mdugm 2013/08/29 v2.31 urw garamondno8 + mdugm (Math Design Project)
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdfont.def
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdfont.def
 File: mdfont.def 2013/08/29 v2.31 (Math Design Project)
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdsffont.def
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdsffont.def
 File: mdsffont.def 2013/08/29 v2.31 (Math Design Project)
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 53.
+LaTeX Info: Font shape OT1/phv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 53.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 56.
+LaTeX Info: Font shape OT1/phv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 56.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 59.
+LaTeX Info: Font shape OT1/phv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 59.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 79.
+LaTeX Info: Font shape OT1/phv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 79.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 102.
+LaTeX Info: Font shape T1/phv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 102.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 105.
+LaTeX Info: Font shape T1/phv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 105.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 108.
+LaTeX Info: Font shape T1/phv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 108.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 128.
+LaTeX Info: Font shape T1/phv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 128.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 259.
+LaTeX Info: Font shape OT1/uhv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 259.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 262.
+LaTeX Info: Font shape OT1/uhv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 262.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 265.
+LaTeX Info: Font shape OT1/uhv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 265.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 268.
+LaTeX Info: Font shape OT1/uhv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 268.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 313.
+LaTeX Info: Font shape T1/uhv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 313.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 316.
+LaTeX Info: Font shape T1/uhv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 316.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 319.
+LaTeX Info: Font shape T1/uhv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 319.
 
 
-LaTeX Warning: Font shape declaration has incorrect series value `mc'.
-               It should not contain an `m'! Please correct it.
-               Found on input line 322.
+LaTeX Info: Font shape T1/uhv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 322.
 
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdttfont.def
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdttfont.def
 File: mdttfont.def 2013/08/29 v2.31 (Math Design Project)
 )
 \symmdcal=\mathgroup5
@@ -283,21 +286,21 @@ LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
 (Font)                  OMS/mdugm/m/n --> OMS/mdugm/m/n on input line 167.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
-(/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks19
-\XKV@tempa@toks=\toks20
+(/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks21
+\XKV@tempa@toks=\toks22
 )
-\XKV@depth=\count179
+\XKV@depth=\count266
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 LaTeX Font Info:    Trying to load font information for T1+mdugm on input line 
 186.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdugm/t1mdugm.fd
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdugm/t1mdugm.fd
 File: t1mdugm.fd 2013/08/29 Fontinst v1.933 font definitions for T1/mdugm.
 )
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 449.
@@ -312,50 +315,50 @@ Now handling font encoding MDB ...
 \symmathdesignB=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `mathdesignB' in version `bold'
 (Font)                  MDB/mdugm/m/n --> MDB/mdugm/b/n on input line 498.
-\@emptytoks=\toks21
+\@emptytoks=\toks23
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 532.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 533.
-\rulethickness=\skip49
+\rulethickness=\skip50
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ))
 (./format_libro.tex
-(/usr/local/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
+(/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count180
-\Gm@cntv=\count181
-\c@Gm@tempcnt=\count182
-\Gm@bindingoffset=\dimen138
-\Gm@wd@mp=\dimen139
-\Gm@odd@mp=\dimen140
-\Gm@even@mp=\dimen141
-\Gm@layoutwidth=\dimen142
-\Gm@layoutheight=\dimen143
-\Gm@layouthoffset=\dimen144
-\Gm@layoutvoffset=\dimen145
-\Gm@dimlist=\toks22
+\Gm@cnth=\count267
+\Gm@cntv=\count268
+\c@Gm@tempcnt=\count269
+\Gm@bindingoffset=\dimen144
+\Gm@wd@mp=\dimen145
+\Gm@odd@mp=\dimen146
+\Gm@even@mp=\dimen147
+\Gm@layoutwidth=\dimen148
+\Gm@layoutheight=\dimen149
+\Gm@layouthoffset=\dimen150
+\Gm@layoutvoffset=\dimen151
+\Gm@dimlist=\toks24
 ))
-(/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
-File: l3backend-dvips.def 2020-05-05 L3 backend support: dvips
-\l__pdf_internal_box=\box45
-\g__pdf_backend_object_int=\count183
-\l__pdf_backend_content_box=\box46
-\l__pdf_backend_model_box=\box47
-\g__pdf_backend_annotation_int=\count184
-\g__pdf_backend_link_int=\count185
-\g__pdf_backend_link_sf_int=\count186
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+File: l3backend-dvips.def 2024-02-20 L3 backend support: dvips
+\l__pdf_internal_box=\box51
+\g__pdf_backend_object_int=\count270
+\l__pdf_backend_content_box=\box52
+\l__pdf_backend_model_box=\box53
+\g__pdf_backend_annotation_int=\count271
+\g__pdf_backend_link_int=\count272
+\g__pdf_backend_link_sf_int=\count273
 )
 (./libro_gar.aux (./extdef_libro.aux) (./Chapters/title_UNC.aux)
-LaTeX Info: Redefining \. on input line 9.
-LaTeX Info: Redefining \% on input line 9.
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
 
 (./Chapters/chap0.aux) (./Chapters/chap01.aux) (./Chapters/chap1.aux)
 (./Chapters/chap2.aux) (./Chapters/chap3.aux) (./Chapters/chap4.aux)
@@ -384,7 +387,7 @@ LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 53.
 LaTeX Font Info:    Trying to load font information for MDA+cmr on input line 5
 3.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdacmr.fd
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdacmr.fd
 File: mdacmr.fd 
 )
 LaTeX Font Info:    ... okay on input line 53.
@@ -392,7 +395,7 @@ LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 53.
 LaTeX Font Info:    Trying to load font information for MDB+cmr on input line 5
 3.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdbcmr.fd
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdbcmr.fd
 File: mdbcmr.fd 
 )
 LaTeX Font Info:    ... okay on input line 53.
@@ -436,10 +439,10 @@ LaTeX Info: Redefining \% on input line 53.
 \openout2 = `extdef_libro.aux'.
 
 (./extdef_libro.tex
-\c@teo=\count187
-\c@cor=\count188
-\c@lem=\count189
-\c@pro=\count190
+\c@teo=\count274
+\c@cor=\count275
+\c@lem=\count276
+\c@pro=\count277
 )
 \openout2 = `Chapters/title_UNC.aux'.
 
@@ -448,89 +451,61 @@ LaTeX Info: Redefining \% on input line 53.
 
 
 
-] [2] [3] [4]
-LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <10> not available
-(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 18.
-LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <10> not available
-(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 18.
-LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <20.74> not available
-(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 18.
-LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 18.
-LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <14.4> not available
-(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 20.
-LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 20.
 
-
-! LaTeX Error: Cannot determine size of graphic in Figure/logo.pdf (no Bounding
-Box).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.39  \includegraphics{Figure/logo.pdf}
-                                       %
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: Figure/logo.pdf Graphic file (type eps)
-<Figure/logo.pdf>) [5]
+] [2] [3] [4]) [5]
 \openout2 = `Chapters/chap0.aux'.
 
- (./Chapters/chap0.tex [6
+
+(./Chapters/chap0.tex [6
+
 
 
 
 ]
-LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <12> not available
-(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 7.
-LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <12> not available
-(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 7.
 LaTeX Font Info:    Trying to load font information for OT1+mdugm on input line
  10.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdugm/ot1mdugm.fd
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdugm/ot1mdugm.fd
 File: ot1mdugm.fd 2013/08/29 Fontinst v1.933 font definitions for OT1/mdugm.
 )
 LaTeX Font Info:    Trying to load font information for OML+mdugm on input line
  10.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdugm/omlmdugm.fd
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdugm/omlmdugm.fd
 File: omlmdugm.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdugm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+mdugm on input line
  10.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdugm/omsmdugm.fd
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdugm/omsmdugm.fd
 File: omsmdugm.fd 2013/08/29 Fontinst v1.933 font definitions for OMS/mdugm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+mdugm on input line
  10.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdugm/omxmdugm.fd
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdugm/omxmdugm.fd
 File: omxmdugm.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdugm.
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 10
 .
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/ulasy.fd
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for MDA+mdugm on input line
  10.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdugm/mdamdugm.fd
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdugm/mdamdugm.fd
 File: mdamdugm.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdugm.
 )
 LaTeX Font Info:    Trying to load font information for MDB+mdugm on input line
  10.
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mathdesign/mdugm/mdbmdugm.fd
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdugm/mdbmdugm.fd
 File: mdbmdugm.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdugm.
 ))
 [7] [8
+
 
 
 ] (./libro_gar.toc
@@ -561,24 +536,12 @@ LaTeX Info: Redefining \% on input line 1.
 
  (./Chapters/chap1.tex
 \hfil Cap\'{\i }tulo 1.
-LaTeX Font Info:    Font shape `T1/mdugm/b/fsc' in size <12> not available
-(Font)              Font shape `T1/mdugm/bx/fsc' tried instead on input line 6.
-
-LaTeX Font Info:    Font shape `T1/mdugm/bx/fsc' in size <12> not available
-(Font)              Font shape `T1/mdugm/mb/fsc' tried instead on input line 6.
-
 [17
 
 
 
-] [18] [19]
-LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <9> not available
-(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 207.
 
-LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 207.
-
- [20]
+] [18] [19] [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
@@ -725,6 +688,7 @@ LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <5> not available
 
 
 
+
 ] [28] [29]
 LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <8> not available
 (Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 234
@@ -816,8 +780,8 @@ LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <6> not available
 .
 
 Overfull \hbox (44.51915pt too wide) in paragraph at lines 253--258
-[][]\T1/mdugm/m/n/10 Sin em-bar-go na-da nos im-pi-de con-si-de-rar tam-bién \T
-1/mdugm/mb/n/10 ma-pas mul-ti-li-nea-les [] \T1/mdugm/m/n/10 de $[]$
+[]\T1/mdugm/m/n/10 Sin em-bar-go na-da nos im-pi-de con-si-de-rar tam-bién \T1/
+mdugm/mb/n/10 ma-pas mul-ti-li-nea-les [] \T1/mdugm/m/n/10 de $[]$
  []
 
 [30] [31] [32] [33] (./Figure/m2_1.pstex_t
@@ -866,7 +830,7 @@ LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <12> not available
 (Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 14.
 
 ) [34]
-Overfull \hbox (5.18904pt too wide) in paragraph at lines 542--547
+Overfull \hbox (5.18904pt too wide) in paragraph at lines 544--549
 $[]$\T1/mdugm/m/n/10 : Prue-be que $\OMS/mdugm/m/n/10 j[]\OT1/mdugm/m/n/10 ([]\
 OML/mdugm/m/it/10 ; []\OT1/mdugm/m/n/10 )\OMS/mdugm/m/n/10 j[] ^^T jj[]jj[]jj[]
 jj[]$\T1/mdugm/m/n/10 . Ayu-da: Con-si-de-re el po-li-no-mio: $\OML/mdugm/m/it/
@@ -875,58 +839,58 @@ jj[]$\T1/mdugm/m/n/10 . Ayu-da: Con-si-de-re el po-li-no-mio: $\OML/mdugm/m/it/
 
 [35] [36] [37]
 LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <9> not available
-(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 827
+(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 829
 .
 LaTeX Font Info:    Font shape `OT1/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 827
+(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 829
 .
 LaTeX Font Info:    Font shape `OML/mdugm/b/it' in size <9> not available
 (Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 82
-7.
+9.
 LaTeX Font Info:    Font shape `OML/mdugm/bx/it' in size <9> not available
 (Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 82
-7.
+9.
 LaTeX Font Info:    Font shape `OMS/mdugm/b/n' in size <9> not available
-(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 827
+(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 829
 .
 LaTeX Font Info:    Font shape `OMS/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 827
+(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 829
 .
 LaTeX Font Info:    Font shape `OMX/mdugm/b/n' in size <9> not available
-(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 827
+(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 829
 .
 LaTeX Font Info:    Font shape `OMX/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 827
+(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 829
 .
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 827.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 829.
 LaTeX Font Info:    Font shape `OML/mdugm/b/n' in size <9> not available
-(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 827
+(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 829
 .
 LaTeX Font Info:    Font shape `OML/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 827
+(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 829
 .
 LaTeX Font Info:    Font shape `MDA/mdugm/b/n' in size <9> not available
-(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 827
+(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 829
 .
 LaTeX Font Info:    Font shape `MDA/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 827
+(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 829
 .
 LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <9> not available
-(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 827
+(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 829
 .
 LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 827
+(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 829
 .
  [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49]
 [50] [51] [52]
-Overfull \hbox (19.88634pt too wide) in paragraph at lines 1855--1859
+Overfull \hbox (19.88634pt too wide) in paragraph at lines 1858--1862
 \T1/mdugm/m/n/10 tie-nen un sig-ni-fi-ca-do fí-si-co cla-ro, son los lla-ma-dos
  mo-dos nor-ma-les --caso unidimensional--
  []
 
 [53]
-Underfull \vbox (badness 5519) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [54]
 (./Figure/m2_2.pstex_t
@@ -935,11 +899,11 @@ File: Figure/m2_2.pstex Graphic file (type eps)
 File: Figure/m2_3.pstex Graphic file (type eps)
 
 <Figure/m2_3.pstex>)
-Overfull \hbox (8.05147pt too wide) in paragraph at lines 2163--2168
-[]\T1/mdugm/m/n/10 donde $\OML/mdugm/m/it/10 t[]$ \T1/mdugm/m/n/10 es la re-pre
--sen-ta-ción del pro-duc-to es-ca-lar y $\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 
-t[]\OT1/mdugm/m/n/10 )[][]$ \T1/mdugm/m/n/10 el de su in-ver-sa ($\OML/mdugm/m/
-it/10 t[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t[]\OT1/mdugm/m/n/10 )[] =
+Overfull \hbox (8.05147pt too wide) in paragraph at lines 2166--2171
+\T1/mdugm/m/n/10 donde $\OML/mdugm/m/it/10 t[]$ \T1/mdugm/m/n/10 es la re-pre-s
+en-ta-ción del pro-duc-to es-ca-lar y $\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t[
+]\OT1/mdugm/m/n/10 )[][]$ \T1/mdugm/m/n/10 el de su in-ver-sa ($\OML/mdugm/m/it
+/10 t[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t[]\OT1/mdugm/m/n/10 )[] =
  []
 
 [57] [58] (./Figure/m2_4.pstex_t
@@ -949,6 +913,7 @@ File: Figure/m2_4.pstex Graphic file (type eps)
 \openout2 = `Chapters/chap3.aux'.
 
  (./Chapters/chap3.tex [64
+
 
 
 
@@ -976,6 +941,12 @@ File: Figure/m3_7.pstex Graphic file (type eps)
 [72] [73] (./Figure/m3_8.pstex_t
 File: Figure/m3_8.pstex Graphic file (type eps)
  <Figure/m3_8.pstex>) [74] [75] [76] [77]
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <10> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 835.
+
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <10> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 835.
+
 LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <7> not available
 (Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 835.
 
@@ -1001,10 +972,18 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <6> not available
 (Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 845.
 
 
-[78] [79] [80] [81] [82] [83] [84]) [85]
+[78] [79] [80] [81] [82] [83] [84]
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <9> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 1279
+.
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <9> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 1279
+.
+) [85]
 \openout2 = `Chapters/chap4.aux'.
 
  (./Chapters/chap4.tex [86
+
 
 
 
@@ -1015,7 +994,12 @@ File: Figure/m4_1.pstex Graphic file (type eps)
  <Figure/m4_1.pstex>) [88] [89] [90]
 (./Figure/m4_2_b.pstex_t
 File: Figure/m4_2_b.pstex Graphic file (type eps)
- <Figure/m4_2_b.pstex>) (./Figure/m4_2.pstex_t
+ <Figure/m4_2_b.pstex>
+LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <12> not available
+(Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 14.
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <12> not available
+(Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 14.
+) (./Figure/m4_2.pstex_t
 File: Figure/m4_2.pstex Graphic file (type eps)
 
 <Figure/m4_2.pstex>) [91] [92] (./Figure/m4_3.pstex_t
@@ -1044,8 +1028,8 @@ File: Figure/m4_7.pstex Graphic file (type eps)
  <Figure/m4_7.pstex>) [100] [101]
 [102]
 Overfull \hbox (0.96628pt too wide) in paragraph at lines 984--986
-[][]\T1/mdugm/m/n/10 Probaremos es-te teo-re-ma más ade-lan-te, lue-go de in-tr
-o-du-cir las he-rra-mien-tas mate-
+[]\T1/mdugm/m/n/10 Probaremos es-te teo-re-ma más ade-lan-te, lue-go de in-tro-
+du-cir las he-rra-mien-tas mate-
  []
 
 [103] [104] [105] [106] [107]) [108]
@@ -1057,22 +1041,23 @@ o-du-cir las he-rra-mien-tas mate-
 
 
 
+
 ]
 Underfull \vbox (badness 1028) has occurred while \output is active []
 
  [110]
 Overfull \hbox (9.86539pt too wide) in paragraph at lines 198--201
-[]\T1/mdugm/m/n/10 donde $[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t\OT1/mdugm/m
-/n/10 ) : \OML/mdugm/m/it/10 I \OMS/mdugm/m/n/10 ! []$ \T1/mdugm/m/n/10 es in-t
-e-gra-ble. Ve-re-mos que si co-no-ce-mos el ope-ra-dor $[][]$ correspon-
+\T1/mdugm/m/n/10 donde $[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t\OT1/mdugm/m/n
+/10 ) : \OML/mdugm/m/it/10 I \OMS/mdugm/m/n/10 ! []$ \T1/mdugm/m/n/10 es in-te-
+gra-ble. Ve-re-mos que si co-no-ce-mos el ope-ra-dor $[][]$ correspon-
  []
 
 [111] [112] [113]
 Overfull \hbox (3.75313pt too wide) in paragraph at lines 341--357
-[]\T1/mdugm/m/n/10 y ve-mos que si $\OML/mdugm/m/it/10 ^^U[] \OMS/mdugm/m/n/10 
-^^@ \OML/mdugm/m/it/10 ^^U[] \OMS/mdugm/m/n/10 6\OT1/mdugm/m/n/10 = 0$ \T1/mdug
-m/m/n/10 lue-go la so-lu-ción es una su-ma de ex-po-nen-cia-les, $\OML/mdugm/m/
-it/10 x[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t\OT1/mdugm/m/n/10 ) =
+\T1/mdugm/m/n/10 y ve-mos que si $\OML/mdugm/m/it/10 ^^U[] \OMS/mdugm/m/n/10 ^^
+@ \OML/mdugm/m/it/10 ^^U[] \OMS/mdugm/m/n/10 6\OT1/mdugm/m/n/10 = 0$ \T1/mdugm/
+m/n/10 lue-go la so-lu-ción es una su-ma de ex-po-nen-cia-les, $\OML/mdugm/m/it
+/10 x[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t\OT1/mdugm/m/n/10 ) =
  []
 
 [114] [115] [116] [117] [118] [119]) [120]
@@ -1086,10 +1071,11 @@ File: Figure/m6_1.pstex Graphic file (type eps)
 
 
 
+
 ]
 Overfull \hbox (0.21632pt too wide) in paragraph at lines 99--101
-[][]\T1/mdugm/m/n/10 El si-guien-te teo-re-ma nos brin-da una he-rra-mien-ta mu
-y prác-ti-ca pa-ra co-no-cer cuan-
+[]\T1/mdugm/m/n/10 El si-guien-te teo-re-ma nos brin-da una he-rra-mien-ta muy 
+prác-ti-ca pa-ra co-no-cer cuan-
  []
 
 [122] (./Figure/m6_2.pstex_t
@@ -1097,17 +1083,17 @@ File: Figure/m6_2.pstex Graphic file (type eps)
  <Figure/m6_2.pstex>) [123] (./Figure/m6_3.pstex_t
 File: Figure/m6_3.pstex Graphic file (type eps)
 
-<Figure/m6_3.pstex>) [124] [125] [126] [127] [128] [129]) [130]
+<Figure/m6_3.pstex>) [124] [125] [126] [127] [128]) [129]
 \openout2 = `Chapters/chap7.aux'.
 
+ (./Chapters/chap7.tex [130
 
-(./Chapters/chap7.tex
+
+
+
+]
 \hfil Cap\'{\i }tulo 7.
-[131
-
-
-
-] [132] [133] [134] (./Figure/m7_1.pstex_t
+[131] [132] [133] [134] (./Figure/m7_1.pstex_t
 File: Figure/m7_1.pstex Graphic file (type eps)
  <Figure/m7_1.pstex>) [135])
 [136]
@@ -1116,6 +1102,7 @@ File: Figure/m7_1.pstex Graphic file (type eps)
  (./Chapters/chap8.tex
 \hfil Cap\'{\i }tulo 8.
 [137
+
 
 
 
@@ -1145,6 +1132,7 @@ File: Figure/m8_5.pstex Graphic file (type eps)
 
 
 
+
 ]
 \hfil Cap\'{\i }tulo 9.
 [167] [168] [169] [170] [171] [172] [173] [174] [175] [176]) [177]
@@ -1152,6 +1140,7 @@ File: Figure/m8_5.pstex Graphic file (type eps)
 
 
 (./Chapters/chap10.tex [178
+
 
 
 
@@ -1164,8 +1153,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--92
 
 [180] [181] [182] [183] [184]
 Overfull \hbox (2.45732pt too wide) in paragraph at lines 453--458
-[][]\T1/mdugm/m/n/10 Otra pro-pie-dad in-tere-san-te de la con-vo-lu-ción se ob
--tie-ne al no-tar que co-mo $[]\OT1/mdugm/m/n/10 ([][])$
+[]\T1/mdugm/m/n/10 Otra pro-pie-dad in-tere-san-te de la con-vo-lu-ción se ob-t
+ie-ne al no-tar que co-mo $[]\OT1/mdugm/m/n/10 ([][])$
  []
 
 [185] [186] [187] [188] [189] [190] [191]) [192]
@@ -1174,6 +1163,7 @@ Overfull \hbox (2.45732pt too wide) in paragraph at lines 453--458
  (./Chapters/chap11.tex
 \hfil Cap\'{\i }tulo 11.
 [193
+
 
 
 
@@ -1203,6 +1193,7 @@ File: Figure/m12_1.pstex Graphic file (type eps)
 
 
 
+
 ] (./Figure/m12_2.pstex_t
 File: Figure/m12_2.pstex Graphic file (type eps)
 
@@ -1213,6 +1204,7 @@ File: Figure/m12_2.pstex Graphic file (type eps)
  (./Chapters/chap13.tex
 \hfil Cap\'{\i }tulo 13.
 [217
+
 
 
 
@@ -1251,18 +1243,19 @@ File: Figure/m13_8b.pstex Graphic file (type eps)
 
 
 
+
 ]
 \hfil Cap\'{\i }tulo 14.
 (./Figure/m14_1.pstex_t
 File: Figure/m14_1.pstex Graphic file (type eps)
  <Figure/m14_1.pstex>) [235]
 Overfull \hbox (2.62007pt too wide) in paragraph at lines 96--100
-[]\T1/mdugm/m/n/10 donde vi-mos que las au-to-fun-cio-nes $\OML/mdugm/m/it/10 v
-[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 x\OT1/mdugm/m/n/10 )$ \T1/mdugm/m/n/10 
-con $\OML/mdugm/m/it/10 v[]\OT1/mdugm/m/n/10 (0) = \OML/mdugm/m/it/10 v[]\OT1/m
-dugm/m/n/10 (1) = 0$ \T1/mdugm/m/n/10 son $\OML/mdugm/m/it/10 v[]\OT1/mdugm/m/n
-/10 (\OML/mdugm/m/it/10 x\OT1/mdugm/m/n/10 ) = [](\OML/mdugm/m/it/10 ^^Ynx\OT1/
-mdugm/m/n/10 )$
+\T1/mdugm/m/n/10 donde vi-mos que las au-to-fun-cio-nes $\OML/mdugm/m/it/10 v[]
+\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 x\OT1/mdugm/m/n/10 )$ \T1/mdugm/m/n/10 co
+n $\OML/mdugm/m/it/10 v[]\OT1/mdugm/m/n/10 (0) = \OML/mdugm/m/it/10 v[]\OT1/mdu
+gm/m/n/10 (1) = 0$ \T1/mdugm/m/n/10 son $\OML/mdugm/m/it/10 v[]\OT1/mdugm/m/n/1
+0 (\OML/mdugm/m/it/10 x\OT1/mdugm/m/n/10 ) = [](\OML/mdugm/m/it/10 ^^Ynx\OT1/md
+ugm/m/n/10 )$
  []
 
 [236] [237] (./Figure/m14_2.pstex_t
@@ -1282,6 +1275,7 @@ dugm/m/n/10 y $\OML/mdugm/m/n/10
 \openout2 = `Chapters/chap15.aux'.
 
  (./Chapters/chap15.tex [240
+
 
 
 
@@ -1306,6 +1300,7 @@ Underfull \vbox (badness 1917) has occurred while \output is active []
 
 
 
+
 ]
 \hfil Cap\'{\i }tulo 16.
 [251] [252]) [253]
@@ -1315,12 +1310,14 @@ Underfull \vbox (badness 1917) has occurred while \output is active []
 
 
 
+
 ] [255]) [256] [257
+
 
 ]
 (./libro_gar.aux (./extdef_libro.aux) (./Chapters/title_UNC.aux)
-LaTeX Info: Redefining \. on input line 9.
-LaTeX Info: Redefining \% on input line 9.
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
 
 (./Chapters/chap0.aux) (./Chapters/chap01.aux) (./Chapters/chap1.aux)
 (./Chapters/chap2.aux) (./Chapters/chap3.aux) (./Chapters/chap4.aux)
@@ -1328,14 +1325,19 @@ LaTeX Info: Redefining \% on input line 9.
 (./Chapters/chap8.aux) (./Chapters/chap9.aux) (./Chapters/chap10.aux)
 (./Chapters/chap11.aux) (./Chapters/chap12.aux) (./Chapters/chap13.aux)
 (./Chapters/chap14.aux) (./Chapters/chap15.aux) (./Chapters/preguntas.aux)
-(./Chapters/bib.aux)) ) 
+(./Chapters/bib.aux))
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+ ) 
 Here is how much of TeX's memory you used:
- 5759 strings out of 480682
- 81104 string characters out of 5904657
- 325998 words of memory out of 5000000
- 21199 multiletter control sequences out of 15000+600000
- 739905 words of font info for 174 fonts, out of 8000000 for 9000
+ 7543 strings out of 474117
+ 134070 string characters out of 5743707
+ 1953184 words of memory out of 5000000
+ 29518 multiletter control sequences out of 15000+600000
+ 765636 words of font info for 186 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,69p,1099b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,15n,79p,894b,784s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on libro_gar.dvi (257 pages, 1132948 bytes).
+Output written on libro_gar.dvi (257 pages, 1082476 bytes).

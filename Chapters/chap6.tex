@@ -206,7 +206,7 @@ y obtenemos
 \eeq
 con autovalores  $\lambda_{\pm} = \dip\frac{-k \pm \sqrt{k^2 + 4}}{2}$, lo que 
 implica
-$\Re (\lambda_{\pm}) > 0$ y así inestabilidad.
+$\Re (\lambda_{+}) > 0$ y así inestabilidad.
 
 De los ejemplos se ve que este teorema es de aplicación amplia.
 Como estabilidad es una noción local para facilitar la demostración tomaremos
@@ -276,13 +276,13 @@ no lo es es más complicado y para ello usaremos los siguientes lemas.
 A = diag.(\lambda_1,...,\lambda_n) + \epsilon \Delta, 
 \]
 con $\Delta$ una matriz con componentes distintas de cero (e igual a uno) a lo sumo en la diagonal 
-inferior, es decir,
+superior, es decir,
 \beq
-A = \lp \barr{ccccccc} \lam_1 &0&0&.&.&.&0\\
-                       \eps &\lam_2& 0&.&.&.& 0\\
+A = \lp \barr{ccccccc} \lam_1 &\eps&0&.&.&.&0\\
+                       0 &\lam_2& 0&.&.&.& 0\\
                        .&.&.&.&.&.&.\\
-                       0&.&.&.&.&.&0 \\
-                       0&.&.&.&.&\eps &\lam_r
+                       0&.&.&.&.&.&\eps \\
+                       0&.&.&.&.& 0 &\lam_r
 \earr \rp .                    
 \eeq
 \elem
@@ -292,18 +292,18 @@ A = \lp \barr{ccccccc} \lam_1 &0&0&.&.&.&0\\
 de la base de Jordan de $A$. Por ejemplo
 en $C^3$ si $\{\ti{\ve{u}}_i\}$ es tal que en ella,
 \beq
-A = \lp \barr{ccc} \lam &0   &  0  \\
-                   1    &\lam & 0  \\
-                   0    & 1   &\lam \\
+A = \lp \barr{ccc} \lam & 1   &  0  \\
+                   0    &\lam & 1  \\
+                   0    & 0   &\lam \\
 \earr \rp .
 \eeq
 definiendo $\dip\ve{u}_1 = \frac{\ti{\ve{u}}_1}{\epsilon^2}$, 
 $\dip \ve{u}_2 = \frac{\ti{\ve{u}}_2}{\epsilon}$, 
 y $\ve{u}_3 = \ti{\ve{u}}_3$, vemos que en esta nueva base,
 \beq
-A = \lp \barr{ccc} \lam & 0    &  0  \\
-                   \eps &\lam  &  0  \\
-                   0    & \eps &\lam \\
+A = \lp \barr{ccc} \lam & \eps    &  0  \\
+                   0 &\lam  &  \eps  \\
+                   0    & 0 &\lam \\
 \earr \rp .
 \eeq
 [$\dip A\ve{u}_1=A\frac{\ti{\ve{u}}_1}{\epsilon^2} =\frac{\lambda \ti{\ve{u}}_1}{\epsilon^2} 
@@ -311,10 +311,10 @@ A = \lp \barr{ccc} \lam & 0    &  0  \\
 \lambda \ti{\ve{u}}_2}{\epsilon} 
 =\epsilon \ve{u}_1 + \lambda \ve{u}_2$, etc.].
 
-\blem El conjunto de tensores simétricas positivas es abierto en el
-conjunto de formas simétricas, es decir si $\ve{\ro}_0$ es simétrica y
-positiva y $\ve{\ro}_1 $ es simétrica luego existe $\epsilon > 0$ tal que
-$\ve{\ro}_0 + \epsilon \ve{\ro}_1 $ es también positiva.
+\blem El conjunto de tensores simétricos positivos es abierto en el
+conjunto de tensores simétricos, es decir si $\ve{\ro}_0$ es simétrico y
+positivo y $\ve{\ro}_1 $ es simétrico luego existe $\epsilon > 0$ tal que
+$\ve{\ro}_0 + \epsilon \ve{\ro}_1 $ es también positivo.
 \elem
 
 \espa
@@ -404,7 +404,7 @@ $v(x)=(ax+bx^2)\frac{\pa}{\pa x}$ y $\ve{\ro}(x,x) = \alpha x^2$ luego,
                + \frac{2b}{\alpha^{1/2}}\ve{\ro}(x,x)^{3/2}
 \earr \eeq
 
-Si $\ve{x}$ es suficientemente peque\~no, [$|\ve{x}| < C$ para algún $C>0$] 
+Si $\ve{x}$ es suficientemente peque\~no, [es decir $|\ve{x}| < C$ para algún $C>0$ suficientemente pequeño] 
 se cumple que 
 $O(\ve{\ro}(\ve{x},\ve{x})^{3/2}) < \gamma (\ve{\ro}(\ve{x},\ve{x}))$ y por lo tanto tenemos que
 \beq
@@ -423,7 +423,7 @@ r(t) = \ln \ve{\ro}(\fit,\fit)
 \eeq
 y derivando con respecto a $t$ obtenemos,
 \beq \barr{rcl}
-\dot{r}(t) &=& \frac{2\;\dot{\ve{\ro}(\fit,\fit)}}{\ve{\ro}(\fit,\fit)}=
+\dot{r}(t) &=& 2\;\frac{\ve{\ro}(\mbox{$\dot\varphi (t)$},\fit)}{\ve{\ro}(\fit,\fit)}=
        \frac{\ve{v}(\fit )(\ve{\ro}(\fit,\fit))}{\ve{\ro} (\fit,\fit)} \\ [3mm]
      &\leq& - \gamma.
 \earr \eeq       

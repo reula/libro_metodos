@@ -872,7 +872,7 @@ concepto, el de espacio dual de un espacio de Hilbert. Podríamos
 definir el dual de un espacio de Hilbert de la misma forma que lo
 hicimos para espacios vectoriales de dimensión finita, es decir como
 el conjunto de mapas lineales de $H$ en $\ve C$. El espacio vectorial así
-obtenido no hereda $H$ ninguna propiedad interesante por ser éste un
+obtenido no hereda de $H$ ninguna propiedad interesante por ser éste un
 espacio demasiado grande.
 Para lograr un espacio más peque\~no y con propiedades atractivas
 restringiremos los mapas lineales a aquellos que sean continuos. 
@@ -881,7 +881,8 @@ el {\bf espacio dual} a $H,\;H'$ será el conjunto de mapas lineales
 continuos de $H$ en $\ve C$. 
 ¿Qué mapas están en $H'$? 
 Note que si $y\in H$ luego el mapa $\fip_y:H\to \ve C$ 
-definido por $\fip_y(x)=\langle y,x\rangle$ es lineal y como $|\fip(x)|\leq\|y\|_H\:\|x\|_H$
+definido por $\fip_y(x)=\langle y,x\rangle$ es lineal y como 
+$|\fip_y(x)|\leq\|y\|_H\:\|x\|_H$
 también es continuo. Este mapa nos da una correspondencia 
 inyectiva (no canónica, ya que depende del producto escalar) entre los
 elementos de $H$ y los de su dual.
@@ -954,7 +955,7 @@ En $l^2$ sea $e_1 = (1,0,0,...)$, $e_2 = (0,1,0,...)$, etc.
 
 \ejer: 
 Muestre que si $a \in l^2 $ luego 
-$\|a-\sum_{n=1}^i\langle a,e_n\rangle e_n \|_{l^2_{i\to \ifi}} \longrightarrow 0 $.
+$\|a-\sum_{n=1}^i\langle e_n, a \rangle e_n \|_{l^2_{i\to \ifi}} \longrightarrow 0 $.
 
 \bcor 
 Todo espacio de Hilbert tiene una base ortonormal.
@@ -1334,40 +1335,40 @@ Probaremos solo la convergencia puntual, la uniforme sigue fácilmente y la
 prueba de ello no agrega nada nuevo.
 Comenzamos con el siguiente cálculo,
 \begin{eqnarray}
-  S_N(f)(\theta) &:=& \frac{1}{\sqrt{2\pi}}\sum_{n=-N}^{N} f_n e^{in\theta} \nn
+  S_N(f)(x) &:=& \frac{1}{\sqrt{2\pi}}\sum_{n=-N}^{N} f_n e^{inx} \nn
             &=&  \frac{1}{{2\pi}}\sum_{n=-N}^{N} 
-                 \int_0^{2\pi}e^{in\theta'}f(\theta') e^{in\theta}d\theta' \nn
-            &=& \frac{1}{{2\pi}}\int_0^{2\pi}f(\theta')
-                (\sum_{n=-N}^{N}e^{in(\theta-\theta')})d\theta' \nn
-            &=&  \int_0^{2\pi}f(\theta')D_N(\theta-\theta')d\theta'          
+                 \int_0^{2\pi}e^{inx'}f(x') e^{inx}dx' \nn
+            &=& \frac{1}{{2\pi}}\int_0^{2\pi}f(x')
+                (\sum_{n=-N}^{N}e^{in(x-x')})dx' \nn
+            &=&  \int_0^{2\pi}f(x')D_N(x-x')dx'          
 \end{eqnarray}
 donde hemos definido el \textbf{núcleo de Dirichlet}~\index{Dirichlet!núcleo}
 \begin{equation}
-  D_N(\theta-\theta'):= \frac{1}{{2\pi}}\sum_{n=-N}^{N}e^{in(\theta-\theta')}.
+  D_N(x-x'):= \frac{1}{{2\pi}}\sum_{n=-N}^{N}e^{in(x-x')}.
 \end{equation}
 Estudiamos ahora algunas propiedades del núcleo de Dirichlet.
 Notemos primero que,
 \begin{eqnarray}
   \label{eqn:nucleo=1}
-  \int_0^{2\pi}D_N(\theta-\theta')d\theta' &=& 
+  \int_0^{2\pi}D_N(x-x')dx' &=& 
                        \frac{1}{{2\pi}}\sum_{n=-N}^{N}
-                       \int_0^{2\pi}e^{in(\theta-\theta')}d\theta' \nn
+                       \int_0^{2\pi}e^{in(x-x')}dx' \nn
             &=&
                 \frac{1}{{2\pi}}[
                   \sum_{n=-N,\;n\neq0}^{N}\frac{-i}{n}
-                  [e^{in(\theta-2\pi)}-e^{in\theta}] + 2\pi] \nn
+                  [e^{in(x-2\pi)}-e^{inx}] + 2\pi] \nn
             &=& 1.
 \end{eqnarray}
 %
 Por otro lado tenemos que
 \begin{eqnarray}
-  2\pi D_N(\theta) &=& \sum_{n=-N}^{N}e^{in\theta} \nn
-                   &=& \sum_{n=-N}^{N}(e^{i\theta})^n 
+  2\pi D_N(x) &=& \sum_{n=-N}^{N}e^{inx} \nn
+                   &=& \sum_{n=-N}^{N}(e^{ix})^n 
 \end{eqnarray}
-y llamando $q := e^{i\theta}$ para simplificar la escritura tenemos,
+y llamando $q := e^{ix}$ para simplificar la escritura tenemos,
 {\small
 \begin{eqnarray}
- && 2\pi D_N(\theta) \nn 
+ && 2\pi D_N(x) \nn 
           &=& \sum_{n=-N}^{N}q^n \nn
           &=& \sum_{n=0}^{N}q^n  + \sum_{n=0}^{N}q^{-n} -1 \nn
           &=& \frac{q^{N+1}-1}{q-1} + \frac{q^{-(N+1)}-1}{q^{-1}-1} -1 \nn
@@ -1376,44 +1377,44 @@ y llamando $q := e^{i\theta}$ para simplificar la escritura tenemos,
 	  &-& \left.(q^{1/2}-q^{-1/2})(q^{-1/2}-q^{1/2}) \right] 
 	  /(q^{1/2}-q^{-1/2})(q^{-1/2}-q^{1/2}) \nn
           &=& \frac{q^{N+1/2}-q^{-N-1/2}}{q^{1/2}-q^{-1/2}} \nn
-          &=& \frac{e^{i\theta(N+1/2)}-e^{-i\theta(N+1/2)}}{e^{i\theta/2}-e^{-i\theta/2}} \nn
-          &=& \frac{\sin((N+1/2)\theta)}{\sin(\theta/2)}.
+          &=& \frac{e^{ix(N+1/2)}-e^{-ix(N+1/2)}}{e^{ix/2}-e^{-ix/2}} \nn
+          &=& \frac{\sin((N+1/2)x)}{\sin(x/2)}.
 \end{eqnarray}
 }
 %
 Por lo tanto
 \begin{equation}
-  D_N(\theta) = \frac{1}{{2\pi}} \frac{\sin((N+1/2)\theta)}{\sin(\theta/2)}.
+  D_N(x) = \frac{1}{{2\pi}} \frac{\sin((N+1/2)x)}{\sin(x/2)}.
 \end{equation}
 %
 Tenemos por lo tanto,
 {\small
 \begin{eqnarray*}
-\! S_N(f)(\theta) \!\!\!
-            &=& \!\!\! \int_0^{2\pi}f(\theta')D_N(\theta-\theta')d\theta'  \nn
-            &=& \!\!\! \int_0^{2\pi}f(\theta-\theta')D_N(\theta)d\theta'  \nn
-            &=&  \!\!\! \frac{1}{{2\pi}}\int_0^{2\pi}[f(\theta-\theta')-f(\theta)]
-                 \frac{\sin((N+1/2)\theta')}{\sin(\theta'/2)}d\theta' 
-                 + f(\theta)
+\! S_N(f)(x) \!\!\!
+            &=& \!\!\! \int_0^{2\pi}f(x')D_N(x-x')dx'  \nn
+            &=& \!\!\! \int_0^{2\pi}f(x-x')D_N(x')dx'  \nn
+            &=&  \!\!\! \frac{1}{{2\pi}}\int_0^{2\pi}[f(x-x')-f(x)]
+                 \frac{\sin((N+1/2)x')}{\sin(x'/2)}dx' 
+                 + f(x)
 \end{eqnarray*}
 }
 %
 donde en la segunda igualdad hemos usado que la integral de una función 
 periódica sobre su período es independiente del punto donde comienza
 el intervalo de integración, y en la última hemos restado y sumado
-$f(\theta)$ y usado que la integral del núcleo de Dirichlet es uno (\ref{eqn:nucleo=1}).
+$f(x)$ y usado que la integral del núcleo de Dirichlet es uno (\ref{eqn:nucleo=1}).
 
-Si $f(\theta)$ es Lipschitz, $|f(\theta-\theta') -f(\theta)| \leq k|\theta'|$
+Si $f(x)$ es Lipschitz, $|f(x-x') -f(x)| \leq k|x'|$
 y por lo tanto
 \begin{equation}
-g_{\theta}(\theta') := \frac{|f(\theta-\theta') -f(\theta)|}{\sin(\theta'/2)}
+g_{x}(x') := \frac{|f(x-x') -f(x)|}{\sin(x'/2)}
 \end{equation}
 %
 es continua en $(0,2\pi)$ y acotada en los extremos, por lo tanto 
 integrable.
 Aplicando ahora el Lema de Riemann-Lebesgue concluimos entonces que la
 integral tiende a cero con $N$ y por lo tanto que 
-$\lim_{N\to \infty} S_N(f)(\theta) = f(\theta)$ en todo punto donde $f(\theta)$ es Lipschitz.
+$\lim_{N\to \infty} S_N(f)(x) = f(x)$ en todo punto donde $f(x)$ es Lipschitz.
 \epru
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1422,16 +1423,16 @@ $\lim_{N\to \infty} S_N(f)(\theta) = f(\theta)$ en todo punto donde $f(\theta)$ 
 
 
 Para probar que $S$ es completo solo tenemos que ver que si 
-$(e^{inx},g)=0\; \forall\; n $ luego $g =0$.
+$\langle e^{inx},g\rangle=0\; \forall\; n $ luego $g =0$.
 Sea $f \in C^1_p[0,2\pi]$ y $c_n$ sus coeficientes de Fourier con respecto
 a $S$, luego
 \beq
-(f,g)=\lim_{M\to \ifi}\lp\sum_{-M}^Mc_n\frac{e^{inx}}{\sqrt{2\pi}},g\rp=0
+\langle f,g \rangle =\lim_{M\to \ifi}\langle \sum_{-M}^Mc_n \frac{e^{inx}}{\sqrt{2\pi}},g\rangle =0
 \eeq
 Concluimos entonces que $g$ es ortogonal a toda $f \in
 C^1_p[0,2\pi]$, pero como vimos este espacio es denso en
 $L^2[0,2\pi]$ y por lo tanto por continuidad debemos tener entonces
-que $(f,g) = 0\; \forall\; f \in H$, o sea $g=0$ 
+que $\langle f,g \rangle = 0\; \forall\; f \in H$, o sea $g=0$ 
 \epru
 \espa
 
@@ -1508,7 +1509,7 @@ con n.
 
 \ejer: Pruebe que un conjunto ortogonal $\{\ve{x}_n\}$ es completo 
 si y solo si
-$(\ve{x}_n,\ve{g}) =  0 \;\;\; \forall n \Rightarrow \ve{g}=0$.
+$\langle \ve{x}_n,\ve{g}\rangle =  0 \;\;\; \forall n \Rightarrow \ve{g}=0$.
 \espa
 
 \bpro:
@@ -1520,13 +1521,13 @@ de los monomios
 con respecto a los espacios de Hilbert obtenidos a partir de los siguientes
 productos escalares:
 \begin{enumerate}
-\item $(f,g) = \int^1_{-1} \bar fg \;dx$ (En este caso obtendrá los
+\item $\langle f,g \rangle = \int^1_{-1} \bar fg \;dx$ (En este caso obtendrá los
 polinomios de Legendre.)
 
-\item $(f,g) = \int^{\infty}_{-\infty} \bar f g e^{-x^2} \;dx$
+\item $\langle f,g \rangle = \int^{\infty}_{-\infty} \bar f g e^{-x^2} \;dx$
 (En este caso obtendrá los polinomios de Hermite.)
 
-\item $(f,g) = \int^{\infty}_0 \bar f g e^{-x}\; dx$
+\item $\langle f,g \rangle = \int^{\infty}_0 \bar f g e^{-x}\; dx$
 (En este caso obtendrá los polinomios de Laguerre.)
 
 \end{enumerate}
@@ -1548,27 +1549,27 @@ que las funciones continuas son densas en $L^2$.
 Dado un conjunto numerable de elementos linealmente independientes de
 $H$, $\{\ve{x}_i\}$ generamos recursivamente los siguientes conjuntos:
 $$
-\ve{y}_i = \ve{x}_i - \sum_{l=1}^{i-1} (\ve{u}_l,\ve{x}_i)\ve{u}_l, \;\;\; \ve{u}_i = \frac{\ve{y}_i}{\|\ve{y}_i\|}.
+\ve{y}_i = \ve{x}_i - \sum_{l=1}^{i-1} \langle \ve{u}_l,\ve{x}_i \rangle \ve{u}_l, \;\;\; \ve{u}_i = \frac{\ve{y}_i}{\|\ve{y}_i\|}.
 $$
 Note que la segunda operación está bien definida ya que $\ve{y}_i \neq 0$.
 Esta aseveración sigue del hecho de que el lado derecho en la
 definición de $\ve{y}_i$ es una combinación lineal de los $\ve{x}_j$,
 $j=1,...,i$ y hemos supuesto que estos son linealmente independientes.
 
-Veamos ahora que $(\ve{u}_i,\ve{u}_j) = \delta_{ij}$.
-Para ello probaremos por inducción que dado $i$, $(\ve{u}_i,\ve{u}_j) = 0
+Veamos ahora que $\langle \ve{u}_i,\ve{u}_j \rangle = \delta_{ij}$.
+Para ello probaremos por inducción que dado $i$, $\langle \ve{u}_i,\ve{u}_j\rangle = 0
 \;\forall\; j < i$ positivo.
 Esto es cierto para $i=1$ [ya que no hay $j$]. Supongamos entonces que es
 cierto para $i-1$ y veamos que también lo es para $i$.
 Pero, dado $j < i$ tenemos,
 $$
-(\ve{u}_j,\ve{y}_i) = [(\ve{u}_j,\ve{x}_i) - \sum_{l=1}^{j-1} (\ve{u}_l,\ve{x}_i)(\ve{u}_j,\ve{u}_l)] =
-[(\ve{u}_j,\ve{x}_i) - (\ve{u}_j,\ve{x}_i)] =0.
+\langle \ve{u}_j,\ve{y}_i \rangle = [\langle \ve{u}_j,\ve{x}_i \rangle  - \sum_{l=1}^{j-1} \langle \ve{u}_l,\ve{x}_i\rangle \langle \ve{u}_j,\ve{u}_l\rangle] =
+[\langle \ve{u}_j,\ve{x}_i \rangle  - \langle \ve{u}_j,\ve{x}_i \rangle] =0.
 $$
 
 Si el conjunto de partida es un conjunto completo, es decir un conjunto
 que no es subconjunto de un conjunto mayor de vectores linealmente independientes, luego el conjunto resultante es una base ortogonal. En particular, si
-$(\ve{x},\ve{u}_i)=0 \;\; \forall i$, luego $\ve{x}=0$. 
+$\langle \ve{x},\ve{u}_i \rangle =0 \;\; \forall i$, luego $\ve{x}=0$. 
 Caso contrario tomamos $\ve{u}=\frac{\ve{x}}{\|\ve{x}\|}$ y tendríamos otro elemento
 de la base, lo que sería una contradicción con respecto a la 
 completitud de los $\{\ve{u}_i\}$.
@@ -1725,7 +1726,7 @@ Sea $S_n: L^2 \to L^2$ el mapa que envía $f \in L^2$ en la serie
 parcial de Fourier,
 \begin{equation}
   S_n(f) := \sum_{m=-n}^{n} c_m e^{imx}, \;\;\;\;\;\;\; 
-                 c_m:= \frac{1}{2\pi}(e^{imx},f(x)).
+                 c_m:= \frac{1}{2\pi}\langle e^{imx},f(x) \rangle .
 \end{equation}
 %
 Muestre que los $S_n$ son proyecciones ortogonales y que 
@@ -1737,7 +1738,7 @@ En este problema se intenta probar que la serie de Fourier de
 una función continua es sumable en el sentido de Césaro en todo punto.
 Sea $f(\theta)$ una función periódica en $L^2$, 
 $f(\theta) \in L^2[0,2\pi]$,
-$c_m:= \frac{1}{2\pi}(e^{im\theta},f(\theta))$
+$c_m:= \frac{1}{2\pi}\langle e^{im\theta},f(\theta)\rangle$
 y \\
 $ S_n(f) := \sum_{m=-n}^{n} c_m e^{imx}$
 
@@ -1771,7 +1772,7 @@ $S_n(f) \to f$ en $L^2$ si $f$ es continua.
 
 \bpro
 Suponga que $f \in C_p^1([0,2\pi])$ y sea $c_n = (e^{in\theta},f)$ y
-$b_n = (e^{in\theta},f')$.
+$b_n = \langle e^{in\theta},f' \rangle $.
 
 a.- Vea que $\sum_{-\infty}^{\infty} |b_n|^2 < \infty$ y concluya que 
     $\sum_{-\infty}^{\infty} n^2 |c_n|^2 < \infty$.
