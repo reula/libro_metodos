@@ -290,7 +290,8 @@ la topología inducida en $X$ por este mapa es la indiscreta!
 \noi b) Sea $X$ e $Y$ como en a) y sea $\phi(x)$ un mapa invertible, luego $\cT_{\phi}$
 coincide con la topología de la línea real.
 
-} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Compacidad}
 
@@ -436,7 +437,47 @@ especie} [Ver recuadro]. Todos los espacios que veremos en este
 curso lo son.
 
 \espa 
-\vfill   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vfill   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Completitud de espacios metricos y sucesiones de Cauchy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Cuando la topología de un conjunto está generada por una métrica las nociones de cercanía 
+adquieren una realidad más tangible, numérica. En ese caso podemos introducir un par de conceptos
+muy importantes que serán claves en el resto del libro. 
+
+Supongamos que tenemos una sucesión de elementos $\{x_n\}$ convirgiendo a un elemento $x$, es decir $x$ es un punto límite. 
+Si la topología es la inducida por una distancia métrica entonces sucederá que, 
+
+\begin{equation}
+    d(x_n, x) \to 0
+\end{equation}
+
+Es decir, dato $\eps > 0 $ arbitrario existirá $N$ tal que $d(x_n,x) < \eps$ $\forall n>N$. 
+
+Sean $n$ and $m$ mayores que $N$, luego, debido a la desigualdad triangular que las distancias satisfacen,
+
+\begin{equation}
+    d(x_n,x_m) \leq d(x_n,x) + d(x,x_m) < 2\eps.
+\end{equation}
+%
+Es decir todos los elementos de la sucesión deben necesariamente acercar entre sí si la sucesión converge. 
+Diremos que una sucesión $\{x_n\}$ \textit{ es de Cauchy} si sus elementos se acercan entre sí, es decir si dado $\eps >0$
+cualquiera existe $N$ tal que para todo $n, m > N$ $d(x_n,x_m) < \eps$. 
+Tenemos entonces que toda sucesión que tiene un punto límite es de Cauchy. 
+Es la inversa válida? Es decir, toda sucesión de Cauchy tiene punto límite? La respuesta es que en general
+no es así. Por ejemplo, si el espacio de la recta sin el $0$ con la distancia data por el valor absoluto, entonces
+la sucesión $\{x_n = \frac{1}{n}\}$ no tiene punto límite. Cláramente este espacio es extraño pues tiene un hueco!
+Pero como veremos luego los huecos pueden ser bastante menos obvios que este. Y es por eso que un concepto muy 
+importante entre los espacios métricos (y también normados, ya que la norma es una función métrica particular) es la
+de \textit{espacio Completo}, es decir un espacio donde toda sucesión de Cauchy tiene punto límite. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \recu{
 {\bf *\yaya{Numerabilidad de espacios topológicos.}}

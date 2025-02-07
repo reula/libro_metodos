@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=latex 2024.12.17)  7 FEB 2025 13:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=latex 2024.12.17)  7 FEB 2025 19:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -548,11 +548,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [22] [23] [24]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25])
-[26]
+ [25]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26])
+[27]
 \openout2 = `Chapters/chap2.aux'.
 
- (./Chapters/chap2.tex
+ (./Chapters/chap2.tex [28
+
+
+
+
+]
 \hfil Cap\'{\i }tulo 2.
 LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <10> not available
 (Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 17.
@@ -684,107 +692,102 @@ LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <5> not available
 LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <5> not available
 (Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 17.
 
-[27
-
-
-
-
-] [28] [29]
+[29] [30] [31]
 LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <8> not available
-(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OT1/mdugm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <6> not available
-(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OT1/mdugm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OML/mdugm/b/it' in size <8> not available
 (Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 23
-4.
+5.
 LaTeX Font Info:    Font shape `OML/mdugm/bx/it' in size <8> not available
 (Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 23
-4.
+5.
 LaTeX Font Info:    Font shape `OML/mdugm/b/it' in size <6> not available
 (Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 23
-4.
+5.
 LaTeX Font Info:    Font shape `OML/mdugm/bx/it' in size <6> not available
 (Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 23
-4.
+5.
 LaTeX Font Info:    Font shape `OMS/mdugm/b/n' in size <8> not available
-(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OMS/mdugm/bx/n' in size <8> not available
-(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OMS/mdugm/b/n' in size <6> not available
-(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OMS/mdugm/bx/n' in size <6> not available
-(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OMX/mdugm/b/n' in size <8> not available
-(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OMX/mdugm/bx/n' in size <8> not available
-(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OMX/mdugm/b/n' in size <6> not available
-(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OMX/mdugm/bx/n' in size <6> not available
-(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 234.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 235.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 234.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 235.
 LaTeX Font Info:    Font shape `OML/mdugm/b/n' in size <8> not available
-(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OML/mdugm/bx/n' in size <8> not available
-(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OML/mdugm/b/n' in size <6> not available
-(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `OML/mdugm/bx/n' in size <6> not available
-(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `MDA/mdugm/b/n' in size <8> not available
-(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `MDA/mdugm/bx/n' in size <8> not available
-(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `MDA/mdugm/b/n' in size <6> not available
-(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `MDA/mdugm/bx/n' in size <6> not available
-(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <8> not available
-(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <8> not available
-(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <6> not available
-(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 234
+(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 235
 .
 LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <6> not available
-(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 234
+(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 235
 .
 
-Overfull \hbox (44.51915pt too wide) in paragraph at lines 253--258
+Overfull \hbox (44.51915pt too wide) in paragraph at lines 254--259
 []\T1/mdugm/m/n/10 Sin em-bar-go na-da nos im-pi-de con-si-de-rar tam-bién \T1/
 mdugm/mb/n/10 ma-pas mul-ti-li-nea-les [] \T1/mdugm/m/n/10 de $[]$
  []
 
-[30] [31] [32] [33] (./Figure/m2_1.pstex_t
+[32] [33] [34] [35] (./Figure/m2_1.pstex_t
 File: Figure/m2_1.pstex Graphic file (type eps)
  <Figure/m2_1.pstex>
 LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <12> not available
@@ -829,90 +832,90 @@ LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <12> not available
 LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <12> not available
 (Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 14.
 
-) [34]
-Overfull \hbox (5.18904pt too wide) in paragraph at lines 544--549
+) [36]
+Overfull \hbox (5.18904pt too wide) in paragraph at lines 547--552
 $[]$\T1/mdugm/m/n/10 : Prue-be que $\OMS/mdugm/m/n/10 j[]\OT1/mdugm/m/n/10 ([]\
 OML/mdugm/m/it/10 ; []\OT1/mdugm/m/n/10 )\OMS/mdugm/m/n/10 j[] ^^T jj[]jj[]jj[]
 jj[]$\T1/mdugm/m/n/10 . Ayu-da: Con-si-de-re el po-li-no-mio: $\OML/mdugm/m/it/
 10 P\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 ^^U\OT1/mdugm/m/n/10 ) :=
  []
 
-[35] [36] [37]
+[37] [38] [39]
 LaTeX Font Info:    Font shape `OT1/mdugm/b/n' in size <9> not available
-(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 829
+(Font)              Font shape `OT1/mdugm/bx/n' tried instead on input line 833
 .
 LaTeX Font Info:    Font shape `OT1/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 829
+(Font)              Font shape `OT1/mdugm/mb/n' tried instead on input line 833
 .
 LaTeX Font Info:    Font shape `OML/mdugm/b/it' in size <9> not available
-(Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 82
-9.
+(Font)              Font shape `OML/mdugm/bx/it' tried instead on input line 83
+3.
 LaTeX Font Info:    Font shape `OML/mdugm/bx/it' in size <9> not available
-(Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 82
-9.
+(Font)              Font shape `OML/mdugm/mb/it' tried instead on input line 83
+3.
 LaTeX Font Info:    Font shape `OMS/mdugm/b/n' in size <9> not available
-(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 829
+(Font)              Font shape `OMS/mdugm/bx/n' tried instead on input line 833
 .
 LaTeX Font Info:    Font shape `OMS/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 829
+(Font)              Font shape `OMS/mdugm/mb/n' tried instead on input line 833
 .
 LaTeX Font Info:    Font shape `OMX/mdugm/b/n' in size <9> not available
-(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 829
+(Font)              Font shape `OMX/mdugm/bx/n' tried instead on input line 833
 .
 LaTeX Font Info:    Font shape `OMX/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 829
+(Font)              Font shape `OMX/mdugm/mb/n' tried instead on input line 833
 .
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 829.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 833.
 LaTeX Font Info:    Font shape `OML/mdugm/b/n' in size <9> not available
-(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 829
+(Font)              Font shape `OML/mdugm/bx/n' tried instead on input line 833
 .
 LaTeX Font Info:    Font shape `OML/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 829
+(Font)              Font shape `OML/mdugm/mb/n' tried instead on input line 833
 .
 LaTeX Font Info:    Font shape `MDA/mdugm/b/n' in size <9> not available
-(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 829
+(Font)              Font shape `MDA/mdugm/bx/n' tried instead on input line 833
 .
 LaTeX Font Info:    Font shape `MDA/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 829
+(Font)              Font shape `MDA/mdugm/mb/n' tried instead on input line 833
 .
 LaTeX Font Info:    Font shape `MDB/mdugm/b/n' in size <9> not available
-(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 829
+(Font)              Font shape `MDB/mdugm/bx/n' tried instead on input line 833
 .
 LaTeX Font Info:    Font shape `MDB/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 829
+(Font)              Font shape `MDB/mdugm/mb/n' tried instead on input line 833
 .
- [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49]
-[50] [51] [52]
-Overfull \hbox (19.88634pt too wide) in paragraph at lines 1858--1862
+ [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
+[52] [53] [54]
+Overfull \hbox (19.88634pt too wide) in paragraph at lines 1862--1866
 \T1/mdugm/m/n/10 tie-nen un sig-ni-fi-ca-do fí-si-co cla-ro, son los lla-ma-dos
  mo-dos nor-ma-les --caso unidimensional--
  []
 
-[53]
+[55]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54]
+ [56]
 (./Figure/m2_2.pstex_t
 File: Figure/m2_2.pstex Graphic file (type eps)
- <Figure/m2_2.pstex>) [55] [56] (./Figure/m2_3.pstex_t
+ <Figure/m2_2.pstex>) [57] [58] (./Figure/m2_3.pstex_t
 File: Figure/m2_3.pstex Graphic file (type eps)
 
 <Figure/m2_3.pstex>)
-Overfull \hbox (8.05147pt too wide) in paragraph at lines 2166--2171
+Overfull \hbox (8.05147pt too wide) in paragraph at lines 2170--2175
 \T1/mdugm/m/n/10 donde $\OML/mdugm/m/it/10 t[]$ \T1/mdugm/m/n/10 es la re-pre-s
 en-ta-ción del pro-duc-to es-ca-lar y $\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t[
 ]\OT1/mdugm/m/n/10 )[][]$ \T1/mdugm/m/n/10 el de su in-ver-sa ($\OML/mdugm/m/it
 /10 t[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t[]\OT1/mdugm/m/n/10 )[] =
  []
 
-[57] [58] (./Figure/m2_4.pstex_t
+[59] [60] (./Figure/m2_4.pstex_t
 File: Figure/m2_4.pstex Graphic file (type eps)
- <Figure/m2_4.pstex>) [59] [60] [61] [62])
-[63]
+ <Figure/m2_4.pstex>) [61] [62] [63] [64])
+[65]
 \openout2 = `Chapters/chap3.aux'.
 
- (./Chapters/chap3.tex [64
+ (./Chapters/chap3.tex [66
 
 
 
@@ -921,26 +924,26 @@ File: Figure/m2_4.pstex Graphic file (type eps)
 \hfil Cap\'{\i }tulo 3.
 (./Figure/m3_1_b.pstex_t
 File: Figure/m3_1_b.pstex Graphic file (type eps)
- <Figure/m3_1_b.pstex>) [65] [66]
+ <Figure/m3_1_b.pstex>) [67] [68]
 (./Figure/m3_2.pstex_t
 File: Figure/m3_2.pstex Graphic file (type eps)
  <Figure/m3_2.pstex>) (./Figure/m3_3.pstex_t
 File: Figure/m3_3.pstex Graphic file (type eps)
 
-<Figure/m3_3.pstex>) [67] [68] (./Figure/m3_4.pstex_t
+<Figure/m3_3.pstex>) [69] [70] (./Figure/m3_4.pstex_t
 File: Figure/m3_4.pstex Graphic file (type eps)
  <Figure/m3_4.pstex>)
-[69] (./Figure/m3_5.pstex_t
+[71] (./Figure/m3_5.pstex_t
 File: Figure/m3_5.pstex Graphic file (type eps)
  <Figure/m3_5.pstex>) (./Figure/m3_6.pstex_t
 File: Figure/m3_6.pstex Graphic file (type eps)
 
-<Figure/m3_6.pstex>) [70] (./Figure/m3_7.pstex_t
+<Figure/m3_6.pstex>) [72] (./Figure/m3_7.pstex_t
 File: Figure/m3_7.pstex Graphic file (type eps)
- <Figure/m3_7.pstex>) [71]
-[72] [73] (./Figure/m3_8.pstex_t
+ <Figure/m3_7.pstex>) [73]
+[74] [75] (./Figure/m3_8.pstex_t
 File: Figure/m3_8.pstex Graphic file (type eps)
- <Figure/m3_8.pstex>) [74] [75] [76] [77]
+ <Figure/m3_8.pstex>) [76] [77] [78] [79]
 LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <10> not available
 (Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 835.
 
@@ -972,26 +975,26 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <6> not available
 (Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 845.
 
 
-[78] [79] [80] [81] [82] [83] [84]
+[80] [81] [82] [83] [84] [85] [86]
 LaTeX Font Info:    Font shape `T1/mdugm/b/n' in size <9> not available
 (Font)              Font shape `T1/mdugm/bx/n' tried instead on input line 1279
 .
 LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <9> not available
 (Font)              Font shape `T1/mdugm/mb/n' tried instead on input line 1279
 .
-) [85]
+) [87]
 \openout2 = `Chapters/chap4.aux'.
 
- (./Chapters/chap4.tex [86
+ (./Chapters/chap4.tex [88
 
 
 
 
 ]
 \hfil Cap\'{\i }tulo 4.
-[87] (./Figure/m4_1.pstex_t
+[89] (./Figure/m4_1.pstex_t
 File: Figure/m4_1.pstex Graphic file (type eps)
- <Figure/m4_1.pstex>) [88] [89] [90]
+ <Figure/m4_1.pstex>) [90] [91] [92]
 (./Figure/m4_2_b.pstex_t
 File: Figure/m4_2_b.pstex Graphic file (type eps)
  <Figure/m4_2_b.pstex>
@@ -1002,10 +1005,10 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <12> not available
 ) (./Figure/m4_2.pstex_t
 File: Figure/m4_2.pstex Graphic file (type eps)
 
-<Figure/m4_2.pstex>) [91] [92] (./Figure/m4_3.pstex_t
+<Figure/m4_2.pstex>) [93] [94] (./Figure/m4_3.pstex_t
 File: Figure/m4_3.pstex Graphic file (type eps)
  <Figure/m4_3.pstex>)
-[93] [94] (./Figure/m4_4.pstex_t
+[95] [96] (./Figure/m4_4.pstex_t
 File: Figure/m4_4.pstex Graphic file (type eps)
  <Figure/m4_4.pstex>
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 14.
@@ -1020,24 +1023,24 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <9.79996> not available
 ) (./Figure/m4_5.pstex_t
 File: Figure/m4_5.pstex Graphic file (type eps)
 
-<Figure/m4_5.pstex>) [95] [96] [97] [98] [99] (./Figure/m4_6.pstex_t
+<Figure/m4_5.pstex>) [97] [98] [99] [100] [101] (./Figure/m4_6.pstex_t
 File: Figure/m4_6.pstex Graphic file (type eps)
 
 <Figure/m4_6.pstex>) (./Figure/m4_7.pstex_t
 File: Figure/m4_7.pstex Graphic file (type eps)
- <Figure/m4_7.pstex>) [100] [101]
-[102]
+ <Figure/m4_7.pstex>) [102] [103]
+[104]
 Overfull \hbox (0.96628pt too wide) in paragraph at lines 984--986
 []\T1/mdugm/m/n/10 Probaremos es-te teo-re-ma más ade-lan-te, lue-go de in-tro-
 du-cir las he-rra-mien-tas mate-
  []
 
-[103] [104] [105] [106] [107]) [108]
+[105] [106] [107] [108] [109]) [110]
 \openout2 = `Chapters/chap5.aux'.
 
  (./Chapters/chap5.tex
 \hfil Cap\'{\i }tulo 5.
-[109
+[111
 
 
 
@@ -1045,14 +1048,14 @@ du-cir las he-rra-mien-tas mate-
 ]
 Underfull \vbox (badness 1028) has occurred while \output is active []
 
- [110]
+ [112]
 Overfull \hbox (9.86539pt too wide) in paragraph at lines 198--201
 \T1/mdugm/m/n/10 donde $[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t\OT1/mdugm/m/n
 /10 ) : \OML/mdugm/m/it/10 I \OMS/mdugm/m/n/10 ! []$ \T1/mdugm/m/n/10 es in-te-
 gra-ble. Ve-re-mos que si co-no-ce-mos el ope-ra-dor $[][]$ correspon-
  []
 
-[111] [112] [113]
+[113] [114] [115]
 Overfull \hbox (3.75313pt too wide) in paragraph at lines 341--357
 \T1/mdugm/m/n/10 y ve-mos que si $\OML/mdugm/m/it/10 ^^U[] \OMS/mdugm/m/n/10 ^^
 @ \OML/mdugm/m/it/10 ^^U[] \OMS/mdugm/m/n/10 6\OT1/mdugm/m/n/10 = 0$ \T1/mdugm/
@@ -1060,14 +1063,14 @@ m/n/10 lue-go la so-lu-ción es una su-ma de ex-po-nen-cia-les, $\OML/mdugm/m/it
 /10 x[]\OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 t\OT1/mdugm/m/n/10 ) =
  []
 
-[114] [115] [116] [117] [118] [119]) [120]
+[116] [117] [118] [119] [120] [121]) [122]
 \openout2 = `Chapters/chap6.aux'.
 
  (./Chapters/chap6.tex
 \hfil Cap\'{\i }tulo 6.
 (./Figure/m6_1.pstex_t
 File: Figure/m6_1.pstex Graphic file (type eps)
- <Figure/m6_1.pstex>) [121
+ <Figure/m6_1.pstex>) [123
 
 
 
@@ -1078,118 +1081,118 @@ Overfull \hbox (0.21632pt too wide) in paragraph at lines 99--101
 prác-ti-ca pa-ra co-no-cer cuan-
  []
 
-[122] (./Figure/m6_2.pstex_t
+[124] (./Figure/m6_2.pstex_t
 File: Figure/m6_2.pstex Graphic file (type eps)
- <Figure/m6_2.pstex>) [123] (./Figure/m6_3.pstex_t
+ <Figure/m6_2.pstex>) [125] (./Figure/m6_3.pstex_t
 File: Figure/m6_3.pstex Graphic file (type eps)
 
-<Figure/m6_3.pstex>) [124] [125] [126] [127] [128]) [129]
+<Figure/m6_3.pstex>) [126] [127] [128] [129] [130]) [131]
 \openout2 = `Chapters/chap7.aux'.
 
- (./Chapters/chap7.tex [130
+ (./Chapters/chap7.tex [132
 
 
 
 
 ]
 \hfil Cap\'{\i }tulo 7.
-[131] [132] [133] [134] (./Figure/m7_1.pstex_t
+[133] [134] [135] [136] (./Figure/m7_1.pstex_t
 File: Figure/m7_1.pstex Graphic file (type eps)
- <Figure/m7_1.pstex>) [135])
-[136]
+ <Figure/m7_1.pstex>) [137])
+[138]
 \openout2 = `Chapters/chap8.aux'.
 
  (./Chapters/chap8.tex
 \hfil Cap\'{\i }tulo 8.
-[137
+[139
 
 
 
 
-] [138] (./Figure/m8_1.pstex_t
+] [140] (./Figure/m8_1.pstex_t
 File: Figure/m8_1.pstex Graphic file (type eps)
  <Figure/m8_1.pstex>) (./Figure/m8_2.pstex_t
 File: Figure/m8_2.pstex Graphic file (type eps)
 
-<Figure/m8_2.pstex>) [139] [140] (./Figure/m8_3.pstex_t
+<Figure/m8_2.pstex>) [141] [142] (./Figure/m8_3.pstex_t
 File: Figure/m8_3.pstex Graphic file (type eps)
  <Figure/m8_3.pstex>)
-[141] [142] [143] [144] [145] [146] [147] [148] (./Figure/m8_4.pstex_t
+[143] [144] [145] [146] [147] [148] [149] [150] (./Figure/m8_4.pstex_t
 File: Figure/m8_4.pstex Graphic file (type eps)
 
 <Figure/m8_4.pstex>)
 Underfull \vbox (badness 1354) has occurred while \output is active []
 
- [149]
+ [151]
 (./Figure/m8_5.pstex_t
 File: Figure/m8_5.pstex Graphic file (type eps)
- <Figure/m8_5.pstex>) [150] [151] [152] [153] [154]
-[155] [156] [157] [158] [159] [160] [161] [162] [163] [164]) [165]
+ <Figure/m8_5.pstex>) [152] [153] [154] [155] [156]
+[157] [158] [159] [160] [161] [162] [163] [164] [165] [166]) [167]
 \openout2 = `Chapters/chap9.aux'.
 
 
-(./Chapters/chap9.tex [166
+(./Chapters/chap9.tex [168
 
 
 
 
 ]
 \hfil Cap\'{\i }tulo 9.
-[167] [168] [169] [170] [171] [172] [173] [174] [175] [176]) [177]
+[169] [170] [171] [172] [173] [174] [175] [176] [177] [178]) [179]
 \openout2 = `Chapters/chap10.aux'.
 
 
-(./Chapters/chap10.tex [178
+(./Chapters/chap10.tex [180
 
 
 
 
 ]
 \hfil Cap\'{\i }tulo 10.
-[179]
+[181]
 Underfull \hbox (badness 10000) in paragraph at lines 89--92
 
  []
 
-[180] [181] [182] [183] [184]
+[182] [183] [184] [185] [186]
 Overfull \hbox (2.45732pt too wide) in paragraph at lines 453--458
 []\T1/mdugm/m/n/10 Otra pro-pie-dad in-tere-san-te de la con-vo-lu-ción se ob-t
 ie-ne al no-tar que co-mo $[]\OT1/mdugm/m/n/10 ([][])$
  []
 
-[185] [186] [187] [188] [189] [190] [191]) [192]
+[187] [188] [189] [190] [191] [192] [193]) [194]
 \openout2 = `Chapters/chap11.aux'.
 
  (./Chapters/chap11.tex
 \hfil Cap\'{\i }tulo 11.
-[193
+[195
 
 
 
 
-] [194] [195] (./Figure/m11_1.pstex_t
+] [196] [197] (./Figure/m11_1.pstex_t
 File: Figure/m11_1.pstex Graphic file (type eps)
- <Figure/m11_1.pstex>) [196]
+ <Figure/m11_1.pstex>) [198]
 (./Figure/m11_2.pstex_t
 File: Figure/m11_2.pstex Graphic file (type eps)
- <Figure/m11_2.pstex>) [197] (./Figure/m11_3.pstex_t
+ <Figure/m11_2.pstex>) [199] (./Figure/m11_3.pstex_t
 File: Figure/m11_3.pstex Graphic file (type eps)
 
-<Figure/m11_3.pstex>) [198] [199] [200] (./Figure/m11_4.pstex_t
+<Figure/m11_3.pstex>) [200] [201] [202] (./Figure/m11_4.pstex_t
 File: Figure/m11_4.pstex Graphic file (type eps)
 
-<Figure/m11_4.pstex>) [201] [202]
+<Figure/m11_4.pstex>) [203] [204]
 Underfull \vbox (badness 3601) has occurred while \output is active []
 
- [203])
-[204]
+ [205])
+[206]
 \openout2 = `Chapters/chap12.aux'.
 
  (./Chapters/chap12.tex
 \hfil Cap\'{\i }tulo 12.
 (./Figure/m12_1.pstex_t
 File: Figure/m12_1.pstex Graphic file (type eps)
- <Figure/m12_1.pstex>) [205
+ <Figure/m12_1.pstex>) [207
 
 
 
@@ -1197,49 +1200,49 @@ File: Figure/m12_1.pstex Graphic file (type eps)
 ] (./Figure/m12_2.pstex_t
 File: Figure/m12_2.pstex Graphic file (type eps)
 
-<Figure/m12_2.pstex>) [206] [207] [208] [209] [210] [211] [212] [213] [214]
-[215]) [216]
+<Figure/m12_2.pstex>) [208] [209] [210] [211] [212] [213] [214] [215] [216]
+[217]) [218]
 \openout2 = `Chapters/chap13.aux'.
 
  (./Chapters/chap13.tex
 \hfil Cap\'{\i }tulo 13.
-[217
+[219
 
 
 
 
 ] (./Figure/m13_1.pstex_t
 File: Figure/m13_1.pstex Graphic file (type eps)
- <Figure/m13_1.pstex>) [218]
+ <Figure/m13_1.pstex>) [220]
 (./Figure/m13_2.pstex_t
 File: Figure/m13_2.pstex Graphic file (type eps)
- <Figure/m13_2.pstex>) [219] (./Figure/m13_3.pstex_t
+ <Figure/m13_2.pstex>) [221] (./Figure/m13_3.pstex_t
 File: Figure/m13_3.pstex Graphic file (type eps)
 
-<Figure/m13_3.pstex>) [220] (./Figure/m13_4.pstex_t
+<Figure/m13_3.pstex>) [222] (./Figure/m13_4.pstex_t
 File: Figure/m13_4.pstex Graphic file (type eps)
  <Figure/m13_4.pstex>)
-[221] [222] [223] (./Figure/m13_5b.pstex_t
+[223] [224] [225] (./Figure/m13_5b.pstex_t
 File: Figure/m13_5b.pstex Graphic file (type eps)
  <Figure/m13_5b.pstex>)
 (./Figure/m13_5.pstex_t
 File: Figure/m13_5.pstex Graphic file (type eps)
- <Figure/m13_5.pstex>) [224] [225] [226]
+ <Figure/m13_5.pstex>) [226] [227] [228]
 (./Figure/m13_6c.pstex_t
 File: Figure/m13_6c.pstex Graphic file (type eps)
- <Figure/m13_6c.pstex>) [227] (./Figure/m13_6b.pstex_t
+ <Figure/m13_6c.pstex>) [229] (./Figure/m13_6b.pstex_t
 File: Figure/m13_6b.pstex Graphic file (type eps)
 
-<Figure/m13_6b.pstex>) [228] [229] (./Figure/m13_7b.pstex_t
+<Figure/m13_6b.pstex>) [230] [231] (./Figure/m13_7b.pstex_t
 File: Figure/m13_7b.pstex Graphic file (type eps)
 
-<Figure/m13_7b.pstex>) [230] [231] (./Figure/m13_8b.pstex_t
+<Figure/m13_7b.pstex>) [232] [233] (./Figure/m13_8b.pstex_t
 File: Figure/m13_8b.pstex Graphic file (type eps)
 
-<Figure/m13_8b.pstex>) [232]) [233]
+<Figure/m13_8b.pstex>) [234]) [235]
 \openout2 = `Chapters/chap14.aux'.
 
- (./Chapters/chap14.tex [234
+ (./Chapters/chap14.tex [236
 
 
 
@@ -1248,7 +1251,7 @@ File: Figure/m13_8b.pstex Graphic file (type eps)
 \hfil Cap\'{\i }tulo 14.
 (./Figure/m14_1.pstex_t
 File: Figure/m14_1.pstex Graphic file (type eps)
- <Figure/m14_1.pstex>) [235]
+ <Figure/m14_1.pstex>) [237]
 Overfull \hbox (2.62007pt too wide) in paragraph at lines 96--100
 \T1/mdugm/m/n/10 donde vi-mos que las au-to-fun-cio-nes $\OML/mdugm/m/it/10 v[]
 \OT1/mdugm/m/n/10 (\OML/mdugm/m/it/10 x\OT1/mdugm/m/n/10 )$ \T1/mdugm/m/n/10 co
@@ -1258,7 +1261,7 @@ gm/m/n/10 (1) = 0$ \T1/mdugm/m/n/10 son $\OML/mdugm/m/it/10 v[]\OT1/mdugm/m/n/1
 ugm/m/n/10 )$
  []
 
-[236] [237] (./Figure/m14_2.pstex_t
+[238] [239] (./Figure/m14_2.pstex_t
 File: Figure/m14_2.pstex Graphic file (type eps)
  <Figure/m14_2.pstex>)
 Overfull \hbox (8.42657pt too wide) in paragraph at lines 269--289
@@ -1271,17 +1274,17 @@ dugm/m/n/10 y $\OML/mdugm/m/n/10
 /n/10 g$\T1/mdugm/m/n/10 .
  []
 
-[238]) [239]
+[240]) [241]
 \openout2 = `Chapters/chap15.aux'.
 
- (./Chapters/chap15.tex [240
+ (./Chapters/chap15.tex [242
 
 
 
 
 ]
 \hfil Cap\'{\i }tulo 15.
-[241] [242] [243] [244]
+[243] [244] [245] [246]
 Overfull \hbox (17.16827pt too wide) in paragraph at lines 184--188
 \T1/mdugm/m/n/10 tie-ne de-ter-mi-nan-te uni-dad. Es-tas re-ci-ben el nom-bre, 
 \T1/mdugm/m/sl/10 gru-po li-neal es-pe-cial\T1/mdugm/m/n/10 , $\OML/mdugm/m/it/
@@ -1289,29 +1292,29 @@ Overfull \hbox (17.16827pt too wide) in paragraph at lines 184--188
 dugm/m/n/10 . 
  []
 
-[245] [246]
+[247] [248]
 Underfull \vbox (badness 1917) has occurred while \output is active []
 
- [247]
-[248]) [249]
+ [249]
+[250]) [251]
 \openout2 = `Chapters/preguntas.aux'.
 
- (./Chapters/preguntas.tex [250
+ (./Chapters/preguntas.tex [252
 
 
 
 
 ]
 \hfil Cap\'{\i }tulo 16.
-[251] [252]) [253]
+[253] [254]) [255]
 \openout2 = `Chapters/bib.aux'.
 
- (./Chapters/bib.tex [254
+ (./Chapters/bib.tex [256
 
 
 
 
-] [255]) [256] [257
+] [257]) [258] [259
 
 
 ]
@@ -1330,6 +1333,10 @@ LaTeX Info: Redefining \% on input line 10.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  7543 strings out of 474117
@@ -1340,4 +1347,4 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  58i,15n,79p,894b,784s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on libro_gar.dvi (257 pages, 1082476 bytes).
+Output written on libro_gar.dvi (259 pages, 1086472 bytes).
