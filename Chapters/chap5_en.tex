@@ -4,7 +4,7 @@
 \label{Homogeneous_Linear_System}
 
 \bteo
-Let $A(t)$ be continuous on $I \subset \mathbb{R}$, closed. Then there exists a unique solution $\ve{x}(t): I \to V$ of the equation,
+Let $A : I \times V \to V$ be continuous on the closed interval $I \subset \mathbb{R}$ (and linear on $V$ for each $t \in I$). Then there exists a unique solution $\ve{x}(t): I \to V$ of the equation,
 \beq
 \derc{\ve{x}(t)}{t} = A(t)\,\ve{x}(t), 
 \label{eqn:5.1}
@@ -91,7 +91,7 @@ w(t)=\varepsilon(\ve{u}_1(t),\ve{u}_2(t),\ldots,\ve{u}_n(t))
 \eeq
 \noi is different from zero. This function is called the {\bf Wronskian}~\index{Wronskian} of the system and satisfies a particularly simple equation whose solution, called the {\bf Liouville formula},~\index{Liouville formula} is 
 \beq
-w(t)=w(t_0) e^{\dip\int_{t_0}^t tr(\ve{A}(\tilde t)) d\tilde t}
+w(t)=w(t_0) \exp \left[ \dip\int_{t_0}^t tr(\ve{A}(\tilde t)) d\tilde t \right]
 \label{5.2}
 \eeq
 \espa
@@ -239,16 +239,16 @@ components of $\ve{A}$, $A^i{}_j$, are complex and therefore
 we have moved to a problem in $\Complex^n$, or abstractly
 in the complexification of $V$.
 
-For that basis we have that the nth component satisfies a
-particularly simple equation!,
+For that basis we have that the n-th component satisfies a
+particularly simple equation,
 \beq
 \derc{x^n}{t}=  A^n{}_n \, x^n    
 \label{eqn:5.7_b_n}
 \eeq
 and therefore, $x^n(t) =  e^{\lambda_n t}x^n_0$ (remember that the 
 diagonal of an upper triangular matrix is composed of its eigenvalues),
-where $x^n_0$ is the nth component of the initial condition at $t=0$.
-The equation for the (n-1)th component is,
+where $x^n_0$ is the n-th component of the initial condition at $t=0$.
+The equation for the (n-1)-th component is,
 
 
 \begin{eqnarray}
@@ -277,7 +277,7 @@ Knowing $x^{n-1}(t)$ we can now calculate, using again (\ref{5.6}),
 $x^{n-2}(t)$ and so on for all the components of $\ve{x}(t)$ in
 this basis. 
 The final result will be that the components are all sums
-of exponentials by polynomials. Indeed note that the integral of
+of exponentials times polynomials. Indeed note that the integral of
 a polynomial of degree $m$ by an exponential is also 
 a polynomial of the same degree by the same exponential plus an integration constant
 (unless the exponential is zero, in which
@@ -385,7 +385,7 @@ and with different values of $\lambda$, as is the case in the previous equation
 $\frac{d}{dt} -\ve{A}$ gives us zero this means that the application of 
 $\frac{d}{dt} -\ve{A}$ to each term of
 the sum must give zero. That is, each term is a solution of
-equation \ref{5.7}!
+equation \ref{5.7}.
 Thus we conclude that each term in the
  sum \ref{5.7} is of the form $e^{\ve{A}t} \ve{v}_0$ for some
 $\ve{v}_0 \in V^{\Complex}$.
@@ -397,7 +397,7 @@ It is clear that the only non-trivial subspaces will be those
 with $\lambda = \lambda_i$, where $\{\lambda_i\},\;i=1..d$ are the eigenvalues
 of $\ve{A}$. Therefore we must consider only these subsets.
 % 
-Since this relationship is linear, $W_{\lambda}$ is a subspace of $V^{\Complex}$. 
+Since this relation is linear, $W_{\lambda}$ is a subspace of $V^{\Complex}$. 
 Since 
 $e^{\ve{A}t} \ve{A} \ve{v}_0 = \ve{A} e^{\ve{A}t} \ve{v}_0 
 = e^{\lambda t} \ve{A} \ve{v}(t) = e^{\lambda t} \ve{v}'(t)$
@@ -426,9 +426,9 @@ generate $V^{\Complex}$.
 On the other hand, the uniqueness of the solutions implies that no 
 element of a given $W_{\lambda_i}$ can be written as
 a linear combination of elements of the other $W_{\lambda}$
-[otherwise the same initial data would give rise to two
-different solutions (since their functional dependence would be
-different)]. Indeed, let $0 = \ve{v}_{01}+ \dots + \ve{v}_{0s}$
+(otherwise the same initial data would give rise to two
+different solutions, since their functional dependence would be
+different). Indeed, let $0 = \ve{v}_{01}+ \dots + \ve{v}_{0s}$
 be any linear combination of elements of $W_{\lambda_i}$, $i=1..s$,
 we see that each of them must be zero. By the uniqueness of the solutions
 to the ordinary equations, we then have 
@@ -470,8 +470,8 @@ of $\ve{A}$ in this subspace has the form,
 \ve{A}= \lap_i + \Delta_i,
 \eeq
 \noi where the numbers $\lap_i$ are the eigenvalues
-corresponding to $\ve{A}$ --generally complex, and therefore we are
-now considering $\ve{A}$ as an operator from $C^n$ to $C^n$-- and
+corresponding to $\ve{A}$---generally complex, and therefore we are
+now considering $\ve{A}$ as an operator from $C^n$ to $C^n$---and
 $\Delta_i$ is a matrix whose only non-zero components are ones and
 can only be in the immediate upper diagonal. The
 matrix $\Delta_i$ has the important property of being nilpotent, that is,
