@@ -143,7 +143,7 @@ say at $x_0$, it is fulfilled that
 or alternatively that for $\epsilon > 0$ sufficiently small,
 there exists $k>0$ such that,
 \beq 
-|f(x)| <k\mid x-x_0 \mid  \,\,\,\mbox{si}\, \mid
+|f(x)| <k\mid x-x_0 \mid  \,\,\,\mbox{if}\, \mid
 x-x_0\mid<\epsilon.
 \eeq  
 
@@ -182,8 +182,9 @@ neighborhood of $t=t_0$
 
 iii) the solution $\varphi $ of~\ref{eq:4.5} is such that
 \beq 
-t-t_0=\int_{x_0}^{\varphi(t)} \frac{dx}{f(x)}\:\:\:\mbox{si}\,\,
+t-t_0=\int_{x_0}^{\varphi(t)} \frac{dx}{f(x)}\:\:\:\mbox{if}\,\,
 f(x)\neq 0
+\label{eq:sol}
 \eeq 
 \label{teo:2}
 \end{teo}
@@ -206,11 +207,11 @@ If $f(x_0)=0$ then $\fit=x_0$ is a solution.
 
 If $f(x_0)\neq 0$ then by continuity there exists a neighborhood of $x_0$
 where $f(x)\neq 0$ and therefore $1/f(x)$ is a continuous function,
-this implies that the integral in~\ref{eq:4.3} is a differentiable function
+this implies that the integral in~\ref{eq:sol} is a differentiable function
 of its integration limits, which we will call
 $\psi(x)-\psi(x_0)$.
 
-\noi Therefore, we have,
+\noi Therefore, we have
 \beq 
 t-t_0=\psi(x)-\psi(x_0)
 \eeq 
@@ -306,8 +307,7 @@ only when $t\to -\infty$. Therefore, $\fip_1(t)$ cannot take the value
 $x_0$ for any finite $t < t_1$ and therefore we have a
 contradiction \epru
 
-The solution whose existence and uniqueness we have just demonstrated can
-not only be thought of as a map between $I_{t_0}$ and $U$ but also
+The solution whose existence and uniqueness we have just demonstrated can be thought of not only as a map between $I_{t_0}$ and $U$ but also
 as a map $g_x^t$ between $U_{x_0}\times\,I_{t_0}$ and $U$ 
 ($U_{x_0}$ neighborhood of $x_0$). The map $g_x^t$ takes $(x,t)$ to the point
 $\fit$ where $\fip$ is the solution of~\ref{eq:4.5} with the initial
@@ -317,8 +317,8 @@ These maps, or local diffeomorphisms, are called
 {\bf local phase flows}, 
 (since in general they cannot be
 defined in all $I_{t_0}\times U$) and satisfy the following
-important group property; if $t,s \in I_0$ then
-$g^{s+t}_{\,\,x}=g^s o g^t_{\,x}$.
+important group property: if $t,s \in I_0$ then
+$g^{s+t}_{\,\,x}=g^s \circ g^t_{\,x}$.
 
 
 By the way the initial conditions appear in the previous Theorem,
@@ -349,7 +349,7 @@ that is, equation~\ref{eq:4.4}.
 
 
 \ejem:
-Let $x(t)$ be the number of bacteria in a culture vessel at time $t$. If the number is large enough, we can think of it as a smooth, differentiable function. If this number is not so large that its density in the vessel is low enough so that they do not have to compete for air and food, then their reproduction is such that $x(t)$ satisfies the equation,
+Let $x(t)$ be the number of bacteria in a culture vessel at time $t$. If the number is large enough, we can think of it as a smooth, differentiable function. Additionally, if this number is not so large that its density in the vessel is low enough so that they do not have to compete for air and food, then their reproduction is such that $x(t)$ satisfies the equation,
 \beq
 \dot x = a\,x\;\;\;\;\;\;a=\mbox{const.}\simeq 2.3\frac1{\mbox{day}},
 \label{eq:4.8}
@@ -361,22 +361,22 @@ that is, the growth rate is proportional to the number of bacteria present. The 
 
 \noi Integrating both sides
 \beq 
-\ln \frac x{x_0}=a\,(t-t_0) \;\;\;\mbox{or}\\;\;\;
+\ln \frac x{x_0}=a\,(t-t_0) \;\;\;\mbox{or}\\ \;\;\;
 x(t)=x_0\,\mbox{e}^{a\,(t-t_0)} 
 \eeq 
 
-That is, the number of bacteria grows exponentially, unless of course $x_0=0$, and depends continuously on the initial number. It should be noted that although the dependence is continuous, the difference between solutions with different initial conditions grows exponentially.
+That is, the number of bacteria grows exponentially (unless, of course, $x_0=0$), and depends continuously on the initial number. It should be noted that even though the dependence is continuous, the difference between solutions with different initial conditions still grows exponentially.
 
-The phase flow in this case is $g^t_x=x\,\mbox{e}^{a\,t}$ and here it is global. With this growth, it is easy to realize that in a few days the number of bacteria and therefore their density will be so large that they will start to compete with each other for food, which will decrease the growth rate. It is experimentally observed that this fact can be taken into account by including in the~\ref{eq:4.8} a term proportional to the square of the number of bacteria.
+The phase flow in this case is $g^t_x=x\,\mbox{e}^{a\,t}$, and is globally defined. With this growth law, it is easy to realize that in a few days the number of bacteria and therefore their density will be so large that they will start to compete with each other for food, which will decrease the growth rate, contradicting the assumption above. It is experimentally observed that this behaviour can be reasonably modeled by including in the~\ref{eq:4.8} a term proportional to the square of the number of bacteria, as
 
 \beq
-\dot x= a\,x-b\,x^2\;\;\;\;\;\;\;\;\;b=\frac a{375}.
+\dot x= a\,x-b\,x^2\,,\;\;\;\;\;\;\;\;\;b=\frac a{375}.
 \label{eq:4.9}
 \eeq
 
 If $x$ is small, the first term dominates and $x$ begins to grow, as we have seen, exponentially until the second term becomes important and the growth rate decreases, tending to zero when $x=x_s$ such that $a\,x_s-b\,x_s^2=0$ or $a-b\,x_s=0$ or $x_s=a/b\simeq 375$ bacteria. Since $\fit=x_s$ is a solution, due to uniqueness, the solution that tends to $x_s$ that we described above cannot reach the value $x_s$ in finite time. If the number of bacteria present is greater than $375$, the growth rate will be negative and the solution will again tend asymptotically to $x_s$.
 
-The general solution of~\ref{eq:4.9} can be obtained similarly to that of~\ref{eq:4.8} and is,
+The general solution of~\ref{eq:4.9} can be obtained similarly to that of~\ref{eq:4.8}, and is
 \beq
 x(t)=\frac{a/b}{1+(\frac a{bx_0}-1)\mbox{e}^{-a(t-t_0)}}
 \eeq 
@@ -397,41 +397,40 @@ $\fip_4(t)=x_0>x_s$}
 \end{figure}
 
 This example allows us to introduce two key concepts in the area.
-The first is that of a {\bf stationary or equilibrium solution}. These are the constant solutions, that is, they are such that
+The first is that of a {\bf stationary or equilibrium solution}. These are the constant solutions, such that
 $\dot x_s=f(x_s)=0$, that is, the roots of the function $f(x)$.
-For equation~\ref{eq:4.8} $x_s=0$, for equation~\ref{eq:4.9}
+For equation~\ref{eq:4.8}, that is $x_s=0$, whereas for equation~\ref{eq:4.9} it is
 $x_s=0\;\;\mbox{and}\;a/b$. 
 
-Note that stationary solutions do not always exist, for example, the equation with $f(x)=1$ does not have them, but when they do exist, the problem of finding them reduces to solving at most a transcendental equation.
+Note that stationary solutions do not always exist. For example, the equation with $f(x)=1$ clearly does not have any. But when they do exist, the problem of finding them reduces to solving at most a transcendental equation.
 Due to the uniqueness of the solutions, this allows us to divide the
 plane $(x,t)$ into strips such that if a solution has initial conditions in this strip, it must remain in it.
 
-The second concept is the {\bf stability} of these solutions.
-The solution $x_s=0$ of~\ref{eq:4.8} and~\ref{eq:4.9} is not stable in the sense that if we choose as an initial condition a point in any neighborhood of this solution, the corresponding solution will initially move away exponentially from the previous one. On the contrary, the solution of~\ref{eq:4.9} $x_s=a/b$ is stable in the sense that if we take initial values close to it, the corresponding solutions will asymptotically approach (in the future) the previous one.
+The second concept is the {\bf stability} of the stationary solutions.
+The solution $x_s=0$ of~\ref{eq:4.8} and~\ref{eq:4.9} is not stable in the sense that if we choose an initial condition in any neighborhood of this solution, the new solution will diverge exponentially from the previous one. On the contrary, the solution of~\ref{eq:4.9} $x_s=a/b$ is stable in the sense that if we take initial values close to it, the corresponding solutions will asymptotically approach (towards the future) the stationary one.
 
-Unstable solutions have no physical interest since the slightest perturbation of the system will generate a solution that quickly moves away from the unstable solution. 
+Unstable solutions have no physical interest since the slightest perturbation of the system will generate solutions that quickly moves away from them. 
 This is not the case in the previous example since the number of bacteria is discrete and the equation only represents an approximation. 
 If the culture vessel is sterilized and hermetically sealed, then there is no possibility of bacterial growth.
 Later we will analyze the problem of stability in detail.
 
 \subsection{Extending the Local Solution}
 
-If we forget about the physical model we described with~\ref{eq:4.9} 
+If we forget about the physical system we modeled with~\ref{eq:4.9} 
 and take
-$z_o < 0$, $t_o = 0$, for example, there will be a maximum time, 
-$t_d = \frac1a \ln [\frac{a/b - z_o}{- z_o}]$,  
-finite for which the solution diverges, that is,
+$x_0 < 0$, $t_0 = 0$, for example, there will be a finite maximum time, 
+$t_d = \frac1a \ln [\frac{a/b - x_0}{- x_0}]$ for which the solution diverges, that is,
 \beq 
 \lim_{t \rightarrow t_d} z(t) = \infty . 
 \eeq
 This shows that the previous theorem can only ensure the
-existence of an interval $I$ for which the solution exists. The
-most we can conclude in general, that is, without giving more information about $f$, is the following Corollary of
+existence of an interval $I$ on which the solution exists. The
+most we can conclude in general, without giving more information about $f$, is the following Corollary of
 Theorem~\ref{teo:2}.
 
 \begin{cor}
 Let $U \subset  \re $ be the domain of definition of f, $U_c $ a
-compact interval [that is, closed and bounded] of $U$, $z_o \in U_c $.
+compact subinterval [that is, closed and bounded] of $U$, $z_o \in U_c $.
 Then the solution $(\fip (z_o,t_o,t), I)$ of equation~\ref{eq:4.5} can be extended either indefinitely or up to
 the boundary of $U_c $. 
 This extension is unique in the sense that any pair of solutions,
@@ -445,7 +444,7 @@ I_2$.
 First, we prove the global version of the uniqueness of the solution.
 Let $T$ be the smallest of the upper bounds of the set 
 $\{\tau\, |\, \varphi_1(z_o,t) = \varphi_2(z_o,t) \,
-for all \, t_o \le t \le \tau \}$.
+\text{for all}  \, t_o \le t \le \tau \}$.
 Suppose in contradiction that $T$ is an interior point of 
 $I_1 \cap I_2 $. 
 By continuity we have,
@@ -471,8 +470,8 @@ solutions coincide in all $I_1 \cap I_2 $.
 Second, we construct the extension. The idea is that if two solutions coincide in $I_1 \cap I_2 $, then we can combine them and form one
 in $I_1 \cup I_2 $, 
 \beq 
-\fit =\left\{ \barr{ll}  \fip_1(t) &for all t \in I_1\\
-           \fip_2(t) &for all t \in I_2. 
+\fit =\left\{ \barr{ll}  \fip_1(t) &\text{for all} t \in I_1\\
+           \fip_2(t) &\text{for all} t \in I_2. 
          \earr\right.
 \eeq
 
@@ -486,7 +485,7 @@ in $I_1 \cup I_2 $,
 \end{figure}
 
 Let $T$ be the smallest upper bound of $\{\tau | \fit $ exists and is 
-contained in $U_c \; for all \, t_o \leq t \leq \tau \}$.
+contained in $U_c \; \text{for all} \, t_o \leq t \leq \tau \}$.
 If $T$ $= \infty $ there is nothing to prove, so suppose $T$ $<
 \infty $. We will prove that there exists $\fit $ defined for all $t_o \leq 
 t \leq $ $T$ and such that $\varphi (T) $ is one of the endpoints of $U_c $.
@@ -499,7 +498,7 @@ Since $U_c $ is compact, we can choose a finite number of points
 ${\hat z_i }$ such that $U_c \subset \bigcup V_{\hat z_i}$. 
 Let $\epsilon > 0 $ be the minimum of the $\epsilon_{\hat z_i} $.
 Since $T$ is the smallest upper bound, there exists $\tau $ between $T -
-\epsilon $ and $T$ such that $\fit \in U_c \, for all \, t_o \leq t \leq \tau $, 
+\epsilon $ and $T$ such that $\fit \in U_c \, \text{for all} \, t_o \leq t \leq \tau $, 
 but since 
 $\varphi(\tau ) \in U_c $ 
 is in one of the $V_{\hat z_i } $, there exists
@@ -511,7 +510,7 @@ $\hat{\fip}(\tau) = \fip(\tau) $.
 Using $\hat{\fip}(t) $ we can now extend $\varphi $, whose extension 
 we will call $\tilde\varphi $, to the interval $t_o \leq t < \tau + \epsilon $.
 But 
-$\tilde\varphi (\theta) \in U_c \, for all \, t_o < \theta <T$ 
+$\tilde\varphi (\theta) \in U_c \, \text{for all} \, t_o < \theta <T$ 
 since 
 $\tilde\varphi(\theta) = \varphi(\theta) \in U_c$, 
 and otherwise $T$ would not
@@ -524,7 +523,7 @@ $\tilde\varphi(T) $ is an endpoint of $U_c$ \epru
 
 This is the case where instead of~\ref{eq:4.5} we have 
 \beq 
-\frac{d\dot z}{dt} = f(z,t).
+\frac{d z}{dt} = f(z,t).
 \eeq
 The geometric interpretation is the same, only now the {\sl
 little lines} have an angle that also depends on the variable t,
@@ -534,8 +533,8 @@ solution. This is indeed the case, but its discussion will be
 included in the general theory of first-order autonomous systems
 that we will state later.
 
-Assuming certain conditions for $f(z,t) $ -- for example, that it is
-Lipschitz with respect to both variables -- it can be seen that local
+Assuming certain conditions for $f(z,t) $---for example, that it is
+Lipschitz with respect to both variables---it can be seen that local
 flows also exist, but these now also depend on $t_o $ and not just
 on the difference between the initial and final time. We will denote
 these flows as $g^t_{t_o}(z)$ and the semigroup property they satisfy is
@@ -572,11 +571,11 @@ F(x,x^{(1)},\ldots,x^{(m)},t)\,=\,0     \label{eq:4.1}
 
 That is, an implicit equation of $x$, a map between 
 $\tilde I\subset \re$ and $\tilde U\subset \re^{m \times n}$, (i.e., $x$ is a
-vector of $n$ components), and its derivatives (where $x^{(i)} \equiv \frac{d^i x}{dt^i}]$ 
+vector of $n$ components), and its derivatives (where $x^{(i)} \equiv \frac{d^i x}{dt^i})$ 
 denotes the $i$-th derivative with respect to the independent parameter, $t$) 
 up to order 
-{\it n}~\footnote{In reality, to correctly define~\ref{eq:4.1}, the open sets $\tilde U^i$ for the $i$-th derivative with respect 
-to $x$ where $F$ is defined must be given.}.
+{\it n}.~\footnote{In reality, to correctly define~\ref{eq:4.1}, the open sets $\tilde U^i$ for the $i$-th derivative with respect 
+to $x$ where $F$ is defined must be given.}
 
 \defi: We will say that the $m$--times differentiable map $x(t): I \to
 \re^n$ is {\bf a solution} of the previous equation if $F$
@@ -596,7 +595,7 @@ implies one of the following ODEs in our sense:
 \begin{equation}
 \begin{array}{l}
    x^{(1)}\,=\,\,1 \\ 
-   or \\
+   \text{or} \\
    x^{(1)}\,=\,-1
 \end{array}
 \end{equation}
@@ -757,7 +756,7 @@ such that their tangent at every point is $\ve{v}$.
 \ejem: The Physical Pendulum
 \beq
 \left\{\barr{rcl}
-   \ddot\theta  & = & -\sin\theta \;\;\;\;\mbox{\o} \\
+   \ddot\theta  & = & -\sin\theta \;\;\;\;\mbox{\mathrm{o}} \\
    \dot \theta & = & z  \\
    \dot z & = & -\sin\theta 
    \earr\right.
@@ -799,14 +798,14 @@ From the example, it is clear that in general, if we give a point of $M$
 and follow the vectors from it, we can find 
 a solution $\gat$ that passes through this point. 
 If we have two solutions $\gamma_1(t)$,
-$\gamma_2(t)$, they cannot cross each other -- without being tangent -- at
-points where the vector field is non-zero [since
-otherwise, their tangents would give two different vectors at the point].
+$\gamma_2(t)$, they cannot cross each other ---without being tangent---at
+points where the vector field is non-zero (since
+otherwise, their tangents would give two different vectors at the point).
 If we assume that the vector field is differentiable, then it can be
 seen that different curves can never touch, and therefore the
 solutions are unique.
 
-Of course, as seen for example in figure \ref{fig:4_7}, 
+Of course, as seen for example in Fig.~\ref{fig:4_7}, 
 the same curve can intersect itself (note that this can only happen
 if the system is autonomous, as otherwise, the inclusion of
 the temporal variable prevents any curve from intersecting itself). 
@@ -979,11 +978,11 @@ expanding and using coordinates
 \gamma_1^i +\left. \derc{v^j}{\lambda}\right|_{(\gamma_0,\lambda=0)},
 \eeq
 $$
-=A^j{}_{i}(t)\;\gamma_1^i +b^j(t).   \label{eq*}
+=A^j{}_{i}(t)\;\gamma_1^i +b^j(t).   \label{eq:lambda}
 $$
-\noi that is, the equation for $\gay{1}{t}$ --usually called the variation equation-- is a linear inhomogeneous non-autonomous equation. Since
+\noi that is, the equation for $\gay{1}{t}$---usually called the variation equation---is a linear inhomogeneous non-autonomous equation. Since
 we took the initial condition $\gay{\lambda}{0}=p\;\;\;\forall\;\lam$, 
-the initial condition we will consider for~\ref{eq*} is $\gay{1}{0}=0$.
+the initial condition we will consider for~\ref{eq:lambda} is $\gay{1}{0}=0$.
 \espa
 
 
@@ -1039,8 +1038,8 @@ x_0(\tilde\tau))\,\,d \tilde\tau\;d\tau.
        \earr
 \eeq
 Without loss of generality, we can assume $f_i(0,0)=0$. When
-$\eps=0$, we obtain the equations of the pendulum --in the small amplitude approximation--, that is, a conservative system. Its
-energy --first integral-- is given by $E(x_1,x_2)=\frac12(x_1^2+x_2^2)$ and its
+$\eps=0$, we obtain the equations of the pendulum ---in the small amplitude approximation---, that is, a conservative system. Its
+energy---first integral---is given by $E(x_1,x_2)=\frac12(x_1^2+x_2^2)$ and its
 phase curves are then circles of radius $\sqrt{2E}$.
 
 When $\eps>0$, the phase curves are not necessarily closed,
@@ -1052,13 +1051,13 @@ $\sqrt{2E_i}$, where $E_i=$ initial energy, that is, where $ x_2 +
 asymptotically approach some closed orbit or finally
 diverge. That
 these are the only options is the result of a classic theorem by 
-{\bf Poincaré--Bendixson}, which shows that in general these are the
+{\bf Poincar\'e--Bendixson}, which shows that in general these are the
 only possibilities in two dimensions.
 
 To study which case it is among these three, we consider the
 variation of energy between two consecutive turns.
 
-Taking a time derivative of the energí expression defined above, and using the evolution equations we obtain:
+Taking a time derivative of the energy expression defined above, and using the evolution equations we obtain:
 \beq 
 \dot E(x_1,x_2)\,=\;\eps\,(x_1\,f_1\;+\;x_2\,f_2).
 \eeq
@@ -1088,7 +1087,7 @@ that near this circle there is a closed phase curve
 $\Gamma_{\eps}$. 
 
 If $\left.F'(E)\right|_{E=E_0}$ is negative, $\Gamma$ is a stable limit cycle 
---any nearby phase curve asymptotically approaches it--. If $\left.F'(E)\right|_{E=E_0}$ is positive,
+---any nearby phase curve asymptotically approaches it---. If $\left.F'(E)\right|_{E=E_0}$ is positive,
 $\Gamma$ is unstable.
 
 \bpro Show that if there are two stable limit cycles,
@@ -1309,7 +1308,7 @@ Find the period by locating the return points (zero velocity).
 \recubib{For this and the next three chapters, I recommend the following books:
 \cite{Arnold}, \cite{Braum}, and \cite{Roxin}. Especially the first one.
 Ordinary differential equations are the basis of classical mechanics, although in the latter there is also a particular geometric structure
-that is fundamental. Almost everything we have seen in this chapter is the {\sl local} theory, the {\sl global} theory, that is, the behavior of the solutions for large values of the independent variable (time in most cases) has only been understood in recent years, giving rise to new concepts such as chaos, attractors, fractal dimensions, etc. Unfortunately, these aspects have not yet been sufficiently synthesized, and therefore I cannot recommend any book on the subject. There are too many interesting ideas, but each of them requires a great deal of information.}
+that is fundamental. Almost everything we have seen in this chapter is the {\sl local} theory. The {\sl global} theory, that is, the behavior of the solutions for large values of the independent variable (time in most cases) has only been understood in recent years, giving rise to new concepts such as chaos, attractors, fractal dimensions, etc. Unfortunately, these aspects have not yet been sufficiently synthesized, and therefore I cannot recommend any book on the subject. There are too many interesting ideas, but each of them requires a great deal of information.}
 
 
 %%% Local Variables: 
