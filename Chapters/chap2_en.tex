@@ -271,7 +271,7 @@ Since $\ve{ t}$ is non-degenerate, it defines an invertible map between $V$ and 
 Indeed, given $\ve{v} \in V$, $\ve{t}(\ve{v},\cdot)$ is an element of $V^*$. 
 But if $\ve{v}$ and $\ve{\tilde{v}}$ determine the same element of $V^*$, that is, if $\ve{ t}(\ve{v},\ve{u}) = \ve{ t}(\ve{\tilde{v}},\ve{u}) \;\; \forall \; \ve{u} \in V$ then $\ve{v}=\ve{\tilde{v}}$, which can be seen by taking $\ve{u} = \ve{v} - \ve{\tilde{v}}$ and using that $\ve{t}$ is non-degenerate. Since the dimensions of $V$ and $V^{*}$ are equal, the map thus defined is invertible.
 
-\ejem: b) Let $\ve{\varepsilon}$ be a tensor of type ${0 \choose n}$ such that \beq \ve{\varepsilon} (\ldots,\underbrace{\ve{v}}_i,\ldots,\underbrace{\ve{u}}_j,\ldots) =-\ve{\varepsilon} (\ldots,\underbrace{\ve{u}}_i,\ldots,\underbrace{\ve{v}}_j,\ldots) \eeq \noi for any box $i$ and $j$, that is, a totally antisymmetric tensor. Let ${\ve{e}_i}$ be a basis of $V$ and $\varepsilon_{123\ldots n}:= \ve{\varepsilon} (\ve{e}_1,\ve{e}_2,\ldots,\ve{e}_n)$. Then any other component of $\ve{\varepsilon}$ in this basis will be either zero or $\varepsilon_{123\ldots n}$ or $-\varepsilon_{123\ldots n}$ depending on whether some $\ve{e}_i$ is repeated, or is an even permutation of the above, or an odd one. Indeed, for example,
+\ejem: b) Let $\ve{\varepsilon}$ be a tensor of type ${0 \choose n}$ such that \beq \ve{\varepsilon} (\ldots,\underbrace{\ve{v}}_i,\ldots,\underbrace{\ve{u}}_j,\ldots) =-\ve{\varepsilon} (\ldots,\underbrace{\ve{u}}_i,\ldots,\underbrace{\ve{v}}_j,\ldots) \eeq \noi for any pair of indices $i$ and $j$, that is, a totally antisymmetric tensor. Let ${\ve{e}_i}$ be a basis of $V$ and $\varepsilon_{123\ldots n}:= \ve{\varepsilon} (\ve{e}_1,\ve{e}_2,\ldots,\ve{e}_n)$. Then any other component of $\ve{\varepsilon}$ in this basis will be either zero or $\varepsilon_{123\ldots n}$ or $-\varepsilon_{123\ldots n}$ depending on whether some $\ve{e}_i$ is repeated, or is an even permutation of the above, or an odd one. Indeed, for example,
 
 \begin{eqnarray*} 
 \varepsilon_{3124\ldots n} &:=& \ve{\varepsilon}(\ve{e_3},\ve{e_1}, \ve{e_{2}}, \ve{e_{4}},\ldots,\ve{e}_n) \\
@@ -292,7 +292,7 @@ This last equality does not depend on the basis used and tells us that the dimen
 \beq
 \ve{ u}\in V, \;\; \ve{ v}^* \in V^* \to \ve{A}(\ve{ u},\ve{v}^*)\in\re. 
 \eeq 
-This implies that $\ve{A}(\ve{u},\cdot)$ is also a vector ---identifying $V$ with $V^{**}$), the one that takes a covector $\ve{\omega} \in V^*$ and gives the number $\ve{A}(\ve{u},\ve{\omega})$---. 
+This implies that $\ve{A}(\ve{u},\cdot)$ is also a vector (identifying $V$ with $V^{**}$), the one that takes a covector $\ve{\omega} \in V^*$ and gives the number $\ve{A}(\ve{u},\ve{\omega})$. 
 Thus, $\ve{A}$ determines a \textbf{linear map} $V \to V$, that is, a linear operator on $V$.
 
 \ejer: Continuing the example before, let ${\ve{u}_i}$ be a basis of $V$ and let $\ve{ a}_i = \ve{A}(\ve{u_i},\cdot)$. Then \[ \ve{\varepsilon}(\ve{a_1},\ldots,\ve{a_n})=\ve{\varepsilon}(\ve{A}(\ve{u_1}, \cdot),\ldots ,\ve{A}(\ve{u_n},\cdot)) \] is totally antisymmetric in the ${u_i}$ and therefore proportional to itself;

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=latex 2024.12.17)  7 FEB 2025 19:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=latex 2024.12.17)  23 MAY 2025 17:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1102,11 +1102,11 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <9.79996> not available
 File: Figure/m4_5.pstex Graphic file (type eps)
 
 <Figure/m4_5.pstex>)
-Overfull \hbox (18.63077pt too wide) in paragraph at lines 488--522
+Overfull \hbox (11.51079pt too wide) in paragraph at lines 487--521
 []\T1/mdugm/m/n/10 Let $\OML/mdugm/m/it/10 T$ \T1/mdugm/m/n/10 be the small-est
  up-per bound of $\OMS/mdugm/m/n/10 f\OML/mdugm/m/it/10 ^^\\OMS/mdugm/m/n/10 j[
-]$ \T1/mdugm/m/n/10 ex-ists and is con-tained in $\OML/mdugm/m/it/10 U[] forall
- t[] \OMS/mdugm/m/n/10 ^^T
+]$ \T1/mdugm/m/n/10 ex-ists and is con-tained in $\OML/mdugm/m/it/10 U[] [] t[]
+ \OMS/mdugm/m/n/10 ^^T
  []
 
 [103] [104] [105] [106] (./Figure/m4_6.pstex_t
@@ -1115,12 +1115,6 @@ File: Figure/m4_6.pstex Graphic file (type eps)
 (./Figure/m4_7.pstex_t
 File: Figure/m4_7.pstex Graphic file (type eps)
  <Figure/m4_7.pstex>) [108] [109] [110] [111] [112]
-LaTeX Font Info:    Trying to load font information for TS1+mdugm on input line
- 1055.
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdugm/ts1mdugm.fd
-File: ts1mdugm.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdugm.
-)
 [113] [114] [115]) [116]
 \openout2 = `Chapters/chap5_en.aux'.
 
@@ -1325,7 +1319,14 @@ File: Figure/m12_1.pstex Graphic file (type eps)
  <Figure/m12_1.pstex>) [217] (./Figure/m12_2.pstex_t
 File: Figure/m12_2.pstex Graphic file (type eps)
 
-<Figure/m12_2.pstex>) [218] [219] [220] [221] [222] [223]
+<Figure/m12_2.pstex>) [218]
+LaTeX Font Info:    Trying to load font information for TS1+mdugm on input line
+ 126.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/mathdesign/mdugm/ts1mdugm.fd
+File: ts1mdugm.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdugm.
+)
+[219] [220] [221] [222] [223]
 Overfull \hbox (0.44577pt too wide) in paragraph at lines 426--430
 []\T1/mdugm/m/it/10 Let $\OML/mdugm/m/n/10 
  \OMS/mdugm/m/n/10 ^^Z \MDA/mdugm/m/n/10 R[]$ \T1/mdugm/m/it/10 be bounded. The
@@ -1476,11 +1477,11 @@ LaTeX Warning: There were multiply-defined labels.
 ### bottom level 
 Here is how much of TeX's memory you used:
  7778 strings out of 474117
- 137845 string characters out of 5743707
+ 137843 string characters out of 5743707
  1952184 words of memory out of 5000000
  29737 multiletter control sequences out of 15000+600000
  771075 words of font info for 189 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,15n,79p,1709b,783s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on book_methods_gar.dvi (264 pages, 1153124 bytes).
+Output written on book_methods_gar.dvi (264 pages, 1153404 bytes).

@@ -25,14 +25,15 @@ The elements of \cT, subsets of $X$, are called the {\bf open subsets} of $X$. T
 \ejem: b) Let \cT = \cP($X$), the collection of all subsets of $X$. Clearly, this collection also satisfies the conditions mentioned above and therefore it is also a topology on $X$, the so-called {\bf discrete topology on} $X$. We can say that in this one all the points are arbitrarily separated from each other since, for example, given any point of $X$ there is an open set that separates it from all the others, which consists of only the point in question.
 
 \ejem: c) Let $X$ be the set of real numbers, \re, and let \\
-$\cT = \{O \subseteq \re |\; \mathrm{if} \;r \in O, \, \exists \eps >0 \; \mathrm{such that if} \; |r - r'| < \eps, \; r' \in O\}$, that is, the collection of open sets in the usual sense of the real numbers. Let's see that this collection satisfies the conditions to be a topology. Clearly, $\emptyset \in \cT$ (since it has no $r$), as well as \re$ \in \cT$ (since it contains all $r'$), and thus condition 1) is satisfied. Let us examine the second condition: let $r \in \bigcup_I O_{\lambda}$ then $r \in O_{\lambda}$ for some $\lambda$ and therefore there will exist $\eps >0 $ such that all $r'$ with $|r-r'| < \eps $ are also in $O_{\lambda}$, and therefore in $\bigcup_I O_{\lambda}$. 
+$\cT = \{O \subseteq \re |\; \mathrm{if} \;r \in O, \, \exists \eps >0$ such that if $ |r - r'| < \eps, \; r' \in O\}$, that is, the collection of open sets in the usual sense of the real numbers. Let's see that this collection satisfies the conditions to be a topology. 
+Clearly, $\emptyset \in \cT$ (since it has no $r$), as well as \re $ \in \cT$ (since it contains all $r'$), and thus condition 1) is satisfied. Let us examine the second condition: let $r \in \bigcup_I O_{\lambda}$ then $r \in O_{\lambda}$ for some $\lambda$ and therefore there will exist $\eps >0 $ such that all $r'$ with $|r-r'| < \eps $ are also in $O_{\lambda}$, and therefore in $\bigcup_I O_{\lambda}$. 
 Finally, the third condition: let $r \in O \cap O'$ then $r$ is in $O$ and therefore there will exist $\eps > 0$ such that all $r'$ with $|r-r'| < \eps $ will be in $O$; as $r$ is also in $O'$, there will exist $\eps'> 0$ such that all $r'$ with $|r-r'| < \eps'$ will be in $O'$. 
 Let $\eps'' = \mathrm{min}\{\eps, \eps' \}$, then all $r'$ with $|r-r'| < \eps''$ will be in $O$ and in $O'$ and therefore in $O \cap O'$, so we conclude that this last set is also in \cT. $\re$ with this topology is called the {\bf real line}.
 
 \ejer: In the real line, as defined in the previous example, find an infinite intersection of open sets that is not open.
 
-\ejem: d) Let $X = \re \times \re \equiv \re^2$, that is, the Cartesian product of \re  with itself ---the set of all pairs $(x,y)$, with $x,y \in \re$--- and let \\
-$\cT = \{O \in \re^2 |\; \mathrm{if} (x,y) \in O, \, \exists \eps >0 \mathrm{such that if} |x - x'|+|y-y'| < \eps, \; (x',y') \in O \}$. Following the previous example, it can be seen that this is also a topological space and that this is the topology we usually use in $\re^2$
+\ejem: d) Let $X = \re \times \re \equiv \re^2$, that is, the Cartesian product of \re $\;$ with itself ---the set of all pairs $(x,y)$, with $x,y \in \re$--- and let \\
+$\cT = \{O \in \re^2 |\; \mathrm{if} (x,y) \in O, \, \exists \eps >0 \;\; \text{such that if}\;\; |x - x'|+|y-y'| < \eps, \; (x',y') \in O \}$. Following the previous example, it can be seen that this is also a topological space and that this is the topology we usually use in $\re^2$
 
 \defi: A {\bf metric space} is a pair $(X,d)$ consisting of a set $X$ and a map $d: X \times X \to \re$, usually called \textbf{distance}, satisfying the following conditions for all $x, x', x'' \in X$:
 

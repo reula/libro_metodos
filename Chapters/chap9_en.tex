@@ -437,7 +437,7 @@ $$ |T_n(\fip)-T_m(\fip)|<\eps$$
 In a normed space, $H$, we have the notion of convergence with respect
 to the norm, which we will call strong convergence
 \[
-\{x_n\} \sr{f}{\rightarrow} x \;\; \mbox{ if } \;\;\lim_{n \to \infty} \|x_n - x\|_H = 0.
+\{x_n\} \sr{s}{\rightarrow} x \;\; \mbox{ if } \;\;\lim_{n \to \infty} \|x_n - x\|_H = 0.
 \]
 % 
 In these spaces, there is another notion of convergence, called weak convergence,
@@ -449,7 +449,7 @@ which uses the existence of the dual space of $H$, $H'$.
 We will say that $\{x_n\}$ {\bf converges weakly} to $x$,
 
 \[
-\{x_n\} \sr{d}{\rightarrow} x, \;\; \mbox{ if } \;\; \sigma(x_n) \rightarrow \sigma(x) \;\;\; \forall \;\; \sigma \in H'.
+\{x_n\} \sr{w}{\rightarrow} x, \;\; \mbox{ if } \;\; \sigma(x_n) \rightarrow \sigma(x) \;\;\; \forall \;\; \sigma \in H'.
 \]
 %
 If $H$ is a Hilbert space (which we will assume from now on),
@@ -480,7 +480,7 @@ and therefore,
 \beq
 \lim_{n\to\ifi} |\sigma(x)-\sigma(x_n)| = 0,
 \eeq 
-that is, $\{x_n\} \sr{d}{\rightarrow} 
+that is, $\{x_n\} \sr{w}{\rightarrow} 
 x$.
 The following is an example of a sequence that converges weakly
 and not strongly.
@@ -539,7 +539,7 @@ Using the Riesz Representation Theorem, we know then that there exists $x \in H$
 \beq
 (x,y) = \sigma(y) = \lim(x_n^{\infty},y) \;\;\;\;\;\forall \;y \in H.
 \eeq
-We thus conclude that $\{x_n^{\infty}\}\sr{d}{\rightarrow} x$
+We thus conclude that $\{x_n^{\infty}\}\sr{w}{\rightarrow} x$
 $\spadesuit$ 
 
 In the next chapter, we will use this property to prove an important result in Sobolev spaces.
